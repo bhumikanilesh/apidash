@@ -1,0 +1,2831 @@
+{
+  "id": "orthanc-server.com",
+  "info": {
+    "base_url": "https://demo.orthanc-server.com/",
+    "description": "Decode the given DICOM instance, for use with numpy in Python. The numpy array has 4 dimensions: (frame, height, width, color channel).",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Orthanc API",
+    "version": "1.11.3"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Clear the full history stored in the changes log",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //changes",
+      "method": "DELETE",
+      "name": "Clear changes",
+      "params": [],
+      "path": "//changes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Clear changes",
+      "url": "https://demo.orthanc-server.com//changes"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Whenever Orthanc receives a new DICOM instance, this event is recorded in the so-called _Changes Log_. This enables remote scripts to react to the arrival of new DICOM resources. A typical application is auto-routing, where an external script waits for a new DICOM instance to arrive into Orthanc, then forward this instance to another modality.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //changes",
+      "method": "GET",
+      "name": "List changes",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "since",
+          "value": ""
+        }
+      ],
+      "path": "//changes",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "since",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List changes",
+      "url": "https://demo.orthanc-server.com//changes"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Clear the full history stored in the exports log",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //exports",
+      "method": "DELETE",
+      "name": "Clear exports",
+      "params": [],
+      "path": "//exports",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Clear exports",
+      "url": "https://demo.orthanc-server.com//exports"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "For medical traceability, Orthanc can be configured to store a log of all the resources that have been exported to remote modalities. In auto-routing scenarios, it is important to prevent this log to grow indefinitely as incoming instances are routed. You can either disable this logging by setting the option `LogExportedResources` to `false` in the configuration file, or periodically clear this log by `DELETE`-ing this URI. This route might be removed in future versions of Orthanc.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //exports",
+      "method": "GET",
+      "name": "List exports",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "since",
+          "value": ""
+        }
+      ],
+      "path": "//exports",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "since",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List exports",
+      "url": "https://demo.orthanc-server.com//exports"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List the Orthanc identifiers of all the available DICOM instances",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances",
+      "method": "GET",
+      "name": "List the available instances",
+      "params": [
+        {
+          "name": "expand",
+          "value": ""
+        },
+        {
+          "name": "full",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "requestedTags",
+          "value": ""
+        },
+        {
+          "name": "short",
+          "value": ""
+        },
+        {
+          "name": "since",
+          "value": ""
+        }
+      ],
+      "path": "//instances",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "expand",
+          "value": ""
+        },
+        {
+          "name": "full",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "requestedTags",
+          "value": ""
+        },
+        {
+          "name": "short",
+          "value": ""
+        },
+        {
+          "name": "since",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the available instances",
+      "url": "https://demo.orthanc-server.com//instances"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Upload DICOM instances",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST //instances",
+      "method": "POST",
+      "name": "Upload DICOM instances",
+      "params": [],
+      "path": "//instances",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Upload DICOM instances",
+      "url": "https://demo.orthanc-server.com//instances"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete the DICOM instance whose Orthanc identifier is provided in the URL",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //instances/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete some instance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete some instance",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get detailed information about the DICOM instance whose Orthanc identifier is provided in the URL",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}",
+      "method": "GET",
+      "name": "Get information about some instance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "full",
+          "value": ""
+        },
+        {
+          "name": "requestedTags",
+          "value": ""
+        },
+        {
+          "name": "short",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "full",
+          "value": ""
+        },
+        {
+          "name": "requestedTags",
+          "value": ""
+        },
+        {
+          "name": "short",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get information about some instance",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "DicomVersion": "",
+        "Force": false,
+        "Keep": [
+          ""
+        ],
+        "KeepPrivateTags": false,
+        "KeepSource": false,
+        "PrivateCreator": "",
+        "Remove": [
+          ""
+        ],
+        "Replace": {},
+        "Transcode": ""
+      },
+      "body_json": {
+        "DicomVersion": "",
+        "Force": false,
+        "Keep": [
+          ""
+        ],
+        "KeepPrivateTags": false,
+        "KeepSource": false,
+        "PrivateCreator": "",
+        "Remove": [
+          ""
+        ],
+        "Replace": {},
+        "Transcode": ""
+      },
+      "body_text": "{\"DicomVersion\": \"\", \"Force\": false, \"Keep\": [\"\"], \"KeepPrivateTags\": false, \"KeepSource\": false, \"PrivateCreator\": \"\", \"Remove\": [\"\"], \"Replace\": {}, \"Transcode\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Download an anonymized version of the DICOM instance whose Orthanc identifier is provided in the URL: https://book.orthanc-server.com/users/anonymization.html#anonymization-of-a-single-instance",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //instances/{{ID}}/anonymize",
+      "method": "POST",
+      "name": "Anonymize instance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/anonymize",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"DicomVersion\": \"\", \"Force\": false, \"Keep\": [\"\"], \"KeepPrivateTags\": false, \"KeepSource\": false, \"PrivateCreator\": \"\", \"Remove\": [\"\"], \"Replace\": {}, \"Transcode\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Anonymize instance",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/anonymize"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the list of attachments that are associated with the given instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments",
+      "method": "GET",
+      "name": "List attachments",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "full",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "full",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List attachments",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an attachment associated with the given DICOM instance. This call will fail if trying to delete a system attachment (i.e. whose index is < 1024).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //instances/{{ID}}/attachments/{{NAME}}",
+      "method": "DELETE",
+      "name": "Delete attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the list of the operations that are available for attachments associated with the given instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}",
+      "method": "GET",
+      "name": "List operations on attachments",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List operations on attachments",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Attach a file to the given DICOM instance. This call will fail if trying to modify a system attachment (i.e. whose index is < 1024).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PUT //instances/{{ID}}/attachments/{{NAME}}",
+      "method": "PUT",
+      "name": "Set attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Change the compression scheme that is used to store an attachment.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST //instances/{{ID}}/attachments/{{NAME}}/compress",
+      "method": "POST",
+      "name": "Compress attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/compress",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Compress attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/compress"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the (binary) content of one attachment associated with the given instance. The attachment will not be decompressed if `StorageCompression` is `true`.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}/compressed-data",
+      "method": "GET",
+      "name": "Get attachment (no decompression)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/compressed-data",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get attachment (no decompression)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/compressed-data"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the MD5 hash of one attachment associated with the given instance, as stored on the disk. This is different from `.../md5` iff `EnableStorage` is `true`.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}/compressed-md5",
+      "method": "GET",
+      "name": "Get MD5 of attachment on disk",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/compressed-md5",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get MD5 of attachment on disk",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/compressed-md5"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the size of one attachment associated with the given instance, as stored on the disk. This is different from `.../size` iff `EnableStorage` is `true`.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}/compressed-size",
+      "method": "GET",
+      "name": "Get size of attachment on disk",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/compressed-size",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get size of attachment on disk",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/compressed-size"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the (binary) content of one attachment associated with the given instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}/data",
+      "method": "GET",
+      "name": "Get attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/data",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/data"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get all the information about the attachment associated with the given instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}/info",
+      "method": "GET",
+      "name": "Get info about the attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/info",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get info about the attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/info"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Test whether the attachment has been stored as a compressed file on the disk.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}/is-compressed",
+      "method": "GET",
+      "name": "Is attachment compressed?",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/is-compressed",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Is attachment compressed?",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/is-compressed"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the MD5 hash of one attachment associated with the given instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}/md5",
+      "method": "GET",
+      "name": "Get MD5 of attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/md5",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get MD5 of attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/md5"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the size of one attachment associated with the given instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/attachments/{{NAME}}/size",
+      "method": "GET",
+      "name": "Get size of attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/size",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get size of attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/size"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Change the compression scheme that is used to store an attachment.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST //instances/{{ID}}/attachments/{{NAME}}/uncompress",
+      "method": "POST",
+      "name": "Uncompress attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/uncompress",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Uncompress attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/uncompress"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Verify that the attachment is not corrupted, by validating its MD5 hash",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST //instances/{{ID}}/attachments/{{NAME}}/verify-md5",
+      "method": "POST",
+      "name": "Verify attachment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/attachments/{{NAME}}/verify-md5",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Verify attachment",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/attachments/{{NAME}}/verify-md5"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the raw content of one DICOM tag in the hierarchy of DICOM dataset",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/content",
+      "method": "GET",
+      "name": "Get raw tag",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "...",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/content",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "...",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get raw tag",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/content"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Write the DICOM file onto the filesystem where Orthanc is running",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST //instances/{{ID}}/export",
+      "method": "POST",
+      "name": "Write DICOM onto filesystem",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/export",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Write DICOM onto filesystem",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/export"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Download one DICOM instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/file",
+      "method": "GET",
+      "name": "Download DICOM",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/file",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Download DICOM",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/file"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List the frames that are available in the DICOM instance of interest",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames",
+      "method": "GET",
+      "name": "List available frames",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List available frames",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List the available operations under URI `/instances/{id}/frames/{frame}/`",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}",
+      "method": "GET",
+      "name": "List operations",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List operations",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode one frame of interest from the given DICOM instance. Pixels of grayscale images are truncated to the [-32768,32767] range. Negative values must be interpreted according to two's complement.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/image-int16",
+      "method": "GET",
+      "name": "Decode a frame (int16)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/image-int16",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode a frame (int16)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/image-int16"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode one frame of interest from the given DICOM instance. Pixels of grayscale images are truncated to the [0,65535] range.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/image-uint16",
+      "method": "GET",
+      "name": "Decode a frame (uint16)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/image-uint16",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode a frame (uint16)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/image-uint16"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode one frame of interest from the given DICOM instance. Pixels of grayscale images are truncated to the [0,255] range.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/image-uint8",
+      "method": "GET",
+      "name": "Decode a frame (uint8)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/image-uint8",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode a frame (uint8)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/image-uint8"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode one frame of interest from the given DICOM instance, and export this frame as a Octave/Matlab matrix to be imported with `eval()`: https://book.orthanc-server.com/faq/matlab.html",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/matlab",
+      "method": "GET",
+      "name": "Decode frame for Matlab",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/matlab",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode frame for Matlab",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/matlab"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode one frame of interest from the given DICOM instance, for use with numpy in Python. The numpy array has 3 dimensions: (height, width, color channel).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/numpy",
+      "method": "GET",
+      "name": "Decode frame for numpy",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "compress",
+          "value": ""
+        },
+        {
+          "name": "rescale",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/numpy",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "compress",
+          "value": ""
+        },
+        {
+          "name": "rescale",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode frame for numpy",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/numpy"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode one frame of interest from the given DICOM instance. The full dynamic range of grayscale images is rescaled to the [0,255] range.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/preview",
+      "method": "GET",
+      "name": "Decode a frame (preview)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/preview",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode a frame (preview)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/preview"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Access the raw content of one individual frame of the DICOM instance of interest, bypassing image decoding. This is notably useful to access the source files in compressed transfer syntaxes.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/raw",
+      "method": "GET",
+      "name": "Access raw frame",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/raw",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Access raw frame",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/raw"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Access the raw content of one individual frame of the DICOM instance of interest, bypassing image decoding. This is notably useful to access the source files in compressed transfer syntaxes. The image is compressed using gzip",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/raw.gz",
+      "method": "GET",
+      "name": "Access raw frame (compressed)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/raw.gz",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Access raw frame (compressed)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/raw.gz"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Render one frame of interest from the given DICOM instance. This function takes scaling into account (`RescaleSlope` and `RescaleIntercept` tags), as well as the default windowing stored in the DICOM file (`WindowCenter` and `WindowWidth`tags), and can be used to resize the resulting image. Color images are not affected by windowing.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/frames/{{FRAME}}/rendered",
+      "method": "GET",
+      "name": "Render a frame",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "height",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        },
+        {
+          "name": "smooth",
+          "value": ""
+        },
+        {
+          "name": "width",
+          "value": ""
+        },
+        {
+          "name": "window-center",
+          "value": ""
+        },
+        {
+          "name": "window-width",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/frames/{{FRAME}}/rendered",
+      "pathParameters": [
+        {
+          "name": "frame",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "height",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        },
+        {
+          "name": "smooth",
+          "value": ""
+        },
+        {
+          "name": "width",
+          "value": ""
+        },
+        {
+          "name": "window-center",
+          "value": ""
+        },
+        {
+          "name": "window-width",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Render a frame",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/frames/{{FRAME}}/rendered"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the DICOM tags in the meta-header of the DICOM instance. By default, the `full` format is used, which combines hexadecimal tags with human-readable description.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/header",
+      "method": "GET",
+      "name": "Get DICOM meta-header",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "short",
+          "value": ""
+        },
+        {
+          "name": "simplify",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/header",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "short",
+          "value": ""
+        },
+        {
+          "name": "simplify",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get DICOM meta-header",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/header"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode the first frame of the given DICOM instance. Pixels of grayscale images are truncated to the [-32768,32767] range. Negative values must be interpreted according to two's complement.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/image-int16",
+      "method": "GET",
+      "name": "Decode an image (int16)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/image-int16",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode an image (int16)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/image-int16"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode the first frame of the given DICOM instance. Pixels of grayscale images are truncated to the [0,65535] range.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/image-uint16",
+      "method": "GET",
+      "name": "Decode an image (uint16)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/image-uint16",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode an image (uint16)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/image-uint16"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode the first frame of the given DICOM instance. Pixels of grayscale images are truncated to the [0,255] range.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/image-uint8",
+      "method": "GET",
+      "name": "Decode an image (uint8)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/image-uint8",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "quality",
+          "value": ""
+        },
+        {
+          "name": "returnUnsupportedImage",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode an image (uint8)",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/image-uint8"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode the first frame of the given DICOM instance., and export this frame as a Octave/Matlab matrix to be imported with `eval()`: https://book.orthanc-server.com/faq/matlab.html",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/matlab",
+      "method": "GET",
+      "name": "Decode frame for Matlab",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/matlab",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode frame for Matlab",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/matlab"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the list of metadata that are associated with the given instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/metadata",
+      "method": "GET",
+      "name": "List metadata",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "expand",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/metadata",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "expand",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List metadata",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/metadata"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete some metadata associated with the given DICOM instance. This call will fail if trying to delete a system metadata (i.e. whose index is < 1024).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //instances/{{ID}}/metadata/{{NAME}}",
+      "method": "DELETE",
+      "name": "Delete metadata",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/metadata/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete metadata",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/metadata/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the value of a metadata that is associated with the given instance",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/metadata/{{NAME}}",
+      "method": "GET",
+      "name": "Get metadata",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/metadata/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get metadata",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/metadata/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Set the value of some metadata in the given DICOM instance. This call will fail if trying to modify a system metadata (i.e. whose index is < 1024).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PUT //instances/{{ID}}/metadata/{{NAME}}",
+      "method": "PUT",
+      "name": "Set metadata",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/metadata/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set metadata",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/metadata/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "Force": false,
+        "Keep": [
+          ""
+        ],
+        "KeepSource": false,
+        "PrivateCreator": "",
+        "Remove": [
+          ""
+        ],
+        "RemovePrivateTags": false,
+        "Replace": {},
+        "Transcode": ""
+      },
+      "body_json": {
+        "Force": false,
+        "Keep": [
+          ""
+        ],
+        "KeepSource": false,
+        "PrivateCreator": "",
+        "Remove": [
+          ""
+        ],
+        "RemovePrivateTags": false,
+        "Replace": {},
+        "Transcode": ""
+      },
+      "body_text": "{\"Force\": false, \"Keep\": [\"\"], \"KeepSource\": false, \"PrivateCreator\": \"\", \"Remove\": [\"\"], \"RemovePrivateTags\": false, \"Replace\": {}, \"Transcode\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Download a modified version of the DICOM instance whose Orthanc identifier is provided in the URL: https://book.orthanc-server.com/users/anonymization.html#modification-of-a-single-instance",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //instances/{{ID}}/modify",
+      "method": "POST",
+      "name": "Modify instance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/modify",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Force\": false, \"Keep\": [\"\"], \"KeepSource\": false, \"PrivateCreator\": \"\", \"Remove\": [\"\"], \"RemovePrivateTags\": false, \"Replace\": {}, \"Transcode\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Modify instance",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/modify"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the instance module of the DICOM instance whose Orthanc identifier is provided in the URL",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/module",
+      "method": "GET",
+      "name": "Get instance module",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "ignore-length",
+          "value": ""
+        },
+        {
+          "name": "short",
+          "value": ""
+        },
+        {
+          "name": "simplify",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/module",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "ignore-length",
+          "value": ""
+        },
+        {
+          "name": "short",
+          "value": ""
+        },
+        {
+          "name": "simplify",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get instance module",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/module"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Decode the given DICOM instance, for use with numpy in Python. The numpy array has 4 dimensions: (frame, height, width, color channel).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //instances/{{ID}}/numpy",
+      "method": "GET",
+      "name": "Decode instance for numpy",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "compress",
+          "value": ""
+        },
+        {
+          "name": "rescale",
+          "value": ""
+        }
+      ],
+      "path": "//instances/{{ID}}/numpy",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "compress",
+          "value": ""
+        },
+        {
+          "name": "rescale",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Decode instance for numpy",
+      "url": "https://demo.orthanc-server.com//instances/{{ID}}/numpy"
+    }
+  ]
+}

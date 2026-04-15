@@ -1,0 +1,529 @@
+{
+  "id": "amazonaws.com_ebs",
+  "info": {
+    "base_url": "http://ebs.{region}.amazonaws.com",
+    "description": "Creates a new Amazon EBS snapshot. The new snapshot enters the pending state after the request completes.  After creating the snapshot, use  PutSnapshotBlock to write blocks of data to the snapshot.",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Amazon Elastic Block Store",
+    "version": "2019-11-02"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_ELASTIC_BLOCK_STORE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has been completed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        }
+      ],
+      "id": "POST /snapshots/completion/{{SNAPSHOT_ID}}",
+      "method": "POST",
+      "name": "POST /snapshots/completion/{snapshotId}#x-amz-ChangedBlocksCount",
+      "note": "Replace {{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "snapshotId",
+          "value": ""
+        }
+      ],
+      "path": "/snapshots/completion/{{SNAPSHOT_ID}}",
+      "pathParameters": [
+        {
+          "name": "snapshotId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /snapshots/completion/{snapshotId}#x-amz-ChangedBlocksCount",
+      "url": "http://ebs.{{REGION}}.amazonaws.com/snapshots/completion/{{SNAPSHOT_ID}}#x-amz-ChangedBlocksCount"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_ELASTIC_BLOCK_STORE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the data in a block in an Amazon Elastic Block Store snapshot.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        }
+      ],
+      "id": "GET /snapshots/{{SNAPSHOT_ID}}/blocks/{{BLOCK_INDEX}}",
+      "method": "GET",
+      "name": "GET /snapshots/{snapshotId}/blocks/{blockIndex}#blockToken",
+      "note": "Replace {{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "snapshotId",
+          "value": ""
+        },
+        {
+          "name": "blockIndex",
+          "value": ""
+        },
+        {
+          "name": "blockToken",
+          "value": ""
+        }
+      ],
+      "path": "/snapshots/{{SNAPSHOT_ID}}/blocks/{{BLOCK_INDEX}}",
+      "pathParameters": [
+        {
+          "name": "snapshotId",
+          "value": ""
+        },
+        {
+          "name": "blockIndex",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "blockToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /snapshots/{snapshotId}/blocks/{blockIndex}#blockToken",
+      "url": "http://ebs.{{REGION}}.amazonaws.com/snapshots/{{SNAPSHOT_ID}}/blocks/{{BLOCK_INDEX}}#blockToken"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_ELASTIC_BLOCK_STORE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        }
+      ],
+      "id": "GET /snapshots/{{SECOND_SNAPSHOT_ID}}/changedblocks",
+      "method": "GET",
+      "name": "GET /snapshots/{secondSnapshotId}/changedblocks",
+      "note": "Replace {{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "secondSnapshotId",
+          "value": ""
+        },
+        {
+          "name": "firstSnapshotId",
+          "value": ""
+        },
+        {
+          "name": "pageToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "startingBlockIndex",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/snapshots/{{SECOND_SNAPSHOT_ID}}/changedblocks",
+      "pathParameters": [
+        {
+          "name": "secondSnapshotId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "firstSnapshotId",
+          "value": ""
+        },
+        {
+          "name": "pageToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "startingBlockIndex",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /snapshots/{secondSnapshotId}/changedblocks",
+      "url": "http://ebs.{{REGION}}.amazonaws.com/snapshots/{{SECOND_SNAPSHOT_ID}}/changedblocks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_ELASTIC_BLOCK_STORE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about the blocks in an Amazon Elastic Block Store snapshot.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        }
+      ],
+      "id": "GET /snapshots/{{SNAPSHOT_ID}}/blocks",
+      "method": "GET",
+      "name": "GET /snapshots/{snapshotId}/blocks",
+      "note": "Replace {{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "snapshotId",
+          "value": ""
+        },
+        {
+          "name": "pageToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "startingBlockIndex",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/snapshots/{{SNAPSHOT_ID}}/blocks",
+      "pathParameters": [
+        {
+          "name": "snapshotId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "pageToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "startingBlockIndex",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /snapshots/{snapshotId}/blocks",
+      "url": "http://ebs.{{REGION}}.amazonaws.com/snapshots/{{SNAPSHOT_ID}}/blocks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_ELASTIC_BLOCK_STORE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "BlockData": ""
+      },
+      "body_json": {
+        "BlockData": ""
+      },
+      "body_text": "{\"BlockData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Writes a block of data to a snapshot. If the specified block contains data, the existing data is overwritten. The target snapshot must be in the <code>pending</code> state.</p> <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /snapshots/{{SNAPSHOT_ID}}/blocks/{{BLOCK_INDEX}}",
+      "method": "PUT",
+      "name": "PUT /snapshots/{snapshotId}/blocks/{blockIndex}#x-amz-Data-Length&x-amz-Checksum&x-amz-Checksum-Algorithm",
+      "note": "Replace {{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "snapshotId",
+          "value": ""
+        },
+        {
+          "name": "blockIndex",
+          "value": ""
+        }
+      ],
+      "path": "/snapshots/{{SNAPSHOT_ID}}/blocks/{{BLOCK_INDEX}}",
+      "pathParameters": [
+        {
+          "name": "snapshotId",
+          "value": ""
+        },
+        {
+          "name": "blockIndex",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"BlockData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /snapshots/{snapshotId}/blocks/{blockIndex}#x-amz-Data-Length&x-amz-Checksum&x-amz-Checksum-Algorithm",
+      "url": "http://ebs.{{REGION}}.amazonaws.com/snapshots/{{SNAPSHOT_ID}}/blocks/{{BLOCK_INDEX}}#x-amz-Data-Length&x-amz-Checksum&x-amz-Checksum-Algorithm"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_ELASTIC_BLOCK_STORE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ClientToken": "",
+        "Description": "",
+        "Encrypted": false,
+        "KmsKeyArn": "",
+        "ParentSnapshotId": "",
+        "Tags": [
+          {
+            "Key": {},
+            "Value": {}
+          }
+        ],
+        "Timeout": 0,
+        "VolumeSize": 0
+      },
+      "body_json": {
+        "ClientToken": "",
+        "Description": "",
+        "Encrypted": false,
+        "KmsKeyArn": "",
+        "ParentSnapshotId": "",
+        "Tags": [
+          {
+            "Key": {},
+            "Value": {}
+          }
+        ],
+        "Timeout": 0,
+        "VolumeSize": 0
+      },
+      "body_text": "{\"VolumeSize\": 0, \"ParentSnapshotId\": \"\", \"Tags\": [{\"Key\": {}, \"Value\": {}}], \"Description\": \"\", \"ClientToken\": \"\", \"Encrypted\": false, \"KmsKeyArn\": \"\", \"Timeout\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request completes. </p> <p>After creating the snapshot, use <a href=\"https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html\"> PutSnapshotBlock</a> to write blocks of data to the snapshot.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /snapshots",
+      "method": "POST",
+      "name": "POST /snapshots",
+      "note": "Replace {{AMAZON_ELASTIC_BLOCK_STORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/snapshots",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VolumeSize\": 0, \"ParentSnapshotId\": \"\", \"Tags\": [{\"Key\": {}, \"Value\": {}}], \"Description\": \"\", \"ClientToken\": \"\", \"Encrypted\": false, \"KmsKeyArn\": \"\", \"Timeout\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /snapshots",
+      "url": "http://ebs.{{REGION}}.amazonaws.com/snapshots"
+    }
+  ]
+}

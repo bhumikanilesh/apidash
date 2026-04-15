@@ -1,0 +1,728 @@
+{
+  "id": "winsms.co.za",
+  "info": {
+    "base_url": "https://www.winsms.co.za/api/rest/v1",
+    "description": "Get a list of all the Sub Accounts owned by the Main Account.",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "communication"
+    ],
+    "title": "WINSMS",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the current remaining credit balance for the account.\n\n***Note*** - The credit balance is expressed as a value with a single decimal place.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/rest/v1/credits/balance",
+      "method": "GET",
+      "name": "Get your current WinSMS credit balance",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/rest/v1/credits/balance",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get your current WinSMS credit balance",
+      "url": "https://www.winsms.co.za/api/rest/v1/credits/balance"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "receivingAccountNumber": 10345,
+        "sendingAccountNumber": 7564,
+        "transferQuantity": 100
+      },
+      "body_json": {
+        "receivingAccountNumber": 10345,
+        "sendingAccountNumber": 7564,
+        "transferQuantity": 100
+      },
+      "body_text": "{\"receivingAccountNumber\": 10345, \"sendingAccountNumber\": 7564, \"transferQuantity\": 100}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Transfer credits between accounts.\n- From Main account to Sub account.\n\n- From Sub account to Main account.\n\n- From Sub account to another Sub account.\n\nYour WinSMS account number and sub account number/s can be obtained by logging in to the WinSMS Client Zone (www.winsms.co.za/cz) with the main account's credentials.\n\nThe main account number is on the home tab and the sub account numbers are under the sub accounts tab.\n\nAccount numbers should be submitted as integers. Do not add the 'W' prefix.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/rest/v1/credits/transfer",
+      "method": "POST",
+      "name": "Transfer credits between main and sub accounts.",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/rest/v1/credits/transfer",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"receivingAccountNumber\": 10345, \"sendingAccountNumber\": 7564, \"transferQuantity\": 100}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Transfer credits between main and sub accounts.",
+      "url": "https://www.winsms.co.za/api/rest/v1/credits/transfer"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "***Only available to users with a [WinSMS Short/Long Code](https://support.winsms.co.za/winsms-long-short-code-system/).***\nGet a list of all incoming short/long code messages received by the account.\n\nOnly the first 100 incoming short/long code messages will be returned if no ***offset*** and ***limit*** parameters are specified.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/rest/v1/shortcode/incoming",
+      "method": "GET",
+      "name": "Get a list of incoming short/long code messages\n",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest/v1/shortcode/incoming",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a list of incoming short/long code messages\n",
+      "url": "https://www.winsms.co.za/api/rest/v1/shortcode/incoming"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a list of all incoming SMS messages received by the account.\n\nOnly the first 100 incoming messages will be returned if no ***offset*** and ***limit*** parameters are specified.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/rest/v1/sms/incoming",
+      "method": "GET",
+      "name": "Get a list of incoming SMS messages",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest/v1/sms/incoming",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a list of incoming SMS messages",
+      "url": "https://www.winsms.co.za/api/rest/v1/sms/incoming"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a list of all opt-out SMS messages received by the account, as well as all manually added opt-out numbers.<br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/rest/v1/sms/incoming/optout",
+      "method": "GET",
+      "name": "Get a list of incoming opt-out SMS messages",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/rest/v1/sms/incoming/optout",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a list of incoming opt-out SMS messages",
+      "url": "https://www.winsms.co.za/api/rest/v1/sms/incoming/optout"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "maxSegments": 3,
+        "message": "Happy holidays from all at TelAmeriCorp.",
+        "recipients": [
+          {
+            "clientMessageId": "clientId-3023",
+            "mobileNumber": "27444444444"
+          },
+          {
+            "mobileNumber": "27555555555"
+          },
+          {
+            "clientMessageId": "clientId-3024",
+            "mobileNumber": "276666666666"
+          }
+        ],
+        "scheduledTime": "201712251430"
+      },
+      "body_json": {
+        "maxSegments": 3,
+        "message": "Happy holidays from all at TelAmeriCorp.",
+        "recipients": [
+          {
+            "clientMessageId": "clientId-3023",
+            "mobileNumber": "27444444444"
+          },
+          {
+            "mobileNumber": "27555555555"
+          },
+          {
+            "clientMessageId": "clientId-3024",
+            "mobileNumber": "276666666666"
+          }
+        ],
+        "scheduledTime": "201712251430"
+      },
+      "body_text": "{\"maxSegments\": 3, \"message\": \"Happy holidays from all at TelAmeriCorp.\", \"recipients\": [{\"clientMessageId\": \"clientId-3023\", \"mobileNumber\": \"27444444444\"}, {\"mobileNumber\": \"27555555555\"}, {\"clientMessageId\": \"clientId-3024\", \"mobileNumber\": \"276666666666\"}], \"scheduledTime\": \"201712251430\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Submit 1 or more SMS messages to be sent by WinSMS. Maximum 1000 recipients per request.\n\nThe SMS message text can be a maximum of 918 characters long. If you are submitting a message longer than 160 characters, you should change the value of ***maxSegments***.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/rest/v1/sms/outgoing/send",
+      "method": "POST",
+      "name": "Send SMS messages",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/rest/v1/sms/outgoing/send",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"maxSegments\": 3, \"message\": \"Happy holidays from all at TelAmeriCorp.\", \"recipients\": [{\"clientMessageId\": \"clientId-3023\", \"mobileNumber\": \"27444444444\"}, {\"mobileNumber\": \"27555555555\"}, {\"clientMessageId\": \"clientId-3024\", \"mobileNumber\": \"276666666666\"}], \"scheduledTime\": \"201712251430\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Send SMS messages",
+      "url": "https://www.winsms.co.za/api/rest/v1/sms/outgoing/send"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "messages": [
+          {
+            "maxSegments": 3,
+            "message": "Happy holidays from all at TelAmeriCorp.",
+            "recipients": [
+              {
+                "clientMessageId": "clientId-3023",
+                "mobileNumber": "27444444444"
+              },
+              {
+                "mobileNumber": "27555555555"
+              },
+              {
+                "clientMessageId": "clientId-3024",
+                "mobileNumber": "276666666666"
+              }
+            ],
+            "scheduledTime": "201712251430"
+          },
+          {
+            "maxSegments": 1,
+            "message": "TelAmeriCorp flash sale - call now for details",
+            "recipients": [
+              {
+                "clientMessageId": "clientId-0015",
+                "mobileNumber": "27333333333"
+              },
+              {
+                "mobileNumber": "27222222222"
+              }
+            ],
+            "scheduledTime": "201801010900"
+          }
+        ]
+      },
+      "body_json": {
+        "messages": [
+          {
+            "maxSegments": 3,
+            "message": "Happy holidays from all at TelAmeriCorp.",
+            "recipients": [
+              {
+                "clientMessageId": "clientId-3023",
+                "mobileNumber": "27444444444"
+              },
+              {
+                "mobileNumber": "27555555555"
+              },
+              {
+                "clientMessageId": "clientId-3024",
+                "mobileNumber": "276666666666"
+              }
+            ],
+            "scheduledTime": "201712251430"
+          },
+          {
+            "maxSegments": 1,
+            "message": "TelAmeriCorp flash sale - call now for details",
+            "recipients": [
+              {
+                "clientMessageId": "clientId-0015",
+                "mobileNumber": "27333333333"
+              },
+              {
+                "mobileNumber": "27222222222"
+              }
+            ],
+            "scheduledTime": "201801010900"
+          }
+        ]
+      },
+      "body_text": "{\"messages\": [{\"maxSegments\": 3, \"message\": \"Happy holidays from all at TelAmeriCorp.\", \"recipients\": [{\"clientMessageId\": \"clientId-3023\", \"mobileNumber\": \"27444444444\"}, {\"mobileNumber\": \"27555555555\"}, {\"clientMessageId\": \"clientId-3024\", \"mobileNumber\": \"276666666666\"}], \"scheduledTime\": \"201712251430\"}, {\"maxSegments\": 1, \"message\": \"TelAmeriCorp flash sale - call now for details\", \"recipients\": [{\"clientMessageId\": \"clientId-0015\", \"mobileNumber\": \"27333333333\"}, {\"mobileNumber\": \"27222222222\"}], \"scheduledTime\": \"201801010900\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Submit multiple different SMS messages to be sent to multiple recipients. Maximum 1000 recipients across all messages.\n\nEach SMS message text can be a maximum of 918 characters long. If you are submitting a message longer than 160 characters, you should change the value of ***maxSegments***.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/rest/v1/sms/outgoing/sendmulti",
+      "method": "POST",
+      "name": "Send multiple different SMS messages",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/rest/v1/sms/outgoing/sendmulti",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"messages\": [{\"maxSegments\": 3, \"message\": \"Happy holidays from all at TelAmeriCorp.\", \"recipients\": [{\"clientMessageId\": \"clientId-3023\", \"mobileNumber\": \"27444444444\"}, {\"mobileNumber\": \"27555555555\"}, {\"clientMessageId\": \"clientId-3024\", \"mobileNumber\": \"276666666666\"}], \"scheduledTime\": \"201712251430\"}, {\"maxSegments\": 1, \"message\": \"TelAmeriCorp flash sale - call now for details\", \"recipients\": [{\"clientMessageId\": \"clientId-0015\", \"mobileNumber\": \"27333333333\"}, {\"mobileNumber\": \"27222222222\"}], \"scheduledTime\": \"201801010900\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Send multiple different SMS messages",
+      "url": "https://www.winsms.co.za/api/rest/v1/sms/outgoing/sendmulti"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": [
+        2316,
+        2317
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Get a list of previously submitted SMS message delivery statuses.\n\nPost an array of API Message Ids received from the ***/sms/outgoing/send*** endpoint.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/rest/v1/sms/outgoing/status",
+      "method": "POST",
+      "name": "Get SMS delivery statuses",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/rest/v1/sms/outgoing/status",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get SMS delivery statuses",
+      "url": "https://www.winsms.co.za/api/rest/v1/sms/outgoing/status"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a list of all scheduled SMS messages that have not yet been sent.\n\nOnly the first 100 scheduled messages will be returned if no ***offset*** and ***limit*** parameters are specified.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/rest/v1/sms/scheduled",
+      "method": "GET",
+      "name": "Get a list of scheduled SMS messages",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest/v1/sms/scheduled",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a list of scheduled SMS messages",
+      "url": "https://www.winsms.co.za/api/rest/v1/sms/scheduled"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": [
+        2316,
+        2317
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Delete a list of previously scheduled SMS messages that have not yet been sent.\n\nCredits originally deducted for each SMS message will be refunded to your account upon successful deletion.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/rest/v1/sms/scheduled/delete",
+      "method": "POST",
+      "name": "Delete scheduled SMS messages and refund credits",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/rest/v1/sms/scheduled/delete",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete scheduled SMS messages and refund credits",
+      "url": "https://www.winsms.co.za/api/rest/v1/sms/scheduled/delete"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "WINSMS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a list of all the Sub Accounts owned by the Main Account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{WINSMS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/rest/v1/subaccounts",
+      "method": "GET",
+      "name": "Get a list of all Sub Accounts.",
+      "note": "Replace {{WINSMS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/rest/v1/subaccounts",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a list of all Sub Accounts.",
+      "url": "https://www.winsms.co.za/api/rest/v1/subaccounts"
+    }
+  ]
+}

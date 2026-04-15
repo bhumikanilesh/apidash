@@ -1,0 +1,2475 @@
+{
+  "id": "tvmaze.com",
+  "info": {
+    "base_url": "https://api.tvmaze.com/v1",
+    "description": "Set `voted_at` to `NULL` or leave it out to use the current time.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "TVmaze user API",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "token": ""
+      },
+      "body_json": {
+        "token": ""
+      },
+      "body_text": "{\"token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Using the token acquired in the `start` endpoint, you can start polling this endpoint once every 10 seconds.\n\nWhen the user has confirmed the authentication request on their end, this endpoint will return the user's API key that you can use in subsequent authenticated endpoints. Note that it'll do so only once, subsequent requests after the initial 200 response will return a 404.\n\nFor as long as the user did not yet confirm their authentication request, this endpoint will return a 403.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/auth/poll",
+      "method": "POST",
+      "name": "Poll whether an authentication request was confirmed",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/auth/poll",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Poll whether an authentication request was confirmed",
+      "url": "https://api.tvmaze.com/v1/auth/poll"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "email": "",
+        "email_confirmation": true
+      },
+      "body_json": {
+        "email": "",
+        "email_confirmation": true
+      },
+      "body_text": "{\"email\": \"\", \"email_confirmation\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "If you want to access the TVmaze API on behalf of a user without querying them for their password, use this endpoint.\n\nTo get started, send a POST request containing the user's email address. The response will contain a `token`, which you can use as input to the `poll` endpoint. The user will receive an email prompting them to confirm the authentication request.\n\nAlternatively, if you expect the user to be logged in to TVmaze on the device they are currently interacting with, you can set `email_confirmation` to false and redirect them to the `confirm_url` URL. If they are logged in to TVmaze, they will be able to confirm the authentication request instantly.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/auth/start",
+      "method": "POST",
+      "name": "Start an authentication request",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/auth/start",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email\": \"\", \"email_confirmation\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Start an authentication request",
+      "url": "https://api.tvmaze.com/v1/auth/start"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "If the credentials supplied as HTTP basic are valid, the user's level of premium - if any - is returned.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/auth/validate",
+      "method": "GET",
+      "name": "Validate your authentication credentials",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/auth/validate",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Validate your authentication credentials",
+      "url": "https://api.tvmaze.com/v1/auth/validate"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": [
+        {
+          "episode_id": 0,
+          "marked_at": 0,
+          "type": {}
+        }
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint can be used by all users, even without premium",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/scrobble/episodes",
+      "method": "POST",
+      "name": "Mark episodes as acquired or watched based on their IDs",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/scrobble/episodes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Mark episodes as acquired or watched based on their IDs",
+      "url": "https://api.tvmaze.com/v1/scrobble/episodes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "_embedded": {
+          "episode": {}
+        },
+        "episode_id": 0,
+        "marked_at": 0,
+        "type": {}
+      },
+      "body_json": {
+        "_embedded": {
+          "episode": {}
+        },
+        "episode_id": 0,
+        "marked_at": 0,
+        "type": {}
+      },
+      "body_text": "{\"_embedded\": {\"episode\": {}}, \"episode_id\": 0, \"marked_at\": 0, \"type\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint can be used by all users, even without premium",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/scrobble/episodes/{{EPISODE_ID}}",
+      "method": "PUT",
+      "name": "Mark an episode as acquired or watched based on its ID",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/scrobble/episodes/{{EPISODE_ID}}",
+      "pathParameters": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"_embedded\": {\"episode\": {}}, \"episode_id\": 0, \"marked_at\": 0, \"type\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Mark an episode as acquired or watched based on its ID",
+      "url": "https://api.tvmaze.com/v1/scrobble/episodes/{{EPISODE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": [
+        {
+          "airdate": "",
+          "episode": 0,
+          "marked_at": 0,
+          "season": 0,
+          "type": {}
+        }
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To specify a show, supply either `tvmaze_id`, `thetvdb_id` or `imdb_id`. To specify an episode, supply either both `season` and `episode`, or `airdate`.\n\nThis endpoint can be used by all users, even without premium.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/scrobble/shows",
+      "method": "POST",
+      "name": "Mark episodes within a show as acquired or watched based on their attributes",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "tvmaze_id",
+          "value": ""
+        },
+        {
+          "name": "thetvdb_id",
+          "value": ""
+        },
+        {
+          "name": "imdb_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/scrobble/shows",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "tvmaze_id",
+          "value": ""
+        },
+        {
+          "name": "thetvdb_id",
+          "value": ""
+        },
+        {
+          "name": "imdb_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Mark episodes within a show as acquired or watched based on their attributes",
+      "url": "https://api.tvmaze.com/v1/scrobble/shows"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint can be used by all users, even without premium",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/scrobble/shows/{{SHOW_ID}}",
+      "method": "GET",
+      "name": "List watched and acquired episodes for a show",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "show_id",
+          "value": ""
+        },
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "path": "/v1/scrobble/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List watched and acquired episodes for a show",
+      "url": "https://api.tvmaze.com/v1/scrobble/shows/{{SHOW_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/episodes",
+      "method": "GET",
+      "name": "List the marked episodes",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/episodes",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the marked episodes",
+      "url": "https://api.tvmaze.com/v1/user/episodes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/episodes/{{EPISODE_ID}}",
+      "method": "DELETE",
+      "name": "Unmark an episode",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/episodes/{{EPISODE_ID}}",
+      "pathParameters": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unmark an episode",
+      "url": "https://api.tvmaze.com/v1/user/episodes/{{EPISODE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/episodes/{{EPISODE_ID}}",
+      "method": "GET",
+      "name": "Check if an episode is marked",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/episodes/{{EPISODE_ID}}",
+      "pathParameters": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check if an episode is marked",
+      "url": "https://api.tvmaze.com/v1/user/episodes/{{EPISODE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "_embedded": {
+          "episode": {}
+        },
+        "episode_id": 0,
+        "marked_at": 0,
+        "type": {}
+      },
+      "body_json": {
+        "_embedded": {
+          "episode": {}
+        },
+        "episode_id": 0,
+        "marked_at": 0,
+        "type": {}
+      },
+      "body_text": "{\"_embedded\": {\"episode\": {}}, \"episode_id\": 0, \"marked_at\": 0, \"type\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Set `marked_at` to `NULL` or leave it out to use the current time.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/user/episodes/{{EPISODE_ID}}",
+      "method": "PUT",
+      "name": "Mark an episode",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/episodes/{{EPISODE_ID}}",
+      "pathParameters": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"_embedded\": {\"episode\": {}}, \"episode_id\": 0, \"marked_at\": 0, \"type\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Mark an episode",
+      "url": "https://api.tvmaze.com/v1/user/episodes/{{EPISODE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/follows/networks",
+      "method": "GET",
+      "name": "List the followed networks",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/networks",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the followed networks",
+      "url": "https://api.tvmaze.com/v1/user/follows/networks"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/follows/networks/{{NETWORK_ID}}",
+      "method": "DELETE",
+      "name": "Unfollow a network",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "network_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/networks/{{NETWORK_ID}}",
+      "pathParameters": [
+        {
+          "name": "network_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unfollow a network",
+      "url": "https://api.tvmaze.com/v1/user/follows/networks/{{NETWORK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/follows/networks/{{NETWORK_ID}}",
+      "method": "GET",
+      "name": "Check if a network is followed",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "network_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/networks/{{NETWORK_ID}}",
+      "pathParameters": [
+        {
+          "name": "network_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check if a network is followed",
+      "url": "https://api.tvmaze.com/v1/user/follows/networks/{{NETWORK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /v1/user/follows/networks/{{NETWORK_ID}}",
+      "method": "PUT",
+      "name": "Follow a network",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "network_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/networks/{{NETWORK_ID}}",
+      "pathParameters": [
+        {
+          "name": "network_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Follow a network",
+      "url": "https://api.tvmaze.com/v1/user/follows/networks/{{NETWORK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/follows/people",
+      "method": "GET",
+      "name": "List the followed people",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/people",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the followed people",
+      "url": "https://api.tvmaze.com/v1/user/follows/people"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/follows/people/{{PERSON_ID}}",
+      "method": "DELETE",
+      "name": "Unfollow a person",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "person_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/people/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "person_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unfollow a person",
+      "url": "https://api.tvmaze.com/v1/user/follows/people/{{PERSON_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/follows/people/{{PERSON_ID}}",
+      "method": "GET",
+      "name": "Check if a person is followed",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "person_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/people/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "person_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check if a person is followed",
+      "url": "https://api.tvmaze.com/v1/user/follows/people/{{PERSON_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /v1/user/follows/people/{{PERSON_ID}}",
+      "method": "PUT",
+      "name": "Follow a person",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "person_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/people/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "person_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Follow a person",
+      "url": "https://api.tvmaze.com/v1/user/follows/people/{{PERSON_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/follows/shows",
+      "method": "GET",
+      "name": "List the followed shows",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/shows",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the followed shows",
+      "url": "https://api.tvmaze.com/v1/user/follows/shows"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/follows/shows/{{SHOW_ID}}",
+      "method": "DELETE",
+      "name": "Unfollow a show",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unfollow a show",
+      "url": "https://api.tvmaze.com/v1/user/follows/shows/{{SHOW_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/follows/shows/{{SHOW_ID}}",
+      "method": "GET",
+      "name": "Check if a show is followed",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check if a show is followed",
+      "url": "https://api.tvmaze.com/v1/user/follows/shows/{{SHOW_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /v1/user/follows/shows/{{SHOW_ID}}",
+      "method": "PUT",
+      "name": "Follow a show",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Follow a show",
+      "url": "https://api.tvmaze.com/v1/user/follows/shows/{{SHOW_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/follows/webchannels",
+      "method": "GET",
+      "name": "List the followed webchannels",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/webchannels",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the followed webchannels",
+      "url": "https://api.tvmaze.com/v1/user/follows/webchannels"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/follows/webchannels/{{WEBCHANNEL_ID}}",
+      "method": "DELETE",
+      "name": "Unfollow a webchannel",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "webchannel_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/webchannels/{{WEBCHANNEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "webchannel_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unfollow a webchannel",
+      "url": "https://api.tvmaze.com/v1/user/follows/webchannels/{{WEBCHANNEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/follows/webchannels/{{WEBCHANNEL_ID}}",
+      "method": "GET",
+      "name": "Check if a webchannel is followed",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "webchannel_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/webchannels/{{WEBCHANNEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "webchannel_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check if a webchannel is followed",
+      "url": "https://api.tvmaze.com/v1/user/follows/webchannels/{{WEBCHANNEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /v1/user/follows/webchannels/{{WEBCHANNEL_ID}}",
+      "method": "PUT",
+      "name": "Follow a webchannel",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "webchannel_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/follows/webchannels/{{WEBCHANNEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "webchannel_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Follow a webchannel",
+      "url": "https://api.tvmaze.com/v1/user/follows/webchannels/{{WEBCHANNEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/tags",
+      "method": "GET",
+      "name": "List all tags",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/user/tags",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all tags",
+      "url": "https://api.tvmaze.com/v1/user/tags"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "id": 0,
+        "name": ""
+      },
+      "body_json": {
+        "id": 0,
+        "name": ""
+      },
+      "body_text": "{\"id\": 0, \"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/user/tags",
+      "method": "POST",
+      "name": "Create a new tag",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/user/tags",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"id\": 0, \"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new tag",
+      "url": "https://api.tvmaze.com/v1/user/tags"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/tags/{{TAG_ID}}",
+      "method": "DELETE",
+      "name": "Delete a specific tag",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tag_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/tags/{{TAG_ID}}",
+      "pathParameters": [
+        {
+          "name": "tag_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a specific tag",
+      "url": "https://api.tvmaze.com/v1/user/tags/{{TAG_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "id": 0,
+        "name": ""
+      },
+      "body_json": {
+        "id": 0,
+        "name": ""
+      },
+      "body_text": "{\"id\": 0, \"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v1/user/tags/{{TAG_ID}}",
+      "method": "PATCH",
+      "name": "Update a specific tag",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tag_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/tags/{{TAG_ID}}",
+      "pathParameters": [
+        {
+          "name": "tag_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"id\": 0, \"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a specific tag",
+      "url": "https://api.tvmaze.com/v1/user/tags/{{TAG_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/tags/{{TAG_ID}}/shows",
+      "method": "GET",
+      "name": "List all shows under this tag",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tag_id",
+          "value": ""
+        },
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/tags/{{TAG_ID}}/shows",
+      "pathParameters": [
+        {
+          "name": "tag_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all shows under this tag",
+      "url": "https://api.tvmaze.com/v1/user/tags/{{TAG_ID}}/shows"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/tags/{{TAG_ID}}/shows/{{SHOW_ID}}",
+      "method": "DELETE",
+      "name": "Untag a show",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tag_id",
+          "value": ""
+        },
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/tags/{{TAG_ID}}/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "tag_id",
+          "value": ""
+        },
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Untag a show",
+      "url": "https://api.tvmaze.com/v1/user/tags/{{TAG_ID}}/shows/{{SHOW_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /v1/user/tags/{{TAG_ID}}/shows/{{SHOW_ID}}",
+      "method": "PUT",
+      "name": "Tag a show",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tag_id",
+          "value": ""
+        },
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/tags/{{TAG_ID}}/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "tag_id",
+          "value": ""
+        },
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Tag a show",
+      "url": "https://api.tvmaze.com/v1/user/tags/{{TAG_ID}}/shows/{{SHOW_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/votes/episodes",
+      "method": "GET",
+      "name": "List the episodes voted for",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/user/votes/episodes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the episodes voted for",
+      "url": "https://api.tvmaze.com/v1/user/votes/episodes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/votes/episodes/{{EPISODE_ID}}",
+      "method": "DELETE",
+      "name": "Remove an episode vote",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/votes/episodes/{{EPISODE_ID}}",
+      "pathParameters": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove an episode vote",
+      "url": "https://api.tvmaze.com/v1/user/votes/episodes/{{EPISODE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/votes/episodes/{{EPISODE_ID}}",
+      "method": "GET",
+      "name": "Check if an episode is voted for",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/votes/episodes/{{EPISODE_ID}}",
+      "pathParameters": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check if an episode is voted for",
+      "url": "https://api.tvmaze.com/v1/user/votes/episodes/{{EPISODE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "episode_id": 0,
+        "vote": 0,
+        "voted_at": 0
+      },
+      "body_json": {
+        "episode_id": 0,
+        "vote": 0,
+        "voted_at": 0
+      },
+      "body_text": "{\"episode_id\": 0, \"vote\": 0, \"voted_at\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/user/votes/episodes/{{EPISODE_ID}}",
+      "method": "PUT",
+      "name": "Vote for an episode",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/votes/episodes/{{EPISODE_ID}}",
+      "pathParameters": [
+        {
+          "name": "episode_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"episode_id\": 0, \"vote\": 0, \"voted_at\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Vote for an episode",
+      "url": "https://api.tvmaze.com/v1/user/votes/episodes/{{EPISODE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/votes/shows",
+      "method": "GET",
+      "name": "List the shows voted for",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/votes/shows",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "embed",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the shows voted for",
+      "url": "https://api.tvmaze.com/v1/user/votes/shows"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v1/user/votes/shows/{{SHOW_ID}}",
+      "method": "DELETE",
+      "name": "Remove a show vote",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/votes/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove a show vote",
+      "url": "https://api.tvmaze.com/v1/user/votes/shows/{{SHOW_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v1/user/votes/shows/{{SHOW_ID}}",
+      "method": "GET",
+      "name": "Check if a show is voted for",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/votes/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check if a show is voted for",
+      "url": "https://api.tvmaze.com/v1/user/votes/shows/{{SHOW_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "TVMAZE_USER_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "show_id": 0,
+        "vote": 0,
+        "voted_at": 0
+      },
+      "body_json": {
+        "show_id": 0,
+        "vote": 0,
+        "voted_at": 0
+      },
+      "body_text": "{\"show_id\": 0, \"vote\": 0, \"voted_at\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Set `voted_at` to `NULL` or leave it out to use the current time.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{TVMAZE_USER_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/user/votes/shows/{{SHOW_ID}}",
+      "method": "PUT",
+      "name": "Vote for a show",
+      "note": "Replace {{TVMAZE_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/user/votes/shows/{{SHOW_ID}}",
+      "pathParameters": [
+        {
+          "name": "show_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"show_id\": 0, \"vote\": 0, \"voted_at\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Vote for a show",
+      "url": "https://api.tvmaze.com/v1/user/votes/shows/{{SHOW_ID}}"
+    }
+  ]
+}

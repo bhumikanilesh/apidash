@@ -1,0 +1,2883 @@
+{
+  "id": "conjur.local",
+  "info": {
+    "base_url": "http://conjur.local",
+    "description": "Once the status webservice has been properly configured and the relevant user\ngroups have been given permissions to access the status webservice, the\nusers in those groups can check the status of the...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Conjur",
+    "version": "5.3.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Response contains three members: installed, configured, and enabled.\n\ninstalled: The authenticator is implemented in Conjur and is available for configuration\nconfigured: The authenticator has a webservice in the DB that was loaded by policy\nenabled: The authenticator is enabled (in the DB or in the ENV) and is ready for authentication\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /authenticators",
+      "method": "GET",
+      "name": "Details about which authenticators are on the Conjur Server",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Request-Id",
+          "value": "test-id"
+        }
+      ],
+      "path": "/authenticators",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Details about which authenticators are on the Conjur Server",
+      "url": "http://conjur.local/authenticators"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_json": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_text": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The access token is used to communicate to the REST API that\nthe bearer of the token has been authorized to access the API and perform\nspecific actions specified by the scope that was granted during authorization.\n\nFor API usage, the base64-encoded access token is ordinarily passed as an HTTP\nAuthorization header as `Authorization: Token token=<base64-encoded token>`.\n\nThe `login` must be URL encoded and the host ID must have the prefix\n`host/`. For example, the host webserver would login as `host/webserver`,\nand would be encoded as `host%2Fwebserver`.\n\nThe `service_id`, if given, must be URL encoded. For example,\n`prod/gke` must be encoded as `prod%2Fgke`.\n\nTo authenticate to Conjur using this endpoint, reference the detailed\ndocumentation: [Azure Authenticator](https://docs.conjur.org/Latest/en/Content/Operations/Services/azure_authn.htm) (`authn-azure`).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /authn-azure/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications running in Azure.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "path": "/authn-azure/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a short-lived access token for applications running in Azure.",
+      "url": "http://conjur.local/authn-azure/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_json": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_text": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use the GCP Authenticator API to send an authentication\nrequest from a Google Cloud service to Conjur.\n\nFor more information, see [the documentation](https://docs.conjur.org/Latest/en/Content/Operations/Services/cjr-gcp-authn.htm).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /authn-gcp/{{ACCOUNT}}/authenticate",
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications running in\nGoogle Cloud Platform.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "path": "/authn-gcp/{{ACCOUNT}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a short-lived access token for applications running in\nGoogle Cloud Platform.\n",
+      "url": "http://conjur.local/authn-gcp/{{ACCOUNT}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Once the status webservice has been properly configured and the relevant user\ngroups have been given permissions to access the status webservice, the\nusers in those groups can check the status of the authenticator.\n\nThis operation only supports the GCP authenticator\n\nSee [Conjur Documentation](https://docs.conjur.org/Latest/en/Content/Integrations/Authn-status.htm)\nfor details on setting up the authenticator status webservice.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /authn-gcp/{{ACCOUNT}}/status",
+      "method": "GET",
+      "name": "Details whether an authentication service has been configured properly",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "path": "/authn-gcp/{{ACCOUNT}}/status",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Details whether an authentication service has been configured properly",
+      "url": "http://conjur.local/authn-gcp/{{ACCOUNT}}/status"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The access token is used to communicate to the REST API that\nthe bearer of the token has been authorized to access the API and perform\nspecific actions specified by the scope that was granted during authorization.\n\nFor API usage, the base64-encoded access token is ordinarily passed as an HTTP\nAuthorization header as `Authorization: Token token=<base64-encoded token>`.\n\nThe `login` must be URL encoded and the host ID must have the prefix\n`host/`. For example, the host webserver would login as `host/webserver`,\nand would be encoded as `host%2Fwebserver`.\n\nThe `service_id`, if given, must be URL encoded. For example,\n`prod/gke` must be encoded as `prod%2Fgke`.\n\nFor detailed instructions on authenticating to Conjur using this endpoint,\nreference the documentation:\n[AWS IAM Authenticator](https://docs.conjur.org/Latest/en/Content/Operations/Services/AWS_IAM_Authenticator.htm) (`authn-iam`).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /authn-iam/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "method": "POST",
+      "name": "Get a short-lived access token for applications running in AWS.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "path": "/authn-iam/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a short-lived access token for applications running in AWS.",
+      "url": "http://conjur.local/authn-iam/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_json": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_text": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use the JWT Authenticator to leverage the identity layer\nprovided by JWT to authenticate with Conjur.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /authn-jwt/{{SERVICE_ID}}/{{ACCOUNT}}/authenticate",
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        }
+      ],
+      "path": "/authn-jwt/{{SERVICE_ID}}/{{ACCOUNT}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API.\n",
+      "url": "http://conjur.local/authn-jwt/{{SERVICE_ID}}/{{ACCOUNT}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use the JWT Authenticator to leverage the identity layer\nprovided by JWT to authenticate with Conjur.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /authn-jwt/{{SERVICE_ID}}/{{ACCOUNT}}/{{ID}}/authenticate",
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API. Covers the case of use of optional URL parameter \"ID\"\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        }
+      ],
+      "path": "/authn-jwt/{{SERVICE_ID}}/{{ACCOUNT}}/{{ID}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API. Covers the case of use of optional URL parameter \"ID\"\n",
+      "url": "http://conjur.local/authn-jwt/{{SERVICE_ID}}/{{ACCOUNT}}/{{ID}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This request sends a Certificate Signing Request to Conjur,\nwhich uses the Kubernetes API to inject a client certificate into the\napplication pod.\n\nThis endpoint requires a properly configured Conjur Certificate Authority\nservice alongside a properly configured and enabled Kubernetes authenticator.\nFor detailed instructions,\nsee [the documentation](https://docs.conjur.org/Latest/en/Content/Integrations/kubernetes.htm).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "POST /authn-k8s/{{SERVICE_ID}}/inject_client_cert",
+      "method": "POST",
+      "name": "For applications running in Kubernetes; sends Conjur a certificate\nsigning request (CSR) and requests a client certificate injected into\nthe application's Kubernetes pod.\n",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        }
+      ],
+      "path": "/authn-k8s/{{SERVICE_ID}}/inject_client_cert",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "For applications running in Kubernetes; sends Conjur a certificate\nsigning request (CSR) and requests a client certificate injected into\nthe application's Kubernetes pod.\n",
+      "url": "http://conjur.local/authn-k8s/{{SERVICE_ID}}/inject_client_cert"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The access token is used to communicate to the REST API that\nthe bearer of the token has been authorized to access the API and perform\nspecific actions specified by the scope that was granted during authorization.\n\nFor API usage, the base64-encoded access token is ordinarily passed as an HTTP\nAuthorization header as `Authorization: Token token=<base64-encoded token>`.\n\nThe `login` must be URL encoded and the host ID must have the prefix\n`host/`. For example, the host webserver would login as `host/webserver`,\nand would be encoded as `host%2Fwebserver`.\n\nThe `service_id`, if given, must be URL encoded. For example,\n`prod/gke` must be encoded as `prod%2Fgke`.\n\nTo authenticate to Conjur using this endpoint, reference the detailed\ndocumentation: [Kubernetes Authenticator](https://docs.conjur.org/Latest/en/Content/Operations/Services/k8s_auth.htm) (`authn-k8s`).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "POST /authn-k8s/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications running in Kubernetes.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "path": "/authn-k8s/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a short-lived access token for applications running in Kubernetes.",
+      "url": "http://conjur.local/authn-k8s/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Exchange your LDAP credentials for a Conjur API key. Once the\nAPI key is obtained, it may be used to inexpensively obtain access\ntokens by calling the Authenticate method. An access token\nis required to use most other parts of the Conjur API.\n\nThe Basic authentication-compliant header is formed by:\n1. Concatenating the LDAP username, a literal colon character ':',\n   and the password to create the authentication string.\n2. Base64-encoding the authentication string.\n3. Prefixing the authentication string with the scheme: `Basic `\n   (note the required space).\n4. Providing the result as the value of the `Authorization` HTTP header:\n   `Authorization: Basic <authentication string>`.\n\nYour HTTP/REST client probably provides HTTP basic authentication support.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /authn-ldap/{{SERVICE_ID}}/{{ACCOUNT}}/login",
+      "method": "GET",
+      "name": "Gets the Conjur API key of a user given the LDAP username and\npassword via HTTP Basic Authentication.\n",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "path": "/authn-ldap/{{SERVICE_ID}}/{{ACCOUNT}}/login",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets the Conjur API key of a user given the LDAP username and\npassword via HTTP Basic Authentication.\n",
+      "url": "http://conjur.local/authn-ldap/{{SERVICE_ID}}/{{ACCOUNT}}/login"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The access token is used to communicate to the REST API that\nthe bearer of the token has been authorized to access the API and perform\nspecific actions specified by the scope that was granted during authorization.\n\nFor API usage, the base64-encoded access token is ordinarily passed as an HTTP\nAuthorization header as `Authorization: Token token=<base64-encoded token>`.\n\nThe `login` must be URL encoded. For example, `alice@devops` must be\nencoded as `alice%40devops`.\n\nThe `service_id`, if given, must be URL encoded. For example,\n`prod/gke` must be encoded as `prod%2Fgke`.\n\nFor host authentication, the `login` is the host ID with the prefix\n`host/`. For example, the host webserver would login as `host/webserver`,\nand would be encoded as `host%2Fwebserver`.\n\nTo authenticate to Conjur using a LDAP, reference the detailed documentation:\n[LDAP Authenticator](https://docs.conjur.org/Latest/en/Content/Integrations/ldap/ldap_authenticator.html) (`authn-ldap`).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /authn-ldap/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "method": "POST",
+      "name": "Gets a short-lived access token for users and hosts using their\nLDAP identity to access the Conjur API.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "path": "/authn-ldap/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a short-lived access token for users and hosts using their\nLDAP identity to access the Conjur API.\n",
+      "url": "http://conjur.local/authn-ldap/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "id_token": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_json": {
+        "id_token": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_text": "{\"id_token\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use the OIDC Authenticator to leverage the identity layer\nprovided by OIDC to authenticate with Conjur.\n\nFor more information see [the documentation](https://docs.conjur.org/Latest/en/Content/OIDC/OIDC.htm).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /authn-oidc/{{SERVICE_ID}}/{{ACCOUNT}}/authenticate",
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications using OpenID\nConnect (OIDC) to access the Conjur API.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "path": "/authn-oidc/{{SERVICE_ID}}/{{ACCOUNT}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"id_token\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a short-lived access token for applications using OpenID\nConnect (OIDC) to access the Conjur API.\n",
+      "url": "http://conjur.local/authn-oidc/{{SERVICE_ID}}/{{ACCOUNT}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Any role can rotate its own API key. The name and password\n(for users) or current API key (for hosts and users) of the role must\nbe provided via HTTP Basic Authorization.\n\nTo rotate another role's API key, you may provide your name and password\n(for users) or current API key (for hosts and users) via HTTP Basic\nAuthorization with the request. Alternatively, you may provide your\nConjur access token via the standard Conjur `Authorization` header.\n\nThe Basic authentication-compliant header is formed by:\n1. Concatenating the role's name, a literal colon character ':',\n   and the password or API key to create the authentication string.\n2. Base64-encoding the authentication string.\n3. Prefixing the authentication string with the scheme: `Basic `\n   (note the required space).\n4. Providing the result as the value of the `Authorization` HTTP header:\n   `Authorization: Basic <authentication string>`.\n\nYour HTTP/REST client probably provides HTTP basic authentication support.\nFor example, `curl` and all of the Conjur client libraries provide this.\n\nIf using the Conjur `Authorization` header, its value should be set to\n`Token token=<base64-encoded access token>`.\n\nNote that the body of the request must be the empty string.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /authn/{{ACCOUNT}}/api_key",
+      "method": "PUT",
+      "name": "Rotates a role's API key.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": ""
+        }
+      ],
+      "path": "/authn/{{ACCOUNT}}/api_key",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "role",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Rotates a role's API key.",
+      "url": "http://conjur.local/authn/{{ACCOUNT}}/api_key"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Passwords are stored in the Conjur database using `bcrypt`\nwith a work factor of 12. Therefore, login is a fairly expensive operation.\nHowever, once the API key is obtained, it may be used to inexpensively\nobtain access tokens by calling the Authenticate method. An access token\nis required to use most other parts of the Conjur API.\n\nThe Basic authentication-compliant header is formed by:\n1. Concatenating the role's name, a literal colon character ':',\n   and the password or API key to create the authentication string.\n2. Base64-encoding the authentication string.\n3. Prefixing the authentication string with the scheme: `Basic `\n   (note the required space).\n4. Providing the result as the value of the `Authorization` HTTP header:\n   `Authorization: Basic <authentication string>`.\n\nYour HTTP/REST client probably provides HTTP basic authentication support.\nFor example, `curl` and all of the Conjur client libraries provide this.\n\nNote that machine roles (Hosts) do not have passwords and do not need to\nuse this endpoint.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /authn/{{ACCOUNT}}/login",
+      "method": "GET",
+      "name": "Gets the API key of a user given the username and password\nvia HTTP Basic Authentication.\n",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "path": "/authn/{{ACCOUNT}}/login",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets the API key of a user given the username and password\nvia HTTP Basic Authentication.\n",
+      "url": "http://conjur.local/authn/{{ACCOUNT}}/login"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You must provide the login name and current password or\nAPI key of the user whose password is to be updated in an HTTP Basic\nAuthentication header. Also replaces the user’s API key with a new\nsecurely generated random value. You can fetch the new API key using\nthe Login method.\n\nThe Basic authentication-compliant header is formed by:\n1. Concatenating the role's name, a literal colon character ':',\n   and the password or API key to create the authentication string.\n2. Base64-encoding the authentication string.\n3. Prefixing the authentication string with the scheme: `Basic `\n   (note the required space).\n4. Providing the result as the value of the `Authorization` HTTP header:\n   `Authorization: Basic <authentication string>`.\n\nYour HTTP/REST client probably provides HTTP basic authentication\nsupport. For example, `curl` and all of the Conjur client libraries\nprovide this.\n\nNote that machine roles (Hosts) do not have passwords. They authenticate\nusing their API keys, while passwords are only used by human users.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /authn/{{ACCOUNT}}/password",
+      "method": "PUT",
+      "name": "Changes a user’s password.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "path": "/authn/{{ACCOUNT}}/password",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Changes a user’s password.",
+      "url": "http://conjur.local/authn/{{ACCOUNT}}/password"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "A client can obtain an access token by presenting a valid\nlogin name and API key.\n\nThe access token is used to communicate to the REST API that the bearer\nof the token has been authorized to access the API and perform specific\nactions specified by the scope that was granted during authorization.\n\nThe `login` must be URL encoded. For example, `alice@devops` must be\nencoded as `alice%40devops`.\n\nThe `service_id`, if given, must be URL encoded. For example,\n`prod/gke` must be encoded as `prod%2Fgke`.\n\nFor host authentication, the `login` is the host ID with the prefix\n`host/`. For example, the host webserver would login as `host/webserver`,\nand would be encoded as `host%2Fwebserver`.\n\nFor API usage, the base64-encoded access token is ordinarily passed as an HTTP\nAuthorization header as `Authorization: Token token=<base64-encoded token>`.\n\nThis is the default authentication endpoint only. See other endpoints for\ndetails on authenticating to Conjur using another method, e.g. for\napplications running in Azure or Kubernetes.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /authn/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "method": "POST",
+      "name": "Gets a short-lived access token, which is required in the header\nof most subsequent API requests.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "path": "/authn/{{ACCOUNT}}/{{LOGIN}}/authenticate",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "login",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a short-lived access token, which is required in the header\nof most subsequent API requests.\n",
+      "url": "http://conjur.local/authn/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "csr": "",
+        "ttl": ""
+      },
+      "body_json": {
+        "csr": "",
+        "ttl": ""
+      },
+      "body_text": "{\"csr\": \"\", \"ttl\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Gets a signed certificate from the configured Certificate Authority service.\n\nThe request must include a valid Certificate Signing Request, and a desired TTL in ISO 8601 format.\n\n*** IMPORTANT ***\nThis endpoint is part of an early implementation of support for using Conjur as a certificate\nauthority, and is currently available at the Community (or early alpha) level.\nThis endpoint is still subject to breaking changes in the future.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /ca/{{ACCOUNT}}/{{SERVICE_ID}}/sign",
+      "method": "POST",
+      "name": "Gets a signed certificate from the configured Certificate Authority service.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "service_id",
+          "value": ""
+        }
+      ],
+      "path": "/ca/{{ACCOUNT}}/{{SERVICE_ID}}/sign",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "service_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"csr\": \"\", \"ttl\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a signed certificate from the configured Certificate Authority service.",
+      "url": "http://conjur.local/ca/{{ACCOUNT}}/{{SERVICE_ID}}/sign"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You can request health checks against any cluster node using the Conjur API.\nThese routes do not require authentication.\n\nThe health check attempts an internal HTTP or TCP connection to\neach Conjur Enterprise service. It also attempts a simple transaction against all internal databases.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /health",
+      "method": "GET",
+      "name": "Health info about conjur",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "params": [],
+      "path": "/health",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Health info about conjur",
+      "url": "http://conjur.local/health"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "id": "new-host"
+      },
+      "body_json": {
+        "id": "new-host"
+      },
+      "body_text": "{\"id\": \"new-host\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a Host using the Host Factory and returns a JSON description of it.\n\nRequires a host factory token, which can be created using the create tokens API.\nIn practice, this token is usually provided automatically as part of Conjur integration with your\nhost provisioning infrastructure.\n\nNote: If the token was created with a CIDR restriction, you must make this API request from a whitelisted address.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /host_factories/hosts",
+      "method": "POST",
+      "name": "Creates a Host using the Host Factory.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Request-Id",
+          "value": "test-id"
+        }
+      ],
+      "path": "/host_factories/hosts",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"id\": \"new-host\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Creates a Host using the Host Factory.",
+      "url": "http://conjur.local/host_factories/hosts"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "expiration": "2017-08-04T22:27:20+00:00",
+        "host_factory": "myorg:hosty_factory:hf-db"
+      },
+      "body_json": {
+        "expiration": "2017-08-04T22:27:20+00:00",
+        "host_factory": "myorg:hosty_factory:hf-db"
+      },
+      "body_text": "{\"expiration\": \"2017-08-04T22:27:20+00:00\", \"host_factory\": \"myorg:hosty_factory:hf-db\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates one or more tokens which can be used to bootstrap host identity. Responds with a JSON document containing the tokens and their restrictions.\n\nIf the tokens are created with a CIDR restriction, Conjur will only accept them from the whitelisted IP ranges.\n\n##### Permissions required\n#\n`execute` privilege on the Host Factory.\"\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /host_factory_tokens",
+      "method": "POST",
+      "name": "Creates one or more host identity tokens.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Request-Id",
+          "value": "test-id"
+        }
+      ],
+      "path": "/host_factory_tokens",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"expiration\": \"2017-08-04T22:27:20+00:00\", \"host_factory\": \"myorg:hosty_factory:hf-db\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Creates one or more host identity tokens.",
+      "url": "http://conjur.local/host_factory_tokens"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Revokes a token, immediately disabling it.\n\n##### Permissions required\n\n`update` privilege on the host factory.\"\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /host_factory_tokens/{{TOKEN}}",
+      "method": "DELETE",
+      "name": "Revokes a token, immediately disabling it.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "path": "/host_factory_tokens/{{TOKEN}}",
+      "pathParameters": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Revokes a token, immediately disabling it.",
+      "url": "http://conjur.local/host_factory_tokens/{{TOKEN}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Information about the Conjur Enterprise node which was queried against.\n\nIncludes authenticator info, release/version info, configuration details,\ninternal services, and role information.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /info",
+      "method": "GET",
+      "name": "Basic information about the Conjur Enterprise server",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "params": [],
+      "path": "/info",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Basic information about the Conjur Enterprise server",
+      "url": "http://conjur.local/info"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Modifies an existing Conjur policy. Data may be explicitly deleted using\nthe `!delete`, `!revoke`, and `!deny` statements. Unlike `replace` mode,\nno data is ever implicitly deleted.\n\n##### Permissions required\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "PATCH /policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}",
+      "method": "PATCH",
+      "name": "Modifies an existing Conjur policy.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": "root"
+        }
+      ],
+      "path": "/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": "root"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Modifies an existing Conjur policy.",
+      "url": "http://conjur.local/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Adds data to the existing Conjur policy. Deletions are not allowed.\nAny policy objects that exist on the server but are omitted from the\npolicy file will not be deleted and any explicit deletions in the policy file will result in an error.\n\n##### Permissions required\n\n`create` privilege on the policy.\"\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "POST /policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}",
+      "method": "POST",
+      "name": "Adds data to the existing Conjur policy.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": "root"
+        }
+      ],
+      "path": "/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": "root"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Adds data to the existing Conjur policy.",
+      "url": "http://conjur.local/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Loads or replaces a Conjur policy document.\n\n**Any policy data which already exists on the server but is not\nexplicitly specified in the new policy file will be deleted!**.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "PUT /policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}",
+      "method": "PUT",
+      "name": "Loads or replaces a Conjur policy document.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": "root"
+        }
+      ],
+      "path": "/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": "root"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Loads or replaces a Conjur policy document.",
+      "url": "http://conjur.local/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Shows all public keys for a resource as newline delimited string for compatibility with the authorized_keys SSH format.\nReturns an empty string if the resource does not exist, to prevent attackers from determining whether a resource exists.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /public_keys/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "method": "GET",
+      "name": "Shows all public keys for a resource.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "admin"
+        }
+      ],
+      "path": "/public_keys/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "admin"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Shows all public keys for a resource.",
+      "url": "http://conjur.local/public_keys/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use the remote_health route to check the health of any Conjur Enterprise Server from any other Conjur Enterprise Server.\nWith this route, you can check master health relative to a follower, or follower health relative\nto a standby, and so on.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /remote_health/{{REMOTE}}",
+      "method": "GET",
+      "name": "Health info about a given Conjur Enterprise server",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "remote",
+          "value": "conjur.myorg.com"
+        }
+      ],
+      "path": "/remote_health/{{REMOTE}}",
+      "pathParameters": [
+        {
+          "name": "remote",
+          "value": "conjur.myorg.com"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Health info about a given Conjur Enterprise server",
+      "url": "http://conjur.local/remote_health/{{REMOTE}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists resources within an organization account.\n\nIn the absence of an `account` query parameter, shows results for the account of the authorization token user.\n\nIf an `account` query parameter is given, shows results for the specified account.\n\nIf a `kind` query parameter is given, narrows results to only resources of that kind.\n\nIf a `limit` is given, returns no more than that number of results. Providing an `offset`\nskips a number of resources before returning the rest. In addition, providing an `offset`\nwill give `limit` a default value of 10 if none other is provided. These two parameters can\nbe combined to page through results.\n\nIf the parameter `count` is `true`, returns only the number of items in the list.\n\n##### Text search\n\nIf the `search` parameter is provided, narrows results to those pertaining to the search query.\nSearch works across resource IDs and the values of annotations. It weighs results so that those\nwith matching id or a matching value of an annotation called `name` appear first, then those with\nanother matching annotation value, and finally those with a matching  `kind`.\"\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /resources",
+      "method": "GET",
+      "name": "Lists resources within an organization account.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "account",
+          "value": "myorg"
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "search",
+          "value": "db"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": "myorg:host:host1"
+        },
+        {
+          "name": "acting_as",
+          "value": "myorg:host:host1"
+        }
+      ],
+      "path": "/resources",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "account",
+          "value": "myorg"
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "search",
+          "value": "db"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": "myorg:host:host1"
+        },
+        {
+          "name": "acting_as",
+          "value": "myorg:host:host1"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists resources within an organization account.",
+      "url": "http://conjur.local/resources"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists resources within an organization account.\n\nIf a `kind` query parameter is given, narrows results to only resources of that kind.\n\nIf a `limit` is given, returns no more than that number of results. Providing an `offset`\nskips a number of resources before returning the rest. In addition, providing an `offset`\nwill give `limit` a default value of 10 if none other is provided. These two parameters\ncan be combined to page through results.\n\nIf the parameter `count` is `true`, returns only the number of items in the list.\n\n##### Text search\n\nIf the `search` parameter is provided, narrows results to those pertaining to the search query.\nSearch works across resource IDs and the values of annotations. It weighs results so that those\nwith matching id or a matching value of an annotation called `name` appear first, then those with\nanother matching annotation value, and finally those with a matching  `kind`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /resources/{{ACCOUNT}}",
+      "method": "GET",
+      "name": "Lists resources within an organization account.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "search",
+          "value": "db"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": "myorg:host:host1"
+        },
+        {
+          "name": "acting_as",
+          "value": "myorg:host:host1"
+        }
+      ],
+      "path": "/resources/{{ACCOUNT}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "search",
+          "value": "db"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": "myorg:host:host1"
+        },
+        {
+          "name": "acting_as",
+          "value": "myorg:host:host1"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists resources within an organization account.",
+      "url": "http://conjur.local/resources/{{ACCOUNT}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists resources of the same kind within an organization account.\n\nKinds of resources include: policy, user, host, group, layer, or variable\n\nIf a `limit` is given, returns no more than that number of results.\nProviding an `offset` skips a number of resources before returning the rest.\nIn addition, providing an `offset` will give `limit` a default value of 10 if\nnone other is provided. These two parameters can be combined to page through results.\n\nIf the parameter `count` is `true`, returns only the number of items in the list.\n\n##### Text search\n\nIf the `search` parameter is provided, narrows results to those pertaining to the search query.\nSearch works across resource IDs and the values of annotations. It weighs results so that those\nwith matching id or a matching value of an annotation called `name` appear first, then those with\nanother matching annotation value, and finally those with a matching  `kind`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /resources/{{ACCOUNT}}/{{KIND}}",
+      "method": "GET",
+      "name": "Lists resources of the same kind within an organization account.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "search",
+          "value": "db"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": "myorg:host:host1"
+        },
+        {
+          "name": "acting_as",
+          "value": "myorg:host:host1"
+        }
+      ],
+      "path": "/resources/{{ACCOUNT}}/{{KIND}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "search",
+          "value": "db"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": "myorg:host:host1"
+        },
+        {
+          "name": "acting_as",
+          "value": "myorg:host:host1"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists resources of the same kind within an organization account.",
+      "url": "http://conjur.local/resources/{{ACCOUNT}}/{{KIND}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Details about a single resource.\n\nIf `permitted_roles` and `privilege` are given, Conjur lists the\nroles with the specified privilege on the resource.\n\nIf `check`, `privilege` and `role` are given, Conjur checks if the\nspecified role has the privilege on the resource.\n\nIf `permitted_roles` and `check` are both given, Conjur responds to the `check` call ONLY.\n\n##### Permissions Required\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /resources/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "method": "GET",
+      "name": "Shows a description of a single resource.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "conjur/authn-iam/test"
+        },
+        {
+          "name": "permitted_roles",
+          "value": ""
+        },
+        {
+          "name": "privilege",
+          "value": ""
+        },
+        {
+          "name": "check",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": "myorg:host:host1"
+        }
+      ],
+      "path": "/resources/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "conjur/authn-iam/test"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "permitted_roles",
+          "value": ""
+        },
+        {
+          "name": "privilege",
+          "value": ""
+        },
+        {
+          "name": "check",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": "myorg:host:host1"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Shows a description of a single resource.",
+      "url": "http://conjur.local/resources/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an existing role membership.\n\nIf a role A is granted to a role B, then role A is said to have role B as a member.\nThese relationships are described in the “members” portion of the returned JSON.\n\nWhen the `members` query parameter is provided, you will get the members of a role.\n\nWhen the `members` and `member` query parameters are provided, the role specfified by\n`member` will be removed as a member of the role specified in the endpoint URI.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "method": "DELETE",
+      "name": "Deletes an existing role membership",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "admin"
+        },
+        {
+          "name": "members",
+          "value": ""
+        },
+        {
+          "name": "member",
+          "value": ""
+        }
+      ],
+      "path": "/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "admin"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "members",
+          "value": ""
+        },
+        {
+          "name": "member",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Deletes an existing role membership",
+      "url": "http://conjur.local/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets detailed information about a specific role, including the role members.\n\nIf a role A is granted to a role B, then role A is said to have role B as a member.\nThese relationships are described in the “members” portion of the returned JSON.\n\n##### Listing members\n\nIf `members` is provided, you will get the members of a role.\n\nIf a `kind` query parameter is given, narrows results to only resources of that kind.\n\nIf a `limit` is given, returns no more than that number of results. Providing an `offset`\nskips a number of resources before returning the rest. In addition, providing an `offset`\nwill give limit a default value of 10 if none other is provided. These two parameters\ncan be combined to page through results.\n\nIf the parameter `count` is true, returns only the number of items in the list.\n\n##### Text search\n\nIf the search parameter is provided, narrows results to those pertaining to the search query.\nSearch works across resource IDs and the values of annotations. It weights results so that\nthose with matching id or a matching value of an annotation called name appear first, then\nthose with another matching annotation value, and finally those with a matching kind.\n\n##### Parameter Priority\n\nIf Conjur is given any combination of optional parameters, it responds with ONLY results\nfor the parameter of the highest priority.\n\n1. `graph`\n2. `all`\n3. `memberships`\n4. `members`\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "method": "GET",
+      "name": "Get role information",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "admin"
+        },
+        {
+          "name": "all",
+          "value": ""
+        },
+        {
+          "name": "memberships",
+          "value": ""
+        },
+        {
+          "name": "members",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "search",
+          "value": ""
+        },
+        {
+          "name": "graph",
+          "value": ""
+        }
+      ],
+      "path": "/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "admin"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "all",
+          "value": ""
+        },
+        {
+          "name": "memberships",
+          "value": ""
+        },
+        {
+          "name": "members",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "search",
+          "value": ""
+        },
+        {
+          "name": "graph",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get role information",
+      "url": "http://conjur.local/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Updates or modifies an existing role membership.\n\nIf a role A is granted to a role B, then role A is said to have role B as a member.\nThese relationships are described in the “members” portion of the returned JSON.\n\nWhen the `members` query parameter is provided, you will get the members of a role.\n\nWhen the `members` and `member` query parameters are provided, the role specfified by\n`member` will be added as a member of the role specified in the endpoint URI.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "POST /roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "method": "POST",
+      "name": "Update or modify an existing role membership",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "admin"
+        },
+        {
+          "name": "members",
+          "value": ""
+        },
+        {
+          "name": "member",
+          "value": ""
+        }
+      ],
+      "path": "/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": "user"
+        },
+        {
+          "name": "identifier",
+          "value": "admin"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "members",
+          "value": ""
+        },
+        {
+          "name": "member",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update or modify an existing role membership",
+      "url": "http://conjur.local/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches multiple secret values in one invocation. It’s faster to fetch secrets in batches than to fetch them one at a time.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /secrets",
+      "method": "GET",
+      "name": "Fetch multiple secrets",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "variable_ids",
+          "value": ""
+        }
+      ],
+      "path": "/secrets",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "variable_ids",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Fetch multiple secrets",
+      "url": "http://conjur.local/secrets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the value of a secret from the specified Secret. The latest version\nwill be retrieved unless the version parameter is specified. The twenty most recent secret versions are retained.\n\nThe secret data is returned in the response body.\n\nNote: Conjur will allow you to add a secret to any resource, but the best practice is to store\nand retrieve secret data only using Secret resources.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /secrets/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "method": "GET",
+      "name": "Fetches the value of a secret from the specified Secret.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": ""
+        },
+        {
+          "name": "version",
+          "value": ""
+        }
+      ],
+      "path": "/secrets/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "version",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Fetches the value of a secret from the specified Secret.",
+      "url": "http://conjur.local/secrets/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Creates a secret value within the specified Secret.\n\n\nNote: Conjur will allow you to add a secret to any resource, but the\nbest practice is to store and retrieve secret data only using Secret resources.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "POST /secrets/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "method": "POST",
+      "name": "Creates a secret value within the specified variable.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": ""
+        },
+        {
+          "name": "expirations",
+          "value": ""
+        }
+      ],
+      "path": "/secrets/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "account",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        },
+        {
+          "name": "identifier",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "expirations",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Creates a secret value within the specified variable.",
+      "url": "http://conjur.local/secrets/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "WhoAmI provides information about the client making an API request.\nIt can be used to help troubleshoot configuration by verifying authentication\nand the client IP address for audit and network access restrictions.\nFor more information, see Host Attributes.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /whoami",
+      "method": "GET",
+      "name": "Provides information about the client making an API request.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Request-Id",
+          "value": "test-id"
+        }
+      ],
+      "path": "/whoami",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Provides information about the client making an API request.",
+      "url": "http://conjur.local/whoami"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "enabled": false
+      },
+      "body_json": {
+        "enabled": false
+      },
+      "body_text": "{\"enabled\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Allows you to either enable or disable a given authenticator that does not have service_id (For example: authn-gcp).\n\nWhen you enable or disable an authenticator via this\nendpoint, the status of the authenticator is stored\nin the Conjur database. The enablement status of the authenticator\nservice may be overridden by setting the `CONJUR_AUTHENTICATORS`\nenvironment variable on the Conjur server; in the case where this\nenvironment variable is set, the database record of whether the\nauthenticator service is enabled will be ignored.\n\n**This endpoint is part of an early implementation of support for enabling Conjur\nauthenticators via the API, and is currently available at the Community\n(or early alpha) level. This endpoint is still subject to breaking\nchanges in the future.**\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /{{AUTHENTICATOR}}/{{ACCOUNT}}",
+      "method": "PATCH",
+      "name": "Enables or disables authenticator defined without service_id.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "authenticator",
+          "value": "authn-gcp"
+        },
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "path": "/{{AUTHENTICATOR}}/{{ACCOUNT}}",
+      "pathParameters": [
+        {
+          "name": "authenticator",
+          "value": "authn-gcp"
+        },
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"enabled\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Enables or disables authenticator defined without service_id.",
+      "url": "http://conjur.local/{{AUTHENTICATOR}}/{{ACCOUNT}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Allows you to either enable or disable a given authenticator\nservice instance.\n\nWhen you enable or disable an authenticator service instance via this\nendpoint, the status of the authenticator service instance is stored\nin the Conjur database. The enablement status of the authenticator\nservice instance may be overridden by setting the `CONJUR_AUTHENTICATORS`\nenvironment variable on the Conjur server; in the case where this\nenvironment variable is set, the database record of whether the\nauthenticator service instance is enabled will be ignored.\n\n**This endpoint is part of an early implementation of support for enabling Conjur\nauthenticators via the API, and is currently available at the Community\n(or early alpha) level. This endpoint is still subject to breaking\nchanges in the future.**\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "PATCH /{{AUTHENTICATOR}}/{{SERVICE_ID}}/{{ACCOUNT}}",
+      "method": "PATCH",
+      "name": "Enables or disables authenticator service instances.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "authenticator",
+          "value": "authn-oidc"
+        },
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "path": "/{{AUTHENTICATOR}}/{{SERVICE_ID}}/{{ACCOUNT}}",
+      "pathParameters": [
+        {
+          "name": "authenticator",
+          "value": "authn-oidc"
+        },
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Enables or disables authenticator service instances.",
+      "url": "http://conjur.local/{{AUTHENTICATOR}}/{{SERVICE_ID}}/{{ACCOUNT}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CONJUR_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Once the status webservice has been properly configured and the relevant user\ngroups have been given permissions to access the status webservice, the\nusers in those groups can check the status of the authenticator.\n\nSupported Authenticators:\n  - Azure\n  - OIDC\n\nNot Supported:\n  - AWS IAM\n  - Kubernetes\n  - LDAP\n\nSee [Conjur Documentation](https://docs.conjur.org/Latest/en/Content/Integrations/Authn-status.htm)\nfor details on setting up the authenticator status webservice.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "id": "GET /{{AUTHENTICATOR}}/{{SERVICE_ID}}/{{ACCOUNT}}/status",
+      "method": "GET",
+      "name": "Details whether an authentication service has been configured properly",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "authenticator",
+          "value": "authn-oidc"
+        },
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "path": "/{{AUTHENTICATOR}}/{{SERVICE_ID}}/{{ACCOUNT}}/status",
+      "pathParameters": [
+        {
+          "name": "authenticator",
+          "value": "authn-oidc"
+        },
+        {
+          "name": "service_id",
+          "value": "prod%2fgke"
+        },
+        {
+          "name": "account",
+          "value": "dev"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Details whether an authentication service has been configured properly",
+      "url": "http://conjur.local/{{AUTHENTICATOR}}/{{SERVICE_ID}}/{{ACCOUNT}}/status"
+    }
+  ]
+}

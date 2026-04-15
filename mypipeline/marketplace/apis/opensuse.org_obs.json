@@ -1,0 +1,2575 @@
+{
+  "id": "opensuse.org_obs",
+  "info": {
+    "base_url": "",
+    "description": "Delete an issue tracker.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Open Build Service API",
+    "version": "2.10.50"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get generic information about the API.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /about",
+      "method": "GET",
+      "name": "Get information about API.",
+      "params": [],
+      "path": "/about",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get information about API.",
+      "url": "//about"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a list of all known architectures known to OBS in general. This is not the list of architectures provided by this instance. Check the schedulers element from the `/configuration` route for this.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /architectures",
+      "method": "GET",
+      "name": "List all known architectures.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/architectures",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all known architectures.",
+      "url": "//architectures"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Show information about one architecture.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /architectures/{{ARCHITECTURE_NAME}}",
+      "method": "GET",
+      "name": "Show one architecture.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "architecture_name",
+          "value": "x86_64"
+        }
+      ],
+      "path": "/architectures/{{ARCHITECTURE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "architecture_name",
+          "value": "x86_64"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Show one architecture.",
+      "url": "//architectures/{{ARCHITECTURE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all attribute namespaces.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /attribute",
+      "method": "GET",
+      "name": "List all attribute namespaces.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/attribute",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all attribute namespaces.",
+      "url": "//attribute"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an attribute namespace and all attributes below.\n\nThis operation is the same as the one defined with [DELETE /attribute/{namespace}/_meta](#/Attributes/delete_attribute__namespace___meta).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /attribute/{{NAMESPACE}}",
+      "method": "DELETE",
+      "name": "Delete an attribute namespace and all attributes below.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an attribute namespace and all attributes below.",
+      "url": "//attribute/{{NAMESPACE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all attributes under a given attribute namespace.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /attribute/{{NAMESPACE}}",
+      "method": "GET",
+      "name": "List all attributes below a namespace.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "namespace",
+          "value": "OBS_TEST"
+        }
+      ],
+      "path": "/attribute/{{NAMESPACE}}",
+      "pathParameters": [
+        {
+          "name": "namespace",
+          "value": "OBS_TEST"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all attributes below a namespace.",
+      "url": "//attribute/{{NAMESPACE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an attribute namespace and all attributes below.\n\nThis operation is the same as the one defined with [DELETE /attribute/{namespace}](#/Attributes/delete_attribute__namespace_).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /attribute/{{NAMESPACE}}/_meta",
+      "method": "DELETE",
+      "name": "Delete an attribute namespace and all attributes below.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}/_meta",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an attribute namespace and all attributes below.",
+      "url": "//attribute/{{NAMESPACE}}/_meta"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Shows attribute namespace.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /attribute/{{NAMESPACE}}/_meta",
+      "method": "GET",
+      "name": "Show attribute namespace.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}/_meta",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Show attribute namespace.",
+      "url": "//attribute/{{NAMESPACE}}/_meta"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint can be used for both, creating an attribute namespace and updating it:\n  * If the attribute namespace passed as parameter doesn't exist, it will create the attribute namespace.\n  * If the attribute namespace passed as parameter already exists, it will update the namespace attribute.\n\nThis operation is the same as the one defined with [PUT](#/Attributes/put_attribute__namespace___meta).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "POST /attribute/{{NAMESPACE}}/_meta",
+      "method": "POST",
+      "name": "Change attribute namespace. Create an attribute namespace if it doesn't exist.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}/_meta",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change attribute namespace. Create an attribute namespace if it doesn't exist.",
+      "url": "//attribute/{{NAMESPACE}}/_meta"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint can be used for both, creating an attribute namespace and updating it:\n  * If the attribute namespace passed as parameter doesn't exist, it will create the attribute namespace.\n  * If the attribute namespace passed as parameter already exists, it will update the namespace attribute.\n\nThis operation is the same as the one defined with [POST](#/Attributes/post_attribute__namespace___meta).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /attribute/{{NAMESPACE}}/_meta",
+      "method": "PUT",
+      "name": "Change attribute namespace. Create an attribute namespace if it doesn't exist.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}/_meta",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change attribute namespace. Create an attribute namespace if it doesn't exist.",
+      "url": "//attribute/{{NAMESPACE}}/_meta"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an attribute and all its values in projects or packages.\n\nThis operation is the same as the one defined with [DELETE /attribute/{namespace}/{attribute_name}/_meta](#/Attributes/delete_attribute__namespace___attribute_name___meta)\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}",
+      "method": "DELETE",
+      "name": "Delete an attribute and all its values in projects or packages.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "attribute_name",
+          "value": "OwnerRootProjectTest"
+        }
+      ],
+      "path": "/attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "attribute_name",
+          "value": "OwnerRootProjectTest"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an attribute and all its values in projects or packages.",
+      "url": "//attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an attribute and all its values in projects or packages.\n\nThis operation is the same as the one defined with [DELETE /attribute/{namespace}/{attribute_name}](#/Attributes/delete_attribute__namespace___attribute_name_)\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta",
+      "method": "DELETE",
+      "name": "Delete an attribute and all its values in projects or packages.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an attribute and all its values in projects or packages.",
+      "url": "//attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Shows attribute.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta",
+      "method": "GET",
+      "name": "Shows attribute.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Shows attribute.",
+      "url": "//attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint can be used for both, creating an attribute and updating it:\n  * If the attribute passed as parameter doesn't exist, it will create the attribute.\n  * If the attribute passed as parameter already exists, it will update the attribute.\n\nThis operation is the same as the one defined with [PUT](#/Attributes/put_attribute__namespace___attribute_name___meta).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "POST /attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta",
+      "method": "POST",
+      "name": "Change attribute data. Create an attribute if it doesn't exist.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change attribute data. Create an attribute if it doesn't exist.",
+      "url": "//attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint can be used for both, creating an attribute and updating it:\n  * If the attribute passed as parameter doesn't exist, it will create the attribute.\n  * If the attribute passed as parameter already exists, it will update the attribute.\n\nThis operation is the same as the one defined with [POST](#/Attributes/post_attribute__namespace___attribute_name___meta).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta",
+      "method": "PUT",
+      "name": "Change attribute data. Create an attribute if it doesn't exist.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change attribute data. Create an attribute if it doesn't exist.",
+      "url": "//attribute/{{NAMESPACE}}/{{ATTRIBUTE_NAME}}/_meta"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a simple directory listing of all projects",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build",
+      "method": "GET",
+      "name": "Get a simple directory listing of all projects",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/build",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a simple directory listing of all projects",
+      "url": "//build"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a simple directory listing of all repositories for the specified project",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}",
+      "method": "GET",
+      "name": "Get a simple directory listing of all repositories for the specified project",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project_name",
+          "value": "home:Admin"
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "project_name",
+          "value": "home:Admin"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a simple directory listing of all repositories for the specified project",
+      "url": "//build/{{PROJECT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Apply different actions on builds/build processes of the specified project",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "POST /build/{{PROJECT_NAME}}",
+      "method": "POST",
+      "name": "Apply different actions on builds/build processes of the specified project",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "package",
+          "value": "firefox"
+        },
+        {
+          "name": "arch",
+          "value": "x86_64"
+        },
+        {
+          "name": "repository",
+          "value": "openSUSE_Leap_15.2"
+        },
+        {
+          "name": "cmd",
+          "value": ""
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "package",
+          "value": "firefox"
+        },
+        {
+          "name": "arch",
+          "value": "x86_64"
+        },
+        {
+          "name": "repository",
+          "value": "openSUSE_Leap_15.2"
+        },
+        {
+          "name": "cmd",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Apply different actions on builds/build processes of the specified project",
+      "url": "//build/{{PROJECT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the build results for packages, architectures and repositories of the specified project.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/_result",
+      "method": "GET",
+      "name": "Get the build results for packages, architectures and repositories of the specified project.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "view",
+          "value": ""
+        },
+        {
+          "name": "package",
+          "value": "obs-server"
+        },
+        {
+          "name": "arch",
+          "value": "x86_64"
+        },
+        {
+          "name": "repository",
+          "value": "openSUSE_Leap_15.2"
+        },
+        {
+          "name": "lastbuild",
+          "value": "1"
+        },
+        {
+          "name": "locallink",
+          "value": "1"
+        },
+        {
+          "name": "multibuild",
+          "value": "1"
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}/_result",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "view",
+          "value": ""
+        },
+        {
+          "name": "package",
+          "value": "obs-server"
+        },
+        {
+          "name": "arch",
+          "value": "x86_64"
+        },
+        {
+          "name": "repository",
+          "value": "openSUSE_Leap_15.2"
+        },
+        {
+          "name": "lastbuild",
+          "value": "1"
+        },
+        {
+          "name": "locallink",
+          "value": "1"
+        },
+        {
+          "name": "multibuild",
+          "value": "1"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the build results for packages, architectures and repositories of the specified project.",
+      "url": "//build/{{PROJECT_NAME}}/_result"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List of all architectures the specified project builds against a given repository.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}",
+      "method": "GET",
+      "name": "List of all architectures the specified project builds against a given repository.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repository_name",
+          "value": "openSUSE_Tumbleweed"
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}",
+      "pathParameters": [
+        {
+          "name": "repository_name",
+          "value": "openSUSE_Tumbleweed"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List of all architectures the specified project builds against a given repository.",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Show the build configuration for the specified repository. Includes all base package requirements, mappings and macros.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/_buildconfig",
+      "method": "GET",
+      "name": "Show the build configuration for the specified repository.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/_buildconfig",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Show the build configuration for the specified repository.",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/_buildconfig"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Show the build dependencies of packages that are part of the project, for a given repository and architecture.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/_builddepinfo",
+      "method": "GET",
+      "name": "Show the build dependencies of packages that are part of the project.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "package",
+          "value": "obs-server"
+        },
+        {
+          "name": "view",
+          "value": ""
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/_builddepinfo",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "package",
+          "value": "obs-server"
+        },
+        {
+          "name": "view",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Show the build dependencies of packages that are part of the project.",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/_builddepinfo"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all binaries (produced by all packages of the given project) for the specified repository and architecture.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/_repository",
+      "method": "GET",
+      "name": "List all binaries (produced by all packages of the given project).",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/_repository",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all binaries (produced by all packages of the given project).",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/_repository"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List binaries built by the sources of the specified package.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}",
+      "method": "GET",
+      "name": "List binaries built by the sources of the specified package.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "package_name",
+          "value": "ctris"
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "package_name",
+          "value": "ctris"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List binaries built by the sources of the specified package.",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint returns information about some specific artifact",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_buildinfo",
+      "method": "GET",
+      "name": "GET /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_buildinfo",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_buildinfo",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_buildinfo",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_buildinfo"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint returns the build history for a specific artifact",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_history",
+      "method": "GET",
+      "name": "GET /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_history",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_history",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_history",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_history"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Show the build status of a currently running build job. Shows an empty result if no build job is running.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_jobstatus",
+      "method": "GET",
+      "name": "Show the build status of a currently running build job.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_jobstatus",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Show the build status of a currently running build job.",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_jobstatus"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint returns the last log file for a specific build artifact",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_log",
+      "method": "GET",
+      "name": "GET /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_log",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_log",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_log",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_log"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Details about the reason of the lastly triggered build.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_reason",
+      "method": "GET",
+      "name": "Show the reason for the lastly triggered build.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_reason",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Show the reason for the lastly triggered build.",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_reason"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint returns the building status for a specific artifact",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_status",
+      "method": "GET",
+      "name": "GET /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_status",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_status",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /build/{project_name}/{repository_name}/{architecture_name}/{package_name}/_status",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/_status"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a project, repository, architecture and package, retrieve the given file's content.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}",
+      "method": "GET",
+      "name": "Return a specific artifact file contents",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_name",
+          "value": "ctris-0.42.1-4.1.x86_64.rpm"
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "file_name",
+          "value": "ctris-0.42.1-4.1.x86_64.rpm"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Return a specific artifact file contents",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "file": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Given a project, repository, architecture and package, update the given file's content.\n\nThis is for Admins only.\n",
+      "form_data": [
+        {
+          "name": "file",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}",
+      "method": "PUT",
+      "name": "Update a specific artifact file contents",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "package_name",
+          "value": ""
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "package_name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"file\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a specific artifact file contents",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a project, repository, architecture and package, retrieve the given artifact's details.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}",
+      "method": "GET",
+      "name": "This endpoint returns details about an specific artifact",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "view",
+          "value": ""
+        }
+      ],
+      "path": "/build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "view",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "This endpoint returns details about an specific artifact",
+      "url": "//build/{{PROJECT_NAME}}/{{REPOSITORY_NAME}}/{{ARCHITECTURE_NAME}}/{{PACKAGE_NAME}}/{{FILE_NAME}}?view=fileinfo"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Display the configuration of this Open Build Service instance.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /configuration",
+      "method": "GET",
+      "name": "Display the configuration of this Open Build Service instance",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/configuration",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Display the configuration of this Open Build Service instance",
+      "url": "//configuration"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Update the configuration of this Open Build Service instance.\n\nThis is for admins only.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /configuration",
+      "method": "PUT",
+      "name": "Update the configuration of this Open Build Service instance",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/configuration",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update the configuration of this Open Build Service instance",
+      "url": "//configuration"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all distributions that can be build against.\nThis will not list distributions that are available via [interconnect](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.concepts.html#id-1.5.10.3.5).\nCheck /distributions/include_remotes for this.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /distributions",
+      "method": "GET",
+      "name": "List all distributions.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/distributions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all distributions.",
+      "url": "//distributions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "architecture": [
+          "i586",
+          "x86_64"
+        ],
+        "icon": [
+          {
+            "height": 8,
+            "url": "https://static.opensuse.org/distributions/logos/opensuse.png",
+            "width": 8
+          },
+          {
+            "height": 16,
+            "url": "https://static.opensuse.org/distributions/logos/opensuse.png",
+            "width": 16
+          }
+        ],
+        "id": 16626,
+        "link": "http://www.opensuse.org/",
+        "name": "openSUSE Tumbleweed",
+        "project": "openSUSE:Factory",
+        "reponame": "openSUSE_Tumbleweed",
+        "repository": "snapshot",
+        "vendor": "opensuse",
+        "version": "Tumbleweed"
+      },
+      "body_json": {
+        "architecture": [
+          "i586",
+          "x86_64"
+        ],
+        "icon": [
+          {
+            "height": 8,
+            "url": "https://static.opensuse.org/distributions/logos/opensuse.png",
+            "width": 8
+          },
+          {
+            "height": 16,
+            "url": "https://static.opensuse.org/distributions/logos/opensuse.png",
+            "width": 16
+          }
+        ],
+        "id": 16626,
+        "link": "http://www.opensuse.org/",
+        "name": "openSUSE Tumbleweed",
+        "project": "openSUSE:Factory",
+        "reponame": "openSUSE_Tumbleweed",
+        "repository": "snapshot",
+        "vendor": "opensuse",
+        "version": "Tumbleweed"
+      },
+      "body_text": "{\"architecture\": [\"i586\", \"x86_64\"], \"icon\": [{\"height\": 8, \"url\": \"https://static.opensuse.org/distributions/logos/opensuse.png\", \"width\": 8}, {\"height\": 16, \"url\": \"https://static.opensuse.org/distributions/logos/opensuse.png\", \"width\": 16}], \"id\": 16626, \"link\": \"http://www.opensuse.org/\", \"name\": \"openSUSE Tumbleweed\", \"project\": \"openSUSE:Factory\", \"reponame\": \"openSUSE_Tumbleweed\", \"repository\": \"snapshot\", \"vendor\": \"opensuse\", \"version\": \"Tumbleweed\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a distribution.\n\nThis is only for admins.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /distributions",
+      "method": "POST",
+      "name": "Create a distribution.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/distributions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"architecture\": [\"i586\", \"x86_64\"], \"icon\": [{\"height\": 8, \"url\": \"https://static.opensuse.org/distributions/logos/opensuse.png\", \"width\": 8}, {\"height\": 16, \"url\": \"https://static.opensuse.org/distributions/logos/opensuse.png\", \"width\": 16}], \"id\": 16626, \"link\": \"http://www.opensuse.org/\", \"name\": \"openSUSE Tumbleweed\", \"project\": \"openSUSE:Factory\", \"reponame\": \"openSUSE_Tumbleweed\", \"repository\": \"snapshot\", \"vendor\": \"opensuse\", \"version\": \"Tumbleweed\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a distribution.",
+      "url": "//distributions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Bulk replace all distributions.\n\nThis is only for admins.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /distributions/bulk_replace",
+      "method": "PUT",
+      "name": "Bulk replace all distributions.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/distributions/bulk_replace",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Bulk replace all distributions.",
+      "url": "//distributions/bulk_replace"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all distributions that can be build against, including the ones provided by the interconnect.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /distributions/include_remotes",
+      "method": "GET",
+      "name": "List all distributions including remote.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/distributions/include_remotes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all distributions including remote.",
+      "url": "//distributions/include_remotes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a distribution.\n\nThis is only for admins.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /distributions/{{DISTRIBUTION_ID}}",
+      "method": "DELETE",
+      "name": "Delete a distribution.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/distributions/{{DISTRIBUTION_ID}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a distribution.",
+      "url": "//distributions/{{DISTRIBUTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Show a distribution that can be build against.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /distributions/{{DISTRIBUTION_ID}}",
+      "method": "GET",
+      "name": "Show a distribution.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "distribution_id",
+          "value": "16626"
+        }
+      ],
+      "path": "/distributions/{{DISTRIBUTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "distribution_id",
+          "value": "16626"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Show a distribution.",
+      "url": "//distributions/{{DISTRIBUTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Update the data of a distribution.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /distributions/{{DISTRIBUTION_ID}}",
+      "method": "PUT",
+      "name": "Update a distribution.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/distributions/{{DISTRIBUTION_ID}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a distribution.",
+      "url": "//distributions/{{DISTRIBUTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List available groups.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /group",
+      "method": "GET",
+      "name": "List available groups.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/group",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List available groups.",
+      "url": "//group"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a group.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /group/{{GROUP_TITLE}}",
+      "method": "DELETE",
+      "name": "Delete a group.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/group/{{GROUP_TITLE}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a group.",
+      "url": "//group/{{GROUP_TITLE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Read group data.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /group/{{GROUP_TITLE}}",
+      "method": "GET",
+      "name": "Read group data.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_title",
+          "value": "group-test"
+        }
+      ],
+      "path": "/group/{{GROUP_TITLE}}",
+      "pathParameters": [
+        {
+          "name": "group_title",
+          "value": "group-test"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Read group data.",
+      "url": "//group/{{GROUP_TITLE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Modify group data.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "POST /group/{{GROUP_TITLE}}",
+      "method": "POST",
+      "name": "Modify group data.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "cmd",
+          "value": ""
+        },
+        {
+          "name": "userid",
+          "value": ""
+        },
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "path": "/group/{{GROUP_TITLE}}",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "cmd",
+          "value": ""
+        },
+        {
+          "name": "userid",
+          "value": ""
+        },
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Modify group data.",
+      "url": "//group/{{GROUP_TITLE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Write group data.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "PUT /group/{{GROUP_TITLE}}",
+      "method": "PUT",
+      "name": "Write group data.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/group/{{GROUP_TITLE}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Write group data.",
+      "url": "//group/{{GROUP_TITLE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the list of issue trackers.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /issue_trackers",
+      "method": "GET",
+      "name": "Get the list of issue trackers.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/issue_trackers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the list of issue trackers.",
+      "url": "//issue_trackers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Create an issue tracker.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "POST /issue_trackers",
+      "method": "POST",
+      "name": "Create an issue tracker.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/issue_trackers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an issue tracker.",
+      "url": "//issue_trackers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "OPEN_BUILD_SERVICE_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an issue tracker.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{OPEN_BUILD_SERVICE_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /issue_trackers/{{ISSUE_TRACKER_NAME}}",
+      "method": "DELETE",
+      "name": "Delete an issue tracker.",
+      "note": "Replace {{OPEN_BUILD_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/issue_trackers/{{ISSUE_TRACKER_NAME}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an issue tracker.",
+      "url": "//issue_trackers/{{ISSUE_TRACKER_NAME}}"
+    }
+  ]
+}

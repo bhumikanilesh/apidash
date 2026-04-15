@@ -1,0 +1,2894 @@
+{
+  "id": "threatjammer.com",
+  "info": {
+    "base_url": "",
+    "description": "### What\nObtain the set of public deny lists available in the service and also which ones are already selected by the user and wich ones are not filtering by the resource type.\n\n### Parameters\nThe...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation"
+    ],
+    "title": "ThreatJammer.com User API",
+    "version": "1.2.20"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "payload": {
+          "description": "",
+          "name": "",
+          "resource_type": "UNKNOWN",
+          "tags": [
+            ""
+          ],
+          "ttl": 0
+        }
+      },
+      "body_json": {
+        "payload": {
+          "description": "",
+          "name": "",
+          "resource_type": "UNKNOWN",
+          "tags": [
+            ""
+          ],
+          "ttl": 0
+        }
+      },
+      "body_text": "{\"payload\": {\"description\": \"\", \"name\": \"\", \"resource_type\": \"UNKNOWN\", \"tags\": [\"\"], \"ttl\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nCreates a new allowlist with the information given and binded to the current user. The parameters are:\n - name\n - description\n - tags\n - expiry\n - Time to Live (TTL)\n - Resource Type (`CIDR`, `AS`, `COUNTRY`, `CONTINENT`, `DATACENTER_ID` and `USER AGENT`)\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request will immediately return a 202 Accepted response. The operation will also return the UUID of the list.\n\n### Parameters\nIn the query string the ID of the private allow list to delete.\n\nIn the body the following parameters:\n- ``name``: A human readable name of the list.\n- ``description``: A long detailed information about what the list contains and how it is used.\n- ``tags``: A list of tags that describe the list.\n- ``ttl``: (Optional) The Time To Live of the list, in seconds. If it does not exist, it will never expire.\n- ``resource_type``: The type of resource that the list contains. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT``,    ``DATACENTER_ID`` or ``USER AGENT``.\n\n### Result\nIt should always return a 202 Accepted response with the UUID of the new list in the body.\n\n### Errors\n\n- If the information is not valid, it will return a `422` (Unprocessable Entity) error.\n- If the ttl is negative, it will return a `400` (Bad Request) error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/allowlist/private",
+      "method": "POST",
+      "name": "Creates a new private allowlist binded to the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/allowlist/private",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"payload\": {\"description\": \"\", \"name\": \"\", \"resource_type\": \"UNKNOWN\", \"tags\": [\"\"], \"ttl\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Creates a new private allowlist binded to the user.",
+      "url": "/v1/allowlist/private"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of private allow lists of the user available in the service.\n\n### Parameters\nNo parameters\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n    - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n    - ``origins``: list of websites that are using the list as a allowlist.\n        - ``self``: the URI to all the list of origins.\n        - ``lists``: list of lists that the origin is using.\n            - ``self``: the URI to the individual information of the list.\n            - ``origin``: the protocol and domain of the website that is using the list.\n            - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED`` it means that the list is not available anymore if not renewed.\n            - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n            - ``created_at``: Unix timestamp in seconds when the list was created.\n            - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/private/all",
+      "method": "GET",
+      "name": "Get the set of private allowlists of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/allowlist/private/all",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of private allowlists of the user.",
+      "url": "/v1/allowlist/private/all"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of private allow lists of the user available in the service filtering by resource type. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``\n\n### Parameters\nThe ``resource type`` to filter. The values can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n    - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n    - ``origins``: list of websites that are using the list as a allowlist.\n        - ``self``: the URI to all the list of origins.\n        - ``lists``: list of lists that the origin is using.\n            - ``self``: the URI to the individual information of the list.\n            - ``origin``: the protocol and domain of the website that is using the list.\n            - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED`` it means that the list is not available anymore if not renewed.\n            - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n            - ``created_at``: Unix timestamp in seconds when the list was created.\n            - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\n- If the resource type is not valid, it will return a ``400`` error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/private/all/{{RESOURCE_TYPE}}",
+      "method": "GET",
+      "name": "Get the set of private allowlists of the user by resource type.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/all/{{RESOURCE_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of private allowlists of the user by resource type.",
+      "url": "/v1/allowlist/private/all/{{RESOURCE_TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the list of all the different private allowlists where the IP address entered by the user. The allowlisted forbidden datasets are the ones submitted manually by the user from files or indidual items.\n\n### Parameters\nThe endpoint accepts the `address` parameter as query string.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to individual status.\n- ``cidrs``: the URI of the lists of CIDRs where the IP was found.\n- ``country``: the URIs where the lists of countries where the IP address was found\n- ``continent``: the URI where the continent where the IP address was found.\n- ``asn``: the URIs where the list of continents of the ASN where the IP address was found.\n- ``datacenter``: the URIs of the lists of datacenters where the IP address was found. If not found, the result is an empty string.\n- ``reported``: the URI of the information of the IP address reported by the user. For allowlist should be empty.\n\n### Errors\n- a `422 Unprocessable Entity` error if the IP address was malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/private/ip/{{ADDRESS}}",
+      "method": "GET",
+      "name": "Get the different private allowlists where the IP address was found.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "address",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/ip/{{ADDRESS}}",
+      "pathParameters": [
+        {
+          "name": "address",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the different private allowlists where the IP address was found.",
+      "url": "/v1/allowlist/private/ip/{{ADDRESS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nDelete all the bindings between a user and a private allowlist. This will remove the content of the allowlist, the allowlist from the user and also all the origins that are using the allowlist.\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request willimmediately return a 202 Accepted response.\n\n### Parameters\nIn the query string the ID of the private allow list to delete.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\n- If the list does not exist, it will return a 404 error.\n- If the allow list is not a valid UUID, it will return a 422 error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/allowlist/private/{{ALLOWLIST_ID}}",
+      "method": "DELETE",
+      "name": "Delete all the bindings between a user and a private allowlist.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/{{ALLOWLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete all the bindings between a user and a private allowlist.",
+      "url": "/v1/allowlist/private/{{ALLOWLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the details of the private allow list of the user available in the service.\n\n### Parameters\nPass the private allowlist ID as query parameter.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI to individual information of the list.\n- ``name``: A human readable name of the list.\n- ``description``: A long detailed information about what the list contains and how it is used.\n- ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n- ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n- ``created_at``: Unix timestamp in seconds when the list was created.\n- ``updated_at``: Unix timestamp in seconds when the list was updated.\n- ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n- ``origins``: list of websites that are using the list as a allowlist.\n    - ``self``: the URI to all the list of origins.\n    - ``lists``: list of lists that the origin is using.\n        - ``self``: the URI to the individual information of the list.\n        - ``origin``: the protocol and domain of the website that is using the list.\n        - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED`` it means that the list is not available anymore if not renewed.\n        - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n        - ``created_at``: Unix timestamp in seconds when the list was created.\n        - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\n- If the allow list is not a valid UUID, it will return a 422 error.\n- If the private allowlist ID does not exist, it will return a ``404`` error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/private/{{ALLOWLIST_ID}}",
+      "method": "GET",
+      "name": "Get the details of a specific private allowlist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/{{ALLOWLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the details of a specific private allowlist of the user.",
+      "url": "/v1/allowlist/private/{{ALLOWLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "description": "",
+        "name": "",
+        "tags": [
+          ""
+        ],
+        "ttl": 0
+      },
+      "body_json": {
+        "description": "",
+        "name": "",
+        "tags": [
+          ""
+        ],
+        "ttl": 0
+      },
+      "body_text": "{\"description\": \"\", \"name\": \"\", \"tags\": [\"\"], \"ttl\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nUpdates the information that describes the allowlist of the user in the system. The parameters that can be modified are:\n - name\n - description\n - tags\n - expiry\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request will immediately return a 202 Accepted response.\n\n### Parameters\nIn the query string the ID of the private allow list to delete.\n\nIn the body the following parameters:\n- ``name``: (Optional) A human readable name of the list.\n- ``description``: (Optional) A long detailed information about what the list contains and how it is used.\n- ``tags``: (Optional) A list of tags that describe the list.\n- ``expiry``: (Optional) Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\n- If the list does not exist, it will return a `404` (Not found) error.\n- If the list is a default list, it will return a `403` (Forbidden) error.\n- If the allow list is not a valid UUID, it will return a `422` (Unprocessable Entity) error.\n- If the expiry is not a valid timestamp, it will return a `422` (Unprocessable Entity) error.\n- If the expiry is in the past, it will return a `400` (Bad Request) error.\n- If the name is not a string, it will return a `422` (Unprocessable Entity) error.\n- If the description is not a string, it will return a `422` (Unprocessable Entity) error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/allowlist/private/{{ALLOWLIST_ID}}",
+      "method": "PUT",
+      "name": "Update the information of an existing private allowlist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/{{ALLOWLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"\", \"name\": \"\", \"tags\": [\"\"], \"ttl\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update the information of an existing private allowlist of the user.",
+      "url": "/v1/allowlist/private/{{ALLOWLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nDelete all the content of a private allowlist of the user. This will remove all the elements, and there is no way to recover them.\n\n### Parameters\nPass the private allowlist ID as query parameter.\n\n### Result\nIf successful, it will return a ``202`` (Accepted) response with an empty body. The operation is asynchronous,and can take several seconds to complete.\n\n### Errors\n\n- If the allow list is not a valid UUID, it will return a ``422`` (Unprocessable Entity) error.\n- If the private allowlist ID does not exist, it will return a ``404`` (Not found) error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/allowlist/private/{{ALLOWLIST_ID}}/content",
+      "method": "DELETE",
+      "name": "Delete all the content of a private allowlist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/{{ALLOWLIST_ID}}/content",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete all the content of a private allowlist of the user.",
+      "url": "/v1/allowlist/private/{{ALLOWLIST_ID}}/content"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nReturns the content of the private allowlist of the user. The content can be CIDRs, ASNs, countries, continents or    datacenter IDs.\n\n### Parameters\nPass the private allowlist ID as query parameter.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI to the content of the list.\n- ``cidrs``: (Optional) list of CIDRs in the list.\n- ``asns``: (Optional) list of ASNs in the list.\n- ``countries``: (Optional) list of countries in the list.\n- ``continents``: (Optional) list of continents in the list.\n- ``datacenters``: (Optional) list of datacenters in the list.\n\n### Errors\n\n- If the allow list is not a valid UUID, it will return a ``422`` (Unprocessable Entity) error.\n- If the private allowlist ID does not exist, it will return a ``404`` (Not found) error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/private/{{ALLOWLIST_ID}}/content",
+      "method": "GET",
+      "name": "Get the content of a private allowlist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/{{ALLOWLIST_ID}}/content",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the content of a private allowlist of the user.",
+      "url": "/v1/allowlist/private/{{ALLOWLIST_ID}}/content"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "append": [
+          ""
+        ],
+        "remove": [
+          ""
+        ]
+      },
+      "body_json": {
+        "append": [
+          ""
+        ],
+        "remove": [
+          ""
+        ]
+      },
+      "body_text": "{\"append\": [\"\"], \"remove\": [\"\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nAdd or remove content of a private allowlist of the user. The content can be CIDRs, ASNs, countries, continents or datacenter IDs.\n\nThe number of elements allowed in all the lists are limited depending on the plan of the user:\n- Free: 100 elements\n- Basic: 1000 elements\n- Premium: 10000 elements\n\n### Parameters\nPass the private allowlist ID as query parameter.\n\nIn the body the following parameters:\n- ``append``: (Optional) Add CIDRs, ASNs, countries, continents or datacenter IDs to add to the list. It's not possible to mix different resource types in the same list.\n- ``remove``: (Optional) Extract CIDRs, ASNs, countries, continents or datacenter IDs to add to the list. It's not possible to mix different resource types in the same list.\n\n\n### Result\nIf successful, it will return a ``202`` (Accepted) response with an empty body. The operation is asynchronous,and can take several seconds to complete.\n\n### Errors\n\n- If the allow list is not a valid UUID, it will return a ``422`` (Unprocessable Entity) error.\n- If the private allowlist ID does not exist, it will return a ``404`` (Not found) error.\n- If the ``append`` or ``remove`` parameters are not processable, it will return a ``422`` (Unprocessable Entity) error.\n- If the number of elements in the lists is over the limit, it will return a ``413`` (Payload Too Large) error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/allowlist/private/{{ALLOWLIST_ID}}/content",
+      "method": "PUT",
+      "name": "Add or remove content of a private allowlist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/{{ALLOWLIST_ID}}/content",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"append\": [\"\"], \"remove\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add or remove content of a private allowlist of the user.",
+      "url": "/v1/allowlist/private/{{ALLOWLIST_ID}}/content"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "origin": "",
+        "status": "ACTIVE"
+      },
+      "body_json": {
+        "origin": "",
+        "status": "ACTIVE"
+      },
+      "body_text": "{\"origin\": \"\", \"status\": \"ACTIVE\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nChange the status of the origin of an allow list to ``ACTIVE``, ``INACTIVE`` or ``DELETED``.\n\nAn ``ACTIVE`` origin will apply the allow list to the protocol and domain of the origin. An origin can be created and activated simply toogling the ``ACTIVE`` status. As an optional parameter it can be provided an ``ttl`` or Time To Live parameter of the origin in the list in seconds. After the TTL expires, the origin will be removed from the list.  If the TTL is not provided, the origin will never expire.\n\nAn ``INACTIVE`` origin will not apply the allow list to the protocol and domain of the origin.\n\nA ``DELETED`` origin will be removed from the list. It will not be used by the service anymore. The user can activate it again with the ``ACTIVE`` status.\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request will  immediately return a 202 Accepted response.\n\n*This operation is not available in the Freemium plan.*\n\n### Parameters\nIn the query string the ID of the allow list to change the status.\nIn the body the JSON object with the following fields:\n- ``origin``: The protocol and domain of the origin. It can be ``http://example.com`` or ``https://example.com``.\n- ``status``: The status of the list. It can be ``ACTIVE``, ``INACTIVE`` or ``DELETED``.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\nIf the list does not exist, it will return a 404 error.\nIf the status is not ``ACTIVE`` or ``INACTIVE``, it will return a 422 error.\nIf the TTL is negative in the past, it will return a 422 error.\nIf the allow list is not a valid UUID, it will return a 422 error.\nIf the origin is not a valid URL, it will return a 400 error.\nIf the allowlist is not active, it will returna 409 error.\nIf the origin is not found in the set owned by the user, it will return a 404 error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/allowlist/private/{{ALLOWLIST_ID}}/origin",
+      "method": "PUT",
+      "name": "Toogle the status of the origin in an allow list.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/private/{{ALLOWLIST_ID}}/origin",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"origin\": \"\", \"status\": \"ACTIVE\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Toogle the status of the origin in an allow list.",
+      "url": "/v1/allowlist/private/{{ALLOWLIST_ID}}/origin"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of public allow lists available in the service and also which ones are already selected by the user and wich ones are not.\n\n### Parameters\nNo parameters\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``status``: The status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``    it means that the list is not available anymore if not renewed.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\nIf the list is already selected by the user, the JSON object will also contain the following fields:\n- ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n- ``origins``: list of websites that are using the list as an allowlist.\n    - ``self``: the URI to all the list of origins.\n    - ``lists``: list of lists that the origin is using.\n        - ``self``: the URI to the individual information of the list.\n        - ``origin``: the protocol and domain of the website that is using the list.\n        - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``        it means that the list is not available anymore if not renewed.\n        - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n        - ``created_at``: Unix timestamp in seconds when the list was created.\n        - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/public/all",
+      "method": "GET",
+      "name": "Get the set of public allowlists.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/allowlist/public/all",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of public allowlists.",
+      "url": "/v1/allowlist/public/all"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of public allow lists available in the service and also which ones are already selected by the user and wich ones are not filtering by the resource type.\n\n### Parameters\nThe ``resource type`` to filter. The values can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``status``: The status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``    it means that the list is not available anymore if not renewed.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\nIf the list is already selected by the user, the JSON object will also contain the following fields:\n- ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n- ``origins``: list of websites that are using the list as an allowlist.\n    - ``self``: the URI to all the list of origins.\n    - ``lists``: list of lists that the origin is using.\n        - ``self``: the URI to the individual information of the list.\n        - ``origin``: the protocol and domain of the website that is using the list.\n        - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``        it means that the list is not available anymore if not renewed.\n        - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n        - ``created_at``: Unix timestamp in seconds when the list was created.\n        - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/public/all/{{RESOURCE_TYPE}}",
+      "method": "GET",
+      "name": "Get the set of public allowlists by resource type.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/public/all/{{RESOURCE_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of public allowlists by resource type.",
+      "url": "/v1/allowlist/public/all/{{RESOURCE_TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the list of all the different public allowlists where the IP address entered by the user is. The public allowlists are the ones activated by the user, but managed by Threatjammer administrators.\n\n### Parameters\nThe endpoint accepts the `address` parameter as query string.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to individual status.\n- ``cidrs``: the URI of the lists of CIDRs where the IP was found.\n- ``country``: the URIs where the lists of countries where the IP address was found\n- ``continent``: the URI where the continent where the IP address was found.\n- ``asn``: the URIs where the list of continents of the ASN where the IP address was found.\n- ``datacenter``: the URIs of the lists of datacenters where the IP address was found. If not found, the result is an empty string.\n\n### Errors\n- a `422 Unprocessable Entity` error if the IP address was malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/public/ip/{{ADDRESS}}",
+      "method": "GET",
+      "name": "Get the different public allowlists where the IP address was found.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "address",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/public/ip/{{ADDRESS}}",
+      "pathParameters": [
+        {
+          "name": "address",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the different public allowlists where the IP address was found.",
+      "url": "/v1/allowlist/public/ip/{{ADDRESS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of public allow lists available in the service selected by the user.\n\n### Parameters\nNo parameters\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``status``: The status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``    it means that the list is not available anymore if not renewed.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n    - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n    - ``origins``: list of websites that are using the list as an allowlist.\n        - ``self``: the URI to all the list of origins.\n        - ``lists``: list of lists that the origin is using.\n            - ``self``: the URI to the individual information of the list.\n            - ``origin``: the protocol and domain of the website that is using the list.\n            - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``            it means that the list is not available anymore if not renewed.\n            - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n            - ``created_at``: Unix timestamp in seconds when the list was created.\n            - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/public/owned",
+      "method": "GET",
+      "name": "Get the set of owned allowlists.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/allowlist/public/owned",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of owned allowlists.",
+      "url": "/v1/allowlist/public/owned"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of public allow lists selected by the user and wich ones are not filtering by the resource type.\n\n### Parameters\nThe ``resource type`` to filter. The values can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``status``: The status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``    it means that the list is not available anymore if not renewed.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n    - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n    - ``origins``: list of websites that are using the list as an allowlist.\n        - ``self``: the URI to all the list of origins.\n        - ``lists``: list of lists that the origin is using.\n            - ``self``: the URI to the individual information of the list.\n            - ``origin``: the protocol and domain of the website that is using the list.\n            - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``            it means that the list is not available anymore if not renewed.\n            - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n            - ``created_at``: Unix timestamp in seconds when the list was created.\n            - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/public/owned/{{RESOURCE_TYPE}}",
+      "method": "GET",
+      "name": "Get the set of public allowlists of a user by resource type.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/public/owned/{{RESOURCE_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of public allowlists of a user by resource type.",
+      "url": "/v1/allowlist/public/owned/{{RESOURCE_TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nDelete all the bindings between a user and an allowlist. This will remove the allowlist from the user and also all the origins that are using the allowlist.\n\n This is an asynchronous operation. It can take several seconds until the operation completes, but the request will  immediately return a 202 Accepted response.\n\n### Parameters\nIn the query string the ID of the allow list to change the status.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\nIf the list does not exist, it will return a 404 error.\nIf the allow list is not a valid UUID, it will return a 422 error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/allowlist/public/{{ALLOWLIST_ID}}",
+      "method": "DELETE",
+      "name": "Delete all the bindings between a user and an allowlist.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/public/{{ALLOWLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete all the bindings between a user and an allowlist.",
+      "url": "/v1/allowlist/public/{{ALLOWLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the details of an allow list available in the service.\n\n### Parameters\nNo parameters\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to individual information of the list.\n- ``name``: A human readable name of the list.\n- ``description``: A long detailed information about what the list contains and how it is used.\n- ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n- ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n- ``status``: The status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``it means that the list is not available anymore if not renewed.\n- ``created_at``: Unix timestamp in seconds when the list was created.\n- ``updated_at``: Unix timestamp in seconds when the list was updated.\n\nIf the list is already selected by the user, the JSON object will also contain the following fields:\n    - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n    - ``origins``: list of websites that are using the list as an allowlist.\n        - ``self``: the URI to all the list of origins.\n        - ``lists``: list of lists that the origin is using.\n            - ``self``: the URI to the individual information of the list.\n            - ``origin``: the protocol and domain of the website that is using the list.\n            - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``            it means that the list is not available anymore if not renewed.\n            - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n            - ``created_at``: Unix timestamp in seconds when the list was created.\n            - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIf the list does not exist, it will return a 404 error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/allowlist/public/{{ALLOWLIST_ID}}",
+      "method": "GET",
+      "name": "Get the details of the allowlist.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/public/{{ALLOWLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the details of the allowlist.",
+      "url": "/v1/allowlist/public/{{ALLOWLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "status": "ACTIVE"
+      },
+      "body_json": {
+        "status": "ACTIVE"
+      },
+      "body_text": "{\"status\": \"ACTIVE\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nChange the status of an allow list to ``ACTIVE`` or ``INACTIVE``. An ``INACTIVE`` list will not be used by the service. An ``ACTIVE`` list will be used by the service. As an optional parameter it can be provided an ``expiry`` date in seconds since epoch. If not provided, the list will never expire.\n\n This is an asynchronous operation. It can take several seconds until the operation completes, but the request will  immediately return a 202 Accepted response.\n\n### Parameters\nIn the query string the ID of the allow list to change the status.\nIn the body the JSON object with the following fields:\n- ``status``: The status of the list. It can be ``ACTIVE`` or ``INACTIVE``.\n- ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\nIf the list does not exist, it will return a 404 error.\nIf the status is not ``ACTIVE`` or ``INACTIVE``, it will return a 422 error.\nIf the expiry is not a valid timestamp, it will return a 422 error.\nIf the allow list is not a valid UUID, it will return a 422 error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/allowlist/public/{{ALLOWLIST_ID}}",
+      "method": "PUT",
+      "name": "Toogle the status of an allow list.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/public/{{ALLOWLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"status\": \"ACTIVE\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Toogle the status of an allow list.",
+      "url": "/v1/allowlist/public/{{ALLOWLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "origin": "",
+        "status": "ACTIVE"
+      },
+      "body_json": {
+        "origin": "",
+        "status": "ACTIVE"
+      },
+      "body_text": "{\"origin\": \"\", \"status\": \"ACTIVE\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nChange the status of the origin of an allow list to ``ACTIVE``, ``INACTIVE`` or ``DELETED``.\n\nAn ``ACTIVE`` origin will apply the allow list to the protocol and domain of the origin. An origin can be created and activated simply toogling the ``ACTIVE`` status. As an optional parameter it can be provided an ``ttl`` or Time To Live parameter of the origin in the list in seconds. After the TTL expires, the origin will be removed from the list.  If the TTL is not provided, the origin will never expire.\n\nAn ``INACTIVE`` origin will not apply the allow list to the protocol and domain of the origin.\n\nA ``DELETED`` origin will be removed from the list. It will not be used by the service anymore. The user can activate it again with the ``ACTIVE`` status.\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request will  immediately return a 202 Accepted response.\n\n*This operation is not available in the Freemium plan.*\n\n### Parameters\nIn the query string the ID of the allow list to change the status.\nIn the body the JSON object with the following fields:\n- ``origin``: The protocol and domain of the origin. It can be ``http://example.com`` or ``https://example.com``.\n- ``status``: The status of the list. It can be ``ACTIVE``, ``INACTIVE`` or ``DELETED``.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\nIf the list does not exist, it will return a 404 error.\nIf the status is not ``ACTIVE`` or ``INACTIVE``, it will return a 422 error.\nIf the TTL is negative in the past, it will return a 422 error.\nIf the allow list is not a valid UUID, it will return a 422 error.\nIf the origin is not a valid URL, it will return a 400 error.\nIf the allowlist is not active, it will returna 409 error.\nIf the origin is not found in the set owned by the user, it will return a 404 error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/allowlist/public/{{ALLOWLIST_ID}}/origin",
+      "method": "PUT",
+      "name": "Toogle the status of the origin in an allow list.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/allowlist/public/{{ALLOWLIST_ID}}/origin",
+      "pathParameters": [
+        {
+          "name": "allowlist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"origin\": \"\", \"status\": \"ACTIVE\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Toogle the status of the origin in an allow list.",
+      "url": "/v1/allowlist/public/{{ALLOWLIST_ID}}/origin"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the IPv4 or IPv6 prefix and the Autonomous System information of the IP address passed as a parameter.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``ip_address``: (Mandatory) The IPv4 or IPv6 address to be queried.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI to individual IPv4 prefix.\n- ``asn``: the URI to query the full details of the ASN.\n- ``object_type``: the type of the prefix. The allowed values are: IPv4 or IPv6.\n- ``maintainer``: the information about the maintainer of this prefix in the registry.\n- ``description``: the description of the prefix as registered in the registry.\n- ``registry_date``: the date of registration of the prefix in the registry. The format is YYYY-MM-DD.\n- ``registry_status``: the URI of the status of the prefix as stored in the registry.\n- ``score``: The risk score of the prefix. It ranges from 0 to 99.\n- ``risk``: The risk of the prefix. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n\n### Errors\nThe endpoint will return the following errors:\n- a `404 Not Found` error if the prefix information was not found.\n- a `422 Unprocessable Entity` error if the IP address is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/asn/ip/{{IP_ADDRESS}}",
+      "method": "GET",
+      "name": "Get the IPv4 or IPv6 prefix of the IP address given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ip_address",
+          "value": ""
+        }
+      ],
+      "path": "/v1/asn/ip/{{IP_ADDRESS}}",
+      "pathParameters": [
+        {
+          "name": "ip_address",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the IPv4 or IPv6 prefix of the IP address given.",
+      "url": "/v1/asn/ip/{{IP_ADDRESS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "prefix": ""
+      },
+      "body_json": {
+        "prefix": ""
+      },
+      "body_text": "{\"prefix\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nObtain the IPv4 or IPv6 prefix and the Autonomous System information of the CIDR passed in the body as a POST method. This endpoint works around the problem of passing '/' addresses in the URI.\n\n### Parameters\nThe endpoint accepts only the following parameter in the body as a JSON object:\n- ``prefix``: (Mandatory) The CIDR v4 or v6 to be queried.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI to individual IPv4 prefix.\n- ``asn``: the URI to query the full details of the ASN.\n- ``object_type``: the type of the prefix. The allowed values are: IPv4 or IPv6.\n- ``maintainer``: the information about the maintainer of this prefix in the registry.\n- ``description``: the description of the prefix as registered in the registry.\n- ``registry_date``: the date of registration of the prefix in the registry. The format is YYYY-MM-DD.\n- ``registry_status``: the URI of the status of the prefix as stored in the registry.\n- ``score``: The risk score of the prefix. It ranges from 0 to 99.\n- ``risk``: The risk of the prefix. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n\n### Errors\nThe endpoint will return the following errors:\n- a `404 Not Found` error if the prefix information was not found.\n- a `422 Unprocessable Entity` error if the CIDR is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/asn/prefix",
+      "method": "POST",
+      "name": "Get the IPv4 or IPv6 prefix of the CIDR given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/asn/prefix",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"prefix\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the IPv4 or IPv6 prefix of the CIDR given.",
+      "url": "/v1/asn/prefix"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the list of Regional Internet Registries (RIRs) entities worldwide.\n\n### Parameters\nNo parameters are required.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to individual RIR.\n- ``name``: the RIR name.\n- ``code``: the internal code of the RIR in the system. Possible values are: iana, arin, ripencc, afrinic, apnic, lacnic.\n\n### Errors\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/asn/registry/all",
+      "method": "GET",
+      "name": "Get the list of the Regional Internet Registries (RIRs) entities worldwide.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/asn/registry/all",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the list of the Regional Internet Registries (RIRs) entities worldwide.",
+      "url": "/v1/asn/registry/all"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the information about the Regional Internet Registries (RIRs) given as a parameter.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``code``: (Mandatory) The code that identifies uniquely the RIR. Possible values are: iana, arin, ripencc, afrinic, apnic, lacnic.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI to individual RIR.\n- ``name``: the RIR name.\n- ``code``: the internal code of the RIR in the system.\n\n### Errors\n- a `422 Unprocessable Entity` error if the code is not one of the available.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/asn/registry/{{CODE}}",
+      "method": "GET",
+      "name": "Get the information of a Regional Internet Registries (RIRs) given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "code",
+          "value": ""
+        }
+      ],
+      "path": "/v1/asn/registry/{{CODE}}",
+      "pathParameters": [
+        {
+          "name": "code",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the information of a Regional Internet Registries (RIRs) given.",
+      "url": "/v1/asn/registry/{{CODE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the list of status of an object can be in a registry.\n\n### Parameters\nNo parameters are required.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to individual status.\n- ``name``: the code name.\n- ``code``: the internal code of the status in the system. Possible values are: assigned, reserved, allocated, available.\n\n### Errors\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/asn/status/all",
+      "method": "GET",
+      "name": "Get the list of status of an object in a registry.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/asn/status/all",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the list of status of an object in a registry.",
+      "url": "/v1/asn/status/all"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the information about the status of an object in the registry as a parameter.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``code``: (Mandatory) The code that identifies uniquely the status in the registry. Possible values are: assigned, reserved, allocated, available.\n\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI to individual status.\n- ``name``: the human readable name of the status.\n- ``code``: the internal code of the status in the system.\n\n### Errors\n- a `422 Unprocessable Entity` error if the code is not one of the available.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/asn/status/{{CODE}}",
+      "method": "GET",
+      "name": "Get the information of a status given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "code",
+          "value": ""
+        }
+      ],
+      "path": "/v1/asn/status/{{CODE}}",
+      "pathParameters": [
+        {
+          "name": "code",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the information of a status given.",
+      "url": "/v1/asn/status/{{CODE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the full details of the Autonomous System Number (ASN) passed as a parameter.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``number``: (Mandatory) The ASN number to be queried.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI of the API call\n- ``name``: the name of the Autonomous System as registered in the registries databases.\n- ``description``: the description of the Autonomous System as registered in the registries databases.\n- ``country_code``: the ISO 3166-1 alpha-2 country code of the Autonomous System.\n- ``registry_date``: the date of registration of the Autonomous System in the registry. The format is YYYY-MM-DD.\n- ``registry``: the URI of the registry where the Autonomous System is registered.\n- ``status``: the status of the Autonomous System as stored in the registry.\n- ``prefixes``: the URI to the list of prefixes that belong to the Autonomous System.\n- ``score``: The risk score of the Autonomous System. It ranges from 0 to 99.\n- ``risk``: The risk of the Autonomous System. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n\n\n### Errors\nThe endpoint will return the following errors:\n- a `404 Not Found` error if the AS was not found.\n- a `422 Unprocessable Entity` error if the AS number is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/asn/{{NUMBER}}",
+      "method": "GET",
+      "name": "Get the Autonomous System details of the AS number given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "number",
+          "value": ""
+        }
+      ],
+      "path": "/v1/asn/{{NUMBER}}",
+      "pathParameters": [
+        {
+          "name": "number",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the Autonomous System details of the AS number given.",
+      "url": "/v1/asn/{{NUMBER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the full list of IPv4 and IPv6 prefixes of the Autonomous System Number (ASN) passed as a parameter.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``number``: (Mandatory) The ASN number to be queried.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI of the API call\n- ``asn``: the URI to query the full details of the ASN.\n- ``prefixes_v4``: the list of IPv4 prefixes that belong to the ASN. Each element of the list is a JSON object with the following structure:\n    - ``self``: the URI to individual IPv4 prefix.\n    - ``asn``: the URI to query the full details of the ASN.\n    - ``object_type``: the type of the prefix. The allowed values are: IPv4.\n    - ``maintainer``: the information about the maintainer of this prefix in the registry.\n    - ``description``: the description of the prefix as registered in the registry.\n    - ``registry_date``: the date of registration of the prefix in the registry. The format is YYYY-MM-DD.\n    - ``registry_status``: the URI of the status of the prefix as stored in the registry.\n    - ``score``: The risk score of the prefix. It ranges from 0 to 99.\n    - ``risk``: The risk of the prefix. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n- ``prefixes_v6``: the list of IPv6 prefixes that belong to the ASN. Each element of the list is a JSON object with the following structure:\n    - ``self``: the URI to individual IPv6 prefix.\n    - ``asn``: the URI to query the full details of the ASN.\n    - ``object_type``: the type of the prefix. The allowed values are: IPv6.\n    - ``maintainer``: the information about the maintainer of this prefix in the registry.\n    - ``description``: the description of the prefix as registered in the registry.\n    - ``registry_date``: the date of registration of the prefix in the registry. The format is YYYY-MM-DD.\n    - ``registry_status``: the URI of the status of the prefix as stored in the registry.\n    - ``score``: The risk score of the prefix. It ranges from 0 to 99.\n    - ``risk``: The risk of the prefix. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n\n### Errors\nThe endpoint will return the following errors:\n- a `404 Not Found` error if the AS was not found.\n- a `422 Unprocessable Entity` error if the AS number is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/asn/{{NUMBER}}/prefixes",
+      "method": "GET",
+      "name": "Get the list of IPv4 and IPv6 prefixes of the AS number given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "number",
+          "value": ""
+        }
+      ],
+      "path": "/v1/asn/{{NUMBER}}/prefixes",
+      "pathParameters": [
+        {
+          "name": "number",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the list of IPv4 and IPv6 prefixes of the AS number given.",
+      "url": "/v1/asn/{{NUMBER}}/prefixes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": [
+        ""
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nObtain a numerical score and a risk assessment of all the IP addresses passed as argument.\n\n### Parameters\nA list of public IPv4 or IPv6 addresses is required in the body of the request.\n\n### Result\nThe result contains a list of the result for each IP address, with two main sets of data:\n- The score is a number **between 0 and 99** describing the probability of the IP address being a malicious one, being **0** means that the IP address is not malicious and is not a threat. Being **99** means that the service behind the IP address is probably malicious an certainly a threat.\n\n- The list of information gathered from the IP address to obtain the score.\n\nThe result is a JSON object with the following structure:\n- ``self``: the URI of the API call\n- ``score``: The score of the IP address. It ranges from 0 to 99.\n- ``risk``: The risk of the IP address. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n- ``reason``: It's a human readable representation of the reason of the risk.\n- ``datasets``: The IP address was found in the these lists of datasets used to obtain the risk score. Datasets are described as a list of URIs.\n- ``sources``: The IP address was found in the these source lists at an specific time with a specific risk score. Sources are described as a list of URIs.\n- ``log``: The activity of the IP address in the different datasets used to obtain the risk score. The log is a URI reference.\n- ``asn``: The information about the Autonomous System (AS) of the IP address. The AS is described as an URI.\n- ``asn_prefix``: The information about the Autonomous System (AS) network prefix of the IP address. The prefix is described as an URI.\n- ``datacenter``: If the IP address is part of a datacenter pool, the information about the datacenter is described as an URI.\n- ``datacenter_prefix``: The information about the Datacenter network prefix of the IP address. The `asn_prefix` and `datacenter_prefix` can be the same, but it is not mandatory. The prefix is described as an URI.\n- ``denylisted``: If the IP address was denylisted by the user, the information about the denylisted IP address is described as an URI.\n- ``first_appearence``: URI to the first appearance of the IP address in the different datasets used to obtain the risk score.\n- ``last_appearence``: URI to the last appearance of the IP address in the different datasets used to obtain the risk score.\n\n### Errors\nThe endpoint will return the following errors:\n- a `422 Unprocessable Entity` error if the IP address is malformed.\n\nThe private IP addresses will be ignored, if any.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/assess/ip",
+      "method": "POST",
+      "name": "Get the risk score of all IP address passed in the body and other data signals.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/assess/ip",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the risk score of all IP address passed in the body and other data signals.",
+      "url": "/v1/assess/ip"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "csv_file": ""
+      },
+      "body_json": {
+        "csv_file": ""
+      },
+      "body_text": "{\"csv_file\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nObtain a numerical score and a risk assessment of all the IP addresses uploaded with a text file.\n\n### Parameters\n- A text file with a list of public IPv4 or IPv6 addresses.\n- A header `Content-Type: multipart/form-data` is required.\n- (optional) in the query string the parameeter `strict_parse`: If set to `true`, no malformed IP addresses allowed, returning an error. If set to `false`, malformed IP addresses will be ignored.\n\nExample:\n```\ncurl -X 'POST' \\\n  'https://dublin.api.threatjammer.com/v1/asses/ip/csv[?strict_parse=true|false]' \\\n  -H 'accept: application/json' \\\n  -H 'Authorization: Bearer YOUR_API_KEY' \\\n  -H 'Content-Type: multipart/form-data' \\\n  -F 'csv_file=@YOUR_TEXT_FILE;type=text/csv'\n```\n\n### Result\nThe result contains a list of the result for each IP address, with two main sets of data:\n- The score is a number **between 0 and 99** describing the probability of the IP address being a malicious one, being **0** means that the IP address is not malicious and is not a threat. Being **99** means that the service behind the IP address is probably malicious an certainly a threat.\n\n- The list of information gathered from the IP address to obtain the score.\n\nThe result is a JSON object with the following structure:\n- ``self``: the URI of the API call\n- ``score``: The score of the IP address. It ranges from 0 to 99.\n- ``risk``: The risk of the IP address. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n- ``reason``: It's a human readable representation of the reason of the risk.\n- ``datasets``: The IP address was found in the these lists of datasets used to obtain the risk score. Datasets are described as a list of URIs.\n- ``sources``: The IP address was found in the these source lists at an specific time with a specific risk score. Sources are described as a list of URIs.\n- ``log``: The activity of the IP address in the different datasets used to obtain the risk score. The log is a URI reference.\n- ``asn``: The information about the Autonomous System (AS) of the IP address. The AS is described as an URI.\n- ``asn_prefix``: The information about the Autonomous System (AS) network prefix of the IP address. The prefix is described as an URI.\n- ``datacenter``: If the IP address is part of a datacenter pool, the information about the datacenter is described as an URI.\n- ``datacenter_prefix``: The information about the Datacenter network prefix of the IP address. The `asn_prefix` and `datacenter_prefix` can be the same, but it is not mandatory. The prefix is described as an URI.\n- ``denylisted``: If the IP address was denylisted by the user, the information about the denylisted IP address is described as an URI.\n- ``first_appearence``: URI to the first appearance of the IP address in the different datasets used to obtain the risk score.\n- ``last_appearence``: URI to the last appearance of the IP address in the different datasets used to obtain the risk score.\n\n### Errors\nThe endpoint will return the following errors:\n- a `422 Unprocessable Entity` error if the IP address is malformed.\n\nThe private IP addresses will be ignored, if any.\n\nWhen the `strict_parse` parameter is set to `true`, the endpoint will return the following errors:\n- a `400 Bad Request`.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/assess/ip/csv",
+      "method": "POST",
+      "name": "Get the risk score of all IP address uploaded and other data signals.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "strict_parse",
+          "value": ""
+        }
+      ],
+      "path": "/v1/assess/ip/csv",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "strict_parse",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"csv_file\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the risk score of all IP address uploaded and other data signals.",
+      "url": "/v1/assess/ip/csv"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain a numerical score and a risk assessment of the IP address passed as argument.\n\n### Parameters\nThe only argument accepted in the query string is a public IPv4 or IPv6 addresses.\n\n### Result\nThe result contains two main sets of data:\n- The score is a number **between 0 and 99** describing the probability of the IP address being a malicious one, being **0** means that the IP address is not malicious and is not a threat. Being **99** means that the service behind the IP address is probably malicious an certainly a threat.\n\n- The list of information gathered from the IP address to obtain the score.\n\nThe result is a JSON object with the following structure:\n- ``self``: the URI of the API call\n- ``score``: The score of the IP address. It ranges from 0 to 99.\n- ``risk``: The risk of the IP address. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n- ``reason``: It's a human readable representation of the reason of the risk.\n- ``datasets``: The IP address was found in the these lists of datasets used to obtain the risk score. Datasets are described as a list of URIs.\n- ``sources``: The IP address was found in the these source lists at an specific time with a specific risk score. Sources are described as a list of URIs.\n- ``log``: The activity of the IP address in the different datasets used to obtain the risk score. The log is a URI reference.\n- ``asn``: The information about the Autonomous System (AS) of the IP address. The AS is described as an URI.\n- ``asn_prefix``: The information about the Autonomous System (AS) network prefix of the IP address. The prefix is described as an URI.\n- ``datacenter``: If the IP address is part of a datacenter pool, the information about the datacenter is described as an URI.\n- ``datacenter_prefix``: The information about the Datacenter network prefix of the IP address. The `asn_prefix` and `datacenter_prefix` can be the same, but it is not mandatory. The prefix is described as an URI.\n- ``denylisted``: If the IP address was denylisted by the user, the information about the denylisted IP address is described as an URI.\n- ``first_appearence``: URI to the first appearance of the IP address in the different datasets used to obtain the risk score.\n- ``last_appearence``: URI to the last appearance of the IP address in the different datasets used to obtain the risk score.\n\n### Errors\nThe endpoint will return the following errors:\n- a `400 Bad Request` error if the IP address is not public.\n- a `422 Unprocessable Entity` error if the IP address is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/assess/ip/{{IP_ADDRESS}}",
+      "method": "GET",
+      "name": "Get a risk score of the IP address and different data signals.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ip_address",
+          "value": ""
+        }
+      ],
+      "path": "/v1/assess/ip/{{IP_ADDRESS}}",
+      "pathParameters": [
+        {
+          "name": "ip_address",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a risk score of the IP address and different data signals.",
+      "url": "/v1/assess/ip/{{IP_ADDRESS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the IPv4 or IPv6 prefix and the Datacenter information of the IP address passed as a parameter.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``ip_address``: (Mandatory) The IPv4 or IPv6 address to be queried.\n\n### Result\n- The result is a JSON object with the following structure:\n    - ``self``: the URI to individual IPv4 prefix.\n    - ``datacenter_id``: the URI to query the full details of the Datacenter.\n    - ``score``: The risk score of the prefix. It ranges from 0 to 99.\n    - ``risk``: The risk of the prefix. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n    - ``min_score``: The minimum risk score of the prefix. It ranges from 0 to 99.\n    - ``max_score``: The maximum risk score of the prefix. It ranges from 0 to 99.\n    - ``ip_abuse_total``: The total number of IPs that have been reported as abuse in the range.\n\n\n### Errors\nThe endpoint will return the following errors:\n- a `404 Not Found` error if the prefix information was not found.\n- a `422 Unprocessable Entity` error if the IP address is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/datacenter/ip/{{IP_ADDRESS}}",
+      "method": "GET",
+      "name": "Get the IPv4 or IPv6 prefix of the IP address given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ip_address",
+          "value": ""
+        }
+      ],
+      "path": "/v1/datacenter/ip/{{IP_ADDRESS}}",
+      "pathParameters": [
+        {
+          "name": "ip_address",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the IPv4 or IPv6 prefix of the IP address given.",
+      "url": "/v1/datacenter/ip/{{IP_ADDRESS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "prefix": ""
+      },
+      "body_json": {
+        "prefix": ""
+      },
+      "body_text": "{\"prefix\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nObtain the IPv4 or IPv6 prefix and the Datacenter information of the CIDR passed in the body as a POST method. This endpoint works around the problem of passing '/' addresses in the URI.\n\n### Parameters\nThe endpoint accepts only the following parameter in the body as a JSON object:\n- ``prefix``: (Mandatory) The CIDR v4 or v6 to be queried.\n\n### Result\n- The result is a JSON object with the following structure:\n    - ``self``: the URI to individual IPv4 prefix.\n    - ``datacenter_id``: the URI to query the full details of the Datacenter.\n    - ``score``: The risk score of the prefix. It ranges from 0 to 99.\n    - ``risk``: The risk of the prefix. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n    - ``min_score``: The minimum risk score of the prefix. It ranges from 0 to 99.\n    - ``max_score``: The maximum risk score of the prefix. It ranges from 0 to 99.\n    - ``ip_abuse_total``: The total number of IPs that have been reported as abuse in the range.\n\n\n### Errors\nThe endpoint will return the following errors:\n- a `404 Not Found` error if the prefix information was not found.\n- a `422 Unprocessable Entity` error if the CIDR is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/datacenter/prefix",
+      "method": "POST",
+      "name": "Get the IPv4 or IPv6 prefix of the CIDR given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/datacenter/prefix",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"prefix\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the IPv4 or IPv6 prefix of the CIDR given.",
+      "url": "/v1/datacenter/prefix"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the details of the Datacenter ID passed as a parameter.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``datacenter_id``: (Mandatory) The internal Datacenter ID to be queried.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI of the API call\n- ``name``: the generic name of the Datacenter. The database takes the name from different sources, so it may be different from the real name.\n- ``description``: a full name of the Datacenter. It contains more details about the Datacenter.\n- ``source``: website of the company that owns the Datacenter.\n- ``asn``: the URI to the ASN of the Datacenter.\n- ``status``: the status of the Datacenter. It can be: `enabled` or `disabled`.\n- ``prefixes``: the URI to the list of prefixes that belong to the Datacenter.\n- ``score``: The risk score of the Datacenter. It ranges from 0 to 99.\n- ``risk``: The risk of the Datacenter. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n\n\n### Errors\nThe endpoint will return the following errors:\n- a `404 Not Found` error if the Datacenter was not found.\n- a `422 Unprocessable Entity` error if the Datacenter is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/datacenter/{{DATACENTER_ID}}",
+      "method": "GET",
+      "name": "Get the Datacenter details of datacente given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datacenter_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/datacenter/{{DATACENTER_ID}}",
+      "pathParameters": [
+        {
+          "name": "datacenter_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the Datacenter details of datacente given.",
+      "url": "/v1/datacenter/{{DATACENTER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the full list of IPv4 and IPv6 prefixes of the Datacenter passed as a parameter.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``datacenter_id``: (Mandatory) The internal Datacenter ID to be queried.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI of the API call\n- ``datacenter_id``: the URI to query the full details of the Datacenter.\n- ``prefixes_v4``: the list of IPv4 prefixes that belong to the Datacenter. Each element of the list is a JSON object with the following structure:\n\n    - ``self``: the URI to individual IPv4 prefix.\n    - ``datacenter_id``: the URI to query the full details of the Datacenter.\n    - ``score``: The risk score of the prefix. It ranges from 0 to 99.\n    - ``risk``: The risk of the prefix. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n    - ``min_score``: The minimum risk score of the prefix. It ranges from 0 to 99.\n    - ``max_score``: The maximum risk score of the prefix. It ranges from 0 to 99.\n    - ``ip_abuse_total``: The total number of IPs that have been reported as abuse in the range.\n\n- ``prefixes_v6``: the list of IPv6 prefixes that belong to the Datacenter. Each element of the list is a JSON object with the following structure:\n\n    - ``self``: the URI to individual IPv4 prefix.\n    - ``datacenter_id``: the URI to query the full details of the Datacenter.\n    - ``score``: The risk score of the prefix. It ranges from 0 to 99.\n    - ``risk``: The risk of the prefix. The allowed values are: LOW, MEDIUM, HIGH. It's a human readable representation of the score.\n    - ``min_score``: The minimum risk score of the prefix. It ranges from 0 to 99.\n    - ``max_score``: The maximum risk score of the prefix. It ranges from 0 to 99.\n    - ``ip_abuse_total``: The total number of IPs that have been reported as abuse in the range.\n\n\n### Errors\nThe endpoint will return the following errors:\n- a `404 Not Found` error if the Datacenter was not found.\n- a `422 Unprocessable Entity` error if the Datacenter number is malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/datacenter/{{DATACENTER_ID}}/prefixes",
+      "method": "GET",
+      "name": "Get the list of IPv4 and IPv6 prefixes of the Datacenter given.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datacenter_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/datacenter/{{DATACENTER_ID}}/prefixes",
+      "pathParameters": [
+        {
+          "name": "datacenter_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the list of IPv4 and IPv6 prefixes of the Datacenter given.",
+      "url": "/v1/datacenter/{{DATACENTER_ID}}/prefixes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the list of all the datasets available in the platform. A dataset is a collection of different data sources that are related to a specific topic. The name of the dataset describes the specific topic.\n\n### Parameters\nNo parameters are required.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to individual status.\n- ``types``: a list of JSON objects with the following fields:\n    - ``self``: the URI to individual dataset information.\n    - ``type``: what type of dataset is this. The only allowed value is ``ip``.\n    - ``name``: the name of the dataset in human readable form.\n    - ``description``: a human readable long description of the dataset.\n    - ``status``: the status of the dataset. The only allowed value is ``ENABLED``.\n    - ``items``: the number of 'live' items in the dataset when the request is performed.\n\n### Errors\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/dataset/ip",
+      "method": "GET",
+      "name": "Get the list of all the datasets available in the platform.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/dataset/ip",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the list of all the datasets available in the platform.",
+      "url": "/v1/dataset/ip"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nGet the detailed information of the dataset queried by the name. A dataset is a collection of different data sources that are related to a specific topic. The name of the dataset describes the specific topic.\n\n### Parameters\nThe endpoint accepts only the following parameter in the path:\n- ``name``: (Mandatory) The code name that identifies uniquely the dataset in the platform. It must be composed of uppercase letters, numbers and underscores.\n\n### Result\nThe result is a JSON object with the following fields:\n- ``self``: the URI to individual dataset information.\n- ``type``: what type of dataset is this. The only allowed value is ``ip``.\n- ``name``: the name of the dataset in human readable form.\n- ``description``: a human readable long description of the dataset.\n- ``status``: the status of the dataset. The only allowed value is ``ENABLED``.\n- ``items``: the number of 'live' items in the dataset when the request is performed.\n\n### Errors\n- a `404 Not Found` error if the dataset code name was not found.\n- a `422 Unprocessable Entity` error if dataset code name does not follow the naming convention.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/dataset/ip/{{NAME}}",
+      "method": "GET",
+      "name": "Get the detailed information of the dataset queried.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1/dataset/ip/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the detailed information of the dataset queried.",
+      "url": "/v1/dataset/ip/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "payload": {
+          "description": "",
+          "name": "",
+          "resource_type": "UNKNOWN",
+          "tags": [
+            ""
+          ],
+          "ttl": 0
+        }
+      },
+      "body_json": {
+        "payload": {
+          "description": "",
+          "name": "",
+          "resource_type": "UNKNOWN",
+          "tags": [
+            ""
+          ],
+          "ttl": 0
+        }
+      },
+      "body_text": "{\"payload\": {\"description\": \"\", \"name\": \"\", \"resource_type\": \"UNKNOWN\", \"tags\": [\"\"], \"ttl\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nCreates a new denylist with the information given and binded to the current user. The parameters are:\n - name\n - description\n - tags\n - expiry\n - Time to Live (TTL)\n - Resource Type (`CIDR`, `AS`, `COUNTRY`, `CONTINENT`, `DATACENTER_ID` and `USER AGENT`)\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request will immediately return a 202 Accepted response. The operation will also return the UUID of the list.\n\n### Parameters\nIn the query string the ID of the private deny list to delete.\n\nIn the body the following parameters:\n- ``name``: A human readable name of the list.\n- ``description``: A long detailed information about what the list contains and how it is used.\n- ``tags``: A list of tags that describe the list.\n- ``ttl``: (Optional) The Time To Live of the list, in seconds. If it does not exist, it will never expire.\n- ``resource_type``: The type of resource that the list contains. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT``,    ``DATACENTER_ID`` or ``USER AGENT``.\n\n### Result\nIt should always return a 202 Accepted response with the UUID of the new list in the body.\n\n### Errors\n\n- If the information is not valid, it will return a `422` (Unprocessable Entity) error.\n- If the ttl is negative, it will return a `400` (Bad Request) error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/denylist/private",
+      "method": "POST",
+      "name": "Creates a new private denylist binded to the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/denylist/private",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"payload\": {\"description\": \"\", \"name\": \"\", \"resource_type\": \"UNKNOWN\", \"tags\": [\"\"], \"ttl\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Creates a new private denylist binded to the user.",
+      "url": "/v1/denylist/private"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of private deny lists of the user available in the service. These lists are different datasets:\n- Lists that are part of the automatically reported data from the Report IP, focused on honeypots and automaticreporting from external sources. The name is `External sources reported CIDRs`.\n- Lists that are part of the automatically denylisted by the Threat Jammer service. The name is `Default denylist`.\n- Lists that are created by the user.\n\n### Parameters\nNo parameters\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n    - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n    - ``origins``: list of websites that are using the list as a denylist.\n        - ``self``: the URI to all the list of origins.\n        - ``lists``: list of lists that the origin is using.\n            - ``self``: the URI to the individual information of the list.\n            - ``origin``: the protocol and domain of the website that is using the list.\n            - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED`` it means that the list is not available anymore if not renewed.\n            - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n            - ``created_at``: Unix timestamp in seconds when the list was created.\n            - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/denylist/private/all",
+      "method": "GET",
+      "name": "Get the set of private denylists of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/denylist/private/all",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of private denylists of the user.",
+      "url": "/v1/denylist/private/all"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of private deny lists of the user available in the service filtering by resource type. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``\n\n These lists are different datasets:\n- Lists that are part of the automatically reported data from the Report IP, focused on honeypots and automaticreporting from external sources. The name is `External sources reported CIDRs`. The resource type is ``CIDR``.\n- Lists that are part of the automatically denylisted by the Threat Jammer service. The name is `Default denylist`. The resource type is ``CIDR``.\n- Lists that are created by the user.\n\n### Parameters\nThe ``resource type`` to filter. The values can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n    - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n    - ``origins``: list of websites that are using the list as a denylist.\n        - ``self``: the URI to all the list of origins.\n        - ``lists``: list of lists that the origin is using.\n            - ``self``: the URI to the individual information of the list.\n            - ``origin``: the protocol and domain of the website that is using the list.\n            - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED`` it means that the list is not available anymore if not renewed.\n            - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n            - ``created_at``: Unix timestamp in seconds when the list was created.\n            - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\n- If the resource type is not valid, it will return a ``422`` (Unprocessable Entity) error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/denylist/private/all/{{RESOURCE_TYPE}}",
+      "method": "GET",
+      "name": "Get the set of private denylists of the user by resource type.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/all/{{RESOURCE_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of private denylists of the user by resource type.",
+      "url": "/v1/denylist/private/all/{{RESOURCE_TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the list of all the different denylists where the IP address entered by the user. The denylisted forbidden datasets are the ones submitted manually by the user from files or indidual items.\n\n### Parameters\nThe endpoint accepts the `address` parameter as query string.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to individual status.\n- ``cidrs``: the URI of the lists of CIDRs where the IP was found.\n- ``country``: the URIs where the lists of countries where the IP address was found\n- ``continent``: the URI where the continent where the IP address was found.\n- ``asn``: the URIs where the list of continents of the ASN where the IP address was found.\n- ``datacenter``: the URIs of the lists of datacenters where the IP address was found. If not found, the result is an empty string.\n- ``reported``: the URI of the information of the IP address reported by the user.\n\n### Errors\n- a `422 Unprocessable Entity` error if the IP address was malformed.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/denylist/private/ip/{{ADDRESS}}",
+      "method": "GET",
+      "name": "Get the different denylists where the IP address was found.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "address",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/ip/{{ADDRESS}}",
+      "pathParameters": [
+        {
+          "name": "address",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the different denylists where the IP address was found.",
+      "url": "/v1/denylist/private/ip/{{ADDRESS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nDelete all the bindings between a user and a private denylist. This will remove the content of the denylist, the denylist from the user and also all the origins that are using the denylist.\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request willimmediately return a 202 Accepted response.\n\nThe default lists ``External sources reported CIDRs`` and ``Default denylist`` cannot be deleted, but can be emptied. Please refer to the documentation to delete the content.\n\n### Parameters\nIn the query string the ID of the private deny list to delete.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\n- If the list does not exist, it will return a `404` (Not found) error.\n- If the list is a default list, it will return a `403` (Forbidden) error.\n- If the deny list is not a valid UUID, it will return a `422` (Unprocessable Entity) error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/denylist/private/{{DENYLIST_ID}}",
+      "method": "DELETE",
+      "name": "Delete all the bindings between a user and a private denylist.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/{{DENYLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete all the bindings between a user and a private denylist.",
+      "url": "/v1/denylist/private/{{DENYLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the details of the private deny list of the user available in the service.\n\n### Parameters\nPass the private denylist ID as query parameter.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI to individual information of the list.\n- ``name``: A human readable name of the list.\n- ``description``: A long detailed information about what the list contains and how it is used.\n- ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n- ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n- ``created_at``: Unix timestamp in seconds when the list was created.\n- ``updated_at``: Unix timestamp in seconds when the list was updated.\n- ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n- ``origins``: list of websites that are using the list as a denylist.\n    - ``self``: the URI to all the list of origins.\n    - ``lists``: list of lists that the origin is using.\n        - ``self``: the URI to the individual information of the list.\n        - ``origin``: the protocol and domain of the website that is using the list.\n        - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED`` it means that the list is not available anymore if not renewed.\n        - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n        - ``created_at``: Unix timestamp in seconds when the list was created.\n        - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\n- If the deny list is not a valid UUID, it will return a ``422`` (Unprocessable Entity) error.\n- If the private denylist ID does not exist, it will return a ``404`` (Not found) error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/denylist/private/{{DENYLIST_ID}}",
+      "method": "GET",
+      "name": "Get the details of a specific private denylist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/{{DENYLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the details of a specific private denylist of the user.",
+      "url": "/v1/denylist/private/{{DENYLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "description": "",
+        "name": "",
+        "tags": [
+          ""
+        ],
+        "ttl": 0
+      },
+      "body_json": {
+        "description": "",
+        "name": "",
+        "tags": [
+          ""
+        ],
+        "ttl": 0
+      },
+      "body_text": "{\"description\": \"\", \"name\": \"\", \"tags\": [\"\"], \"ttl\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nUpdates the information that describes the denylist of the user in the system. The parameters that can be modified are:\n - name\n - description\n - tags\n - expiry\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request will immediately return a 202 Accepted response.\n\nThe default lists ``External sources reported CIDRs`` and ``Default denylist`` cannot be updated.\n\n### Parameters\nIn the query string the ID of the private deny list to delete.\n\nIn the body the following parameters:\n- ``name``: (Optional) A human readable name of the list.\n- ``description``: (Optional) A long detailed information about what the list contains and how it is used.\n- ``tags``: (Optional) A list of tags that describe the list.\n- ``expiry``: (Optional) Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\n- If the list does not exist, it will return a `404` (Not found) error.\n- If the list is a default list, it will return a `403` (Forbidden) error.\n- If the deny list is not a valid UUID, it will return a `422` (Unprocessable Entity) error.\n- If the expiry is not a valid timestamp, it will return a `422` (Unprocessable Entity) error.\n- If the expiry is in the past, it will return a `400` (Bad Request) error.\n- If the name is not a string, it will return a `422` (Unprocessable Entity) error.\n- If the description is not a string, it will return a `422` (Unprocessable Entity) error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/denylist/private/{{DENYLIST_ID}}",
+      "method": "PUT",
+      "name": "Update the information of an existing private denylist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/{{DENYLIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"\", \"name\": \"\", \"tags\": [\"\"], \"ttl\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update the information of an existing private denylist of the user.",
+      "url": "/v1/denylist/private/{{DENYLIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nDelete all the content of a private denylist of the user. This will remove all the elements, and there is no way to recover them.\n\n### Parameters\nPass the private denylist ID as query parameter.\n\n### Result\nIf successful, it will return a ``202`` (Accepted) response with an empty body. The operation is asynchronous,and can take several seconds to complete.\n\n### Errors\n\n- If the deny list is not a valid UUID, it will return a ``422`` (Unprocessable Entity) error.\n- If the private denylist ID does not exist, it will return a ``404`` (Not found) error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/denylist/private/{{DENYLIST_ID}}/content",
+      "method": "DELETE",
+      "name": "Delete all the content of a private denylist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/{{DENYLIST_ID}}/content",
+      "pathParameters": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete all the content of a private denylist of the user.",
+      "url": "/v1/denylist/private/{{DENYLIST_ID}}/content"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nReturns the content of the private denylist of the user. The content can be CIDRs, ASNs, countries, continents or    datacenter IDs.\n\n### Parameters\nPass the private denylist ID as query parameter.\n\n### Result\nThe result is a JSON object with the following structure:\n- ``self``: the URI to the content of the list.\n- ``cidrs``: (Optional) list of CIDRs in the list.\n- ``asns``: (Optional) list of ASNs in the list.\n- ``countries``: (Optional) list of countries in the list.\n- ``continents``: (Optional) list of continents in the list.\n- ``datacenters``: (Optional) list of datacenters in the list.\n\n### Errors\n\n- If the deny list is not a valid UUID, it will return a ``422`` (Unprocessable Entity) error.\n- If the private denylist ID does not exist, it will return a ``404`` (Not found) error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/denylist/private/{{DENYLIST_ID}}/content",
+      "method": "GET",
+      "name": "Get the content of a private denylist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/{{DENYLIST_ID}}/content",
+      "pathParameters": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the content of a private denylist of the user.",
+      "url": "/v1/denylist/private/{{DENYLIST_ID}}/content"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "append": [
+          ""
+        ],
+        "remove": [
+          ""
+        ]
+      },
+      "body_json": {
+        "append": [
+          ""
+        ],
+        "remove": [
+          ""
+        ]
+      },
+      "body_text": "{\"append\": [\"\"], \"remove\": [\"\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nAdd or remove content of a private denylist of the user. The content can be CIDRs, ASNs, countries, continents or datacenter IDs.\n\n The number of elements allowed in all the lists are limited depending on the plan of the user:\n- Free: 100 elements\n- Basic: 1000 elements\n- Premium: 10000 elements\n\n### Parameters\nPass the private denylist ID as query parameter.\n\nIn the body the following parameters:\n- ``append``: (Optional) Add CIDRs, ASNs, countries, continents or datacenter IDs to add to the list. It's not possible to mix different resource types in the same list.\n- ``remove``: (Optional) Extract CIDRs, ASNs, countries, continents or datacenter IDs to add to the list. It's not possible to mix different resource types in the same list.\n\n\n### Result\nIf successful, it will return a ``202`` (Accepted) response with an empty body. The operation is asynchronous,and can take several seconds to complete.\n\n### Errors\n\n- If the deny list is not a valid UUID, it will return a ``422`` (Unprocessable Entity) error.\n- If the private denylist ID does not exist, it will return a ``404`` (Not found) error.\n- If the ``append`` or ``remove`` parameters are not processable, it will return a ``422`` (Unprocessable Entity) error.\n- If the number of elements in the lists is over the limit, it will return a ``413`` (Payload Too Large) error.\n\nIt will also return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/denylist/private/{{DENYLIST_ID}}/content",
+      "method": "PUT",
+      "name": "Add or remove content of a private denylist of the user.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/{{DENYLIST_ID}}/content",
+      "pathParameters": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"append\": [\"\"], \"remove\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add or remove content of a private denylist of the user.",
+      "url": "/v1/denylist/private/{{DENYLIST_ID}}/content"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "origin": "",
+        "status": "ACTIVE"
+      },
+      "body_json": {
+        "origin": "",
+        "status": "ACTIVE"
+      },
+      "body_text": "{\"origin\": \"\", \"status\": \"ACTIVE\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### What\nChange the status of the origin of a deny list to ``ACTIVE``, ``INACTIVE`` or ``DELETED``.\n\nAn ``ACTIVE`` origin will apply the deny list to the protocol and domain of the origin. An origin can be created and activated simply toogling the ``ACTIVE`` status. As an optional parameter it can be provided an ``ttl`` or Time To Live parameter of the origin in the list in seconds. After the TTL expires, the origin will be removed from the list.  If the TTL is not provided, the origin will never expire.\n\nAn ``INACTIVE`` origin will not apply the deny list to the protocol and domain of the origin.\n\nA ``DELETED`` origin will be removed from the list. It will not be used by the service anymore. The user can activate it again with the ``ACTIVE`` status.\n\nThis is an asynchronous operation. It can take several seconds until the operation completes, but the request will  immediately return a 202 Accepted response.\n\n*This operation is not available in the Freemium plan.*\n\n### Parameters\nIn the query string the ID of the deny list to change the status.\nIn the body the JSON object with the following fields:\n- ``origin``: The protocol and domain of the origin. It can be ``http://example.com`` or ``https://example.com``.\n- ``status``: The status of the list. It can be ``ACTIVE``, ``INACTIVE`` or ``DELETED``.\n\n### Result\nIt should always return a 202 Accepted response with an empty body.\n\n### Errors\n\nIf the list does not exist, it will return a 404 error.\nIf the status is not ``ACTIVE`` or ``INACTIVE``, it will return a 422 error.\nIf the TTL is negative in the past, it will return a 422 error.\nIf the deny list is not a valid UUID, it will return a 422 error.\nIf the origin is not a valid URL, it will return a 400 error.\nIf the denylist is not active, it will returna 409 error.\nIf the origin is not found in the set owned by the user, it will return a 404 error.\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/denylist/private/{{DENYLIST_ID}}/origin",
+      "method": "PUT",
+      "name": "Toogle the status of the origin in a deny list.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/private/{{DENYLIST_ID}}/origin",
+      "pathParameters": [
+        {
+          "name": "denylist_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"origin\": \"\", \"status\": \"ACTIVE\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Toogle the status of the origin in a deny list.",
+      "url": "/v1/denylist/private/{{DENYLIST_ID}}/origin"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of public deny lists available in the service and also which ones are already selected by the user and wich ones are not.\n\n### Parameters\nNo parameters\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``status``: The status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``    it means that the list is not available anymore if not renewed.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\nIf the list is already selected by the user, the JSON object will also contain the following fields:\n- ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n- ``origins``: list of websites that are using the list as an denylist.\n    - ``self``: the URI to all the list of origins.\n    - ``lists``: list of lists that the origin is using.\n        - ``self``: the URI to the individual information of the list.\n        - ``origin``: the protocol and domain of the website that is using the list.\n        - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``        it means that the list is not available anymore if not renewed.\n        - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n        - ``created_at``: Unix timestamp in seconds when the list was created.\n        - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/denylist/public/all",
+      "method": "GET",
+      "name": "Get the set of public denylists.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/denylist/public/all",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of public denylists.",
+      "url": "/v1/denylist/public/all"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "THREATJAMMERCOM_USER_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### What\nObtain the set of public deny lists available in the service and also which ones are already selected by the user and wich ones are not filtering by the resource type.\n\n### Parameters\nThe ``resource type`` to filter. The values can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n\n### Result\nThe result is a JSON object with a list of the following JSON objects:\n- ``self``: the URI to the status of all the lists.\n- ``lists``: a list of JSON objects with the available lists:\n    - ``self``: the URI to individual information of the list.\n    - ``name``: A human readable name of the list.\n    - ``description``: A long detailed information about what the list contains and how it is used.\n    - ``resource_type``: The type of the list. It can be ``CIDR``, ``AS``, ``COUNTRY``, ``CONTINENT`` or ``DATACENTER_ID``.\n    - ``list_type``: The type of the list. It can be ``ALLOW`` or ``DENY``.\n    - ``status``: The status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``    it means that the list is not available anymore if not renewed.\n    - ``created_at``: Unix timestamp in seconds when the list was created.\n    - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\nIf the list is already selected by the user, the JSON object will also contain the following fields:\n- ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n- ``origins``: list of websites that are using the list as an denylist.\n    - ``self``: the URI to all the list of origins.\n    - ``lists``: list of lists that the origin is using.\n        - ``self``: the URI to the individual information of the list.\n        - ``origin``: the protocol and domain of the website that is using the list.\n        - ``status``: the status of the list. It can be ``ACTIVE`` or ``INACTIVE`` or ``EXPIRED``. If the list is ``EXPIRED``        it means that the list is not available anymore if not renewed.\n        - ``expiry``: Unix timestamp in seconds when the list will expire. If it does not exist, it will never expire.\n        - ``created_at``: Unix timestamp in seconds when the list was created.\n        - ``updated_at``: Unix timestamp in seconds when the list was updated.\n\n### Errors\n\nIt will return the API Global errors described in the API description.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{THREATJAMMERCOM_USER_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/denylist/public/all/{{RESOURCE_TYPE}}",
+      "method": "GET",
+      "name": "Get the set of public denylists by resource type.",
+      "note": "Replace {{THREATJAMMERCOM_USER_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "path": "/v1/denylist/public/all/{{RESOURCE_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "resource_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the set of public denylists by resource type.",
+      "url": "/v1/denylist/public/all/{{RESOURCE_TYPE}}"
+    }
+  ]
+}

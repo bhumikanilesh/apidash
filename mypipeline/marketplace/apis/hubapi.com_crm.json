@@ -1,0 +1,469 @@
+{
+  "id": "hubapi.com_crm",
+  "info": {
+    "base_url": "https://api.hubapi.com/",
+    "description": "Update a card definition with new details.",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "CRM cards",
+    "version": "v3"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns an example card detail response. This is the payload with displayed details for a card that will be shown to a user. An app should send this in response to the data fetch request.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //crm/v3/extensions/cards/sample-response",
+      "method": "GET",
+      "name": "Get sample card detail response",
+      "params": [],
+      "path": "//crm/v3/extensions/cards/sample-response",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get sample card detail response",
+      "url": "https://api.hubapi.com//crm/v3/extensions/cards/sample-response"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CRM_CARDS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of cards for a given app.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        }
+      ],
+      "id": "GET //crm/v3/extensions/cards/{{APP_ID}}",
+      "method": "GET",
+      "name": "Get all cards",
+      "note": "Replace {{CRM_CARDS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "appId",
+          "value": ""
+        }
+      ],
+      "path": "//crm/v3/extensions/cards/{{APP_ID}}",
+      "pathParameters": [
+        {
+          "name": "appId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all cards",
+      "url": "https://api.hubapi.com//crm/v3/extensions/cards/{{APP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CRM_CARDS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "actions": {
+          "baseUrls": [
+            "https://www.example.com/hubspot"
+          ]
+        },
+        "display": {
+          "properties": {
+            "dataType": "STRING",
+            "label": "Pets Name",
+            "name": "pet_name"
+          }
+        },
+        "fetch": {
+          "objectTypes": [
+            {
+              "name": "contacts",
+              "propertiesToSend": [
+                "email",
+                "firstname"
+              ]
+            }
+          ],
+          "targetUrl": "https://www.example.com/hubspot/target"
+        },
+        "title": "PetSpot"
+      },
+      "body_json": {
+        "actions": {
+          "baseUrls": [
+            "https://www.example.com/hubspot"
+          ]
+        },
+        "display": {
+          "properties": {
+            "dataType": "STRING",
+            "label": "Pets Name",
+            "name": "pet_name"
+          }
+        },
+        "fetch": {
+          "objectTypes": [
+            {
+              "name": "contacts",
+              "propertiesToSend": [
+                "email",
+                "firstname"
+              ]
+            }
+          ],
+          "targetUrl": "https://www.example.com/hubspot/target"
+        },
+        "title": "PetSpot"
+      },
+      "body_text": "{\"actions\": {\"baseUrls\": [\"https://www.example.com/hubspot\"]}, \"display\": {\"properties\": {\"dataType\": \"STRING\", \"label\": \"Pets Name\", \"name\": \"pet_name\"}}, \"fetch\": {\"objectTypes\": [{\"name\": \"contacts\", \"propertiesToSend\": [\"email\", \"firstname\"]}], \"targetUrl\": \"https://www.example.com/hubspot/target\"}, \"title\": \"PetSpot\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Defines a new card that will become active on an account when this app is installed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //crm/v3/extensions/cards/{{APP_ID}}",
+      "method": "POST",
+      "name": "Create a new card",
+      "note": "Replace {{CRM_CARDS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "appId",
+          "value": ""
+        }
+      ],
+      "path": "//crm/v3/extensions/cards/{{APP_ID}}",
+      "pathParameters": [
+        {
+          "name": "appId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"actions\": {\"baseUrls\": [\"https://www.example.com/hubspot\"]}, \"display\": {\"properties\": {\"dataType\": \"STRING\", \"label\": \"Pets Name\", \"name\": \"pet_name\"}}, \"fetch\": {\"objectTypes\": [{\"name\": \"contacts\", \"propertiesToSend\": [\"email\", \"firstname\"]}], \"targetUrl\": \"https://www.example.com/hubspot/target\"}, \"title\": \"PetSpot\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new card",
+      "url": "https://api.hubapi.com//crm/v3/extensions/cards/{{APP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CRM_CARDS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Permanently deletes a card definition with the given ID. Once deleted, data fetch requests for this card will no longer be sent to your service. This can't be undone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE //crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}",
+      "method": "DELETE",
+      "name": "Delete a card",
+      "note": "Replace {{CRM_CARDS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "cardId",
+          "value": ""
+        }
+      ],
+      "path": "//crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}",
+      "pathParameters": [
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "cardId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a card",
+      "url": "https://api.hubapi.com//crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CRM_CARDS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the definition for a card with the given ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        }
+      ],
+      "id": "GET //crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}",
+      "method": "GET",
+      "name": "Get a card.",
+      "note": "Replace {{CRM_CARDS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "cardId",
+          "value": ""
+        }
+      ],
+      "path": "//crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}",
+      "pathParameters": [
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "cardId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a card.",
+      "url": "https://api.hubapi.com//crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CRM_CARDS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "actions": {
+          "baseUrls": [
+            "https://www.example.com/hubspot"
+          ]
+        },
+        "display": {
+          "properties": {
+            "dataType": "STRING",
+            "label": "Pets Name",
+            "name": "pet_name"
+          }
+        },
+        "fetch": {
+          "objectTypes": [
+            {
+              "name": "contacts",
+              "propertiesToSend": [
+                "email",
+                "firstname"
+              ]
+            }
+          ],
+          "targetUrl": "https://www.example.com/hubspot/target"
+        },
+        "title": "PetSpot"
+      },
+      "body_json": {
+        "actions": {
+          "baseUrls": [
+            "https://www.example.com/hubspot"
+          ]
+        },
+        "display": {
+          "properties": {
+            "dataType": "STRING",
+            "label": "Pets Name",
+            "name": "pet_name"
+          }
+        },
+        "fetch": {
+          "objectTypes": [
+            {
+              "name": "contacts",
+              "propertiesToSend": [
+                "email",
+                "firstname"
+              ]
+            }
+          ],
+          "targetUrl": "https://www.example.com/hubspot/target"
+        },
+        "title": "PetSpot"
+      },
+      "body_text": "{\"actions\": {\"baseUrls\": [\"https://www.example.com/hubspot\"]}, \"display\": {\"properties\": {\"dataType\": \"STRING\", \"label\": \"Pets Name\", \"name\": \"pet_name\"}}, \"fetch\": {\"objectTypes\": [{\"name\": \"contacts\", \"propertiesToSend\": [\"email\", \"firstname\"]}], \"targetUrl\": \"https://www.example.com/hubspot/target\"}, \"title\": \"PetSpot\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update a card definition with new details.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CRM_CARDS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH //crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}",
+      "method": "PATCH",
+      "name": "Update a card",
+      "note": "Replace {{CRM_CARDS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "cardId",
+          "value": ""
+        }
+      ],
+      "path": "//crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}",
+      "pathParameters": [
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "cardId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"actions\": {\"baseUrls\": [\"https://www.example.com/hubspot\"]}, \"display\": {\"properties\": {\"dataType\": \"STRING\", \"label\": \"Pets Name\", \"name\": \"pet_name\"}}, \"fetch\": {\"objectTypes\": [{\"name\": \"contacts\", \"propertiesToSend\": [\"email\", \"firstname\"]}], \"targetUrl\": \"https://www.example.com/hubspot/target\"}, \"title\": \"PetSpot\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a card",
+      "url": "https://api.hubapi.com//crm/v3/extensions/cards/{{APP_ID}}/{{CARD_ID}}"
+    }
+  ]
+}

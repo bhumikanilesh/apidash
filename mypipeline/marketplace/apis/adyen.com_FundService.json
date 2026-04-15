@@ -1,0 +1,585 @@
+{
+  "id": "adyen.com_FundService",
+  "info": {
+    "base_url": "https://cal-test.adyen.com/cal/services/Fund/v3",
+    "description": "Transfers funds from one account to another account. Both accounts must be in the same platform, but can have different account holders. The transfer must include a transfer code, which should be...",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Fund API",
+    "version": "3"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FUND_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "accountHolderCode": ""
+      },
+      "body_json": {
+        "accountHolderCode": ""
+      },
+      "body_text": "{\"accountHolderCode\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns the account balances of an account holder. An account's balances are organized according by currencies. This mean that an account may have multiple balances: one for each currency.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Fund/v3/accountHolderBalance",
+      "method": "POST",
+      "name": "Get the balances of an account holder",
+      "note": "Replace {{FUND_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Fund/v3/accountHolderBalance",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"accountHolderCode\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the balances of an account holder",
+      "url": "https://cal-test.adyen.com/cal/services/Fund/v3/accountHolderBalance"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FUND_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "accountHolderCode": "",
+        "transactionListsPerAccount": [
+          {
+            "TransactionListForAccount": {
+              "accountCode": "",
+              "page": 0
+            }
+          }
+        ],
+        "transactionStatuses": [
+          "BalanceNotPaidOutTransfer"
+        ]
+      },
+      "body_json": {
+        "accountHolderCode": "",
+        "transactionListsPerAccount": [
+          {
+            "TransactionListForAccount": {
+              "accountCode": "",
+              "page": 0
+            }
+          }
+        ],
+        "transactionStatuses": [
+          "BalanceNotPaidOutTransfer"
+        ]
+      },
+      "body_text": "{\"accountHolderCode\": \"\", \"transactionListsPerAccount\": [{\"TransactionListForAccount\": {\"accountCode\": \"\", \"page\": 0}}], \"transactionStatuses\": [\"BalanceNotPaidOutTransfer\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns a list of transactions for an account holder's accounts. You can specify the accounts and transaction statuses to be included on the list. The call returns a maximum of 50 transactions for each account. To retrieve all transactions, you must make another call with the 'page' value incremented. Transactions are listed in chronological order, with the most recent transaction first.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Fund/v3/accountHolderTransactionList",
+      "method": "POST",
+      "name": "Get a list of transactions",
+      "note": "Replace {{FUND_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Fund/v3/accountHolderTransactionList",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"accountHolderCode\": \"\", \"transactionListsPerAccount\": [{\"TransactionListForAccount\": {\"accountCode\": \"\", \"page\": 0}}], \"transactionStatuses\": [\"BalanceNotPaidOutTransfer\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a list of transactions",
+      "url": "https://cal-test.adyen.com/cal/services/Fund/v3/accountHolderTransactionList"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FUND_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "accountHolderCode": "",
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "bankAccountUUID": "",
+        "description": "",
+        "merchantAccount": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ]
+      },
+      "body_json": {
+        "accountHolderCode": "",
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "bankAccountUUID": "",
+        "description": "",
+        "merchantAccount": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ]
+      },
+      "body_text": "{\"accountHolderCode\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"bankAccountUUID\": \"\", \"description\": \"\", \"merchantAccount\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Sends a direct debit request to an account holder's bank account. If the direct debit is successful, the funds are settled in the accounts specified in the split instructions. Adyen sends the result of the direct debit in a [`DIRECT_DEBIT_INITIATED`](https://docs.adyen.com/api-explorer/#/NotificationService/latest/post/DIRECT_DEBIT_INITIATED) notification webhook.\n\n To learn more about direct debits, see [Top up accounts](https://docs.adyen.com/marketplaces-and-platforms/classic/top-up-accounts).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Fund/v3/debitAccountHolder",
+      "method": "POST",
+      "name": "Send a direct debit request",
+      "note": "Replace {{FUND_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Fund/v3/debitAccountHolder",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"accountHolderCode\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"bankAccountUUID\": \"\", \"description\": \"\", \"merchantAccount\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Send a direct debit request",
+      "url": "https://cal-test.adyen.com/cal/services/Fund/v3/debitAccountHolder"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FUND_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "accountCode": "",
+        "accountHolderCode": "",
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "bankAccountUUID": "",
+        "description": "",
+        "merchantReference": ""
+      },
+      "body_json": {
+        "accountCode": "",
+        "accountHolderCode": "",
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "bankAccountUUID": "",
+        "description": "",
+        "merchantReference": ""
+      },
+      "body_text": "{\"accountCode\": \"\", \"accountHolderCode\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"bankAccountUUID\": \"\", \"description\": \"\", \"merchantReference\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Pays out a specified amount from an account to the bank account of account holder.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Fund/v3/payoutAccountHolder",
+      "method": "POST",
+      "name": "Pay out from an account to the account holder",
+      "note": "Replace {{FUND_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Fund/v3/payoutAccountHolder",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"accountCode\": \"\", \"accountHolderCode\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"bankAccountUUID\": \"\", \"description\": \"\", \"merchantReference\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Pay out from an account to the account holder",
+      "url": "https://cal-test.adyen.com/cal/services/Fund/v3/payoutAccountHolder"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FUND_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "merchantReference": "",
+        "originalReference": ""
+      },
+      "body_json": {
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "merchantReference": "",
+        "originalReference": ""
+      },
+      "body_text": "{\"amount\": {\"currency\": \"\", \"value\": 0}, \"merchantReference\": \"\", \"originalReference\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Refunds funds transferred from one account to another. Both accounts must be in the same platform, but can have different account holders. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Fund/v3/refundFundsTransfer",
+      "method": "POST",
+      "name": "Refund a funds transfer",
+      "note": "Replace {{FUND_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Fund/v3/refundFundsTransfer",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amount\": {\"currency\": \"\", \"value\": 0}, \"merchantReference\": \"\", \"originalReference\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refund a funds transfer",
+      "url": "https://cal-test.adyen.com/cal/services/Fund/v3/refundFundsTransfer"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FUND_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "accountCode": "",
+        "accountHolderCode": ""
+      },
+      "body_json": {
+        "accountCode": "",
+        "accountHolderCode": ""
+      },
+      "body_text": "{\"accountCode\": \"\", \"accountHolderCode\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Refunds all the transactions of an account that have taken place since the most recent payout. This request is on a account basis (as opposed to a payment basis), so only the portion of the payment that was made to the specified account is refunded. The commissions, fees, and payments to other accounts remain in the accounts to which they were sent as designated by the original payment's split details.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Fund/v3/refundNotPaidOutTransfers",
+      "method": "POST",
+      "name": "Refund all transactions of an account since the most recent payout",
+      "note": "Replace {{FUND_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Fund/v3/refundNotPaidOutTransfers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"accountCode\": \"\", \"accountHolderCode\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refund all transactions of an account since the most recent payout",
+      "url": "https://cal-test.adyen.com/cal/services/Fund/v3/refundNotPaidOutTransfers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FUND_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "destinationAccountCode": "",
+        "merchantReference": "",
+        "sourceAccountCode": ""
+      },
+      "body_json": {
+        "destinationAccountCode": "",
+        "merchantReference": "",
+        "sourceAccountCode": ""
+      },
+      "body_text": "{\"destinationAccountCode\": \"\", \"merchantReference\": \"\", \"sourceAccountCode\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Defines a benefactor and a beneficiary relationship between two accounts. At the time of benefactor/beneficiary setup, the funds in the benefactor account are transferred to the beneficiary account, and any further payments to the benefactor account are automatically sent to the beneficiary account. A series of benefactor/beneficiaries may not exceed four beneficiaries and may not have a cycle in it.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Fund/v3/setupBeneficiary",
+      "method": "POST",
+      "name": "Designate a beneficiary account and transfer the benefactor's current balance",
+      "note": "Replace {{FUND_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Fund/v3/setupBeneficiary",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"destinationAccountCode\": \"\", \"merchantReference\": \"\", \"sourceAccountCode\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Designate a beneficiary account and transfer the benefactor's current balance",
+      "url": "https://cal-test.adyen.com/cal/services/Fund/v3/setupBeneficiary"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FUND_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "destinationAccountCode": "",
+        "merchantReference": "",
+        "sourceAccountCode": "",
+        "transferCode": ""
+      },
+      "body_json": {
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "destinationAccountCode": "",
+        "merchantReference": "",
+        "sourceAccountCode": "",
+        "transferCode": ""
+      },
+      "body_text": "{\"amount\": {\"currency\": \"\", \"value\": 0}, \"destinationAccountCode\": \"\", \"merchantReference\": \"\", \"sourceAccountCode\": \"\", \"transferCode\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Transfers funds from one account to another account. Both accounts must be in the same platform, but can have different account holders. The transfer must include a transfer code, which should be determined by the platform, in compliance with local regulations.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{FUND_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Fund/v3/transferFunds",
+      "method": "POST",
+      "name": "Transfer funds between platform accounts",
+      "note": "Replace {{FUND_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Fund/v3/transferFunds",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amount\": {\"currency\": \"\", \"value\": 0}, \"destinationAccountCode\": \"\", \"merchantReference\": \"\", \"sourceAccountCode\": \"\", \"transferCode\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Transfer funds between platform accounts",
+      "url": "https://cal-test.adyen.com/cal/services/Fund/v3/transferFunds"
+    }
+  ]
+}

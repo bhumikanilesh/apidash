@@ -1,0 +1,3478 @@
+{
+  "id": "flat.io",
+  "info": {
+    "base_url": "https://api.flat.io/v2",
+    "description": "Flat API provides Other capabilities via REST API.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Flat API",
+    "version": "2.13.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes",
+      "method": "GET",
+      "name": "List the classes available for the current user",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "state",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "state",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the classes available for the current user",
+      "url": "https://api.flat.io/v2/classes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "name": "Music Theory Course",
+        "section": "Music Theory 101"
+      },
+      "body_json": {
+        "name": "Music Theory Course",
+        "section": "Music Theory 101"
+      },
+      "body_text": "{\"name\": \"Music Theory Course\", \"section\": \"Music Theory 101\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Classrooms on Flat allow you to create activities with assignments and post content to a specific group.\n\nWhen creating a class, Flat automatically creates two groups: one for the teachers of the course, one for the students. The creator of this class is automatically added to the teachers group.\n\nIf the classsroom is synchronized with another application like Google Classroom, some of the meta information will automatically be updated.\n\nYou can add users to this class using `PUT /classes/{class}/users/{user}`, they will automatically added to the group based on their role on Flat. Users can also enroll themselves to this class using `POST /classes/enroll/{enrollmentCode}` and the `enrollmentCode` returned in the `ClassDetails` response.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/classes",
+      "method": "POST",
+      "name": "Create a new class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/classes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"Music Theory Course\", \"section\": \"Music Theory 101\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new class",
+      "url": "https://api.flat.io/v2/classes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this method to join a class using an enrollment code given one of the teacher of this class. This code is also available in the `ClassDetails` returned to the teachers when creating the class or listing / fetching a specific class.\n\nFlat will automatically add the user to the corresponding class group based on this role in the organization.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /v2/classes/enroll/{{ENROLLMENT_CODE}}",
+      "method": "POST",
+      "name": "Join a class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "enrollmentCode",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/enroll/{{ENROLLMENT_CODE}}",
+      "pathParameters": [
+        {
+          "name": "enrollmentCode",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Join a class",
+      "url": "https://api.flat.io/v2/classes/enroll/{{ENROLLMENT_CODE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}",
+      "method": "GET",
+      "name": "Get the details of a single class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the details of a single class",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "name": "Music Theory Course",
+        "section": "Music Theory 101"
+      },
+      "body_json": {
+        "name": "Music Theory Course",
+        "section": "Music Theory 101"
+      },
+      "body_text": "{\"name\": \"Music Theory Course\", \"section\": \"Music Theory 101\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update the meta information of the class\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/classes/{{CLASS}}",
+      "method": "PUT",
+      "name": "Update the class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"Music Theory Course\", \"section\": \"Music Theory 101\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update the class",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Mark the class as `active`. This is mainly used for classes synchronized from Clever that are initially with an `inactive` state and hidden in the UI.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /v2/classes/{{CLASS}}/activate",
+      "method": "POST",
+      "name": "Activate the class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/activate",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Activate the class",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/activate"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Mark the class as `active`. When this course is synchronized with another app, like Google Classroom, this state will be automatically be updated.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/classes/{{CLASS}}/archive",
+      "method": "DELETE",
+      "name": "Unarchive the class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/archive",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unarchive the class",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/archive"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Mark the class as `archived`. When this course is synchronized with another app, like Google Classroom, this state will be automatically be updated.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /v2/classes/{{CLASS}}/archive",
+      "method": "POST",
+      "name": "Archive the class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/archive",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Archive the class",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/archive"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}/assignments",
+      "method": "GET",
+      "name": "Assignments listing",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Assignments listing",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "attachments": [
+          {
+            "score": "0000000000000000",
+            "type": "flat"
+          },
+          {
+            "type": "link",
+            "url": "https://flat.io/developers"
+          }
+        ],
+        "description": "Get started with Flat",
+        "dueDate": "2017-07-12T13:56:19.613000Z",
+        "maxPoints": 100,
+        "scheduledDate": "2017-06-20T13:56:19.613000Z",
+        "title": "First assignment"
+      },
+      "body_json": {
+        "attachments": [
+          {
+            "score": "0000000000000000",
+            "type": "flat"
+          },
+          {
+            "type": "link",
+            "url": "https://flat.io/developers"
+          }
+        ],
+        "description": "Get started with Flat",
+        "dueDate": "2017-07-12T13:56:19.613000Z",
+        "maxPoints": 100,
+        "scheduledDate": "2017-06-20T13:56:19.613000Z",
+        "title": "First assignment"
+      },
+      "body_text": "{\"attachments\": [{\"score\": \"0000000000000000\", \"type\": \"flat\"}, {\"type\": \"link\", \"url\": \"https://flat.io/developers\"}], \"description\": \"Get started with Flat\", \"dueDate\": \"2017-07-12T13:56:19.613000Z\", \"maxPoints\": 100, \"scheduledDate\": \"2017-06-20T13:56:19.613000Z\", \"title\": \"First assignment\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this method as a teacher to create and post a new assignment to a class.\n\nIf the class is synchronized with Google Classroom, the assignment will be automatically posted to your Classroom course.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/classes/{{CLASS}}/assignments",
+      "method": "POST",
+      "name": "Assignment creation",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"attachments\": [{\"score\": \"0000000000000000\", \"type\": \"flat\"}, {\"type\": \"link\", \"url\": \"https://flat.io/developers\"}], \"description\": \"Get started with Flat\", \"dueDate\": \"2017-07-12T13:56:19.613000Z\", \"maxPoints\": 100, \"scheduledDate\": \"2017-06-20T13:56:19.613000Z\", \"title\": \"First assignment\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Assignment creation",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Mark the assignment as `active`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/archive",
+      "method": "DELETE",
+      "name": "Unarchive the assignment.",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/archive",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unarchive the assignment.",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/archive"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Archive the assignment\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/archive",
+      "method": "POST",
+      "name": "Archive the assignment",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/archive",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Archive the assignment",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/archive"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "classroom": "0000000000000000"
+      },
+      "body_json": {
+        "classroom": "0000000000000000"
+      },
+      "body_text": "{\"classroom\": \"0000000000000000\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Copy an assignment to a specified class.\n\nIf the original assignment has a due date in the past, this new assingment will be created without a due date.\n\nIf the new class is synchronized with an external app (e.g. Google Classroom), the copied assignment will also be posted on the external app.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/copy",
+      "method": "POST",
+      "name": "Copy an assignment",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/copy",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"classroom\": \"0000000000000000\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Copy an assignment",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/copy"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions",
+      "method": "GET",
+      "name": "List the students' submissions",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the students' submissions",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "attachments": [
+          {
+            "score": "58c4955a226ffff257211a8d",
+            "title": "Hello - Student",
+            "type": "flat"
+          }
+        ],
+        "submit": true
+      },
+      "body_json": {
+        "attachments": [
+          {
+            "score": "58c4955a226ffff257211a8d",
+            "title": "Hello - Student",
+            "type": "flat"
+          }
+        ],
+        "submit": true
+      },
+      "body_text": "{\"attachments\": [{\"score\": \"58c4955a226ffff257211a8d\", \"title\": \"Hello - Student\", \"type\": \"flat\"}], \"submit\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this method as a student to create, update and submit a submission related to an assignment.\nStudents can only set `attachments` and `submit`.\nTeachers can use `PUT /classes/{class}/assignments/{assignment}/submissions/{submission}` to update a submission by id.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions",
+      "method": "PUT",
+      "name": "Create or edit a submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"attachments\": [{\"score\": \"58c4955a226ffff257211a8d\", \"title\": \"Hello - Student\", \"type\": \"flat\"}], \"submit\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create or edit a submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Export list of submissions grades to a CSV file",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/csv",
+      "method": "GET",
+      "name": "CSV Grades exports",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/csv",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CSV Grades exports",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/csv"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Export list of submissions grades to an Excel file",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/excel",
+      "method": "GET",
+      "name": "Excel Grades exports",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/excel",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Excel Grades exports",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/excel"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this method as a teacher to delete a submission and allow student to start over the assignment\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}",
+      "method": "DELETE",
+      "name": "Delete a submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        },
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        },
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}",
+      "method": "GET",
+      "name": "Get a student submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a student submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "attachments": [
+          {
+            "score": "58c4955a226ffff257211a8d",
+            "title": "Hello - Student",
+            "type": "flat"
+          }
+        ],
+        "submit": true
+      },
+      "body_json": {
+        "attachments": [
+          {
+            "score": "58c4955a226ffff257211a8d",
+            "title": "Hello - Student",
+            "type": "flat"
+          }
+        ],
+        "submit": true
+      },
+      "body_text": "{\"attachments\": [{\"score\": \"58c4955a226ffff257211a8d\", \"title\": \"Hello - Student\", \"type\": \"flat\"}], \"submit\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this method as a teacher to update the different submission and give feedback.\nTeachers can only set `return`, `draftGrade` and `grade`\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}",
+      "method": "PUT",
+      "name": "Edit a submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"attachments\": [{\"score\": \"58c4955a226ffff257211a8d\", \"title\": \"Hello - Student\", \"type\": \"flat\"}], \"submit\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Edit a submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments",
+      "method": "GET",
+      "name": "List the feedback comments of a submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the feedback comments of a submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "comment": ""
+      },
+      "body_json": {
+        "comment": ""
+      },
+      "body_text": "{\"comment\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments",
+      "method": "POST",
+      "name": "Add a feedback comment to a submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"comment\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add a feedback comment to a submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments/{{COMMENT}}",
+      "method": "DELETE",
+      "name": "Delete a feedback comment to a submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        },
+        {
+          "name": "comment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments/{{COMMENT}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        },
+        {
+          "name": "comment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a feedback comment to a submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments/{{COMMENT}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "comment": ""
+      },
+      "body_json": {
+        "comment": ""
+      },
+      "body_text": "{\"comment\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments/{{COMMENT}}",
+      "method": "PUT",
+      "name": "Update a feedback comment to a submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        },
+        {
+          "name": "comment",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments/{{COMMENT}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        },
+        {
+          "name": "comment",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"comment\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a feedback comment to a submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/comments/{{COMMENT}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "For teachers only. Returns a detailed history of the submission. This currently includes state and grade histories.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/history",
+      "method": "GET",
+      "name": "Get the history of the submission",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/history",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "assignment",
+          "value": ""
+        },
+        {
+          "name": "submission",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the history of the submission",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/assignments/{{ASSIGNMENT}}/submissions/{{SUBMISSION}}/history"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this method as a teacher to list all the assignment submissions sent by a student of the class\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/classes/{{CLASS}}/students/{{USER}}/submissions",
+      "method": "GET",
+      "name": "List the submissions for a student",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "user",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/students/{{USER}}/submissions",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "user",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the submissions for a student",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/students/{{USER}}/submissions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method can be used by a teacher to remove a user from the class, or by a student to leave the classroom.\n\nWarning: Removing a user from the class will remove the associated resources, including the submissions and feedback related to these submissions.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/classes/{{CLASS}}/users/{{USER}}",
+      "method": "DELETE",
+      "name": "Remove a user from the class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "user",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/users/{{USER}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "user",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove a user from the class",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/users/{{USER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method can be used by a teacher of the class to enroll another Flat user into the class.\n\nOnly users that are part of your Organization can be enrolled in a class of this same Organization.\n\nWhen enrolling a user in the class, Flat will automatically add this user to the corresponding Class group, based on this role in the Organization.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "PUT /v2/classes/{{CLASS}}/users/{{USER}}",
+      "method": "PUT",
+      "name": "Add a user to the class",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "user",
+          "value": ""
+        }
+      ],
+      "path": "/v2/classes/{{CLASS}}/users/{{USER}}",
+      "pathParameters": [
+        {
+          "name": "class",
+          "value": ""
+        },
+        {
+          "name": "user",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add a user to the class",
+      "url": "https://api.flat.io/v2/classes/{{CLASS}}/users/{{USER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this method to list the user's collections contained in `parent` (by default in the `root` collection).\nIf no sort option is provided, the collections are sorted by `creationDate` `desc`.\n\nNote that this method will not include the `parent` collection in the listing.\nFor example, if you need the details of the `root` collection, you can use `GET /v2/collections/root`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/collections",
+      "method": "GET",
+      "name": "List the collections",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "parent",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "next",
+          "value": ""
+        },
+        {
+          "name": "previous",
+          "value": ""
+        }
+      ],
+      "path": "/v2/collections",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "parent",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "next",
+          "value": ""
+        },
+        {
+          "name": "previous",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the collections",
+      "url": "https://api.flat.io/v2/collections"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "privacy": "private",
+        "title": "Jazz scores"
+      },
+      "body_json": {
+        "privacy": "private",
+        "title": "Jazz scores"
+      },
+      "body_text": "{\"privacy\": \"private\", \"title\": \"Jazz scores\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method will create a new collection and add it to your `root` collection.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/collections",
+      "method": "POST",
+      "name": "Create a new collection",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/collections",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"privacy\": \"private\", \"title\": \"Jazz scores\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new collection",
+      "url": "https://api.flat.io/v2/collections"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method will schedule the deletion of the collection. Until deleted, the collection will be available in the `trash`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/collections/{{COLLECTION}}",
+      "method": "DELETE",
+      "name": "Delete the collection",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collection",
+          "value": ""
+        }
+      ],
+      "path": "/v2/collections/{{COLLECTION}}",
+      "pathParameters": [
+        {
+          "name": "collection",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete the collection",
+      "url": "https://api.flat.io/v2/collections/{{COLLECTION}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/collections/{{COLLECTION}}",
+      "method": "GET",
+      "name": "Get collection details",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collection",
+          "value": ""
+        },
+        {
+          "name": "sharingKey",
+          "value": ""
+        }
+      ],
+      "path": "/v2/collections/{{COLLECTION}}",
+      "pathParameters": [
+        {
+          "name": "collection",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sharingKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get collection details",
+      "url": "https://api.flat.io/v2/collections/{{COLLECTION}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "privacy": "private",
+        "title": ""
+      },
+      "body_json": {
+        "privacy": "private",
+        "title": ""
+      },
+      "body_text": "{\"privacy\": \"private\", \"title\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/collections/{{COLLECTION}}",
+      "method": "PUT",
+      "name": "Update a collection's metadata",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collection",
+          "value": ""
+        }
+      ],
+      "path": "/v2/collections/{{COLLECTION}}",
+      "pathParameters": [
+        {
+          "name": "collection",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"privacy\": \"private\", \"title\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a collection's metadata",
+      "url": "https://api.flat.io/v2/collections/{{COLLECTION}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this method to list the scores contained in a collection.\nIf no sort option is provided, the scores are sorted by `modificationDate` `desc`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/collections/{{COLLECTION}}/scores",
+      "method": "GET",
+      "name": "List the scores contained in a collection",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collection",
+          "value": ""
+        },
+        {
+          "name": "sharingKey",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "next",
+          "value": ""
+        },
+        {
+          "name": "previous",
+          "value": ""
+        }
+      ],
+      "path": "/v2/collections/{{COLLECTION}}/scores",
+      "pathParameters": [
+        {
+          "name": "collection",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sharingKey",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "next",
+          "value": ""
+        },
+        {
+          "name": "previous",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the scores contained in a collection",
+      "url": "https://api.flat.io/v2/collections/{{COLLECTION}}/scores"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method will delete a score from the collection. Unlike [`DELETE /scores/{score}`](#operation/deleteScore), this score will not remove the score from your account, but only from the collection.\nThis can be used to *move* a score from one collection to another, or simply remove a score from one collection when this one is contained in multiple collections.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/collections/{{COLLECTION}}/scores/{{SCORE}}",
+      "method": "DELETE",
+      "name": "Delete a score from the collection",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collection",
+          "value": ""
+        },
+        {
+          "name": "score",
+          "value": ""
+        },
+        {
+          "name": "sharingKey",
+          "value": ""
+        }
+      ],
+      "path": "/v2/collections/{{COLLECTION}}/scores/{{SCORE}}",
+      "pathParameters": [
+        {
+          "name": "collection",
+          "value": ""
+        },
+        {
+          "name": "score",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sharingKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a score from the collection",
+      "url": "https://api.flat.io/v2/collections/{{COLLECTION}}/scores/{{SCORE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This operation will add a score to a collection. The default behavior will make the score available across multiple collections.\nYou must have the capability `canAddScores` on the provided `collection` to perform the action.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "PUT /v2/collections/{{COLLECTION}}/scores/{{SCORE}}",
+      "method": "PUT",
+      "name": "Add a score to the collection",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collection",
+          "value": ""
+        },
+        {
+          "name": "score",
+          "value": ""
+        },
+        {
+          "name": "sharingKey",
+          "value": ""
+        }
+      ],
+      "path": "/v2/collections/{{COLLECTION}}/scores/{{SCORE}}",
+      "pathParameters": [
+        {
+          "name": "collection",
+          "value": ""
+        },
+        {
+          "name": "score",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sharingKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add a score to the collection",
+      "url": "https://api.flat.io/v2/collections/{{COLLECTION}}/scores/{{SCORE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method will restore the collection by removing it from the `trash` and add it back to the `root` collection.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /v2/collections/{{COLLECTION}}/untrash",
+      "method": "POST",
+      "name": "Untrash a collection",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collection",
+          "value": ""
+        }
+      ],
+      "path": "/v2/collections/{{COLLECTION}}/untrash",
+      "pathParameters": [
+        {
+          "name": "collection",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Untrash a collection",
+      "url": "https://api.flat.io/v2/collections/{{COLLECTION}}/untrash"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/groups/{{GROUP}}",
+      "method": "GET",
+      "name": "Get group information",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group",
+          "value": ""
+        }
+      ],
+      "path": "/v2/groups/{{GROUP}}",
+      "pathParameters": [
+        {
+          "name": "group",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get group information",
+      "url": "https://api.flat.io/v2/groups/{{GROUP}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the list of scores shared with a group.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/groups/{{GROUP}}/scores",
+      "method": "GET",
+      "name": "List group's scores",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group",
+          "value": ""
+        },
+        {
+          "name": "parent",
+          "value": ""
+        }
+      ],
+      "path": "/v2/groups/{{GROUP}}/scores",
+      "pathParameters": [
+        {
+          "name": "group",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "parent",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List group's scores",
+      "url": "https://api.flat.io/v2/groups/{{GROUP}}/scores"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/groups/{{GROUP}}/users",
+      "method": "GET",
+      "name": "List group's users",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group",
+          "value": ""
+        },
+        {
+          "name": "source",
+          "value": ""
+        }
+      ],
+      "path": "/v2/groups/{{GROUP}}/users",
+      "pathParameters": [
+        {
+          "name": "group",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "source",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List group's users",
+      "url": "https://api.flat.io/v2/groups/{{GROUP}}/users"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get details about the current authenticated User.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/me",
+      "method": "GET",
+      "name": "Get current user profile",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "onlyId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/me",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "onlyId",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get current user profile",
+      "url": "https://api.flat.io/v2/me"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/organizations/invitations",
+      "method": "GET",
+      "name": "List the organization invitations",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "next",
+          "value": ""
+        },
+        {
+          "name": "previous",
+          "value": ""
+        }
+      ],
+      "path": "/v2/organizations/invitations",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "next",
+          "value": ""
+        },
+        {
+          "name": "previous",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the organization invitations",
+      "url": "https://api.flat.io/v2/organizations/invitations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "email": "edu@flat.io",
+        "organizationRole": "teacher"
+      },
+      "body_json": {
+        "email": "edu@flat.io",
+        "organizationRole": "teacher"
+      },
+      "body_text": "{\"email\": \"edu@flat.io\", \"organizationRole\": \"teacher\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method creates and sends invitation for teachers and admins.\n\nInvitations can only be used by new Flat users or users who are not part of the organization yet.\n\nIf the email of the user is already associated to a user of your organization, the API will simply update the role of the existing user and won't send an invitation. In this case, the property `usedBy` will be directly filled with the uniquer identifier of the corresponding user.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/organizations/invitations",
+      "method": "POST",
+      "name": "Create a new invitation to join the organization",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/organizations/invitations",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email\": \"edu@flat.io\", \"organizationRole\": \"teacher\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new invitation to join the organization",
+      "url": "https://api.flat.io/v2/organizations/invitations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/organizations/invitations/{{INVITATION}}",
+      "method": "DELETE",
+      "name": "Remove an organization invitation",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "invitation",
+          "value": ""
+        }
+      ],
+      "path": "/v2/organizations/invitations/{{INVITATION}}",
+      "pathParameters": [
+        {
+          "name": "invitation",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove an organization invitation",
+      "url": "https://api.flat.io/v2/organizations/invitations/{{INVITATION}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/organizations/lti/credentials",
+      "method": "GET",
+      "name": "List LTI 1.x credentials",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/organizations/lti/credentials",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List LTI 1.x credentials",
+      "url": "https://api.flat.io/v2/organizations/lti/credentials"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "lms": "canvas",
+        "name": "My couple of credentials for Canvas"
+      },
+      "body_json": {
+        "lms": "canvas",
+        "name": "My couple of credentials for Canvas"
+      },
+      "body_text": "{\"lms\": \"canvas\", \"name\": \"My couple of credentials for Canvas\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Flat for Education is a Certified LTI Provider. You can use these API methods to automate the creation of LTI credentials. You can read more about our LTI implementation, supported components and LTI Endpoints in our [Developer Documentation](https://flat.io/developers/docs/lti/).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/organizations/lti/credentials",
+      "method": "POST",
+      "name": "Create a new couple of LTI 1.x credentials",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/organizations/lti/credentials",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"lms\": \"canvas\", \"name\": \"My couple of credentials for Canvas\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new couple of LTI 1.x credentials",
+      "url": "https://api.flat.io/v2/organizations/lti/credentials"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/organizations/lti/credentials/{{CREDENTIALS}}",
+      "method": "DELETE",
+      "name": "Revoke LTI 1.x credentials",
+      "note": "Replace {{FLAT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "credentials",
+          "value": ""
+        }
+      ],
+      "path": "/v2/organizations/lti/credentials/{{CREDENTIALS}}",
+      "pathParameters": [
+        {
+          "name": "credentials",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Revoke LTI 1.x credentials",
+      "url": "https://api.flat.io/v2/organizations/lti/credentials/{{CREDENTIALS}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/organizations/users",
+      "method": "GET",
+      "name": "List the organization users",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "next",
+          "value": ""
+        },
+        {
+          "name": "previous",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "group",
+          "value": ""
+        },
+        {
+          "name": "noActiveLicense",
+          "value": ""
+        },
+        {
+          "name": "licenseExpirationDate",
+          "value": ""
+        },
+        {
+          "name": "onlyIds",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/v2/organizations/users",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "next",
+          "value": ""
+        },
+        {
+          "name": "previous",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "group",
+          "value": ""
+        },
+        {
+          "name": "noActiveLicense",
+          "value": ""
+        },
+        {
+          "name": "licenseExpirationDate",
+          "value": ""
+        },
+        {
+          "name": "onlyIds",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List the organization users",
+      "url": "https://api.flat.io/v2/organizations/users"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "email": "",
+        "firstname": "",
+        "lastname": "",
+        "locale": "en",
+        "password": "",
+        "username": ""
+      },
+      "body_json": {
+        "email": "",
+        "firstname": "",
+        "lastname": "",
+        "locale": "en",
+        "password": "",
+        "username": ""
+      },
+      "body_text": "{\"email\": \"\", \"firstname\": \"\", \"lastname\": \"\", \"locale\": \"en\", \"password\": \"\", \"username\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{FLAT_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/organizations/users",
+      "method": "POST",
+      "name": "Create a new user account",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/organizations/users",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email\": \"\", \"firstname\": \"\", \"lastname\": \"\", \"locale\": \"en\", \"password\": \"\", \"username\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new user account",
+      "url": "https://api.flat.io/v2/organizations/users"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "FLAT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{FLAT_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{FLAT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/organizations/users/count",
+      "method": "GET",
+      "name": "Count the organization users using the provided filters",
+      "note": "Replace {{FLAT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "group",
+          "value": ""
+        },
+        {
+          "name": "noActiveLicense",
+          "value": ""
+        }
+      ],
+      "path": "/v2/organizations/users/count",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "group",
+          "value": ""
+        },
+        {
+          "name": "noActiveLicense",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Count the organization users using the provided filters",
+      "url": "https://api.flat.io/v2/organizations/users/count"
+    }
+  ]
+}

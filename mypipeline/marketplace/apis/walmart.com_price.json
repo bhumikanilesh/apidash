@@ -1,0 +1,279 @@
+{
+  "id": "walmart.com_price",
+  "info": {
+    "base_url": "https://marketplace.walmartapis.com",
+    "description": "Updates the regular price for a given item.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Price Management",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "PRICE_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "subsidyEnrolled": false,
+        "subsidyPreference": false
+      },
+      "body_json": {
+        "subsidyEnrolled": false,
+        "subsidyPreference": false
+      },
+      "body_text": "{\"subsidyEnrolled\": false, \"subsidyPreference\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API helps Sellers to completely opt-in or opt-out from CAP program.\n\nIf the subsidyEnrolled value = \"true\", the Seller enrolls in the CAP program. All eligible SKUs (current and future) are by default opt-in. Seller should use the SKU opt-in/opt-out API to opt-out individual items.\n\nIf the subsidyEnrolled value = \"false\", the Seller stops participating in the CAP program and all eligible SKUs (current and future) are opt-out of the CAP program.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{PRICE_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{PRICE_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/cppreference",
+      "method": "POST",
+      "name": "Set up CAP SKU All",
+      "note": "Replace {{PRICE_MANAGEMENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "WM_SEC.ACCESS_TOKEN",
+          "value": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+        },
+        {
+          "name": "WM_CONSUMER.CHANNEL.TYPE",
+          "value": ""
+        },
+        {
+          "name": "WM_QOS.CORRELATION_ID",
+          "value": "b3261d2d-028a-4ef7-8602-633c23200af6"
+        },
+        {
+          "name": "WM_SVC.NAME",
+          "value": "Walmart Service Name"
+        }
+      ],
+      "path": "/v3/cppreference",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"subsidyEnrolled\": false, \"subsidyPreference\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set up CAP SKU All",
+      "url": "https://marketplace.walmartapis.com/v3/cppreference"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "PRICE_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "file": ""
+      },
+      "body_json": {
+        "file": ""
+      },
+      "body_text": "{\"file\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates prices in bulk.\n\nIn one Feed you can update up to 10,000 items in bulk. To ensure optimal Feed processing time, we recommend sending no more than 1000 items in one Feed and keeping the Feed sizes below 10 MB.\n\nThe price sequence guarantee is observed by the bulk price update functionality, subject to the following rules:\n\nThe timestamp used to determine precedence is passed in the request headers. All price updates in the feed are considered to have the same timestamp. The timestamp in the XML file is used only for auditing.\nYou can send a single SKU multiple times in one Feed. If a SKU is repeated in a Feed, the price will be set for that SKU on Walmart.com, but there is no guarantee as to which SKU's price within that feed will be used.\nThis API should be used in preference to the update a price. It should be called no sooner than 24 hours after a new item is set up and a wpid (Walmart Part ID) is available. Thereafter, the bulk price update has an service level agreement (SLA) of 15 minutes.\n\nAfter the update is submitted, wait for at least five minutes before verifying whether the bulk price update was successful. Individual SKU price update success or failure is only available after the entire feed is processed.\n\nIf a SKU's price update fails (for example, multiple price updates were sent for the same SKU in a single feed), an error will be returned.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{PRICE_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{PRICE_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/feeds",
+      "method": "POST",
+      "name": "Update bulk prices (Multiple)",
+      "note": "Replace {{PRICE_MANAGEMENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "feedType",
+          "value": ""
+        }
+      ],
+      "path": "/v3/feeds",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "feedType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"file\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update bulk prices (Multiple)",
+      "url": "https://marketplace.walmartapis.com/v3/feeds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "PRICE_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "definitions": {},
+        "offerId": "",
+        "pricing": [
+          {
+            "comparisonPrice": {
+              "amount": 0.0,
+              "currency": "USD"
+            },
+            "comparisonPriceType": "BASE",
+            "currentPrice": {
+              "amount": 0.0,
+              "currency": "USD"
+            },
+            "currentPriceType": "BASE",
+            "effectiveDate": "",
+            "expirationDate": "",
+            "priceDisplayCodes": "CART",
+            "processMode": "UPSERT",
+            "promoId": ""
+          }
+        ],
+        "replaceAll": "true",
+        "sku": ""
+      },
+      "body_json": {
+        "definitions": {},
+        "offerId": "",
+        "pricing": [
+          {
+            "comparisonPrice": {
+              "amount": 0.0,
+              "currency": "USD"
+            },
+            "comparisonPriceType": "BASE",
+            "currentPrice": {
+              "amount": 0.0,
+              "currency": "USD"
+            },
+            "currentPriceType": "BASE",
+            "effectiveDate": "",
+            "expirationDate": "",
+            "priceDisplayCodes": "CART",
+            "processMode": "UPSERT",
+            "promoId": ""
+          }
+        ],
+        "replaceAll": "true",
+        "sku": ""
+      },
+      "body_text": "{\"definitions\": {}, \"offerId\": \"\", \"pricing\": [{\"comparisonPrice\": {\"amount\": 0.0, \"currency\": \"USD\"}, \"comparisonPriceType\": \"BASE\", \"currentPrice\": {\"amount\": 0.0, \"currency\": \"USD\"}, \"currentPriceType\": \"BASE\", \"effectiveDate\": \"\", \"expirationDate\": \"\", \"priceDisplayCodes\": \"CART\", \"processMode\": \"UPSERT\", \"promoId\": \"\"}], \"replaceAll\": \"true\", \"sku\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the regular price for a given item.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{PRICE_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{PRICE_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v3/price",
+      "method": "PUT",
+      "name": "Update a price",
+      "note": "Replace {{PRICE_MANAGEMENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "WM_SEC.ACCESS_TOKEN",
+          "value": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+        },
+        {
+          "name": "WM_CONSUMER.CHANNEL.TYPE",
+          "value": ""
+        },
+        {
+          "name": "WM_QOS.CORRELATION_ID",
+          "value": "b3261d2d-028a-4ef7-8602-633c23200af6"
+        },
+        {
+          "name": "WM_SVC.NAME",
+          "value": "Walmart Service Name"
+        }
+      ],
+      "path": "/v3/price",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"definitions\": {}, \"offerId\": \"\", \"pricing\": [{\"comparisonPrice\": {\"amount\": 0.0, \"currency\": \"USD\"}, \"comparisonPriceType\": \"BASE\", \"currentPrice\": {\"amount\": 0.0, \"currency\": \"USD\"}, \"currentPriceType\": \"BASE\", \"effectiveDate\": \"\", \"expirationDate\": \"\", \"priceDisplayCodes\": \"CART\", \"processMode\": \"UPSERT\", \"promoId\": \"\"}], \"replaceAll\": \"true\", \"sku\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a price",
+      "url": "https://marketplace.walmartapis.com/v3/price"
+    }
+  ]
+}

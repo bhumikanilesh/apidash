@@ -1,0 +1,1336 @@
+{
+  "id": "vtex.local_Marketplace-APIs",
+  "info": {
+    "base_url": "https://vtex.local",
+    "description": "All SKUs sent from a seller to a marketplace must be reviewed and matched. Actions in the matching process are added in the request body through the [matchType] object. Match type actions include:...",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Suggestions",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint retrieves a list of all SKUs sent by the seller for the Marketplace's approval. Marketplace operators should use this endpoint whenever they want to check the full list of received SKUs and their  information. \n\nNote that all the information sent by the seller will be in the [content] object. All remaining information in this endpoint's response is given by the Matcher. \n\nMatcher rates received SKUs by correlating the data sent by sellers, to existing fields in the marketplace. The calculation of these scores determines whether the product has been: \n\n`Approved`: score equal to or greater than 80 points. \n\n`Pending`: from 31 to 79 points.\n\n`Denied`: from 0 to 30 points. \n\nNote that  if the autoApprove setting is enabled, the SKUs will be approved, regardless of the Score.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "GET /suggestions",
+      "method": "GET",
+      "name": "Get all SKU suggestions",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "accountName",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "seller",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "hasmapping",
+          "value": ""
+        },
+        {
+          "name": "matcherid",
+          "value": ""
+        },
+        {
+          "name": "_from",
+          "value": ""
+        },
+        {
+          "name": "_to",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "seller",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "hasmapping",
+          "value": ""
+        },
+        {
+          "name": "matcherid",
+          "value": ""
+        },
+        {
+          "name": "_from",
+          "value": ""
+        },
+        {
+          "name": "_to",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all SKU suggestions",
+      "url": "https://vtex.local/suggestions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint retrieves the current approval settings of a marketplace's Received SKUs module. Its response includes: \n\n- `Score`: Matcher scores for approving and rejecting SKUs received from sellers. \n\n- `Matchers`: All Matchers configured on the marketplace, and their respective details. \n\n- `SpecificationsMapping`: Mapping of product and SKU specifications, per seller. \n\n- `MatchFlux`: This field determines the type of approval configuration applied to SKUs received from a seller. \n\nThe possible values include: \n\n-`default`, where the Matcher reviews the SKU, and approves it based on its score. \n\n-`manual`, for manual approvals through the Received SKU UI, or Match API. \n\n-`autoApprove`, for every SKU received from a given seller to be approved automatically, regardless of their Matcher Score.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "GET /suggestions/configuration",
+      "method": "GET",
+      "name": "Get Account's Approval Settings",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/configuration",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Account's Approval Settings",
+      "url": "https://vtex.local/suggestions/configuration"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MatchFlux": "AutoApprove",
+        "Matchers": [
+          {
+            "Description": null,
+            "IsActive": true,
+            "MatcherId": "vtex-matcher",
+            "UpdatesNotificationEndpoint": null,
+            "hook-base-address": "http://simple-suggestion-matcher.vtex.com.br"
+          }
+        ],
+        "Score": {
+          "Approve": 80,
+          "Reject": 30
+        },
+        "SpecificationsMapping": []
+      },
+      "body_json": {
+        "MatchFlux": "AutoApprove",
+        "Matchers": [
+          {
+            "Description": null,
+            "IsActive": true,
+            "MatcherId": "vtex-matcher",
+            "UpdatesNotificationEndpoint": null,
+            "hook-base-address": "http://simple-suggestion-matcher.vtex.com.br"
+          }
+        ],
+        "Score": {
+          "Approve": 80,
+          "Reject": 30
+        },
+        "SpecificationsMapping": []
+      },
+      "body_text": "{\"MatchFlux\": \"AutoApprove\", \"Matchers\": [{\"Description\": null, \"IsActive\": true, \"MatcherId\": \"vtex-matcher\", \"UpdatesNotificationEndpoint\": null, \"hook-base-address\": \"http://simple-suggestion-matcher.vtex.com.br\"}], \"Score\": {\"Approve\": 80, \"Reject\": 30}, \"SpecificationsMapping\": []}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Marketplaces use this endpoint to create or update approval settings on their Received SKUs module. \n\nThe request includes all the details necessary to implement the chosen approval settings.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /suggestions/configuration",
+      "method": "PUT",
+      "name": "Save Account's Approval Settings",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/configuration",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"MatchFlux\": \"AutoApprove\", \"Matchers\": [{\"Description\": null, \"IsActive\": true, \"MatcherId\": \"vtex-matcher\", \"UpdatesNotificationEndpoint\": null, \"hook-base-address\": \"http://simple-suggestion-matcher.vtex.com.br\"}], \"Score\": {\"Approve\": 80, \"Reject\": 30}, \"SpecificationsMapping\": []}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Save Account's Approval Settings",
+      "url": "https://vtex.local/suggestions/configuration"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint can be used to check whether the autoapprove setting is active or not, for a specific seller. \n\nIf the response is `true`, the autoapprove setting is active. If the response is `false`, it is inactive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "GET /suggestions/configuration/autoapproval/toggle",
+      "method": "GET",
+      "name": "Get autoApprove Status in Account Settings",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/configuration/autoapproval/toggle",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get autoApprove Status in Account Settings",
+      "url": "https://vtex.local/suggestions/configuration/autoapproval/toggle"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Enabled": true
+      },
+      "body_json": {
+        "Enabled": true
+      },
+      "body_text": "{\"Enabled\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint enables the autoapprove rule to a marketplace's whole Received SKUs module. Once enabling the rule, received SKUs will be automatically approved on your store, regardless of the seller. \n\n For the autoapprove rule to work as expected, the approval [Matcher score](https://help.vtex.com/en/tutorial/entendendo-a-pontuacao-do-vtex-matcher--tutorials_424) should be set up as 80 (default value), but you can configure a different number through the field `Score` in [Save Account's Approval Settings](https://developers.vtex.com/vtex-rest-api/reference/saveaccountconfig).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /suggestions/configuration/autoapproval/toggle",
+      "method": "PUT",
+      "name": "Activate autoApprove in Marketplace's Account",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/configuration/autoapproval/toggle",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"Enabled\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Activate autoApprove in Marketplace's Account",
+      "url": "https://vtex.local/suggestions/configuration/autoapproval/toggle"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Enabled": true
+      },
+      "body_json": {
+        "Enabled": true
+      },
+      "body_text": "{\"Enabled\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint enables the auto approve setting to received SKUs from a specific seller. Be aware that once enabling the rule through this request, all received SKUs from that seller will be automatically approved on your store, regardless of the Matcher Score.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /suggestions/configuration/autoapproval/toggle/seller/{{SELLER_ID}}",
+      "method": "PUT",
+      "name": "Activate autoApprove Setting for a Seller",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/configuration/autoapproval/toggle/seller/{{SELLER_ID}}",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"Enabled\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Activate autoApprove Setting for a Seller",
+      "url": "https://vtex.local/suggestions/configuration/autoapproval/toggle/seller/{{SELLER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint retrieves the current Received SKUs approval settings applied to a specific seller. Its response includes: \n\n- `sellerId`: A string that identifies the seller in the marketplace. \n\n- `accountId`: Marketplace’s account ID. \n\n- `accountName`: Marketplace’s account name. \n\n- `mapping`: Mapping of SKU and product Specifications. \n\n- `matchFlux`: This field determines the type of approval configuration applied to SKUs received  from a seller. \n\nThe possible values include:  \n\n-`default`, where the Matcher reviews the SKU, and approves it based on its score. \n\n-`manual`, for manual approvals through the Received SKU UI and Match API. \n\n-`autoApprove`, for every SKU received from a given seller to be approved automatically, regardless of the Matcher Score.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "GET /suggestions/configuration/seller/{{SELLER_ID}}",
+      "method": "GET",
+      "name": "Get Seller's Approval Settings",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/configuration/seller/{{SELLER_ID}}",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Seller's Approval Settings",
+      "url": "https://vtex.local/suggestions/configuration/seller/{{SELLER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "mapping": {},
+        "matchFlux": "autoApprove",
+        "sellerId": "seller123"
+      },
+      "body_json": {
+        "mapping": {},
+        "matchFlux": "autoApprove",
+        "sellerId": "seller123"
+      },
+      "body_text": "{\"mapping\": {}, \"matchFlux\": \"autoApprove\", \"sellerId\": \"seller123\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Marketplaces use this endpoint to create or update approval settings to a specific seller, on the Received SKUs module. \n\nThe request includes all the details necessary to implement the chosen approval settings.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /suggestions/configuration/seller/{{SELLER_ID}}",
+      "method": "PUT",
+      "name": "Save Seller's Approval Settings",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/configuration/seller/{{SELLER_ID}}",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"mapping\": {}, \"matchFlux\": \"autoApprove\", \"sellerId\": \"seller123\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Save Seller's Approval Settings",
+      "url": "https://vtex.local/suggestions/configuration/seller/{{SELLER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint allows the user to bulk approve, deny, or associate received SKUs. In a single request, you can match up to 25 received SKUs from your sellers.\n\nThrough the `actionName` attribute you can select the operation you want to apply to the received SKU. \n\nActions include: \n\n1. `newproduct`: match the SKU as a new product. \n\n2. `skuassociation`: associate the received SKU to an existing SKU. \n\n3. `productassociation`: associate the received SKU to an existing product. \n\n4. `deny`: deny the received SKU.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "PUT /suggestions/matches/action/{{ACTION_NAME}}",
+      "method": "PUT",
+      "name": "Match Multiple Received SKUs",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "actionName",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/matches/action/{{ACTION_NAME}}",
+      "pathParameters": [
+        {
+          "name": "actionName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Match Multiple Received SKUs",
+      "url": "https://vtex.local/suggestions/matches/action/{{ACTION_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint deletes a chosen SKU suggestion. Only one SKU should be deleted per request. This request cannot be undone. A workaround to revert its action, is to send the suggestion again, through the Send Suggestion API.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}",
+      "method": "DELETE",
+      "name": "Delete SKU Suggestion",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerSkuId",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerSkuId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete SKU Suggestion",
+      "url": "https://vtex.local/suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint retrieves the data of a specific SKU sent by the seller, to the marketplace. Marketplaces or external matchers can call this endpoint when they want to check the information about a single SKU. \n\nNote that all the information sent by the seller will be in the [content] object. All remaining information in this endpoint's response is given by the Matcher. \n\nMatcher rates received SKUs by correlating the data sent by sellers, to existing fields in the marketplace. The calculation of these scores determines whether the product has been: \n\n`Approved`: score equal to or greater than 80 points. \n\n`Pending`: from 31 to 79 points.\n\n`Denied`: from 0 to 30 points. \n\nNote that  if the autoApprove setting is enabled, the SKUs will be approved, regardless of the Score.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "GET /suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}",
+      "method": "GET",
+      "name": "Get SKU Suggestion by ID",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerSkuId",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerSkuId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get SKU Suggestion by ID",
+      "url": "https://vtex.local/suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "AvailableQuantity": 0,
+        "BrandName": "",
+        "CategoryFullPath": "",
+        "EAN": "EAN10",
+        "Height": 10,
+        "Images": [
+          {
+            "imageName": "Principal",
+            "imageUrl": "https://i.pinimg.com/originals/2d/96/4a/2d964a6bf37d9224d0615dc85fccdd62.jpg"
+          }
+        ],
+        "Length": 10,
+        "MeasurementUnit": "",
+        "Pricing": {
+          "Currency": "",
+          "CurrencySymbol": "",
+          "SalePrice": 0
+        },
+        "ProductDescription": "",
+        "ProductId": "1234",
+        "ProductName": "",
+        "ProductSpecifications": [
+          {
+            "fieldName": "Color",
+            "fieldValues": [
+              "Red",
+              "Green"
+            ]
+          }
+        ],
+        "RefId": "REF10",
+        "SellerId": "1",
+        "SellerStockKeepingUnitId": 0,
+        "SkuName": "",
+        "SkuSpecifications": [
+          {
+            "fieldName": "color",
+            "fieldValues": [
+              "Red"
+            ]
+          }
+        ],
+        "UnitMultiplier": 0,
+        "Weight": 100,
+        "Width": 10
+      },
+      "body_json": {
+        "AvailableQuantity": 0,
+        "BrandName": "",
+        "CategoryFullPath": "",
+        "EAN": "EAN10",
+        "Height": 10,
+        "Images": [
+          {
+            "imageName": "Principal",
+            "imageUrl": "https://i.pinimg.com/originals/2d/96/4a/2d964a6bf37d9224d0615dc85fccdd62.jpg"
+          }
+        ],
+        "Length": 10,
+        "MeasurementUnit": "",
+        "Pricing": {
+          "Currency": "",
+          "CurrencySymbol": "",
+          "SalePrice": 0
+        },
+        "ProductDescription": "",
+        "ProductId": "1234",
+        "ProductName": "",
+        "ProductSpecifications": [
+          {
+            "fieldName": "Color",
+            "fieldValues": [
+              "Red",
+              "Green"
+            ]
+          }
+        ],
+        "RefId": "REF10",
+        "SellerId": "1",
+        "SellerStockKeepingUnitId": 0,
+        "SkuName": "",
+        "SkuSpecifications": [
+          {
+            "fieldName": "color",
+            "fieldValues": [
+              "Red"
+            ]
+          }
+        ],
+        "UnitMultiplier": 0,
+        "Weight": 100,
+        "Width": 10
+      },
+      "body_text": "{\"AvailableQuantity\": 0, \"BrandName\": \"\", \"CategoryFullPath\": \"\", \"EAN\": \"EAN10\", \"Height\": 10, \"Images\": [{\"imageName\": \"Principal\", \"imageUrl\": \"https://i.pinimg.com/originals/2d/96/4a/2d964a6bf37d9224d0615dc85fccdd62.jpg\"}], \"Length\": 10, \"MeasurementUnit\": \"\", \"Pricing\": {\"Currency\": \"\", \"CurrencySymbol\": \"\", \"SalePrice\": 0}, \"ProductDescription\": \"\", \"ProductId\": \"1234\", \"ProductName\": \"\", \"ProductSpecifications\": [{\"fieldName\": \"Color\", \"fieldValues\": [\"Red\", \"Green\"]}], \"RefId\": \"REF10\", \"SellerId\": \"1\", \"SellerStockKeepingUnitId\": 0, \"SkuName\": \"\", \"SkuSpecifications\": [{\"fieldName\": \"color\", \"fieldValues\": [\"Red\"]}], \"UnitMultiplier\": 0, \"Weight\": 100, \"Width\": 10}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This request is used by the seller when it wants to suggest that one of their SKUs is sold in the marketplace.\n\nBefore using this request, the seller should always use the [Change Notification](https://developers.vtex.com/vtex-rest-api/reference/catalog-api-get-seller-sku-notification) request in order to check if the SKU already exists in the marketplace. If it doesn't, then this is the next call in the SKU integration flow.\n\nIn the Send Suggestion request, the seller must send information about the SKU, such as the product and SKU name, the seller ID, and the image URL. All parameters are explained below. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}",
+      "method": "PUT",
+      "name": "Send SKU Suggestion",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerSkuId",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerSkuId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"AvailableQuantity\": 0, \"BrandName\": \"\", \"CategoryFullPath\": \"\", \"EAN\": \"EAN10\", \"Height\": 10, \"Images\": [{\"imageName\": \"Principal\", \"imageUrl\": \"https://i.pinimg.com/originals/2d/96/4a/2d964a6bf37d9224d0615dc85fccdd62.jpg\"}], \"Length\": 10, \"MeasurementUnit\": \"\", \"Pricing\": {\"Currency\": \"\", \"CurrencySymbol\": \"\", \"SalePrice\": 0}, \"ProductDescription\": \"\", \"ProductId\": \"1234\", \"ProductName\": \"\", \"ProductSpecifications\": [{\"fieldName\": \"Color\", \"fieldValues\": [\"Red\", \"Green\"]}], \"RefId\": \"REF10\", \"SellerId\": \"1\", \"SellerStockKeepingUnitId\": 0, \"SkuName\": \"\", \"SkuSpecifications\": [{\"fieldName\": \"color\", \"fieldValues\": [\"Red\"]}], \"UnitMultiplier\": 0, \"Weight\": 100, \"Width\": 10}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Send SKU Suggestion",
+      "url": "https://vtex.local/suggestions/{{SELLER_ID}}/{{SELLER_SKU_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Whenever an SKU Suggestion is updated or changed, a new version of the original one is created. All versions are logged, so you can search for previous our current states of SKU suggestions. \n\nThis endpoint retrieves the data of *all* previous and latest versions of a specific SKU suggestion, sent by the seller. Whenever an SKU is updated, it is important to map previous versions, to compare and identify changes. \n\nThe response's object [latestversion] provides the information of the most recent version of that SKU suggestion.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "GET /suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions",
+      "method": "GET",
+      "name": "Get all Versions",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerskuid",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerskuid",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Versions",
+      "url": "https://vtex.local/suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Whenever an SKU Suggestion is updated or changed, a new version of the original one is created. All versions are logged, so you can search for previous our current states of SKU suggestions. \n\nThis endpoint retrieves a specific *version* of a chosen SKU sent by the seller. Add the Seller's ID, Seller's SKU ID, and version ID in the path to detail your search.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        }
+      ],
+      "id": "GET /suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions/{{VERSION}}",
+      "method": "GET",
+      "name": "Get Version by ID",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerskuid",
+          "value": ""
+        },
+        {
+          "name": "version",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions/{{VERSION}}",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerskuid",
+          "value": ""
+        },
+        {
+          "name": "version",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Version by ID",
+      "url": "https://vtex.local/suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions/{{VERSION}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SUGGESTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "matchType": "itemMatch",
+        "matcherId": "{{matcherid}}",
+        "product": {
+          "brandId": 1234567,
+          "categoryId": 12,
+          "description": "Descricao exemplo",
+          "name": "Produto exemplo",
+          "specifications": null
+        },
+        "productRef": "{{productRef}}(should be specified when match is a product match)",
+        "score": "{{score}} (must be decimal)",
+        "sku": {
+          "eans": [
+            "12345678901213"
+          ],
+          "height": 1,
+          "images": [
+            {
+              "imagem1.jpg": "imageurl.example"
+            }
+          ],
+          "length": 1,
+          "measurementUnit": "un",
+          "name": "Sku exemplo",
+          "refId": null,
+          "specifications": {
+            "Embalagem": "3 kg"
+          },
+          "unitMultiplier": 1,
+          "weight": 1,
+          "width": 1
+        },
+        "skuRef": "{{skuid}}(should be specifed when match is a sku match)"
+      },
+      "body_json": {
+        "matchType": "itemMatch",
+        "matcherId": "{{matcherid}}",
+        "product": {
+          "brandId": 1234567,
+          "categoryId": 12,
+          "description": "Descricao exemplo",
+          "name": "Produto exemplo",
+          "specifications": null
+        },
+        "productRef": "{{productRef}}(should be specified when match is a product match)",
+        "score": "{{score}} (must be decimal)",
+        "sku": {
+          "eans": [
+            "12345678901213"
+          ],
+          "height": 1,
+          "images": [
+            {
+              "imagem1.jpg": "imageurl.example"
+            }
+          ],
+          "length": 1,
+          "measurementUnit": "un",
+          "name": "Sku exemplo",
+          "refId": null,
+          "specifications": {
+            "Embalagem": "3 kg"
+          },
+          "unitMultiplier": 1,
+          "weight": 1,
+          "width": 1
+        },
+        "skuRef": "{{skuid}}(should be specifed when match is a sku match)"
+      },
+      "body_text": "{\"matchType\": \"itemMatch\", \"matcherId\": \"{{matcherid}}\", \"product\": {\"brandId\": 1234567, \"categoryId\": 12, \"description\": \"Descricao exemplo\", \"name\": \"Produto exemplo\", \"specifications\": null}, \"productRef\": \"{{productRef}}(should be specified when match is a product match)\", \"score\": \"{{score}} (must be decimal)\", \"sku\": {\"eans\": [\"12345678901213\"], \"height\": 1, \"images\": [{\"imagem1.jpg\": \"imageurl.example\"}], \"length\": 1, \"measurementUnit\": \"un\", \"name\": \"Sku exemplo\", \"refId\": null, \"specifications\": {\"Embalagem\": \"3 kg\"}, \"unitMultiplier\": 1, \"weight\": 1, \"width\": 1}, \"skuRef\": \"{{skuid}}(should be specifed when match is a sku match)\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "All SKUs sent from a seller to a marketplace must be reviewed and matched. Actions in the matching process are added in the request body through the [matchType] object. Match type actions include: \n\n1. `newproduct`: match the SKU as a new product. \n\n2. `itemMatch`: associate the received SKU to an existing SKU. \n\n3. `productMatch`: associate the received SKU to an existing product. \n\n4. `deny`: deny the received SKU. \n\n5. `pending`: the received SKU requires attention. \n\n6. `incomplete`: the received SKU is lacking information to be matched. \n\n7. `insufficientScore`: the score given by the Matcher to this received SKU doesn't qualify it to be matched. \n\nNote that  if the autoApprove setting is enabled, the SKUs will be approved, regardless of the Score.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SUGGESTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions/{{VERSION}}/matches/{{MATCHID}}",
+      "method": "PUT",
+      "name": "Match Received SKUs individually",
+      "note": "Replace {{SUGGESTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerskuid",
+          "value": ""
+        },
+        {
+          "name": "version",
+          "value": ""
+        },
+        {
+          "name": "matchid",
+          "value": ""
+        },
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "path": "/suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions/{{VERSION}}/matches/{{MATCHID}}",
+      "pathParameters": [
+        {
+          "name": "sellerId",
+          "value": ""
+        },
+        {
+          "name": "sellerskuid",
+          "value": ""
+        },
+        {
+          "name": "version",
+          "value": ""
+        },
+        {
+          "name": "matchid",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "accountName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"matchType\": \"itemMatch\", \"matcherId\": \"{{matcherid}}\", \"product\": {\"brandId\": 1234567, \"categoryId\": 12, \"description\": \"Descricao exemplo\", \"name\": \"Produto exemplo\", \"specifications\": null}, \"productRef\": \"{{productRef}}(should be specified when match is a product match)\", \"score\": \"{{score}} (must be decimal)\", \"sku\": {\"eans\": [\"12345678901213\"], \"height\": 1, \"images\": [{\"imagem1.jpg\": \"imageurl.example\"}], \"length\": 1, \"measurementUnit\": \"un\", \"name\": \"Sku exemplo\", \"refId\": null, \"specifications\": {\"Embalagem\": \"3 kg\"}, \"unitMultiplier\": 1, \"weight\": 1, \"width\": 1}, \"skuRef\": \"{{skuid}}(should be specifed when match is a sku match)\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Match Received SKUs individually",
+      "url": "https://vtex.local/suggestions/{{SELLER_ID}}/{{SELLERSKUID}}/versions/{{VERSION}}/matches/{{MATCHID}}"
+    }
+  ]
+}

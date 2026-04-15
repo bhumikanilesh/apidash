@@ -1,0 +1,3693 @@
+{
+  "id": "box.com",
+  "info": {
+    "base_url": "https://api.box.com/2.0",
+    "description": "Returns the contents of a file in binary format.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Box Platform API",
+    "version": "2.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Authorize a user by sending them through the [Box](https://box.com)\nwebsite and request their permission to act on their behalf.\n\nThis is the first step when authenticating a user using\nOAuth 2.0. To request a user's authorization to use the Box APIs\non their behalf you will need to send a user to the URL with this\nformat.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /2.0/authorize",
+      "method": "GET",
+      "name": "Authorize user",
+      "params": [
+        {
+          "name": "response_type",
+          "value": "code"
+        },
+        {
+          "name": "client_id",
+          "value": "ly1nj6n11vionaie65emwzk575hnnmrk"
+        },
+        {
+          "name": "redirect_uri",
+          "value": "http://example.com/auth/callback"
+        },
+        {
+          "name": "state",
+          "value": "my_state"
+        },
+        {
+          "name": "scope",
+          "value": "admin_readwrite"
+        }
+      ],
+      "path": "/2.0/authorize",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "response_type",
+          "value": "code"
+        },
+        {
+          "name": "client_id",
+          "value": "ly1nj6n11vionaie65emwzk575hnnmrk"
+        },
+        {
+          "name": "redirect_uri",
+          "value": "http://example.com/auth/callback"
+        },
+        {
+          "name": "state",
+          "value": "my_state"
+        },
+        {
+          "name": "scope",
+          "value": "admin_readwrite"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Authorize user",
+      "url": "https://api.box.com/2.0/authorize"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the list domains that have been deemed safe to create collaborations\nfor within the current enterprise.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/collaboration_whitelist_entries",
+      "method": "GET",
+      "name": "List allowed collaboration domains",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "path": "/2.0/collaboration_whitelist_entries",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List allowed collaboration domains",
+      "url": "https://api.box.com/2.0/collaboration_whitelist_entries"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "direction": "inbound",
+        "domain": "example.com"
+      },
+      "body_json": {
+        "direction": "inbound",
+        "domain": "example.com"
+      },
+      "body_text": "{\"direction\": \"inbound\", \"domain\": \"example.com\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new entry in the list of allowed domains to allow\ncollaboration for.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/collaboration_whitelist_entries",
+      "method": "POST",
+      "name": "Add domain to list of allowed collaboration domains",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [],
+      "path": "/2.0/collaboration_whitelist_entries",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"direction\": \"inbound\", \"domain\": \"example.com\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add domain to list of allowed collaboration domains",
+      "url": "https://api.box.com/2.0/collaboration_whitelist_entries"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Removes a domain from the list of domains that have been deemed safe to create\ncollaborations for within the current enterprise.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/collaboration_whitelist_entries/{{COLLABORATION_WHITELIST_ENTRY_ID}}",
+      "method": "DELETE",
+      "name": "Remove domain from list of allowed collaboration domains",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collaboration_whitelist_entry_id",
+          "value": "213123"
+        }
+      ],
+      "path": "/2.0/collaboration_whitelist_entries/{{COLLABORATION_WHITELIST_ENTRY_ID}}",
+      "pathParameters": [
+        {
+          "name": "collaboration_whitelist_entry_id",
+          "value": "213123"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove domain from list of allowed collaboration domains",
+      "url": "https://api.box.com/2.0/collaboration_whitelist_entries/{{COLLABORATION_WHITELIST_ENTRY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a domain that has been deemed safe to create collaborations\nfor within the current enterprise.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/collaboration_whitelist_entries/{{COLLABORATION_WHITELIST_ENTRY_ID}}",
+      "method": "GET",
+      "name": "Get allowed collaboration domain",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collaboration_whitelist_entry_id",
+          "value": "213123"
+        }
+      ],
+      "path": "/2.0/collaboration_whitelist_entries/{{COLLABORATION_WHITELIST_ENTRY_ID}}",
+      "pathParameters": [
+        {
+          "name": "collaboration_whitelist_entry_id",
+          "value": "213123"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get allowed collaboration domain",
+      "url": "https://api.box.com/2.0/collaboration_whitelist_entries/{{COLLABORATION_WHITELIST_ENTRY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of users who have been exempt from the collaboration\ndomain restrictions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/collaboration_whitelist_exempt_targets",
+      "method": "GET",
+      "name": "List users exempt from collaboration domain restrictions",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "path": "/2.0/collaboration_whitelist_exempt_targets",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List users exempt from collaboration domain restrictions",
+      "url": "https://api.box.com/2.0/collaboration_whitelist_exempt_targets"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "user": {
+          "id": "23522323"
+        }
+      },
+      "body_json": {
+        "user": {
+          "id": "23522323"
+        }
+      },
+      "body_text": "{\"user\": {\"id\": \"23522323\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Exempts a user from the restrictions set out by the allowed list of domains\nfor collaborations.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/collaboration_whitelist_exempt_targets",
+      "method": "POST",
+      "name": "Create user exemption from collaboration domain restrictions",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [],
+      "path": "/2.0/collaboration_whitelist_exempt_targets",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"user\": {\"id\": \"23522323\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create user exemption from collaboration domain restrictions",
+      "url": "https://api.box.com/2.0/collaboration_whitelist_exempt_targets"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Removes a user's exemption from the restrictions set out by the allowed list\nof domains for collaborations.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/collaboration_whitelist_exempt_targets/{{COLLABORATION_WHITELIST_EXEMPT_TARGET_ID}}",
+      "method": "DELETE",
+      "name": "Remove user from list of users exempt from domain restrictions",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collaboration_whitelist_exempt_target_id",
+          "value": "984923"
+        }
+      ],
+      "path": "/2.0/collaboration_whitelist_exempt_targets/{{COLLABORATION_WHITELIST_EXEMPT_TARGET_ID}}",
+      "pathParameters": [
+        {
+          "name": "collaboration_whitelist_exempt_target_id",
+          "value": "984923"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove user from list of users exempt from domain restrictions",
+      "url": "https://api.box.com/2.0/collaboration_whitelist_exempt_targets/{{COLLABORATION_WHITELIST_EXEMPT_TARGET_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a users who has been exempt from the collaboration\ndomain restrictions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/collaboration_whitelist_exempt_targets/{{COLLABORATION_WHITELIST_EXEMPT_TARGET_ID}}",
+      "method": "GET",
+      "name": "Get user exempt from collaboration domain restrictions",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collaboration_whitelist_exempt_target_id",
+          "value": "984923"
+        }
+      ],
+      "path": "/2.0/collaboration_whitelist_exempt_targets/{{COLLABORATION_WHITELIST_EXEMPT_TARGET_ID}}",
+      "pathParameters": [
+        {
+          "name": "collaboration_whitelist_exempt_target_id",
+          "value": "984923"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get user exempt from collaboration domain restrictions",
+      "url": "https://api.box.com/2.0/collaboration_whitelist_exempt_targets/{{COLLABORATION_WHITELIST_EXEMPT_TARGET_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves all pending collaboration invites for this user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/collaborations",
+      "method": "GET",
+      "name": "List pending collaborations",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "status",
+          "value": "pending"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "path": "/2.0/collaborations",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "status",
+          "value": "pending"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List pending collaborations",
+      "url": "https://api.box.com/2.0/collaborations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "accessible_by": {
+          "id": "23522323",
+          "login": "john@example.com",
+          "type": "user"
+        },
+        "can_view_path": true,
+        "expires_at": "2019-08-29T23:59:00-07:00",
+        "item": {
+          "id": "11446498",
+          "type": "file"
+        },
+        "role": "editor"
+      },
+      "body_json": {
+        "accessible_by": {
+          "id": "23522323",
+          "login": "john@example.com",
+          "type": "user"
+        },
+        "can_view_path": true,
+        "expires_at": "2019-08-29T23:59:00-07:00",
+        "item": {
+          "id": "11446498",
+          "type": "file"
+        },
+        "role": "editor"
+      },
+      "body_text": "{\"accessible_by\": {\"id\": \"23522323\", \"login\": \"john@example.com\", \"type\": \"user\"}, \"can_view_path\": true, \"expires_at\": \"2019-08-29T23:59:00-07:00\", \"item\": {\"id\": \"11446498\", \"type\": \"file\"}, \"role\": \"editor\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds a collaboration for a single user or a single group to a file\nor folder.\n\nCollaborations can be created using email address, user IDs, or a\ngroup IDs.\n\nIf a collaboration is being created with a group, access to\nthis endpoint is dependent on the group's ability to be invited.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/collaborations",
+      "method": "POST",
+      "name": "Create collaboration",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "notify",
+          "value": "True"
+        }
+      ],
+      "path": "/2.0/collaborations",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "notify",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": "{\"accessible_by\": {\"id\": \"23522323\", \"login\": \"john@example.com\", \"type\": \"user\"}, \"can_view_path\": true, \"expires_at\": \"2019-08-29T23:59:00-07:00\", \"item\": {\"id\": \"11446498\", \"type\": \"file\"}, \"role\": \"editor\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create collaboration",
+      "url": "https://api.box.com/2.0/collaborations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a single collaboration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/collaborations/{{COLLABORATION_ID}}",
+      "method": "DELETE",
+      "name": "Remove collaboration",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collaboration_id",
+          "value": "1234"
+        }
+      ],
+      "path": "/2.0/collaborations/{{COLLABORATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "collaboration_id",
+          "value": "1234"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove collaboration",
+      "url": "https://api.box.com/2.0/collaborations/{{COLLABORATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a single collaboration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/collaborations/{{COLLABORATION_ID}}",
+      "method": "GET",
+      "name": "Get collaboration",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collaboration_id",
+          "value": "1234"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "path": "/2.0/collaborations/{{COLLABORATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "collaboration_id",
+          "value": "1234"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get collaboration",
+      "url": "https://api.box.com/2.0/collaborations/{{COLLABORATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "can_view_path": true,
+        "expires_at": "2019-08-29T23:59:00-07:00",
+        "role": "editor",
+        "status": "accepted"
+      },
+      "body_json": {
+        "can_view_path": true,
+        "expires_at": "2019-08-29T23:59:00-07:00",
+        "role": "editor",
+        "status": "accepted"
+      },
+      "body_text": "{\"can_view_path\": true, \"expires_at\": \"2019-08-29T23:59:00-07:00\", \"role\": \"editor\", \"status\": \"accepted\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates a collaboration.\nCan be used to change the owner of an item, or to\naccept collaboration invites.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2.0/collaborations/{{COLLABORATION_ID}}",
+      "method": "PUT",
+      "name": "Update collaboration",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collaboration_id",
+          "value": "1234"
+        }
+      ],
+      "path": "/2.0/collaborations/{{COLLABORATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "collaboration_id",
+          "value": "1234"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"can_view_path\": true, \"expires_at\": \"2019-08-29T23:59:00-07:00\", \"role\": \"editor\", \"status\": \"accepted\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update collaboration",
+      "url": "https://api.box.com/2.0/collaborations/{{COLLABORATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves all collections for a given user.\n\nCurrently, only the `favorites` collection\nis supported.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/collections",
+      "method": "GET",
+      "name": "List all collections",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "path": "/2.0/collections",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all collections",
+      "url": "https://api.box.com/2.0/collections"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the files and/or folders contained within\nthis collection.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/collections/{{COLLECTION_ID}}/items",
+      "method": "GET",
+      "name": "List collection items",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "collection_id",
+          "value": "926489"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "path": "/2.0/collections/{{COLLECTION_ID}}/items",
+      "pathParameters": [
+        {
+          "name": "collection_id",
+          "value": "926489"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List collection items",
+      "url": "https://api.box.com/2.0/collections/{{COLLECTION_ID}}/items"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "item": {
+          "id": "11446498",
+          "type": "file"
+        },
+        "message": "Review completed!",
+        "tagged_message": "@[1234:John] Review completed!"
+      },
+      "body_json": {
+        "item": {
+          "id": "11446498",
+          "type": "file"
+        },
+        "message": "Review completed!",
+        "tagged_message": "@[1234:John] Review completed!"
+      },
+      "body_text": "{\"item\": {\"id\": \"11446498\", \"type\": \"file\"}, \"message\": \"Review completed!\", \"tagged_message\": \"@[1234:John] Review completed!\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds a comment by the user to a specific file, or\nas a reply to an other comment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/comments",
+      "method": "POST",
+      "name": "Create comment",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "path": "/2.0/comments",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "requestBodyExample": "{\"item\": {\"id\": \"11446498\", \"type\": \"file\"}, \"message\": \"Review completed!\", \"tagged_message\": \"@[1234:John] Review completed!\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create comment",
+      "url": "https://api.box.com/2.0/comments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Permanently deletes a comment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/comments/{{COMMENT_ID}}",
+      "method": "DELETE",
+      "name": "Remove comment",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "comment_id",
+          "value": "12345"
+        }
+      ],
+      "path": "/2.0/comments/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "comment_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove comment",
+      "url": "https://api.box.com/2.0/comments/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the message and metadata for a specific comment, as well\nas information on the user who created the comment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/comments/{{COMMENT_ID}}",
+      "method": "GET",
+      "name": "Get comment",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "comment_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "path": "/2.0/comments/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "comment_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get comment",
+      "url": "https://api.box.com/2.0/comments/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "message": "Review completed!"
+      },
+      "body_json": {
+        "message": "Review completed!"
+      },
+      "body_text": "{\"message\": \"Review completed!\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update the message of a comment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2.0/comments/{{COMMENT_ID}}",
+      "method": "PUT",
+      "name": "Update comment",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "comment_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "path": "/2.0/comments/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "comment_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "requestBodyExample": "{\"message\": \"Review completed!\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update comment",
+      "url": "https://api.box.com/2.0/comments/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an individual device pin.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/device_pinners/{{DEVICE_PINNER_ID}}",
+      "method": "DELETE",
+      "name": "Remove device pin",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "device_pinner_id",
+          "value": "2324234"
+        }
+      ],
+      "path": "/2.0/device_pinners/{{DEVICE_PINNER_ID}}",
+      "pathParameters": [
+        {
+          "name": "device_pinner_id",
+          "value": "2324234"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove device pin",
+      "url": "https://api.box.com/2.0/device_pinners/{{DEVICE_PINNER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about an individual device pin.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/device_pinners/{{DEVICE_PINNER_ID}}",
+      "method": "GET",
+      "name": "Get device pin",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "device_pinner_id",
+          "value": "2324234"
+        }
+      ],
+      "path": "/2.0/device_pinners/{{DEVICE_PINNER_ID}}",
+      "pathParameters": [
+        {
+          "name": "device_pinner_id",
+          "value": "2324234"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get device pin",
+      "url": "https://api.box.com/2.0/device_pinners/{{DEVICE_PINNER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves all the device pins within an enterprise.\n\nThe user must have admin privileges, and the application\nneeds the \"manage enterprise\" scope to make this call.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/enterprises/{{ENTERPRISE_ID}}/device_pinners",
+      "method": "GET",
+      "name": "List enterprise device pins",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "enterprise_id",
+          "value": "3442311"
+        },
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        },
+        {
+          "name": "direction",
+          "value": "ASC"
+        }
+      ],
+      "path": "/2.0/enterprises/{{ENTERPRISE_ID}}/device_pinners",
+      "pathParameters": [
+        {
+          "name": "enterprise_id",
+          "value": "3442311"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        },
+        {
+          "name": "direction",
+          "value": "ASC"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List enterprise device pins",
+      "url": "https://api.box.com/2.0/enterprises/{{ENTERPRISE_ID}}/device_pinners"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns up to a year of past events for a given user\nor for the entire enterprise.\n\nBy default this returns events for the authenticated user. To retrieve events\nfor the entire enterprise, set the `stream_type` to `admin_logs_streaming`\nfor live monitoring of new events, or `admin_logs` for querying across\nhistorical events. The user making the API call will\nneed to have admin privileges, and the application will need to have the\nscope `manage enterprise properties` checked.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/events",
+      "method": "GET",
+      "name": "List user and enterprise events",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "stream_type",
+          "value": "all"
+        },
+        {
+          "name": "stream_position",
+          "value": "1348790499819"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "event_type",
+          "value": "['ACCESS_GRANTED']"
+        },
+        {
+          "name": "created_after",
+          "value": "2012-12-12T10:53:43-08:00"
+        },
+        {
+          "name": "created_before",
+          "value": "2013-12-12T10:53:43-08:00"
+        }
+      ],
+      "path": "/2.0/events",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "stream_type",
+          "value": "all"
+        },
+        {
+          "name": "stream_position",
+          "value": "1348790499819"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "event_type",
+          "value": "['ACCESS_GRANTED']"
+        },
+        {
+          "name": "created_after",
+          "value": "2012-12-12T10:53:43-08:00"
+        },
+        {
+          "name": "created_before",
+          "value": "2013-12-12T10:53:43-08:00"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List user and enterprise events",
+      "url": "https://api.box.com/2.0/events"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a file request permanently.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/file_requests/{{FILE_REQUEST_ID}}",
+      "method": "DELETE",
+      "name": "Delete file request",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_request_id",
+          "value": "123"
+        }
+      ],
+      "path": "/2.0/file_requests/{{FILE_REQUEST_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_request_id",
+          "value": "123"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete file request",
+      "url": "https://api.box.com/2.0/file_requests/{{FILE_REQUEST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the information about a file request.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/file_requests/{{FILE_REQUEST_ID}}",
+      "method": "GET",
+      "name": "Get file request",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_request_id",
+          "value": "123"
+        }
+      ],
+      "path": "/2.0/file_requests/{{FILE_REQUEST_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_request_id",
+          "value": "123"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get file request",
+      "url": "https://api.box.com/2.0/file_requests/{{FILE_REQUEST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "description": "Please upload required documents",
+        "expires_at": "2020-09-28T10:53:43-08:00",
+        "is_description_required": true,
+        "is_email_required": true,
+        "status": "active",
+        "title": "Please upload required documents"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Updates a file request. This can be used to activate or\ndeactivate a file request.",
+      "form_data": [
+        {
+          "name": "description",
+          "type": "text",
+          "value": "Please upload required documents"
+        },
+        {
+          "name": "expires_at",
+          "type": "text",
+          "value": "2020-09-28T10:53:43-08:00"
+        },
+        {
+          "name": "is_description_required",
+          "type": "text",
+          "value": true
+        },
+        {
+          "name": "is_email_required",
+          "type": "text",
+          "value": true
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "value": "active"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "value": "Please upload required documents"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /2.0/file_requests/{{FILE_REQUEST_ID}}",
+      "method": "PUT",
+      "name": "Update file request",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_request_id",
+          "value": "123"
+        }
+      ],
+      "path": "/2.0/file_requests/{{FILE_REQUEST_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_request_id",
+          "value": "123"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"Please upload required documents\", \"expires_at\": \"2020-09-28T10:53:43-08:00\", \"is_description_required\": true, \"is_email_required\": true, \"status\": \"active\", \"title\": \"Please upload required documents\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update file request",
+      "url": "https://api.box.com/2.0/file_requests/{{FILE_REQUEST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "description": "Please upload required documents",
+        "expires_at": "2020-09-28T10:53:43-08:00",
+        "folder": {
+          "id": "42037322",
+          "type": "folder"
+        },
+        "is_description_required": true,
+        "is_email_required": true,
+        "status": "active",
+        "title": "Please upload required documents"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Copies an existing file request that is already present on one folder,\nand applies it to another folder.",
+      "form_data": [
+        {
+          "name": "description",
+          "type": "text",
+          "value": "Please upload required documents"
+        },
+        {
+          "name": "expires_at",
+          "type": "text",
+          "value": "2020-09-28T10:53:43-08:00"
+        },
+        {
+          "name": "is_description_required",
+          "type": "text",
+          "value": true
+        },
+        {
+          "name": "is_email_required",
+          "type": "text",
+          "value": true
+        },
+        {
+          "name": "status",
+          "type": "text",
+          "value": "active"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "value": "Please upload required documents"
+        },
+        {
+          "name": "folder",
+          "type": "text",
+          "value": {
+            "id": "42037322",
+            "type": "folder"
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /2.0/file_requests/{{FILE_REQUEST_ID}}/copy",
+      "method": "POST",
+      "name": "Copy file request",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_request_id",
+          "value": "123"
+        }
+      ],
+      "path": "/2.0/file_requests/{{FILE_REQUEST_ID}}/copy",
+      "pathParameters": [
+        {
+          "name": "file_request_id",
+          "value": "123"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"Please upload required documents\", \"expires_at\": \"2020-09-28T10:53:43-08:00\", \"is_description_required\": true, \"is_email_required\": true, \"status\": \"active\", \"title\": \"Please upload required documents\", \"folder\": {\"id\": \"42037322\", \"type\": \"folder\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Copy file request",
+      "url": "https://api.box.com/2.0/file_requests/{{FILE_REQUEST_ID}}/copy"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a list of file versions on legal hold for a legal hold\nassignment.\n\nDue to ongoing re-architecture efforts this API might not return all file\nversions for this policy ID.\n\nInstead, this API will only return file versions held in the legacy\narchitecture. Two new endpoints will available to request any file versions\nheld in the new architecture.\n\nFor file versions held in the new architecture, the `GET\n/legal_hold_policy_assignments/:id/file_versions_on_hold` API can be used to\nreturn all past file versions available for this policy assignment, and the\n`GET /legal_hold_policy_assignments/:id/files_on_hold` API can be used to\nreturn any current (latest) versions of a file under legal hold.\n\nThe `GET /legal_hold_policy_assignments?policy_id={id}` API can be used to\nfind a list of policy assignments for a given policy ID.\n\nOnce the re-architecture is completed this API will be deprecated.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/file_version_legal_holds",
+      "method": "GET",
+      "name": "List file version legal holds",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "policy_id",
+          "value": "133870"
+        },
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "path": "/2.0/file_version_legal_holds",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "policy_id",
+          "value": "133870"
+        },
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List file version legal holds",
+      "url": "https://api.box.com/2.0/file_version_legal_holds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about the legal hold policies\nassigned to a file version.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/file_version_legal_holds/{{FILE_VERSION_LEGAL_HOLD_ID}}",
+      "method": "GET",
+      "name": "Get file version legal hold",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_version_legal_hold_id",
+          "value": "2348213"
+        }
+      ],
+      "path": "/2.0/file_version_legal_holds/{{FILE_VERSION_LEGAL_HOLD_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_version_legal_hold_id",
+          "value": "2348213"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get file version legal hold",
+      "url": "https://api.box.com/2.0/file_version_legal_holds/{{FILE_VERSION_LEGAL_HOLD_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves all file version retentions for the given enterprise.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/file_version_retentions",
+      "method": "GET",
+      "name": "List file version retentions",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "43123123"
+        },
+        {
+          "name": "file_version_id",
+          "value": "1"
+        },
+        {
+          "name": "policy_id",
+          "value": "982312"
+        },
+        {
+          "name": "disposition_action",
+          "value": "permanently_delete"
+        },
+        {
+          "name": "disposition_before",
+          "value": "2012-12-12T10:53:43-08:00"
+        },
+        {
+          "name": "disposition_after",
+          "value": "2012-12-19T10:34:23-08:00"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        },
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        }
+      ],
+      "path": "/2.0/file_version_retentions",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "file_id",
+          "value": "43123123"
+        },
+        {
+          "name": "file_version_id",
+          "value": "1"
+        },
+        {
+          "name": "policy_id",
+          "value": "982312"
+        },
+        {
+          "name": "disposition_action",
+          "value": "permanently_delete"
+        },
+        {
+          "name": "disposition_before",
+          "value": "2012-12-12T10:53:43-08:00"
+        },
+        {
+          "name": "disposition_after",
+          "value": "2012-12-19T10:34:23-08:00"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        },
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List file version retentions",
+      "url": "https://api.box.com/2.0/file_version_retentions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about a file version retention.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/file_version_retentions/{{FILE_VERSION_RETENTION_ID}}",
+      "method": "GET",
+      "name": "Get retention on file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_version_retention_id",
+          "value": "3424234"
+        }
+      ],
+      "path": "/2.0/file_version_retentions/{{FILE_VERSION_RETENTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_version_retention_id",
+          "value": "3424234"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get retention on file",
+      "url": "https://api.box.com/2.0/file_version_retentions/{{FILE_VERSION_RETENTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "attributes": {
+          "content_created_at": "2012-12-12T10:53:43-08:00",
+          "content_modified_at": "2012-12-12T10:53:43-08:00",
+          "name": "Photo.png",
+          "parent": {
+            "id": "124132"
+          }
+        },
+        "file": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Uploads a small file to Box. For file sizes over 50MB we recommend\nusing the Chunk Upload APIs.\n\n# Request body order\n\nThe `attributes` part of the body must come **before** the\n`file` part. Requests that do not follow this format when\nuploading the file will receive a HTTP `400` error with a\n`metadata_after_file_contents` error code.",
+      "form_data": [
+        {
+          "name": "attributes",
+          "type": "text",
+          "value": {
+            "content_created_at": "2012-12-12T10:53:43-08:00",
+            "content_modified_at": "2012-12-12T10:53:43-08:00",
+            "name": "Photo.png",
+            "parent": {
+              "id": "124132"
+            }
+          }
+        },
+        {
+          "name": "file",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /2.0/files/content",
+      "method": "POST",
+      "name": "Upload file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "path": "/2.0/files/content",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "requestBodyExample": "{\"attributes\": {\"content_created_at\": \"2012-12-12T10:53:43-08:00\", \"content_modified_at\": \"2012-12-12T10:53:43-08:00\", \"name\": \"Photo.png\", \"parent\": {\"id\": \"124132\"}}, \"file\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Upload file",
+      "url": "https://api.box.com/2.0/files/content"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "file_name": "Project.mov",
+        "file_size": 104857600,
+        "folder_id": "0"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates an upload session for a new file.",
+      "form_data": [
+        {
+          "name": "file_name",
+          "type": "text",
+          "value": "Project.mov"
+        },
+        {
+          "name": "file_size",
+          "type": "text",
+          "value": 104857600
+        },
+        {
+          "name": "folder_id",
+          "type": "text",
+          "value": "0"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /2.0/files/upload_sessions",
+      "method": "POST",
+      "name": "Create upload session",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [],
+      "path": "/2.0/files/upload_sessions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"file_name\": \"Project.mov\", \"file_size\": 104857600, \"folder_id\": \"0\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create upload session",
+      "url": "https://api.box.com/2.0/files/upload_sessions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Abort an upload session and discard all data uploaded.\n\nThis cannot be reversed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}",
+      "method": "DELETE",
+      "name": "Remove upload session",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "path": "/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove upload session",
+      "url": "https://api.box.com/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return information about an upload session.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}",
+      "method": "GET",
+      "name": "Get upload session",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "path": "/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get upload session",
+      "url": "https://api.box.com/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Updates a chunk of an upload session for a file.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "PUT /2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}",
+      "method": "PUT",
+      "name": "Upload part of file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "path": "/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Upload part of file",
+      "url": "https://api.box.com/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "parts": [
+          {
+            "offset": 16777216,
+            "part_id": "6F2D3486",
+            "sha1": "134b65991ed521fcfe4724b7d814ab8ded5185dc",
+            "size": 3222784
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Close an upload session and create a file from the\nuploaded chunks.",
+      "form_data": [
+        {
+          "name": "parts",
+          "type": "text",
+          "value": [
+            {
+              "offset": 16777216,
+              "part_id": "6F2D3486",
+              "sha1": "134b65991ed521fcfe4724b7d814ab8ded5185dc",
+              "size": 3222784
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}/commit",
+      "method": "POST",
+      "name": "Commit upload session",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "path": "/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}/commit",
+      "pathParameters": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"parts\": [{\"offset\": 16777216, \"part_id\": \"6F2D3486\", \"size\": 3222784, \"sha1\": \"134b65991ed521fcfe4724b7d814ab8ded5185dc\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Commit upload session",
+      "url": "https://api.box.com/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}/commit"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return a list of the chunks uploaded to the upload\nsession so far.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}/parts",
+      "method": "GET",
+      "name": "List parts",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "path": "/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}/parts",
+      "pathParameters": [
+        {
+          "name": "upload_session_id",
+          "value": "D5E3F7A"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": "1000"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List parts",
+      "url": "https://api.box.com/2.0/files/upload_sessions/{{UPLOAD_SESSION_ID}}/parts"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a file, either permanently or by moving it to\nthe trash.\n\nThe the enterprise settings determine whether the item will\nbe permanently deleted from Box or moved to the trash.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/files/{{FILE_ID}}",
+      "method": "DELETE",
+      "name": "Delete file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete file",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the details about a file.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/files/{{FILE_ID}}",
+      "method": "GET",
+      "name": "Get file information",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get file information",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "name": "Restored.docx",
+        "parent": {
+          "id": "123"
+        }
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Restores a file that has been moved to the trash.\n\nAn optional new parent ID can be provided to restore the file to in case the\noriginal folder has been deleted.",
+      "form_data": [
+        {
+          "name": "name",
+          "type": "text",
+          "value": "Restored.docx"
+        },
+        {
+          "name": "parent",
+          "type": "text",
+          "value": {
+            "id": "123"
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /2.0/files/{{FILE_ID}}",
+      "method": "POST",
+      "name": "Restore file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "requestBodyExample": "{\"name\": \"Restored.docx\", \"parent\": {\"id\": \"123\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Restore file",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "description": "The latest reports. Automatically updated",
+        "disposition_at": "2012-12-12T10:53:43-08:00",
+        "lock": {
+          "access": "lock",
+          "expires_at": "2012-12-12T10:53:43-08:00",
+          "is_download_prevented": true
+        },
+        "name": "NewFile.txt",
+        "parent": {
+          "id": "123"
+        },
+        "permissions": {
+          "can_download": "open"
+        },
+        "shared_link": {
+          "access": "open",
+          "password": "do-not-use-this-password",
+          "permissions": {
+            "can_download": true
+          },
+          "unshared_at": "2012-12-12T10:53:43-08:00",
+          "vanity_name": "my-shared-link"
+        },
+        "tags": [
+          "approved"
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Updates a file. This can be used to rename or move a file,\ncreate a shared link, or lock a file.",
+      "form_data": [
+        {
+          "name": "description",
+          "type": "text",
+          "value": "The latest reports. Automatically updated"
+        },
+        {
+          "name": "disposition_at",
+          "type": "text",
+          "value": "2012-12-12T10:53:43-08:00"
+        },
+        {
+          "name": "lock",
+          "type": "text",
+          "value": {
+            "access": "lock",
+            "expires_at": "2012-12-12T10:53:43-08:00",
+            "is_download_prevented": true
+          }
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "value": "NewFile.txt"
+        },
+        {
+          "name": "parent",
+          "type": "text",
+          "value": {
+            "id": "123"
+          }
+        },
+        {
+          "name": "permissions",
+          "type": "text",
+          "value": {
+            "can_download": "open"
+          }
+        },
+        {
+          "name": "shared_link",
+          "type": "text",
+          "value": {
+            "access": "open",
+            "password": "do-not-use-this-password",
+            "permissions": {
+              "can_download": true
+            },
+            "unshared_at": "2012-12-12T10:53:43-08:00",
+            "vanity_name": "my-shared-link"
+          }
+        },
+        {
+          "name": "tags",
+          "type": "text",
+          "value": [
+            "approved"
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /2.0/files/{{FILE_ID}}",
+      "method": "PUT",
+      "name": "Update file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        }
+      ],
+      "requestBodyExample": "{\"description\": \"The latest reports. Automatically updated\", \"disposition_at\": \"2012-12-12T10:53:43-08:00\", \"lock\": {\"access\": \"lock\", \"expires_at\": \"2012-12-12T10:53:43-08:00\", \"is_download_prevented\": true}, \"name\": \"NewFile.txt\", \"parent\": {\"id\": \"123\"}, \"permissions\": {\"can_download\": \"open\"}, \"shared_link\": {\"access\": \"open\", \"password\": \"do-not-use-this-password\", \"permissions\": {\"can_download\": true}, \"unshared_at\": \"2012-12-12T10:53:43-08:00\", \"vanity_name\": \"my-shared-link\"}, \"tags\": [\"approved\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update file",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "shared_link": {
+          "access": "open",
+          "password": "do-not-use-this-password",
+          "permissions": {
+            "can_download": true,
+            "can_edit": true,
+            "can_preview": true
+          },
+          "unshared_at": "2012-12-12T10:53:43-08:00",
+          "vanity_name": "my-shared-link"
+        }
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Adds a shared link to a file.",
+      "form_data": [
+        {
+          "name": "shared_link",
+          "type": "text",
+          "value": {
+            "access": "open",
+            "password": "do-not-use-this-password",
+            "permissions": {
+              "can_download": true,
+              "can_edit": true,
+              "can_preview": true
+            },
+            "unshared_at": "2012-12-12T10:53:43-08:00",
+            "vanity_name": "my-shared-link"
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /2.0/files/{{FILE_ID}}",
+      "method": "PUT",
+      "name": "Add shared link to file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "shared_link"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "shared_link"
+        }
+      ],
+      "requestBodyExample": "{\"shared_link\": {\"access\": \"open\", \"password\": \"do-not-use-this-password\", \"permissions\": {\"can_download\": true, \"can_edit\": true, \"can_preview\": true}, \"unshared_at\": \"2012-12-12T10:53:43-08:00\", \"vanity_name\": \"my-shared-link\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add shared link to file",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}#add_shared_link"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets the information for a shared link on a file.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/files/{{FILE_ID}}",
+      "method": "GET",
+      "name": "Get shared link for file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "shared_link"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "shared_link"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get shared link for file",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}#get_shared_link"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "shared_link": null
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Removes a shared link from a file.",
+      "form_data": [
+        {
+          "name": "shared_link",
+          "type": "text",
+          "value": null
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /2.0/files/{{FILE_ID}}",
+      "method": "PUT",
+      "name": "Remove shared link from file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "shared_link"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "shared_link"
+        }
+      ],
+      "requestBodyExample": "{\"shared_link\": null}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove shared link from file",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}#remove_shared_link"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "shared_link": {
+          "access": "open",
+          "password": "do-not-use-this-password",
+          "permissions": {
+            "can_download": true,
+            "can_edit": true,
+            "can_preview": true
+          },
+          "unshared_at": "2012-12-12T10:53:43-08:00",
+          "vanity_name": "my-shared-link"
+        }
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Updates a shared link on a file.",
+      "form_data": [
+        {
+          "name": "shared_link",
+          "type": "text",
+          "value": {
+            "access": "open",
+            "password": "do-not-use-this-password",
+            "permissions": {
+              "can_download": true,
+              "can_edit": true,
+              "can_preview": true
+            },
+            "unshared_at": "2012-12-12T10:53:43-08:00",
+            "vanity_name": "my-shared-link"
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /2.0/files/{{FILE_ID}}",
+      "method": "PUT",
+      "name": "Update shared link on file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "shared_link"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "shared_link"
+        }
+      ],
+      "requestBodyExample": "{\"shared_link\": {\"access\": \"open\", \"password\": \"do-not-use-this-password\", \"permissions\": {\"can_download\": true, \"can_edit\": true, \"can_preview\": true}, \"unshared_at\": \"2012-12-12T10:53:43-08:00\", \"vanity_name\": \"my-shared-link\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update shared link on file",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}#update_shared_link"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a list of pending and active collaborations for a\nfile. This returns all the users that have access to the file\nor have been invited to the file.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/files/{{FILE_ID}}/collaborations",
+      "method": "GET",
+      "name": "List file collaborations",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        },
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}/collaborations",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        },
+        {
+          "name": "marker",
+          "value": "JV9IRGZmieiBasejOG9yDCRNgd2ymoZIbjsxbJMjIs3kioVii"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List file collaborations",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}/collaborations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a list of comments for a file.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/files/{{FILE_ID}}/comments",
+      "method": "GET",
+      "name": "List file comments",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}/comments",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": "['id', 'type', 'name']"
+        },
+        {
+          "name": "limit",
+          "value": "1000"
+        },
+        {
+          "name": "offset",
+          "value": "1000"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List file comments",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}/comments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BOX_PLATFORM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the contents of a file in binary format.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BOX_PLATFORM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/files/{{FILE_ID}}/content",
+      "method": "GET",
+      "name": "Download file",
+      "note": "Replace {{BOX_PLATFORM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        },
+        {
+          "name": "version",
+          "value": "4"
+        },
+        {
+          "name": "access_token",
+          "value": "c3FIOG9vSGV4VHo4QzAyg5T1JvNnJoZ3ExaVNyQWw6WjRsanRKZG5lQk9qUE1BVQ"
+        }
+      ],
+      "path": "/2.0/files/{{FILE_ID}}/content",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "version",
+          "value": "4"
+        },
+        {
+          "name": "access_token",
+          "value": "c3FIOG9vSGV4VHo4QzAyg5T1JvNnJoZ3ExaVNyQWw6WjRsanRKZG5lQk9qUE1BVQ"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Download file",
+      "url": "https://api.box.com/2.0/files/{{FILE_ID}}/content"
+    }
+  ]
+}

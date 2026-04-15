@@ -1,0 +1,2487 @@
+{
+  "id": "wikimedia.org",
+  "info": {
+    "base_url": "https://wikimedia.org/api/rest_v1",
+    "description": "Fetches the dictionary meaning of a word from a language and displays\nit in the target language.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)",
+    "source": "apis.guru",
+    "tags": [
+      "image-generation",
+      "text-generation",
+      "translation"
+    ],
+    "title": "Wikimedia",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets availability of featured feed content for the apps by wiki domain.\n\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/feed/availability",
+      "method": "GET",
+      "name": "Gets availability of featured feed content for the apps by wiki domain.",
+      "params": [],
+      "path": "/api/rest_v1/feed/availability",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets availability of featured feed content for the apps by wiki domain.",
+      "url": "https://wikimedia.org/api/rest_v1/feed/availability"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Checks the supplied TeX formula for correctness and returns the\nnormalised formula representation as well as information about\nidentifiers. Available types are tex and inline-tex. The response\ncontains the `x-resource-location` header which can be used to retrieve\nthe render of the checked formula in one of the supported rendering\nformats. Just append the value of the header to `/media/math/{format}/`\nand perform a GET request against that URL.\n\nStability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /api/rest_v1/media/math/check/{{TYPE}}",
+      "method": "POST",
+      "name": "Check and normalize a TeX formula.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/media/math/check/{{TYPE}}",
+      "pathParameters": [
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check and normalize a TeX formula.",
+      "url": "https://wikimedia.org/api/rest_v1/media/math/check/{{TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the previously-stored formula via `/media/math/check/{type}` for\nthe given hash.\n\nStability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/media/math/formula/{{HASH}}",
+      "method": "GET",
+      "name": "Get a previously-stored formula",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "hash",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/media/math/formula/{{HASH}}",
+      "pathParameters": [
+        {
+          "name": "hash",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a previously-stored formula",
+      "url": "https://wikimedia.org/api/rest_v1/media/math/formula/{{HASH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a request hash, renders a TeX formula into its mathematic\nrepresentation in the given format. When a request is issued to the\n`/media/math/check/{format}` POST endpoint, the response contains the\n`x-resource-location` header denoting the hash ID of the POST data. Once\nobtained, this endpoint has to be used to obtain the actual render.\n\nStability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/media/math/render/{{FORMAT}}/{{HASH}}",
+      "method": "GET",
+      "name": "Get rendered formula in the given format.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "format",
+          "value": ""
+        },
+        {
+          "name": "hash",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/media/math/render/{{FORMAT}}/{{HASH}}",
+      "pathParameters": [
+        {
+          "name": "format",
+          "value": ""
+        },
+        {
+          "name": "hash",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get rendered formula in the given format.",
+      "url": "https://wikimedia.org/api/rest_v1/media/math/render/{{FORMAT}}/{{HASH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date range, returns a timeseries of absolute bytes\ndifference sums. You can filter by editors-type (all-editor-types, anonymous, group-bot,\nname-bot, user) and page-type (all-page-types, content, non-content). You can choose\nbetween daily and monthly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/bytes-difference/absolute/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get the sum of absolute value of text bytes difference between current edit and\nprevious one.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/bytes-difference/absolute/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the sum of absolute value of text bytes difference between current edit and\nprevious one.\n",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/bytes-difference/absolute/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project, a page-title prefixed with canonical namespace (for\ninstance 'User:Jimbo_Wales') and a date range, returns a timeseries of bytes\ndifference absolute sums. You can filter by editors-type (all-editor-types, anonymous,\ngroup-bot, name-bot, user). You can choose between daily and monthly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/bytes-difference/absolute/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get the sum of absolute text bytes difference per page.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "page-title",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/bytes-difference/absolute/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "page-title",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the sum of absolute text bytes difference per page.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/bytes-difference/absolute/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date range, returns a timeseries of bytes difference net\nsums. You can filter by editors-type (all-editor-types, anonymous, group-bot, name-bot,\nuser) and page-type (all-page-types, content or non-content). You can choose between\ndaily and monthly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/bytes-difference/net/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get the sum of net text bytes difference between current edit and previous one.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/bytes-difference/net/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the sum of net text bytes difference between current edit and previous one.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/bytes-difference/net/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project, a page-title prefixed with canonical namespace (for\ninstance 'User:Jimbo_Wales') and a date range, returns a timeseries of bytes\ndifference net sums. You can filter by editors-type (all-editor-types, anonymous,\ngroup-bot, name-bot, user). You can choose between daily and monthly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/bytes-difference/net/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get the sum of net text bytes difference per page.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "page-title",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/bytes-difference/net/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "page-title",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the sum of net text bytes difference per page.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/bytes-difference/net/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date range, returns a timeseries of its edited-pages counts.\nYou can filter by editor-type (all-editor-types, anonymous, group-bot, name-bot, user),\npage-type (all-page-types, content or non-content) or activity-level (1..4-edits,\n5..24-edits, 25..99-edits, 100..-edits). You can choose between daily and monthly\ngranularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/edited-pages/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{ACTIVITY-LEVEL}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get edited-pages counts for a project.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "activity-level",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/edited-pages/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{ACTIVITY-LEVEL}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "activity-level",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get edited-pages counts for a project.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/edited-pages/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{ACTIVITY-LEVEL}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date range, returns a timeseries of its new pages counts.\nYou can filter by editor type (all-editor-types, anonymous, group-bot, name-bot, user)\nor page-type (all-page-types, content or non-content). You can choose between daily and\nmonthly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/edited-pages/new/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get new pages counts for a project.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/edited-pages/new/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get new pages counts for a project.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/edited-pages/new/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date (day or month), returns a timeseries of the top 100\nedited-pages by absolute bytes-difference. You can filter by editor-type (all-editor-types,\nanonymous, group-bot, name-bot, user) or page-type (all-page-types, content or non-content).\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/edited-pages/top-by-absolute-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "method": "GET",
+      "name": "Get top 100 edited-pages by absolute bytes-difference.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/edited-pages/top-by-absolute-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get top 100 edited-pages by absolute bytes-difference.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/edited-pages/top-by-absolute-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date (day or month), returns a timeseries of the top\n100 edited-pages by edits count. You can filter by editor-type (all-editor-types,\nanonymous, group-bot, name-bot, user) or page-type (all-page-types, content or\nnon-content).\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/edited-pages/top-by-edits/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "method": "GET",
+      "name": "Get top 100 edited-pages by edits count.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/edited-pages/top-by-edits/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get top 100 edited-pages by edits count.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/edited-pages/top-by-edits/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date (day or month), returns a timeseries of the top 100\nedited-pages by net bytes-difference. You can filter by editor-type (all-editor-types,\nanonymous, group-bot, name-bot, user) or page-type (all-page-types, content or non-content).\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/edited-pages/top-by-net-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "method": "GET",
+      "name": "Get top 100 edited-pages by net bytes-difference.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/edited-pages/top-by-net-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get top 100 edited-pages by net bytes-difference.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/edited-pages/top-by-net-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date range, returns a timeseries of its editors counts.\nYou can filter by editory-type (all-editor-types, anonymous, group-bot, name-bot, user),\npage-type (all-page-types, content or non-content) or activity-level (1..4-edits,\n5..24-edits, 25..99-edits or 100..-edits). You can choose between daily and monthly\ngranularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/editors/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{ACTIVITY-LEVEL}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get editors counts for a project.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "activity-level",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/editors/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{ACTIVITY-LEVEL}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "activity-level",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get editors counts for a project.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/editors/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{ACTIVITY-LEVEL}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date (day or month), returns a timeseries of the top 100\neditors by absolute bytes-difference. You can filter by editor-type (all-editor-types,\nanonymous, group-bot, name-bot, user) or page-type (all-page-types, content or non-content).\nThe user_text returned is either the mediawiki user_text if the user is registered, or\nnull if user is anonymous.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/editors/top-by-absolute-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "method": "GET",
+      "name": "Get top 100 editors by absolute bytes-difference.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/editors/top-by-absolute-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get top 100 editors by absolute bytes-difference.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/editors/top-by-absolute-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date (day or month), returns a timeseries of the top\n100 editors by edits count. You can filter by editor-type (all-editor-types,\nanonymous, group-bot, name-bot, user) or page-type (all-page-types, content or\nnon-content). The user_text returned is either the mediawiki user_text if the user is\nregistered, or null if user is anonymous.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/editors/top-by-edits/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "method": "GET",
+      "name": "Get top 100 editors by edits count.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/editors/top-by-edits/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get top 100 editors by edits count.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/editors/top-by-edits/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date (day or month), returns a timeseries of the top 100\neditors by net bytes-difference. You can filter by editor-type (all-editor-types, anonymous,\ngroup-bot, name-bot, user) or page-type (all-page-types, content or non-content). The\nuser_text returned is either the mediawiki user_text if the user is registered, or\n\"Anonymous Editor\" if user is anonymous.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/editors/top-by-net-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "method": "GET",
+      "name": "Get top 100 editors by net bytes-difference.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/editors/top-by-net-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get top 100 editors by net bytes-difference.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/editors/top-by-net-bytes-difference/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{YEAR}}/{{MONTH}}/{{DAY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date range, returns a timeseries of edits counts.\nYou can filter by editors-type (all-editor-types, anonymous, bot, registered) and\npage-type (all-page-types, content or non-content). You can choose between daily and\nmonthly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/edits/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get edits counts for a project.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/edits/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "page-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get edits counts for a project.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/edits/aggregate/{{PROJECT}}/{{EDITOR-TYPE}}/{{PAGE-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project, a page-title prefixed with its canonical namespace (for\ninstance 'User:Jimbo_Wales') and a date range, returns a timeseries of edit counts.\nYou can filter by editors-type (all-editor-types, anonymous, group-bot, name-bot, user).\nYou can choose between daily and monthly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/edits/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get edit counts for a page in a project.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "page-title",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/edits/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "page-title",
+          "value": ""
+        },
+        {
+          "name": "editor-type",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get edit counts for a page in a project.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/edits/per-page/{{PROJECT}}/{{PAGE-TITLE}}/{{EDITOR-TYPE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a project and a date range, returns a timeseries of pagecounts.\nYou can filter by access site (mobile or desktop) and you can choose between monthly,\ndaily and hourly granularity as well.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 100 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/legacy/pagecounts/aggregate/{{PROJECT}}/{{ACCESS-SITE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "GET /metrics/legacy/pagecounts/aggregate/{project}/{access-site}/{granularity}/{start}/{end}",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access-site",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/legacy/pagecounts/aggregate/{{PROJECT}}/{{ACCESS-SITE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access-site",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /metrics/legacy/pagecounts/aggregate/{project}/{access-site}/{granularity}/{start}/{end}",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/legacy/pagecounts/aggregate/{{PROJECT}}/{{ACCESS-SITE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a date range, returns a timeseries of pageview counts. You can filter by project,\naccess method and/or agent type. You can choose between daily and hourly granularity\nas well.\n\n- Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable)\n- Rate limit: 100 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/pageviews/aggregate/{{PROJECT}}/{{ACCESS}}/{{AGENT}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get pageview counts for a project.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access",
+          "value": ""
+        },
+        {
+          "name": "agent",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/pageviews/aggregate/{{PROJECT}}/{{ACCESS}}/{{AGENT}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access",
+          "value": ""
+        },
+        {
+          "name": "agent",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get pageview counts for a project.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/aggregate/{{PROJECT}}/{{ACCESS}}/{{AGENT}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki article and a date range, returns a daily timeseries of its pageview\ncounts. You can also filter by access method and/or agent type.\n\n- Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable)\n- Rate limit: 100 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/pageviews/per-article/{{PROJECT}}/{{ACCESS}}/{{AGENT}}/{{ARTICLE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get pageview counts for a page.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access",
+          "value": ""
+        },
+        {
+          "name": "agent",
+          "value": ""
+        },
+        {
+          "name": "article",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/pageviews/per-article/{{PROJECT}}/{{ACCESS}}/{{AGENT}}/{{ARTICLE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access",
+          "value": ""
+        },
+        {
+          "name": "agent",
+          "value": ""
+        },
+        {
+          "name": "article",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get pageview counts for a page.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/{{PROJECT}}/{{ACCESS}}/{{AGENT}}/{{ARTICLE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the pageviews to this project, split by country of origin for a given month.\nBecause of privacy reasons, pageviews are given in a bucketed format, and countries\nwith less than 100 views do not get reported.\nStability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 100 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/pageviews/top-by-country/{{PROJECT}}/{{ACCESS}}/{{YEAR}}/{{MONTH}}",
+      "method": "GET",
+      "name": "Get pageviews by country and access method.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/pageviews/top-by-country/{{PROJECT}}/{{ACCESS}}/{{YEAR}}/{{MONTH}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get pageviews by country and access method.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/top-by-country/{{PROJECT}}/{{ACCESS}}/{{YEAR}}/{{MONTH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the 1000 most viewed articles for a given project and timespan (month or day).\nYou can filter by access method.\n\n- Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable)\n- Rate limit: 100 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/pageviews/top/{{PROJECT}}/{{ACCESS}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "method": "GET",
+      "name": "Get the most viewed articles for a project.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/pageviews/top/{{PROJECT}}/{{ACCESS}}/{{YEAR}}/{{MONTH}}/{{DAY}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access",
+          "value": ""
+        },
+        {
+          "name": "year",
+          "value": ""
+        },
+        {
+          "name": "month",
+          "value": ""
+        },
+        {
+          "name": "day",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the most viewed articles for a project.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/{{PROJECT}}/{{ACCESS}}/{{YEAR}}/{{MONTH}}/{{DAY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a Mediawiki project and a date range, returns a timeseries of its newly registered\nusers counts. You can choose between daily and monthly granularity. The newly registered\nusers value is computed with self-created users only, not auto-login created ones.\n\n- Stability: [experimental](https://www.mediawiki.org/wiki/API_versioning#Experimental)\n- Rate limit: 25 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/registered-users/new/{{PROJECT}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get newly registered users counts for a project.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/registered-users/new/{{PROJECT}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get newly registered users counts for a project.",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/registered-users/new/{{PROJECT}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a project and a date range, returns a timeseries of unique devices counts.\nYou need to specify a project, and can filter by accessed site (mobile or desktop).\nYou can choose between daily and hourly granularity as well.\n\n- Stability: [stable](https://www.mediawiki.org/wiki/API_versioning#Stable)\n- Rate limit: 100 req/s\n- License: Data accessible via this endpoint is available under the\n  [CC0 1.0 license](https://creativecommons.org/publicdomain/zero/1.0/).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/metrics/unique-devices/{{PROJECT}}/{{ACCESS-SITE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "method": "GET",
+      "name": "Get unique devices count per project",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access-site",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/metrics/unique-devices/{{PROJECT}}/{{ACCESS-SITE}}/{{GRANULARITY}}/{{START}}/{{END}}",
+      "pathParameters": [
+        {
+          "name": "project",
+          "value": ""
+        },
+        {
+          "name": "access-site",
+          "value": ""
+        },
+        {
+          "name": "granularity",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "end",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get unique devices count per project",
+      "url": "https://wikimedia.org/api/rest_v1/metrics/unique-devices/{{PROJECT}}/{{ACCESS-SITE}}/{{GRANULARITY}}/{{START}}/{{END}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the machine translation for the posted content from the source\nto the destination language.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /api/rest_v1/transform/html/from/{{FROM_LANG}}/to/{{TO_LANG}}",
+      "method": "POST",
+      "name": "Machine-translate content",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "from_lang",
+          "value": ""
+        },
+        {
+          "name": "to_lang",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/transform/html/from/{{FROM_LANG}}/to/{{TO_LANG}}",
+      "pathParameters": [
+        {
+          "name": "from_lang",
+          "value": ""
+        },
+        {
+          "name": "to_lang",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Machine-translate content",
+      "url": "https://wikimedia.org/api/rest_v1/transform/html/from/{{FROM_LANG}}/to/{{TO_LANG}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the machine translation for the posted content from the source\nto the destination language.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /api/rest_v1/transform/html/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{PROVIDER}}",
+      "method": "POST",
+      "name": "Machine-translate content",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "from_lang",
+          "value": ""
+        },
+        {
+          "name": "to_lang",
+          "value": ""
+        },
+        {
+          "name": "provider",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/transform/html/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{PROVIDER}}",
+      "pathParameters": [
+        {
+          "name": "from_lang",
+          "value": ""
+        },
+        {
+          "name": "to_lang",
+          "value": ""
+        },
+        {
+          "name": "provider",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Machine-translate content",
+      "url": "https://wikimedia.org/api/rest_v1/transform/html/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{PROVIDER}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the list of language pairs the back-end service can translate\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/transform/list/languagepairs/",
+      "method": "GET",
+      "name": "Lists the language pairs supported by the back-end",
+      "params": [],
+      "path": "/api/rest_v1/transform/list/languagepairs/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists the language pairs supported by the back-end",
+      "url": "https://wikimedia.org/api/rest_v1/transform/list/languagepairs/"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the list of tools that are available for the given pair of languages.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/transform/list/pair/{{FROM}}/{{TO}}/",
+      "method": "GET",
+      "name": "Lists the tools available for a language pair",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/transform/list/pair/{{FROM}}/{{TO}}/",
+      "pathParameters": [
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists the tools available for a language pair",
+      "url": "https://wikimedia.org/api/rest_v1/transform/list/pair/{{FROM}}/{{TO}}/"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the list of tools and all of the language pairs it can translate\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/transform/list/tool/{{TOOL}}",
+      "method": "GET",
+      "name": "Lists the tools and language pairs available for the given tool category",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tool",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/transform/list/tool/{{TOOL}}",
+      "pathParameters": [
+        {
+          "name": "tool",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists the tools and language pairs available for the given tool category",
+      "url": "https://wikimedia.org/api/rest_v1/transform/list/tool/{{TOOL}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the list of tools and all of the language pairs it can translate\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/transform/list/tool/{{TOOL}}/{{FROM}}",
+      "method": "GET",
+      "name": "Lists the tools and language pairs available for the given tool category",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tool",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/transform/list/tool/{{TOOL}}/{{FROM}}",
+      "pathParameters": [
+        {
+          "name": "tool",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists the tools and language pairs available for the given tool category",
+      "url": "https://wikimedia.org/api/rest_v1/transform/list/tool/{{TOOL}}/{{FROM}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the list of tools and all of the language pairs it can translate\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/transform/list/tool/{{TOOL}}/{{FROM}}/{{TO}}",
+      "method": "GET",
+      "name": "Lists the tools and language pairs available for the given tool category",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tool",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/transform/list/tool/{{TOOL}}/{{FROM}}/{{TO}}",
+      "pathParameters": [
+        {
+          "name": "tool",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists the tools and language pairs available for the given tool category",
+      "url": "https://wikimedia.org/api/rest_v1/transform/list/tool/{{TOOL}}/{{FROM}}/{{TO}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the dictionary meaning of a word from a language and displays\nit in the target language.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/transform/word/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{WORD}}",
+      "method": "GET",
+      "name": "Fetch the dictionary meaning of a word",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "from_lang",
+          "value": ""
+        },
+        {
+          "name": "to_lang",
+          "value": ""
+        },
+        {
+          "name": "word",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/transform/word/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{WORD}}",
+      "pathParameters": [
+        {
+          "name": "from_lang",
+          "value": ""
+        },
+        {
+          "name": "to_lang",
+          "value": ""
+        },
+        {
+          "name": "word",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Fetch the dictionary meaning of a word",
+      "url": "https://wikimedia.org/api/rest_v1/transform/word/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{WORD}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetches the dictionary meaning of a word from a language and displays\nit in the target language.\n\nStability: [unstable](https://www.mediawiki.org/wiki/API_versioning#Unstable)\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/rest_v1/transform/word/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{WORD}}/{{PROVIDER}}",
+      "method": "GET",
+      "name": "Fetch the dictionary meaning of a word",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "from_lang",
+          "value": ""
+        },
+        {
+          "name": "to_lang",
+          "value": ""
+        },
+        {
+          "name": "word",
+          "value": ""
+        },
+        {
+          "name": "provider",
+          "value": ""
+        }
+      ],
+      "path": "/api/rest_v1/transform/word/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{WORD}}/{{PROVIDER}}",
+      "pathParameters": [
+        {
+          "name": "from_lang",
+          "value": ""
+        },
+        {
+          "name": "to_lang",
+          "value": ""
+        },
+        {
+          "name": "word",
+          "value": ""
+        },
+        {
+          "name": "provider",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Fetch the dictionary meaning of a word",
+      "url": "https://wikimedia.org/api/rest_v1/transform/word/from/{{FROM_LANG}}/to/{{TO_LANG}}/{{WORD}}/{{PROVIDER}}"
+    }
+  ]
+}

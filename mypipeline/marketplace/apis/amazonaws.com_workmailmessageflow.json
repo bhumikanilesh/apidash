@@ -1,0 +1,152 @@
+{
+  "id": "amazonaws.com_workmailmessageflow",
+  "info": {
+    "base_url": "http://workmailmessageflow.{region}.amazonaws.com",
+    "description": "Updates the raw content of an in-transit email message, in MIME format. This example describes how to update in-transit email message. For more information and examples for using this API, see ...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation",
+      "communication"
+    ],
+    "title": "Amazon WorkMail Message Flow",
+    "version": "2019-05-01"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKMAIL_MESSAGE_FLOW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the raw content of an in-transit email message, in MIME format.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKMAIL_MESSAGE_FLOW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKMAIL_MESSAGE_FLOW_API_KEY}}"
+        }
+      ],
+      "id": "GET /messages/{{MESSAGE_ID}}",
+      "method": "GET",
+      "name": "GET /messages/{messageId}",
+      "note": "Replace {{AMAZON_WORKMAIL_MESSAGE_FLOW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "messageId",
+          "value": ""
+        }
+      ],
+      "path": "/messages/{{MESSAGE_ID}}",
+      "pathParameters": [
+        {
+          "name": "messageId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /messages/{messageId}",
+      "url": "http://workmailmessageflow.{{REGION}}.amazonaws.com/messages/{{MESSAGE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKMAIL_MESSAGE_FLOW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "content": {
+          "s3Reference": {
+            "bucket": {},
+            "key": {},
+            "objectVersion": {}
+          }
+        }
+      },
+      "body_json": {
+        "content": {
+          "s3Reference": {
+            "bucket": {},
+            "key": {},
+            "objectVersion": {}
+          }
+        }
+      },
+      "body_text": "{\"content\": {\"s3Reference\": {\"bucket\": {}, \"key\": {}, \"objectVersion\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates the raw content of an in-transit email message, in MIME format.</p> <p>This example describes how to update in-transit email message. For more information and examples for using this API, see <a href=\"https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html\"> Updating message content with AWS Lambda</a>.</p> <note> <p>Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code> from an AWS Lambda function configured with a synchronous <a href=\"https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules\"> Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a delivered or sent message, the message remains unchanged, even though <a href=\"https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html\">GetRawMessageContent</a> returns an updated message. </p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKMAIL_MESSAGE_FLOW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKMAIL_MESSAGE_FLOW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /messages/{{MESSAGE_ID}}",
+      "method": "POST",
+      "name": "POST /messages/{messageId}",
+      "note": "Replace {{AMAZON_WORKMAIL_MESSAGE_FLOW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "messageId",
+          "value": ""
+        }
+      ],
+      "path": "/messages/{{MESSAGE_ID}}",
+      "pathParameters": [
+        {
+          "name": "messageId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"content\": {\"s3Reference\": {\"bucket\": {}, \"key\": {}, \"objectVersion\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /messages/{messageId}",
+      "url": "http://workmailmessageflow.{{REGION}}.amazonaws.com/messages/{{MESSAGE_ID}}"
+    }
+  ]
+}

@@ -1,0 +1,4090 @@
+{
+  "id": "patientview.org",
+  "info": {
+    "base_url": "https://www.patientview.org/",
+    "description": "Given a User ID retrieve a list of available observation types for that user (where they have patient entered observation data).",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "PatientView",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "apiKey": "",
+        "password": "",
+        "username": ""
+      },
+      "body_json": {
+        "apiKey": "",
+        "password": "",
+        "username": ""
+      },
+      "body_text": "{\"apiKey\": \"\", \"password\": \"\", \"username\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Authenticate using username and password, returns token, which must be added to X-Auth-Token in header of all future requests",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //auth/login",
+      "method": "POST",
+      "name": "Log In",
+      "params": [],
+      "path": "//auth/login",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"apiKey\": \"\", \"password\": \"\", \"username\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Log In",
+      "url": "https://www.patientview.org//auth/login"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Log Out",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //auth/logout/{{TOKEN}}",
+      "method": "DELETE",
+      "name": "Log Out",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "path": "//auth/logout/{{TOKEN}}",
+      "pathParameters": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Log Out",
+      "url": "https://www.patientview.org//auth/logout/{{TOKEN}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Once logged in and have a token, get basic user information including group role membership",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //auth/{{TOKEN}}/basicuserinformation",
+      "method": "GET",
+      "name": "Get Basic User Information",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "path": "//auth/{{TOKEN}}/basicuserinformation",
+      "pathParameters": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Basic User Information",
+      "url": "https://www.patientview.org//auth/{{TOKEN}}/basicuserinformation"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a User ID, get basic patient information for a user from clinical data stored in FHIR",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //patient/{{USER_ID}}/basic",
+      "method": "GET",
+      "name": "Get Basic Patient Information",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        }
+      ],
+      "path": "//patient/{{USER_ID}}/basic",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Basic Patient Information",
+      "url": "https://www.patientview.org//patient/{{USER_ID}}/basic"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "getPatientManagementDiagnoses",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //patientmanagement/diagnoses",
+      "method": "GET",
+      "name": "getPatientManagementDiagnoses",
+      "params": [],
+      "path": "//patientmanagement/diagnoses",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "getPatientManagementDiagnoses",
+      "url": "https://www.patientview.org//patientmanagement/diagnoses"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "getPatientManagementLookupTypes",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //patientmanagement/lookuptypes",
+      "method": "GET",
+      "name": "getPatientManagementLookupTypes",
+      "params": [],
+      "path": "//patientmanagement/lookuptypes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "getPatientManagementLookupTypes",
+      "url": "https://www.patientview.org//patientmanagement/lookuptypes"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "condition": {
+          "asserter": "",
+          "category": "",
+          "code": "",
+          "date": "",
+          "description": "",
+          "fullDescription": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {},
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {},
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {},
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "id": 0,
+          "identifier": "",
+          "links": [
+            {
+              "created": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "link": "",
+              "linkType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {},
+                "value": ""
+              },
+              "name": ""
+            }
+          ],
+          "notes": "",
+          "severity": "",
+          "status": ""
+        },
+        "encounters": [
+          {
+            "date": "",
+            "encounterType": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {},
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "observations": [
+              {
+                "applies": "",
+                "bodySite": "",
+                "comments": "",
+                "comparator": "",
+                "diagram": "",
+                "group": {
+                  "address1": {},
+                  "address2": {},
+                  "address3": {},
+                  "childGroups": {},
+                  "code": {},
+                  "contactPoints": {},
+                  "created": {},
+                  "fhirResourceId": {},
+                  "groupFeatures": {},
+                  "groupType": {},
+                  "id": {},
+                  "lastImportDate": {},
+                  "lastUpdate": {},
+                  "links": {},
+                  "locations": {},
+                  "name": {},
+                  "parentGroups": {},
+                  "postcode": {},
+                  "sftpUser": {},
+                  "shortName": {},
+                  "visible": {},
+                  "visibleToJoin": {}
+                },
+                "id": 0,
+                "identifier": "",
+                "location": "",
+                "name": "",
+                "temporaryUuid": "",
+                "units": "",
+                "value": ""
+              }
+            ],
+            "procedures": [
+              {
+                "bodySite": "",
+                "id": 0,
+                "type": ""
+              }
+            ],
+            "status": ""
+          }
+        ],
+        "groupCode": "",
+        "identifier": "",
+        "observations": [
+          {
+            "applies": "",
+            "bodySite": "",
+            "comments": "",
+            "comparator": "",
+            "diagram": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {},
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "location": "",
+            "name": "",
+            "temporaryUuid": "",
+            "units": "",
+            "value": ""
+          }
+        ],
+        "patient": {
+          "address1": "",
+          "address2": "",
+          "address3": "",
+          "address4": "",
+          "contacts": [
+            {
+              "id": 0,
+              "system": "",
+              "use": "",
+              "value": ""
+            }
+          ],
+          "dateOfBirth": "",
+          "dateOfBirthNoTime": "",
+          "forename": "",
+          "gender": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {},
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {},
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {},
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "groupCode": "",
+          "identifier": "",
+          "identifiers": [
+            {
+              "id": 0,
+              "label": "",
+              "value": ""
+            }
+          ],
+          "postcode": "",
+          "practitioners": [
+            {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "address4": "",
+              "allowInviteGp": false,
+              "contacts": [
+                {
+                  "id": {},
+                  "system": {},
+                  "use": {},
+                  "value": {}
+                }
+              ],
+              "gender": "",
+              "groupCode": "",
+              "identifier": "",
+              "inviteDate": "",
+              "name": "",
+              "postcode": "",
+              "role": ""
+            }
+          ],
+          "surname": ""
+        },
+        "practitioners": [
+          {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "address4": "",
+            "allowInviteGp": false,
+            "contacts": [
+              {
+                "id": 0,
+                "system": "",
+                "use": "",
+                "value": ""
+              }
+            ],
+            "gender": "",
+            "groupCode": "",
+            "identifier": "",
+            "inviteDate": "",
+            "name": "",
+            "postcode": "",
+            "role": ""
+          }
+        ]
+      },
+      "body_json": {
+        "condition": {
+          "asserter": "",
+          "category": "",
+          "code": "",
+          "date": "",
+          "description": "",
+          "fullDescription": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {},
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {},
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {},
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "id": 0,
+          "identifier": "",
+          "links": [
+            {
+              "created": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "link": "",
+              "linkType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {},
+                "value": ""
+              },
+              "name": ""
+            }
+          ],
+          "notes": "",
+          "severity": "",
+          "status": ""
+        },
+        "encounters": [
+          {
+            "date": "",
+            "encounterType": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {},
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "observations": [
+              {
+                "applies": "",
+                "bodySite": "",
+                "comments": "",
+                "comparator": "",
+                "diagram": "",
+                "group": {
+                  "address1": {},
+                  "address2": {},
+                  "address3": {},
+                  "childGroups": {},
+                  "code": {},
+                  "contactPoints": {},
+                  "created": {},
+                  "fhirResourceId": {},
+                  "groupFeatures": {},
+                  "groupType": {},
+                  "id": {},
+                  "lastImportDate": {},
+                  "lastUpdate": {},
+                  "links": {},
+                  "locations": {},
+                  "name": {},
+                  "parentGroups": {},
+                  "postcode": {},
+                  "sftpUser": {},
+                  "shortName": {},
+                  "visible": {},
+                  "visibleToJoin": {}
+                },
+                "id": 0,
+                "identifier": "",
+                "location": "",
+                "name": "",
+                "temporaryUuid": "",
+                "units": "",
+                "value": ""
+              }
+            ],
+            "procedures": [
+              {
+                "bodySite": "",
+                "id": 0,
+                "type": ""
+              }
+            ],
+            "status": ""
+          }
+        ],
+        "groupCode": "",
+        "identifier": "",
+        "observations": [
+          {
+            "applies": "",
+            "bodySite": "",
+            "comments": "",
+            "comparator": "",
+            "diagram": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {},
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "location": "",
+            "name": "",
+            "temporaryUuid": "",
+            "units": "",
+            "value": ""
+          }
+        ],
+        "patient": {
+          "address1": "",
+          "address2": "",
+          "address3": "",
+          "address4": "",
+          "contacts": [
+            {
+              "id": 0,
+              "system": "",
+              "use": "",
+              "value": ""
+            }
+          ],
+          "dateOfBirth": "",
+          "dateOfBirthNoTime": "",
+          "forename": "",
+          "gender": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {},
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {},
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {},
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "groupCode": "",
+          "identifier": "",
+          "identifiers": [
+            {
+              "id": 0,
+              "label": "",
+              "value": ""
+            }
+          ],
+          "postcode": "",
+          "practitioners": [
+            {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "address4": "",
+              "allowInviteGp": false,
+              "contacts": [
+                {
+                  "id": {},
+                  "system": {},
+                  "use": {},
+                  "value": {}
+                }
+              ],
+              "gender": "",
+              "groupCode": "",
+              "identifier": "",
+              "inviteDate": "",
+              "name": "",
+              "postcode": "",
+              "role": ""
+            }
+          ],
+          "surname": ""
+        },
+        "practitioners": [
+          {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "address4": "",
+            "allowInviteGp": false,
+            "contacts": [
+              {
+                "id": 0,
+                "system": "",
+                "use": "",
+                "value": ""
+              }
+            ],
+            "gender": "",
+            "groupCode": "",
+            "identifier": "",
+            "inviteDate": "",
+            "name": "",
+            "postcode": "",
+            "role": ""
+          }
+        ]
+      },
+      "body_text": "{\"condition\": {\"asserter\": \"\", \"category\": \"\", \"code\": \"\", \"date\": \"\", \"description\": \"\", \"fullDescription\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {}, \"value\": \"\"}, \"name\": \"\"}], \"notes\": \"\", \"severity\": \"\", \"status\": \"\"}, \"encounters\": [{\"date\": \"\", \"encounterType\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": {}, \"address2\": {}, \"address3\": {}, \"childGroups\": {}, \"code\": {}, \"contactPoints\": {}, \"created\": {}, \"fhirResourceId\": {}, \"groupFeatures\": {}, \"groupType\": {}, \"id\": {}, \"lastImportDate\": {}, \"lastUpdate\": {}, \"links\": {}, \"locations\": {}, \"name\": {}, \"parentGroups\": {}, \"postcode\": {}, \"sftpUser\": {}, \"shortName\": {}, \"visible\": {}, \"visibleToJoin\": {}}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"procedures\": [{\"bodySite\": \"\", \"id\": 0, \"type\": \"\"}], \"status\": \"\"}], \"groupCode\": \"\", \"identifier\": \"\", \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"patient\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"dateOfBirth\": \"\", \"dateOfBirthNoTime\": \"\", \"forename\": \"\", \"gender\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"groupCode\": \"\", \"identifier\": \"\", \"identifiers\": [{\"id\": 0, \"label\": \"\", \"value\": \"\"}], \"postcode\": \"\", \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": {}, \"system\": {}, \"use\": {}, \"value\": {}}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}], \"surname\": \"\"}, \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "validatePatientManagement",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //patientmanagement/validate",
+      "method": "POST",
+      "name": "validatePatientManagement",
+      "params": [],
+      "path": "//patientmanagement/validate",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"condition\": {\"asserter\": \"\", \"category\": \"\", \"code\": \"\", \"date\": \"\", \"description\": \"\", \"fullDescription\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {}, \"value\": \"\"}, \"name\": \"\"}], \"notes\": \"\", \"severity\": \"\", \"status\": \"\"}, \"encounters\": [{\"date\": \"\", \"encounterType\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": {}, \"address2\": {}, \"address3\": {}, \"childGroups\": {}, \"code\": {}, \"contactPoints\": {}, \"created\": {}, \"fhirResourceId\": {}, \"groupFeatures\": {}, \"groupType\": {}, \"id\": {}, \"lastImportDate\": {}, \"lastUpdate\": {}, \"links\": {}, \"locations\": {}, \"name\": {}, \"parentGroups\": {}, \"postcode\": {}, \"sftpUser\": {}, \"shortName\": {}, \"visible\": {}, \"visibleToJoin\": {}}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"procedures\": [{\"bodySite\": \"\", \"id\": 0, \"type\": \"\"}], \"status\": \"\"}], \"groupCode\": \"\", \"identifier\": \"\", \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"patient\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"dateOfBirth\": \"\", \"dateOfBirthNoTime\": \"\", \"forename\": \"\", \"gender\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"groupCode\": \"\", \"identifier\": \"\", \"identifiers\": [{\"id\": 0, \"label\": \"\", \"value\": \"\"}], \"postcode\": \"\", \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": {}, \"system\": {}, \"use\": {}, \"value\": {}}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}], \"surname\": \"\"}, \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "validatePatientManagement",
+      "url": "https://www.patientview.org//patientmanagement/validate"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "getPatientManagement",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}",
+      "method": "GET",
+      "name": "getPatientManagement",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": ""
+        },
+        {
+          "name": "identifierId",
+          "value": ""
+        }
+      ],
+      "path": "//patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": ""
+        },
+        {
+          "name": "identifierId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "getPatientManagement",
+      "url": "https://www.patientview.org//patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "condition": {
+          "asserter": "",
+          "category": "",
+          "code": "",
+          "date": "",
+          "description": "",
+          "fullDescription": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {
+                  "description": {},
+                  "id": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "name": {}
+                },
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "id": 0,
+          "identifier": "",
+          "links": [
+            {
+              "created": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "link": "",
+              "linkType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "name": ""
+            }
+          ],
+          "notes": "",
+          "severity": "",
+          "status": ""
+        },
+        "encounters": [
+          {
+            "date": "",
+            "encounterType": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "observations": [
+              {
+                "applies": "",
+                "bodySite": "",
+                "comments": "",
+                "comparator": "",
+                "diagram": "",
+                "group": {
+                  "address1": {},
+                  "address2": {},
+                  "address3": {},
+                  "childGroups": {},
+                  "code": {},
+                  "contactPoints": {},
+                  "created": {},
+                  "fhirResourceId": {},
+                  "groupFeatures": {},
+                  "groupType": {},
+                  "id": {},
+                  "lastImportDate": {},
+                  "lastUpdate": {},
+                  "links": {},
+                  "locations": {},
+                  "name": {},
+                  "parentGroups": {},
+                  "postcode": {},
+                  "sftpUser": {},
+                  "shortName": {},
+                  "visible": {},
+                  "visibleToJoin": {}
+                },
+                "id": 0,
+                "identifier": "",
+                "location": "",
+                "name": "",
+                "temporaryUuid": "",
+                "units": "",
+                "value": ""
+              }
+            ],
+            "procedures": [
+              {
+                "bodySite": "",
+                "id": 0,
+                "type": ""
+              }
+            ],
+            "status": ""
+          }
+        ],
+        "groupCode": "",
+        "identifier": "",
+        "observations": [
+          {
+            "applies": "",
+            "bodySite": "",
+            "comments": "",
+            "comparator": "",
+            "diagram": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "location": "",
+            "name": "",
+            "temporaryUuid": "",
+            "units": "",
+            "value": ""
+          }
+        ],
+        "patient": {
+          "address1": "",
+          "address2": "",
+          "address3": "",
+          "address4": "",
+          "contacts": [
+            {
+              "id": 0,
+              "system": "",
+              "use": "",
+              "value": ""
+            }
+          ],
+          "dateOfBirth": "",
+          "dateOfBirthNoTime": "",
+          "forename": "",
+          "gender": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {
+                  "description": {},
+                  "id": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "name": {}
+                },
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "groupCode": "",
+          "identifier": "",
+          "identifiers": [
+            {
+              "id": 0,
+              "label": "",
+              "value": ""
+            }
+          ],
+          "postcode": "",
+          "practitioners": [
+            {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "address4": "",
+              "allowInviteGp": false,
+              "contacts": [
+                {
+                  "id": {},
+                  "system": {},
+                  "use": {},
+                  "value": {}
+                }
+              ],
+              "gender": "",
+              "groupCode": "",
+              "identifier": "",
+              "inviteDate": "",
+              "name": "",
+              "postcode": "",
+              "role": ""
+            }
+          ],
+          "surname": ""
+        },
+        "practitioners": [
+          {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "address4": "",
+            "allowInviteGp": false,
+            "contacts": [
+              {
+                "id": 0,
+                "system": "",
+                "use": "",
+                "value": ""
+              }
+            ],
+            "gender": "",
+            "groupCode": "",
+            "identifier": "",
+            "inviteDate": "",
+            "name": "",
+            "postcode": "",
+            "role": ""
+          }
+        ]
+      },
+      "body_json": {
+        "condition": {
+          "asserter": "",
+          "category": "",
+          "code": "",
+          "date": "",
+          "description": "",
+          "fullDescription": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {
+                  "description": {},
+                  "id": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "name": {}
+                },
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "id": 0,
+          "identifier": "",
+          "links": [
+            {
+              "created": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "link": "",
+              "linkType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "name": ""
+            }
+          ],
+          "notes": "",
+          "severity": "",
+          "status": ""
+        },
+        "encounters": [
+          {
+            "date": "",
+            "encounterType": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "observations": [
+              {
+                "applies": "",
+                "bodySite": "",
+                "comments": "",
+                "comparator": "",
+                "diagram": "",
+                "group": {
+                  "address1": {},
+                  "address2": {},
+                  "address3": {},
+                  "childGroups": {},
+                  "code": {},
+                  "contactPoints": {},
+                  "created": {},
+                  "fhirResourceId": {},
+                  "groupFeatures": {},
+                  "groupType": {},
+                  "id": {},
+                  "lastImportDate": {},
+                  "lastUpdate": {},
+                  "links": {},
+                  "locations": {},
+                  "name": {},
+                  "parentGroups": {},
+                  "postcode": {},
+                  "sftpUser": {},
+                  "shortName": {},
+                  "visible": {},
+                  "visibleToJoin": {}
+                },
+                "id": 0,
+                "identifier": "",
+                "location": "",
+                "name": "",
+                "temporaryUuid": "",
+                "units": "",
+                "value": ""
+              }
+            ],
+            "procedures": [
+              {
+                "bodySite": "",
+                "id": 0,
+                "type": ""
+              }
+            ],
+            "status": ""
+          }
+        ],
+        "groupCode": "",
+        "identifier": "",
+        "observations": [
+          {
+            "applies": "",
+            "bodySite": "",
+            "comments": "",
+            "comparator": "",
+            "diagram": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "location": "",
+            "name": "",
+            "temporaryUuid": "",
+            "units": "",
+            "value": ""
+          }
+        ],
+        "patient": {
+          "address1": "",
+          "address2": "",
+          "address3": "",
+          "address4": "",
+          "contacts": [
+            {
+              "id": 0,
+              "system": "",
+              "use": "",
+              "value": ""
+            }
+          ],
+          "dateOfBirth": "",
+          "dateOfBirthNoTime": "",
+          "forename": "",
+          "gender": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {
+                  "description": {},
+                  "id": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "name": {}
+                },
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "groupCode": "",
+          "identifier": "",
+          "identifiers": [
+            {
+              "id": 0,
+              "label": "",
+              "value": ""
+            }
+          ],
+          "postcode": "",
+          "practitioners": [
+            {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "address4": "",
+              "allowInviteGp": false,
+              "contacts": [
+                {
+                  "id": {},
+                  "system": {},
+                  "use": {},
+                  "value": {}
+                }
+              ],
+              "gender": "",
+              "groupCode": "",
+              "identifier": "",
+              "inviteDate": "",
+              "name": "",
+              "postcode": "",
+              "role": ""
+            }
+          ],
+          "surname": ""
+        },
+        "practitioners": [
+          {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "address4": "",
+            "allowInviteGp": false,
+            "contacts": [
+              {
+                "id": 0,
+                "system": "",
+                "use": "",
+                "value": ""
+              }
+            ],
+            "gender": "",
+            "groupCode": "",
+            "identifier": "",
+            "inviteDate": "",
+            "name": "",
+            "postcode": "",
+            "role": ""
+          }
+        ]
+      },
+      "body_text": "{\"condition\": {\"asserter\": \"\", \"category\": \"\", \"code\": \"\", \"date\": \"\", \"description\": \"\", \"fullDescription\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {\"description\": {}, \"id\": {}, \"lookupType\": {}, \"value\": {}}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"name\": {}}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"name\": \"\"}], \"notes\": \"\", \"severity\": \"\", \"status\": \"\"}, \"encounters\": [{\"date\": \"\", \"encounterType\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": {}, \"address2\": {}, \"address3\": {}, \"childGroups\": {}, \"code\": {}, \"contactPoints\": {}, \"created\": {}, \"fhirResourceId\": {}, \"groupFeatures\": {}, \"groupType\": {}, \"id\": {}, \"lastImportDate\": {}, \"lastUpdate\": {}, \"links\": {}, \"locations\": {}, \"name\": {}, \"parentGroups\": {}, \"postcode\": {}, \"sftpUser\": {}, \"shortName\": {}, \"visible\": {}, \"visibleToJoin\": {}}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"procedures\": [{\"bodySite\": \"\", \"id\": 0, \"type\": \"\"}], \"status\": \"\"}], \"groupCode\": \"\", \"identifier\": \"\", \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"patient\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"dateOfBirth\": \"\", \"dateOfBirthNoTime\": \"\", \"forename\": \"\", \"gender\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {\"description\": {}, \"id\": {}, \"lookupType\": {}, \"value\": {}}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"name\": {}}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"groupCode\": \"\", \"identifier\": \"\", \"identifiers\": [{\"id\": 0, \"label\": \"\", \"value\": \"\"}], \"postcode\": \"\", \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": {}, \"system\": {}, \"use\": {}, \"value\": {}}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}], \"surname\": \"\"}, \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "savePatientManagement",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}",
+      "method": "POST",
+      "name": "savePatientManagement",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": ""
+        },
+        {
+          "name": "identifierId",
+          "value": ""
+        }
+      ],
+      "path": "//patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": ""
+        },
+        {
+          "name": "identifierId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"condition\": {\"asserter\": \"\", \"category\": \"\", \"code\": \"\", \"date\": \"\", \"description\": \"\", \"fullDescription\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {\"description\": {}, \"id\": {}, \"lookupType\": {}, \"value\": {}}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"name\": {}}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"name\": \"\"}], \"notes\": \"\", \"severity\": \"\", \"status\": \"\"}, \"encounters\": [{\"date\": \"\", \"encounterType\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": {}, \"address2\": {}, \"address3\": {}, \"childGroups\": {}, \"code\": {}, \"contactPoints\": {}, \"created\": {}, \"fhirResourceId\": {}, \"groupFeatures\": {}, \"groupType\": {}, \"id\": {}, \"lastImportDate\": {}, \"lastUpdate\": {}, \"links\": {}, \"locations\": {}, \"name\": {}, \"parentGroups\": {}, \"postcode\": {}, \"sftpUser\": {}, \"shortName\": {}, \"visible\": {}, \"visibleToJoin\": {}}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"procedures\": [{\"bodySite\": \"\", \"id\": 0, \"type\": \"\"}], \"status\": \"\"}], \"groupCode\": \"\", \"identifier\": \"\", \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"patient\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"dateOfBirth\": \"\", \"dateOfBirthNoTime\": \"\", \"forename\": \"\", \"gender\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {\"description\": {}, \"id\": {}, \"lookupType\": {}, \"value\": {}}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"name\": {}}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"groupCode\": \"\", \"identifier\": \"\", \"identifiers\": [{\"id\": 0, \"label\": \"\", \"value\": \"\"}], \"postcode\": \"\", \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": {}, \"system\": {}, \"use\": {}, \"value\": {}}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}], \"surname\": \"\"}, \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "savePatientManagement",
+      "url": "https://www.patientview.org//patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "condition": {
+          "asserter": "",
+          "category": "",
+          "code": "",
+          "date": "",
+          "description": "",
+          "fullDescription": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {
+                  "description": {},
+                  "id": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "name": {}
+                },
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "id": 0,
+          "identifier": "",
+          "links": [
+            {
+              "created": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "link": "",
+              "linkType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "name": ""
+            }
+          ],
+          "notes": "",
+          "severity": "",
+          "status": ""
+        },
+        "encounters": [
+          {
+            "date": "",
+            "encounterType": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "observations": [
+              {
+                "applies": "",
+                "bodySite": "",
+                "comments": "",
+                "comparator": "",
+                "diagram": "",
+                "group": {
+                  "address1": {},
+                  "address2": {},
+                  "address3": {},
+                  "childGroups": {},
+                  "code": {},
+                  "contactPoints": {},
+                  "created": {},
+                  "fhirResourceId": {},
+                  "groupFeatures": {},
+                  "groupType": {},
+                  "id": {},
+                  "lastImportDate": {},
+                  "lastUpdate": {},
+                  "links": {},
+                  "locations": {},
+                  "name": {},
+                  "parentGroups": {},
+                  "postcode": {},
+                  "sftpUser": {},
+                  "shortName": {},
+                  "visible": {},
+                  "visibleToJoin": {}
+                },
+                "id": 0,
+                "identifier": "",
+                "location": "",
+                "name": "",
+                "temporaryUuid": "",
+                "units": "",
+                "value": ""
+              }
+            ],
+            "procedures": [
+              {
+                "bodySite": "",
+                "id": 0,
+                "type": ""
+              }
+            ],
+            "status": ""
+          }
+        ],
+        "groupCode": "",
+        "identifier": "",
+        "observations": [
+          {
+            "applies": "",
+            "bodySite": "",
+            "comments": "",
+            "comparator": "",
+            "diagram": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "location": "",
+            "name": "",
+            "temporaryUuid": "",
+            "units": "",
+            "value": ""
+          }
+        ],
+        "patient": {
+          "address1": "",
+          "address2": "",
+          "address3": "",
+          "address4": "",
+          "contacts": [
+            {
+              "id": 0,
+              "system": "",
+              "use": "",
+              "value": ""
+            }
+          ],
+          "dateOfBirth": "",
+          "dateOfBirthNoTime": "",
+          "forename": "",
+          "gender": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {
+                  "description": {},
+                  "id": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "name": {}
+                },
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "groupCode": "",
+          "identifier": "",
+          "identifiers": [
+            {
+              "id": 0,
+              "label": "",
+              "value": ""
+            }
+          ],
+          "postcode": "",
+          "practitioners": [
+            {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "address4": "",
+              "allowInviteGp": false,
+              "contacts": [
+                {
+                  "id": {},
+                  "system": {},
+                  "use": {},
+                  "value": {}
+                }
+              ],
+              "gender": "",
+              "groupCode": "",
+              "identifier": "",
+              "inviteDate": "",
+              "name": "",
+              "postcode": "",
+              "role": ""
+            }
+          ],
+          "surname": ""
+        },
+        "practitioners": [
+          {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "address4": "",
+            "allowInviteGp": false,
+            "contacts": [
+              {
+                "id": 0,
+                "system": "",
+                "use": "",
+                "value": ""
+              }
+            ],
+            "gender": "",
+            "groupCode": "",
+            "identifier": "",
+            "inviteDate": "",
+            "name": "",
+            "postcode": "",
+            "role": ""
+          }
+        ]
+      },
+      "body_json": {
+        "condition": {
+          "asserter": "",
+          "category": "",
+          "code": "",
+          "date": "",
+          "description": "",
+          "fullDescription": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {
+                  "description": {},
+                  "id": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "name": {}
+                },
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "id": 0,
+          "identifier": "",
+          "links": [
+            {
+              "created": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "link": "",
+              "linkType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "name": ""
+            }
+          ],
+          "notes": "",
+          "severity": "",
+          "status": ""
+        },
+        "encounters": [
+          {
+            "date": "",
+            "encounterType": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "observations": [
+              {
+                "applies": "",
+                "bodySite": "",
+                "comments": "",
+                "comparator": "",
+                "diagram": "",
+                "group": {
+                  "address1": {},
+                  "address2": {},
+                  "address3": {},
+                  "childGroups": {},
+                  "code": {},
+                  "contactPoints": {},
+                  "created": {},
+                  "fhirResourceId": {},
+                  "groupFeatures": {},
+                  "groupType": {},
+                  "id": {},
+                  "lastImportDate": {},
+                  "lastUpdate": {},
+                  "links": {},
+                  "locations": {},
+                  "name": {},
+                  "parentGroups": {},
+                  "postcode": {},
+                  "sftpUser": {},
+                  "shortName": {},
+                  "visible": {},
+                  "visibleToJoin": {}
+                },
+                "id": 0,
+                "identifier": "",
+                "location": "",
+                "name": "",
+                "temporaryUuid": "",
+                "units": "",
+                "value": ""
+              }
+            ],
+            "procedures": [
+              {
+                "bodySite": "",
+                "id": 0,
+                "type": ""
+              }
+            ],
+            "status": ""
+          }
+        ],
+        "groupCode": "",
+        "identifier": "",
+        "observations": [
+          {
+            "applies": "",
+            "bodySite": "",
+            "comments": "",
+            "comparator": "",
+            "diagram": "",
+            "group": {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "childGroups": [
+                {}
+              ],
+              "code": "",
+              "contactPoints": [
+                {
+                  "contactPointType": {},
+                  "content": {},
+                  "created": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "created": "",
+              "fhirResourceId": "",
+              "groupFeatures": [
+                {
+                  "created": {},
+                  "feature": {},
+                  "id": {},
+                  "lastUpdate": {}
+                }
+              ],
+              "groupType": {
+                "created": "",
+                "description": "",
+                "descriptionFriendly": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "lookupType": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "type": {}
+                },
+                "value": ""
+              },
+              "id": 0,
+              "lastImportDate": "",
+              "lastUpdate": "",
+              "links": [
+                {
+                  "created": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "link": {},
+                  "linkType": {},
+                  "name": {}
+                }
+              ],
+              "locations": [
+                {
+                  "address": {},
+                  "created": {},
+                  "email": {},
+                  "id": {},
+                  "label": {},
+                  "lastUpdate": {},
+                  "name": {},
+                  "phone": {},
+                  "web": {}
+                }
+              ],
+              "name": "",
+              "parentGroups": [
+                {}
+              ],
+              "postcode": "",
+              "sftpUser": "",
+              "shortName": "",
+              "visible": false,
+              "visibleToJoin": false
+            },
+            "id": 0,
+            "identifier": "",
+            "location": "",
+            "name": "",
+            "temporaryUuid": "",
+            "units": "",
+            "value": ""
+          }
+        ],
+        "patient": {
+          "address1": "",
+          "address2": "",
+          "address3": "",
+          "address4": "",
+          "contacts": [
+            {
+              "id": 0,
+              "system": "",
+              "use": "",
+              "value": ""
+            }
+          ],
+          "dateOfBirth": "",
+          "dateOfBirthNoTime": "",
+          "forename": "",
+          "gender": "",
+          "group": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "childGroups": [
+              {}
+            ],
+            "code": "",
+            "contactPoints": [
+              {
+                "contactPointType": {
+                  "description": {},
+                  "id": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "content": "",
+                "created": "",
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "created": "",
+            "fhirResourceId": "",
+            "groupFeatures": [
+              {
+                "created": "",
+                "feature": {
+                  "created": {},
+                  "description": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "name": {}
+                },
+                "id": 0,
+                "lastUpdate": ""
+              }
+            ],
+            "groupType": {
+              "created": "",
+              "description": "",
+              "descriptionFriendly": "",
+              "displayOrder": 0,
+              "id": 0,
+              "lastUpdate": "",
+              "lookupType": {
+                "created": "",
+                "description": "",
+                "id": 0,
+                "lastUpdate": "",
+                "type": "GROUP"
+              },
+              "value": ""
+            },
+            "id": 0,
+            "lastImportDate": "",
+            "lastUpdate": "",
+            "links": [
+              {
+                "created": "",
+                "displayOrder": 0,
+                "id": 0,
+                "lastUpdate": "",
+                "link": "",
+                "linkType": {
+                  "created": {},
+                  "description": {},
+                  "descriptionFriendly": {},
+                  "displayOrder": {},
+                  "id": {},
+                  "lastUpdate": {},
+                  "lookupType": {},
+                  "value": {}
+                },
+                "name": ""
+              }
+            ],
+            "locations": [
+              {
+                "address": "",
+                "created": "",
+                "email": "",
+                "id": 0,
+                "label": "",
+                "lastUpdate": "",
+                "name": "",
+                "phone": "",
+                "web": ""
+              }
+            ],
+            "name": "",
+            "parentGroups": [
+              {}
+            ],
+            "postcode": "",
+            "sftpUser": "",
+            "shortName": "",
+            "visible": false,
+            "visibleToJoin": false
+          },
+          "groupCode": "",
+          "identifier": "",
+          "identifiers": [
+            {
+              "id": 0,
+              "label": "",
+              "value": ""
+            }
+          ],
+          "postcode": "",
+          "practitioners": [
+            {
+              "address1": "",
+              "address2": "",
+              "address3": "",
+              "address4": "",
+              "allowInviteGp": false,
+              "contacts": [
+                {
+                  "id": {},
+                  "system": {},
+                  "use": {},
+                  "value": {}
+                }
+              ],
+              "gender": "",
+              "groupCode": "",
+              "identifier": "",
+              "inviteDate": "",
+              "name": "",
+              "postcode": "",
+              "role": ""
+            }
+          ],
+          "surname": ""
+        },
+        "practitioners": [
+          {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "address4": "",
+            "allowInviteGp": false,
+            "contacts": [
+              {
+                "id": 0,
+                "system": "",
+                "use": "",
+                "value": ""
+              }
+            ],
+            "gender": "",
+            "groupCode": "",
+            "identifier": "",
+            "inviteDate": "",
+            "name": "",
+            "postcode": "",
+            "role": ""
+          }
+        ]
+      },
+      "body_text": "{\"condition\": {\"asserter\": \"\", \"category\": \"\", \"code\": \"\", \"date\": \"\", \"description\": \"\", \"fullDescription\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {\"description\": {}, \"id\": {}, \"lookupType\": {}, \"value\": {}}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"name\": {}}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"name\": \"\"}], \"notes\": \"\", \"severity\": \"\", \"status\": \"\"}, \"encounters\": [{\"date\": \"\", \"encounterType\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": {}, \"address2\": {}, \"address3\": {}, \"childGroups\": {}, \"code\": {}, \"contactPoints\": {}, \"created\": {}, \"fhirResourceId\": {}, \"groupFeatures\": {}, \"groupType\": {}, \"id\": {}, \"lastImportDate\": {}, \"lastUpdate\": {}, \"links\": {}, \"locations\": {}, \"name\": {}, \"parentGroups\": {}, \"postcode\": {}, \"sftpUser\": {}, \"shortName\": {}, \"visible\": {}, \"visibleToJoin\": {}}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"procedures\": [{\"bodySite\": \"\", \"id\": 0, \"type\": \"\"}], \"status\": \"\"}], \"groupCode\": \"\", \"identifier\": \"\", \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"patient\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"dateOfBirth\": \"\", \"dateOfBirthNoTime\": \"\", \"forename\": \"\", \"gender\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {\"description\": {}, \"id\": {}, \"lookupType\": {}, \"value\": {}}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"name\": {}}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"groupCode\": \"\", \"identifier\": \"\", \"identifiers\": [{\"id\": 0, \"label\": \"\", \"value\": \"\"}], \"postcode\": \"\", \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": {}, \"system\": {}, \"use\": {}, \"value\": {}}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}], \"surname\": \"\"}, \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "savePatientManagementSurgeries",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}/surgeries",
+      "method": "POST",
+      "name": "savePatientManagementSurgeries",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": ""
+        },
+        {
+          "name": "identifierId",
+          "value": ""
+        }
+      ],
+      "path": "//patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}/surgeries",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": ""
+        },
+        {
+          "name": "identifierId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"condition\": {\"asserter\": \"\", \"category\": \"\", \"code\": \"\", \"date\": \"\", \"description\": \"\", \"fullDescription\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {\"description\": {}, \"id\": {}, \"lookupType\": {}, \"value\": {}}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"name\": {}}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"name\": \"\"}], \"notes\": \"\", \"severity\": \"\", \"status\": \"\"}, \"encounters\": [{\"date\": \"\", \"encounterType\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": {}, \"address2\": {}, \"address3\": {}, \"childGroups\": {}, \"code\": {}, \"contactPoints\": {}, \"created\": {}, \"fhirResourceId\": {}, \"groupFeatures\": {}, \"groupType\": {}, \"id\": {}, \"lastImportDate\": {}, \"lastUpdate\": {}, \"links\": {}, \"locations\": {}, \"name\": {}, \"parentGroups\": {}, \"postcode\": {}, \"sftpUser\": {}, \"shortName\": {}, \"visible\": {}, \"visibleToJoin\": {}}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"procedures\": [{\"bodySite\": \"\", \"id\": 0, \"type\": \"\"}], \"status\": \"\"}], \"groupCode\": \"\", \"identifier\": \"\", \"observations\": [{\"applies\": \"\", \"bodySite\": \"\", \"comments\": \"\", \"comparator\": \"\", \"diagram\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {}, \"content\": {}, \"created\": {}, \"id\": {}, \"lastUpdate\": {}}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": {}, \"feature\": {}, \"id\": {}, \"lastUpdate\": {}}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"type\": {}}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"link\": {}, \"linkType\": {}, \"name\": {}}], \"locations\": [{\"address\": {}, \"created\": {}, \"email\": {}, \"id\": {}, \"label\": {}, \"lastUpdate\": {}, \"name\": {}, \"phone\": {}, \"web\": {}}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"id\": 0, \"identifier\": \"\", \"location\": \"\", \"name\": \"\", \"temporaryUuid\": \"\", \"units\": \"\", \"value\": \"\"}], \"patient\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"dateOfBirth\": \"\", \"dateOfBirthNoTime\": \"\", \"forename\": \"\", \"gender\": \"\", \"group\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"childGroups\": [{}], \"code\": \"\", \"contactPoints\": [{\"contactPointType\": {\"description\": {}, \"id\": {}, \"lookupType\": {}, \"value\": {}}, \"content\": \"\", \"created\": \"\", \"id\": 0, \"lastUpdate\": \"\"}], \"created\": \"\", \"fhirResourceId\": \"\", \"groupFeatures\": [{\"created\": \"\", \"feature\": {\"created\": {}, \"description\": {}, \"id\": {}, \"lastUpdate\": {}, \"name\": {}}, \"id\": 0, \"lastUpdate\": \"\"}], \"groupType\": {\"created\": \"\", \"description\": \"\", \"descriptionFriendly\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"lookupType\": {\"created\": \"\", \"description\": \"\", \"id\": 0, \"lastUpdate\": \"\", \"type\": \"GROUP\"}, \"value\": \"\"}, \"id\": 0, \"lastImportDate\": \"\", \"lastUpdate\": \"\", \"links\": [{\"created\": \"\", \"displayOrder\": 0, \"id\": 0, \"lastUpdate\": \"\", \"link\": \"\", \"linkType\": {\"created\": {}, \"description\": {}, \"descriptionFriendly\": {}, \"displayOrder\": {}, \"id\": {}, \"lastUpdate\": {}, \"lookupType\": {}, \"value\": {}}, \"name\": \"\"}], \"locations\": [{\"address\": \"\", \"created\": \"\", \"email\": \"\", \"id\": 0, \"label\": \"\", \"lastUpdate\": \"\", \"name\": \"\", \"phone\": \"\", \"web\": \"\"}], \"name\": \"\", \"parentGroups\": [{}], \"postcode\": \"\", \"sftpUser\": \"\", \"shortName\": \"\", \"visible\": false, \"visibleToJoin\": false}, \"groupCode\": \"\", \"identifier\": \"\", \"identifiers\": [{\"id\": 0, \"label\": \"\", \"value\": \"\"}], \"postcode\": \"\", \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": {}, \"system\": {}, \"use\": {}, \"value\": {}}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}], \"surname\": \"\"}, \"practitioners\": [{\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"address4\": \"\", \"allowInviteGp\": false, \"contacts\": [{\"id\": 0, \"system\": \"\", \"use\": \"\", \"value\": \"\"}], \"gender\": \"\", \"groupCode\": \"\", \"identifier\": \"\", \"inviteDate\": \"\", \"name\": \"\", \"postcode\": \"\", \"role\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "savePatientManagementSurgeries",
+      "url": "https://www.patientview.org//patientmanagement/{{USER_ID}}/group/{{GROUP_ID}}/identifier/{{IDENTIFIER_ID}}/surgeries"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a User ID retrieve a list of available observation types for that user (where they have observation data).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //user/{{USER_ID}}/availableobservationheadings",
+      "method": "GET",
+      "name": "Get Available Observations Types For a User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        }
+      ],
+      "path": "//user/{{USER_ID}}/availableobservationheadings",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Available Observations Types For a User",
+      "url": "https://www.patientview.org//user/{{USER_ID}}/availableobservationheadings"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a User ID and search parameters, retrieve a page of observations.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //user/{{USER_ID}}/observations",
+      "method": "GET",
+      "name": "Get Observations of Multiple Types For a User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "code",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "orderDirection",
+          "value": ""
+        }
+      ],
+      "path": "//user/{{USER_ID}}/observations",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "code",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "orderDirection",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Observations of Multiple Types For a User",
+      "url": "https://www.patientview.org//user/{{USER_ID}}/observations"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a User ID and observation code, retrieve all observations.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //user/{{USER_ID}}/observations/{{CODE}}",
+      "method": "GET",
+      "name": "Get Observations of a Certain Type For a User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "code",
+          "value": ""
+        }
+      ],
+      "path": "//user/{{USER_ID}}/observations/{{CODE}}",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "code",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Observations of a Certain Type For a User",
+      "url": "https://www.patientview.org//user/{{USER_ID}}/observations/{{CODE}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a User ID and observation code, retrieve patient entered observations.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //user/{{USER_ID}}/observations/{{CODE}}/patiententered",
+      "method": "GET",
+      "name": "Get patient entered Observations of a Certain Type For a User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "code",
+          "value": ""
+        }
+      ],
+      "path": "//user/{{USER_ID}}/observations/{{CODE}}/patiententered",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "code",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get patient entered Observations of a Certain Type For a User",
+      "url": "https://www.patientview.org//user/{{USER_ID}}/observations/{{CODE}}/patiententered"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Given a User ID retrieve a list of available observation types for that user (where they have patient entered observation data).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //user/{{USER_ID}}/patiententeredobservationheadings",
+      "method": "GET",
+      "name": "Get Available Patient Entered Observations Types For a User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        }
+      ],
+      "path": "//user/{{USER_ID}}/patiententeredobservationheadings",
+      "pathParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Available Patient Entered Observations Types For a User",
+      "url": "https://www.patientview.org//user/{{USER_ID}}/patiententeredobservationheadings"
+    }
+  ]
+}

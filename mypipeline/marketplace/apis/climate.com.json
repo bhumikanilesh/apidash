@@ -1,0 +1,1625 @@
+{
+  "id": "climate.com",
+  "info": {
+    "base_url": "https://platform.climate.com/",
+    "description": "Check the status of an **Upload** by ID.",
+    "source": "apis.guru",
+    "tags": [
+      "weather"
+    ],
+    "title": "Climate FieldView Platform APIs",
+    "version": "4.0.11"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "geometry": {
+          "coordinates": [
+            0,
+            0
+          ],
+          "type": "Point"
+        }
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Upload a **Boundary** entry by passing the geometry of the boundary. This will store the boundary but will not create field in Climate FieldView and will not link to an existing field in Climate FieldView.\nThis is restricted to callers with **boundaries:write** scope.\nTo upload a field boundary for field creation in Climate FieldView, please use **POST /v4/uploads**.",
+      "form_data": [
+        {
+          "name": "geometry",
+          "type": "text",
+          "value": {
+            "coordinates": [
+              0,
+              0
+            ],
+            "type": "Point"
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //v4/boundaries",
+      "method": "POST",
+      "name": "Upload a boundary",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [],
+      "path": "//v4/boundaries",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"geometry\": {\"coordinates\": [0, 0], \"type\": \"Point\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Upload a boundary",
+      "url": "https://platform.climate.com//v4/boundaries"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ids": [
+          ""
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Retrieve multiple **Boundaries** (up to 10 per request).",
+      "form_data": [
+        {
+          "name": "ids",
+          "type": "text",
+          "value": [
+            ""
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //v4/boundaries/query",
+      "method": "POST",
+      "name": "Retrieve Boundaries in batch",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [],
+      "path": "//v4/boundaries/query",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ids\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Boundaries in batch",
+      "url": "https://platform.climate.com//v4/boundaries/query"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a **Boundary** by ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/boundaries/{{BOUNDARY_ID}}",
+      "method": "GET",
+      "name": "Retrieve a Boundary by ID",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "boundaryId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/boundaries/{{BOUNDARY_ID}}",
+      "pathParameters": [
+        {
+          "name": "boundaryId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a Boundary by ID",
+      "url": "https://platform.climate.com//v4/boundaries/{{BOUNDARY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "contentType": "application/vnd.climate.acrsi.geojson",
+        "definition": {}
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Step one in requesting a data product. The method will return an **Export** ID which the caller will use in subsequent `GET` requests.\nThe following `contentTypes` may be requested:\n  * __application/vnd.climate.acrsi.geojson__ (Beta)\n     Exports the planting activities accessible by the authenticated user and optionally filtered by resource owner\n     as a [GeoJSON Feature Collection](https://tools.ietf.org/html/rfc7946#page-12).\n\n     The export request definition must contain the following properties:\n       * plantingStartDate\n       * plantingEndDate\n       * resourceOwnerId\n\n     Requires `exports:read` and `plantingActivitySummary:read` scope.\n  \n  * __application/vnd.climate.harvest.geojson__\n     Exports the harvesting activities accessible by the authenticated user and optionally filtered by resource owner\n     as a [GeoJSON Feature Collection](https://tools.ietf.org/html/rfc7946#page-12).\n\n     The export request definition must contain the following properties:\n       * harvestStartDate\n       * harvestEndDate\n       * resourceOwnerId\n\n     Requires `exports:read` and `plantingActivitySummary:read` scope.",
+      "form_data": [
+        {
+          "name": "contentType",
+          "type": "text",
+          "value": "application/vnd.climate.acrsi.geojson"
+        },
+        {
+          "name": "definition",
+          "type": "text",
+          "value": {}
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //v4/exports",
+      "method": "POST",
+      "name": "Initiate a new export request.",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [],
+      "path": "//v4/exports",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"contentType\": \"application/vnd.climate.acrsi.geojson\", \"definition\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Initiate a new export request.",
+      "url": "https://platform.climate.com//v4/exports"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Downloads larger than `5MiB` (`5242880 bytes`) in size must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB` (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/exports/{{EXPORT_ID}}/contents",
+      "method": "GET",
+      "name": "Retrieve the binary contents of a processed export request.",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "exportId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/exports/{{EXPORT_ID}}/contents",
+      "pathParameters": [
+        {
+          "name": "exportId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve the binary contents of a processed export request.",
+      "url": "https://platform.climate.com//v4/exports/{{EXPORT_ID}}/contents"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Check the status of an **Export** by ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/exports/{{EXPORT_ID}}/status",
+      "method": "GET",
+      "name": "Retrieve the status of an Export.",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "exportId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/exports/{{EXPORT_ID}}/status",
+      "pathParameters": [
+        {
+          "name": "exportId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve the status of an Export.",
+      "url": "https://platform.climate.com//v4/exports/{{EXPORT_ID}}/status"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a given **farm organization** by organization type and ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/farmOrganizations/{{FARM_ORGANIZATION_TYPE}}/{{FARM_ORGANIZATION_ID}}",
+      "method": "GET",
+      "name": "Retrieve a specific farm organization by organization type and ID",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "farmOrganizationType",
+          "value": ""
+        },
+        {
+          "name": "farmOrganizationId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/farmOrganizations/{{FARM_ORGANIZATION_TYPE}}/{{FARM_ORGANIZATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "farmOrganizationType",
+          "value": ""
+        },
+        {
+          "name": "farmOrganizationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a specific farm organization by organization type and ID",
+      "url": "https://platform.climate.com//v4/farmOrganizations/{{FARM_ORGANIZATION_TYPE}}/{{FARM_ORGANIZATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve list of **Fields**. Filter the results by field name if the `fieldName` query parameter is specified.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/fields",
+      "method": "GET",
+      "name": "Retrieve list of Fields",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "fieldName",
+          "value": ""
+        }
+      ],
+      "path": "//v4/fields",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "fieldName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve list of Fields",
+      "url": "https://platform.climate.com//v4/fields"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve all fields the authenticated user has access to, including fields shared with the authenticated user from other resource owners. Filter the results by field name if the `fieldName` query parameter is specified.\nA 409 will be returned if the X-Next-Token has expired. When receiving a 409, the client should discard the X-Next-Token, discard all currently persisted fields for the user, and re-fetch fields from /fields/all.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/fields/all",
+      "method": "GET",
+      "name": "Retrieve list of all Fields the user has access to.",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "fieldName",
+          "value": ""
+        }
+      ],
+      "path": "//v4/fields/all",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "fieldName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve list of all Fields the user has access to.",
+      "url": "https://platform.climate.com//v4/fields/all"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a given **Field** by ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/fields/{{FIELD_ID}}",
+      "method": "GET",
+      "name": "Retrieve a specific Field by ID",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "fieldId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/fields/{{FIELD_ID}}",
+      "pathParameters": [
+        {
+          "name": "fieldId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a specific Field by ID",
+      "url": "https://platform.climate.com//v4/fields/{{FIELD_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of application activities. The id in the response is used for  GET /v4/layers/asApplied/{activityId}/contents.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/asApplied",
+      "method": "GET",
+      "name": "Retrieve a list of application activities",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        },
+        {
+          "name": "occurredAfter",
+          "value": ""
+        },
+        {
+          "name": "occurredBefore",
+          "value": ""
+        },
+        {
+          "name": "updatedAfter",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/asApplied",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        },
+        {
+          "name": "occurredAfter",
+          "value": ""
+        },
+        {
+          "name": "occurredBefore",
+          "value": ""
+        },
+        {
+          "name": "updatedAfter",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a list of application activities",
+      "url": "https://platform.climate.com//v4/layers/asApplied"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve an individual application activity by id.  Ids are retrieved via the  /layers/asApplied route. Downloads larger than `5MiB` (`5242880 bytes`) in size, must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB`  (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`). The data is compressed using .zip format.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/asApplied/{{ACTIVITY_ID}}/contents",
+      "method": "GET",
+      "name": "Retrieve the raw application activity",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "activityId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/asApplied/{{ACTIVITY_ID}}/contents",
+      "pathParameters": [
+        {
+          "name": "activityId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve the raw application activity",
+      "url": "https://platform.climate.com//v4/layers/asApplied/{{ACTIVITY_ID}}/contents"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of harvest activities. The id in the response is used for  GET /v4/layers/asHarvested/{activityId}/contents.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/asHarvested",
+      "method": "GET",
+      "name": "Retrieve a list of harvest activities",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        },
+        {
+          "name": "occurredAfter",
+          "value": ""
+        },
+        {
+          "name": "occurredBefore",
+          "value": ""
+        },
+        {
+          "name": "updatedAfter",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/asHarvested",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        },
+        {
+          "name": "occurredAfter",
+          "value": ""
+        },
+        {
+          "name": "occurredBefore",
+          "value": ""
+        },
+        {
+          "name": "updatedAfter",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a list of harvest activities",
+      "url": "https://platform.climate.com//v4/layers/asHarvested"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve an individual harvest activity by id.  Ids are retrieved via the  /layers/asHarvested route. Downloads larger than `5MiB` (`5242880 bytes`) in size, must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB`  (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`). The data is compressed using .zip format.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/asHarvested/{{ACTIVITY_ID}}/contents",
+      "method": "GET",
+      "name": "Retrieve the raw harvest activity",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "activityId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/asHarvested/{{ACTIVITY_ID}}/contents",
+      "pathParameters": [
+        {
+          "name": "activityId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve the raw harvest activity",
+      "url": "https://platform.climate.com//v4/layers/asHarvested/{{ACTIVITY_ID}}/contents"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of planting activities. The id in the response is used for  GET /v4/layers/asPlanted/{activityId}/contents.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/asPlanted",
+      "method": "GET",
+      "name": "Retrieve a list of planting activities",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        },
+        {
+          "name": "occurredAfter",
+          "value": ""
+        },
+        {
+          "name": "occurredBefore",
+          "value": ""
+        },
+        {
+          "name": "updatedAfter",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/asPlanted",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        },
+        {
+          "name": "occurredAfter",
+          "value": ""
+        },
+        {
+          "name": "occurredBefore",
+          "value": ""
+        },
+        {
+          "name": "updatedAfter",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a list of planting activities",
+      "url": "https://platform.climate.com//v4/layers/asPlanted"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve an individual planting activity by id.  Ids are retrieved via the  /layers/asPlanted route. Downloads larger than `5MiB` (`5242880 bytes`) in size, must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB`  (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`).  The data is compressed using .zip format.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/asPlanted/{{ACTIVITY_ID}}/contents",
+      "method": "GET",
+      "name": "Retrieve the raw planting activity",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "activityId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/asPlanted/{{ACTIVITY_ID}}/contents",
+      "pathParameters": [
+        {
+          "name": "activityId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve the raw planting activity",
+      "url": "https://platform.climate.com//v4/layers/asPlanted/{{ACTIVITY_ID}}/contents"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of scouting observations created or updated by the user identified by the Authorization header.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/scoutingObservations",
+      "method": "GET",
+      "name": "Retrieve a list of scouting observations",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "occurredAfter",
+          "value": ""
+        },
+        {
+          "name": "occurredBefore",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/scoutingObservations",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "occurredAfter",
+          "value": ""
+        },
+        {
+          "name": "occurredBefore",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a list of scouting observations",
+      "url": "https://platform.climate.com//v4/layers/scoutingObservations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve an individual scouting observation by id.  Ids are retrieved via the /layers/scoutingObservations route.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}",
+      "method": "GET",
+      "name": "Retrieve individual scouting observation",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scoutingObservationId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "scoutingObservationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve individual scouting observation",
+      "url": "https://platform.climate.com//v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve attachments associated with a given scouting observation. Photos added to scouting notes in the FieldView app are capped to 20MB, and we won’t store photos larger than that in a scouting note.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}/attachments",
+      "method": "GET",
+      "name": "Retrieve attachments associated with a given scouting observation.",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scoutingObservationId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}/attachments",
+      "pathParameters": [
+        {
+          "name": "scoutingObservationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve attachments associated with a given scouting observation.",
+      "url": "https://platform.climate.com//v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}/attachments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Photos added to scouting notes in the FieldView app are capped to `20MiB` (`20971520 bytes`), and we won’t store photos larger than that in a scouting note. Downloads larger than `5MiB` (`5242880 bytes`) in size, must be downloaded in chunks no larger than `5MiB` (`5242880 bytes`) and no smaller than `1MiB` (`1048576 bytes`). The last chunk could be less than `1MiB` (`1048576 bytes`).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}/attachments/{{ATTACHMENT_ID}}/contents",
+      "method": "GET",
+      "name": "Retrieve the binary contents of a scouting observation’s attachment.",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scoutingObservationId",
+          "value": ""
+        },
+        {
+          "name": "attachmentId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}/attachments/{{ATTACHMENT_ID}}/contents",
+      "pathParameters": [
+        {
+          "name": "scoutingObservationId",
+          "value": ""
+        },
+        {
+          "name": "attachmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve the binary contents of a scouting observation’s attachment.",
+      "url": "https://platform.climate.com//v4/layers/scoutingObservations/{{SCOUTING_OBSERVATION_ID}}/attachments/{{ATTACHMENT_ID}}/contents"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the **operations** accessible to the authenticated user. Filter the results by resource owner if the `resourceOwnerId` query parameter is specified.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/operations/all",
+      "method": "GET",
+      "name": "Retrieve the operations accessible to a a given user.",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/operations/all",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve the operations accessible to a a given user.",
+      "url": "https://platform.climate.com//v4/operations/all"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a resource owner for the given `resourceOwnerId`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/resourceOwners/{{RESOURCE_OWNER_ID}}",
+      "method": "GET",
+      "name": "Retrieve a resource owner by ID",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/resourceOwners/{{RESOURCE_OWNER_ID}}",
+      "pathParameters": [
+        {
+          "name": "resourceOwnerId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a resource owner by ID",
+      "url": "https://platform.climate.com//v4/resourceOwners/{{RESOURCE_OWNER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "contentType": "image/vnd.climate.thermal.geotiff",
+        "length": 0,
+        "md5": "",
+        "metadata": {}
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Step one in uploading a data product. The method will return an **Upload** ID which the caller will use in subsequent `PUT` requests.\nThe following `contentTypes` may be uploaded:\n    <details><summary>__image/vnd.climate.thermal.geotiff__</summary>\n\n    Allows for the upload of a thermal image. The image is a single band geotiff with 64 bit signed floating point values in degrees Celsius. The Coordinate Reference System (CRS) must be UTM with WGS84 datum.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n      * isCalibrated - boolean\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary>__image/vnd.climate.ndvi.geotiff__</summary>\n\n    Allows for the upload of a NDVI image. The image is a single band geotiff with 64 bit signed floating point values in the range of -1 to 1 inclusive. The Coordinate Reference System (CRS) must be UTM with WGS84 datum.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary> __image/vnd.climate.rgb.geotiff__</summary>\n\n    Allows for the upload of a true color image. The image is a multi band geotiff with 24-bit composite values. Each band is 8 bits with values in the range of 0 to 255. The Coordinate Reference System (CRS) must be UTM with WGS84 datum. The geotiff must contain 3 bands in the order Red, Green, Blue.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n      * isCalibrated - boolean\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * reflectanceComputeMethod - either TOA or GROUND\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary> __image/vnd.climate.rgb-nir.geotiff__</summary>\n\n    Allows for the upload of a Near Infrared (NIR) image. The Coordinate Reference System (CRS) must be UTM with WGS84 datum.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n      * isCalibrated - boolean\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * reflectanceComputeMethod - either TOA or GROUND\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary>__image/vnd.climate.rgb-cir.geotiff__</summary>\n\n    Allows for the upload of a Color Infrared (CIR) image. The Coordinate Reference System (CRS) must be UTM with WGS84 datum.\n\n    The following metadata entries are required to be embedded in the geotiff:\n      * acquisitionStartDate - ISO8601 date\n      * acquisitionEndDate - ISO8601 date\n      * isCalibrated - boolean\n\n    The following metadata entries are optional:\n      * sourceId - uuid referencing the asset in the partner's system\n      * fieldId - uuid referencing a field in the Climate system\n      * boundaryId - uuid referencing a boundary in the Climate system\n      * brandId - uuid referencing a partner's branding in the Climate system\n      * reflectanceComputeMethod - either TOA or GROUND\n      * name - name of the layer. The maximum number of characters that will be accepted as input is 20.\n\n    Requires either imagery:write or platform scope.\n  </details>\n  <details><summary> __application/vnd.climate.rx.planting.shp__</summary>\n\n    Allows for the upload of a planting prescription in shapefile format.  The upload must be an archive in the zip format.  It should contain one and only one of each of the following file types:\n      * .shp\n      * .shx\n      * .dbf\n\n    All files with the above suffixes must have the same prefix, ie Back40.shp, Back40.shx and Back40.dbf.\n\n    Requires either rx:write or platform scope.\n  </details>\n  <details><summary> __application/vnd.climate.prescription.zones.shp__</summary>\n\n    Allows for the upload of a zones prescription in shapefile format.  The upload must be an archive in the zip format.  It should contain one and only one of each of the following file types:\n      * .shp\n      * .shx\n      * .dbf\n\n    All files with the above suffixes must have the same prefix, ie Back40.shp, Back40.shx and Back40.dbf.\n\n    The following metadata entries are required:\n      * fieldId - field identifier for prescription zones.\n    \n    Requires either rxZones:write or platform scope.\n  </details>\n  <details><summary> __application/vnd.climate.modus.xml__</summary>\n\n    Allows for the upload of a soil sampling file in the modus 1.0 format with some restrictions.  The upload must be a single xml file.\n\n    The following elements are required to be present in the modus file.\n      * EventCode - Max length of 64 bytes\n      * EventDate - Must be in ISO8601\n      * SoilSample - Has a maxOccurs of 20k\n      * Depth - Has a maxOccurs of 50\n      * LabName - Must be non-empty.\n      * StartingDepth - 0 to 36 inclusive, default 0\n      * EndingDepth - 1 - 36 inclusive, default 1\n      * ColumnDepth\n      * DepthUnit - must be inches\n      * Geometry - point in wgs84\n    \n    Requires the soil:write scope.\n   </details>\n   <details><summary> __application/vnd.climate.stand-count.geojson__</summary>\n\n    Allows for the upload of a valid [geojson feature collection](https://tools.ietf.org/html/rfc7946#section-3.3).\n\n    Each feature in the collection must contain the following entry in its properties section:\n      * StandPPA - A count of the number of plants per acre:\n\n    Additionally, the type field of each feature's geometry field must be:\n      * Point\n\n    Requires `imagery:write` scope.\n   </details>\n   <details><summary> __application/vnd.climate.weed-count.geojson__</summary>\n\n    Allows for the upload of a valid [geojson feature collection](https://tools.ietf.org/html/rfc7946#section-3.3).\n\n    Each feature in the collection must contain the following entry in its properties section:\n      * StandPPA - A count of the number of plants per acre:\n\n    Additionally, the type field of each feature's geometry field must be:\n      * Point\n\n    Requires `imagery:write` scope.\n   </details>\n   <details><summary> __application/vnd.climate.as-applied.zip__</summary>\n\n    Allows for the upload of a valid application data [supported formats](https://support.climate.com/kt#/kA02A000000DjvOSAS/en_US).\n\n    The following metadata entries are required:\n      * fileName - name of the file being uploaded.\n\n    The following metadata entries are optional:\n      * resourceOwner - the grower's account email, where dealer/partner wants to upload data. As a prerequisite the grower must share their operation with the dealer/partner.\n\n    Requires `asApplied:write` scope.\n   </details>\n   <details><summary> __application/vnd.climate.as-planted.zip__</summary>\n\n    Allows for the upload of a valid planting data [supported formats](https://support.climate.com/kt#/kA02A000000DjvOSAS/en_US).\n\n    The following metadata entries are required:\n      * fileName - name of the file being uploaded.\n\n    The following metadata entries are optional:\n      * resourceOwner - the grower's account email, where dealer/partner wants to upload data. As a prerequisite the grower must share their operation with the dealer/partner.\n\n    Requires `asPlanted:write` scope.\n   </details>\n   <details><summary> __application/vnd.climate.as-harvested.zip__</summary>\n\n    Allows for the upload of a valid harvest data [supported formats](https://support.climate.com/kt#/kA02A000000DjvOSAS/en_US).\n\n    The following metadata entries are required:\n      * fileName - name of the file being uploaded.\n\n    The following metadata entries are optional:\n      * resourceOwner - the grower's account email, where dealer/partner wants to upload data. As a prerequisite the grower must share their operation with the dealer/partner.\n\n    Requires `asHarvested:write` scope.\n   </details>",
+      "form_data": [
+        {
+          "name": "contentType",
+          "type": "text",
+          "value": "image/vnd.climate.thermal.geotiff"
+        },
+        {
+          "name": "length",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "md5",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "metadata",
+          "type": "text",
+          "value": {}
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST //v4/uploads",
+      "method": "POST",
+      "name": "Initiate a new upload",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "X-Recipient-Email",
+          "value": ""
+        }
+      ],
+      "path": "//v4/uploads",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"contentType\": \"image/vnd.climate.thermal.geotiff\", \"length\": 0, \"md5\": \"\", \"metadata\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Initiate a new upload",
+      "url": "https://platform.climate.com//v4/uploads"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ids": [
+          ""
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Check the status of multiple **Uploads** (up to 100 per request).",
+      "form_data": [
+        {
+          "name": "ids",
+          "type": "text",
+          "value": [
+            ""
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST //v4/uploads/status/query",
+      "method": "POST",
+      "name": "Retrieve Upload statuses in batch",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [],
+      "path": "//v4/uploads/status/query",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ids\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Upload statuses in batch",
+      "url": "https://platform.climate.com//v4/uploads/status/query"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Send chunked data for an **Upload**.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "PUT //v4/uploads/{{UPLOAD_ID}}",
+      "method": "PUT",
+      "name": "Chunked upload of data",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "uploadId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/uploads/{{UPLOAD_ID}}",
+      "pathParameters": [
+        {
+          "name": "uploadId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Chunked upload of data",
+      "url": "https://platform.climate.com//v4/uploads/{{UPLOAD_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Check the status of an **Upload** by ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}}"
+        }
+      ],
+      "id": "GET //v4/uploads/{{UPLOAD_ID}}/status",
+      "method": "GET",
+      "name": "Retrieve Upload status",
+      "note": "Replace {{CLIMATE_FIELDVIEW_PLATFORM_APIS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "uploadId",
+          "value": ""
+        }
+      ],
+      "path": "//v4/uploads/{{UPLOAD_ID}}/status",
+      "pathParameters": [
+        {
+          "name": "uploadId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Upload status",
+      "url": "https://platform.climate.com//v4/uploads/{{UPLOAD_ID}}/status"
+    }
+  ]
+}

@@ -1,0 +1,4893 @@
+{
+  "id": "amazonaws.com_wafv2",
+  "info": {
+    "base_url": "http://wafv2.{region}.amazonaws.com",
+    "description": "Updates the specified RuleGroup.  This operation completely replaces the mutable specifications that you already have for the rule group with the ones that you provide to this call.  To modify a rule...",
+    "source": "apis.guru",
+    "tags": [
+      "maps"
+    ],
+    "title": "AWS WAFV2",
+    "version": "2019-07-29"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {},
+        "WebACLArn": {}
+      },
+      "body_json": {
+        "ResourceArn": {},
+        "WebACLArn": {}
+      },
+      "body_text": "{\"WebACLArn\": {}, \"ResourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Associates a web ACL with a regional application resource, to protect the resource. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information, see <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html\">UpdateDistribution</a> in the <i>Amazon CloudFront Developer Guide</i>. </p> <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.AssociateWebACL",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"WebACLArn\": {}, \"ResourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.AssociateWebACL",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.AssociateWebACL"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Rules": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Rules": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"Rules\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules. You can use this to check the capacity requirements for the rules you want to use in a <a>RuleGroup</a> or <a>WebACL</a>. </p> <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href=\"https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html\">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.CheckCapacity",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"Rules\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.CheckCapacity",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.CheckCapacity"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Scope": {},
+        "TokenDomains": {}
+      },
+      "body_json": {
+        "Scope": {},
+        "TokenDomains": {}
+      },
+      "body_text": "{\"Scope\": {}, \"TokenDomains\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates an API key for use in the integration of the CAPTCHA API in your JavaScript client applications. The integration lets you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript integration, see <a href=\"https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html\">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p> <p>The CAPTCHA API requires a key that authorizes CAPTCHA use from the client application domain. You can use a single key for up to 5 domains. After you generate a key, you can copy it for use in your JavaScript integration. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.CreateAPIKey",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"TokenDomains\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.CreateAPIKey",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.CreateAPIKey"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Addresses": {},
+        "Description": {},
+        "IPAddressVersion": {},
+        "Name": {},
+        "Scope": {},
+        "Tags": {}
+      },
+      "body_json": {
+        "Addresses": {},
+        "Description": {},
+        "IPAddressVersion": {},
+        "Name": {},
+        "Scope": {},
+        "Tags": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Description\": {}, \"IPAddressVersion\": {}, \"Addresses\": {}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates an <a>IPSet</a>, which you use to identify web requests that originate from specific IP addresses or ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can configure WAF to block them using an IPSet that lists those IP addresses. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.CreateIPSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Description\": {}, \"IPAddressVersion\": {}, \"Addresses\": {}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.CreateIPSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.CreateIPSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": {},
+        "Name": {},
+        "RegularExpressionList": {},
+        "Scope": {},
+        "Tags": {}
+      },
+      "body_json": {
+        "Description": {},
+        "Name": {},
+        "RegularExpressionList": {},
+        "Scope": {},
+        "Tags": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Description\": {}, \"RegularExpressionList\": {}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have WAF inspect a web request component for the specified patterns.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.CreateRegexPatternSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Description\": {}, \"RegularExpressionList\": {}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.CreateRegexPatternSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.CreateRegexPatternSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Capacity": {},
+        "CustomResponseBodies": {},
+        "Description": {},
+        "Name": {},
+        "Rules": {},
+        "Scope": {},
+        "Tags": {},
+        "VisibilityConfig": {
+          "CloudWatchMetricsEnabled": {},
+          "MetricName": {},
+          "SampledRequestsEnabled": {}
+        }
+      },
+      "body_json": {
+        "Capacity": {},
+        "CustomResponseBodies": {},
+        "Description": {},
+        "Name": {},
+        "Rules": {},
+        "Scope": {},
+        "Tags": {},
+        "VisibilityConfig": {
+          "CloudWatchMetricsEnabled": {},
+          "MetricName": {},
+          "SampledRequestsEnabled": {}
+        }
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Capacity\": {}, \"Description\": {}, \"Rules\": {}, \"VisibilityConfig\": {\"SampledRequestsEnabled\": {}, \"CloudWatchMetricsEnabled\": {}, \"MetricName\": {}}, \"Tags\": {}, \"CustomResponseBodies\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a <a>RuleGroup</a> per the specifications provided. </p> <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.CreateRuleGroup",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Capacity\": {}, \"Description\": {}, \"Rules\": {}, \"VisibilityConfig\": {\"SampledRequestsEnabled\": {}, \"CloudWatchMetricsEnabled\": {}, \"MetricName\": {}}, \"Tags\": {}, \"CustomResponseBodies\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.CreateRuleGroup",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.CreateRuleGroup"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "AssociationConfig": {
+          "RequestBody": {}
+        },
+        "CaptchaConfig": {
+          "ImmunityTimeProperty": {
+            "ImmunityTime": {}
+          }
+        },
+        "ChallengeConfig": {
+          "ImmunityTimeProperty": {
+            "ImmunityTime": {}
+          }
+        },
+        "CustomResponseBodies": {},
+        "DefaultAction": {
+          "Allow": {
+            "CustomRequestHandling": {}
+          },
+          "Block": {
+            "CustomResponse": {}
+          }
+        },
+        "Description": {},
+        "Name": {},
+        "Rules": {},
+        "Scope": {},
+        "Tags": {},
+        "TokenDomains": {},
+        "VisibilityConfig": {
+          "CloudWatchMetricsEnabled": {},
+          "MetricName": {},
+          "SampledRequestsEnabled": {}
+        }
+      },
+      "body_json": {
+        "AssociationConfig": {
+          "RequestBody": {}
+        },
+        "CaptchaConfig": {
+          "ImmunityTimeProperty": {
+            "ImmunityTime": {}
+          }
+        },
+        "ChallengeConfig": {
+          "ImmunityTimeProperty": {
+            "ImmunityTime": {}
+          }
+        },
+        "CustomResponseBodies": {},
+        "DefaultAction": {
+          "Allow": {
+            "CustomRequestHandling": {}
+          },
+          "Block": {
+            "CustomResponse": {}
+          }
+        },
+        "Description": {},
+        "Name": {},
+        "Rules": {},
+        "Scope": {},
+        "Tags": {},
+        "TokenDomains": {},
+        "VisibilityConfig": {
+          "CloudWatchMetricsEnabled": {},
+          "MetricName": {},
+          "SampledRequestsEnabled": {}
+        }
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"DefaultAction\": {\"Block\": {\"CustomResponse\": {}}, \"Allow\": {\"CustomRequestHandling\": {}}}, \"Description\": {}, \"Rules\": {}, \"VisibilityConfig\": {\"SampledRequestsEnabled\": {}, \"CloudWatchMetricsEnabled\": {}, \"MetricName\": {}}, \"Tags\": {}, \"CustomResponseBodies\": {}, \"CaptchaConfig\": {\"ImmunityTimeProperty\": {\"ImmunityTime\": {}}}, \"ChallengeConfig\": {\"ImmunityTimeProperty\": {\"ImmunityTime\": {}}}, \"TokenDomains\": {}, \"AssociationConfig\": {\"RequestBody\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a <a>WebACL</a> per the specifications provided.</p> <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.CreateWebACL",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"DefaultAction\": {\"Block\": {\"CustomResponse\": {}}, \"Allow\": {\"CustomRequestHandling\": {}}}, \"Description\": {}, \"Rules\": {}, \"VisibilityConfig\": {\"SampledRequestsEnabled\": {}, \"CloudWatchMetricsEnabled\": {}, \"MetricName\": {}}, \"Tags\": {}, \"CustomResponseBodies\": {}, \"CaptchaConfig\": {\"ImmunityTimeProperty\": {\"ImmunityTime\": {}}}, \"ChallengeConfig\": {\"ImmunityTimeProperty\": {\"ImmunityTime\": {}}}, \"TokenDomains\": {}, \"AssociationConfig\": {\"RequestBody\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.CreateWebACL",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.CreateWebACL"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "WebACLArn": {},
+        "WebACLLockToken": {}
+      },
+      "body_json": {
+        "WebACLArn": {},
+        "WebACLLockToken": {}
+      },
+      "body_text": "{\"WebACLArn\": {}, \"WebACLLockToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Deletes all rule groups that are managed by Firewall Manager for the specified web ACL. </p> <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteFirewallManagerRuleGroups",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"WebACLArn\": {}, \"WebACLLockToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteFirewallManagerRuleGroups",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DeleteFirewallManagerRuleGroups"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes the specified <a>IPSet</a>. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteIPSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteIPSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DeleteIPSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {}
+      },
+      "body_json": {
+        "ResourceArn": {}
+      },
+      "body_text": "{\"ResourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes the <a>LoggingConfiguration</a> from the specified web ACL.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteLoggingConfiguration",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteLoggingConfiguration",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DeleteLoggingConfiguration"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {}
+      },
+      "body_json": {
+        "ResourceArn": {}
+      },
+      "body_text": "{\"ResourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Permanently deletes an IAM policy from the specified rule group.</p> <p>You must be the owner of the rule group to perform this operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DeletePermissionPolicy",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DeletePermissionPolicy",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DeletePermissionPolicy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes the specified <a>RegexPatternSet</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteRegexPatternSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteRegexPatternSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DeleteRegexPatternSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes the specified <a>RuleGroup</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteRuleGroup",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteRuleGroup",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DeleteRuleGroup"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Deletes the specified <a>WebACL</a>. </p> <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>. </p> <note> <p>Before deleting any web ACL, first disassociate it from all resources.</p> <ul> <li> <p>To retrieve a list of the resources that are associated with a web ACL, use the following calls:</p> <ul> <li> <p>For regional resources, call <a>ListResourcesForWebACL</a>.</p> </li> <li> <p>For Amazon CloudFront distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>. For information, see <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html\">ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>. </p> </li> </ul> </li> <li> <p>To disassociate a resource from a web ACL, use the following calls:</p> <ul> <li> <p>For regional resources, call <a>DisassociateWebACL</a>.</p> </li> <li> <p>For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For information, see <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html\">UpdateDistribution</a> in the <i>Amazon CloudFront API Reference</i>. </p> </li> </ul> </li> </ul> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteWebACL",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DeleteWebACL",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DeleteWebACL"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Name": {},
+        "Scope": {},
+        "VendorName": {},
+        "VersionName": {}
+      },
+      "body_json": {
+        "Name": {},
+        "Scope": {},
+        "VendorName": {},
+        "VersionName": {}
+      },
+      "body_text": "{\"VendorName\": {}, \"Name\": {}, \"Scope\": {}, \"VersionName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Provides high-level information for a managed rule group, including descriptions of the rules. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DescribeManagedRuleGroup",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VendorName\": {}, \"Name\": {}, \"Scope\": {}, \"VersionName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DescribeManagedRuleGroup",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DescribeManagedRuleGroup"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {}
+      },
+      "body_json": {
+        "ResourceArn": {}
+      },
+      "body_text": "{\"ResourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Disassociates the specified regional application resource from any existing web ACL association. A resource can have at most one web ACL association. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For information, see <a href=\"https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html\">UpdateDistribution</a> in the <i>Amazon CloudFront API Reference</i>. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.DisassociateWebACL",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.DisassociateWebACL",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.DisassociateWebACL"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Platform": {},
+        "ReleaseVersion": {}
+      },
+      "body_json": {
+        "Platform": {},
+        "ReleaseVersion": {}
+      },
+      "body_text": "{\"Platform\": {}, \"ReleaseVersion\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Generates a presigned download URL for the specified release of the mobile SDK.</p> <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href=\"https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html\">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GenerateMobileSdkReleaseUrl",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Platform\": {}, \"ReleaseVersion\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GenerateMobileSdkReleaseUrl",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GenerateMobileSdkReleaseUrl"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "APIKey": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "APIKey": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"APIKey\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns your API key in decrypted form. Use this to check the token domains that you have defined for the key. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetDecryptedAPIKey",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"APIKey\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetDecryptedAPIKey",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetDecryptedAPIKey"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves the specified <a>IPSet</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetIPSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetIPSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetIPSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {}
+      },
+      "body_json": {
+        "ResourceArn": {}
+      },
+      "body_text": "{\"ResourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns the <a>LoggingConfiguration</a> for the specified web ACL.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetLoggingConfiguration",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetLoggingConfiguration",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetLoggingConfiguration"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Retrieves the specified managed rule set. </p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetManagedRuleSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetManagedRuleSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetManagedRuleSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Platform": {},
+        "ReleaseVersion": {}
+      },
+      "body_json": {
+        "Platform": {},
+        "ReleaseVersion": {}
+      },
+      "body_text": "{\"Platform\": {}, \"ReleaseVersion\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Retrieves information for the specified mobile SDK release, including release notes and tags.</p> <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href=\"https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html\">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetMobileSdkRelease",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Platform\": {}, \"ReleaseVersion\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetMobileSdkRelease",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetMobileSdkRelease"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {}
+      },
+      "body_json": {
+        "ResourceArn": {}
+      },
+      "body_text": "{\"ResourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Returns the IAM policy that is attached to the specified rule group.</p> <p>You must be the owner of the rule group to perform this operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetPermissionPolicy",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetPermissionPolicy",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetPermissionPolicy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "RuleGroupRuleName": {},
+        "RuleName": {},
+        "Scope": {},
+        "WebACLId": {},
+        "WebACLName": {}
+      },
+      "body_json": {
+        "RuleGroupRuleName": {},
+        "RuleName": {},
+        "Scope": {},
+        "WebACLId": {},
+        "WebACLName": {}
+      },
+      "body_text": "{\"Scope\": {}, \"WebACLName\": {}, \"WebACLId\": {}, \"RuleGroupRuleName\": {}, \"RuleName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum number of managed keys that can be blocked for a single rate-based rule instance is 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest rates are blocked.</p> <p>For a rate-based rule that you've defined inside a rule group, provide the name of the rule group reference statement in your request, in addition to the rate-based rule name and the web ACL name. </p> <p>WAF monitors web requests and manages keys independently for each unique combination of web ACL, optional rule group, and rate-based rule. For example, if you define a rate-based rule inside a rule group, and then use the rule group in a web ACL, WAF monitors web requests and manages keys for that web ACL, rule group reference statement, and rate-based rule instance. If you use the same rule group in a second web ACL, WAF monitors web requests and manages keys for this second usage completely independent of your first. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetRateBasedStatementManagedKeys",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"WebACLName\": {}, \"WebACLId\": {}, \"RuleGroupRuleName\": {}, \"RuleName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetRateBasedStatementManagedKeys",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetRateBasedStatementManagedKeys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves the specified <a>RegexPatternSet</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetRegexPatternSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetRegexPatternSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetRegexPatternSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ARN": {},
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "ARN": {},
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"ARN\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves the specified <a>RuleGroup</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetRuleGroup",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"ARN\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetRuleGroup",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetRuleGroup"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MaxItems": {},
+        "RuleMetricName": {},
+        "Scope": {},
+        "TimeWindow": {
+          "EndTime": {},
+          "StartTime": {}
+        },
+        "WebAclArn": {}
+      },
+      "body_json": {
+        "MaxItems": {},
+        "RuleMetricName": {},
+        "Scope": {},
+        "TimeWindow": {
+          "EndTime": {},
+          "StartTime": {}
+        },
+        "WebAclArn": {}
+      },
+      "body_text": "{\"WebAclArn\": {}, \"RuleMetricName\": {}, \"Scope\": {}, \"TimeWindow\": {\"StartTime\": {}, \"EndTime\": {}}, \"MaxItems\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Gets detailed information about a specified number of requests--a sample--that WAF randomly selects from among the first 5,000 requests that your Amazon Web Services resource received during a time range that you choose. You can specify a sample size of up to 500 requests, and you can specify any time range in the previous three hours.</p> <p> <code>GetSampledRequests</code> returns a time range, which is usually the time range that you specified. However, if your resource (such as a CloudFront distribution) received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code> returns an updated time range. This new time range indicates the actual period during which WAF selected the requests in the sample.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetSampledRequests",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"WebAclArn\": {}, \"RuleMetricName\": {}, \"Scope\": {}, \"TimeWindow\": {\"StartTime\": {}, \"EndTime\": {}}, \"MaxItems\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetSampledRequests",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetSampledRequests"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Id": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves the specified <a>WebACL</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetWebACL",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetWebACL",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetWebACL"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {}
+      },
+      "body_json": {
+        "ResourceArn": {}
+      },
+      "body_text": "{\"ResourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves the <a>WebACL</a> for the specified resource. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.GetWebACLForResource",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.GetWebACLForResource",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.GetWebACLForResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves a list of the API keys that you've defined for the specified scope. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListAPIKeys",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListAPIKeys",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListAPIKeys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "Name": {},
+        "NextMarker": {},
+        "Scope": {},
+        "VendorName": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "Name": {},
+        "NextMarker": {},
+        "Scope": {},
+        "VendorName": {}
+      },
+      "body_text": "{\"VendorName\": {}, \"Name\": {}, \"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns a list of the available versions for the specified managed rule group. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListAvailableManagedRuleGroupVersions",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VendorName\": {}, \"Name\": {}, \"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListAvailableManagedRuleGroupVersions",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListAvailableManagedRuleGroupVersions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves an array of managed rule groups that are available for you to use. This list includes all Amazon Web Services Managed Rules rule groups and all of the Amazon Web Services Marketplace managed rule groups that you're subscribed to.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListAvailableManagedRuleGroups",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListAvailableManagedRuleGroups",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListAvailableManagedRuleGroups"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you manage.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListIPSets",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListIPSets",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListIPSets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves an array of your <a>LoggingConfiguration</a> objects.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListLoggingConfigurations",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListLoggingConfigurations",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListLoggingConfigurations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Retrieves the managed rule sets that you own. </p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListManagedRuleSets",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListManagedRuleSets",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListManagedRuleSets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Platform": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Platform": {}
+      },
+      "body_text": "{\"Platform\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Retrieves a list of the available releases for the mobile SDK and the specified device platform. </p> <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href=\"https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html\">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListMobileSdkReleases",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Platform\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListMobileSdkReleases",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListMobileSdkReleases"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex pattern sets that you manage.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListRegexPatternSets",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListRegexPatternSets",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListRegexPatternSets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceType": {},
+        "WebACLArn": {}
+      },
+      "body_json": {
+        "ResourceType": {},
+        "WebACLArn": {}
+      },
+      "body_text": "{\"WebACLArn\": {}, \"ResourceType\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the specified web ACL. If you want the list of Amazon CloudFront resources, use the CloudFront call <code>ListDistributionsByWebACLId</code>. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListResourcesForWebACL",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"WebACLArn\": {}, \"ResourceType\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListResourcesForWebACL",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListResourcesForWebACL"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups that you manage. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListRuleGroups",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListRuleGroups",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListRuleGroups"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "ResourceARN": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "ResourceARN": {}
+      },
+      "body_text": "{\"NextMarker\": {}, \"Limit\": {}, \"ResourceARN\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to \"customer\" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListTagsForResource",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"NextMarker\": {}, \"Limit\": {}, \"ResourceARN\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListTagsForResource",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListTagsForResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Limit": {},
+        "NextMarker": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you manage.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.ListWebACLs",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Scope\": {}, \"NextMarker\": {}, \"Limit\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.ListWebACLs",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.ListWebACLs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "LoggingConfiguration": {
+          "LogDestinationConfigs": {},
+          "LoggingFilter": {
+            "DefaultBehavior": {},
+            "Filters": {}
+          },
+          "ManagedByFirewallManager": {},
+          "RedactedFields": {},
+          "ResourceArn": {}
+        }
+      },
+      "body_json": {
+        "LoggingConfiguration": {
+          "LogDestinationConfigs": {},
+          "LoggingFilter": {
+            "DefaultBehavior": {},
+            "Filters": {}
+          },
+          "ManagedByFirewallManager": {},
+          "RedactedFields": {},
+          "ResourceArn": {}
+        }
+      },
+      "body_text": "{\"LoggingConfiguration\": {\"ResourceArn\": {}, \"LogDestinationConfigs\": {}, \"RedactedFields\": {}, \"ManagedByFirewallManager\": {}, \"LoggingFilter\": {\"Filters\": {}, \"DefaultBehavior\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL, according to the configuration provided. </p> <note> <p>This operation completely replaces any mutable specifications that you already have for a logging configuration with the ones that you provide to this call. </p> <p>To modify an existing logging configuration, do the following: </p> <ol> <li> <p>Retrieve it by calling <a>GetLoggingConfiguration</a> </p> </li> <li> <p>Update its settings as needed</p> </li> <li> <p>Provide the complete logging configuration specification to this call</p> </li> </ol> </note> <note> <p>You can define one logging destination per web ACL.</p> </note> <p>You can access information about the traffic that WAF inspects using the following steps:</p> <ol> <li> <p>Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. </p> <p>The name that you give the destination must start with <code>aws-waf-logs-</code>. Depending on the type of destination, you might need to configure additional settings or permissions. </p> <p>For configuration requirements and pricing information for each destination type, see <a href=\"https://docs.aws.amazon.com/waf/latest/developerguide/logging.html\">Logging web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p> </li> <li> <p>Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p> <p>For additional information about web ACL logging, see <a href=\"https://docs.aws.amazon.com/waf/latest/developerguide/logging.html\">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.PutLoggingConfiguration",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"LoggingConfiguration\": {\"ResourceArn\": {}, \"LogDestinationConfigs\": {}, \"RedactedFields\": {}, \"ManagedByFirewallManager\": {}, \"LoggingFilter\": {\"Filters\": {}, \"DefaultBehavior\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.PutLoggingConfiguration",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.PutLoggingConfiguration"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "RecommendedVersion": {},
+        "Scope": {},
+        "VersionsToPublish": {}
+      },
+      "body_json": {
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "RecommendedVersion": {},
+        "Scope": {},
+        "VersionsToPublish": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}, \"RecommendedVersion\": {}, \"VersionsToPublish\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Defines the versions of your managed rule set that you are offering to the customers. Customers see your offerings as managed rule groups with versioning.</p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note> <p>Customers retrieve their managed rule group list by calling <a>ListAvailableManagedRuleGroups</a>. The name that you provide here for your managed rule set is the name the customer sees for the corresponding managed rule group. Customers can retrieve the available versions for a managed rule group by calling <a>ListAvailableManagedRuleGroupVersions</a>. You provide a rule group specification for each version. For each managed rule set, you must specify a version that you recommend using. </p> <p>To initiate the expiration of a managed rule group version, use <a>UpdateManagedRuleSetVersionExpiryDate</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.PutManagedRuleSetVersions",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}, \"RecommendedVersion\": {}, \"VersionsToPublish\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.PutManagedRuleSetVersions",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.PutManagedRuleSetVersions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Policy": {},
+        "ResourceArn": {}
+      },
+      "body_json": {
+        "Policy": {},
+        "ResourceArn": {}
+      },
+      "body_text": "{\"ResourceArn\": {}, \"Policy\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Attaches an IAM policy to the specified resource. Use this to share a rule group across accounts.</p> <p>You must be the owner of the rule group to perform this operation.</p> <p>This action is subject to the following restrictions:</p> <ul> <li> <p>You can attach only one policy with each <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The ARN in the request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist in the same Region.</p> </li> <li> <p>The user making the request must be the owner of the rule group.</p> </li> </ul>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.PutPermissionPolicy",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}, \"Policy\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.PutPermissionPolicy",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.PutPermissionPolicy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceARN": {},
+        "Tags": {}
+      },
+      "body_json": {
+        "ResourceARN": {},
+        "Tags": {}
+      },
+      "body_text": "{\"ResourceARN\": {}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Associates tags with the specified Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to \"customer\" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p> <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.TagResource",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceARN\": {}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.TagResource",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.TagResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceARN": {},
+        "TagKeys": {}
+      },
+      "body_json": {
+        "ResourceARN": {},
+        "TagKeys": {}
+      },
+      "body_text": "{\"ResourceARN\": {}, \"TagKeys\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Disassociates tags from an Amazon Web Services resource. Tags are key:value pairs that you can associate with Amazon Web Services resources. For example, the tag key might be \"customer\" and the tag value might be \"companyA.\" You can specify one or more tags to add to each container. You can add up to 50 tags to each Amazon Web Services resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.UntagResource",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceARN\": {}, \"TagKeys\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.UntagResource",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.UntagResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Addresses": {},
+        "Description": {},
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Addresses": {},
+        "Description": {},
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"Description\": {}, \"Addresses\": {}, \"LockToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates the specified <a>IPSet</a>. </p> <note> <p>This operation completely replaces the mutable specifications that you already have for the IP set with the ones that you provide to this call. </p> <p>To modify an IP set, do the following: </p> <ol> <li> <p>Retrieve it by calling <a>GetIPSet</a> </p> </li> <li> <p>Update its settings as needed</p> </li> <li> <p>Provide the complete IP set specification to this call</p> </li> </ol> </note> <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.UpdateIPSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"Description\": {}, \"Addresses\": {}, \"LockToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.UpdateIPSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.UpdateIPSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ExpiryTimestamp": {},
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {},
+        "VersionToExpire": {}
+      },
+      "body_json": {
+        "ExpiryTimestamp": {},
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Scope": {},
+        "VersionToExpire": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}, \"VersionToExpire\": {}, \"ExpiryTimestamp\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates the expiration information for your managed rule set. Use this to initiate the expiration of a managed rule group version. After you initiate expiration for a version, WAF excludes it from the response to <a>ListAvailableManagedRuleGroupVersions</a> for the managed rule group. </p> <note> <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p> <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.UpdateManagedRuleSetVersionExpiryDate",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"LockToken\": {}, \"VersionToExpire\": {}, \"ExpiryTimestamp\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.UpdateManagedRuleSetVersionExpiryDate",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.UpdateManagedRuleSetVersionExpiryDate"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": {},
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "RegularExpressionList": {},
+        "Scope": {}
+      },
+      "body_json": {
+        "Description": {},
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "RegularExpressionList": {},
+        "Scope": {}
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"Description\": {}, \"RegularExpressionList\": {}, \"LockToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates the specified <a>RegexPatternSet</a>.</p> <note> <p>This operation completely replaces the mutable specifications that you already have for the regex pattern set with the ones that you provide to this call. </p> <p>To modify a regex pattern set, do the following: </p> <ol> <li> <p>Retrieve it by calling <a>GetRegexPatternSet</a> </p> </li> <li> <p>Update its settings as needed</p> </li> <li> <p>Provide the complete regex pattern set specification to this call</p> </li> </ol> </note> <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.UpdateRegexPatternSet",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"Description\": {}, \"RegularExpressionList\": {}, \"LockToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.UpdateRegexPatternSet",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.UpdateRegexPatternSet"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_WAF_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CustomResponseBodies": {},
+        "Description": {},
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Rules": {},
+        "Scope": {},
+        "VisibilityConfig": {
+          "CloudWatchMetricsEnabled": {},
+          "MetricName": {},
+          "SampledRequestsEnabled": {}
+        }
+      },
+      "body_json": {
+        "CustomResponseBodies": {},
+        "Description": {},
+        "Id": {},
+        "LockToken": {},
+        "Name": {},
+        "Rules": {},
+        "Scope": {},
+        "VisibilityConfig": {
+          "CloudWatchMetricsEnabled": {},
+          "MetricName": {},
+          "SampledRequestsEnabled": {}
+        }
+      },
+      "body_text": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"Description\": {}, \"Rules\": {}, \"VisibilityConfig\": {\"SampledRequestsEnabled\": {}, \"CloudWatchMetricsEnabled\": {}, \"MetricName\": {}}, \"LockToken\": {}, \"CustomResponseBodies\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates the specified <a>RuleGroup</a>.</p> <note> <p>This operation completely replaces the mutable specifications that you already have for the rule group with the ones that you provide to this call. </p> <p>To modify a rule group, do the following: </p> <ol> <li> <p>Retrieve it by calling <a>GetRuleGroup</a> </p> </li> <li> <p>Update its settings as needed</p> </li> <li> <p>Provide the complete rule group specification to this call</p> </li> </ol> </note> <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p> <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_WAF_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSWAF_20190729.UpdateRuleGroup",
+      "note": "Replace {{AWS_WAFV2_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": {}, \"Scope\": {}, \"Id\": {}, \"Description\": {}, \"Rules\": {}, \"VisibilityConfig\": {\"SampledRequestsEnabled\": {}, \"CloudWatchMetricsEnabled\": {}, \"MetricName\": {}}, \"LockToken\": {}, \"CustomResponseBodies\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSWAF_20190729.UpdateRuleGroup",
+      "url": "http://wafv2.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSWAF_20190729.UpdateRuleGroup"
+    }
+  ]
+}

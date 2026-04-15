@@ -1,0 +1,175 @@
+{
+  "id": "npr.org_sponsorship",
+  "info": {
+    "base_url": "https://sponsorship.api.npr.org",
+    "description": "**Not** for use by NPR One clients (for whom sponsorship is already integrated into the Listening Service), this endpoint is designed to be used by our other client applications to submit tracking...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "NPR Sponsorship Service",
+    "version": "2"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**Not** for use by NPR One clients (for whom sponsorship is already integrated into the Listening Service), this endpoint is designed to be used by our other client applications to request sponsorship on behalf of a user. Sponsorship units are returned in the form of VAST XML. It is worth noting that this endpoint attempts to always return XML, even in the case of exceptions.\n\nThe default behavior of this endpoint is asynchronous; on an initial request, a call to our external sponsorship provider is placed on a queue, which is typically processed within 3 minutes. Once the sponsorship call is received and processed, the returned sponsorship units are placed in a cache on our server for the current user. Subsequent calls to this endpoint will return VAST sponsorship units from this cache until tracking information is submitted, which removes the ad from the cache and will automatically request additional ads asynchronously if there are fewer than a certain number remaining in the cache.\n\nFor development purposes, it's worth noting that there is currently no way to clear a user's cache without submitting some form of tracking.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v2/ads",
+      "method": "GET",
+      "name": "Request VAST sponsorship units",
+      "params": [
+        {
+          "name": "forceResult",
+          "value": ""
+        },
+        {
+          "name": "adCount",
+          "value": ""
+        }
+      ],
+      "path": "/v2/ads",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "forceResult",
+          "value": ""
+        },
+        {
+          "name": "adCount",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request VAST sponsorship units",
+      "url": "https://sponsorship.api.npr.org/v2/ads"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "attributes": {
+          "ipAddress": "",
+          "userAgent": ""
+        },
+        "errors": [
+          {}
+        ],
+        "href": "",
+        "items": [
+          {
+            "attributes": {
+              "adId": {},
+              "event": {}
+            },
+            "errors": [
+              {}
+            ],
+            "href": "",
+            "items": [
+              {}
+            ],
+            "links": {},
+            "version": "1.0"
+          }
+        ],
+        "links": {},
+        "version": "1.0"
+      },
+      "body_json": {
+        "attributes": {
+          "ipAddress": "",
+          "userAgent": ""
+        },
+        "errors": [
+          {}
+        ],
+        "href": "",
+        "items": [
+          {
+            "attributes": {
+              "adId": {},
+              "event": {}
+            },
+            "errors": [
+              {}
+            ],
+            "href": "",
+            "items": [
+              {}
+            ],
+            "links": {},
+            "version": "1.0"
+          }
+        ],
+        "links": {},
+        "version": "1.0"
+      },
+      "body_text": "{\"attributes\": {\"ipAddress\": \"\", \"userAgent\": \"\"}, \"errors\": [{}], \"href\": \"\", \"items\": [{\"attributes\": {\"adId\": {}, \"event\": {}}, \"errors\": [{}], \"href\": \"\", \"items\": [{}], \"links\": {}, \"version\": \"1.0\"}], \"links\": {}, \"version\": \"1.0\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**Not** for use by NPR One clients (for whom sponsorship is already integrated into the Listening Service), this endpoint is designed to be used by our other client applications to submit tracking information for sponsorship units obtained from the `GET /sponsorship/v2/ads` endpoint.\n\nThe tracking information should be submitted in the body of the request in the form of a JSON object following the Collection.Doc+JSON specification.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/ads",
+      "method": "POST",
+      "name": "Record tracking data for VAST sponsorship units",
+      "params": [
+        {
+          "name": "Authorization",
+          "value": ""
+        },
+        {
+          "name": "X-Advertising-ID",
+          "value": ""
+        }
+      ],
+      "path": "/v2/ads",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"attributes\": {\"ipAddress\": \"\", \"userAgent\": \"\"}, \"errors\": [{}], \"href\": \"\", \"items\": [{\"attributes\": {\"adId\": {}, \"event\": {}}, \"errors\": [{}], \"href\": \"\", \"items\": [{}], \"links\": {}, \"version\": \"1.0\"}], \"links\": {}, \"version\": \"1.0\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Record tracking data for VAST sponsorship units",
+      "url": "https://sponsorship.api.npr.org/v2/ads"
+    }
+  ]
+}

@@ -1,0 +1,1704 @@
+{
+  "id": "amazonaws.com_lookoutvision",
+  "info": {
+    "base_url": "http://lookoutvision.{region}.amazonaws.com",
+    "description": "Removes one or more tags from an Amazon Lookout for Vision model. For more information, see Tagging a model in the Amazon Lookout for Vision Developer Guide.  This operation requires permissions to...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation",
+      "image-generation"
+    ],
+    "title": "Amazon Lookout for Vision",
+    "version": "2020-11-20"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DatasetSource": {
+          "GroundTruthManifest": {
+            "S3Object": {
+              "Bucket": {},
+              "Key": {},
+              "VersionId": {}
+            }
+          }
+        },
+        "DatasetType": ""
+      },
+      "body_json": {
+        "DatasetSource": {
+          "GroundTruthManifest": {
+            "S3Object": {
+              "Bucket": {},
+              "Key": {},
+              "VersionId": {}
+            }
+          }
+        },
+        "DatasetType": ""
+      },
+      "body_text": "{\"DatasetType\": \"\", \"DatasetSource\": {\"GroundTruthManifest\": {\"S3Object\": {\"Bucket\": {}, \"Key\": {}, \"VersionId\": {}}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new dataset in an Amazon Lookout for Vision project. <code>CreateDataset</code> can create a training or a test dataset from a valid dataset source (<code>DatasetSource</code>).</p> <p>If you want a single dataset project, specify <code>train</code> for the value of <code>DatasetType</code>.</p> <p>To have a project with separate training and test datasets, call <code>CreateDataset</code> twice. On the first call, specify <code>train</code> for the value of <code>DatasetType</code>. On the second call, specify <code>test</code> for the value of <code>DatasetType</code>. </p> <p>This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-11-20/projects/{{PROJECT_NAME}}/datasets",
+      "method": "POST",
+      "name": "POST /2020-11-20/projects/{projectName}/datasets",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/datasets",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"DatasetType\": \"\", \"DatasetSource\": {\"GroundTruthManifest\": {\"S3Object\": {\"Bucket\": {}, \"Key\": {}, \"VersionId\": {}}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-11-20/projects/{projectName}/datasets",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/datasets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "KmsKeyId": "",
+        "OutputConfig": {
+          "S3Location": {
+            "Bucket": {},
+            "Prefix": {}
+          }
+        },
+        "Tags": [
+          {
+            "Key": {},
+            "Value": {}
+          }
+        ]
+      },
+      "body_json": {
+        "Description": "",
+        "KmsKeyId": "",
+        "OutputConfig": {
+          "S3Location": {
+            "Bucket": {},
+            "Prefix": {}
+          }
+        },
+        "Tags": [
+          {
+            "Key": {},
+            "Value": {}
+          }
+        ]
+      },
+      "body_text": "{\"Description\": \"\", \"OutputConfig\": {\"S3Location\": {\"Bucket\": {}, \"Prefix\": {}}}, \"KmsKeyId\": \"\", \"Tags\": [{\"Key\": {}, \"Value\": {}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new version of a model within an an Amazon Lookout for Vision project. <code>CreateModel</code> is an asynchronous operation in which Amazon Lookout for Vision trains, tests, and evaluates a new version of a model. </p> <p>To get the current status, check the <code>Status</code> field returned in the response from <a>DescribeModel</a>.</p> <p>If the project has a single dataset, Amazon Lookout for Vision internally splits the dataset to create a training and a test dataset. If the project has a training and a test dataset, Lookout for Vision uses the respective datasets to train and test the model. </p> <p>After training completes, the evaluation metrics are stored at the location specified in <code>OutputConfig</code>. </p> <p>This operation requires permissions to perform the <code>lookoutvision:CreateModel</code> operation. If you want to tag your model, you also require permission to the <code>lookoutvision:TagResource</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-11-20/projects/{{PROJECT_NAME}}/models",
+      "method": "POST",
+      "name": "POST /2020-11-20/projects/{projectName}/models",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/models",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Description\": \"\", \"OutputConfig\": {\"S3Location\": {\"Bucket\": {}, \"Prefix\": {}}}, \"KmsKeyId\": \"\", \"Tags\": [{\"Key\": {}, \"Value\": {}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-11-20/projects/{projectName}/models",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/models"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Lists the versions of a model in an Amazon Lookout for Vision project.</p> <p>The <code>ListModels</code> operation is eventually consistent. Recent calls to <code>CreateModel</code> might take a while to appear in the response from <code>ListProjects</code>.</p> <p>This operation requires permissions to perform the <code>lookoutvision:ListModels</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/projects/{{PROJECT_NAME}}/models",
+      "method": "GET",
+      "name": "GET /2020-11-20/projects/{projectName}/models",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/models",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/projects/{projectName}/models",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/models"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ProjectName": ""
+      },
+      "body_json": {
+        "ProjectName": ""
+      },
+      "body_text": "{\"ProjectName\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates an empty Amazon Lookout for Vision project. After you create the project, add a dataset by calling <a>CreateDataset</a>.</p> <p>This operation requires permissions to perform the <code>lookoutvision:CreateProject</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-11-20/projects",
+      "method": "POST",
+      "name": "POST /2020-11-20/projects",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amzn-Client-Token",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ProjectName\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-11-20/projects",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Lists the Amazon Lookout for Vision projects in your AWS account that are in the AWS Region in which you call <code>ListProjects</code>.</p> <p>The <code>ListProjects</code> operation is eventually consistent. Recent calls to <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear in the response from <code>ListProjects</code>.</p> <p>This operation requires permissions to perform the <code>lookoutvision:ListProjects</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/projects",
+      "method": "GET",
+      "name": "GET /2020-11-20/projects",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/projects",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Deletes an existing Amazon Lookout for Vision <code>dataset</code>. </p> <p>If your the project has a single dataset, you must create a new dataset before you can create a model.</p> <p>If you project has a training dataset and a test dataset consider the following. </p> <ul> <li> <p>If you delete the test dataset, your project reverts to a single dataset project. If you then train the model, Amazon Lookout for Vision internally splits the remaining dataset into a training and test dataset.</p> </li> <li> <p>If you delete the training dataset, you must create a training dataset before you can create a model.</p> </li> </ul> <p>This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-11-20/projects/{projectName}/datasets/{datasetType}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "datasetType",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "datasetType",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-11-20/projects/{projectName}/datasets/{datasetType}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Describe an Amazon Lookout for Vision dataset.</p> <p>This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}",
+      "method": "GET",
+      "name": "GET /2020-11-20/projects/{projectName}/datasets/{datasetType}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "datasetType",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "datasetType",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/projects/{projectName}/datasets/{datasetType}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop a running model, use the <a>StopModel</a> operation.</p> <p>It might take a few seconds to delete a model. To determine if a model has been deleted, call <a>ListModels</a> and check if the version of the model (<code>ModelVersion</code>) is in the <code>Models</code> array. </p> <p/> <p>This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-11-20/projects/{projectName}/models/{modelVersion}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-11-20/projects/{projectName}/models/{modelVersion}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Describes a version of an Amazon Lookout for Vision model.</p> <p>This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}",
+      "method": "GET",
+      "name": "GET /2020-11-20/projects/{projectName}/models/{modelVersion}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/projects/{projectName}/models/{modelVersion}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Deletes an Amazon Lookout for Vision project.</p> <p>To delete a project, you must first delete each version of the model associated with the project. To delete a model use the <a>DeleteModel</a> operation.</p> <p>You also have to delete the dataset(s) associated with the model. For more information, see <a>DeleteDataset</a>. The images referenced by the training and test datasets aren't deleted. </p> <p>This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-11-20/projects/{{PROJECT_NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-11-20/projects/{projectName}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-11-20/projects/{projectName}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Describes an Amazon Lookout for Vision project.</p> <p>This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/projects/{{PROJECT_NAME}}",
+      "method": "GET",
+      "name": "GET /2020-11-20/projects/{projectName}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/projects/{projectName}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Describes an Amazon Lookout for Vision model packaging job. </p> <p>This operation requires permissions to perform the <code>lookoutvision:DescribeModelPackagingJob</code> operation.</p> <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs/{{JOB_NAME}}",
+      "method": "GET",
+      "name": "GET /2020-11-20/projects/{projectName}/modelpackagingjobs/{jobName}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "jobName",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs/{{JOB_NAME}}",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "jobName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/projects/{projectName}/modelpackagingjobs/{jobName}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs/{{JOB_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Body": ""
+      },
+      "body_json": {
+        "Body": ""
+      },
+      "body_text": "{\"Body\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Detects anomalies in an image that you supply. </p> <p>The response from <code>DetectAnomalies</code> includes a boolean prediction that the image contains one or more anomalies and a confidence value for the prediction. If the model is an image segmentation model, the response also includes segmentation information for each type of anomaly found in the image.</p> <note> <p>Before calling <code>DetectAnomalies</code>, you must first start your model with the <a>StartModel</a> operation. You are charged for the amount of time, in minutes, that a model runs and for the number of anomaly detection units that your model uses. If you are not using a model, use the <a>StopModel</a> operation to stop your model. </p> </note> <p>For more information, see <i>Detecting anomalies in an image</i> in the Amazon Lookout for Vision developer guide.</p> <p>This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/detect",
+      "method": "POST",
+      "name": "POST /2020-11-20/projects/{projectName}/models/{modelVersion}/detect#Content-Type",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/detect",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Body\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-11-20/projects/{projectName}/models/{modelVersion}/detect#Content-Type",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/detect#Content-Type"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information for a single image, including the image location and the assigned label.</p> <p>This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}/entries",
+      "method": "GET",
+      "name": "GET /2020-11-20/projects/{projectName}/datasets/{datasetType}/entries",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "datasetType",
+          "value": ""
+        },
+        {
+          "name": "labeled",
+          "value": ""
+        },
+        {
+          "name": "anomalyClass",
+          "value": ""
+        },
+        {
+          "name": "createdBefore",
+          "value": ""
+        },
+        {
+          "name": "createdAfter",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "sourceRefContains",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}/entries",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "datasetType",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "labeled",
+          "value": ""
+        },
+        {
+          "name": "anomalyClass",
+          "value": ""
+        },
+        {
+          "name": "createdBefore",
+          "value": ""
+        },
+        {
+          "name": "createdAfter",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "sourceRefContains",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/projects/{projectName}/datasets/{datasetType}/entries",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}/entries"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Changes": ""
+      },
+      "body_json": {
+        "Changes": ""
+      },
+      "body_text": "{\"Changes\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Adds or updates one or more JSON Line entries in a dataset. A JSON Line includes information about an image used for training or testing an Amazon Lookout for Vision model.</p> <p>To update an existing JSON Line, use the <code>source-ref</code> field to identify the JSON Line. The JSON line that you supply replaces the existing JSON line. Any existing annotations that are not in the new JSON line are removed from the dataset. </p> <p>For more information, see <i>Defining JSON lines for anomaly classification</i> in the Amazon Lookout for Vision Developer Guide. </p> <note> <p>The images you reference in the <code>source-ref</code> field of a JSON line, must be in the same S3 bucket as the existing images in the dataset. </p> </note> <p>Updating a dataset might take a while to complete. To check the current status, call <a>DescribeDataset</a> and check the <code>Status</code> field in the response.</p> <p>This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}/entries",
+      "method": "PATCH",
+      "name": "PATCH /2020-11-20/projects/{projectName}/datasets/{datasetType}/entries",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "datasetType",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}/entries",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "datasetType",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Changes\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /2020-11-20/projects/{projectName}/datasets/{datasetType}/entries",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/datasets/{{DATASET_TYPE}}/entries"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p> Lists the model packaging jobs created for an Amazon Lookout for Vision project. </p> <p>This operation requires permissions to perform the <code>lookoutvision:ListModelPackagingJobs</code> operation. </p> <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs",
+      "method": "GET",
+      "name": "GET /2020-11-20/projects/{projectName}/modelpackagingjobs",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/projects/{projectName}/modelpackagingjobs",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Configuration": {
+          "Greengrass": {
+            "CompilerOptions": {},
+            "ComponentDescription": {},
+            "ComponentName": {},
+            "ComponentVersion": {},
+            "S3OutputLocation": {
+              "Bucket": {},
+              "Prefix": {}
+            },
+            "Tags": {},
+            "TargetDevice": {},
+            "TargetPlatform": {
+              "Accelerator": {},
+              "Arch": {},
+              "Os": {}
+            }
+          }
+        },
+        "Description": "",
+        "JobName": "",
+        "ModelVersion": ""
+      },
+      "body_json": {
+        "Configuration": {
+          "Greengrass": {
+            "CompilerOptions": {},
+            "ComponentDescription": {},
+            "ComponentName": {},
+            "ComponentVersion": {},
+            "S3OutputLocation": {
+              "Bucket": {},
+              "Prefix": {}
+            },
+            "Tags": {},
+            "TargetDevice": {},
+            "TargetPlatform": {
+              "Accelerator": {},
+              "Arch": {},
+              "Os": {}
+            }
+          }
+        },
+        "Description": "",
+        "JobName": "",
+        "ModelVersion": ""
+      },
+      "body_text": "{\"ModelVersion\": \"\", \"JobName\": \"\", \"Configuration\": {\"Greengrass\": {\"CompilerOptions\": {}, \"TargetDevice\": {}, \"TargetPlatform\": {\"Os\": {}, \"Arch\": {}, \"Accelerator\": {}}, \"S3OutputLocation\": {\"Bucket\": {}, \"Prefix\": {}}, \"ComponentName\": {}, \"ComponentVersion\": {}, \"ComponentDescription\": {}, \"Tags\": {}}}, \"Description\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Starts an Amazon Lookout for Vision model packaging job. A model packaging job creates an AWS IoT Greengrass component for a Lookout for Vision model. You can use the component to deploy your model to an edge device managed by Greengrass. </p> <p>Use the <a>DescribeModelPackagingJob</a> API to determine the current status of the job. The model packaging job is complete if the value of <code>Status</code> is <code>SUCCEEDED</code>.</p> <p>To deploy the component to the target device, use the component name and component version with the AWS IoT Greengrass <a href=\"https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateDeployment.html\">CreateDeployment</a> API.</p> <p>This operation requires the following permissions:</p> <ul> <li> <p> <code>lookoutvision:StartModelPackagingJob</code> </p> </li> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>kms:GenerateDataKey</code> </p> </li> <li> <p> <code>greengrass:CreateComponentVersion</code> </p> </li> <li> <p> <code>greengrass:DescribeComponent</code> </p> </li> <li> <p>(Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the component.</p> </li> </ul> <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs",
+      "method": "POST",
+      "name": "POST /2020-11-20/projects/{projectName}/modelpackagingjobs",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ModelVersion\": \"\", \"JobName\": \"\", \"Configuration\": {\"Greengrass\": {\"CompilerOptions\": {}, \"TargetDevice\": {}, \"TargetPlatform\": {\"Os\": {}, \"Arch\": {}, \"Accelerator\": {}}, \"S3OutputLocation\": {\"Bucket\": {}, \"Prefix\": {}}, \"ComponentName\": {}, \"ComponentVersion\": {}, \"ComponentDescription\": {}, \"Tags\": {}}}, \"Description\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-11-20/projects/{projectName}/modelpackagingjobs",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/modelpackagingjobs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Returns a list of tags attached to the specified Amazon Lookout for Vision model.</p> <p>This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-11-20/tags/{{RESOURCE_ARN}}",
+      "method": "GET",
+      "name": "GET /2020-11-20/tags/{resourceArn}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-11-20/tags/{resourceArn}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/tags/{{RESOURCE_ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Tags": [
+          {
+            "Key": {},
+            "Value": {}
+          }
+        ]
+      },
+      "body_json": {
+        "Tags": [
+          {
+            "Key": {},
+            "Value": {}
+          }
+        ]
+      },
+      "body_text": "{\"Tags\": [{\"Key\": {}, \"Value\": {}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Adds one or more key-value tags to an Amazon Lookout for Vision model. For more information, see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p> <p>This operation requires permissions to perform the <code>lookoutvision:TagResource</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-11-20/tags/{{RESOURCE_ARN}}",
+      "method": "POST",
+      "name": "POST /2020-11-20/tags/{resourceArn}",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Tags\": [{\"Key\": {}, \"Value\": {}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-11-20/tags/{resourceArn}",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/tags/{{RESOURCE_ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MaxInferenceUnits": 0,
+        "MinInferenceUnits": 0
+      },
+      "body_json": {
+        "MaxInferenceUnits": 0,
+        "MinInferenceUnits": 0
+      },
+      "body_text": "{\"MinInferenceUnits\": 0, \"MaxInferenceUnits\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Starts the running of the version of an Amazon Lookout for Vision model. Starting a model takes a while to complete. To check the current state of the model, use <a>DescribeModel</a>.</p> <p>A model is ready to use when its status is <code>HOSTED</code>.</p> <p>Once the model is running, you can detect custom labels in new images by calling <a>DetectAnomalies</a>.</p> <note> <p>You are charged for the amount of time that the model is running. To stop a running model, call <a>StopModel</a>.</p> </note> <p>This operation requires permissions to perform the <code>lookoutvision:StartModel</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/start",
+      "method": "POST",
+      "name": "POST /2020-11-20/projects/{projectName}/models/{modelVersion}/start",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/start",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MinInferenceUnits\": 0, \"MaxInferenceUnits\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-11-20/projects/{projectName}/models/{modelVersion}/start",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/start"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Stops the hosting of a running model. The operation might take a while to complete. To check the current status, call <a>DescribeModel</a>. </p> <p>After the model hosting stops, the <code>Status</code> of the model is <code>TRAINED</code>.</p> <p>This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "POST /2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/stop",
+      "method": "POST",
+      "name": "POST /2020-11-20/projects/{projectName}/models/{modelVersion}/stop",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/stop",
+      "pathParameters": [
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "modelVersion",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-11-20/projects/{projectName}/models/{modelVersion}/stop",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/projects/{{PROJECT_NAME}}/models/{{MODEL_VERSION}}/stop"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_LOOKOUT_FOR_VISION_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Removes one or more tags from an Amazon Lookout for Vision model. For more information, see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>. </p> <p>This operation requires permissions to perform the <code>lookoutvision:UntagResource</code> operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_LOOKOUT_FOR_VISION_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-11-20/tags/{{RESOURCE_ARN}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-11-20/tags/{resourceArn}#tagKeys",
+      "note": "Replace {{AMAZON_LOOKOUT_FOR_VISION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        },
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "path": "/2020-11-20/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-11-20/tags/{resourceArn}#tagKeys",
+      "url": "http://lookoutvision.{{REGION}}.amazonaws.com/2020-11-20/tags/{{RESOURCE_ARN}}#tagKeys"
+    }
+  ]
+}

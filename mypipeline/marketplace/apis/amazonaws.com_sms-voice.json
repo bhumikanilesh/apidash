@@ -1,0 +1,672 @@
+{
+  "id": "amazonaws.com_sms-voice",
+  "info": {
+    "base_url": "http://sms-voice.pinpoint.{region}.amazonaws.com",
+    "description": "Create a new voice message and send it to a recipient's phone number.",
+    "source": "apis.guru",
+    "tags": [
+      "communication",
+      "voice"
+    ],
+    "title": "Amazon Pinpoint SMS and Voice Service",
+    "version": "2018-09-05"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ConfigurationSetName": ""
+      },
+      "body_json": {
+        "ConfigurationSetName": ""
+      },
+      "body_text": "{\"ConfigurationSetName\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/sms-voice/configuration-sets",
+      "method": "POST",
+      "name": "POST /v1/sms-voice/configuration-sets",
+      "note": "Replace {{AMAZON_PINPOINT_SMS_AND_VOICE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sms-voice/configuration-sets",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ConfigurationSetName\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/sms-voice/configuration-sets",
+      "url": "http://sms-voice.pinpoint.{{REGION}}.amazonaws.com/v1/sms-voice/configuration-sets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all of the configuration sets associated with your Amazon Pinpoint account in the current region.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/sms-voice/configuration-sets",
+      "method": "GET",
+      "name": "GET /v1/sms-voice/configuration-sets",
+      "note": "Replace {{AMAZON_PINPOINT_SMS_AND_VOICE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "NextToken",
+          "value": ""
+        },
+        {
+          "name": "PageSize",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sms-voice/configuration-sets",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "NextToken",
+          "value": ""
+        },
+        {
+          "name": "PageSize",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/sms-voice/configuration-sets",
+      "url": "http://sms-voice.pinpoint.{{REGION}}.amazonaws.com/v1/sms-voice/configuration-sets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "EventDestination": {
+          "CloudWatchLogsDestination": {
+            "IamRoleArn": {},
+            "LogGroupArn": {}
+          },
+          "Enabled": {},
+          "KinesisFirehoseDestination": {
+            "DeliveryStreamArn": {},
+            "IamRoleArn": {}
+          },
+          "MatchingEventTypes": [
+            "INITIATED_CALL"
+          ],
+          "SnsDestination": {
+            "TopicArn": {}
+          }
+        },
+        "EventDestinationName": ""
+      },
+      "body_json": {
+        "EventDestination": {
+          "CloudWatchLogsDestination": {
+            "IamRoleArn": {},
+            "LogGroupArn": {}
+          },
+          "Enabled": {},
+          "KinesisFirehoseDestination": {
+            "DeliveryStreamArn": {},
+            "IamRoleArn": {}
+          },
+          "MatchingEventTypes": [
+            "INITIATED_CALL"
+          ],
+          "SnsDestination": {
+            "TopicArn": {}
+          }
+        },
+        "EventDestinationName": ""
+      },
+      "body_text": "{\"EventDestination\": {\"CloudWatchLogsDestination\": {\"IamRoleArn\": {}, \"LogGroupArn\": {}}, \"Enabled\": {}, \"KinesisFirehoseDestination\": {\"DeliveryStreamArn\": {}, \"IamRoleArn\": {}}, \"MatchingEventTypes\": [\"INITIATED_CALL\"], \"SnsDestination\": {\"TopicArn\": {}}}, \"EventDestinationName\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new event destination in a configuration set.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations",
+      "method": "POST",
+      "name": "POST /v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations",
+      "note": "Replace {{AMAZON_PINPOINT_SMS_AND_VOICE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations",
+      "pathParameters": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"EventDestination\": {\"CloudWatchLogsDestination\": {\"IamRoleArn\": {}, \"LogGroupArn\": {}}, \"Enabled\": {}, \"KinesisFirehoseDestination\": {\"DeliveryStreamArn\": {}, \"IamRoleArn\": {}}, \"MatchingEventTypes\": [\"INITIATED_CALL\"], \"SnsDestination\": {\"TopicArn\": {}}}, \"EventDestinationName\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations",
+      "url": "http://sms-voice.pinpoint.{{REGION}}.amazonaws.com/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations",
+      "method": "GET",
+      "name": "GET /v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations",
+      "note": "Replace {{AMAZON_PINPOINT_SMS_AND_VOICE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations",
+      "pathParameters": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations",
+      "url": "http://sms-voice.pinpoint.{{REGION}}.amazonaws.com/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an existing configuration set.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /v1/sms-voice/configuration-sets/{ConfigurationSetName}",
+      "note": "Replace {{AMAZON_PINPOINT_SMS_AND_VOICE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}",
+      "pathParameters": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /v1/sms-voice/configuration-sets/{ConfigurationSetName}",
+      "url": "http://sms-voice.pinpoint.{{REGION}}.amazonaws.com/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an event destination in a configuration set.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations/{{EVENT_DESTINATION_NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}",
+      "note": "Replace {{AMAZON_PINPOINT_SMS_AND_VOICE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        },
+        {
+          "name": "EventDestinationName",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations/{{EVENT_DESTINATION_NAME}}",
+      "pathParameters": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        },
+        {
+          "name": "EventDestinationName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}",
+      "url": "http://sms-voice.pinpoint.{{REGION}}.amazonaws.com/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations/{{EVENT_DESTINATION_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "EventDestination": {
+          "CloudWatchLogsDestination": {
+            "IamRoleArn": {},
+            "LogGroupArn": {}
+          },
+          "Enabled": {},
+          "KinesisFirehoseDestination": {
+            "DeliveryStreamArn": {},
+            "IamRoleArn": {}
+          },
+          "MatchingEventTypes": [
+            "INITIATED_CALL"
+          ],
+          "SnsDestination": {
+            "TopicArn": {}
+          }
+        }
+      },
+      "body_json": {
+        "EventDestination": {
+          "CloudWatchLogsDestination": {
+            "IamRoleArn": {},
+            "LogGroupArn": {}
+          },
+          "Enabled": {},
+          "KinesisFirehoseDestination": {
+            "DeliveryStreamArn": {},
+            "IamRoleArn": {}
+          },
+          "MatchingEventTypes": [
+            "INITIATED_CALL"
+          ],
+          "SnsDestination": {
+            "TopicArn": {}
+          }
+        }
+      },
+      "body_text": "{\"EventDestination\": {\"CloudWatchLogsDestination\": {\"IamRoleArn\": {}, \"LogGroupArn\": {}}, \"Enabled\": {}, \"KinesisFirehoseDestination\": {\"DeliveryStreamArn\": {}, \"IamRoleArn\": {}}, \"MatchingEventTypes\": [\"INITIATED_CALL\"], \"SnsDestination\": {\"TopicArn\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations/{{EVENT_DESTINATION_NAME}}",
+      "method": "PUT",
+      "name": "PUT /v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}",
+      "note": "Replace {{AMAZON_PINPOINT_SMS_AND_VOICE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        },
+        {
+          "name": "EventDestinationName",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations/{{EVENT_DESTINATION_NAME}}",
+      "pathParameters": [
+        {
+          "name": "ConfigurationSetName",
+          "value": ""
+        },
+        {
+          "name": "EventDestinationName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"EventDestination\": {\"CloudWatchLogsDestination\": {\"IamRoleArn\": {}, \"LogGroupArn\": {}}, \"Enabled\": {}, \"KinesisFirehoseDestination\": {\"DeliveryStreamArn\": {}, \"IamRoleArn\": {}}, \"MatchingEventTypes\": [\"INITIATED_CALL\"], \"SnsDestination\": {\"TopicArn\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}",
+      "url": "http://sms-voice.pinpoint.{{REGION}}.amazonaws.com/v1/sms-voice/configuration-sets/{{CONFIGURATION_SET_NAME}}/event-destinations/{{EVENT_DESTINATION_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CallerId": "",
+        "ConfigurationSetName": "",
+        "Content": {
+          "CallInstructionsMessage": {
+            "Text": {}
+          },
+          "PlainTextMessage": {
+            "LanguageCode": {},
+            "Text": {},
+            "VoiceId": {}
+          },
+          "SSMLMessage": {
+            "LanguageCode": {},
+            "Text": {},
+            "VoiceId": {}
+          }
+        },
+        "DestinationPhoneNumber": "",
+        "OriginationPhoneNumber": ""
+      },
+      "body_json": {
+        "CallerId": "",
+        "ConfigurationSetName": "",
+        "Content": {
+          "CallInstructionsMessage": {
+            "Text": {}
+          },
+          "PlainTextMessage": {
+            "LanguageCode": {},
+            "Text": {},
+            "VoiceId": {}
+          },
+          "SSMLMessage": {
+            "LanguageCode": {},
+            "Text": {},
+            "VoiceId": {}
+          }
+        },
+        "DestinationPhoneNumber": "",
+        "OriginationPhoneNumber": ""
+      },
+      "body_text": "{\"CallerId\": \"\", \"ConfigurationSetName\": \"\", \"Content\": {\"CallInstructionsMessage\": {\"Text\": {}}, \"PlainTextMessage\": {\"LanguageCode\": {}, \"Text\": {}, \"VoiceId\": {}}, \"SSMLMessage\": {\"LanguageCode\": {}, \"Text\": {}, \"VoiceId\": {}}}, \"DestinationPhoneNumber\": \"\", \"OriginationPhoneNumber\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new voice message and send it to a recipient's phone number.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_PINPOINT_SMS_AND_VOICE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/sms-voice/voice/message",
+      "method": "POST",
+      "name": "POST /v1/sms-voice/voice/message",
+      "note": "Replace {{AMAZON_PINPOINT_SMS_AND_VOICE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sms-voice/voice/message",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CallerId\": \"\", \"ConfigurationSetName\": \"\", \"Content\": {\"CallInstructionsMessage\": {\"Text\": {}}, \"PlainTextMessage\": {\"LanguageCode\": {}, \"Text\": {}, \"VoiceId\": {}}, \"SSMLMessage\": {\"LanguageCode\": {}, \"Text\": {}, \"VoiceId\": {}}}, \"DestinationPhoneNumber\": \"\", \"OriginationPhoneNumber\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/sms-voice/voice/message",
+      "url": "http://sms-voice.pinpoint.{{REGION}}.amazonaws.com/v1/sms-voice/voice/message"
+    }
+  ]
+}

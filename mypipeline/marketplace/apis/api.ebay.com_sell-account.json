@@ -1,0 +1,2753 @@
+{
+  "id": "api.ebay.com_sell-account",
+  "info": {
+    "base_url": "https://api.ebay.com{basePath}",
+    "description": "This method retrieves a list of subscriptions associated with the seller account.",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Account API",
+    "version": "v1.9.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method allows developers to check the seller eligibility status for eBay advertising programs.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /advertising_eligibility",
+      "method": "GET",
+      "name": "GET /advertising_eligibility",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "program_types",
+          "value": ""
+        }
+      ],
+      "path": "/advertising_eligibility",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "program_types",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /advertising_eligibility",
+      "url": "https://api.ebay.com{{BASE_PATH}}/advertising_eligibility"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the list of custom policies specified by the <b>policy_types</b> query parameter for the selected eBay marketplace.<br/> <br/> <span class=\"tablenote\"><strong>Note:</strong> The following eBay marketplaces support Custom Policies: <ul><li>Germany (EBAY_DE)</li> <li>Canada (EBAY_CA)</li> <li>Australia (EBAY_AU)</li> <li>United States (EBAY_US)</li> <li>France (EBAY_FR)</li></ul></span><br/><br/>For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\" target=\"_blank\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /custom_policy/",
+      "method": "GET",
+      "name": "GET /custom_policy/",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "policy_types",
+          "value": ""
+        }
+      ],
+      "path": "/custom_policy/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "policy_types",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /custom_policy/",
+      "url": "https://api.ebay.com{{BASE_PATH}}/custom_policy/"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "description": "",
+        "label": "",
+        "name": "",
+        "policyType": ""
+      },
+      "body_json": {
+        "description": "",
+        "label": "",
+        "name": "",
+        "policyType": ""
+      },
+      "body_text": "{\"description\": \"\", \"label\": \"\", \"name\": \"\", \"policyType\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method creates a new custom policy in which a seller specifies their terms for complying with local governmental regulations. <br/><br/>Two Custom Policy types are supported: <ul><li>Product Compliance (PRODUCT_COMPLIANCE)</li> <li>Takeback (TAKE_BACK)</li></ul>Each Custom Policy targets a <b>policyType</b> and <b>eBay marketplace</b> combination. Multiple policies may be created as follows: <ul><li><b>Product Compliance</b>: a maximum of 10 policies per eBay marketplace may be created</li> <li><b>Takeback</b>: a maximum of 3 policies per eBay marketplace may be created</li></ul>A successful create policy call returns an HTTP status code of <b>201 Created</b> with the system-generated policy ID included in the <b>Location</b> response header.<br/><br/><b>Product Compliance Policy</b><br/><br/>Product Compliance policies disclose product information as required for regulatory compliance.<br/><br/><span class=\"tablenote\"><strong>Note:</strong> A maximum of 10 Product Compliance policies per eBay marketplace may be created.</span> <br/><br/> <b>Takeback Policy</b><br/><br/>Takeback policies describe the seller's legal obligation to take back a previously purchased item when the buyer purchases a new one.<br/><br/><span class=\"tablenote\"><strong>Note:</strong> A maximum of 3 Takeback policies per eBay marketplace may be created.</span>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /custom_policy/",
+      "method": "POST",
+      "name": "POST /custom_policy/",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-EBAY-C-MARKETPLACE-ID",
+          "value": ""
+        }
+      ],
+      "path": "/custom_policy/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"\", \"label\": \"\", \"name\": \"\", \"policyType\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /custom_policy/",
+      "url": "https://api.ebay.com{{BASE_PATH}}/custom_policy/"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the custom policy specified by the <b>custom_policy_id</b> path parameter for the selected eBay marketplace.<br/> <br/> <span class=\"tablenote\"><strong>Note:</strong> The following eBay marketplaces support Custom Policies: <ul><li>Germany (EBAY_DE)</li> <li>Canada (EBAY_CA)</li> <li>Australia (EBAY_AU)</li> <li>United States (EBAY_US)</li> <li>France (EBAY_FR)</li></ul></span><br/><br/>For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\" target=\"_blank\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /custom_policy/{{CUSTOM_POLICY_ID}}",
+      "method": "GET",
+      "name": "GET /custom_policy/{custom_policy_id}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "custom_policy_id",
+          "value": ""
+        }
+      ],
+      "path": "/custom_policy/{{CUSTOM_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "custom_policy_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /custom_policy/{custom_policy_id}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/custom_policy/{{CUSTOM_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "description": "",
+        "label": "",
+        "name": ""
+      },
+      "body_json": {
+        "description": "",
+        "label": "",
+        "name": ""
+      },
+      "body_text": "{\"description\": \"\", \"label\": \"\", \"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method updates an existing custom policy specified by the <b>custom_policy_id</b> path parameter for the selected marketplace. This method overwrites the policy's <b>Name</b>, <b>Label</b>, and <b>Description</b> fields. Therefore, the complete, current text of all three policy fields must be included in the request payload even when one or two of these fields will not actually be updated.<br/> <br/>For example, the value for the <b>Label</b> field is to be updated, but the <b>Name</b> and <b>Description</b> values will remain unchanged. The existing <b>Name</b> and <b>Description</b> values, as they are defined in the current policy, must also be passed in. <br/><br/>A successful policy update call returns an HTTP status code of <b>204 No Content</b>.<br/><br/><span class=\"tablenote\"><strong>Note:</strong> The following eBay marketplaces support Custom Policies: <ul><li>Germany (EBAY_DE)</li> <li>Canada (EBAY_CA)</li> <li>Australia (EBAY_AU)</li> <li>United States (EBAY_US)</li> <li>France (EBAY_FR)</li></ul></span><br/><br/>For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /custom_policy/{{CUSTOM_POLICY_ID}}",
+      "method": "PUT",
+      "name": "PUT /custom_policy/{custom_policy_id}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "custom_policy_id",
+          "value": ""
+        }
+      ],
+      "path": "/custom_policy/{{CUSTOM_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "custom_policy_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"\", \"label\": \"\", \"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /custom_policy/{custom_policy_id}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/custom_policy/{{CUSTOM_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves all the fulfillment policies configured for the marketplace you specify using the <code>marketplace_id</code> query parameter.  <br/><br/><b>Marketplaces and locales</b>  <br/><br/>Get the correct policies for a marketplace that supports multiple locales using the <code>Content-Language</code> request header. For example, get the policies for the French locale of the Canadian marketplace by specifying <code>fr-CA</code> for the <code>Content-Language</code> header. Likewise, target the Dutch locale of the Belgium marketplace by setting <code>Content-Language: nl-BE</code>. For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\" target=\"_blank\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /fulfillment_policy",
+      "method": "GET",
+      "name": "GET /fulfillment_policy",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        }
+      ],
+      "path": "/fulfillment_policy",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /fulfillment_policy",
+      "url": "https://api.ebay.com{{BASE_PATH}}/fulfillment_policy"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "description": "",
+        "freightShipping": false,
+        "globalShipping": false,
+        "handlingTime": {
+          "unit": "",
+          "value": 0
+        },
+        "localPickup": false,
+        "marketplaceId": "",
+        "name": "",
+        "pickupDropOff": false,
+        "shipToLocations": {
+          "regionExcluded": [
+            {
+              "regionName": "",
+              "regionType": ""
+            }
+          ],
+          "regionIncluded": [
+            {
+              "regionName": "",
+              "regionType": ""
+            }
+          ]
+        },
+        "shippingOptions": [
+          {
+            "costType": "",
+            "insuranceFee": {
+              "currency": "",
+              "value": ""
+            },
+            "insuranceOffered": false,
+            "optionType": "",
+            "packageHandlingCost": {
+              "currency": "",
+              "value": ""
+            },
+            "rateTableId": "",
+            "shippingDiscountProfileId": "",
+            "shippingPromotionOffered": false,
+            "shippingServices": [
+              {
+                "additionalShippingCost": {
+                  "currency": {},
+                  "value": {}
+                },
+                "buyerResponsibleForPickup": false,
+                "buyerResponsibleForShipping": false,
+                "cashOnDeliveryFee": {
+                  "currency": {},
+                  "value": {}
+                },
+                "freeShipping": false,
+                "shipToLocations": {
+                  "regionExcluded": {},
+                  "regionIncluded": {}
+                },
+                "shippingCarrierCode": "",
+                "shippingCost": {
+                  "currency": {},
+                  "value": {}
+                },
+                "shippingServiceCode": "",
+                "sortOrder": 0,
+                "surcharge": {
+                  "currency": {},
+                  "value": {}
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "body_json": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "description": "",
+        "freightShipping": false,
+        "globalShipping": false,
+        "handlingTime": {
+          "unit": "",
+          "value": 0
+        },
+        "localPickup": false,
+        "marketplaceId": "",
+        "name": "",
+        "pickupDropOff": false,
+        "shipToLocations": {
+          "regionExcluded": [
+            {
+              "regionName": "",
+              "regionType": ""
+            }
+          ],
+          "regionIncluded": [
+            {
+              "regionName": "",
+              "regionType": ""
+            }
+          ]
+        },
+        "shippingOptions": [
+          {
+            "costType": "",
+            "insuranceFee": {
+              "currency": "",
+              "value": ""
+            },
+            "insuranceOffered": false,
+            "optionType": "",
+            "packageHandlingCost": {
+              "currency": "",
+              "value": ""
+            },
+            "rateTableId": "",
+            "shippingDiscountProfileId": "",
+            "shippingPromotionOffered": false,
+            "shippingServices": [
+              {
+                "additionalShippingCost": {
+                  "currency": {},
+                  "value": {}
+                },
+                "buyerResponsibleForPickup": false,
+                "buyerResponsibleForShipping": false,
+                "cashOnDeliveryFee": {
+                  "currency": {},
+                  "value": {}
+                },
+                "freeShipping": false,
+                "shipToLocations": {
+                  "regionExcluded": {},
+                  "regionIncluded": {}
+                },
+                "shippingCarrierCode": "",
+                "shippingCost": {
+                  "currency": {},
+                  "value": {}
+                },
+                "shippingServiceCode": "",
+                "sortOrder": 0,
+                "surcharge": {
+                  "currency": {},
+                  "value": {}
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "body_text": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"description\": \"\", \"freightShipping\": false, \"globalShipping\": false, \"handlingTime\": {\"unit\": \"\", \"value\": 0}, \"localPickup\": false, \"marketplaceId\": \"\", \"name\": \"\", \"pickupDropOff\": false, \"shipToLocations\": {\"regionExcluded\": [{\"regionName\": \"\", \"regionType\": \"\"}], \"regionIncluded\": [{\"regionName\": \"\", \"regionType\": \"\"}]}, \"shippingOptions\": [{\"costType\": \"\", \"insuranceFee\": {\"currency\": \"\", \"value\": \"\"}, \"insuranceOffered\": false, \"optionType\": \"\", \"packageHandlingCost\": {\"currency\": \"\", \"value\": \"\"}, \"rateTableId\": \"\", \"shippingDiscountProfileId\": \"\", \"shippingPromotionOffered\": false, \"shippingServices\": [{\"additionalShippingCost\": {\"currency\": {}, \"value\": {}}, \"buyerResponsibleForPickup\": false, \"buyerResponsibleForShipping\": false, \"cashOnDeliveryFee\": {\"currency\": {}, \"value\": {}}, \"freeShipping\": false, \"shipToLocations\": {\"regionExcluded\": {}, \"regionIncluded\": {}}, \"shippingCarrierCode\": \"\", \"shippingCost\": {\"currency\": {}, \"value\": {}}, \"shippingServiceCode\": \"\", \"sortOrder\": 0, \"surcharge\": {\"currency\": {}, \"value\": {}}}]}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method creates a new fulfillment policy where the policy encapsulates seller's terms for fulfilling item purchases. Fulfillment policies include the shipment options that the seller offers to buyers.  <br/><br/>Each policy targets a specific eBay marketplace and a category group type, and you can create multiple policies for each combination. <br/><br/>A successful request returns the <b>getFulfillmentPolicy</b> URI to the new policy in the <b>Location</b> response header and the ID for the new policy is returned in the response payload.  <p class=\"tablenote\"><b>Tip:</b> For details on creating and using the business policies supported by the Account API, see <a href=\"/api-docs/sell/static/seller-accounts/business-policies.html\">eBay business policies</a>.</p>  <p><b>Using the eBay standard envelope service (eSE)</b></p>  <p>The eBay standard envelope service (eSE) is a domestic envelope service with tracking through eBay. This service applies to specific Trading Cards categories (not all categories are supported), and to Coins & Paper Money, Postcards, and Stamps. See <a href=\"/api-docs/sell/static/seller-accounts/using-the-ebay-standard-envelope-service.html\" target=\"_blank\">Using the eBay standard envelope (eSE) service</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /fulfillment_policy/",
+      "method": "POST",
+      "name": "POST /fulfillment_policy/",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/fulfillment_policy/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"description\": \"\", \"freightShipping\": false, \"globalShipping\": false, \"handlingTime\": {\"unit\": \"\", \"value\": 0}, \"localPickup\": false, \"marketplaceId\": \"\", \"name\": \"\", \"pickupDropOff\": false, \"shipToLocations\": {\"regionExcluded\": [{\"regionName\": \"\", \"regionType\": \"\"}], \"regionIncluded\": [{\"regionName\": \"\", \"regionType\": \"\"}]}, \"shippingOptions\": [{\"costType\": \"\", \"insuranceFee\": {\"currency\": \"\", \"value\": \"\"}, \"insuranceOffered\": false, \"optionType\": \"\", \"packageHandlingCost\": {\"currency\": \"\", \"value\": \"\"}, \"rateTableId\": \"\", \"shippingDiscountProfileId\": \"\", \"shippingPromotionOffered\": false, \"shippingServices\": [{\"additionalShippingCost\": {\"currency\": {}, \"value\": {}}, \"buyerResponsibleForPickup\": false, \"buyerResponsibleForShipping\": false, \"cashOnDeliveryFee\": {\"currency\": {}, \"value\": {}}, \"freeShipping\": false, \"shipToLocations\": {\"regionExcluded\": {}, \"regionIncluded\": {}}, \"shippingCarrierCode\": \"\", \"shippingCost\": {\"currency\": {}, \"value\": {}}, \"shippingServiceCode\": \"\", \"sortOrder\": 0, \"surcharge\": {\"currency\": {}, \"value\": {}}}]}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /fulfillment_policy/",
+      "url": "https://api.ebay.com{{BASE_PATH}}/fulfillment_policy/"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the details for a specific fulfillment policy. In the request, supply both the policy <code>name</code> and its associated <code>marketplace_id</code> as query parameters.   <br/><br/><b>Marketplaces and locales</b>  <br/><br/>Get the correct policy for a marketplace that supports multiple locales using the <code>Content-Language</code> request header. For example, get a policy for the French locale of the Canadian marketplace by specifying <code>fr-CA</code> for the <code>Content-Language</code> header. Likewise, target the Dutch locale of the Belgium marketplace by setting <code>Content-Language: nl-BE</code>. For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /fulfillment_policy/get_by_policy_name",
+      "method": "GET",
+      "name": "GET /fulfillment_policy/get_by_policy_name",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/fulfillment_policy/get_by_policy_name",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /fulfillment_policy/get_by_policy_name",
+      "url": "https://api.ebay.com{{BASE_PATH}}/fulfillment_policy/get_by_policy_name"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method deletes a fulfillment policy. Supply the ID of the policy you want to delete in the <b>fulfillmentPolicyId</b> path parameter.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /fulfillment_policy/{{FULFILLMENT_POLICY_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /fulfillment_policy/{fulfillmentPolicyId}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "fulfillmentPolicyId",
+          "value": ""
+        }
+      ],
+      "path": "/fulfillment_policy/{{FULFILLMENT_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "fulfillmentPolicyId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /fulfillment_policy/{fulfillmentPolicyId}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/fulfillment_policy/{{FULFILLMENT_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the complete details of a fulfillment policy. Supply the ID of the policy you want to retrieve using the <b>fulfillmentPolicyId</b> path parameter.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /fulfillment_policy/{{FULFILLMENT_POLICY_ID}}",
+      "method": "GET",
+      "name": "GET /fulfillment_policy/{fulfillmentPolicyId}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "fulfillmentPolicyId",
+          "value": ""
+        }
+      ],
+      "path": "/fulfillment_policy/{{FULFILLMENT_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "fulfillmentPolicyId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /fulfillment_policy/{fulfillmentPolicyId}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/fulfillment_policy/{{FULFILLMENT_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "description": "",
+        "freightShipping": false,
+        "globalShipping": false,
+        "handlingTime": {
+          "unit": "",
+          "value": 0
+        },
+        "localPickup": false,
+        "marketplaceId": "",
+        "name": "",
+        "pickupDropOff": false,
+        "shipToLocations": {
+          "regionExcluded": [
+            {
+              "regionName": "",
+              "regionType": ""
+            }
+          ],
+          "regionIncluded": [
+            {
+              "regionName": "",
+              "regionType": ""
+            }
+          ]
+        },
+        "shippingOptions": [
+          {
+            "costType": "",
+            "insuranceFee": {
+              "currency": "",
+              "value": ""
+            },
+            "insuranceOffered": false,
+            "optionType": "",
+            "packageHandlingCost": {
+              "currency": "",
+              "value": ""
+            },
+            "rateTableId": "",
+            "shippingDiscountProfileId": "",
+            "shippingPromotionOffered": false,
+            "shippingServices": [
+              {
+                "additionalShippingCost": {
+                  "currency": {},
+                  "value": {}
+                },
+                "buyerResponsibleForPickup": false,
+                "buyerResponsibleForShipping": false,
+                "cashOnDeliveryFee": {
+                  "currency": {},
+                  "value": {}
+                },
+                "freeShipping": false,
+                "shipToLocations": {
+                  "regionExcluded": {},
+                  "regionIncluded": {}
+                },
+                "shippingCarrierCode": "",
+                "shippingCost": {
+                  "currency": {},
+                  "value": {}
+                },
+                "shippingServiceCode": "",
+                "sortOrder": 0,
+                "surcharge": {
+                  "currency": {},
+                  "value": {}
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "body_json": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "description": "",
+        "freightShipping": false,
+        "globalShipping": false,
+        "handlingTime": {
+          "unit": "",
+          "value": 0
+        },
+        "localPickup": false,
+        "marketplaceId": "",
+        "name": "",
+        "pickupDropOff": false,
+        "shipToLocations": {
+          "regionExcluded": [
+            {
+              "regionName": "",
+              "regionType": ""
+            }
+          ],
+          "regionIncluded": [
+            {
+              "regionName": "",
+              "regionType": ""
+            }
+          ]
+        },
+        "shippingOptions": [
+          {
+            "costType": "",
+            "insuranceFee": {
+              "currency": "",
+              "value": ""
+            },
+            "insuranceOffered": false,
+            "optionType": "",
+            "packageHandlingCost": {
+              "currency": "",
+              "value": ""
+            },
+            "rateTableId": "",
+            "shippingDiscountProfileId": "",
+            "shippingPromotionOffered": false,
+            "shippingServices": [
+              {
+                "additionalShippingCost": {
+                  "currency": {},
+                  "value": {}
+                },
+                "buyerResponsibleForPickup": false,
+                "buyerResponsibleForShipping": false,
+                "cashOnDeliveryFee": {
+                  "currency": {},
+                  "value": {}
+                },
+                "freeShipping": false,
+                "shipToLocations": {
+                  "regionExcluded": {},
+                  "regionIncluded": {}
+                },
+                "shippingCarrierCode": "",
+                "shippingCost": {
+                  "currency": {},
+                  "value": {}
+                },
+                "shippingServiceCode": "",
+                "sortOrder": 0,
+                "surcharge": {
+                  "currency": {},
+                  "value": {}
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "body_text": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"description\": \"\", \"freightShipping\": false, \"globalShipping\": false, \"handlingTime\": {\"unit\": \"\", \"value\": 0}, \"localPickup\": false, \"marketplaceId\": \"\", \"name\": \"\", \"pickupDropOff\": false, \"shipToLocations\": {\"regionExcluded\": [{\"regionName\": \"\", \"regionType\": \"\"}], \"regionIncluded\": [{\"regionName\": \"\", \"regionType\": \"\"}]}, \"shippingOptions\": [{\"costType\": \"\", \"insuranceFee\": {\"currency\": \"\", \"value\": \"\"}, \"insuranceOffered\": false, \"optionType\": \"\", \"packageHandlingCost\": {\"currency\": \"\", \"value\": \"\"}, \"rateTableId\": \"\", \"shippingDiscountProfileId\": \"\", \"shippingPromotionOffered\": false, \"shippingServices\": [{\"additionalShippingCost\": {\"currency\": {}, \"value\": {}}, \"buyerResponsibleForPickup\": false, \"buyerResponsibleForShipping\": false, \"cashOnDeliveryFee\": {\"currency\": {}, \"value\": {}}, \"freeShipping\": false, \"shipToLocations\": {\"regionExcluded\": {}, \"regionIncluded\": {}}, \"shippingCarrierCode\": \"\", \"shippingCost\": {\"currency\": {}, \"value\": {}}, \"shippingServiceCode\": \"\", \"sortOrder\": 0, \"surcharge\": {\"currency\": {}, \"value\": {}}}]}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method updates an existing fulfillment policy. Specify the policy you want to update using the <b>fulfillment_policy_id</b> path parameter. Supply a complete policy payload with the updates you want to make; this call overwrites the existing policy with the new details specified in the payload.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /fulfillment_policy/{{FULFILLMENT_POLICY_ID}}",
+      "method": "PUT",
+      "name": "PUT /fulfillment_policy/{fulfillmentPolicyId}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "fulfillmentPolicyId",
+          "value": ""
+        }
+      ],
+      "path": "/fulfillment_policy/{{FULFILLMENT_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "fulfillmentPolicyId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"description\": \"\", \"freightShipping\": false, \"globalShipping\": false, \"handlingTime\": {\"unit\": \"\", \"value\": 0}, \"localPickup\": false, \"marketplaceId\": \"\", \"name\": \"\", \"pickupDropOff\": false, \"shipToLocations\": {\"regionExcluded\": [{\"regionName\": \"\", \"regionType\": \"\"}], \"regionIncluded\": [{\"regionName\": \"\", \"regionType\": \"\"}]}, \"shippingOptions\": [{\"costType\": \"\", \"insuranceFee\": {\"currency\": \"\", \"value\": \"\"}, \"insuranceOffered\": false, \"optionType\": \"\", \"packageHandlingCost\": {\"currency\": \"\", \"value\": \"\"}, \"rateTableId\": \"\", \"shippingDiscountProfileId\": \"\", \"shippingPromotionOffered\": false, \"shippingServices\": [{\"additionalShippingCost\": {\"currency\": {}, \"value\": {}}, \"buyerResponsibleForPickup\": false, \"buyerResponsibleForShipping\": false, \"cashOnDeliveryFee\": {\"currency\": {}, \"value\": {}}, \"freeShipping\": false, \"shipToLocations\": {\"regionExcluded\": {}, \"regionIncluded\": {}}, \"shippingCarrierCode\": \"\", \"shippingCost\": {\"currency\": {}, \"value\": {}}, \"shippingServiceCode\": \"\", \"sortOrder\": 0, \"surcharge\": {\"currency\": {}, \"value\": {}}}]}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /fulfillment_policy/{fulfillmentPolicyId}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/fulfillment_policy/{{FULFILLMENT_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<span class=\"tablenote\"><b>Note:</b>This method was originally created to see which onboarding requirements were still pending for sellers being onboarded for eBay managed payments, but now that all seller accounts are onboarded globally, this method should now just returne an empty payload with a <code>204 No Content</code> HTTP status code. </span>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /kyc",
+      "method": "GET",
+      "name": "GET /kyc",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/kyc",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /kyc",
+      "url": "https://api.ebay.com{{BASE_PATH}}/kyc"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves all the payment policies configured for the marketplace you specify using the <code>marketplace_id</code> query parameter.  <br/><br/><b>Marketplaces and locales</b>  <br/><br/>Get the correct policies for a marketplace that supports multiple locales using the <code>Content-Language</code> request header. For example, get the policies for the French locale of the Canadian marketplace by specifying <code>fr-CA</code> for the <code>Content-Language</code> header. Likewise, target the Dutch locale of the Belgium marketplace by setting <code>Content-Language: nl-BE</code>. For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\" target=\"_blank\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /payment_policy",
+      "method": "GET",
+      "name": "GET /payment_policy",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        }
+      ],
+      "path": "/payment_policy",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /payment_policy",
+      "url": "https://api.ebay.com{{BASE_PATH}}/payment_policy"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "deposit": {
+          "amount": {
+            "currency": "",
+            "value": ""
+          },
+          "dueIn": {
+            "unit": "",
+            "value": 0
+          },
+          "paymentMethods": [
+            {
+              "brands": [
+                ""
+              ],
+              "paymentMethodType": "",
+              "recipientAccountReference": {
+                "referenceId": "",
+                "referenceType": ""
+              }
+            }
+          ]
+        },
+        "description": "",
+        "fullPaymentDueIn": {
+          "unit": "",
+          "value": 0
+        },
+        "immediatePay": false,
+        "marketplaceId": "",
+        "name": "",
+        "paymentInstructions": "",
+        "paymentMethods": [
+          {
+            "brands": [
+              ""
+            ],
+            "paymentMethodType": "",
+            "recipientAccountReference": {
+              "referenceId": "",
+              "referenceType": ""
+            }
+          }
+        ]
+      },
+      "body_json": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "deposit": {
+          "amount": {
+            "currency": "",
+            "value": ""
+          },
+          "dueIn": {
+            "unit": "",
+            "value": 0
+          },
+          "paymentMethods": [
+            {
+              "brands": [
+                ""
+              ],
+              "paymentMethodType": "",
+              "recipientAccountReference": {
+                "referenceId": "",
+                "referenceType": ""
+              }
+            }
+          ]
+        },
+        "description": "",
+        "fullPaymentDueIn": {
+          "unit": "",
+          "value": 0
+        },
+        "immediatePay": false,
+        "marketplaceId": "",
+        "name": "",
+        "paymentInstructions": "",
+        "paymentMethods": [
+          {
+            "brands": [
+              ""
+            ],
+            "paymentMethodType": "",
+            "recipientAccountReference": {
+              "referenceId": "",
+              "referenceType": ""
+            }
+          }
+        ]
+      },
+      "body_text": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"deposit\": {\"amount\": {\"currency\": \"\", \"value\": \"\"}, \"dueIn\": {\"unit\": \"\", \"value\": 0}, \"paymentMethods\": [{\"brands\": [\"\"], \"paymentMethodType\": \"\", \"recipientAccountReference\": {\"referenceId\": \"\", \"referenceType\": \"\"}}]}, \"description\": \"\", \"fullPaymentDueIn\": {\"unit\": \"\", \"value\": 0}, \"immediatePay\": false, \"marketplaceId\": \"\", \"name\": \"\", \"paymentInstructions\": \"\", \"paymentMethods\": [{\"brands\": [\"\"], \"paymentMethodType\": \"\", \"recipientAccountReference\": {\"referenceId\": \"\", \"referenceType\": \"\"}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method creates a new payment policy where the policy encapsulates seller's terms for order payments.  <br/><br/>Each policy targets a specific eBay marketplace and category group, and you can create multiple policies for each combination.  <br/><br/>A successful request returns the <b>getPaymentPolicy</b> URI to the new policy in the <b>Location</b> response header and the ID for the new policy is returned in the response payload.  <p class=\"tablenote\"><b>Tip:</b> For details on creating and using the business policies supported by the Account API, see <a href=\"/api-docs/sell/static/seller-accounts/business-policies.html\">eBay business policies</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /payment_policy",
+      "method": "POST",
+      "name": "POST /payment_policy",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/payment_policy",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"deposit\": {\"amount\": {\"currency\": \"\", \"value\": \"\"}, \"dueIn\": {\"unit\": \"\", \"value\": 0}, \"paymentMethods\": [{\"brands\": [\"\"], \"paymentMethodType\": \"\", \"recipientAccountReference\": {\"referenceId\": \"\", \"referenceType\": \"\"}}]}, \"description\": \"\", \"fullPaymentDueIn\": {\"unit\": \"\", \"value\": 0}, \"immediatePay\": false, \"marketplaceId\": \"\", \"name\": \"\", \"paymentInstructions\": \"\", \"paymentMethods\": [{\"brands\": [\"\"], \"paymentMethodType\": \"\", \"recipientAccountReference\": {\"referenceId\": \"\", \"referenceType\": \"\"}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /payment_policy",
+      "url": "https://api.ebay.com{{BASE_PATH}}/payment_policy"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the details of a specific payment policy. Supply both the policy <code>name</code> and its associated <code>marketplace_id</code> in the request query parameters.   <br/><br/><b>Marketplaces and locales</b>  <br/><br/>Get the correct policy for a marketplace that supports multiple locales using the <code>Content-Language</code> request header. For example, get a policy for the French locale of the Canadian marketplace by specifying <code>fr-CA</code> for the <code>Content-Language</code> header. Likewise, target the Dutch locale of the Belgium marketplace by setting <code>Content-Language: nl-BE</code>. For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /payment_policy/get_by_policy_name",
+      "method": "GET",
+      "name": "GET /payment_policy/get_by_policy_name",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/payment_policy/get_by_policy_name",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /payment_policy/get_by_policy_name",
+      "url": "https://api.ebay.com{{BASE_PATH}}/payment_policy/get_by_policy_name"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method deletes a payment policy. Supply the ID of the policy you want to delete in the <b>paymentPolicyId</b> path parameter. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /payment_policy/{{PAYMENT_POLICY_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /payment_policy/{payment_policy_id}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "payment_policy_id",
+          "value": ""
+        }
+      ],
+      "path": "/payment_policy/{{PAYMENT_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "payment_policy_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /payment_policy/{payment_policy_id}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/payment_policy/{{PAYMENT_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the complete details of a payment policy. Supply the ID of the policy you want to retrieve using the <b>paymentPolicyId</b> path parameter.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /payment_policy/{{PAYMENT_POLICY_ID}}",
+      "method": "GET",
+      "name": "GET /payment_policy/{payment_policy_id}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "payment_policy_id",
+          "value": ""
+        }
+      ],
+      "path": "/payment_policy/{{PAYMENT_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "payment_policy_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /payment_policy/{payment_policy_id}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/payment_policy/{{PAYMENT_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "deposit": {
+          "amount": {
+            "currency": "",
+            "value": ""
+          },
+          "dueIn": {
+            "unit": "",
+            "value": 0
+          },
+          "paymentMethods": [
+            {
+              "brands": [
+                ""
+              ],
+              "paymentMethodType": "",
+              "recipientAccountReference": {
+                "referenceId": "",
+                "referenceType": ""
+              }
+            }
+          ]
+        },
+        "description": "",
+        "fullPaymentDueIn": {
+          "unit": "",
+          "value": 0
+        },
+        "immediatePay": false,
+        "marketplaceId": "",
+        "name": "",
+        "paymentInstructions": "",
+        "paymentMethods": [
+          {
+            "brands": [
+              ""
+            ],
+            "paymentMethodType": "",
+            "recipientAccountReference": {
+              "referenceId": "",
+              "referenceType": ""
+            }
+          }
+        ]
+      },
+      "body_json": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "deposit": {
+          "amount": {
+            "currency": "",
+            "value": ""
+          },
+          "dueIn": {
+            "unit": "",
+            "value": 0
+          },
+          "paymentMethods": [
+            {
+              "brands": [
+                ""
+              ],
+              "paymentMethodType": "",
+              "recipientAccountReference": {
+                "referenceId": "",
+                "referenceType": ""
+              }
+            }
+          ]
+        },
+        "description": "",
+        "fullPaymentDueIn": {
+          "unit": "",
+          "value": 0
+        },
+        "immediatePay": false,
+        "marketplaceId": "",
+        "name": "",
+        "paymentInstructions": "",
+        "paymentMethods": [
+          {
+            "brands": [
+              ""
+            ],
+            "paymentMethodType": "",
+            "recipientAccountReference": {
+              "referenceId": "",
+              "referenceType": ""
+            }
+          }
+        ]
+      },
+      "body_text": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"deposit\": {\"amount\": {\"currency\": \"\", \"value\": \"\"}, \"dueIn\": {\"unit\": \"\", \"value\": 0}, \"paymentMethods\": [{\"brands\": [\"\"], \"paymentMethodType\": \"\", \"recipientAccountReference\": {\"referenceId\": \"\", \"referenceType\": \"\"}}]}, \"description\": \"\", \"fullPaymentDueIn\": {\"unit\": \"\", \"value\": 0}, \"immediatePay\": false, \"marketplaceId\": \"\", \"name\": \"\", \"paymentInstructions\": \"\", \"paymentMethods\": [{\"brands\": [\"\"], \"paymentMethodType\": \"\", \"recipientAccountReference\": {\"referenceId\": \"\", \"referenceType\": \"\"}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method updates an existing payment policy. Specify the policy you want to update using the <b>payment_policy_id</b> path parameter. Supply a complete policy payload with the updates you want to make; this call overwrites the existing policy with the new details specified in the payload.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /payment_policy/{{PAYMENT_POLICY_ID}}",
+      "method": "PUT",
+      "name": "PUT /payment_policy/{payment_policy_id}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "payment_policy_id",
+          "value": ""
+        }
+      ],
+      "path": "/payment_policy/{{PAYMENT_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "payment_policy_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"deposit\": {\"amount\": {\"currency\": \"\", \"value\": \"\"}, \"dueIn\": {\"unit\": \"\", \"value\": 0}, \"paymentMethods\": [{\"brands\": [\"\"], \"paymentMethodType\": \"\", \"recipientAccountReference\": {\"referenceId\": \"\", \"referenceType\": \"\"}}]}, \"description\": \"\", \"fullPaymentDueIn\": {\"unit\": \"\", \"value\": 0}, \"immediatePay\": false, \"marketplaceId\": \"\", \"name\": \"\", \"paymentInstructions\": \"\", \"paymentMethods\": [{\"brands\": [\"\"], \"paymentMethodType\": \"\", \"recipientAccountReference\": {\"referenceId\": \"\", \"referenceType\": \"\"}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /payment_policy/{payment_policy_id}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/payment_policy/{{PAYMENT_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<span class=\"tablenote\"><b>Note:</b> This method is no longer applicable, as all seller accounts globally have been enabled for the new eBay payment and checkout flow.</span><br/><br/>This method returns whether or not the user is opted-in to the specified payments program. Sellers opt-in to payments programs by marketplace and you use the <b>marketplace_id</b> path parameter to specify the marketplace of the status flag you want returned.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /payments_program/{{MARKETPLACE_ID}}/{{PAYMENTS_PROGRAM_TYPE}}",
+      "method": "GET",
+      "name": "GET /payments_program/{marketplace_id}/{payments_program_type}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "payments_program_type",
+          "value": ""
+        }
+      ],
+      "path": "/payments_program/{{MARKETPLACE_ID}}/{{PAYMENTS_PROGRAM_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "payments_program_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /payments_program/{marketplace_id}/{payments_program_type}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/payments_program/{{MARKETPLACE_ID}}/{{PAYMENTS_PROGRAM_TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<span class=\"tablenote\"><b>Note:</b> This method is no longer applicable, as all seller accounts globally have been enabled for the new eBay payment and checkout flow.</span><br/><br/>This method retrieves a seller's onboarding status for a payments program for a specified marketplace. The overall onboarding status of the seller and the status of each onboarding step is returned.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /payments_program/{{MARKETPLACE_ID}}/{{PAYMENTS_PROGRAM_TYPE}}/onboarding",
+      "method": "GET",
+      "name": "GET /payments_program/{marketplace_id}/{payments_program_type}/onboarding",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "payments_program_type",
+          "value": ""
+        }
+      ],
+      "path": "/payments_program/{{MARKETPLACE_ID}}/{{PAYMENTS_PROGRAM_TYPE}}/onboarding",
+      "pathParameters": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "payments_program_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /payments_program/{marketplace_id}/{payments_program_type}/onboarding",
+      "url": "https://api.ebay.com{{BASE_PATH}}/payments_program/{{MARKETPLACE_ID}}/{{PAYMENTS_PROGRAM_TYPE}}/onboarding"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the seller's current set of privileges, including whether or not the seller's eBay registration has been completed, as well as the details of their site-wide <b>sellingLimt</b> (the amount and quantity they can sell on a given day).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /privilege",
+      "method": "GET",
+      "name": "GET /privilege",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/privilege",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /privilege",
+      "url": "https://api.ebay.com{{BASE_PATH}}/privilege"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method gets a list of the seller programs that the seller has opted-in to.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /program/get_opted_in_programs",
+      "method": "GET",
+      "name": "GET /program/get_opted_in_programs",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/program/get_opted_in_programs",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /program/get_opted_in_programs",
+      "url": "https://api.ebay.com{{BASE_PATH}}/program/get_opted_in_programs"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "programType": ""
+      },
+      "body_json": {
+        "programType": ""
+      },
+      "body_text": "{\"programType\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method opts the seller in to an eBay seller program. Refer to the <a href=\"/api-docs/sell/account/overview.html#opt-in\" target=\"_blank\">Account API overview</a> for information about available eBay seller programs.<br /><br /><span class=\"tablenote\"><b>Note:</b> It can take up to 24-hours for eBay to process your request to opt-in to a Seller Program. Use the <a href=\"/api-docs/sell/account/resources/program/methods/getOptedInPrograms\" target=\"_blank\">getOptedInPrograms</a> call to check the status of your request after the processing period has passed.</span>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /program/opt_in",
+      "method": "POST",
+      "name": "POST /program/opt_in",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/program/opt_in",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"programType\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /program/opt_in",
+      "url": "https://api.ebay.com{{BASE_PATH}}/program/opt_in"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "programType": ""
+      },
+      "body_json": {
+        "programType": ""
+      },
+      "body_text": "{\"programType\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method opts the seller out of a seller program to which you have previously opted-in to. Get a list of the seller programs you have opted-in to using the <b>getOptedInPrograms</b> call.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /program/opt_out",
+      "method": "POST",
+      "name": "POST /program/opt_out",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/program/opt_out",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"programType\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /program/opt_out",
+      "url": "https://api.ebay.com{{BASE_PATH}}/program/opt_out"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves a seller's <i>shipping rate tables</i> for the country specified in the <b>country_code</b> query parameter. If you call this method without specifying a country code, the call returns all of the seller's shipping rate tables.  <br/><br/>The method's response includes a <b>rateTableId</b> for each table defined by the seller. This <b>rateTableId</b> value is used in add/revise item call or in create/update fulfillment business policy call to specify the shipping rate table to use for that policy's domestic or international shipping options. <br/><br/>This call currently supports getting rate tables related to the following marketplaces:<ul><li><code>EBAY_AU</code></li> <li><code>EBAY_CA</code></li> <li><code>EBAY_DE</code></li> <li><code>EBAY_ES</code></li> <li><code>EBAY_FR</code></li> <li><code>EBAY_GB</code></li> <li><code>EBAY_IT</code></li> <li><code>EBAY_US</code></li></ul>  <span class=\"tablenote\"><b>Note:</b> Rate tables created with the Trading API might not have been assigned a <b>rateTableId</b> at the time of their creation. This method can assign and return <b>rateTableId</b> values for rate tables with missing IDs if you make a request using the <b>country_code</b> where the seller has defined rate tables.</span>  <br/><br/>Sellers can define up to 40 shipping rate tables for their account, which lets them set up different rate tables for each of the marketplaces they sell into. Go to <a href=\"https://www.ebay.com/ship/rt \">Shipping rate tables</a> in  <b>My eBay</b> to create and update rate tables.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /rate_table",
+      "method": "GET",
+      "name": "GET /rate_table",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "country_code",
+          "value": ""
+        }
+      ],
+      "path": "/rate_table",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "country_code",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /rate_table",
+      "url": "https://api.ebay.com{{BASE_PATH}}/rate_table"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves all the return policies configured for the marketplace you specify using the <code>marketplace_id</code> query parameter.  <br/><br/><b>Marketplaces and locales</b>  <br/><br/>Get the correct policies for a marketplace that supports multiple locales using the <code>Content-Language</code> request header. For example, get the policies for the French locale of the Canadian marketplace by specifying <code>fr-CA</code> for the <code>Content-Language</code> header. Likewise, target the Dutch locale of the Belgium marketplace by setting <code>Content-Language: nl-BE</code>. For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\" target=\"_blank\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /return_policy",
+      "method": "GET",
+      "name": "GET /return_policy",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        }
+      ],
+      "path": "/return_policy",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /return_policy",
+      "url": "https://api.ebay.com{{BASE_PATH}}/return_policy"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "description": "",
+        "extendedHolidayReturnsOffered": false,
+        "internationalOverride": {
+          "returnMethod": "",
+          "returnPeriod": {
+            "unit": "",
+            "value": 0
+          },
+          "returnShippingCostPayer": "",
+          "returnsAccepted": false
+        },
+        "marketplaceId": "",
+        "name": "",
+        "refundMethod": "",
+        "restockingFeePercentage": "",
+        "returnInstructions": "",
+        "returnMethod": "",
+        "returnPeriod": {
+          "unit": "",
+          "value": 0
+        },
+        "returnShippingCostPayer": "",
+        "returnsAccepted": false
+      },
+      "body_json": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "description": "",
+        "extendedHolidayReturnsOffered": false,
+        "internationalOverride": {
+          "returnMethod": "",
+          "returnPeriod": {
+            "unit": "",
+            "value": 0
+          },
+          "returnShippingCostPayer": "",
+          "returnsAccepted": false
+        },
+        "marketplaceId": "",
+        "name": "",
+        "refundMethod": "",
+        "restockingFeePercentage": "",
+        "returnInstructions": "",
+        "returnMethod": "",
+        "returnPeriod": {
+          "unit": "",
+          "value": 0
+        },
+        "returnShippingCostPayer": "",
+        "returnsAccepted": false
+      },
+      "body_text": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"description\": \"\", \"extendedHolidayReturnsOffered\": false, \"internationalOverride\": {\"returnMethod\": \"\", \"returnPeriod\": {\"unit\": \"\", \"value\": 0}, \"returnShippingCostPayer\": \"\", \"returnsAccepted\": false}, \"marketplaceId\": \"\", \"name\": \"\", \"refundMethod\": \"\", \"restockingFeePercentage\": \"\", \"returnInstructions\": \"\", \"returnMethod\": \"\", \"returnPeriod\": {\"unit\": \"\", \"value\": 0}, \"returnShippingCostPayer\": \"\", \"returnsAccepted\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method creates a new return policy where the policy encapsulates seller's terms for returning items.  <br/><br/>Each policy targets a specific marketplace, and you can create multiple policies for each marketplace. Return policies are not applicable to motor-vehicle listings.<br/><br/>A successful request returns the <b>getReturnPolicy</b> URI to the new policy in the <b>Location</b> response header and the ID for the new policy is returned in the response payload.  <p class=\"tablenote\"><b>Tip:</b> For details on creating and using the business policies supported by the Account API, see <a href=\"/api-docs/sell/static/seller-accounts/business-policies.html\">eBay business policies</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /return_policy",
+      "method": "POST",
+      "name": "POST /return_policy",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/return_policy",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"description\": \"\", \"extendedHolidayReturnsOffered\": false, \"internationalOverride\": {\"returnMethod\": \"\", \"returnPeriod\": {\"unit\": \"\", \"value\": 0}, \"returnShippingCostPayer\": \"\", \"returnsAccepted\": false}, \"marketplaceId\": \"\", \"name\": \"\", \"refundMethod\": \"\", \"restockingFeePercentage\": \"\", \"returnInstructions\": \"\", \"returnMethod\": \"\", \"returnPeriod\": {\"unit\": \"\", \"value\": 0}, \"returnShippingCostPayer\": \"\", \"returnsAccepted\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /return_policy",
+      "url": "https://api.ebay.com{{BASE_PATH}}/return_policy"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the details of a specific return policy. Supply both the policy <code>name</code> and its associated <code>marketplace_id</code> in the request query parameters.   <br/><br/><b>Marketplaces and locales</b>  <br/><br/>Get the correct policy for a marketplace that supports multiple locales using the <code>Content-Language</code> request header. For example, get a policy for the French locale of the Canadian marketplace by specifying <code>fr-CA</code> for the <code>Content-Language</code> header. Likewise, target the Dutch locale of the Belgium marketplace by setting <code>Content-Language: nl-BE</code>. For details on header values, see <a href=\"/api-docs/static/rest-request-components.html#HTTP\">HTTP request headers</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /return_policy/get_by_policy_name",
+      "method": "GET",
+      "name": "GET /return_policy/get_by_policy_name",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/return_policy/get_by_policy_name",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "marketplace_id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /return_policy/get_by_policy_name",
+      "url": "https://api.ebay.com{{BASE_PATH}}/return_policy/get_by_policy_name"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method deletes a return policy. Supply the ID of the policy you want to delete in the <b>returnPolicyId</b> path parameter.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /return_policy/{{RETURN_POLICY_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /return_policy/{return_policy_id}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "return_policy_id",
+          "value": ""
+        }
+      ],
+      "path": "/return_policy/{{RETURN_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "return_policy_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /return_policy/{return_policy_id}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/return_policy/{{RETURN_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the complete details of the return policy specified by the <b>returnPolicyId</b> path parameter.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /return_policy/{{RETURN_POLICY_ID}}",
+      "method": "GET",
+      "name": "GET /return_policy/{return_policy_id}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "return_policy_id",
+          "value": ""
+        }
+      ],
+      "path": "/return_policy/{{RETURN_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "return_policy_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /return_policy/{return_policy_id}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/return_policy/{{RETURN_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "description": "",
+        "extendedHolidayReturnsOffered": false,
+        "internationalOverride": {
+          "returnMethod": "",
+          "returnPeriod": {
+            "unit": "",
+            "value": 0
+          },
+          "returnShippingCostPayer": "",
+          "returnsAccepted": false
+        },
+        "marketplaceId": "",
+        "name": "",
+        "refundMethod": "",
+        "restockingFeePercentage": "",
+        "returnInstructions": "",
+        "returnMethod": "",
+        "returnPeriod": {
+          "unit": "",
+          "value": 0
+        },
+        "returnShippingCostPayer": "",
+        "returnsAccepted": false
+      },
+      "body_json": {
+        "categoryTypes": [
+          {
+            "default": false,
+            "name": ""
+          }
+        ],
+        "description": "",
+        "extendedHolidayReturnsOffered": false,
+        "internationalOverride": {
+          "returnMethod": "",
+          "returnPeriod": {
+            "unit": "",
+            "value": 0
+          },
+          "returnShippingCostPayer": "",
+          "returnsAccepted": false
+        },
+        "marketplaceId": "",
+        "name": "",
+        "refundMethod": "",
+        "restockingFeePercentage": "",
+        "returnInstructions": "",
+        "returnMethod": "",
+        "returnPeriod": {
+          "unit": "",
+          "value": 0
+        },
+        "returnShippingCostPayer": "",
+        "returnsAccepted": false
+      },
+      "body_text": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"description\": \"\", \"extendedHolidayReturnsOffered\": false, \"internationalOverride\": {\"returnMethod\": \"\", \"returnPeriod\": {\"unit\": \"\", \"value\": 0}, \"returnShippingCostPayer\": \"\", \"returnsAccepted\": false}, \"marketplaceId\": \"\", \"name\": \"\", \"refundMethod\": \"\", \"restockingFeePercentage\": \"\", \"returnInstructions\": \"\", \"returnMethod\": \"\", \"returnPeriod\": {\"unit\": \"\", \"value\": 0}, \"returnShippingCostPayer\": \"\", \"returnsAccepted\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method updates an existing return policy. Specify the policy you want to update using the <b>return_policy_id</b> path parameter. Supply a complete policy payload with the updates you want to make; this call overwrites the existing policy with the new details specified in the payload.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /return_policy/{{RETURN_POLICY_ID}}",
+      "method": "PUT",
+      "name": "PUT /return_policy/{return_policy_id}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "return_policy_id",
+          "value": ""
+        }
+      ],
+      "path": "/return_policy/{{RETURN_POLICY_ID}}",
+      "pathParameters": [
+        {
+          "name": "return_policy_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categoryTypes\": [{\"default\": false, \"name\": \"\"}], \"description\": \"\", \"extendedHolidayReturnsOffered\": false, \"internationalOverride\": {\"returnMethod\": \"\", \"returnPeriod\": {\"unit\": \"\", \"value\": 0}, \"returnShippingCostPayer\": \"\", \"returnsAccepted\": false}, \"marketplaceId\": \"\", \"name\": \"\", \"refundMethod\": \"\", \"restockingFeePercentage\": \"\", \"returnInstructions\": \"\", \"returnMethod\": \"\", \"returnPeriod\": {\"unit\": \"\", \"value\": 0}, \"returnShippingCostPayer\": \"\", \"returnsAccepted\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /return_policy/{return_policy_id}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/return_policy/{{RETURN_POLICY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this call to retrieve all sales tax table entries that the seller has defined for a specific country. All four response fields will be returned for each tax jurisdiction that matches the search criteria. <br/><br/><span class=\"tablenote\"><b>Important!</b> In most US states and territories, eBay now 'collects and remits' sales tax, so sellers can no longer configure sales tax rates for these states/territories.</span>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /sales_tax",
+      "method": "GET",
+      "name": "GET /sales_tax",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "country_code",
+          "value": ""
+        }
+      ],
+      "path": "/sales_tax",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "country_code",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /sales_tax",
+      "url": "https://api.ebay.com{{BASE_PATH}}/sales_tax"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This call deletes a sales tax table entry for a jurisdiction. Specify the jurisdiction to delete using the <b>countryCode</b> and <b>jurisdictionId</b> path parameters.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /sales_tax/{countryCode}/{jurisdictionId}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "countryCode",
+          "value": ""
+        },
+        {
+          "name": "jurisdictionId",
+          "value": ""
+        }
+      ],
+      "path": "/sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "countryCode",
+          "value": ""
+        },
+        {
+          "name": "jurisdictionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /sales_tax/{countryCode}/{jurisdictionId}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This call gets the current sales tax table entry for a specific tax jurisdiction. Specify the jurisdiction to retrieve using the <b>countryCode</b> and <b>jurisdictionId</b> path parameters. All four response fields will be returned if a sales tax entry exists for the tax jurisdiction. Otherwise, the response will be returned as empty.<br/><br/><span class=\"tablenote\"><b>Important!</b> In most US states and territories, eBay now 'collects and remits' sales tax, so sellers can no longer configure sales tax rates for these states/territories.</span>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}",
+      "method": "GET",
+      "name": "GET /sales_tax/{countryCode}/{jurisdictionId}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "countryCode",
+          "value": ""
+        },
+        {
+          "name": "jurisdictionId",
+          "value": ""
+        }
+      ],
+      "path": "/sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "countryCode",
+          "value": ""
+        },
+        {
+          "name": "jurisdictionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /sales_tax/{countryCode}/{jurisdictionId}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "salesTaxPercentage": "",
+        "shippingAndHandlingTaxed": false
+      },
+      "body_json": {
+        "salesTaxPercentage": "",
+        "shippingAndHandlingTaxed": false
+      },
+      "body_text": "{\"salesTaxPercentage\": \"\", \"shippingAndHandlingTaxed\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method creates or updates a sales tax table entry for a jurisdiction. Specify the tax table entry you want to configure using the two path parameters: <b>countryCode</b> and <b>jurisdictionId</b>.  <br/><br/>A tax table entry for a jurisdiction is comprised of two fields: one for the jurisdiction's sales-tax rate and another that's a boolean value indicating whether or not shipping and handling are taxed in the jurisdiction.  <br/><br/>You can set up <i>tax tables</i> for countries that support different <i>tax jurisdictions</i>. Currently, only Canada, India, and the US support separate tax jurisdictions. If you sell into any of these countries, you can set up tax tables for any of the country's jurisdictions. Retrieve valid jurisdiction IDs using <b>getSalesTaxJurisdictions</b> in the Metadata API.  <br/><br/>For details on using this call, see <a href=\"/api-docs/sell/static/seller-accounts/tax-tables.html\">Establishing sales-tax tables</a>. <br/><br/><span class=\"tablenote\"><b>Important!</b> In the US, eBay now 'collects and remits' sales tax for every US state except for Missouri (and a few US territories), so sellers can no longer configure sales tax rates for any states except Missouri. With eBay 'collect and remit', eBay calculates the sales tax, collects the sales tax from the buyer, and remits the sales tax to the tax authorities at the buyer's location.</span>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}",
+      "method": "PUT",
+      "name": "PUT /sales_tax/{countryCode}/{jurisdictionId}",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "countryCode",
+          "value": ""
+        },
+        {
+          "name": "jurisdictionId",
+          "value": ""
+        }
+      ],
+      "path": "/sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "countryCode",
+          "value": ""
+        },
+        {
+          "name": "jurisdictionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"salesTaxPercentage\": \"\", \"shippingAndHandlingTaxed\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /sales_tax/{countryCode}/{jurisdictionId}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/sales_tax/{{COUNTRY_CODE}}/{{JURISDICTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ACCOUNT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves a list of subscriptions associated with the seller account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ACCOUNT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /subscription",
+      "method": "GET",
+      "name": "GET /subscription",
+      "note": "Replace {{ACCOUNT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "continuation_token",
+          "value": ""
+        }
+      ],
+      "path": "/subscription",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "continuation_token",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /subscription",
+      "url": "https://api.ebay.com{{BASE_PATH}}/subscription"
+    }
+  ]
+}

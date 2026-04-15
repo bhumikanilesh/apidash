@@ -1,0 +1,751 @@
+{
+  "id": "azure.com_storage-DataLakeStorage",
+  "info": {
+    "base_url": "https://azure.local",
+    "description": "Create or rename a file or directory.    By default, the destination is overwritten and if the destination already exists and has a lease the lease is broken.  This operation supports conditional...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Azure Data Lake Storage",
+    "version": "2019-10-31"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List filesystems and their properties in given account.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /",
+      "method": "GET",
+      "name": "List Filesystems",
+      "params": [
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "prefix",
+          "value": ""
+        },
+        {
+          "name": "continuation",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "prefix",
+          "value": ""
+        },
+        {
+          "name": "continuation",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Filesystems",
+      "url": "https://azure.local/"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Marks the filesystem for deletion.  When a filesystem is deleted, a filesystem with the same identifier cannot be created for at least 30 seconds. While the filesystem is being deleted, attempts to create a filesystem with the same identifier will fail with status code 409 (Conflict), with the service returning additional error information indicating that the filesystem is being deleted. All other operations, including operations on any files or directories within the filesystem, will fail with status code 404 (Not Found) while the filesystem is being deleted. This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://docs.microsoft.com/en-us/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /{{FILESYSTEM}}",
+      "method": "DELETE",
+      "name": "Delete Filesystem",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Filesystem",
+      "url": "https://azure.local/{{FILESYSTEM}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List filesystem paths and their properties.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /{{FILESYSTEM}}",
+      "method": "GET",
+      "name": "List Paths",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        },
+        {
+          "name": "directory",
+          "value": ""
+        },
+        {
+          "name": "recursive",
+          "value": ""
+        },
+        {
+          "name": "continuation",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "upn",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        },
+        {
+          "name": "directory",
+          "value": ""
+        },
+        {
+          "name": "recursive",
+          "value": ""
+        },
+        {
+          "name": "continuation",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "upn",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Paths",
+      "url": "https://azure.local/{{FILESYSTEM}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Set properties for the filesystem.  This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://docs.microsoft.com/en-us/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PATCH /{{FILESYSTEM}}",
+      "method": "PATCH",
+      "name": "Set Filesystem Properties",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set Filesystem Properties",
+      "url": "https://azure.local/{{FILESYSTEM}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Create a filesystem rooted at the specified location. If the filesystem already exists, the operation fails.  This operation does not support conditional HTTP requests.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PUT /{{FILESYSTEM}}",
+      "method": "PUT",
+      "name": "Create Filesystem",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Filesystem",
+      "url": "https://azure.local/{{FILESYSTEM}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete the file or directory. This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://docs.microsoft.com/en-us/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /{{FILESYSTEM}}/{{PATH}}",
+      "method": "DELETE",
+      "name": "Delete File | Delete Directory",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        },
+        {
+          "name": "recursive",
+          "value": ""
+        },
+        {
+          "name": "continuation",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "timeout",
+          "value": ""
+        },
+        {
+          "name": "recursive",
+          "value": ""
+        },
+        {
+          "name": "continuation",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete File | Delete Directory",
+      "url": "https://azure.local/{{FILESYSTEM}}/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Read the contents of a file.  For read operations, range requests are supported. This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://docs.microsoft.com/en-us/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /{{FILESYSTEM}}/{{PATH}}",
+      "method": "GET",
+      "name": "Read File",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Read File",
+      "url": "https://azure.local/{{FILESYSTEM}}/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Uploads data to be appended to a file, flushes (writes) previously uploaded data to a file, sets properties for a file or directory, or sets access control for a file or directory. Data can only be appended to a file. This operation supports conditional HTTP requests. For more information, see [Specifying Conditional Headers for Blob Service Operations](https://docs.microsoft.com/en-us/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PATCH /{{FILESYSTEM}}/{{PATH}}",
+      "method": "PATCH",
+      "name": "Append Data | Flush Data | Set Properties | Set Access Control",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        },
+        {
+          "name": "action",
+          "value": ""
+        },
+        {
+          "name": "position",
+          "value": ""
+        },
+        {
+          "name": "retainUncommittedData",
+          "value": ""
+        },
+        {
+          "name": "close",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "timeout",
+          "value": ""
+        },
+        {
+          "name": "action",
+          "value": ""
+        },
+        {
+          "name": "position",
+          "value": ""
+        },
+        {
+          "name": "retainUncommittedData",
+          "value": ""
+        },
+        {
+          "name": "close",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Append Data | Flush Data | Set Properties | Set Access Control",
+      "url": "https://azure.local/{{FILESYSTEM}}/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Create and manage a lease to restrict write and delete access to the path. This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://docs.microsoft.com/en-us/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /{{FILESYSTEM}}/{{PATH}}",
+      "method": "POST",
+      "name": "Lease Path",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "timeout",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lease Path",
+      "url": "https://azure.local/{{FILESYSTEM}}/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Create or rename a file or directory.    By default, the destination is overwritten and if the destination already exists and has a lease the lease is broken.  This operation supports conditional HTTP requests.  For more information, see [Specifying Conditional Headers for Blob Service Operations](https://docs.microsoft.com/en-us/rest/api/storageservices/specifying-conditional-headers-for-blob-service-operations).  To fail if the destination already exists, use a conditional request with If-None-Match: \"*\".",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PUT /{{FILESYSTEM}}/{{PATH}}",
+      "method": "PUT",
+      "name": "Create File | Create Directory | Rename File | Rename Directory",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        },
+        {
+          "name": "timeout",
+          "value": ""
+        },
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "continuation",
+          "value": ""
+        },
+        {
+          "name": "mode",
+          "value": ""
+        }
+      ],
+      "path": "/{{FILESYSTEM}}/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "filesystem",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "timeout",
+          "value": ""
+        },
+        {
+          "name": "resource",
+          "value": ""
+        },
+        {
+          "name": "continuation",
+          "value": ""
+        },
+        {
+          "name": "mode",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create File | Create Directory | Rename File | Rename Directory",
+      "url": "https://azure.local/{{FILESYSTEM}}/{{PATH}}"
+    }
+  ]
+}

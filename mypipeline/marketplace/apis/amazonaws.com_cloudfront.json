@@ -1,0 +1,4402 @@
+{
+  "id": "amazonaws.com_cloudfront",
+  "info": {
+    "base_url": "https://cloudfront.amazonaws.com",
+    "description": "Remove a field-level encryption profile.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Amazon CloudFront",
+    "version": "2020-05-31"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.</p> <p>With this operation you can move an alias that's already in use on a CloudFront distribution to a different distribution in one step. This prevents the downtime that could occur if you first remove the alias from one distribution and then separately add the alias to another distribution.</p> <p>To use this operation to associate an alias with a distribution, you provide the alias and the ID of the target distribution for the alias. For more information, including how to set up the target distribution, prerequisites that you must complete, and other restrictions, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move\">Moving an alternate domain name to a different distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "PUT /2020-05-31/distribution/{{TARGET_DISTRIBUTION_ID}}/associate-alias",
+      "method": "PUT",
+      "name": "PUT /2020-05-31/distribution/{TargetDistributionId}/associate-alias#Alias",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "TargetDistributionId",
+          "value": ""
+        },
+        {
+          "name": "Alias",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution/{{TARGET_DISTRIBUTION_ID}}/associate-alias",
+      "pathParameters": [
+        {
+          "name": "TargetDistributionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "Alias",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /2020-05-31/distribution/{TargetDistributionId}/associate-alias#Alias",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/{{TARGET_DISTRIBUTION_ID}}/associate-alias#Alias"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CallerReference": ""
+      },
+      "body_json": {
+        "CallerReference": ""
+      },
+      "body_text": "{\"CallerReference\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a staging distribution using the configuration of the provided primary distribution. A staging distribution is a copy of an existing distribution (called the primary distribution) that you can use in a continuous deployment workflow.</p> <p>After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the staging distribution.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/distribution/{{PRIMARY_DISTRIBUTION_ID}}/copy",
+      "method": "POST",
+      "name": "POST /2020-05-31/distribution/{PrimaryDistributionId}/copy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "PrimaryDistributionId",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution/{{PRIMARY_DISTRIBUTION_ID}}/copy",
+      "pathParameters": [
+        {
+          "name": "PrimaryDistributionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CallerReference\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/distribution/{PrimaryDistributionId}/copy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/{{PRIMARY_DISTRIBUTION_ID}}/copy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CachePolicyConfig": {
+          "Comment": {},
+          "DefaultTTL": {},
+          "MaxTTL": {},
+          "MinTTL": {},
+          "Name": {},
+          "ParametersInCacheKeyAndForwardedToOrigin": {
+            "CookiesConfig": {
+              "CookieBehavior": {},
+              "Cookies": {}
+            },
+            "EnableAcceptEncodingBrotli": {},
+            "EnableAcceptEncodingGzip": {},
+            "HeadersConfig": {
+              "HeaderBehavior": {},
+              "Headers": {}
+            },
+            "QueryStringsConfig": {
+              "QueryStringBehavior": {},
+              "QueryStrings": {}
+            }
+          }
+        }
+      },
+      "body_json": {
+        "CachePolicyConfig": {
+          "Comment": {},
+          "DefaultTTL": {},
+          "MaxTTL": {},
+          "MinTTL": {},
+          "Name": {},
+          "ParametersInCacheKeyAndForwardedToOrigin": {
+            "CookiesConfig": {
+              "CookieBehavior": {},
+              "Cookies": {}
+            },
+            "EnableAcceptEncodingBrotli": {},
+            "EnableAcceptEncodingGzip": {},
+            "HeadersConfig": {
+              "HeaderBehavior": {},
+              "Headers": {}
+            },
+            "QueryStringsConfig": {
+              "QueryStringBehavior": {},
+              "QueryStrings": {}
+            }
+          }
+        }
+      },
+      "body_text": "{\"CachePolicyConfig\": {\"Comment\": {}, \"Name\": {}, \"DefaultTTL\": {}, \"MaxTTL\": {}, \"MinTTL\": {}, \"ParametersInCacheKeyAndForwardedToOrigin\": {\"EnableAcceptEncodingGzip\": {}, \"EnableAcceptEncodingBrotli\": {}, \"HeadersConfig\": {\"HeaderBehavior\": {}, \"Headers\": {}}, \"CookiesConfig\": {\"CookieBehavior\": {}, \"Cookies\": {}}, \"QueryStringsConfig\": {\"QueryStringBehavior\": {}, \"QueryStrings\": {}}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a cache policy.</p> <p>After you create a cache policy, you can attach it to one or more cache behaviors. When it's attached to a cache behavior, the cache policy determines the following:</p> <ul> <li> <p>The values that CloudFront includes in the <i>cache key</i>. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p> </li> <li> <p>The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache.</p> </li> </ul> <p>The headers, cookies, and query strings that are included in the cache key are also included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p> <p>For more information about cache policies, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html\">Controlling the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/cache-policy",
+      "method": "POST",
+      "name": "POST /2020-05-31/cache-policy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/cache-policy",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CachePolicyConfig\": {\"Comment\": {}, \"Name\": {}, \"DefaultTTL\": {}, \"MaxTTL\": {}, \"MinTTL\": {}, \"ParametersInCacheKeyAndForwardedToOrigin\": {\"EnableAcceptEncodingGzip\": {}, \"EnableAcceptEncodingBrotli\": {}, \"HeadersConfig\": {\"HeaderBehavior\": {}, \"Headers\": {}}, \"CookiesConfig\": {\"CookieBehavior\": {}, \"Cookies\": {}}, \"QueryStringsConfig\": {\"QueryStringBehavior\": {}, \"QueryStrings\": {}}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/cache-policy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets a list of cache policies.</p> <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p> <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/cache-policy",
+      "method": "GET",
+      "name": "GET /2020-05-31/cache-policy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Type",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/cache-policy",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Type",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/cache-policy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CloudFrontOriginAccessIdentityConfig": {
+          "CallerReference": {},
+          "Comment": {}
+        }
+      },
+      "body_json": {
+        "CloudFrontOriginAccessIdentityConfig": {
+          "CallerReference": {},
+          "Comment": {}
+        }
+      },
+      "body_text": "{\"CloudFrontOriginAccessIdentityConfig\": {\"CallerReference\": {}, \"Comment\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more information about how to use origin access identities, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html\">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/origin-access-identity/cloudfront",
+      "method": "POST",
+      "name": "POST /2020-05-31/origin-access-identity/cloudfront",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/origin-access-identity/cloudfront",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CloudFrontOriginAccessIdentityConfig\": {\"CallerReference\": {}, \"Comment\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/origin-access-identity/cloudfront",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-identity/cloudfront"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists origin access identities.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/origin-access-identity/cloudfront",
+      "method": "GET",
+      "name": "GET /2020-05-31/origin-access-identity/cloudfront",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/origin-access-identity/cloudfront",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/origin-access-identity/cloudfront",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-identity/cloudfront"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ContinuousDeploymentPolicyConfig": {
+          "Enabled": {},
+          "StagingDistributionDnsNames": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "TrafficConfig": {
+            "SingleHeaderConfig": {
+              "Header": {},
+              "Value": {}
+            },
+            "SingleWeightConfig": {
+              "SessionStickinessConfig": {},
+              "Weight": {}
+            },
+            "Type": {}
+          }
+        }
+      },
+      "body_json": {
+        "ContinuousDeploymentPolicyConfig": {
+          "Enabled": {},
+          "StagingDistributionDnsNames": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "TrafficConfig": {
+            "SingleHeaderConfig": {
+              "Header": {},
+              "Value": {}
+            },
+            "SingleWeightConfig": {
+              "SessionStickinessConfig": {},
+              "Weight": {}
+            },
+            "Type": {}
+          }
+        }
+      },
+      "body_text": "{\"ContinuousDeploymentPolicyConfig\": {\"StagingDistributionDnsNames\": {\"Quantity\": {}, \"Items\": {}}, \"Enabled\": {}, \"TrafficConfig\": {\"SingleWeightConfig\": {\"Weight\": {}, \"SessionStickinessConfig\": {}}, \"SingleHeaderConfig\": {\"Header\": {}, \"Value\": {}}, \"Type\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a continuous deployment policy that distributes traffic for a custom domain name to two different CloudFront distributions.</p> <p>To use a continuous deployment policy, first use <code>CopyDistribution</code> to create a staging distribution, then use <code>UpdateDistribution</code> to modify the staging distribution's configuration.</p> <p>After you create and update a staging distribution, you can use a continuous deployment policy to incrementally move traffic to the staging distribution. This workflow enables you to test changes to a distribution's configuration before moving all of your domain's production traffic to the new configuration.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/continuous-deployment-policy",
+      "method": "POST",
+      "name": "POST /2020-05-31/continuous-deployment-policy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/continuous-deployment-policy",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ContinuousDeploymentPolicyConfig\": {\"StagingDistributionDnsNames\": {\"Quantity\": {}, \"Items\": {}}, \"Enabled\": {}, \"TrafficConfig\": {\"SingleWeightConfig\": {\"Weight\": {}, \"SessionStickinessConfig\": {}}, \"SingleHeaderConfig\": {\"Header\": {}, \"Value\": {}}, \"Type\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/continuous-deployment-policy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/continuous-deployment-policy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets a list of the continuous deployment policies in your Amazon Web Services account.</p> <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/continuous-deployment-policy",
+      "method": "GET",
+      "name": "GET /2020-05-31/continuous-deployment-policy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/continuous-deployment-policy",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/continuous-deployment-policy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/continuous-deployment-policy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DistributionConfig": {
+          "Aliases": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "CacheBehaviors": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "CallerReference": {},
+          "Comment": {},
+          "ContinuousDeploymentPolicyId": {},
+          "CustomErrorResponses": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "DefaultCacheBehavior": {
+            "AllowedMethods": {
+              "CachedMethods": {
+                "Items": {},
+                "Quantity": {}
+              },
+              "Items": {},
+              "Quantity": {}
+            },
+            "CachePolicyId": {},
+            "Compress": {},
+            "DefaultTTL": {},
+            "FieldLevelEncryptionId": {},
+            "ForwardedValues": {
+              "Cookies": {},
+              "Headers": {},
+              "QueryString": {},
+              "QueryStringCacheKeys": {}
+            },
+            "FunctionAssociations": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "LambdaFunctionAssociations": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "MaxTTL": {},
+            "MinTTL": {},
+            "OriginRequestPolicyId": {},
+            "RealtimeLogConfigArn": {},
+            "ResponseHeadersPolicyId": {},
+            "SmoothStreaming": {},
+            "TargetOriginId": {},
+            "TrustedKeyGroups": {
+              "Enabled": {},
+              "Items": {},
+              "Quantity": {}
+            },
+            "TrustedSigners": {
+              "Enabled": {},
+              "Items": {},
+              "Quantity": {}
+            },
+            "ViewerProtocolPolicy": {}
+          },
+          "DefaultRootObject": {},
+          "Enabled": {},
+          "HttpVersion": {},
+          "IsIPV6Enabled": {},
+          "Logging": {
+            "Bucket": {},
+            "Enabled": {},
+            "IncludeCookies": {},
+            "Prefix": {}
+          },
+          "OriginGroups": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "Origins": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "PriceClass": {},
+          "Restrictions": {
+            "GeoRestriction": {
+              "Items": {},
+              "Quantity": {},
+              "RestrictionType": {}
+            }
+          },
+          "Staging": {},
+          "ViewerCertificate": {
+            "ACMCertificateArn": {},
+            "Certificate": {},
+            "CertificateSource": {},
+            "CloudFrontDefaultCertificate": {},
+            "IAMCertificateId": {},
+            "MinimumProtocolVersion": {},
+            "SSLSupportMethod": {}
+          },
+          "WebACLId": {}
+        }
+      },
+      "body_json": {
+        "DistributionConfig": {
+          "Aliases": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "CacheBehaviors": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "CallerReference": {},
+          "Comment": {},
+          "ContinuousDeploymentPolicyId": {},
+          "CustomErrorResponses": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "DefaultCacheBehavior": {
+            "AllowedMethods": {
+              "CachedMethods": {
+                "Items": {},
+                "Quantity": {}
+              },
+              "Items": {},
+              "Quantity": {}
+            },
+            "CachePolicyId": {},
+            "Compress": {},
+            "DefaultTTL": {},
+            "FieldLevelEncryptionId": {},
+            "ForwardedValues": {
+              "Cookies": {},
+              "Headers": {},
+              "QueryString": {},
+              "QueryStringCacheKeys": {}
+            },
+            "FunctionAssociations": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "LambdaFunctionAssociations": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "MaxTTL": {},
+            "MinTTL": {},
+            "OriginRequestPolicyId": {},
+            "RealtimeLogConfigArn": {},
+            "ResponseHeadersPolicyId": {},
+            "SmoothStreaming": {},
+            "TargetOriginId": {},
+            "TrustedKeyGroups": {
+              "Enabled": {},
+              "Items": {},
+              "Quantity": {}
+            },
+            "TrustedSigners": {
+              "Enabled": {},
+              "Items": {},
+              "Quantity": {}
+            },
+            "ViewerProtocolPolicy": {}
+          },
+          "DefaultRootObject": {},
+          "Enabled": {},
+          "HttpVersion": {},
+          "IsIPV6Enabled": {},
+          "Logging": {
+            "Bucket": {},
+            "Enabled": {},
+            "IncludeCookies": {},
+            "Prefix": {}
+          },
+          "OriginGroups": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "Origins": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "PriceClass": {},
+          "Restrictions": {
+            "GeoRestriction": {
+              "Items": {},
+              "Quantity": {},
+              "RestrictionType": {}
+            }
+          },
+          "Staging": {},
+          "ViewerCertificate": {
+            "ACMCertificateArn": {},
+            "Certificate": {},
+            "CertificateSource": {},
+            "CloudFrontDefaultCertificate": {},
+            "IAMCertificateId": {},
+            "MinimumProtocolVersion": {},
+            "SSLSupportMethod": {}
+          },
+          "WebACLId": {}
+        }
+      },
+      "body_text": "{\"DistributionConfig\": {\"CallerReference\": {}, \"Aliases\": {\"Quantity\": {}, \"Items\": {}}, \"DefaultRootObject\": {}, \"Origins\": {\"Quantity\": {}, \"Items\": {}}, \"OriginGroups\": {\"Quantity\": {}, \"Items\": {}}, \"DefaultCacheBehavior\": {\"TargetOriginId\": {}, \"TrustedSigners\": {\"Enabled\": {}, \"Quantity\": {}, \"Items\": {}}, \"TrustedKeyGroups\": {\"Enabled\": {}, \"Quantity\": {}, \"Items\": {}}, \"ViewerProtocolPolicy\": {}, \"AllowedMethods\": {\"Quantity\": {}, \"Items\": {}, \"CachedMethods\": {\"Quantity\": {}, \"Items\": {}}}, \"SmoothStreaming\": {}, \"Compress\": {}, \"LambdaFunctionAssociations\": {\"Quantity\": {}, \"Items\": {}}, \"FunctionAssociations\": {\"Quantity\": {}, \"Items\": {}}, \"FieldLevelEncryptionId\": {}, \"RealtimeLogConfigArn\": {}, \"CachePolicyId\": {}, \"OriginRequestPolicyId\": {}, \"ResponseHeadersPolicyId\": {}, \"ForwardedValues\": {\"QueryString\": {}, \"Cookies\": {}, \"Headers\": {}, \"QueryStringCacheKeys\": {}}, \"MinTTL\": {}, \"DefaultTTL\": {}, \"MaxTTL\": {}}, \"CacheBehaviors\": {\"Quantity\": {}, \"Items\": {}}, \"CustomErrorResponses\": {\"Quantity\": {}, \"Items\": {}}, \"Comment\": {}, \"Logging\": {\"Enabled\": {}, \"IncludeCookies\": {}, \"Bucket\": {}, \"Prefix\": {}}, \"PriceClass\": {}, \"Enabled\": {}, \"ViewerCertificate\": {\"CloudFrontDefaultCertificate\": {}, \"IAMCertificateId\": {}, \"ACMCertificateArn\": {}, \"SSLSupportMethod\": {}, \"MinimumProtocolVersion\": {}, \"Certificate\": {}, \"CertificateSource\": {}}, \"Restrictions\": {\"GeoRestriction\": {\"RestrictionType\": {}, \"Quantity\": {}, \"Items\": {}}}, \"WebACLId\": {}, \"HttpVersion\": {}, \"IsIPV6Enabled\": {}, \"ContinuousDeploymentPolicyId\": {}, \"Staging\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a CloudFront distribution.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/distribution",
+      "method": "POST",
+      "name": "POST /2020-05-31/distribution",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"DistributionConfig\": {\"CallerReference\": {}, \"Aliases\": {\"Quantity\": {}, \"Items\": {}}, \"DefaultRootObject\": {}, \"Origins\": {\"Quantity\": {}, \"Items\": {}}, \"OriginGroups\": {\"Quantity\": {}, \"Items\": {}}, \"DefaultCacheBehavior\": {\"TargetOriginId\": {}, \"TrustedSigners\": {\"Enabled\": {}, \"Quantity\": {}, \"Items\": {}}, \"TrustedKeyGroups\": {\"Enabled\": {}, \"Quantity\": {}, \"Items\": {}}, \"ViewerProtocolPolicy\": {}, \"AllowedMethods\": {\"Quantity\": {}, \"Items\": {}, \"CachedMethods\": {\"Quantity\": {}, \"Items\": {}}}, \"SmoothStreaming\": {}, \"Compress\": {}, \"LambdaFunctionAssociations\": {\"Quantity\": {}, \"Items\": {}}, \"FunctionAssociations\": {\"Quantity\": {}, \"Items\": {}}, \"FieldLevelEncryptionId\": {}, \"RealtimeLogConfigArn\": {}, \"CachePolicyId\": {}, \"OriginRequestPolicyId\": {}, \"ResponseHeadersPolicyId\": {}, \"ForwardedValues\": {\"QueryString\": {}, \"Cookies\": {}, \"Headers\": {}, \"QueryStringCacheKeys\": {}}, \"MinTTL\": {}, \"DefaultTTL\": {}, \"MaxTTL\": {}}, \"CacheBehaviors\": {\"Quantity\": {}, \"Items\": {}}, \"CustomErrorResponses\": {\"Quantity\": {}, \"Items\": {}}, \"Comment\": {}, \"Logging\": {\"Enabled\": {}, \"IncludeCookies\": {}, \"Bucket\": {}, \"Prefix\": {}}, \"PriceClass\": {}, \"Enabled\": {}, \"ViewerCertificate\": {\"CloudFrontDefaultCertificate\": {}, \"IAMCertificateId\": {}, \"ACMCertificateArn\": {}, \"SSLSupportMethod\": {}, \"MinimumProtocolVersion\": {}, \"Certificate\": {}, \"CertificateSource\": {}}, \"Restrictions\": {\"GeoRestriction\": {\"RestrictionType\": {}, \"Quantity\": {}, \"Items\": {}}}, \"WebACLId\": {}, \"HttpVersion\": {}, \"IsIPV6Enabled\": {}, \"ContinuousDeploymentPolicyId\": {}, \"Staging\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/distribution",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List CloudFront distributions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/distribution",
+      "method": "GET",
+      "name": "GET /2020-05-31/distribution",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/distribution",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DistributionConfigWithTags": {
+          "DistributionConfig": {
+            "Aliases": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "CacheBehaviors": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "CallerReference": {},
+            "Comment": {},
+            "ContinuousDeploymentPolicyId": {},
+            "CustomErrorResponses": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "DefaultCacheBehavior": {
+              "AllowedMethods": {},
+              "CachePolicyId": {},
+              "Compress": {},
+              "DefaultTTL": {},
+              "FieldLevelEncryptionId": {},
+              "ForwardedValues": {},
+              "FunctionAssociations": {},
+              "LambdaFunctionAssociations": {},
+              "MaxTTL": {},
+              "MinTTL": {},
+              "OriginRequestPolicyId": {},
+              "RealtimeLogConfigArn": {},
+              "ResponseHeadersPolicyId": {},
+              "SmoothStreaming": {},
+              "TargetOriginId": {},
+              "TrustedKeyGroups": {},
+              "TrustedSigners": {},
+              "ViewerProtocolPolicy": {}
+            },
+            "DefaultRootObject": {},
+            "Enabled": {},
+            "HttpVersion": {},
+            "IsIPV6Enabled": {},
+            "Logging": {
+              "Bucket": {},
+              "Enabled": {},
+              "IncludeCookies": {},
+              "Prefix": {}
+            },
+            "OriginGroups": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "Origins": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "PriceClass": {},
+            "Restrictions": {
+              "GeoRestriction": {}
+            },
+            "Staging": {},
+            "ViewerCertificate": {
+              "ACMCertificateArn": {},
+              "Certificate": {},
+              "CertificateSource": {},
+              "CloudFrontDefaultCertificate": {},
+              "IAMCertificateId": {},
+              "MinimumProtocolVersion": {},
+              "SSLSupportMethod": {}
+            },
+            "WebACLId": {}
+          },
+          "Tags": {
+            "Items": {}
+          }
+        }
+      },
+      "body_json": {
+        "DistributionConfigWithTags": {
+          "DistributionConfig": {
+            "Aliases": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "CacheBehaviors": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "CallerReference": {},
+            "Comment": {},
+            "ContinuousDeploymentPolicyId": {},
+            "CustomErrorResponses": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "DefaultCacheBehavior": {
+              "AllowedMethods": {},
+              "CachePolicyId": {},
+              "Compress": {},
+              "DefaultTTL": {},
+              "FieldLevelEncryptionId": {},
+              "ForwardedValues": {},
+              "FunctionAssociations": {},
+              "LambdaFunctionAssociations": {},
+              "MaxTTL": {},
+              "MinTTL": {},
+              "OriginRequestPolicyId": {},
+              "RealtimeLogConfigArn": {},
+              "ResponseHeadersPolicyId": {},
+              "SmoothStreaming": {},
+              "TargetOriginId": {},
+              "TrustedKeyGroups": {},
+              "TrustedSigners": {},
+              "ViewerProtocolPolicy": {}
+            },
+            "DefaultRootObject": {},
+            "Enabled": {},
+            "HttpVersion": {},
+            "IsIPV6Enabled": {},
+            "Logging": {
+              "Bucket": {},
+              "Enabled": {},
+              "IncludeCookies": {},
+              "Prefix": {}
+            },
+            "OriginGroups": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "Origins": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "PriceClass": {},
+            "Restrictions": {
+              "GeoRestriction": {}
+            },
+            "Staging": {},
+            "ViewerCertificate": {
+              "ACMCertificateArn": {},
+              "Certificate": {},
+              "CertificateSource": {},
+              "CloudFrontDefaultCertificate": {},
+              "IAMCertificateId": {},
+              "MinimumProtocolVersion": {},
+              "SSLSupportMethod": {}
+            },
+            "WebACLId": {}
+          },
+          "Tags": {
+            "Items": {}
+          }
+        }
+      },
+      "body_text": "{\"DistributionConfigWithTags\": {\"DistributionConfig\": {\"CallerReference\": {}, \"Aliases\": {\"Quantity\": {}, \"Items\": {}}, \"DefaultRootObject\": {}, \"Origins\": {\"Quantity\": {}, \"Items\": {}}, \"OriginGroups\": {\"Quantity\": {}, \"Items\": {}}, \"DefaultCacheBehavior\": {\"TargetOriginId\": {}, \"TrustedSigners\": {}, \"TrustedKeyGroups\": {}, \"ViewerProtocolPolicy\": {}, \"AllowedMethods\": {}, \"SmoothStreaming\": {}, \"Compress\": {}, \"LambdaFunctionAssociations\": {}, \"FunctionAssociations\": {}, \"FieldLevelEncryptionId\": {}, \"RealtimeLogConfigArn\": {}, \"CachePolicyId\": {}, \"OriginRequestPolicyId\": {}, \"ResponseHeadersPolicyId\": {}, \"ForwardedValues\": {}, \"MinTTL\": {}, \"DefaultTTL\": {}, \"MaxTTL\": {}}, \"CacheBehaviors\": {\"Quantity\": {}, \"Items\": {}}, \"CustomErrorResponses\": {\"Quantity\": {}, \"Items\": {}}, \"Comment\": {}, \"Logging\": {\"Enabled\": {}, \"IncludeCookies\": {}, \"Bucket\": {}, \"Prefix\": {}}, \"PriceClass\": {}, \"Enabled\": {}, \"ViewerCertificate\": {\"CloudFrontDefaultCertificate\": {}, \"IAMCertificateId\": {}, \"ACMCertificateArn\": {}, \"SSLSupportMethod\": {}, \"MinimumProtocolVersion\": {}, \"Certificate\": {}, \"CertificateSource\": {}}, \"Restrictions\": {\"GeoRestriction\": {}}, \"WebACLId\": {}, \"HttpVersion\": {}, \"IsIPV6Enabled\": {}, \"ContinuousDeploymentPolicyId\": {}, \"Staging\": {}}, \"Tags\": {\"Items\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new distribution with tags.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/distribution",
+      "method": "POST",
+      "name": "POST /2020-05-31/distribution#WithTags",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "WithTags",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "WithTags",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"DistributionConfigWithTags\": {\"DistributionConfig\": {\"CallerReference\": {}, \"Aliases\": {\"Quantity\": {}, \"Items\": {}}, \"DefaultRootObject\": {}, \"Origins\": {\"Quantity\": {}, \"Items\": {}}, \"OriginGroups\": {\"Quantity\": {}, \"Items\": {}}, \"DefaultCacheBehavior\": {\"TargetOriginId\": {}, \"TrustedSigners\": {}, \"TrustedKeyGroups\": {}, \"ViewerProtocolPolicy\": {}, \"AllowedMethods\": {}, \"SmoothStreaming\": {}, \"Compress\": {}, \"LambdaFunctionAssociations\": {}, \"FunctionAssociations\": {}, \"FieldLevelEncryptionId\": {}, \"RealtimeLogConfigArn\": {}, \"CachePolicyId\": {}, \"OriginRequestPolicyId\": {}, \"ResponseHeadersPolicyId\": {}, \"ForwardedValues\": {}, \"MinTTL\": {}, \"DefaultTTL\": {}, \"MaxTTL\": {}}, \"CacheBehaviors\": {\"Quantity\": {}, \"Items\": {}}, \"CustomErrorResponses\": {\"Quantity\": {}, \"Items\": {}}, \"Comment\": {}, \"Logging\": {\"Enabled\": {}, \"IncludeCookies\": {}, \"Bucket\": {}, \"Prefix\": {}}, \"PriceClass\": {}, \"Enabled\": {}, \"ViewerCertificate\": {\"CloudFrontDefaultCertificate\": {}, \"IAMCertificateId\": {}, \"ACMCertificateArn\": {}, \"SSLSupportMethod\": {}, \"MinimumProtocolVersion\": {}, \"Certificate\": {}, \"CertificateSource\": {}}, \"Restrictions\": {\"GeoRestriction\": {}}, \"WebACLId\": {}, \"HttpVersion\": {}, \"IsIPV6Enabled\": {}, \"ContinuousDeploymentPolicyId\": {}, \"Staging\": {}}, \"Tags\": {\"Items\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/distribution#WithTags",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution#WithTags"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "FieldLevelEncryptionConfig": {
+          "CallerReference": {},
+          "Comment": {},
+          "ContentTypeProfileConfig": {
+            "ContentTypeProfiles": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "ForwardWhenContentTypeIsUnknown": {}
+          },
+          "QueryArgProfileConfig": {
+            "ForwardWhenQueryArgProfileIsUnknown": {},
+            "QueryArgProfiles": {
+              "Items": {},
+              "Quantity": {}
+            }
+          }
+        }
+      },
+      "body_json": {
+        "FieldLevelEncryptionConfig": {
+          "CallerReference": {},
+          "Comment": {},
+          "ContentTypeProfileConfig": {
+            "ContentTypeProfiles": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "ForwardWhenContentTypeIsUnknown": {}
+          },
+          "QueryArgProfileConfig": {
+            "ForwardWhenQueryArgProfileIsUnknown": {},
+            "QueryArgProfiles": {
+              "Items": {},
+              "Quantity": {}
+            }
+          }
+        }
+      },
+      "body_text": "{\"FieldLevelEncryptionConfig\": {\"CallerReference\": {}, \"Comment\": {}, \"QueryArgProfileConfig\": {\"ForwardWhenQueryArgProfileIsUnknown\": {}, \"QueryArgProfiles\": {\"Quantity\": {}, \"Items\": {}}}, \"ContentTypeProfileConfig\": {\"ForwardWhenContentTypeIsUnknown\": {}, \"ContentTypeProfiles\": {\"Quantity\": {}, \"Items\": {}}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new field-level encryption configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/field-level-encryption",
+      "method": "POST",
+      "name": "POST /2020-05-31/field-level-encryption",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/field-level-encryption",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"FieldLevelEncryptionConfig\": {\"CallerReference\": {}, \"Comment\": {}, \"QueryArgProfileConfig\": {\"ForwardWhenQueryArgProfileIsUnknown\": {}, \"QueryArgProfiles\": {\"Quantity\": {}, \"Items\": {}}}, \"ContentTypeProfileConfig\": {\"ForwardWhenContentTypeIsUnknown\": {}, \"ContentTypeProfiles\": {\"Quantity\": {}, \"Items\": {}}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/field-level-encryption",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/field-level-encryption"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all field-level encryption configurations that have been created in CloudFront for this account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/field-level-encryption",
+      "method": "GET",
+      "name": "GET /2020-05-31/field-level-encryption",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/field-level-encryption",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/field-level-encryption",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/field-level-encryption"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "FieldLevelEncryptionProfileConfig": {
+          "CallerReference": {},
+          "Comment": {},
+          "EncryptionEntities": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "Name": {}
+        }
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Create a field-level encryption profile.",
+      "form_data": [
+        {
+          "name": "FieldLevelEncryptionProfileConfig",
+          "type": "text",
+          "value": {
+            "CallerReference": {},
+            "Comment": {},
+            "EncryptionEntities": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "Name": {}
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /2020-05-31/field-level-encryption-profile",
+      "method": "POST",
+      "name": "POST /2020-05-31/field-level-encryption-profile",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/field-level-encryption-profile",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"FieldLevelEncryptionProfileConfig\": {\"Name\": {}, \"CallerReference\": {}, \"Comment\": {}, \"EncryptionEntities\": {\"Quantity\": {}, \"Items\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/field-level-encryption-profile",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/field-level-encryption-profile"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Request a list of field-level encryption profiles that have been created in CloudFront for this account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/field-level-encryption-profile",
+      "method": "GET",
+      "name": "GET /2020-05-31/field-level-encryption-profile",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/field-level-encryption-profile",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/field-level-encryption-profile",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/field-level-encryption-profile"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "FunctionCode": "",
+        "FunctionConfig": {
+          "Comment": {},
+          "Runtime": {}
+        },
+        "Name": ""
+      },
+      "body_json": {
+        "FunctionCode": "",
+        "FunctionConfig": {
+          "Comment": {},
+          "Runtime": {}
+        },
+        "Name": ""
+      },
+      "body_text": "{\"Name\": \"\", \"FunctionConfig\": {\"Comment\": {}, \"Runtime\": {}}, \"FunctionCode\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a CloudFront function.</p> <p>To create a function, you provide the function code and some configuration information about the function. The response contains an Amazon Resource Name (ARN) that uniquely identifies the function.</p> <p>When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p> <p>When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it's live, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/function",
+      "method": "POST",
+      "name": "POST /2020-05-31/function",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/function",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"FunctionConfig\": {\"Comment\": {}, \"Runtime\": {}}, \"FunctionCode\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/function",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/function"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets a list of all CloudFront functions in your Amazon Web Services account.</p> <p>You can optionally apply a filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/function",
+      "method": "GET",
+      "name": "GET /2020-05-31/function",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        },
+        {
+          "name": "Stage",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/function",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        },
+        {
+          "name": "Stage",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/function",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/function"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "InvalidationBatch": {
+          "CallerReference": {},
+          "Paths": {
+            "Items": {},
+            "Quantity": {}
+          }
+        }
+      },
+      "body_json": {
+        "InvalidationBatch": {
+          "CallerReference": {},
+          "Paths": {
+            "Items": {},
+            "Quantity": {}
+          }
+        }
+      },
+      "body_text": "{\"InvalidationBatch\": {\"Paths\": {\"Quantity\": {}, \"Items\": {}}, \"CallerReference\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new invalidation.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/distribution/{{DISTRIBUTION_ID}}/invalidation",
+      "method": "POST",
+      "name": "POST /2020-05-31/distribution/{DistributionId}/invalidation",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution/{{DISTRIBUTION_ID}}/invalidation",
+      "pathParameters": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"InvalidationBatch\": {\"Paths\": {\"Quantity\": {}, \"Items\": {}}, \"CallerReference\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/distribution/{DistributionId}/invalidation",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/{{DISTRIBUTION_ID}}/invalidation"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists invalidation batches.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/distribution/{{DISTRIBUTION_ID}}/invalidation",
+      "method": "GET",
+      "name": "GET /2020-05-31/distribution/{DistributionId}/invalidation",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution/{{DISTRIBUTION_ID}}/invalidation",
+      "pathParameters": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/distribution/{DistributionId}/invalidation",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/{{DISTRIBUTION_ID}}/invalidation"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "KeyGroupConfig": {
+          "Comment": {},
+          "Items": {},
+          "Name": {}
+        }
+      },
+      "body_json": {
+        "KeyGroupConfig": {
+          "Comment": {},
+          "Items": {},
+          "Name": {}
+        }
+      },
+      "body_text": "{\"KeyGroupConfig\": {\"Name\": {}, \"Items\": {}, \"Comment\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a key group that you can use with <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html\">CloudFront signed URLs and signed cookies</a>.</p> <p>To create a key group, you must specify at least one public key for the key group. After you create a key group, you can reference it from one or more cache behaviors. When you reference a key group in a cache behavior, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html\">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/key-group",
+      "method": "POST",
+      "name": "POST /2020-05-31/key-group",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/key-group",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"KeyGroupConfig\": {\"Name\": {}, \"Items\": {}, \"Comment\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/key-group",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/key-group"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets a list of key groups.</p> <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/key-group",
+      "method": "GET",
+      "name": "GET /2020-05-31/key-group",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/key-group",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/key-group",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/key-group"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MonitoringSubscription": {
+          "RealtimeMetricsSubscriptionConfig": {
+            "RealtimeMetricsSubscriptionStatus": {}
+          }
+        }
+      },
+      "body_json": {
+        "MonitoringSubscription": {
+          "RealtimeMetricsSubscriptionConfig": {
+            "RealtimeMetricsSubscriptionStatus": {}
+          }
+        }
+      },
+      "body_text": "{\"MonitoringSubscription\": {\"RealtimeMetricsSubscriptionConfig\": {\"RealtimeMetricsSubscriptionStatus\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an additional cost.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional\">Viewing additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/",
+      "method": "POST",
+      "name": "POST /2020-05-31/distributions/{DistributionId}/monitoring-subscription/",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/",
+      "pathParameters": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MonitoringSubscription\": {\"RealtimeMetricsSubscriptionConfig\": {\"RealtimeMetricsSubscriptionStatus\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/distributions/{DistributionId}/monitoring-subscription/",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Disables additional CloudWatch metrics for the specified CloudFront distribution.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/",
+      "method": "DELETE",
+      "name": "DELETE /2020-05-31/distributions/{DistributionId}/monitoring-subscription/",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/",
+      "pathParameters": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-05-31/distributions/{DistributionId}/monitoring-subscription/",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront distribution.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/",
+      "method": "GET",
+      "name": "GET /2020-05-31/distributions/{DistributionId}/monitoring-subscription/",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/",
+      "pathParameters": [
+        {
+          "name": "DistributionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/distributions/{DistributionId}/monitoring-subscription/",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distributions/{{DISTRIBUTION_ID}}/monitoring-subscription/"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "OriginAccessControlConfig": {
+          "Description": {},
+          "Name": {},
+          "OriginAccessControlOriginType": {},
+          "SigningBehavior": {},
+          "SigningProtocol": {}
+        }
+      },
+      "body_json": {
+        "OriginAccessControlConfig": {
+          "Description": {},
+          "Name": {},
+          "OriginAccessControlOriginType": {},
+          "SigningBehavior": {},
+          "SigningProtocol": {}
+        }
+      },
+      "body_text": "{\"OriginAccessControlConfig\": {\"Name\": {}, \"Description\": {}, \"SigningProtocol\": {}, \"SigningBehavior\": {}, \"OriginAccessControlOriginType\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new origin access control in CloudFront. After you create an origin access control, you can add it to an origin in a CloudFront distribution so that CloudFront sends authenticated (signed) requests to the origin.</p> <p>This makes it possible to block public access to the origin, allowing viewers (users) to access the origin's content only through CloudFront.</p> <p>For more information about using a CloudFront origin access control, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-origin.html\">Restricting access to an Amazon Web Services origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/origin-access-control",
+      "method": "POST",
+      "name": "POST /2020-05-31/origin-access-control",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/origin-access-control",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"OriginAccessControlConfig\": {\"Name\": {}, \"Description\": {}, \"SigningProtocol\": {}, \"SigningBehavior\": {}, \"OriginAccessControlOriginType\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/origin-access-control",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-control"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets the list of CloudFront origin access controls in this Amazon Web Services account.</p> <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send another request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the next request.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/origin-access-control",
+      "method": "GET",
+      "name": "GET /2020-05-31/origin-access-control",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/origin-access-control",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/origin-access-control",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-control"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "OriginRequestPolicyConfig": {
+          "Comment": {},
+          "CookiesConfig": {
+            "CookieBehavior": {},
+            "Cookies": {
+              "Items": {},
+              "Quantity": {}
+            }
+          },
+          "HeadersConfig": {
+            "HeaderBehavior": {},
+            "Headers": {
+              "Items": {},
+              "Quantity": {}
+            }
+          },
+          "Name": {},
+          "QueryStringsConfig": {
+            "QueryStringBehavior": {},
+            "QueryStrings": {
+              "Items": {},
+              "Quantity": {}
+            }
+          }
+        }
+      },
+      "body_json": {
+        "OriginRequestPolicyConfig": {
+          "Comment": {},
+          "CookiesConfig": {
+            "CookieBehavior": {},
+            "Cookies": {
+              "Items": {},
+              "Quantity": {}
+            }
+          },
+          "HeadersConfig": {
+            "HeaderBehavior": {},
+            "Headers": {
+              "Items": {},
+              "Quantity": {}
+            }
+          },
+          "Name": {},
+          "QueryStringsConfig": {
+            "QueryStringBehavior": {},
+            "QueryStrings": {
+              "Items": {},
+              "Quantity": {}
+            }
+          }
+        }
+      },
+      "body_text": "{\"OriginRequestPolicyConfig\": {\"Comment\": {}, \"Name\": {}, \"HeadersConfig\": {\"HeaderBehavior\": {}, \"Headers\": {\"Quantity\": {}, \"Items\": {}}}, \"CookiesConfig\": {\"CookieBehavior\": {}, \"Cookies\": {\"Quantity\": {}, \"Items\": {}}}, \"QueryStringsConfig\": {\"QueryStringBehavior\": {}, \"QueryStrings\": {\"Quantity\": {}, \"Items\": {}}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates an origin request policy.</p> <p>After you create an origin request policy, you can attach it to one or more cache behaviors. When it's attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p> <ul> <li> <p>The request body and the URL path (without the domain name) from the viewer request.</p> </li> <li> <p>The headers that CloudFront automatically includes in every origin request, including <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.</p> </li> <li> <p>All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request policy. These can include items from the viewer request and, in the case of headers, additional ones that are added by CloudFront.</p> </li> </ul> <p>CloudFront sends a request when it can't find a valid object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p> <p>For more information about origin request policies, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html\">Controlling origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/origin-request-policy",
+      "method": "POST",
+      "name": "POST /2020-05-31/origin-request-policy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/origin-request-policy",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"OriginRequestPolicyConfig\": {\"Comment\": {}, \"Name\": {}, \"HeadersConfig\": {\"HeaderBehavior\": {}, \"Headers\": {\"Quantity\": {}, \"Items\": {}}}, \"CookiesConfig\": {\"CookieBehavior\": {}, \"Cookies\": {\"Quantity\": {}, \"Items\": {}}}, \"QueryStringsConfig\": {\"QueryStringBehavior\": {}, \"QueryStrings\": {\"Quantity\": {}, \"Items\": {}}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/origin-request-policy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-request-policy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets a list of origin request policies.</p> <p>You can optionally apply a filter to return only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p> <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/origin-request-policy",
+      "method": "GET",
+      "name": "GET /2020-05-31/origin-request-policy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Type",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/origin-request-policy",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Type",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/origin-request-policy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-request-policy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "PublicKeyConfig": {
+          "CallerReference": {},
+          "Comment": {},
+          "EncodedKey": {},
+          "Name": {}
+        }
+      },
+      "body_json": {
+        "PublicKeyConfig": {
+          "CallerReference": {},
+          "Comment": {},
+          "EncodedKey": {},
+          "Name": {}
+        }
+      },
+      "body_text": "{\"PublicKeyConfig\": {\"CallerReference\": {}, \"Name\": {}, \"EncodedKey\": {}, \"Comment\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Uploads a public key to CloudFront that you can use with <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html\">signed URLs and signed cookies</a>, or with <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html\">field-level encryption</a>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/public-key",
+      "method": "POST",
+      "name": "POST /2020-05-31/public-key",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/public-key",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"PublicKeyConfig\": {\"CallerReference\": {}, \"Name\": {}, \"EncodedKey\": {}, \"Comment\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/public-key",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/public-key"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all public keys that have been added to CloudFront for this account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/public-key",
+      "method": "GET",
+      "name": "GET /2020-05-31/public-key",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/public-key",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/public-key",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/public-key"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "EndPoints": [
+          {
+            "KinesisStreamConfig": {
+              "RoleARN": {},
+              "StreamARN": {}
+            },
+            "StreamType": {}
+          }
+        ],
+        "Fields": [
+          {}
+        ],
+        "Name": "",
+        "SamplingRate": 0
+      },
+      "body_json": {
+        "EndPoints": [
+          {
+            "KinesisStreamConfig": {
+              "RoleARN": {},
+              "StreamARN": {}
+            },
+            "StreamType": {}
+          }
+        ],
+        "Fields": [
+          {}
+        ],
+        "Name": "",
+        "SamplingRate": 0
+      },
+      "body_text": "{\"EndPoints\": [{\"StreamType\": {}, \"KinesisStreamConfig\": {\"RoleARN\": {}, \"StreamARN\": {}}}], \"Fields\": [{}], \"Name\": \"\", \"SamplingRate\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a real-time log configuration.</p> <p>After you create a real-time log configuration, you can attach it to one or more cache behaviors to send real-time log data to the specified Amazon Kinesis data stream.</p> <p>For more information about real-time log configurations, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html\">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/realtime-log-config",
+      "method": "POST",
+      "name": "POST /2020-05-31/realtime-log-config",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/realtime-log-config",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"EndPoints\": [{\"StreamType\": {}, \"KinesisStreamConfig\": {\"RoleARN\": {}, \"StreamARN\": {}}}], \"Fields\": [{}], \"Name\": \"\", \"SamplingRate\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/realtime-log-config",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/realtime-log-config"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets a list of real-time log configurations.</p> <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/realtime-log-config",
+      "method": "GET",
+      "name": "GET /2020-05-31/realtime-log-config",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "MaxItems",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/realtime-log-config",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxItems",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/realtime-log-config",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/realtime-log-config"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResponseHeadersPolicyConfig": {
+          "Comment": {},
+          "CorsConfig": {
+            "AccessControlAllowCredentials": {},
+            "AccessControlAllowHeaders": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "AccessControlAllowMethods": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "AccessControlAllowOrigins": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "AccessControlExposeHeaders": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "AccessControlMaxAgeSec": {},
+            "OriginOverride": {}
+          },
+          "CustomHeadersConfig": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "Name": {},
+          "RemoveHeadersConfig": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "SecurityHeadersConfig": {
+            "ContentSecurityPolicy": {
+              "ContentSecurityPolicy": {},
+              "Override": {}
+            },
+            "ContentTypeOptions": {
+              "Override": {}
+            },
+            "FrameOptions": {
+              "FrameOption": {},
+              "Override": {}
+            },
+            "ReferrerPolicy": {
+              "Override": {},
+              "ReferrerPolicy": {}
+            },
+            "StrictTransportSecurity": {
+              "AccessControlMaxAgeSec": {},
+              "IncludeSubdomains": {},
+              "Override": {},
+              "Preload": {}
+            },
+            "XSSProtection": {
+              "ModeBlock": {},
+              "Override": {},
+              "Protection": {},
+              "ReportUri": {}
+            }
+          },
+          "ServerTimingHeadersConfig": {
+            "Enabled": {},
+            "SamplingRate": {}
+          }
+        }
+      },
+      "body_json": {
+        "ResponseHeadersPolicyConfig": {
+          "Comment": {},
+          "CorsConfig": {
+            "AccessControlAllowCredentials": {},
+            "AccessControlAllowHeaders": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "AccessControlAllowMethods": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "AccessControlAllowOrigins": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "AccessControlExposeHeaders": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "AccessControlMaxAgeSec": {},
+            "OriginOverride": {}
+          },
+          "CustomHeadersConfig": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "Name": {},
+          "RemoveHeadersConfig": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "SecurityHeadersConfig": {
+            "ContentSecurityPolicy": {
+              "ContentSecurityPolicy": {},
+              "Override": {}
+            },
+            "ContentTypeOptions": {
+              "Override": {}
+            },
+            "FrameOptions": {
+              "FrameOption": {},
+              "Override": {}
+            },
+            "ReferrerPolicy": {
+              "Override": {},
+              "ReferrerPolicy": {}
+            },
+            "StrictTransportSecurity": {
+              "AccessControlMaxAgeSec": {},
+              "IncludeSubdomains": {},
+              "Override": {},
+              "Preload": {}
+            },
+            "XSSProtection": {
+              "ModeBlock": {},
+              "Override": {},
+              "Protection": {},
+              "ReportUri": {}
+            }
+          },
+          "ServerTimingHeadersConfig": {
+            "Enabled": {},
+            "SamplingRate": {}
+          }
+        }
+      },
+      "body_text": "{\"ResponseHeadersPolicyConfig\": {\"Comment\": {}, \"Name\": {}, \"CorsConfig\": {\"AccessControlAllowOrigins\": {\"Quantity\": {}, \"Items\": {}}, \"AccessControlAllowHeaders\": {\"Quantity\": {}, \"Items\": {}}, \"AccessControlAllowMethods\": {\"Quantity\": {}, \"Items\": {}}, \"AccessControlAllowCredentials\": {}, \"AccessControlExposeHeaders\": {\"Quantity\": {}, \"Items\": {}}, \"AccessControlMaxAgeSec\": {}, \"OriginOverride\": {}}, \"SecurityHeadersConfig\": {\"XSSProtection\": {\"Override\": {}, \"Protection\": {}, \"ModeBlock\": {}, \"ReportUri\": {}}, \"FrameOptions\": {\"Override\": {}, \"FrameOption\": {}}, \"ReferrerPolicy\": {\"Override\": {}, \"ReferrerPolicy\": {}}, \"ContentSecurityPolicy\": {\"Override\": {}, \"ContentSecurityPolicy\": {}}, \"ContentTypeOptions\": {\"Override\": {}}, \"StrictTransportSecurity\": {\"Override\": {}, \"IncludeSubdomains\": {}, \"Preload\": {}, \"AccessControlMaxAgeSec\": {}}}, \"ServerTimingHeadersConfig\": {\"Enabled\": {}, \"SamplingRate\": {}}, \"CustomHeadersConfig\": {\"Quantity\": {}, \"Items\": {}}, \"RemoveHeadersConfig\": {\"Quantity\": {}, \"Items\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a response headers policy.</p> <p>A response headers policy contains information about a set of HTTP headers. To create a response headers policy, you provide some metadata about the policy and a set of configurations that specify the headers.</p> <p>After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution. When it's attached to a cache behavior, the response headers policy affects the HTTP headers that CloudFront includes in HTTP responses to requests that match the cache behavior. CloudFront adds or removes response headers according to the configuration of the response headers policy.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html\">Adding or removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/response-headers-policy",
+      "method": "POST",
+      "name": "POST /2020-05-31/response-headers-policy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/response-headers-policy",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResponseHeadersPolicyConfig\": {\"Comment\": {}, \"Name\": {}, \"CorsConfig\": {\"AccessControlAllowOrigins\": {\"Quantity\": {}, \"Items\": {}}, \"AccessControlAllowHeaders\": {\"Quantity\": {}, \"Items\": {}}, \"AccessControlAllowMethods\": {\"Quantity\": {}, \"Items\": {}}, \"AccessControlAllowCredentials\": {}, \"AccessControlExposeHeaders\": {\"Quantity\": {}, \"Items\": {}}, \"AccessControlMaxAgeSec\": {}, \"OriginOverride\": {}}, \"SecurityHeadersConfig\": {\"XSSProtection\": {\"Override\": {}, \"Protection\": {}, \"ModeBlock\": {}, \"ReportUri\": {}}, \"FrameOptions\": {\"Override\": {}, \"FrameOption\": {}}, \"ReferrerPolicy\": {\"Override\": {}, \"ReferrerPolicy\": {}}, \"ContentSecurityPolicy\": {\"Override\": {}, \"ContentSecurityPolicy\": {}}, \"ContentTypeOptions\": {\"Override\": {}}, \"StrictTransportSecurity\": {\"Override\": {}, \"IncludeSubdomains\": {}, \"Preload\": {}, \"AccessControlMaxAgeSec\": {}}}, \"ServerTimingHeadersConfig\": {\"Enabled\": {}, \"SamplingRate\": {}}, \"CustomHeadersConfig\": {\"Quantity\": {}, \"Items\": {}}, \"RemoveHeadersConfig\": {\"Quantity\": {}, \"Items\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/response-headers-policy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/response-headers-policy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets a list of response headers policies.</p> <p>You can optionally apply a filter to get only the managed policies created by Amazon Web Services, or only the custom policies created in your Amazon Web Services account.</p> <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/response-headers-policy",
+      "method": "GET",
+      "name": "GET /2020-05-31/response-headers-policy",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Type",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/response-headers-policy",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Type",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/response-headers-policy",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/response-headers-policy"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "StreamingDistributionConfig": {
+          "Aliases": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "CallerReference": {},
+          "Comment": {},
+          "Enabled": {},
+          "Logging": {
+            "Bucket": {},
+            "Enabled": {},
+            "Prefix": {}
+          },
+          "PriceClass": {},
+          "S3Origin": {
+            "DomainName": {},
+            "OriginAccessIdentity": {}
+          },
+          "TrustedSigners": {
+            "Enabled": {},
+            "Items": {},
+            "Quantity": {}
+          }
+        }
+      },
+      "body_json": {
+        "StreamingDistributionConfig": {
+          "Aliases": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "CallerReference": {},
+          "Comment": {},
+          "Enabled": {},
+          "Logging": {
+            "Bucket": {},
+            "Enabled": {},
+            "Prefix": {}
+          },
+          "PriceClass": {},
+          "S3Origin": {
+            "DomainName": {},
+            "OriginAccessIdentity": {}
+          },
+          "TrustedSigners": {
+            "Enabled": {},
+            "Items": {},
+            "Quantity": {}
+          }
+        }
+      },
+      "body_text": "{\"StreamingDistributionConfig\": {\"CallerReference\": {}, \"S3Origin\": {\"DomainName\": {}, \"OriginAccessIdentity\": {}}, \"Aliases\": {\"Quantity\": {}, \"Items\": {}}, \"Comment\": {}, \"Logging\": {\"Enabled\": {}, \"Bucket\": {}, \"Prefix\": {}}, \"TrustedSigners\": {\"Enabled\": {}, \"Quantity\": {}, \"Items\": {}}, \"PriceClass\": {}, \"Enabled\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href=\"http://forums.aws.amazon.com/ann.jspa?annID=7356\">read the announcement</a> on the Amazon CloudFront discussion forum.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/streaming-distribution",
+      "method": "POST",
+      "name": "POST /2020-05-31/streaming-distribution",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/streaming-distribution",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"StreamingDistributionConfig\": {\"CallerReference\": {}, \"S3Origin\": {\"DomainName\": {}, \"OriginAccessIdentity\": {}}, \"Aliases\": {\"Quantity\": {}, \"Items\": {}}, \"Comment\": {}, \"Logging\": {\"Enabled\": {}, \"Bucket\": {}, \"Prefix\": {}}, \"TrustedSigners\": {\"Enabled\": {}, \"Quantity\": {}, \"Items\": {}}, \"PriceClass\": {}, \"Enabled\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/streaming-distribution",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/streaming-distribution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List streaming distributions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/streaming-distribution",
+      "method": "GET",
+      "name": "GET /2020-05-31/streaming-distribution",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/streaming-distribution",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Marker",
+          "value": ""
+        },
+        {
+          "name": "MaxItems",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/streaming-distribution",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/streaming-distribution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "StreamingDistributionConfigWithTags": {
+          "StreamingDistributionConfig": {
+            "Aliases": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "CallerReference": {},
+            "Comment": {},
+            "Enabled": {},
+            "Logging": {
+              "Bucket": {},
+              "Enabled": {},
+              "Prefix": {}
+            },
+            "PriceClass": {},
+            "S3Origin": {
+              "DomainName": {},
+              "OriginAccessIdentity": {}
+            },
+            "TrustedSigners": {
+              "Enabled": {},
+              "Items": {},
+              "Quantity": {}
+            }
+          },
+          "Tags": {
+            "Items": {}
+          }
+        }
+      },
+      "body_json": {
+        "StreamingDistributionConfigWithTags": {
+          "StreamingDistributionConfig": {
+            "Aliases": {
+              "Items": {},
+              "Quantity": {}
+            },
+            "CallerReference": {},
+            "Comment": {},
+            "Enabled": {},
+            "Logging": {
+              "Bucket": {},
+              "Enabled": {},
+              "Prefix": {}
+            },
+            "PriceClass": {},
+            "S3Origin": {
+              "DomainName": {},
+              "OriginAccessIdentity": {}
+            },
+            "TrustedSigners": {
+              "Enabled": {},
+              "Items": {},
+              "Quantity": {}
+            }
+          },
+          "Tags": {
+            "Items": {}
+          }
+        }
+      },
+      "body_text": "{\"StreamingDistributionConfigWithTags\": {\"StreamingDistributionConfig\": {\"CallerReference\": {}, \"S3Origin\": {\"DomainName\": {}, \"OriginAccessIdentity\": {}}, \"Aliases\": {\"Quantity\": {}, \"Items\": {}}, \"Comment\": {}, \"Logging\": {\"Enabled\": {}, \"Bucket\": {}, \"Prefix\": {}}, \"TrustedSigners\": {\"Enabled\": {}, \"Quantity\": {}, \"Items\": {}}, \"PriceClass\": {}, \"Enabled\": {}}, \"Tags\": {\"Items\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href=\"http://forums.aws.amazon.com/ann.jspa?annID=7356\">read the announcement</a> on the Amazon CloudFront discussion forum.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2020-05-31/streaming-distribution",
+      "method": "POST",
+      "name": "POST /2020-05-31/streaming-distribution#WithTags",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "WithTags",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/streaming-distribution",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "WithTags",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"StreamingDistributionConfigWithTags\": {\"StreamingDistributionConfig\": {\"CallerReference\": {}, \"S3Origin\": {\"DomainName\": {}, \"OriginAccessIdentity\": {}}, \"Aliases\": {\"Quantity\": {}, \"Items\": {}}, \"Comment\": {}, \"Logging\": {\"Enabled\": {}, \"Bucket\": {}, \"Prefix\": {}}, \"TrustedSigners\": {\"Enabled\": {}, \"Quantity\": {}, \"Items\": {}}, \"PriceClass\": {}, \"Enabled\": {}}, \"Tags\": {\"Items\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /2020-05-31/streaming-distribution#WithTags",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/streaming-distribution#WithTags"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it's attached to a cache behavior. First update your distributions to remove the cache policy from all cache behaviors, then delete the cache policy.</p> <p>To delete a cache policy, you must provide the policy's identifier and version. To get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-05-31/cache-policy/{{ID}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-05-31/cache-policy/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/cache-policy/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-05-31/cache-policy/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Gets a cache policy, including the following metadata:</p> <ul> <li> <p>The policy's identifier.</p> </li> <li> <p>The date and time when the policy was last modified.</p> </li> </ul> <p>To get a cache policy, you must provide the policy's identifier. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/cache-policy/{{ID}}",
+      "method": "GET",
+      "name": "GET /2020-05-31/cache-policy/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/cache-policy/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/cache-policy/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CachePolicyConfig": {
+          "Comment": {},
+          "DefaultTTL": {},
+          "MaxTTL": {},
+          "MinTTL": {},
+          "Name": {},
+          "ParametersInCacheKeyAndForwardedToOrigin": {
+            "CookiesConfig": {
+              "CookieBehavior": {},
+              "Cookies": {}
+            },
+            "EnableAcceptEncodingBrotli": {},
+            "EnableAcceptEncodingGzip": {},
+            "HeadersConfig": {
+              "HeaderBehavior": {},
+              "Headers": {}
+            },
+            "QueryStringsConfig": {
+              "QueryStringBehavior": {},
+              "QueryStrings": {}
+            }
+          }
+        }
+      },
+      "body_json": {
+        "CachePolicyConfig": {
+          "Comment": {},
+          "DefaultTTL": {},
+          "MaxTTL": {},
+          "MinTTL": {},
+          "Name": {},
+          "ParametersInCacheKeyAndForwardedToOrigin": {
+            "CookiesConfig": {
+              "CookieBehavior": {},
+              "Cookies": {}
+            },
+            "EnableAcceptEncodingBrotli": {},
+            "EnableAcceptEncodingGzip": {},
+            "HeadersConfig": {
+              "HeaderBehavior": {},
+              "Headers": {}
+            },
+            "QueryStringsConfig": {
+              "QueryStringBehavior": {},
+              "QueryStrings": {}
+            }
+          }
+        }
+      },
+      "body_text": "{\"CachePolicyConfig\": {\"Comment\": {}, \"Name\": {}, \"DefaultTTL\": {}, \"MaxTTL\": {}, \"MinTTL\": {}, \"ParametersInCacheKeyAndForwardedToOrigin\": {\"EnableAcceptEncodingGzip\": {}, \"EnableAcceptEncodingBrotli\": {}, \"HeadersConfig\": {\"HeaderBehavior\": {}, \"Headers\": {}}, \"CookiesConfig\": {\"CookieBehavior\": {}, \"Cookies\": {}}, \"QueryStringsConfig\": {\"QueryStringBehavior\": {}, \"QueryStrings\": {}}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates a cache policy configuration.</p> <p>When you update a cache policy configuration, all the fields are updated with the values provided in the request. You cannot update some fields independent of others. To update a cache policy configuration:</p> <ol> <li> <p>Use <code>GetCachePolicyConfig</code> to get the current configuration.</p> </li> <li> <p>Locally modify the fields in the cache policy configuration that you want to update.</p> </li> <li> <p>Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that you modified and those that you didn't.</p> </li> </ol>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2020-05-31/cache-policy/{{ID}}",
+      "method": "PUT",
+      "name": "PUT /2020-05-31/cache-policy/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/cache-policy/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CachePolicyConfig\": {\"Comment\": {}, \"Name\": {}, \"DefaultTTL\": {}, \"MaxTTL\": {}, \"MinTTL\": {}, \"ParametersInCacheKeyAndForwardedToOrigin\": {\"EnableAcceptEncodingGzip\": {}, \"EnableAcceptEncodingBrotli\": {}, \"HeadersConfig\": {\"HeaderBehavior\": {}, \"Headers\": {}}, \"CookiesConfig\": {\"CookieBehavior\": {}, \"Cookies\": {}}, \"QueryStringsConfig\": {\"QueryStringBehavior\": {}, \"QueryStrings\": {}}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /2020-05-31/cache-policy/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/cache-policy/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an origin access identity.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-05-31/origin-access-identity/cloudfront/{{ID}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-05-31/origin-access-identity/cloudfront/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/origin-access-identity/cloudfront/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-05-31/origin-access-identity/cloudfront/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-identity/cloudfront/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the information about an origin access identity.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/origin-access-identity/cloudfront/{{ID}}",
+      "method": "GET",
+      "name": "GET /2020-05-31/origin-access-identity/cloudfront/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/origin-access-identity/cloudfront/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/origin-access-identity/cloudfront/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/origin-access-identity/cloudfront/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Deletes a continuous deployment policy.</p> <p>You cannot delete a continuous deployment policy that's attached to a primary distribution. First update your distribution to remove the continuous deployment policy, then you can delete the policy.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-05-31/continuous-deployment-policy/{{ID}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-05-31/continuous-deployment-policy/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/continuous-deployment-policy/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-05-31/continuous-deployment-policy/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/continuous-deployment-policy/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets a continuous deployment policy, including metadata (the policy's identifier and the date and time when the policy was last modified).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/continuous-deployment-policy/{{ID}}",
+      "method": "GET",
+      "name": "GET /2020-05-31/continuous-deployment-policy/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/continuous-deployment-policy/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/continuous-deployment-policy/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/continuous-deployment-policy/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ContinuousDeploymentPolicyConfig": {
+          "Enabled": {},
+          "StagingDistributionDnsNames": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "TrafficConfig": {
+            "SingleHeaderConfig": {
+              "Header": {},
+              "Value": {}
+            },
+            "SingleWeightConfig": {
+              "SessionStickinessConfig": {},
+              "Weight": {}
+            },
+            "Type": {}
+          }
+        }
+      },
+      "body_json": {
+        "ContinuousDeploymentPolicyConfig": {
+          "Enabled": {},
+          "StagingDistributionDnsNames": {
+            "Items": {},
+            "Quantity": {}
+          },
+          "TrafficConfig": {
+            "SingleHeaderConfig": {
+              "Header": {},
+              "Value": {}
+            },
+            "SingleWeightConfig": {
+              "SessionStickinessConfig": {},
+              "Weight": {}
+            },
+            "Type": {}
+          }
+        }
+      },
+      "body_text": "{\"ContinuousDeploymentPolicyConfig\": {\"StagingDistributionDnsNames\": {\"Quantity\": {}, \"Items\": {}}, \"Enabled\": {}, \"TrafficConfig\": {\"SingleWeightConfig\": {\"Weight\": {}, \"SessionStickinessConfig\": {}}, \"SingleHeaderConfig\": {\"Header\": {}, \"Value\": {}}, \"Type\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates a continuous deployment policy. You can update a continuous deployment policy to enable or disable it, to change the percentage of traffic that it sends to the staging distribution, or to change the staging distribution that it sends traffic to.</p> <p>When you update a continuous deployment policy configuration, all the fields are updated with the values that are provided in the request. You cannot update some fields independent of others. To update a continuous deployment policy configuration:</p> <ol> <li> <p>Use <code>GetContinuousDeploymentPolicyConfig</code> to get the current configuration.</p> </li> <li> <p>Locally modify the fields in the continuous deployment policy configuration that you want to update.</p> </li> <li> <p>Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous deployment policy configuration, including the fields that you modified and those that you didn't.</p> </li> </ol>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2020-05-31/continuous-deployment-policy/{{ID}}",
+      "method": "PUT",
+      "name": "PUT /2020-05-31/continuous-deployment-policy/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/continuous-deployment-policy/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ContinuousDeploymentPolicyConfig\": {\"StagingDistributionDnsNames\": {\"Quantity\": {}, \"Items\": {}}, \"Enabled\": {}, \"TrafficConfig\": {\"SingleWeightConfig\": {\"Weight\": {}, \"SessionStickinessConfig\": {}}, \"SingleHeaderConfig\": {\"Header\": {}, \"Value\": {}}, \"Type\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /2020-05-31/continuous-deployment-policy/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/continuous-deployment-policy/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a distribution.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-05-31/distribution/{{ID}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-05-31/distribution/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-05-31/distribution/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the information about a distribution.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/distribution/{{ID}}",
+      "method": "GET",
+      "name": "GET /2020-05-31/distribution/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/distribution/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/distribution/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Remove a field-level encryption configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-05-31/field-level-encryption/{{ID}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-05-31/field-level-encryption/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/field-level-encryption/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-05-31/field-level-encryption/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/field-level-encryption/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the field-level encryption configuration information.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "GET /2020-05-31/field-level-encryption/{{ID}}",
+      "method": "GET",
+      "name": "GET /2020-05-31/field-level-encryption/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/field-level-encryption/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /2020-05-31/field-level-encryption/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/field-level-encryption/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_CLOUDFRONT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Remove a field-level encryption profile.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_CLOUDFRONT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /2020-05-31/field-level-encryption-profile/{{ID}}",
+      "method": "DELETE",
+      "name": "DELETE /2020-05-31/field-level-encryption-profile/{Id}",
+      "note": "Replace {{AMAZON_CLOUDFRONT_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "path": "/2020-05-31/field-level-encryption-profile/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "Id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /2020-05-31/field-level-encryption-profile/{Id}",
+      "url": "https://cloudfront.amazonaws.com/2020-05-31/field-level-encryption-profile/{{ID}}"
+    }
+  ]
+}

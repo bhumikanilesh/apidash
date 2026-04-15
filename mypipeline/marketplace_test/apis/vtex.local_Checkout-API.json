@@ -1,0 +1,1405 @@
+{
+  "id": "vtex.local_Checkout-API",
+  "info": {
+    "base_url": "https://vtex.local",
+    "description": "This call removes all user information, making a cart anonymous while leaving the items.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure that...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation"
+    ],
+    "title": "Checkout API",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Process order",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/gatewayCallback/{{ORDER_GROUP}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get current or create a new cart",
+      "url": "https://vtex.local/api/checkout/pub/orderForm"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get cart information by ID",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "locale": "EN",
+        "optinNewsLetter": false
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "locale",
+          "type": "text",
+          "value": "EN"
+        },
+        {
+          "name": "optinNewsLetter",
+          "type": "text",
+          "value": false
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Add client preferences",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/clientPreferencesData"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "corporateDocument": "12345678000100",
+        "corporateName": "company-name",
+        "corporatePhone": "+551100988887777",
+        "document": "123456789",
+        "documentType": "cpf",
+        "email": "customer@examplemail.com",
+        "firstName": "first-name",
+        "isCorporate": false,
+        "lastName": "last-name",
+        "phone": "+55110988887777",
+        "stateInscription": "12345678",
+        "tradeName": "trade-name"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "form_data": [
+        {
+          "name": "corporateDocument",
+          "type": "text",
+          "value": "12345678000100"
+        },
+        {
+          "name": "corporateName",
+          "type": "text",
+          "value": "company-name"
+        },
+        {
+          "name": "corporatePhone",
+          "type": "text",
+          "value": "+551100988887777"
+        },
+        {
+          "name": "document",
+          "type": "text",
+          "value": "123456789"
+        },
+        {
+          "name": "documentType",
+          "type": "text",
+          "value": "cpf"
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "value": "customer@examplemail.com"
+        },
+        {
+          "name": "firstName",
+          "type": "text",
+          "value": "first-name"
+        },
+        {
+          "name": "isCorporate",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "lastName",
+          "type": "text",
+          "value": "last-name"
+        },
+        {
+          "name": "phone",
+          "type": "text",
+          "value": "+55110988887777"
+        },
+        {
+          "name": "stateInscription",
+          "type": "text",
+          "value": "12345678"
+        },
+        {
+          "name": "tradeName",
+          "type": "text",
+          "value": "trade-name"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": {
+        "Content-Type": "multipart/form-data"
+      },
+      "method": "POST",
+      "name": "Add client profile",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/clientProfileData"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "coupon": "free-shipping",
+        "marketingTags": [
+          ""
+        ],
+        "utmCampaign": "Black friday",
+        "utmMedium": "CPC",
+        "utmSource": "Facebook",
+        "utmiCampaign": "utmi_campaign-exmaple",
+        "utmiPage": "utmi_page-example",
+        "utmiPart": "utmi_part-exmaple"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "coupon",
+          "type": "text",
+          "value": "free-shipping"
+        },
+        {
+          "name": "marketingTags",
+          "type": "text",
+          "value": [
+            ""
+          ]
+        },
+        {
+          "name": "utmCampaign",
+          "type": "text",
+          "value": "Black friday"
+        },
+        {
+          "name": "utmMedium",
+          "type": "text",
+          "value": "CPC"
+        },
+        {
+          "name": "utmSource",
+          "type": "text",
+          "value": "Facebook"
+        },
+        {
+          "name": "utmiCampaign",
+          "type": "text",
+          "value": "utmi_campaign-exmaple"
+        },
+        {
+          "name": "utmiPage",
+          "type": "text",
+          "value": "utmi_page-example"
+        },
+        {
+          "name": "utmiPart",
+          "type": "text",
+          "value": "utmi_part-exmaple"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Add marketing data",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/marketingData"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "salesAssociateData": {
+          "salesAssociateId": "seller123"
+        }
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "salesAssociateData",
+          "type": "text",
+          "value": {
+            "salesAssociateId": "seller123"
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Add merchant context data",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/merchantContextData"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "payments": [
+          {
+            "group": "bankInvoicePaymentGroup",
+            "hasDefaultBillingAddress": false,
+            "installments": 1,
+            "installmentsInterestRate": 0,
+            "installmentsValue": 1,
+            "paymentSystem": 1,
+            "paymentSystemName": "Boleto Bancário",
+            "referenceValue": 100,
+            "value": 100
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "payments",
+          "type": "text",
+          "value": [
+            {
+              "group": "bankInvoicePaymentGroup",
+              "hasDefaultBillingAddress": false,
+              "installments": 1,
+              "installmentsInterestRate": 0,
+              "installmentsValue": 1,
+              "paymentSystem": 1,
+              "paymentSystemName": "Boleto Bancário",
+              "referenceValue": 100,
+              "value": 100
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Add payment data",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/paymentData"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "clearAddressIfPostalCodeNotFound": false,
+        "logisticsInfo": [
+          {
+            "itemIndex": 0,
+            "selectedDeliveryChannel": "delivery",
+            "selectedSla": "normal"
+          }
+        ],
+        "selectedAddresses": [
+          {
+            "addressType": "residential",
+            "city": "Rio de Janeiro",
+            "complement": "3rd floor",
+            "country": "BRA",
+            "geoCoordinates": [
+              -47.924747467041016
+            ],
+            "neighborhood": "Botafogo",
+            "number": "300",
+            "postalCode": "12345-000",
+            "receiverName": "receiver-name",
+            "reference": "Grey building",
+            "state": "RJ",
+            "street": "Praia de Botafogo"
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "clearAddressIfPostalCodeNotFound",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "logisticsInfo",
+          "type": "text",
+          "value": [
+            {
+              "itemIndex": 0,
+              "selectedDeliveryChannel": "delivery",
+              "selectedSla": "normal"
+            }
+          ]
+        },
+        {
+          "name": "selectedAddresses",
+          "type": "text",
+          "value": [
+            {
+              "addressType": "residential",
+              "city": "Rio de Janeiro",
+              "complement": "3rd floor",
+              "country": "BRA",
+              "geoCoordinates": [
+                -47.924747467041016
+              ],
+              "neighborhood": "Botafogo",
+              "number": "300",
+              "postalCode": "12345-000",
+              "receiverName": "receiver-name",
+              "reference": "Grey building",
+              "state": "RJ",
+              "street": "Praia de Botafogo"
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Add shipping address and select delivery option",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/shippingData"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "text": "freeshipping"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "text",
+          "type": "text",
+          "value": "freeshipping"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Add coupons to the cart",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/coupons"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "PUT",
+      "name": "Set multiple custom field values",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "DELETE",
+      "name": "Remove single custom field value",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}/{{APP_FIELD_NAME}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "value": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "value",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "PUT",
+      "name": "Set single custom field value",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}/{{APP_FIELD_NAME}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Cart installments",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/installments"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "orderItems": [
+          {
+            "id": "2005",
+            "index": 0,
+            "price": 1099,
+            "quantity": 3,
+            "seller": "1"
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "orderItems",
+          "type": "text",
+          "value": [
+            {
+              "id": "2005",
+              "index": 0,
+              "price": 1099,
+              "quantity": 3,
+              "seller": "1"
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Add cart items",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Remove all items",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/removeAll"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "orderItems": [
+          {
+            "index": 0,
+            "quantity": 3
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "orderItems",
+          "type": "text",
+          "value": [
+            {
+              "index": 0,
+              "quantity": 3
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Update cart items",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/update"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "price": 10000
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "price",
+          "type": "text",
+          "value": 10000
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-API-Key": "{{CHECKOUT_API_KEY}}"
+      },
+      "method": "PUT",
+      "name": "Change price",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/{{ITEM_INDEX}}/price"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Clear orderForm messages",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/messages/clear"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "ignoreProfileData": false
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "form_data": [
+        {
+          "name": "ignoreProfileData",
+          "type": "text",
+          "value": false
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": {
+        "Content-Type": "multipart/form-data"
+      },
+      "method": "PATCH",
+      "name": "Ignore profile data",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/profile"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "interestValue": 0,
+        "optinNewsLetter": false,
+        "referenceId": "41a22925298a4ddca95318131a25b000",
+        "referenceValue": 6800,
+        "savePersonalData": false,
+        "value": 6800
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "interestValue",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "optinNewsLetter",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "referenceId",
+          "type": "text",
+          "value": "41a22925298a4ddca95318131a25b000"
+        },
+        {
+          "name": "referenceValue",
+          "type": "text",
+          "value": 6800
+        },
+        {
+          "name": "savePersonalData",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "value",
+          "type": "text",
+          "value": 6800
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Place order from an existing cart",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/transaction"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "country": "BRA",
+        "geoCoordinates": [
+          -47.924747467041016
+        ],
+        "items": [
+          {
+            "id": "1",
+            "quantity": 1,
+            "seller": "1"
+          }
+        ],
+        "postalCode": "12345-000"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "country",
+          "type": "text",
+          "value": "BRA"
+        },
+        {
+          "name": "geoCoordinates",
+          "type": "text",
+          "value": [
+            -47.924747467041016
+          ]
+        },
+        {
+          "name": "items",
+          "type": "text",
+          "value": [
+            {
+              "id": "1",
+              "quantity": 1,
+              "seller": "1"
+            }
+          ]
+        },
+        {
+          "name": "postalCode",
+          "type": "text",
+          "value": "12345-000"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "method": "POST",
+      "name": "Cart simulation",
+      "url": "https://vtex.local/api/checkout/pub/orderForms/simulation"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "clientProfileData": {
+          "corporateDocument": "12345678000100",
+          "corporateName": "company-name",
+          "corporatePhone": "+551100988887777",
+          "document": "123456789",
+          "documentType": "cpf",
+          "email": "customer@examplemail.com",
+          "firstName": "first-name",
+          "isCorporate": false,
+          "lastName": "last-name",
+          "phone": "+55110988887777",
+          "stateInscription": "12345678",
+          "tradeName": "trade-name"
+        },
+        "items": [
+          {
+            "id": "123456789",
+            "quantity": 1,
+            "seller": "1"
+          }
+        ],
+        "marketingData": {
+          "coupon": "free-shipping",
+          "utmCampaign": "Black friday",
+          "utmMedium": "CPC",
+          "utmSource": "Facebook",
+          "utmiCampaign": "utmi_campaign-exmaple",
+          "utmiPage": "utmi_page-example",
+          "utmiPart": "utmi_part-exmaple"
+        },
+        "openTextField": "open-text-example",
+        "paymentData": {
+          "giftCardMessages": [
+            {}
+          ],
+          "giftCards": [
+            {
+              "balance": 500,
+              "id": "1390324156495k195pmab4rall3di",
+              "inUse": true,
+              "isSpecialCard": false,
+              "name": "name-example",
+              "redemptionCode": "HYUO-TEZZ-QFFT-HTFR",
+              "value": 500
+            }
+          ],
+          "paymentSystems": [
+            {
+              "description": "description-example",
+              "groupName": "creditCardPaymentGroup",
+              "id": 2,
+              "isCustom": false,
+              "name": "Visa",
+              "requiresDocument": false,
+              "selected": false,
+              "stringId": "12345abc",
+              "template": "creditCardPaymentGroup-template",
+              "validator": {
+                "cardCodeMask": "999",
+                "cardCodeRegex": "[^0-9]",
+                "mask": "9999 9999 9999 9999",
+                "regex": "^4",
+                "weights": [
+                  {}
+                ]
+              }
+            }
+          ],
+          "payments": [
+            {
+              "accountId": "accountID-example",
+              "bin": "2",
+              "installments": 2,
+              "paymentSystem": "12",
+              "referenceValue": 16175,
+              "value": 16175
+            }
+          ],
+          "updateStatus": "updated"
+        },
+        "salesAssociateData": {
+          "salesAssociateId": "seller123"
+        },
+        "shippingData": {
+          "address": {
+            "addressId": "Home",
+            "addressType": "residential",
+            "city": "Rio de Janeiro",
+            "complement": "3rd floor",
+            "country": "BRA",
+            "geoCoordinates": [
+              -47.924747467041016
+            ],
+            "neighborhood": "Botafogo",
+            "number": "300",
+            "postalCode": "12345-000",
+            "receiverName": "receiver-name",
+            "reference": "Grey building",
+            "state": "Rio de Janeiro",
+            "street": "Praia de Botafogo"
+          },
+          "logisticsInfo": [
+            {
+              "deliveryWindow": {
+                "endDateUtc": "2021-07-13T23:59:59+00:00",
+                "lisPrice": 0,
+                "price": 0,
+                "startDateUtc": "2021-07-13T00:00:00+00:00",
+                "tax": 0
+              },
+              "itemIndex": 0,
+              "lockTTL": "8d",
+              "price": 1099,
+              "selectedSla": "Express",
+              "shippingEstimate": "7d"
+            }
+          ],
+          "updateStatus": "updated"
+        }
+      },
+      "body_json": {
+        "clientProfileData": {
+          "corporateDocument": "12345678000100",
+          "corporateName": "company-name",
+          "corporatePhone": "+551100988887777",
+          "document": "123456789",
+          "documentType": "cpf",
+          "email": "customer@examplemail.com",
+          "firstName": "first-name",
+          "isCorporate": false,
+          "lastName": "last-name",
+          "phone": "+55110988887777",
+          "stateInscription": "12345678",
+          "tradeName": "trade-name"
+        },
+        "items": [
+          {
+            "id": "123456789",
+            "quantity": 1,
+            "seller": "1"
+          }
+        ],
+        "marketingData": {
+          "coupon": "free-shipping",
+          "utmCampaign": "Black friday",
+          "utmMedium": "CPC",
+          "utmSource": "Facebook",
+          "utmiCampaign": "utmi_campaign-exmaple",
+          "utmiPage": "utmi_page-example",
+          "utmiPart": "utmi_part-exmaple"
+        },
+        "openTextField": "open-text-example",
+        "paymentData": {
+          "giftCardMessages": [
+            {}
+          ],
+          "giftCards": [
+            {
+              "balance": 500,
+              "id": "1390324156495k195pmab4rall3di",
+              "inUse": true,
+              "isSpecialCard": false,
+              "name": "name-example",
+              "redemptionCode": "HYUO-TEZZ-QFFT-HTFR",
+              "value": 500
+            }
+          ],
+          "paymentSystems": [
+            {
+              "description": "description-example",
+              "groupName": "creditCardPaymentGroup",
+              "id": 2,
+              "isCustom": false,
+              "name": "Visa",
+              "requiresDocument": false,
+              "selected": false,
+              "stringId": "12345abc",
+              "template": "creditCardPaymentGroup-template",
+              "validator": {
+                "cardCodeMask": "999",
+                "cardCodeRegex": "[^0-9]",
+                "mask": "9999 9999 9999 9999",
+                "regex": "^4",
+                "weights": [
+                  {}
+                ]
+              }
+            }
+          ],
+          "payments": [
+            {
+              "accountId": "accountID-example",
+              "bin": "2",
+              "installments": 2,
+              "paymentSystem": "12",
+              "referenceValue": 16175,
+              "value": 16175
+            }
+          ],
+          "updateStatus": "updated"
+        },
+        "salesAssociateData": {
+          "salesAssociateId": "seller123"
+        },
+        "shippingData": {
+          "address": {
+            "addressId": "Home",
+            "addressType": "residential",
+            "city": "Rio de Janeiro",
+            "complement": "3rd floor",
+            "country": "BRA",
+            "geoCoordinates": [
+              -47.924747467041016
+            ],
+            "neighborhood": "Botafogo",
+            "number": "300",
+            "postalCode": "12345-000",
+            "receiverName": "receiver-name",
+            "reference": "Grey building",
+            "state": "Rio de Janeiro",
+            "street": "Praia de Botafogo"
+          },
+          "logisticsInfo": [
+            {
+              "deliveryWindow": {
+                "endDateUtc": "2021-07-13T23:59:59+00:00",
+                "lisPrice": 0,
+                "price": 0,
+                "startDateUtc": "2021-07-13T00:00:00+00:00",
+                "tax": 0
+              },
+              "itemIndex": 0,
+              "lockTTL": "8d",
+              "price": 1099,
+              "selectedSla": "Express",
+              "shippingEstimate": "7d"
+            }
+          ],
+          "updateStatus": "updated"
+        }
+      },
+      "body_text": "{\"clientProfileData\": {\"corporateDocument\": \"12345678000100\", \"corporateName\": \"company-name\", \"corporatePhone\": \"+551100988887777\", \"document\": \"123456789\", \"documentType\": \"cpf\", \"email\": \"customer@examplemail.com\", \"firstName\": \"first-name\", \"isCorporate\": false, \"lastName\": \"last-name\", \"phone\": \"+55110988887777\", \"stateInscription\": \"12345678\", \"tradeName\": \"trade-name\"}, \"items\": [{\"id\": \"123456789\", \"quantity\": 1, \"seller\": \"1\"}], \"marketingData\": {\"coupon\": \"free-shipping\", \"utmCampaign\": \"Black friday\", \"utmMedium\": \"CPC\", \"utmSource\": \"Facebook\", \"utmiCampaign\": \"utmi_campaign-exmaple\", \"utmiPage\": \"utmi_page-example\", \"utmiPart\": \"utmi_part-exmaple\"}, \"openTextField\": \"open-text-example\", \"paymentData\": {\"giftCardMessages\": [{}], \"giftCards\": [{\"balance\": 500, \"id\": \"1390324156495k195pmab4rall3di\", \"inUse\": true, \"isSpecialCard\": false, \"name\": \"name-example\", \"redemptionCode\": \"HYUO-TEZZ-QFFT-HTFR\", \"value\": 500}], \"paymentSystems\": [{\"description\": \"description-example\", \"groupName\": \"creditCardPaymentGroup\", \"id\": 2, \"isCustom\": false, \"name\": \"Visa\", \"requiresDocument\": false, \"selected\": false, \"stringId\": \"12345abc\", \"template\": \"creditCardPaymentGroup-template\", \"validator\": {\"cardCodeMask\": \"999\", \"cardCodeRegex\": \"[^0-9]\", \"mask\": \"9999 9999 9999 9999\", \"regex\": \"^4\", \"weights\": [{}]}}], \"payments\": [{\"accountId\": \"accountID-example\", \"bin\": \"2\", \"installments\": 2, \"paymentSystem\": \"12\", \"referenceValue\": 16175, \"value\": 16175}], \"updateStatus\": \"updated\"}, \"salesAssociateData\": {\"salesAssociateId\": \"seller123\"}, \"shippingData\": {\"address\": {\"addressId\": \"Home\", \"addressType\": \"residential\", \"city\": \"Rio de Janeiro\", \"complement\": \"3rd floor\", \"country\": \"BRA\", \"geoCoordinates\": [-47.924747467041016], \"neighborhood\": \"Botafogo\", \"number\": \"300\", \"postalCode\": \"12345-000\", \"receiverName\": \"receiver-name\", \"reference\": \"Grey building\", \"state\": \"Rio de Janeiro\", \"street\": \"Praia de Botafogo\"}, \"logisticsInfo\": [{\"deliveryWindow\": {\"endDateUtc\": \"2021-07-13T23:59:59+00:00\", \"lisPrice\": 0, \"price\": 0, \"startDateUtc\": \"2021-07-13T00:00:00+00:00\", \"tax\": 0}, \"itemIndex\": 0, \"lockTTL\": \"8d\", \"price\": 1099, \"selectedSla\": \"Express\", \"shippingEstimate\": \"7d\"}], \"updateStatus\": \"updated\"}}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{CHECKOUT_API_KEY}}"
+      },
+      "method": "PUT",
+      "name": "Place order",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "url": "https://vtex.local/api/checkout/pub/orders"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "List pickup points by location",
+      "url": "https://vtex.local/api/checkout/pub/pickup-points"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get address by postal code",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/postal-code/{{COUNTRY_CODE}}/{{POSTAL_CODE}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get client profile by email",
+      "note": "Set Content-Type to multipart/form-data for file uploads",
+      "url": "https://vtex.local/api/checkout/pub/profiles"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get sellers by region or address",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/api/checkout/pub/regions/{{REGION_ID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CHECKOUT_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Get orderForm configuration",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "url": "https://vtex.local/api/checkout/pvt/configuration/orderForm"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "allowManualPrice": null,
+        "allowMultipleDeliveries": null,
+        "apps": null,
+        "decimalDigitsPrecision": 2,
+        "minimumQuantityAccumulatedForItems": 1,
+        "minimumValueAccumulated": null,
+        "paymentConfiguration": {
+          "requiresAuthenticationForPreAuthorizedPaymentOption": false
+        },
+        "taxConfiguration": null
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "form_data": [
+        {
+          "name": "allowManualPrice",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "allowMultipleDeliveries",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "apps",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "decimalDigitsPrecision",
+          "type": "text",
+          "value": 2
+        },
+        {
+          "name": "minimumQuantityAccumulatedForItems",
+          "type": "text",
+          "value": 1
+        },
+        {
+          "name": "minimumValueAccumulated",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "paymentConfiguration",
+          "type": "text",
+          "value": {
+            "requiresAuthenticationForPreAuthorizedPaymentOption": false
+          }
+        },
+        {
+          "name": "taxConfiguration",
+          "type": "text",
+          "value": null
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-API-Key": "{{CHECKOUT_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Update orderForm configuration",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "url": "https://vtex.local/api/checkout/pvt/configuration/orderForm"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CHECKOUT_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Get window to change seller",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "url": "https://vtex.local/api/checkout/pvt/configuration/window-to-change-seller"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "waitingTime": 0
+      },
+      "body_json": {
+        "waitingTime": 0
+      },
+      "body_text": "{\"waitingTime\": 0}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{CHECKOUT_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Update window to change seller",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "url": "https://vtex.local/api/checkout/pvt/configuration/window-to-change-seller"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Remove all personal data",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://vtex.local/checkout/changeToAnonymousUser/{{ORDER_FORM_ID}}"
+    }
+  ]
+}

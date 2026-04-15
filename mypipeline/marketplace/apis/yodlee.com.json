@@ -1,0 +1,3119 @@
+{
+  "id": "yodlee.com",
+  "info": {
+    "base_url": "",
+    "description": "The update transaction categories service is used to update the transaction category namefor a high level category, a system-defined category and a user-defined category.The renamed category can be...",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Yodlee Core APIs",
+    "version": "1.1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get accounts service provides information about accounts added by the user.<br>By default, this service returns information for active and to be closed accounts.<br>If requestId is provided, the accounts that are updated in the context of the requestId will be provided in the response.<br><br><b>Note:</b><br><li>fullAccountNumber is deprecated and is replaced with fullAccountNumberList in include parameter and response.</li><li>fullAccountNumberList, PII (Personal Identifiable Information) and holder details are not available by default, as it is a premium feature that needs security approval. This will not be available for testing in Sandbox environment.</li>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /accounts",
+      "method": "GET",
+      "name": "Get Accounts",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "providerAccountId",
+          "value": ""
+        },
+        {
+          "name": "requestId",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "path": "/accounts",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "providerAccountId",
+          "value": ""
+        },
+        {
+          "name": "requestId",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Accounts",
+      "url": "//accounts"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "account": {
+          "accountName": "",
+          "accountNumber": "",
+          "accountType": "",
+          "address": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "city": "",
+            "country": "",
+            "sourceType": "",
+            "state": "",
+            "street": "",
+            "type": "HOME",
+            "zip": ""
+          },
+          "amountDue": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "balance": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "dueDate": "",
+          "frequency": "DAILY",
+          "homeValue": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "includeInNetWorth": "",
+          "memo": "",
+          "nickname": "",
+          "valuationType": "SYSTEM"
+        }
+      },
+      "body_json": {
+        "account": {
+          "accountName": "",
+          "accountNumber": "",
+          "accountType": "",
+          "address": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "city": "",
+            "country": "",
+            "sourceType": "",
+            "state": "",
+            "street": "",
+            "type": "HOME",
+            "zip": ""
+          },
+          "amountDue": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "balance": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "dueDate": "",
+          "frequency": "DAILY",
+          "homeValue": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "includeInNetWorth": "",
+          "memo": "",
+          "nickname": "",
+          "valuationType": "SYSTEM"
+        }
+      },
+      "body_text": "{\"account\": {\"accountName\": \"\", \"accountNumber\": \"\", \"accountType\": \"\", \"address\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"city\": \"\", \"country\": \"\", \"sourceType\": \"\", \"state\": \"\", \"street\": \"\", \"type\": \"HOME\", \"zip\": \"\"}, \"amountDue\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"balance\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"dueDate\": \"\", \"frequency\": \"DAILY\", \"homeValue\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"includeInNetWorth\": \"\", \"memo\": \"\", \"nickname\": \"\", \"valuationType\": \"SYSTEM\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The add account service is used to add manual accounts.<br>The response of add account service includes the account name , account number and Yodlee generated account id.<br>All manual accounts added will be included as part of networth calculation by default.<br>Add manual account support is available for bank, card, investment, insurance and loan container only.<br><br><b>Note:</b> <li>A real estate account addition is only supported for SYSTEM and MANUAL valuation type.</li>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /accounts",
+      "method": "POST",
+      "name": "Add Manual Account",
+      "params": [],
+      "path": "/accounts",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account\": {\"accountName\": \"\", \"accountNumber\": \"\", \"accountType\": \"\", \"address\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"city\": \"\", \"country\": \"\", \"sourceType\": \"\", \"state\": \"\", \"street\": \"\", \"type\": \"HOME\", \"zip\": \"\"}, \"amountDue\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"balance\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"dueDate\": \"\", \"frequency\": \"DAILY\", \"homeValue\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"includeInNetWorth\": \"\", \"memo\": \"\", \"nickname\": \"\", \"valuationType\": \"SYSTEM\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add Manual Account",
+      "url": "//accounts"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "address": {
+          "address1": "",
+          "address2": "",
+          "address3": "",
+          "city": "",
+          "country": "",
+          "sourceType": "",
+          "state": "",
+          "street": "",
+          "type": "HOME",
+          "zip": ""
+        }
+      },
+      "body_json": {
+        "address": {
+          "address1": "",
+          "address2": "",
+          "address3": "",
+          "city": "",
+          "country": "",
+          "sourceType": "",
+          "state": "",
+          "street": "",
+          "type": "HOME",
+          "zip": ""
+        }
+      },
+      "body_text": "{\"address\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"city\": \"\", \"country\": \"\", \"sourceType\": \"\", \"state\": \"\", \"street\": \"\", \"type\": \"HOME\", \"zip\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this service to validate the address before adding the real estate account.<br>If the address is valid, the service will return the complete address information.<br>The response will contain multiple addresses if the user-provided input matches with multiple entries in the vendor database.<br>In the case of multiple matches, the user can select the appropriate address from the list and then invoke the add account service with the complete address.<br><br><b>Note:</b> <li>Yodlee recommends to use this service before adding the real estate account to avoid failures.</li>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /accounts/evaluateAddress",
+      "method": "POST",
+      "name": "Evaluate Address",
+      "params": [],
+      "path": "/accounts/evaluateAddress",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"address\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"city\": \"\", \"country\": \"\", \"sourceType\": \"\", \"state\": \"\", \"street\": \"\", \"type\": \"HOME\", \"zip\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Evaluate Address",
+      "url": "//accounts/evaluateAddress"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The historical balances service is used to retrieve the historical balances for an account or a user.<br>Historical balances are daily (D), weekly (W), and monthly (M). <br>The interval input should be passed as D, W, and M to retrieve the desired historical balances. The default interval is daily (D). <br>When no account id is provided, historical balances of the accounts that are active, to be closed, and closed are provided in the response. <br>If the fromDate and toDate are not passed, the last 90 days of data will be provided. <br>The fromDate and toDate should be passed in the YYYY-MM-DD format. <br>The date field in the response denotes the date for which the balance is requested.<br>includeCF needs to be sent as true if the customer wants to return carried forward balances for a date when the data is not available. <br>asofDate field in the response denotes the date as of which the balance was updated for that account.<br>When there is no balance available for a requested date and if includeCF is sent as true, the previous date for which the balance is available is provided in the response. <br>When there is no previous balance available, no data will be sent.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /accounts/historicalBalances",
+      "method": "GET",
+      "name": "Get Historical Balances",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "includeCF",
+          "value": ""
+        },
+        {
+          "name": "interval",
+          "value": ""
+        },
+        {
+          "name": "skip",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "path": "/accounts/historicalBalances",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "includeCF",
+          "value": ""
+        },
+        {
+          "name": "interval",
+          "value": ""
+        },
+        {
+          "name": "skip",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Historical Balances",
+      "url": "//accounts/historicalBalances"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The delete account service allows an account to be deleted.<br>This service does not return a response. The HTTP response code is 204 (Success with no content).<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /accounts/{{ACCOUNT_ID}}",
+      "method": "DELETE",
+      "name": "Delete Account",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/accounts/{{ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Account",
+      "url": "//accounts/{{ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get account details service provides detailed information of an account.<br><br><b>Note:</b><li>fullAccountNumber is deprecated and is replaced with fullAccountNumberList in include parameter and response.</li>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /accounts/{{ACCOUNT_ID}}",
+      "method": "GET",
+      "name": "Get Account Details",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        }
+      ],
+      "path": "/accounts/{{ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "include",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Account Details",
+      "url": "//accounts/{{ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "account": {
+          "accountName": "",
+          "accountNumber": "",
+          "accountStatus": "ACTIVE",
+          "address": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "city": "",
+            "country": "",
+            "sourceType": "",
+            "state": "",
+            "street": "",
+            "type": "HOME",
+            "zip": ""
+          },
+          "amountDue": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "balance": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "container": "bank",
+          "dueDate": "",
+          "frequency": "DAILY",
+          "homeValue": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "includeInNetWorth": "",
+          "isEbillEnrolled": "",
+          "memo": "",
+          "nickname": ""
+        }
+      },
+      "body_json": {
+        "account": {
+          "accountName": "",
+          "accountNumber": "",
+          "accountStatus": "ACTIVE",
+          "address": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "city": "",
+            "country": "",
+            "sourceType": "",
+            "state": "",
+            "street": "",
+            "type": "HOME",
+            "zip": ""
+          },
+          "amountDue": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "balance": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "container": "bank",
+          "dueDate": "",
+          "frequency": "DAILY",
+          "homeValue": {
+            "amount": 0.0,
+            "currency": "AUD"
+          },
+          "includeInNetWorth": "",
+          "isEbillEnrolled": "",
+          "memo": "",
+          "nickname": ""
+        }
+      },
+      "body_text": "{\"account\": {\"accountName\": \"\", \"accountNumber\": \"\", \"accountStatus\": \"ACTIVE\", \"address\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"city\": \"\", \"country\": \"\", \"sourceType\": \"\", \"state\": \"\", \"street\": \"\", \"type\": \"HOME\", \"zip\": \"\"}, \"amountDue\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"balance\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"container\": \"bank\", \"dueDate\": \"\", \"frequency\": \"DAILY\", \"homeValue\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"includeInNetWorth\": \"\", \"isEbillEnrolled\": \"\", \"memo\": \"\", \"nickname\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The update account service is used to update manual and aggregated accounts.<br>The HTTP response code is 204 (Success without content).<br>Update manual account support is available for bank, card, investment, insurance, loan, otherAssets, otherLiabilities and realEstate containers only.<br><br><b>Note:</b><li> A real estate account update is only supported for SYSTEM and MANUAL valuation type.</li><li> Attribute <b>isEbillEnrolled</b> is deprecated as it is applicable for bill accounts only.</li>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /accounts/{{ACCOUNT_ID}}",
+      "method": "PUT",
+      "name": "Update Account",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/accounts/{{ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account\": {\"accountName\": \"\", \"accountNumber\": \"\", \"accountStatus\": \"ACTIVE\", \"address\": {\"address1\": \"\", \"address2\": \"\", \"address3\": \"\", \"city\": \"\", \"country\": \"\", \"sourceType\": \"\", \"state\": \"\", \"street\": \"\", \"type\": \"HOME\", \"zip\": \"\"}, \"amountDue\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"balance\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"container\": \"bank\", \"dueDate\": \"\", \"frequency\": \"DAILY\", \"homeValue\": {\"amount\": 0.0, \"currency\": \"AUD\"}, \"includeInNetWorth\": \"\", \"isEbillEnrolled\": \"\", \"memo\": \"\", \"nickname\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Account",
+      "url": "//accounts/{{ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint provides the list of API keys that exist for a customer.<br>You can use one of the following authorization methods to access this API:<br><ol><li>cobsession</li><li>JWT token</li></ol><b>Notes:</b><li>This service is not available in developer sandbox environment and will be made available for testing in your dedicated environment. ",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /auth/apiKey",
+      "method": "GET",
+      "name": "Get API Keys",
+      "params": [],
+      "path": "/auth/apiKey",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get API Keys",
+      "url": "//auth/apiKey"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "publicKey": ""
+      },
+      "body_json": {
+        "publicKey": ""
+      },
+      "body_text": "{\"publicKey\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint is used to generate an API key. The RSA public key you provide should be in 2048 bit PKCS#8 encoded format. <br>A public key is a mandatory input for generating the API key.<br/>The public key should be a unique key. The apiKeyId you get in the response is what you should use to generate the JWT token.<br> You can use one of the following authorization methods to access<br/>this API:<br><ol><li>cobsession</li><li>JWT token</li></ol> Alternatively, you can use base 64 encoded cobrandLogin and cobrandPassword in the Authorization header (Format: Authorization: Basic <encoded value of cobrandLogin: cobrandPassword>)<br><br><b>Note:</b><br><li>This service is not available in developer sandbox environment and will be made available for testing in your dedicated environment. The content type has to be passed as application/json for the body parameter.</li>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /auth/apiKey",
+      "method": "POST",
+      "name": "Generate API Key",
+      "params": [],
+      "path": "/auth/apiKey",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"publicKey\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Generate API Key",
+      "url": "//auth/apiKey"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint allows an existing API key to be deleted.<br>You can use one of the following authorization methods to access this API:<br><ol><li>cobsession</li><li>JWT token</li></ol> <b>Notes:</b> <li>This service is not available in developer sandbox environment and will be made availablefor testing in your dedicated environment. ",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /auth/apiKey/{{KEY}}",
+      "method": "DELETE",
+      "name": "Delete API Key",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "key",
+          "value": ""
+        }
+      ],
+      "path": "/auth/apiKey/{{KEY}}",
+      "pathParameters": [
+        {
+          "name": "key",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete API Key",
+      "url": "//auth/apiKey/{{KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint revokes the token passed in the Authorization header. This service is applicable for JWT-based (and all API key-based) authentication and also client credential (clientId and secret) based authentication. This service does not return a response body. The HTTP response code is 204 (success with no content). <br>Tokens generally have limited lifetime of up to 30 minutes. You will call this service when you finish working with one user, and you want to delete the valid token rather than simply letting it expire.<br><br><b>Note:</b> <li>Revoking an access token (either type, admin or a user token) can take up to 2 minutes, as the tokens are stored on a distributed system.<br/>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /auth/token",
+      "method": "DELETE",
+      "name": "Delete Token",
+      "params": [],
+      "path": "/auth/token",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Token",
+      "url": "//auth/token"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<b>Generate Access Token using client credential authentication.</b><br>This service returns access tokens required to access Yodlee 1.1 APIs. These tokens are the simplest and easiest of several alternatives for authenticating with Yodlee servers.<br>The most commonly used services obtain data specific to an end user (your customer). For these services, you need a <b>user access token</b>. These are simply tokens created with the user name parameter (<b>loginName</b>) set to the id of your end user.  <i><br><br><b>Note:</b> You determine this id and you must ensure it's unique among all your customers.</i> <br><br>Each token issued has an associated user. The token passed in the http headers explicitly names the user referenced in that API call.<br><br>Some of the APIs do administrative work, and don't reference an end user. <br/>One example of administrative work is key management. Another example is registering a new user explicitly, with <b>POST /user/register</b> call or subscribe to webhook, with <b>POST /config/notifications/events/{eventName}</b>. <br/>To invoke these, you need an <b>admin access token</b>. Create this by passing in your admin user login name in place of a regular user name.<br><br>This service also allows for simplified registration of new users. Any time you pass in a user name not already in use, the system will automatically implicitly create a new user for you. <br>This user will naturally have very few associated details. You can later provide additional user information by calling the <b>PUT user/register service</b>.<br><br><b>Notes:</b><li>The content type has to be passed as application/x-www-form-urlencoded.<li>Upgrading to client credential authentication requires infrastructure reconfiguration. <li>Customers wishing to switch from another authentication scheme to client credential authentication, please contact Yodlee Client Services.</li>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /auth/token",
+      "method": "POST",
+      "name": "Generate Access Token",
+      "params": [],
+      "path": "/auth/token",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Generate Access Token",
+      "url": "//auth/token"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<b>Refer GET /configs/notifications/events.</b><br>The get events service provides the list of events for which consumers subscribed <br>to receive notifications. <br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /cobrand/config/notifications/events",
+      "method": "GET",
+      "name": "Get Subscribed Events",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "path": "/cobrand/config/notifications/events",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Subscribed Events",
+      "url": "//cobrand/config/notifications/events"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<b>Refer DELETE /configs/notifications/events/{eventName}.</b><br>The delete events service is used to unsubscribe from an events service.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /cobrand/config/notifications/events/{{EVENT_NAME}}",
+      "method": "DELETE",
+      "name": "Delete Subscription",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "path": "/cobrand/config/notifications/events/{{EVENT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Subscription",
+      "url": "//cobrand/config/notifications/events/{{EVENT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "event": {
+          "callbackUrl": ""
+        }
+      },
+      "body_json": {
+        "event": {
+          "callbackUrl": ""
+        }
+      },
+      "body_text": "{\"event\": {\"callbackUrl\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<b>Refer POST /configs/notifications/events/{eventName}.</b><br>The subscribe events service is used to subscribe to an event for receiving notifications.<br>The callback URL, where the notification will be posted should be provided to this service.<br>If the callback URL is invalid or inaccessible, the subscription will be unsuccessful, and an error will be thrown.<br>Customers can subscribe to REFRESH,DATA_UPDATES and AUTO_REFRESH_UPDATES event.<br><br><b>Notes</b>:<br>This service is not available in developer sandbox/test environment and will be made available for testing in your dedicated environment, once the contract is signed.<br>The content type has to be passed as application/json for the body parameter.<br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cobrand/config/notifications/events/{{EVENT_NAME}}",
+      "method": "POST",
+      "name": "Subscribe Event",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "path": "/cobrand/config/notifications/events/{{EVENT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"event\": {\"callbackUrl\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Subscribe Event",
+      "url": "//cobrand/config/notifications/events/{{EVENT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "event": {
+          "callbackUrl": ""
+        }
+      },
+      "body_json": {
+        "event": {
+          "callbackUrl": ""
+        }
+      },
+      "body_text": "{\"event\": {\"callbackUrl\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<b>Refer PUT /configs/notifications/events/{eventName}.</b><br>The update events service is used to update the callback URL.<br>If the callback URL is invalid or inaccessible, the subscription will be unsuccessful, and an error will be thrown.<br><b>Note:</b> The content type has to be passed as application/json for the body parameter. <br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /cobrand/config/notifications/events/{{EVENT_NAME}}",
+      "method": "PUT",
+      "name": "Update Subscription",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "path": "/cobrand/config/notifications/events/{{EVENT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"event\": {\"callbackUrl\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Subscription",
+      "url": "//cobrand/config/notifications/events/{{EVENT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "cobrand": {
+          "cobrandLogin": "",
+          "cobrandPassword": "",
+          "locale": ""
+        }
+      },
+      "body_json": {
+        "cobrand": {
+          "cobrandLogin": "",
+          "cobrandPassword": "",
+          "locale": ""
+        }
+      },
+      "body_text": "{\"cobrand\": {\"cobrandLogin\": \"\", \"cobrandPassword\": \"\", \"locale\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The cobrand login service authenticates a cobrand.<br>Cobrand session in the response includes the cobrand session token (cobSession) <br>which is used in subsequent API calls like registering or signing in the user. <br>The idle timeout for a cobrand session is 2 hours and the absolute timeout is 24 hours. This service can be <br>invoked to create a new cobrand session token. <br><b>Note:</b> This endpoint is deprecated for customers using the API Key-based authentication and is applicable only to customers who use the SAML-based authentication.<br>The content type has to be passed as application/json for the body parameter. <br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cobrand/login",
+      "method": "POST",
+      "name": "Cobrand Login",
+      "params": [],
+      "path": "/cobrand/login",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"cobrand\": {\"cobrandLogin\": \"\", \"cobrandPassword\": \"\", \"locale\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cobrand Login",
+      "url": "//cobrand/login"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The cobrand logout service is used to log out the cobrand.<br>This service does not return a response. The HTTP response code is 204 (Success with no content).<br><b>Note:</b> This endpoint is deprecated for customers using the API Key-based authentication and is applicable only to customers who use the SAML-based authentication.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /cobrand/logout",
+      "method": "POST",
+      "name": "Cobrand Logout",
+      "params": [],
+      "path": "/cobrand/logout",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cobrand Logout",
+      "url": "//cobrand/logout"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<b>Refer GET /configs/publicKey.</b><br>The get public key service provides the customer the public key that should be used to encrypt the user credentials before sending it to Yodlee.<br>This endpoint is useful only for PKI enabled.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /cobrand/publicKey",
+      "method": "GET",
+      "name": "Get Public Key",
+      "params": [],
+      "path": "/cobrand/publicKey",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Public Key",
+      "url": "//cobrand/publicKey"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get events service provides the list of events for which consumers subscribed to receive notifications. <br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /configs/notifications/events",
+      "method": "GET",
+      "name": "Get Subscribed Notification Events",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "path": "/configs/notifications/events",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Subscribed Notification Events",
+      "url": "//configs/notifications/events"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The delete events service is used to unsubscribe from an events service.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /configs/notifications/events/{{EVENT_NAME}}",
+      "method": "DELETE",
+      "name": "Delete Notification Subscription",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "path": "/configs/notifications/events/{{EVENT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Notification Subscription",
+      "url": "//configs/notifications/events/{{EVENT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "event": {
+          "callbackUrl": ""
+        }
+      },
+      "body_json": {
+        "event": {
+          "callbackUrl": ""
+        }
+      },
+      "body_text": "{\"event\": {\"callbackUrl\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The subscribe events service is used to subscribe to an event for receiving notifications.<br>The callback URL, where the notification will be posted should be provided to this service.<br>If the callback URL is invalid or inaccessible, the subscription will be unsuccessful, and an error will be thrown.<br>Customers can subscribe to REFRESH,DATA_UPDATES and AUTO_REFRESH_UPDATES event.<br><br><b>Notes:</b><li>This service is not available in developer sandbox/test environment and will be made available for testing in your dedicated environment, once the contract is signed.<li>The content type has to be passed as application/json for the body parameter.</li>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /configs/notifications/events/{{EVENT_NAME}}",
+      "method": "POST",
+      "name": "Subscribe For Notification Event",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "path": "/configs/notifications/events/{{EVENT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"event\": {\"callbackUrl\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Subscribe For Notification Event",
+      "url": "//configs/notifications/events/{{EVENT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "event": {
+          "callbackUrl": ""
+        }
+      },
+      "body_json": {
+        "event": {
+          "callbackUrl": ""
+        }
+      },
+      "body_text": "{\"event\": {\"callbackUrl\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The update events service is used to update the callback URL.<br>If the callback URL is invalid or inaccessible, the subscription will be unsuccessful, and an error will be thrown.<br><br><b>Note:</b> <li>The content type has to be passed as application/json for the body parameter. <br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /configs/notifications/events/{{EVENT_NAME}}",
+      "method": "PUT",
+      "name": "Update Notification Subscription",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "path": "/configs/notifications/events/{{EVENT_NAME}}",
+      "pathParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"event\": {\"callbackUrl\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Notification Subscription",
+      "url": "//configs/notifications/events/{{EVENT_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get public key service provides the public key that should be used to encrypt user credentials while invoking POST /providerAccounts and PUT /providerAccounts endpoints.<br>This service will only work if the PKI (public key infrastructure) feature is enabled for the customer.<br><br><b>Note:</b><li> The key in the response is a string in PEM format.</li><li>This endpoint is not available in the Sandbox environment and it is useful only if the PKI feature is enabled.</li>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /configs/publicKey",
+      "method": "GET",
+      "name": "Get Public Key",
+      "params": [],
+      "path": "/configs/publicKey",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Public Key",
+      "url": "//configs/publicKey"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get extracts events service is used to learn about occurrences of data extract related events. This service currently supports only the DATA_UPDATES event.<br>Passing the event name as DATA_UPDATES provides information about users for whom data has been modified in the system for the specified time range. To learn more, please refer to the <a href=\"https://developer.yodlee.com/docs/api/1.1/DataExtracts\">dataExtracts</a> page.<br>You can retrieve data in increments of no more than 60 minutes over the period of the last 7 days from today's date.<br>This service is only invoked with either admin access token or a cobrand session.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /dataExtracts/events",
+      "method": "GET",
+      "name": "Get Events",
+      "params": [
+        {
+          "name": "eventName",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        }
+      ],
+      "path": "/dataExtracts/events",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "eventName",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Events",
+      "url": "//dataExtracts/events"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get user data service is used to get a user's modified data for a particular period of time for accounts, transactions, holdings, and provider account information.<br>The time difference between fromDate and toDate fields cannot be more than 60 minutes.<br>By default, pagination is available for the transaction entity in this API. In the first response, the API will retrieve 500 transactions along with other data. The response header will provide a link to retrieve the next set of transactions.<br>In the response body of the first API response, totalTransactionsCount indicates the total number of transactions the API will retrieve for the user.<br>This service is only invoked with either admin access token or a cobrand session.<br/>Refer to <a href=\"https://developer.yodlee.com/docs/api/1.1/DataExtracts\">dataExtracts</a> page for more information.<br><br><b>Note:</b><li>This service supports the localization feature and accepts locale as a header parameter.</li>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /dataExtracts/userData",
+      "method": "GET",
+      "name": "Get userData",
+      "params": [
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "loginName",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        }
+      ],
+      "path": "/dataExtracts/userData",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "loginName",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get userData",
+      "url": "//dataExtracts/userData"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get holding summary service is used to get the summary of asset classifications for the user.<br>By default, accounts with status as ACTIVE and TO BE CLOSED will be considered.<br>If the include parameter value is passed as details then a summary with holdings and account information is returned.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /derived/holdingSummary",
+      "method": "GET",
+      "name": "Get Holding Summary",
+      "params": [
+        {
+          "name": "accountIds",
+          "value": ""
+        },
+        {
+          "name": "classificationType",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        }
+      ],
+      "path": "/derived/holdingSummary",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountIds",
+          "value": ""
+        },
+        {
+          "name": "classificationType",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Holding Summary",
+      "url": "//derived/holdingSummary"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get networth service is used to get the networth for the user.<br>If the include parameter value is passed as details then networth with historical balances is returned. <br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /derived/networth",
+      "method": "GET",
+      "name": "Get Networth Summary",
+      "params": [
+        {
+          "name": "accountIds",
+          "value": ""
+        },
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "interval",
+          "value": ""
+        },
+        {
+          "name": "skip",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "path": "/derived/networth",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountIds",
+          "value": ""
+        },
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "interval",
+          "value": ""
+        },
+        {
+          "name": "skip",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Networth Summary",
+      "url": "//derived/networth"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The transaction summary service provides the summary values of transactions for the given date range by category type, high-level categories, or system-defined categories.<br><br>Yodlee has the transaction data stored for a day, month, year and week per category as per the availability of user's data. If the include parameter value is passed as details, then summary details will be returned depending on the interval passed-monthly is the default.<br><br><b>Notes:</b><ol> <li> Details can be requested for only one system-defined category<li>Passing categoryType is mandatory except when the groupBy value is CATEGORY_TYPE<li>Dates will not be respected for monthly, yearly, and weekly details<li>When monthly details are requested, only the fromDate and toDate month will be respected<li>When yearly details are requested, only the fromDate and toDate year will be respected<li>For weekly data points, details will be provided for every Sunday date available within the fromDate and toDate<li>This service supports the localization feature and accepts locale as a header parameter</li></ol>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /derived/transactionSummary",
+      "method": "GET",
+      "name": "Get Transaction Summary",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "categoryId",
+          "value": ""
+        },
+        {
+          "name": "categoryType",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "groupBy",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "includeUserCategory",
+          "value": ""
+        },
+        {
+          "name": "interval",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        }
+      ],
+      "path": "/derived/transactionSummary",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "categoryId",
+          "value": ""
+        },
+        {
+          "name": "categoryType",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "groupBy",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "includeUserCategory",
+          "value": ""
+        },
+        {
+          "name": "interval",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Transaction Summary",
+      "url": "//derived/transactionSummary"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get documents service allows customers to search or retrieve metadata related to documents. <br>The API returns the document as per the input parameters passed. If no date range is provided then all downloaded documents will be retrieved. Details of deleted documents or documents associated to closed providerAccount will not be returned. <br>This API is a premium service which requires subscription in advance to use.  Please contact Yodlee Client Services for more information. <br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /documents",
+      "method": "GET",
+      "name": "Get Documents",
+      "params": [
+        {
+          "name": "Keyword",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "docType",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        }
+      ],
+      "path": "/documents",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Keyword",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "docType",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Documents",
+      "url": "//documents"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The delete document service allows the consumer to delete a document. The deleted document will not be returned in the get documents API. The HTTP response code is 204 (success without content).<br>Documents can be deleted only if the document related dataset attributes are subscribed.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /documents/{{DOCUMENT_ID}}",
+      "method": "DELETE",
+      "name": "Delete Document",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "documentId",
+          "value": ""
+        }
+      ],
+      "path": "/documents/{{DOCUMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "documentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Document",
+      "url": "//documents/{{DOCUMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get document details service allows consumers to download a document. The document is provided in base64.<br>This API is a premium service which requires subscription in advance to use.  Please contact Yodlee Client Services for more information. <br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /documents/{{DOCUMENT_ID}}",
+      "method": "GET",
+      "name": "Download a Document",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "documentId",
+          "value": ""
+        }
+      ],
+      "path": "/documents/{{DOCUMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "documentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Download a Document",
+      "url": "//documents/{{DOCUMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get holdings service is used to get the list of holdings of a user.<br>Supported holding types can be employeeStockOption, moneyMarketFund, bond, etc. and is obtained using get holding type list service. <br>Asset classifications for the holdings need to be requested through the \"include\" parameter.<br>Asset classification information for holdings are not available by default, as it is a premium feature.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /holdings",
+      "method": "GET",
+      "name": "Get Holdings",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "assetClassification.classificationType",
+          "value": ""
+        },
+        {
+          "name": "classificationValue",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "path": "/holdings",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "assetClassification.classificationType",
+          "value": ""
+        },
+        {
+          "name": "classificationValue",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Holdings",
+      "url": "//holdings"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get asset classifications list service is used to get the supported asset classifications. <br>The response includes different classification types like assetClass, country, sector, style, etc. and the values corresponding to each type.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /holdings/assetClassificationList",
+      "method": "GET",
+      "name": "Get Asset Classification List",
+      "params": [],
+      "path": "/holdings/assetClassificationList",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Asset Classification List",
+      "url": "//holdings/assetClassificationList"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get holding types list service is used to get the supported holding types.<br>The response includes different holding types such as future, moneyMarketFund, stock, etc. and it returns the supported holding types <br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /holdings/holdingTypeList",
+      "method": "GET",
+      "name": "Get Holding Type List",
+      "params": [],
+      "path": "/holdings/holdingTypeList",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Holding Type List",
+      "url": "//holdings/holdingTypeList"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get security details service is used to get all the security information for the holdings<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /holdings/securities",
+      "method": "GET",
+      "name": "Get Security Details",
+      "params": [
+        {
+          "name": "holdingId",
+          "value": ""
+        }
+      ],
+      "path": "/holdings/securities",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "holdingId",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Security Details",
+      "url": "//holdings/securities"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get provider accounts service is used to return all the provider accounts added by the user. <br>This includes the failed and successfully added provider accounts.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /providerAccounts",
+      "method": "GET",
+      "name": "Get Provider Accounts",
+      "params": [
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "providerIds",
+          "value": ""
+        }
+      ],
+      "path": "/providerAccounts",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "providerIds",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Provider Accounts",
+      "url": "//providerAccounts"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "aggregationSource": "SYSTEM",
+        "consentId": 0,
+        "dataset": [
+          {
+            "attribute": [
+              {
+                "container": [
+                  {}
+                ],
+                "containerAttributes": {
+                  "BANK": {},
+                  "CREDITCARD": {},
+                  "INSURANCE": {},
+                  "INVESTMENT": {},
+                  "LOAN": {}
+                },
+                "fromDate": "",
+                "fromFinYear": "",
+                "name": "BASIC_ACCOUNT_INFO",
+                "toDate": "",
+                "toFinYear": ""
+              }
+            ],
+            "name": "BASIC_AGG_DATA"
+          }
+        ],
+        "datasetName": [
+          "BASIC_AGG_DATA"
+        ],
+        "field": [
+          {
+            "id": "",
+            "image": "",
+            "isOptional": false,
+            "isValueProvided": false,
+            "maxLength": 0,
+            "minLength": 0,
+            "name": "",
+            "option": [
+              {
+                "displayText": "",
+                "isSelected": false,
+                "optionValue": ""
+              }
+            ],
+            "prefix": "",
+            "suffix": "",
+            "type": "text",
+            "value": "",
+            "valueEditable": ""
+          }
+        ],
+        "preferences": {
+          "isAutoRefreshEnabled": false,
+          "isDataExtractsEnabled": false,
+          "linkedProviderAccountId": 0
+        }
+      },
+      "body_json": {
+        "aggregationSource": "SYSTEM",
+        "consentId": 0,
+        "dataset": [
+          {
+            "attribute": [
+              {
+                "container": [
+                  {}
+                ],
+                "containerAttributes": {
+                  "BANK": {},
+                  "CREDITCARD": {},
+                  "INSURANCE": {},
+                  "INVESTMENT": {},
+                  "LOAN": {}
+                },
+                "fromDate": "",
+                "fromFinYear": "",
+                "name": "BASIC_ACCOUNT_INFO",
+                "toDate": "",
+                "toFinYear": ""
+              }
+            ],
+            "name": "BASIC_AGG_DATA"
+          }
+        ],
+        "datasetName": [
+          "BASIC_AGG_DATA"
+        ],
+        "field": [
+          {
+            "id": "",
+            "image": "",
+            "isOptional": false,
+            "isValueProvided": false,
+            "maxLength": 0,
+            "minLength": 0,
+            "name": "",
+            "option": [
+              {
+                "displayText": "",
+                "isSelected": false,
+                "optionValue": ""
+              }
+            ],
+            "prefix": "",
+            "suffix": "",
+            "type": "text",
+            "value": "",
+            "valueEditable": ""
+          }
+        ],
+        "preferences": {
+          "isAutoRefreshEnabled": false,
+          "isDataExtractsEnabled": false,
+          "linkedProviderAccountId": 0
+        }
+      },
+      "body_text": "{\"aggregationSource\": \"SYSTEM\", \"consentId\": 0, \"dataset\": [{\"attribute\": [{\"container\": [{}], \"containerAttributes\": {\"BANK\": {}, \"CREDITCARD\": {}, \"INSURANCE\": {}, \"INVESTMENT\": {}, \"LOAN\": {}}, \"fromDate\": \"\", \"fromFinYear\": \"\", \"name\": \"BASIC_ACCOUNT_INFO\", \"toDate\": \"\", \"toFinYear\": \"\"}], \"name\": \"BASIC_AGG_DATA\"}], \"datasetName\": [\"BASIC_AGG_DATA\"], \"field\": [{\"id\": \"\", \"image\": \"\", \"isOptional\": false, \"isValueProvided\": false, \"maxLength\": 0, \"minLength\": 0, \"name\": \"\", \"option\": [{\"displayText\": \"\", \"isSelected\": false, \"optionValue\": \"\"}], \"prefix\": \"\", \"suffix\": \"\", \"type\": \"text\", \"value\": \"\", \"valueEditable\": \"\"}], \"preferences\": {\"isAutoRefreshEnabled\": false, \"isDataExtractsEnabled\": false, \"linkedProviderAccountId\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The update account API is used to:<br> <ul><li>Retrieve the latest information for accounts that belong to one providerAccount from the provider site. You must allow at least 15 min between requests.<li>Retrieve the latest information of all the eligible accounts that belong to the user.<li>Data to be retrieved from the provider site can be overridden using datasetName or dataset. If you do pass datasetName, all the datasets that are implicitly configured for the dataset will be retrieved. This action is allowed for single provider account refresh flows only.<li>Check the status of the providerAccount before invoking this API. Do not call this API to trigger any action on a providerAccount when an action is already in progress for the providerAccount.<li>If the customer has subscribed to the REFRESH event notification and invoked this API, relevant notifications will be sent to the customer.<li>A dataset may depend on another dataset for retrieval, so the response will include the requested and dependent datasets.<li>Check all the dataset additional statuses returned in the response because the provider account status is drawn from the dataset additional statuses.<li>Updating preferences using this API will trigger refreshes.<li> The content type has to be passed as application/json for the body parameter.</ul><br>-----------------------------------------------------------------------------------------------------------------------------------------<br><br><b>Update All Eligible Accounts - Notes:</b><br><ul><li>This API will trigger a refresh for all the eligible provider accounts(both OB and credential-based accounts).<li>This API will not refresh closed, inactive, or UAR accounts, or accounts with refreshes in-progress or recently refreshed non-OB accounts.<li>No parameters should be passed to this API to trigger this action.<li>Do not call this API often. Our recommendation is to call this only at the time the user logs in to your app because it can hamper other API calls performance.<li>The response only contains information for accounts that were refreshed. If no accounts are eligible for refresh, no response is returned.</ul>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /providerAccounts",
+      "method": "PUT",
+      "name": "Update Account",
+      "params": [
+        {
+          "name": "providerAccountIds",
+          "value": ""
+        }
+      ],
+      "path": "/providerAccounts",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "providerAccountIds",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"aggregationSource\": \"SYSTEM\", \"consentId\": 0, \"dataset\": [{\"attribute\": [{\"container\": [{}], \"containerAttributes\": {\"BANK\": {}, \"CREDITCARD\": {}, \"INSURANCE\": {}, \"INVESTMENT\": {}, \"LOAN\": {}}, \"fromDate\": \"\", \"fromFinYear\": \"\", \"name\": \"BASIC_ACCOUNT_INFO\", \"toDate\": \"\", \"toFinYear\": \"\"}], \"name\": \"BASIC_AGG_DATA\"}], \"datasetName\": [\"BASIC_AGG_DATA\"], \"field\": [{\"id\": \"\", \"image\": \"\", \"isOptional\": false, \"isValueProvided\": false, \"maxLength\": 0, \"minLength\": 0, \"name\": \"\", \"option\": [{\"displayText\": \"\", \"isSelected\": false, \"optionValue\": \"\"}], \"prefix\": \"\", \"suffix\": \"\", \"type\": \"text\", \"value\": \"\", \"valueEditable\": \"\"}], \"preferences\": {\"isAutoRefreshEnabled\": false, \"isDataExtractsEnabled\": false, \"linkedProviderAccountId\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Account",
+      "url": "//providerAccounts"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get provider accounts profile service is used to return the user profile details that are associated to the provider account. <br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /providerAccounts/profile",
+      "method": "GET",
+      "name": "Get User Profile Details",
+      "note": "Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "path": "/providerAccounts/profile",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get User Profile Details",
+      "url": "//providerAccounts/profile"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The delete provider account service is used to delete a provider account from the Yodlee system. This service also deletes the accounts that are created in the Yodlee system for that provider account. <br>This service does not return a response. The HTTP response code is 204 (Success with no content).<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /providerAccounts/{{PROVIDER_ACCOUNT_ID}}",
+      "method": "DELETE",
+      "name": "Delete Provider Account",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "path": "/providerAccounts/{{PROVIDER_ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Provider Account",
+      "url": "//providerAccounts/{{PROVIDER_ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get provider account details service is used to learn the status of adding accounts and updating accounts.<br>This service has to be called continuously to know the progress level of the triggered process. This service also provides the MFA information requested by the provider site.<br>When <i>include = credentials</i>, questions is passed as input, the service returns the credentials (non-password values) and questions stored in the Yodlee system for that provider account. <br><br><b>Note:</b> <li>The password and answer fields are not returned in the response.</li>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /providerAccounts/{{PROVIDER_ACCOUNT_ID}}",
+      "method": "GET",
+      "name": "Get Provider Account Details",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "providerAccountId",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "requestId",
+          "value": ""
+        }
+      ],
+      "path": "/providerAccounts/{{PROVIDER_ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "requestId",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Provider Account Details",
+      "url": "//providerAccounts/{{PROVIDER_ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "preferences": {
+          "isAutoRefreshEnabled": false,
+          "isDataExtractsEnabled": false,
+          "linkedProviderAccountId": 0
+        }
+      },
+      "body_json": {
+        "preferences": {
+          "isAutoRefreshEnabled": false,
+          "isDataExtractsEnabled": false,
+          "linkedProviderAccountId": 0
+        }
+      },
+      "body_text": "{\"preferences\": {\"isAutoRefreshEnabled\": false, \"isDataExtractsEnabled\": false, \"linkedProviderAccountId\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint is used to update preferences like data extracts and auto refreshes without triggering refresh for the providerAccount.<br>Setting isDataExtractsEnabled to false will not trigger data extracts notification and dataExtracts/events will not reflect any data change that is happening for the providerAccount.<br>Modified data will not be provided in the dataExtracts/userData endpoint.<br>Setting isAutoRefreshEnabled to false will not trigger auto refreshes for the provider account.<br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /providerAccounts/{{PROVIDER_ACCOUNT_ID}}/preferences",
+      "method": "PUT",
+      "name": "Update Preferences",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "path": "/providerAccounts/{{PROVIDER_ACCOUNT_ID}}/preferences",
+      "pathParameters": [
+        {
+          "name": "providerAccountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"preferences\": {\"isAutoRefreshEnabled\": false, \"isDataExtractsEnabled\": false, \"linkedProviderAccountId\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Preferences",
+      "url": "//providerAccounts/{{PROVIDER_ACCOUNT_ID}}/preferences"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get provider service is used to get all the providers that are enabled, search a provider service by name or routing number and get popular sites of a region. <br>Searching for a provider using a routing number is applicable only to the USA and Canada regions.<br>The valid values for priority are: <br>   1. cobrand: Returns providers enabled for the cobrand (Default priority)<br>   2. popular: Returns providers popular among users of the customer<br><br>Only the datasets, attributes, and containers that are enabled for the customer will be returned in the response.<br>Input for the dataset$filter should adhere to the following expression:<br><dataset.name>[<attribute.name>.container[<container> OR <container>] OR <attribute.name>.container[<container>]] <br>OR <dataset.name>[<attribute.name> OR <attribute.name>]<br><b>dataset$filter value examples:</b><br>ACCT_PROFILE[FULL_ACCT_NUMBER.container[bank OR investment OR creditCard]]<br>ACCT_PROFILE[FULL_ACCT_NUMBER.container[bank]]<br>BASIC_AGG_DATA[ACCOUNT_DETAILS.container[bank OR investment] OR HOLDINGS.container[bank]] OR ACCT_PROFILE[FULL_ACCT_NUMBER.container[bank]]<br>BASIC_AGG_DATA<br>BASIC_AGG_DATA OR ACCT_PROFILE<br>BASIC_AGG_DATA [ ACCOUNT_DETAILS OR HOLDINGS ]<br>BASIC_AGG_DATA [ ACCOUNT_DETAILS] OR DOCUMENT <br>BASIC_AGG_DATA [ BASIC_ACCOUNT_INFO OR ACCOUNT_DETAILS ] <br><br>The fullAcountNumberFields is specified to filter the providers that have paymentAccountNumber or unmaskedAccountNumber support in the FULL_ACCT_NUMBER dataset attribute.<br><b>Examples for usage of fullAccountNumberFields </b><br>dataset$filter=ACCT_PROFILE[ FULL_ACCT_NUMBER.container [ bank ]] &amp; fullAccountNumberFields=paymentAccountNumber<br>dataset$filter=ACCT_PROFILE[ FULL_ACCT_NUMBER.container [ bank ]] &amp; fullAccountNumberFields=unmaskedAccountNumber<br>dataset$filter=ACCT_PROFILE[ FULL_ACCT_NUMBER.container [ bank ]] &amp; fullAccountNumberFields=unmaskedAccountNumber,paymentAccountNumber<br><br>The skip and top parameters are used for pagination. In the skip and top parameters, pass the number of records to be skipped and retrieved, respectively.<br>The response header provides the links to retrieve the next and previous set of transactions.<br><br><b>Note:</b> <ol><li>In a product flow involving user interaction, Yodlee recommends invoking this service with filters.<li>Without filters, the service may perform slowly as it takes a few minutes to return data in the response.<li>The AuthParameter appears in the response only in case of token-based aggregation sites.<li>The pagination feature only applies when the priority parameter is set as cobrand. If no values are provided in the skip and top parameters, the API will only return the first 500 records.<li>This service supports the localization feature and accepts locale as a header parameter.<li>The capability has been deprecated in query parameter and response.</li></ol>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /providers",
+      "method": "GET",
+      "name": "Get Providers",
+      "params": [
+        {
+          "name": "capability",
+          "value": ""
+        },
+        {
+          "name": "dataset$filter",
+          "value": ""
+        },
+        {
+          "name": "fullAccountNumberFields",
+          "value": ""
+        },
+        {
+          "name": "institutionId",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "priority",
+          "value": ""
+        },
+        {
+          "name": "providerId",
+          "value": ""
+        },
+        {
+          "name": "skip",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "path": "/providers",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "capability",
+          "value": ""
+        },
+        {
+          "name": "dataset$filter",
+          "value": ""
+        },
+        {
+          "name": "fullAccountNumberFields",
+          "value": ""
+        },
+        {
+          "name": "institutionId",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "priority",
+          "value": ""
+        },
+        {
+          "name": "providerId",
+          "value": ""
+        },
+        {
+          "name": "skip",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Providers",
+      "url": "//providers"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The count service provides the total number of providers that get returned in the GET /providers depending on the input parameters passed.<br>If you are implementing pagination for providers, call this endpoint before calling GET /providers to know the number of providers that are returned for the input parameters passed.<br>The functionality of the input parameters remains the same as that of the GET /providers endpoint<br><br><b>Note:</b> <li>The capability has been deprecated in the query parameter.</li>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /providers/count",
+      "method": "GET",
+      "name": "Get Providers Count",
+      "params": [
+        {
+          "name": "capability",
+          "value": ""
+        },
+        {
+          "name": "dataset$filter",
+          "value": ""
+        },
+        {
+          "name": "fullAccountNumberFields",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "priority",
+          "value": ""
+        }
+      ],
+      "path": "/providers/count",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "capability",
+          "value": ""
+        },
+        {
+          "name": "dataset$filter",
+          "value": ""
+        },
+        {
+          "name": "fullAccountNumberFields",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "priority",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Providers Count",
+      "url": "//providers/count"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The get provider detail service is used to get detailed information including the login form for a provider.<br>The response is a provider object that includes information such as name of the provider, <br>provider's base URL, a list of containers supported by the provider, the login form details of the provider, etc.<br>Only enabled datasets, attributes and containers gets returned in the response.<br><br><b>Note:</b><li>This service supports the localization feature and accepts locale as a header parameter.<li>The capability has been deprecated in the response.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /providers/{{PROVIDER_ID}}",
+      "method": "GET",
+      "name": "Get Provider Details",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "providerId",
+          "value": ""
+        }
+      ],
+      "path": "/providers/{{PROVIDER_ID}}",
+      "pathParameters": [
+        {
+          "name": "providerId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Provider Details",
+      "url": "//providers/{{PROVIDER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The statements service is used to get the list of statement related information. <br>By default, all the latest statements of active and to be closed accounts are retrieved for the user. <br>Certain sites do not have both a statement date and a due date. When a fromDate is passed as an input, all the statements that have the due date on or after the passed date are retrieved. <br>For sites that do not have the due date, statements that have the statement date on or after the passed date are retrieved. <br>The default value of \"isLatest\" is true. To retrieve historical statements isLatest needs to be set to false.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /statements",
+      "method": "GET",
+      "name": "Get Statements",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "isLatest",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "path": "/statements",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "isLatest",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Statements",
+      "url": "//statements"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The Transaction service is used to get a list of transactions for a user.<br>By default, this service returns the last 30 days of transactions from today's date.<br>The keyword parameter performs a contains search on the original, consumer, and simple description attributes, replace the special characters #, &, and + with percent-encoding values %23, %26, and %2B respectively. Eg: for -Debit# , pass the input as -Debit%23.<br>Values for categoryId parameter can be fetched from get transaction category list service.<br> The categoryId is used to filter transactions based on system-defined category as well as user-defined category.<br>User-defined categoryIds should be provided in the filter with the prefix ''U''. E.g. U10002<br>The skip and top parameters are used for pagination. In the skip and top parameters pass the number of records to be skipped and retrieved, respectively. The response header provides the links to retrieve the next and previous set of transactions.<br>Double quotes in the merchant name will be prefixed by backslashes (&#92;) in the response, e.g. Toys \"R\" Us. <br>sourceId is a unique ID that the provider site has assigned to the transaction. The source ID is only available for the pre-populated accounts. Pre-populated accounts are the accounts that the FI customers shares with Yodlee, so that the user does not have to add or aggregate those accounts.<br><br><b>Note</b><li> <a href=\"https://developer.yodlee.com/docs/api/1.1/Transaction_Data_Enrichment\">TDE</a> is made available for bank and card accounts and for the US market only.The address field in the response is available only when the TDE key is turned on.<li>The pagination feature is available by default. If no values are passed in the skip and top parameters, the API will only return the first 500 transactions.<li>This service supports the localization feature and accepts locale as a header parameter.<br>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /transactions",
+      "method": "GET",
+      "name": "Get Transactions",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "baseType",
+          "value": ""
+        },
+        {
+          "name": "categoryId",
+          "value": ""
+        },
+        {
+          "name": "categoryType",
+          "value": ""
+        },
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "detailCategoryId",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "highLevelCategoryId",
+          "value": ""
+        },
+        {
+          "name": "keyword",
+          "value": ""
+        },
+        {
+          "name": "skip",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "path": "/transactions",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "baseType",
+          "value": ""
+        },
+        {
+          "name": "categoryId",
+          "value": ""
+        },
+        {
+          "name": "categoryType",
+          "value": ""
+        },
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "detailCategoryId",
+          "value": ""
+        },
+        {
+          "name": "fromDate",
+          "value": ""
+        },
+        {
+          "name": "highLevelCategoryId",
+          "value": ""
+        },
+        {
+          "name": "keyword",
+          "value": ""
+        },
+        {
+          "name": "skip",
+          "value": ""
+        },
+        {
+          "name": "toDate",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Transactions",
+      "url": "//transactions"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The categories service returns the list of available transaction categories.<br>High level category is returned in the response only if it is opted by the customer.<br>When invoked by passing the cobrand session or admin access token, this service returns the supported transaction categories at the cobrand level. <br>When invoked by passing the cobrand session and the user session or user access token, this service returns the transaction categories <br>along with user-defined categories.<br>Double quotes in the user-defined category name will be prefixed by backslashes (&#92;) in the response, <br>e.g. Toys \"R\" Us.<br/>Source and id are the primary attributes of the category entity.<br><br><b>Note:</b><li>This service supports the localization feature and accepts locale as a header parameter.</li>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /transactions/categories",
+      "method": "GET",
+      "name": "Get Transaction Category List",
+      "params": [],
+      "path": "/transactions/categories",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Transaction Category List",
+      "url": "//transactions/categories"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "categoryName": "",
+        "parentCategoryId": 0,
+        "source": ""
+      },
+      "body_json": {
+        "categoryName": "",
+        "parentCategoryId": 0,
+        "source": ""
+      },
+      "body_text": "{\"categoryName\": \"\", \"parentCategoryId\": 0, \"source\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The create transaction categories service is used to create user-defined categories for a system-defined category.<br>The parentCategoryId is the system-defined category id.This can be retrieved using get transaction categories service.<br>The categoryName can accept minimum of 1, maximum of 50 alphanumeric or special characters.<br>The HTTP response code is 201 (Created successfully).<br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /transactions/categories",
+      "method": "POST",
+      "name": "Create Category",
+      "params": [],
+      "path": "/transactions/categories",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categoryName\": \"\", \"parentCategoryId\": 0, \"source\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Category",
+      "url": "//transactions/categories"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "categoryName": "",
+        "highLevelCategoryName": "",
+        "id": 0,
+        "source": "SYSTEM"
+      },
+      "body_json": {
+        "categoryName": "",
+        "highLevelCategoryName": "",
+        "id": 0,
+        "source": "SYSTEM"
+      },
+      "body_text": "{\"categoryName\": \"\", \"highLevelCategoryName\": \"\", \"id\": 0, \"source\": \"SYSTEM\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The update transaction categories service is used to update the transaction category name<br>for a high level category, a system-defined category and a user-defined category.<br>The renamed category can be set back to the original name by passing an empty string for categoryName.<br>The categoryName can accept minimum of 1, maximum of 50 alphanumeric or special characters.<br>The HTTP response code is 204 (Success without content).<br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /transactions/categories",
+      "method": "PUT",
+      "name": "Update Category",
+      "params": [],
+      "path": "/transactions/categories",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categoryName\": \"\", \"highLevelCategoryName\": \"\", \"id\": 0, \"source\": \"SYSTEM\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Category",
+      "url": "//transactions/categories"
+    }
+  ]
+}

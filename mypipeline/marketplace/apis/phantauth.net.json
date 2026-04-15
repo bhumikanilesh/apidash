@@ -1,0 +1,552 @@
+{
+  "id": "phantauth.net",
+  "info": {
+    "base_url": "https://phantauth.net",
+    "description": "It is used to generate OpenID Connect tokens as path parameters to a user of a given name.\n\nThis method is mainly used in the testing process, when, for example, the token received from the normal...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation",
+      "text-generation"
+    ],
+    "title": "PhantAuth",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "client_id": "magic.toolbox",
+        "client_name": "Magic Toolbox",
+        "client_secret": "O68dVlLk",
+        "logo_email": "magic.toolbox.OUUWE4A@mailinator.com",
+        "logo_uri": "https://www.gravatar.com/avatar/23a9c0277d8e4062b01f1097037f0d5b?s=256&d=https%3A%2F%2Favatars.phantauth.net%2Ficon%2F9b68RVeE.png",
+        "policy_uri": "https://phantauth.net/client/magic.toolbox/policy",
+        "software_id": "igG6Jgx7mfzPdjhBvHvqRQ",
+        "software_version": "3.8.0",
+        "tos_uri": "https://phantauth.net/client/magic.toolbox/tos"
+      },
+      "body_json": {
+        "client_id": "magic.toolbox",
+        "client_name": "Magic Toolbox",
+        "client_secret": "O68dVlLk",
+        "logo_email": "magic.toolbox.OUUWE4A@mailinator.com",
+        "logo_uri": "https://www.gravatar.com/avatar/23a9c0277d8e4062b01f1097037f0d5b?s=256&d=https%3A%2F%2Favatars.phantauth.net%2Ficon%2F9b68RVeE.png",
+        "policy_uri": "https://phantauth.net/client/magic.toolbox/policy",
+        "software_id": "igG6Jgx7mfzPdjhBvHvqRQ",
+        "software_version": "3.8.0",
+        "tos_uri": "https://phantauth.net/client/magic.toolbox/tos"
+      },
+      "body_text": "{\"client_id\": \"magic.toolbox\", \"client_name\": \"Magic Toolbox\", \"client_secret\": \"O68dVlLk\", \"logo_email\": \"magic.toolbox.OUUWE4A@mailinator.com\", \"logo_uri\": \"https://www.gravatar.com/avatar/23a9c0277d8e4062b01f1097037f0d5b?s=256&d=https%3A%2F%2Favatars.phantauth.net%2Ficon%2F9b68RVeE.png\", \"policy_uri\": \"https://phantauth.net/client/magic.toolbox/policy\", \"software_id\": \"igG6Jgx7mfzPdjhBvHvqRQ\", \"software_version\": \"3.8.0\", \"tos_uri\": \"https://phantauth.net/client/magic.toolbox/tos\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To create a selfie token from the client data, you need an opaqe string token, which contains the encoded client properties sent in the request.\nLater, the selfie token can be used as a client ID. In this case, the client data is included in the selfie token, that is, the client properties are taken from the token.\nBy the use of a selfie token, you can use your own client objects in the authentication process.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /client",
+      "method": "POST",
+      "name": "Create a Client Selfie",
+      "params": [],
+      "path": "/client",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"magic.toolbox\", \"client_name\": \"Magic Toolbox\", \"client_secret\": \"O68dVlLk\", \"logo_email\": \"magic.toolbox.OUUWE4A@mailinator.com\", \"logo_uri\": \"https://www.gravatar.com/avatar/23a9c0277d8e4062b01f1097037f0d5b?s=256&d=https%3A%2F%2Favatars.phantauth.net%2Ficon%2F9b68RVeE.png\", \"policy_uri\": \"https://phantauth.net/client/magic.toolbox/policy\", \"software_id\": \"igG6Jgx7mfzPdjhBvHvqRQ\", \"software_version\": \"3.8.0\", \"tos_uri\": \"https://phantauth.net/client/magic.toolbox/tos\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Client Selfie",
+      "url": "https://phantauth.net/client"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this endpoint to generate a random client. The client is generated in a deterministic way, on the bases of the client ID given as a path parameter.\nIn the case of identical client IDs, the endpoint will generate the same client object. The properties of the generated client object are randomly generated on the basis of the client ID.\nIn lack of a client ID, all calls generate a different client object to the randomly generated client ID.\n\nBy providing an email address as the `client_id` parameter, you can customize the client logo by the use of the gravatar associated with the email address.\n\nIf the `client_id` parameter contains minimum one dot (`.`) or space (` `) character, the client_name is produced from the parameter, rather than being generated.`\n\nThe result is always a client object. If you want to generate multiple clients in one single step, you can do it by the use of *Fleet* generation.\nThe members of a fleet are clients randomly generated from the fleet name.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /client/{{CLIENT_ID}}",
+      "method": "GET",
+      "name": "Get a Client",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "client_id",
+          "value": ""
+        }
+      ],
+      "path": "/client/{{CLIENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "client_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Client",
+      "url": "https://phantauth.net/client/{{CLIENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "It is used to generate a OpenID Connect token as a path parameter to a client of a given client ID.\n\nIt is primarily used for testing purposes, when, for example, the token from the standard authentication flow is not available to the test code.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /client/{{CLIENT_ID}}/token/{{KIND}}",
+      "method": "GET",
+      "name": "Get a Client Token",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "client_id",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        }
+      ],
+      "path": "/client/{{CLIENT_ID}}/token/{{KIND}}",
+      "pathParameters": [
+        {
+          "name": "client_id",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Client Token",
+      "url": "https://phantauth.net/client/{{CLIENT_ID}}/token/{{KIND}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint allows you to get the data of a given PhantAuth domain. To use the PhantAuth services, you don't need this endpoint.\nIt is, therefore, mainly used for debug/diagnostic purposes in tenant customization.\n\nDomainname is the fully qualified DNS name of the domain you get (e.g. *phantauth.net* or *phantauth.cf*).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /domain/{{DOMAINNAME}}",
+      "method": "GET",
+      "name": "Get a Domain",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "domainname",
+          "value": ""
+        }
+      ],
+      "path": "/domain/{{DOMAINNAME}}",
+      "pathParameters": [
+        {
+          "name": "domainname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Domain",
+      "url": "https://phantauth.net/domain/{{DOMAINNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this endpoint to generate a random group of clients. The feleet is generated in a deterministic way, on the basis of a fleet name given as a path parameter.\nIn the case of identical fleet names, the endpoint will generate the same fleet object. The properties of the generated fleet object are randomly generated on the basis of the fleet name.\nIn lack of a fleet name, all calls generate a different fleet object to the randomly generated fleet name.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /fleet/{{FLEETNAME}}",
+      "method": "GET",
+      "name": "Get a Fleet",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "fleetname",
+          "value": ""
+        }
+      ],
+      "path": "/fleet/{{FLEETNAME}}",
+      "pathParameters": [
+        {
+          "name": "fleetname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Fleet",
+      "url": "https://phantauth.net/fleet/{{FLEETNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this endpoint to generate a random group of users. The team is generated in a deterministic way, on the basis of the team name given as the path parameter.\nIn the case of identical team names, the endpoint will generate the same team object. The properties of the generated team object are randomly generated on the basis of the team name.\nIn lack of a team name, all calls generate a different team object to the randomly generated team name.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /team/{{TEAMNAME}}",
+      "method": "GET",
+      "name": "Get a Team",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "teamname",
+          "value": ""
+        }
+      ],
+      "path": "/team/{{TEAMNAME}}",
+      "pathParameters": [
+        {
+          "name": "teamname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Team",
+      "url": "https://phantauth.net/team/{{TEAMNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint allows you to get the data of a given PhantAuth tenant. To use the PhantAuth services, you don't need this endpoint.\nIt is, therefore, mainly used for debug/diagnostic purposes in tenant customization.\n\nTenantname is the name of the full DNS domain of the tenant you get.\nIn the case of an official and shared tenant (phantauth.net and phantauth.cf DNS domains), the DNS domain can be omitted (e.g. *default* or *faker*).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /tenant/{{TENANTNAME}}",
+      "method": "GET",
+      "name": "Get a Tenant",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "tenantname",
+          "value": ""
+        }
+      ],
+      "path": "/tenant/{{TENANTNAME}}",
+      "pathParameters": [
+        {
+          "name": "tenantname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Tenant",
+      "url": "https://phantauth.net/tenant/{{TENANTNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "address": {
+          "country": "USA",
+          "formatted": "160 Washington Walk\nSan Francisco 98239",
+          "locality": "San Francisco",
+          "postal_code": "98239",
+          "street_address": "160 Washington Walk"
+        },
+        "birthdate": "1950-02-10",
+        "email": "john.smith.XPKEFHI@mailinator.com",
+        "email_verified": false,
+        "family_name": "Smith",
+        "gender": "male",
+        "given_name": "John",
+        "locale": "en_US",
+        "name": "John Smith",
+        "nickname": "John",
+        "password": "Opha8TV2",
+        "phone_number": "747-178-7374",
+        "phone_number_verified": true,
+        "picture": "https://www.gravatar.com/avatar/54c27dd1891df67163ef53616549933f?s=256&d=https://avatars.phantauth.net/ai/male/Vyb8Yrdv.jpg",
+        "preferred_username": "jsmith",
+        "sub": "john.smith",
+        "updated_at": 1518220800,
+        "zoneinfo": "America/Chicago"
+      },
+      "body_json": {
+        "address": {
+          "country": "USA",
+          "formatted": "160 Washington Walk\nSan Francisco 98239",
+          "locality": "San Francisco",
+          "postal_code": "98239",
+          "street_address": "160 Washington Walk"
+        },
+        "birthdate": "1950-02-10",
+        "email": "john.smith.XPKEFHI@mailinator.com",
+        "email_verified": false,
+        "family_name": "Smith",
+        "gender": "male",
+        "given_name": "John",
+        "locale": "en_US",
+        "name": "John Smith",
+        "nickname": "John",
+        "password": "Opha8TV2",
+        "phone_number": "747-178-7374",
+        "phone_number_verified": true,
+        "picture": "https://www.gravatar.com/avatar/54c27dd1891df67163ef53616549933f?s=256&d=https://avatars.phantauth.net/ai/male/Vyb8Yrdv.jpg",
+        "preferred_username": "jsmith",
+        "sub": "john.smith",
+        "updated_at": 1518220800,
+        "zoneinfo": "America/Chicago"
+      },
+      "body_text": "{\"address\": {\"country\": \"USA\", \"formatted\": \"160 Washington Walk\\nSan Francisco 98239\", \"locality\": \"San Francisco\", \"postal_code\": \"98239\", \"street_address\": \"160 Washington Walk\"}, \"birthdate\": \"1950-02-10\", \"email\": \"john.smith.XPKEFHI@mailinator.com\", \"email_verified\": false, \"family_name\": \"Smith\", \"gender\": \"male\", \"given_name\": \"John\", \"locale\": \"en_US\", \"name\": \"John Smith\", \"nickname\": \"John\", \"password\": \"Opha8TV2\", \"phone_number\": \"747-178-7374\", \"phone_number_verified\": true, \"picture\": \"https://www.gravatar.com/avatar/54c27dd1891df67163ef53616549933f?s=256&d=https://avatars.phantauth.net/ai/male/Vyb8Yrdv.jpg\", \"preferred_username\": \"jsmith\", \"sub\": \"john.smith\", \"updated_at\": 1518220800, \"zoneinfo\": \"America/Chicago\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To create a selfie token from the user data, you need an opaqe string token, which contains the encoded user properties sent in the request.\nLater, the selfie token can be used as a login name. In this case, the user data is included in the selfie token, that is, the user properties are taken from the token.\nBy the use of a selfie token, you can use your own user objects during the authentication process.\n\nIts use, however, is limited by its relatively large size (more than 100 characters), which exceeds the maximum size of the user name in several systems.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /user",
+      "method": "POST",
+      "name": "Create a User Selfie",
+      "params": [],
+      "path": "/user",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"address\": {\"country\": \"USA\", \"formatted\": \"160 Washington Walk\\nSan Francisco 98239\", \"locality\": \"San Francisco\", \"postal_code\": \"98239\", \"street_address\": \"160 Washington Walk\"}, \"birthdate\": \"1950-02-10\", \"email\": \"john.smith.XPKEFHI@mailinator.com\", \"email_verified\": false, \"family_name\": \"Smith\", \"gender\": \"male\", \"given_name\": \"John\", \"locale\": \"en_US\", \"name\": \"John Smith\", \"nickname\": \"John\", \"password\": \"Opha8TV2\", \"phone_number\": \"747-178-7374\", \"phone_number_verified\": true, \"picture\": \"https://www.gravatar.com/avatar/54c27dd1891df67163ef53616549933f?s=256&d=https://avatars.phantauth.net/ai/male/Vyb8Yrdv.jpg\", \"preferred_username\": \"jsmith\", \"sub\": \"john.smith\", \"updated_at\": 1518220800, \"zoneinfo\": \"America/Chicago\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a User Selfie",
+      "url": "https://phantauth.net/user"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this endpoint to generate a random user. The user is generated in a deterministic way, on the bases of the user name given as a path parameter.\nIn the case of identical user names, the endpoint will generate the same user object. The properties of the generated user object are randomly generated on the basis of the user name.\nIn lack of a user name, all calls generate a different user object to the randomly generated user name.\n\nBy providing an email address as the `username` parameter, you can customize the user picture by the use of the gravatar associated with the email address.\n\nIf the `username` parameter contains at least one dot (`.`) or space (` `) character, the whole name is produced from the parameter, rather than being generated.\nIn this case, these cahracters play the role of separator between the units of the full name (family name, given name).`\n\nThe result is always a user object. If you want to generate multiple users in one single step, you can do it by the use of *Team* generation.\nThe members of a team are users randomly generated from the team name.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /user/{{USERNAME}}",
+      "method": "GET",
+      "name": "Get a User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "path": "/user/{{USERNAME}}",
+      "pathParameters": [
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a User",
+      "url": "https://phantauth.net/user/{{USERNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "It is used to generate OpenID Connect tokens as path parameters to a user of a given name.\n\nThis method is mainly used in the testing process, when, for example, the token received from the normal authenticaton flow is not available to the test code.\nGenerating an access token, for example, will let you avoid authentication, and immediately call an operation requiring the access token.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /user/{{USERNAME}}/token/{{KIND}}",
+      "method": "GET",
+      "name": "Get a User Token",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "username",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        },
+        {
+          "name": "scope",
+          "value": ""
+        }
+      ],
+      "path": "/user/{{USERNAME}}/token/{{KIND}}",
+      "pathParameters": [
+        {
+          "name": "username",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "scope",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a User Token",
+      "url": "https://phantauth.net/user/{{USERNAME}}/token/{{KIND}}"
+    }
+  ]
+}

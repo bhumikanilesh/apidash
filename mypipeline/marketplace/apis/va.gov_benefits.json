@@ -1,0 +1,309 @@
+{
+  "id": "va.gov_benefits",
+  "info": {
+    "base_url": "https://sandbox-api.va.gov/services/vba_documents/{version}",
+    "description": "An endpoint that will allow you to see exactly what the server sees. We split apart all submitted docs and metadata and zip the file to make it available to you to help with debugging purposes. Files...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Benefits Intake",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Accepts document metadata, document binary, and attachment binaries. Full URL, including\nquery parameters, provided from POST `/document_uploads`.\n\n## Example Payload\n\nThe following demonstrates a (redacted) multipart payload suitable for submitting to the PUT\nendpoint. Most programming languages should have provisions for assembling a multipart\npayload like this without having to do so manually.\n\n```\n--17de1ed8f01442b2a2d7a93506314b76\nContent-Disposition: form-data; name=\"metadata\"\nContent-Type: application/json\n\n{\"veteranFirstName\": \"Jane\",\n\"veteranLastName\": \"Doe\",\n\"fileNumber\": \"012345678\",\n\"zipCode\": \"97202\",\n\"source\": \"MyVSO\",\n\"docType\": \"21-22\"\n\"businessLine\": \"CMP\"}\n--17de1ed8f01442b2a2d7a93506314b76\nContent-Disposition: form-data; name=\"content\"\nContent-Type: application/pdf\n\n<Binary PDF contents>\n--17de1ed8f01442b2a2d7a93506314b76\nContent-Disposition: form-data; name=\"attachment1\"\nContent-Type: application/pdf\n\n<Binary PDF attachment contents>\n--17de1ed8f01442b2a2d7a93506314b76--\n```\n\nThis PUT request would have an overall HTTP Content-Type header:\n\n```\nContent-Type: multipart/form-data; boundary=17de1ed8f01442b2a2d7a93506314b76\n```\n\nNote that the Content-Disposition parameter \"name\" in each part must be the expected values\n\"metadata\", \"content\", \"attachment1\"...\"attachmentN\". The attachment attributes must be named \nexactly as they are listed here (case sensitive), for example: \"attachment_1\" or \"Attachment2\"\nare invalid.\n\nThis is an example curl command:\n\n```\ncurl -v -L -X PUT '<Location from \\uploads>' -F 'metadata=\"{\\\"veteranFirstName\\\": \\\"Jane\\\",\\\"veteranLastName\\\": \\\"Doe\\\",\\\"fileNumber\\\": \\\"012345678\\\",\\\"zipCode\\\": \\\"97202\\\",\\\"source\\\": \\\"MyVSO\\\",\\\"docType\\\": \\\"21-22\\\",\\\"businessLine\\\": \\\"CMP\\\"}\";type=application/json' -F 'content=@\"content.pdf\"' -F 'attachment1=@\"file1.pdf\"' -F 'attachment2=@\"another_file.pdf\"'\n```\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PUT /services/vba_documents/{{VERSION}}/path",
+      "method": "PUT",
+      "name": "Accepts document upload.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Content-MD5",
+          "value": ""
+        }
+      ],
+      "path": "/services/vba_documents/{{VERSION}}/path",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Accepts document upload.",
+      "url": "https://sandbox-api.va.gov/services/vba_documents/{{VERSION}}/path"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "BENEFITS_INTAKE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{BENEFITS_INTAKE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{BENEFITS_INTAKE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{BENEFITS_INTAKE_API_KEY}}"
+        }
+      ],
+      "id": "POST /services/vba_documents/{{VERSION}}/uploads",
+      "method": "POST",
+      "name": "Get a location for subsequent document upload PUT request",
+      "note": "Replace {{BENEFITS_INTAKE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/services/vba_documents/{{VERSION}}/uploads",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a location for subsequent document upload PUT request",
+      "url": "https://sandbox-api.va.gov/services/vba_documents/{{VERSION}}/uploads"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "BENEFITS_INTAKE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ids": [
+          "6d8433c1-cd55-4c24-affd-f592287a7572"
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Replace {{BENEFITS_INTAKE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [
+        {
+          "name": "ids",
+          "type": "text",
+          "value": [
+            "6d8433c1-cd55-4c24-affd-f592287a7572"
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{BENEFITS_INTAKE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{BENEFITS_INTAKE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /services/vba_documents/{{VERSION}}/uploads/report",
+      "method": "POST",
+      "name": "Get a bulk status report for a list of previous uploads",
+      "note": "Replace {{BENEFITS_INTAKE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/services/vba_documents/{{VERSION}}/uploads/report",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ids\": [\"6d8433c1-cd55-4c24-affd-f592287a7572\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a bulk status report for a list of previous uploads",
+      "url": "https://sandbox-api.va.gov/services/vba_documents/{{VERSION}}/uploads/report"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Using this endpoint will decrease the likelihood of errors associated with individual documents during\nthe submission process. Validations performed:\n* Document is a valid PDF (Note: `Content-Type` header value must be \"application/pdf\")\n* Document does not have a user password (an owner password is acceptable)\n* File size does not exceed 100 MB\n* Page size does not exceed 21\" x 21\"\n\nEach PDF document is sent as a direct file upload. The request body should contain nothing other than the document in\nbinary format. Binary multipart/form-data encoding is not supported. This endpoint does NOT validate metadata in JSON\nformat.\n\nThis endpoint does NOT initiate the claims intake process or submit data to that process. After using this endpoint,\nindividual PDF documents can be combined and submitted as a payload using PUT `/path`.\n\nA `200` response confirms that the individual document provided passes the system requirements.\n\nA `422` response indicates one or more problems with the document that should be resolved before submitting it in the\nfull document submission payload.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /services/vba_documents/{{VERSION}}/uploads/validate_document",
+      "method": "POST",
+      "name": "Validate an individual document against system file requirements",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/services/vba_documents/{{VERSION}}/uploads/validate_document",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Validate an individual document against system file requirements",
+      "url": "https://sandbox-api.va.gov/services/vba_documents/{{VERSION}}/uploads/validate_document"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "BENEFITS_INTAKE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{BENEFITS_INTAKE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{BENEFITS_INTAKE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{BENEFITS_INTAKE_API_KEY}}"
+        }
+      ],
+      "id": "GET /services/vba_documents/{{VERSION}}/uploads/{{ID}}",
+      "method": "GET",
+      "name": "Get status for a previous benefits document upload",
+      "note": "Replace {{BENEFITS_INTAKE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "6d8433c1-cd55-4c24-affd-f592287a7572"
+        }
+      ],
+      "path": "/services/vba_documents/{{VERSION}}/uploads/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "6d8433c1-cd55-4c24-affd-f592287a7572"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get status for a previous benefits document upload",
+      "url": "https://sandbox-api.va.gov/services/vba_documents/{{VERSION}}/uploads/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "BENEFITS_INTAKE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "An endpoint that will allow you to see exactly what the server sees. We split apart all submitted docs and metadata and zip the file to make it available to you to help with debugging purposes. Files are deleted after 10 days. Only available in testing environments, not production.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{BENEFITS_INTAKE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{BENEFITS_INTAKE_API_KEY}}"
+        }
+      ],
+      "id": "GET /services/vba_documents/{{VERSION}}/uploads/{{ID}}/download",
+      "method": "GET",
+      "name": "Download zip of \"what the server sees\"",
+      "note": "Replace {{BENEFITS_INTAKE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "6d8433c1-cd55-4c24-affd-f592287a7572"
+        }
+      ],
+      "path": "/services/vba_documents/{{VERSION}}/uploads/{{ID}}/download",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "6d8433c1-cd55-4c24-affd-f592287a7572"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Download zip of \"what the server sees\"",
+      "url": "https://sandbox-api.va.gov/services/vba_documents/{{VERSION}}/uploads/{{ID}}/download"
+    }
+  ]
+}

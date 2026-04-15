@@ -1,0 +1,3084 @@
+{
+  "id": "clearblade.com",
+  "info": {
+    "base_url": "https://platform.clearblade.com/",
+    "description": "## Description:\nUpdates email communication settings. This endpoint is Admin only.\n   \n## Setting options\n    \n|Settings|Types|\n|--------|-----|\n|encryption_type|STARTTLS, TLS, NONE|\n|port|25, 465,...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation",
+      "communication"
+    ],
+    "title": "ClearBlade API",
+    "version": "3.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves system information for all systems in the developer account.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/allapps",
+      "method": "GET",
+      "name": "DEVELOPER - Get platform assets",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/allapps",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get platform assets",
+      "url": "https://platform.clearblade.com//admin/allapps"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all the collections in the specified system.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/allcollections",
+      "method": "GET",
+      "name": "DEVELOPER - Get collections",
+      "params": [
+        {
+          "name": "appid",
+          "value": ""
+        }
+      ],
+      "path": "//admin/allcollections",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "appid",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get collections",
+      "url": "https://platform.clearblade.com//admin/allcollections"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all the systems tied to the specified developer's account.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/allsystems",
+      "method": "GET",
+      "name": "DEVELOPER - Get systems",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/allsystems",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get systems",
+      "url": "https://platform.clearblade.com//admin/allsystems"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "## Description:\nReturns list of assets and the information about the changes that have been made. This endpoint is for Admin only.\n### Query Structure:\n```json\n{\"PAGESIZE\":int,\"PAGENUM\":int,\"FILTERS\":[[{\"_REPLACE_WITH_OPERATOR_\":[{\"valueType\":\"value\"}]}]], \"SORT\":[{\"DESC\":\"value\"}]}\n```\n  Note - You can generate a complex query object in a code service using the `ClearBlade.Query()` object. \n## Audit Table Schema:\nRefer to this when building the query.\n\n  | Column | Type | Possible Values|Example|\n  |:---------|:---------|:------|:---------|\n  | id   | bigint   |ANY_POSITIVE_INTEGER|10440595|\n  |system_key|string|SINGLE_STRING_WITH_HEX_CHARS_ONLY|\"ccafb4cadaccaf9ebba01\"|\n  |time|timestamp|ISO_DATE_TIME_STRING|\"2020-01-29T20:18:18.475214Z\"|\n  |response_time|bigint|ANY_POSITIVE_INTEGER|4038669|\n  |asset_class|string|adapters, adapterFiles, devices, users, multi_dev, services, libraries, servicecaches, timers, triggers, webhooks, portals, plugins, rolesperms, collections, edges, messaging, deployments, edgegroups, system, usersessions, devicesessions|\"collections\"|\n  |action_type|string|Create, Update, Delete, Create Columns, Delete Columns, Developer Password Reset, User Password Reset, MQTT Disconnect, MQTT Connect|\"MQTT Connect\"|\n  |email|string|SINGLE_VALID_EMAIL_STRING|\"example@clearblade.com\"|\n  |asset_id|string|ANY_STRING|\"ClearBlade-iPhone\"|\n  |changes|string|STRINGIFIED_JSON|\"{\\\\\"newVersion\\\\\":2}\"|\n  |user_type|string|UNKNOWN, DEV, USER, DEVICE, Invalid UserType|\"DEVICE\"|\n  \n### Example:\n\n```json\n{\"FILTERS\":[[{\"NEQ\":[{\"asset_class\":\"services\"}]},{\"EQ\":[{\"action_type\":\"create\"}]}]],\"PAGESIZE\":0,\"PAGENUM\":0}\n```\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/audit",
+      "method": "GET",
+      "name": "AUDIT  - Get Audit Info",
+      "params": [
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "path": "//admin/audit",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "AUDIT  - Get Audit Info",
+      "url": "https://platform.clearblade.com//admin/audit"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets total number of changes made to assets across all systems on the instance. This endpoint is Admin only.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/audit/count",
+      "method": "GET",
+      "name": "Audit - Get counts",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/audit/count",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Audit - Get counts",
+      "url": "https://platform.clearblade.com//admin/audit/count"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "## Description:\nReturns list of assets and the information about the changes that have been made. This endpoint is for Admin and Dev.\n\n### Query Structure:\n```json\n{\"PAGESIZE\":int,\"PAGENUM\":int,\"FILTERS\":[[{\"_REPLACE_WITH_OPERATOR_\":[{\"valueType\":\"value\"}]}]], \"SORT\":[{\"DESC\":\"value\"}]}\n```\n  Note - You can generate a complex query object in a code service using the `ClearBlade.Query()` object. \n## Audit Table Schema:\nRefer to this when building the query.\n\n  | Column | Type | Possible Values|Example|\n  |:---------|:---------|:------|:---------|\n  | id   | bigint   |ANY_POSITIVE_INTEGER|10440595|\n  |system_key|string|SINGLE_STRING_WITH_HEX_CHARS_ONLY|\"ccafb4cadaccaf9ebba01\"|\n  |time|timestamp|ISO_DATE_TIME_STRING|\"2020-01-29T20:18:18.475214Z\"|\n  |response_time|bigint|ANY_POSITIVE_INTEGER|4038669|\n  |asset_class|string|adapters, adapterFiles, devices, users, multi_dev, services, libraries, servicecaches, timers, triggers, webhooks, portals, plugins, rolesperms, collections, edges, messaging, deployments, edgegroups, system, usersessions, devicesessions|\"collections\"|\n  |action_type|string|Create, Update, Delete, Create Columns, Delete Columns, Developer Password Reset, User Password Reset, MQTT Disconnect, MQTT Connect|\"MQTT Connect\"|\n  |email|string|SINGLE_VALID_EMAIL_STRING|\"example@clearblade.com\"|\n  |asset_id|string|ANY_STRING|\"ClearBlade-iPhone\"|\n  |changes|string|STRINGIFIED_JSON|\"{\\\\\"newVersion\\\\\":2}\"|\n  |user_type|string|UNKNOWN, DEV, USER, DEVICE, Invalid UserType|\"DEVICE\"|\n  \n### Example:\n\n```json\n{\"FILTERS\":[[{\"NEQ\":[{\"asset_class\":\"services\"}]},{\"EQ\":[{\"action_type\":\"create\"}]}]],\"PAGESIZE\":0,\"PAGENUM\":0}\n```\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/audit/{{SYSTEM_KEY}}",
+      "method": "GET",
+      "name": "AUDIT  - Get Audit Info",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "path": "//admin/audit/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "AUDIT  - Get Audit Info",
+      "url": "https://platform.clearblade.com//admin/audit/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets total number of changes made to assets across all systems on the instance. This endpoint is for Admin and Dev.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/audit/{{SYSTEM_KEY}}/count",
+      "method": "GET",
+      "name": "AUDIT - Get counts",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "path": "//admin/audit/{{SYSTEM_KEY}}/count",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "AUDIT - Get counts",
+      "url": "https://platform.clearblade.com//admin/audit/{{SYSTEM_KEY}}/count"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "email": "cbman@clearblade.com",
+        "password": "cl34rbl4d3"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "## Description\nLogs developer into system and returns an Developer Token\n## Endpoint Body Values\nHere are the body values for the two scenarios\n### Basic Auth\nRequired Keys\n  - username\n  - password\n\nExample \n```json\n{\n  \"username\":\"cbman@clearblade.com\",\n  \"password\":\"cl34rbl4d3\"\n}\n```  \n\n### Refreshing Token\nRequired Keys \n  - grant_type (only one valid value - \"refresh_token\")\n  - refresh_token\n  - access_token\n\nExample \n```json\n{\n  \"grant_type\":\"refresh_token\",\n  \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJmMjkwZTJlYjBiZDRmNjhiZDRkM2RlZjNkMWM0MDEiLCJzaWQiOiIzOWFkM2U5OC1hMmU0LTQxYzQtOGMzNi03ZjQxNDFhYzYxN2IiLCJ1dCI6MiwidHQiOjMsImV4cCI6MTU5MDI3ODExMSwiaWF0IjoxNTg5NDE0MTExfQ.iY6uJu2QgNP0uHoGdmEZm9wsztB1SUrCHrisxoXoxolol\",\n  \"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJmMjkwZTJlYjBiZDRmNjhiZDRkM2RlZjNkMWM0MDEiLCJzaWQiOiI3NmY4ODg4MS04YmU5LTRiM2UtOWJkNi1jOTJjZGQ4OTNlMmEiLCJ1dCI6MiwidHQiOjEsImV4cCI6MTU4OTg0NjExMSwiaWF0IjoxNTg5NDE0MTExfQ.xboryHuVn2zz-gSZ_JcD7-j_eBmJU1SMHkiDl9j8bak\"\n}\n```\n",
+      "form_data": [
+        {
+          "name": "email",
+          "type": "text",
+          "value": "cbman@clearblade.com"
+        },
+        {
+          "name": "password",
+          "type": "text",
+          "value": "cl34rbl4d3"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/auth",
+      "method": "POST",
+      "name": "DEVELOPER - Authenticate dev",
+      "params": [],
+      "path": "//admin/auth",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email\": \"cbman@clearblade.com\", \"password\": \"cl34rbl4d3\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Authenticate dev",
+      "url": "https://platform.clearblade.com//admin/auth"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Verifies developer access to the system",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST //admin/checkauth",
+      "method": "POST",
+      "name": "DEVELOPER - Verifies access to the system",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/checkauth",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Verifies access to the system",
+      "url": "https://platform.clearblade.com//admin/checkauth"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an existing collection in the specified system.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //admin/collectionmanagement",
+      "method": "DELETE",
+      "name": "DEVELOPER - Delete collection",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "//admin/collectionmanagement",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Delete collection",
+      "url": "https://platform.clearblade.com//admin/collectionmanagement"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "appID": "c0f8e2c50bbeeaf87f5efa2eee301",
+        "collectionID": "c0f8e2c50bbeeafb87f5efa2eee301",
+        "name": "newCollection"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Creates a new collection or database connection in the specified system.",
+      "form_data": [
+        {
+          "name": "appID",
+          "type": "text",
+          "value": "c0f8e2c50bbeeaf87f5efa2eee301"
+        },
+        {
+          "name": "collectionID",
+          "type": "text",
+          "value": "c0f8e2c50bbeeafb87f5efa2eee301"
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "value": "newCollection"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/collectionmanagement",
+      "method": "POST",
+      "name": "DEVELOPER - Create collection",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/collectionmanagement",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"appID\": \"c0f8e2c50bbeeaf87f5efa2eee301\", \"collectionID\": \"c0f8e2c50bbeeafb87f5efa2eee301\", \"name\": \"newCollection\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Create collection",
+      "url": "https://platform.clearblade.com//admin/collectionmanagement"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "addColumn": {
+          "id": "c0f8e2c50bbeeafb87f5efa2eee301",
+          "name": "Sensor_Location",
+          "type": "string"
+        },
+        "id": "c0f8e2c50bbeeafb87f5efa2eee301"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Creates or deletes a column within an existing collection, or updates an existing database connection in the specified system.",
+      "form_data": [
+        {
+          "name": "addColumn",
+          "type": "text",
+          "value": {
+            "id": "c0f8e2c50bbeeafb87f5efa2eee301",
+            "name": "Sensor_Location",
+            "type": "string"
+          }
+        },
+        {
+          "name": "id",
+          "type": "text",
+          "value": "c0f8e2c50bbeeafb87f5efa2eee301"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/collectionmanagement",
+      "method": "PUT",
+      "name": "DEVELOPER - Update collection",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/collectionmanagement",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"addColumn\": {\"id\": \"c0f8e2c50bbeeafb87f5efa2eee301\", \"name\": \"Sensor_Location\", \"type\": \"string\"}, \"id\": \"c0f8e2c50bbeeafb87f5efa2eee301\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Update collection",
+      "url": "https://platform.clearblade.com//admin/collectionmanagement"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the number of developers who are considered administrators in their system.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/count/developers",
+      "method": "GET",
+      "name": "ADMIN - Get number of admin developers",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/count/developers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ADMIN - Get number of admin developers",
+      "url": "https://platform.clearblade.com//admin/count/developers"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the number of systems that are available.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/count/systems",
+      "method": "GET",
+      "name": "ADMIN - Get number of systems available",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/count/systems",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ADMIN - Get number of systems available",
+      "url": "https://platform.clearblade.com//admin/count/systems"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all the names and internal and external database statuses",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/database/status",
+      "method": "GET",
+      "name": "DATABASES - Retrieves all internal and external database statuses",
+      "params": [],
+      "path": "//admin/database/status",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DATABASES - Retrieves all internal and external database statuses",
+      "url": "https://platform.clearblade.com//admin/database/status"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "change": {},
+        "owner": "owner@clearblade.com"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "For admin, you can add/remove/change the owner of a system even if you’re not the system's owner. For Developer,you can add/remove a developer as long as you’re the owner of the system.",
+      "form_data": [
+        {
+          "name": "change",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "owner",
+          "type": "text",
+          "value": "owner@clearblade.com"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/developers/{{SYSTEM_KEY}}",
+      "method": "PUT",
+      "name": "ADMIN - Add/Remove/Change owner",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "path": "//admin/developers/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"change\": {}, \"owner\": \"owner@clearblade.com\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ADMIN - Add/Remove/Change owner",
+      "url": "https://platform.clearblade.com//admin/developers/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the rotating keys from its device.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //admin/devices/keys/{{SYSTEM_KEY}}/{{DEVICE_NAME}}",
+      "method": "DELETE",
+      "name": "DEVELOPER - Delete rotating keys for a device",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "deviceName",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/keys/{{SYSTEM_KEY}}/{{DEVICE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "deviceName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Delete rotating keys for a device",
+      "url": "https://platform.clearblade.com//admin/devices/keys/{{SYSTEM_KEY}}/{{DEVICE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "count": 1
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Creates rotating keys for a device.",
+      "form_data": [
+        {
+          "name": "count",
+          "type": "text",
+          "value": 1
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/devices/keys/{{SYSTEM_KEY}}/{{DEVICE_NAME}}",
+      "method": "POST",
+      "name": "DEVICE -Creates rotating keys for a device.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "deviceName",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/keys/{{SYSTEM_KEY}}/{{DEVICE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "deviceName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"count\": 1}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVICE -Creates rotating keys for a device.",
+      "url": "https://platform.clearblade.com//admin/devices/keys/{{SYSTEM_KEY}}/{{DEVICE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes all devices matching the filters specified by a query.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //admin/devices/{{SYSTEM_KEY}}",
+      "method": "DELETE",
+      "name": "DEVELOPER - Delete devices using a query",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Delete devices using a query",
+      "url": "https://platform.clearblade.com//admin/devices/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about all devices in the specified system",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/devices/{{SYSTEM_KEY}}",
+      "method": "GET",
+      "name": "DEVELOPER - Get devices with or without a query",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get devices with or without a query",
+      "url": "https://platform.clearblade.com//admin/devices/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "$set": {
+          "[columnName]": "[newValue]"
+        },
+        "query": [
+          {
+            "EQ": [
+              {
+                "[columnName]": ""
+              }
+            ],
+            "GT": [
+              {
+                "[columnName]": ""
+              }
+            ],
+            "GTE": [
+              {
+                "[columnName]": ""
+              }
+            ],
+            "LT": [
+              {
+                "[columnName]": ""
+              }
+            ],
+            "LTE": [
+              {
+                "[columnName]": ""
+              }
+            ],
+            "NEQ": [
+              {
+                "[columnName]": ""
+              }
+            ],
+            "RE": [
+              {
+                "[columnName]": ""
+              }
+            ]
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Updates all devices matching the filters specified by a query.",
+      "form_data": [
+        {
+          "name": "$set",
+          "type": "text",
+          "value": {
+            "[columnName]": "[newValue]"
+          }
+        },
+        {
+          "name": "query",
+          "type": "text",
+          "value": [
+            {
+              "EQ": [
+                {
+                  "[columnName]": ""
+                }
+              ],
+              "GT": [
+                {
+                  "[columnName]": ""
+                }
+              ],
+              "GTE": [
+                {
+                  "[columnName]": ""
+                }
+              ],
+              "LT": [
+                {
+                  "[columnName]": ""
+                }
+              ],
+              "LTE": [
+                {
+                  "[columnName]": ""
+                }
+              ],
+              "NEQ": [
+                {
+                  "[columnName]": ""
+                }
+              ],
+              "RE": [
+                {
+                  "[columnName]": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/devices/{{SYSTEM_KEY}}",
+      "method": "PUT",
+      "name": "DEVELOPER - Update devices using a query",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"$set\": {\"[columnName]\": \"[newValue]\"}, \"query\": [{\"EQ\": [{\"[columnName]\": \"\"}], \"GT\": [{\"[columnName]\": \"\"}], \"GTE\": [{\"[columnName]\": \"\"}], \"LT\": [{\"[columnName]\": \"\"}], \"LTE\": [{\"[columnName]\": \"\"}], \"NEQ\": [{\"[columnName]\": \"\"}], \"RE\": [{\"[columnName]\": \"\"}]}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Update devices using a query",
+      "url": "https://platform.clearblade.com//admin/devices/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified device from its system.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //admin/devices/{{SYSTEM_KEY}}/{{NAME}}",
+      "method": "DELETE",
+      "name": "DEVELOPER - Delete device",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/{{SYSTEM_KEY}}/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Delete device",
+      "url": "https://platform.clearblade.com//admin/devices/{{SYSTEM_KEY}}/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about the specified device.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/devices/{{SYSTEM_KEY}}/{{NAME}}",
+      "method": "GET",
+      "name": "DEVELOPER - Get device",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/{{SYSTEM_KEY}}/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get device",
+      "url": "https://platform.clearblade.com//admin/devices/{{SYSTEM_KEY}}/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "active_key": "",
+        "allow_certificate_auth": false,
+        "allow_key_auth": false,
+        "certificate": "",
+        "custom": "",
+        "description": "",
+        "enabled": false,
+        "keys": "",
+        "name": "",
+        "state": "",
+        "type": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Creates a new device in the specified system.",
+      "form_data": [
+        {
+          "name": "active_key",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "allow_certificate_auth",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "allow_key_auth",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "certificate",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "custom",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "enabled",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "keys",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/devices/{{SYSTEM_KEY}}/{{NAME}}",
+      "method": "POST",
+      "name": "DEVELOPER - Create device",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/{{SYSTEM_KEY}}/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"active_key\": \"\", \"allow_certificate_auth\": false, \"allow_key_auth\": false, \"certificate\": \"\", \"custom\": \"\", \"description\": \"\", \"enabled\": false, \"keys\": \"\", \"name\": \"\", \"state\": \"\", \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Create device",
+      "url": "https://platform.clearblade.com//admin/devices/{{SYSTEM_KEY}}/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "active_key": "",
+        "allow_certificate_auth": false,
+        "allow_key_auth": false,
+        "certificate": "",
+        "custom": "",
+        "description": "",
+        "enabled": false,
+        "keys": "",
+        "state": "",
+        "type": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Updates the specified device's information.",
+      "form_data": [
+        {
+          "name": "active_key",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "allow_certificate_auth",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "allow_key_auth",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "certificate",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "custom",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "enabled",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "keys",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/devices/{{SYSTEM_KEY}}/{{NAME}}",
+      "method": "PUT",
+      "name": "DEVELOPER - Update device",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "//admin/devices/{{SYSTEM_KEY}}/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"active_key\": \"\", \"allow_certificate_auth\": false, \"allow_key_auth\": false, \"certificate\": \"\", \"custom\": \"\", \"description\": \"\", \"enabled\": false, \"keys\": \"\", \"state\": \"\", \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Update device",
+      "url": "https://platform.clearblade.com//admin/devices/{{SYSTEM_KEY}}/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get list of which triggers, services, and libraries should be copied onto which edge when it starts up.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/edges/template/{{SYSTEM_KEY}}",
+      "method": "GET",
+      "name": "DEVELOPER - Get edge template",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "path": "//admin/edges/template/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get edge template",
+      "url": "https://platform.clearblade.com//admin/edges/template/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "def_module": {
+          "module": "trigger"
+        },
+        "def_name": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Update template for the specified edge.",
+      "form_data": [
+        {
+          "name": "def_module",
+          "type": "text",
+          "value": {
+            "module": "trigger"
+          }
+        },
+        {
+          "name": "def_name",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/edges/template/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "method": "PUT",
+      "name": "DEVELOPER - Update edge template",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "path": "//admin/edges/template/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"def_module\": {\"module\": \"trigger\"}, \"def_name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Update edge template",
+      "url": "https://platform.clearblade.com//admin/edges/template/{{SYSTEM_KEY}}/{{EDGE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves all the edges that belong to the specified system.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/edges/{{SYSTEM_KEY}}",
+      "method": "GET",
+      "name": "DEVELOPER - Get edges",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "path": "//admin/edges/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get edges",
+      "url": "https://platform.clearblade.com//admin/edges/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves all the edges that the adapter belongs to.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/edges/{{SYSTEM_KEY}}/control",
+      "method": "GET",
+      "name": "DEVELOPER - Get edges for the adapter",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "path": "//admin/edges/{{SYSTEM_KEY}}/control",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get edges for the adapter",
+      "url": "https://platform.clearblade.com//admin/edges/{{SYSTEM_KEY}}/control"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified edge from its system.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "method": "DELETE",
+      "name": "DEVELOPER - Delete edge",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "path": "//admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Delete edge",
+      "url": "https://platform.clearblade.com//admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about the specified edge.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "method": "GET",
+      "name": "DEVELOPER - Get edge",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "path": "//admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Get edge",
+      "url": "https://platform.clearblade.com//admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "description": "",
+        "local_addr": "",
+        "local_port": "",
+        "location": "",
+        "mac_address": "",
+        "public_addr": "",
+        "public_port": "",
+        "system_key": "",
+        "system_secret": "",
+        "token": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Creates a new edge in the specified system.",
+      "form_data": [
+        {
+          "name": "description",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "local_addr",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "local_port",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "location",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "mac_address",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "public_addr",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "public_port",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "system_key",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "system_secret",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "token",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "method": "POST",
+      "name": "DEVELOPER - Create edge",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "path": "//admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"\", \"local_addr\": \"\", \"local_port\": \"\", \"location\": \"\", \"mac_address\": \"\", \"public_addr\": \"\", \"public_port\": \"\", \"system_key\": \"\", \"system_secret\": \"\", \"token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Create edge",
+      "url": "https://platform.clearblade.com//admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "description": "",
+        "local_addr": "",
+        "local_port": "",
+        "location": "",
+        "mac_address": "",
+        "public_addr": "",
+        "public_port": "",
+        "system_key": "",
+        "system_secret": "",
+        "token": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Updates the specified edge's information.",
+      "form_data": [
+        {
+          "name": "description",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "local_addr",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "local_port",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "location",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "mac_address",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "public_addr",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "public_port",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "system_key",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "system_secret",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "token",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "method": "PUT",
+      "name": "DEVELOPER - Update edge",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "path": "//admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "edgeName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"\", \"local_addr\": \"\", \"local_port\": \"\", \"location\": \"\", \"mac_address\": \"\", \"public_addr\": \"\", \"public_port\": \"\", \"system_key\": \"\", \"system_secret\": \"\", \"token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Update edge",
+      "url": "https://platform.clearblade.com//admin/edges/{{SYSTEM_KEY}}/{{EDGE_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Logs the current developer out of their session and invalidates their DevToken",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST //admin/logout",
+      "method": "POST",
+      "name": "DEVELOPER - Log out dev",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/logout",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Log out dev",
+      "url": "https://platform.clearblade.com//admin/logout"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns current platform license key.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/pkey",
+      "method": "GET",
+      "name": "ADMIN - Get platform license key.",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/pkey",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ADMIN - Get platform license key.",
+      "url": "https://platform.clearblade.com//admin/pkey"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about the specified developer.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/platform/developer",
+      "method": "GET",
+      "name": "ADMIN - Get developer",
+      "params": [
+        {
+          "name": "developer",
+          "value": ""
+        }
+      ],
+      "path": "//admin/platform/developer",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "developer",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ADMIN - Get developer",
+      "url": "https://platform.clearblade.com//admin/platform/developer"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "admin": false,
+        "disabled": false,
+        "email": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Disables the specified developer on the platform.",
+      "form_data": [
+        {
+          "name": "admin",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "disabled",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/platform/developer",
+      "method": "POST",
+      "name": "DEVELOPER - Disable developer",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/platform/developer",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"admin\": false, \"disabled\": false, \"email\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Disable developer",
+      "url": "https://platform.clearblade.com//admin/platform/developer"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all developers in the platform.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/platform/developers",
+      "method": "GET",
+      "name": "ADMIN - Get developers",
+      "params": [
+        {
+          "name": "pagesize",
+          "value": ""
+        },
+        {
+          "name": "pagenum",
+          "value": ""
+        },
+        {
+          "name": "total",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        }
+      ],
+      "path": "//admin/platform/developers",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "pagesize",
+          "value": ""
+        },
+        {
+          "name": "pagenum",
+          "value": ""
+        },
+        {
+          "name": "total",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ADMIN - Get developers",
+      "url": "https://platform.clearblade.com//admin/platform/developers"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "## Description:\nGet list of systems that have been updated. This is an Admin only endpoint.\n\n### Query:\n```json\n{\"PAGESIZE\":int,\"PAGENUM\":int,\"FILTERS\":[[{\"_REPLACE_WITH_OPERATOR_\":[{\"valueType\":\"value\"}]}]],\"SORT\":[{\"DESC\":\"value\"}]}\n```\n  Note - You can generate a complex query object in a code service using the `ClearBlade.Query()` object. \n## Admin Audit Table Schema:\nRefer to this when building the query.\n\n  | Column | Type | Possible Values| Examples|\n  |:--------|:--------|:------|:------|\n  | name   | string   |ANY_STRING|\"ClearBladeDev\"|\n  |owner|string|EMAIL_STRING |\"example@clearblade.com\"|\n  |systemKey|string|SINGLE_STRING_WITH_HEX_CHARS_ONLY|\"80sdff82c0b1fbda1f271\"|\n  |disabled|boolean|true, false|true|\n  |lastUpdated|timestamp|ISO_DATE_TIME_STRING|\"2020-01-29T20:18:18.475214Z\"|\n  |numDevs|int|ANY_POSITIVE_INTEGER|2|\n  |numServices|int|ANY_POSITIVE_INTEGER|2|\n  |numLibraries|int|ANY_POSITIVE_INTEGER|2|\n  |numDeployments|int|ANY_POSITIVE_INTEGER|2|\n  |numRoles|int|ANY_POSITIVE_INTEGER|2|\n  |numUsers|int|ANY_POSITIVE_INTEGER|2|\n  |numDevices|int|ANY_POSITIVE_INTEGER|2|\n  |numEdge|int|ANY_POSITIVE_INTEGER|2|\n  |numAPIReqsTotal|int|ANY_POSITIVE_INTEGER|2|\n  |numAPIReqsMonth|int|ANY_POSITIVE_INTEGER|2|\n  |numAPIReqsYear|int|ANY_POSITIVE_INTEGER|2|\n  |numPub|int|ANY_POSITIVE_INTEGER|2|\n  |numPubMonth|int|ANY_POSITIVE_INTEGER|2|\n  |numPubYear|int|ANY_POSITIVE_INTEGER|2|\n  |numRecTotal|int|ANY_POSITIVE_INTEGER|2|\n  |numRecMonth|int|ANY_POSITIVE_INTEGER|2|\n  |numRecYear|int|ANY_POSITIVE_INTEGER|2|\n  |diskUsage|int|ANY_POSITIVE_INTEGER|2|\n\n### Example:\n\n```json\n \"query\":{\"FILTERS\":[[{\"NEQ\":[{\"disabled\":true}]},{\"EQ\":[{\"numDevs\":2}]}]],\"PAGESIZE\":0,\"PAGENUM\":0}\n```\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/platform/systems",
+      "method": "GET",
+      "name": "AUDIT - Get list of systems that have been updated",
+      "params": [
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "path": "//admin/platform/systems",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "AUDIT - Get list of systems that have been updated",
+      "url": "https://platform.clearblade.com//admin/platform/systems"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "## Description:\n Get list of changes that have been made to the system. This is an Admin and Dev endpoint.\n### Query:\n```json\n\"query\":{\"PAGESIZE\":int,\"PAGENUM\":int,\"FILTERS\":[[{\"_REPLACE_WITH_OPERATOR_\":[{\"valueType\":\"value\"}]}]],\"SORT\":[{\"DESC\":\"value\"}]}\n```\n  Note - You can generate a complex query object in a code service using the `ClearBlade.Query()` object. \n## Admin Audit Table Schema:\n## Admin Audit Table Schema:\nRefer to this when building the query.\n\n  | Column | Type | Possible Values| Examples|\n  |:--------|:--------|:------|:------|\n  | name   | string   |ANY_STRING|\"ClearBladeDev\"|\n  |owner|string|EMAIL_STRING |\"example@clearblade.com\"|\n  |systemKey|string|SINGLE_STRING_WITH_HEX_CHARS_ONLY|\"80sdff82c0b1fbda1f271\"|\n  |disabled|boolean|true, false|true|\n  |lastUpdated|timestamp|ISO_DATE_TIME_STRING|\"2020-01-29T20:18:18.475214Z\"|\n  |numDevs|int|ANY_POSITIVE_INTEGER|2|\n  |numServices|int|ANY_POSITIVE_INTEGER|2|\n  |numLibraries|int|ANY_POSITIVE_INTEGER|2|\n  |numDeployments|int|ANY_POSITIVE_INTEGER|2|\n  |numRoles|int|ANY_POSITIVE_INTEGER|2|\n  |numUsers|int|ANY_POSITIVE_INTEGER|2|\n  |numDevices|int|ANY_POSITIVE_INTEGER|2|\n  |numEdge|int|ANY_POSITIVE_INTEGER|2|\n  |numAPIReqsTotal|int|ANY_POSITIVE_INTEGER|2|\n  |numAPIReqsMonth|int|ANY_POSITIVE_INTEGER|2|\n  |numAPIReqsYear|int|ANY_POSITIVE_INTEGER|2|\n  |numPub|int|ANY_POSITIVE_INTEGER|2|\n  |numPubMonth|int|ANY_POSITIVE_INTEGER|2|\n  |numPubYear|int|ANY_POSITIVE_INTEGER|2|\n  |numRecTotal|int|ANY_POSITIVE_INTEGER|2|\n  |numRecMonth|int|ANY_POSITIVE_INTEGER|2|\n  |numRecYear|int|ANY_POSITIVE_INTEGER|2|\n  |diskUsage|int|ANY_POSITIVE_INTEGER|2|\n\n### Example:\n\n```json\n \"query\":{\"FILTERS\":[[{\"NEQ\":[{\"disabled\":true}]},{\"EQ\":[{\"numDevs\":2}]}]],\"PAGESIZE\":0,\"PAGENUM\":0}\n```\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/platform/systems/{{SYSTEM_KEY}}",
+      "method": "GET",
+      "name": "AUDIT - Get list of systems that have been updated",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        },
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "path": "//admin/platform/systems/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "query",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "AUDIT - Get list of systems that have been updated",
+      "url": "https://platform.clearblade.com//admin/platform/systems/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the specified system's status as it relates to limits. To be used by the billing system.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/platform/{{SYSTEM_KEY}}",
+      "method": "GET",
+      "name": "ADMIN - Get system status",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "path": "//admin/platform/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ADMIN - Get system status",
+      "url": "https://platform.clearblade.com//admin/platform/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about a specified portal.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/portals/{{SYSTEM_KEY}}",
+      "method": "GET",
+      "name": "DEVELOPER - Gets the information for a portal",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "path": "//admin/portals/{{SYSTEM_KEY}}",
+      "pathParameters": [
+        {
+          "name": "systemKey",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Gets the information for a portal",
+      "url": "https://platform.clearblade.com//admin/portals/{{SYSTEM_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "new_password": "bieberluver",
+        "old_password": "bieberboy"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Changes a developer's password.",
+      "form_data": [
+        {
+          "name": "new_password",
+          "type": "text",
+          "value": "bieberluver"
+        },
+        {
+          "name": "old_password",
+          "type": "text",
+          "value": "bieberboy"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/putpass",
+      "method": "PUT",
+      "name": "DEVELOPER - Change dev password",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/putpass",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"new_password\": \"bieberluver\", \"old_password\": \"bieberboy\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Change dev password",
+      "url": "https://platform.clearblade.com//admin/putpass"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "email": "martin@clearblade.com",
+        "fname": "Martin",
+        "lname": "theMachine",
+        "org": "ClearBlade",
+        "password": "bieberboy"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Registers a new developer account with the CB platform.",
+      "form_data": [
+        {
+          "name": "email",
+          "type": "text",
+          "value": "martin@clearblade.com"
+        },
+        {
+          "name": "fname",
+          "type": "text",
+          "value": "Martin"
+        },
+        {
+          "name": "lname",
+          "type": "text",
+          "value": "theMachine"
+        },
+        {
+          "name": "org",
+          "type": "text",
+          "value": "ClearBlade"
+        },
+        {
+          "name": "password",
+          "type": "text",
+          "value": "bieberboy"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/reg",
+      "method": "POST",
+      "name": "DEVELOPER - Register new dev",
+      "params": [],
+      "path": "//admin/reg",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email\": \"martin@clearblade.com\", \"fname\": \"Martin\", \"lname\": \"theMachine\", \"org\": \"ClearBlade\", \"password\": \"bieberboy\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Register new dev",
+      "url": "https://platform.clearblade.com//admin/reg"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "id": "[systemID]"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Generates a new System Secret for the specified system.",
+      "form_data": [
+        {
+          "name": "id",
+          "type": "text",
+          "value": "[systemID]"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/regensystemsecret",
+      "method": "PUT",
+      "name": "DEVELOPER - Regen secret",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/regensystemsecret",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"id\": \"[systemID]\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DEVELOPER - Regen secret",
+      "url": "https://platform.clearblade.com//admin/regensystemsecret"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "email": "example@clearblade.com",
+        "new_password": "password"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Changes a developer's password.",
+      "form_data": [
+        {
+          "name": "email",
+          "type": "text",
+          "value": "example@clearblade.com"
+        },
+        {
+          "name": "new_password",
+          "type": "text",
+          "value": "password"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/resetpassword",
+      "method": "POST",
+      "name": "ADMIN - Change dev password (Admin)",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/resetpassword",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email\": \"example@clearblade.com\", \"new_password\": \"password\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ADMIN - Change dev password (Admin)",
+      "url": "https://platform.clearblade.com//admin/resetpassword"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes email communication settings. This endpoint is Admin only.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE //admin/settings/email-service",
+      "method": "DELETE",
+      "name": "2FA - Delete email settings",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/settings/email-service",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "2FA - Delete email settings",
+      "url": "https://platform.clearblade.com//admin/settings/email-service"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets current email communication settings. This endpoint is Admin only.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET //admin/settings/email-service",
+      "method": "GET",
+      "name": "2FA - Get Email Settings",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/settings/email-service",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "2FA - Get Email Settings",
+      "url": "https://platform.clearblade.com//admin/settings/email-service"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "encryption_type": "STARTTLS",
+        "from": "example@gmail.com",
+        "host": "smtp.gmail.com",
+        "password": "test",
+        "port": "587",
+        "protocol": "SMTP",
+        "two_factor_message": "Please use the code to log in: $CODE",
+        "two_factor_subject": "Login code",
+        "username": "example@gmail.com",
+        "validation_message": "Please validate your email here: $LINK",
+        "validation_subject": "Email validation"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "## Description:\n  Creates email communication . This endpoint is Admin only.\n  \n## Settings choices\n\n|Settings|Allowed Values|\n|--------|-----|\n|encryption_type|STARTTLS, TLS, NONE|\n|protocol|SMTP|\n",
+      "form_data": [
+        {
+          "name": "encryption_type",
+          "type": "text",
+          "value": "STARTTLS"
+        },
+        {
+          "name": "from",
+          "type": "text",
+          "value": "example@gmail.com"
+        },
+        {
+          "name": "host",
+          "type": "text",
+          "value": "smtp.gmail.com"
+        },
+        {
+          "name": "password",
+          "type": "text",
+          "value": "test"
+        },
+        {
+          "name": "port",
+          "type": "text",
+          "value": "587"
+        },
+        {
+          "name": "protocol",
+          "type": "text",
+          "value": "SMTP"
+        },
+        {
+          "name": "two_factor_message",
+          "type": "text",
+          "value": "Please use the code to log in: $CODE"
+        },
+        {
+          "name": "two_factor_subject",
+          "type": "text",
+          "value": "Login code"
+        },
+        {
+          "name": "username",
+          "type": "text",
+          "value": "example@gmail.com"
+        },
+        {
+          "name": "validation_message",
+          "type": "text",
+          "value": "Please validate your email here: $LINK"
+        },
+        {
+          "name": "validation_subject",
+          "type": "text",
+          "value": "Email validation"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST //admin/settings/email-service",
+      "method": "POST",
+      "name": "2FA - Create Email Communication",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/settings/email-service",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"encryption_type\": \"STARTTLS\", \"from\": \"example@gmail.com\", \"host\": \"smtp.gmail.com\", \"password\": \"test\", \"port\": \"587\", \"protocol\": \"SMTP\", \"two_factor_message\": \"Please use the code to log in: $CODE\", \"two_factor_subject\": \"Login code\", \"username\": \"example@gmail.com\", \"validation_message\": \"Please validate your email here: $LINK\", \"validation_subject\": \"Email validation\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "2FA - Create Email Communication",
+      "url": "https://platform.clearblade.com//admin/settings/email-service"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "encryption_type": "STARTTLS",
+        "from": "example@gmail.com",
+        "host": "smtp.gmail.com",
+        "password": "test",
+        "port": "587",
+        "protocol": "SMTP",
+        "two_factor_message": "Please use the code to log in: $CODE",
+        "two_factor_subject": "Login code",
+        "username": "example@gmail.com",
+        "validation_message": "Please validate your email here: $LINK",
+        "validation_subject": "Email validation"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "\n## Description:\nUpdates email communication settings. This endpoint is Admin only.\n   \n## Setting options\n    \n|Settings|Types|\n|--------|-----|\n|encryption_type|STARTTLS, TLS, NONE|\n|port|25, 465, 587, 2525|\n\nSMTP is the only protocol supported\n",
+      "form_data": [
+        {
+          "name": "encryption_type",
+          "type": "text",
+          "value": "STARTTLS"
+        },
+        {
+          "name": "from",
+          "type": "text",
+          "value": "example@gmail.com"
+        },
+        {
+          "name": "host",
+          "type": "text",
+          "value": "smtp.gmail.com"
+        },
+        {
+          "name": "password",
+          "type": "text",
+          "value": "test"
+        },
+        {
+          "name": "port",
+          "type": "text",
+          "value": "587"
+        },
+        {
+          "name": "protocol",
+          "type": "text",
+          "value": "SMTP"
+        },
+        {
+          "name": "two_factor_message",
+          "type": "text",
+          "value": "Please use the code to log in: $CODE"
+        },
+        {
+          "name": "two_factor_subject",
+          "type": "text",
+          "value": "Login code"
+        },
+        {
+          "name": "username",
+          "type": "text",
+          "value": "example@gmail.com"
+        },
+        {
+          "name": "validation_message",
+          "type": "text",
+          "value": "Please validate your email here: $LINK"
+        },
+        {
+          "name": "validation_subject",
+          "type": "text",
+          "value": "Email validation"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT //admin/settings/email-service",
+      "method": "PUT",
+      "name": "2FA - Update Email Settings",
+      "params": [
+        {
+          "name": "ClearBlade-DevToken",
+          "value": ""
+        }
+      ],
+      "path": "//admin/settings/email-service",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"encryption_type\": \"STARTTLS\", \"from\": \"example@gmail.com\", \"host\": \"smtp.gmail.com\", \"password\": \"test\", \"port\": \"587\", \"protocol\": \"SMTP\", \"two_factor_message\": \"Please use the code to log in: $CODE\", \"two_factor_subject\": \"Login code\", \"username\": \"example@gmail.com\", \"validation_message\": \"Please validate your email here: $LINK\", \"validation_subject\": \"Email validation\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "2FA - Update Email Settings",
+      "url": "https://platform.clearblade.com//admin/settings/email-service"
+    }
+  ]
+}

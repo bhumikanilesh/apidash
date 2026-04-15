@@ -1,0 +1,2988 @@
+{
+  "id": "salesforce.local_einstein",
+  "info": {
+    "base_url": "http://salesforce.local",
+    "description": "Returns the status of a model's training process. Use the progress field to determine how far the training has progressed. When training completes successfully, the status is SUCCEEDED and the...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "image-generation",
+      "text-generation",
+      "translation"
+    ],
+    "title": "Einstein Vision and Einstein Language",
+    "version": "2.0.1"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns prediction usage on a monthly basis for the current calendar month and future months. Each apiusage object in the response corresponds to a calendar month in your plan.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apiusage",
+      "method": "GET",
+      "name": "Get API Isage",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/apiusage",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get API Isage",
+      "url": "http://salesforce.local/v2/apiusage"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of datasets and their labels that were created by the current user. The response is sorted by dataset ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/datasets",
+      "method": "GET",
+      "name": "Get All Datasets",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "global",
+          "value": ""
+        }
+      ],
+      "path": "/v2/language/datasets",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "global",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get All Datasets",
+      "url": "http://salesforce.local/v2/language/datasets"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "name": "weather",
+        "path": "",
+        "type": "text-intent"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates a dataset, labels, and examples from the specified .csv, .tsv, or .json file. The call returns immediately and continues to upload data in the background.",
+      "form_data": [
+        {
+          "name": "data",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "value": "weather"
+        },
+        {
+          "name": "path",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "value": "text-intent"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /v2/language/datasets/upload",
+      "method": "POST",
+      "name": "Create a Dataset From a File Asynchronously",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [],
+      "path": "/v2/language/datasets/upload",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"name\": \"weather\", \"path\": \"\", \"type\": \"text-intent\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Dataset From a File Asynchronously",
+      "url": "http://salesforce.local/v2/language/datasets/upload"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "name": "weather",
+        "path": "",
+        "type": "text-intent"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates a dataset, labels, and examples from the specified .csv, .tsv, or .json file. The call returns after the dataset is created and all of the data is uploaded.",
+      "form_data": [
+        {
+          "name": "data",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "value": "weather"
+        },
+        {
+          "name": "path",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "value": "text-intent"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /v2/language/datasets/upload/sync",
+      "method": "POST",
+      "name": "Create a Dataset From a File Synchronously",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [],
+      "path": "/v2/language/datasets/upload/sync",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"name\": \"weather\", \"path\": \"\", \"type\": \"text-intent\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Dataset From a File Synchronously",
+      "url": "http://salesforce.local/v2/language/datasets/upload/sync"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified dataset and associated labels and examples.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/language/datasets/{{DATASET_ID}}",
+      "method": "DELETE",
+      "name": "Delete a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "path": "/v2/language/datasets/{{DATASET_ID}}",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Dataset",
+      "url": "http://salesforce.local/v2/language/datasets/{{DATASET_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a single dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/datasets/{{DATASET_ID}}",
+      "method": "GET",
+      "name": "Get a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "path": "/v2/language/datasets/{{DATASET_ID}}",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Dataset",
+      "url": "http://salesforce.local/v2/language/datasets/{{DATASET_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all the examples for the specified dataset,",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/datasets/{{DATASET_ID}}/examples",
+      "method": "GET",
+      "name": "Get All Examples",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "source",
+          "value": ""
+        }
+      ],
+      "path": "/v2/language/datasets/{{DATASET_ID}}/examples",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "source",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get All Examples",
+      "url": "http://salesforce.local/v2/language/datasets/{{DATASET_ID}}/examples"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all models for the specified dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/datasets/{{DATASET_ID}}/models",
+      "method": "GET",
+      "name": "Get All Models",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "path": "/v2/language/datasets/{{DATASET_ID}}/models",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get All Models",
+      "url": "http://salesforce.local/v2/language/datasets/{{DATASET_ID}}/models"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "type": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Adds examples from a .csv, .tsv, or .json file to a dataset.",
+      "form_data": [
+        {
+          "name": "data",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /v2/language/datasets/{{DATASET_ID}}/upload",
+      "method": "PUT",
+      "name": "Create Examples From a File",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "path": "/v2/language/datasets/{{DATASET_ID}}/upload",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Examples From a File",
+      "url": "http://salesforce.local/v2/language/datasets/{{DATASET_ID}}/upload"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the status of a language dataset or model deletion. When you delete a dataset or model, the deletion may not occur immediately. Use this call to find out when the deletion is complete.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/deletion/{{ID}}",
+      "method": "GET",
+      "name": "Get Deletion Status",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "Z2JTFBF3A7XKIJC5QEJXMO4HSY"
+        }
+      ],
+      "path": "/v2/language/deletion/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "Z2JTFBF3A7XKIJC5QEJXMO4HSY"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Deletion Status",
+      "url": "http://salesforce.local/v2/language/deletion/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all the examples for the specified label. Returns both uploaded examples and feedback examples.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/examples",
+      "method": "GET",
+      "name": "Get All Examples for Label",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "labelId",
+          "value": "SomeLabelId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "path": "/v2/language/examples",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "labelId",
+          "value": "SomeLabelId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get All Examples for Label",
+      "url": "http://salesforce.local/v2/language/examples"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "document": "",
+        "expectedLabel": "",
+        "modelId": "",
+        "name": "feedback-2"
+      },
+      "body_json": {
+        "document": "",
+        "expectedLabel": "",
+        "modelId": "",
+        "name": "feedback-2"
+      },
+      "body_text": "{\"document\": \"\", \"expectedLabel\": \"\", \"modelId\": \"\", \"name\": \"feedback-2\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds a feedback example to the dataset associated with the specified model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/language/feedback",
+      "method": "POST",
+      "name": "Create a Feedback Example",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/language/feedback",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"document\": \"\", \"expectedLabel\": \"\", \"modelId\": \"\", \"name\": \"feedback-2\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Feedback Example",
+      "url": "http://salesforce.local/v2/language/feedback"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "document": "I can't tell you how much fun it was",
+        "modelId": "WJH4YCA7YX4PCWVNCYNWYHBMY4",
+        "numResults": 3,
+        "sampleId": ""
+      },
+      "body_json": {
+        "document": "I can't tell you how much fun it was",
+        "modelId": "WJH4YCA7YX4PCWVNCYNWYHBMY4",
+        "numResults": 3,
+        "sampleId": ""
+      },
+      "body_text": "{\"document\": \"I can't tell you how much fun it was\", \"modelId\": \"WJH4YCA7YX4PCWVNCYNWYHBMY4\", \"numResults\": 3, \"sampleId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns an intent prediction for the given string.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/language/intent",
+      "method": "POST",
+      "name": "Prediction for Intent",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/language/intent",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"document\": \"I can't tell you how much fun it was\", \"modelId\": \"WJH4YCA7YX4PCWVNCYNWYHBMY4\", \"numResults\": 3, \"sampleId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Prediction for Intent",
+      "url": "http://salesforce.local/v2/language/intent"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/language/models/{{MODEL_ID}}",
+      "method": "DELETE",
+      "name": "Delete a Model",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": "SomeModelId"
+        }
+      ],
+      "path": "/v2/language/models/{{MODEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": "SomeModelId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Model",
+      "url": "http://salesforce.local/v2/language/models/{{MODEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the metrics for a model",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/models/{{MODEL_ID}}",
+      "method": "GET",
+      "name": "Get Model Metrics",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": "SomeModelId"
+        }
+      ],
+      "path": "/v2/language/models/{{MODEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": "SomeModelId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Model Metrics",
+      "url": "http://salesforce.local/v2/language/models/{{MODEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the metrics for each epoch in a model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/models/{{MODEL_ID}}/lc",
+      "method": "GET",
+      "name": "Get Model Learning Curve",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": "SomeModelId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "path": "/v2/language/models/{{MODEL_ID}}/lc",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": "SomeModelId"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Model Learning Curve",
+      "url": "http://salesforce.local/v2/language/models/{{MODEL_ID}}/lc"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "algorithm": "intent",
+        "epochs": 20,
+        "learningRate": 0.0001,
+        "modelId": "7JXCXTRXTMNLJCEF2DR5CJ46QU",
+        "trainParams": {
+          "trainSplitRatio": 0.9,
+          "withFeedback": false,
+          "withGlobalDatasetId": 0
+        }
+      },
+      "body_json": {
+        "algorithm": "intent",
+        "epochs": 20,
+        "learningRate": 0.0001,
+        "modelId": "7JXCXTRXTMNLJCEF2DR5CJ46QU",
+        "trainParams": {
+          "trainSplitRatio": 0.9,
+          "withFeedback": false,
+          "withGlobalDatasetId": 0
+        }
+      },
+      "body_text": "{\"algorithm\": \"intent\", \"epochs\": 20, \"learningRate\": 0.0001, \"modelId\": \"7JXCXTRXTMNLJCEF2DR5CJ46QU\", \"trainParams\": {\"trainSplitRatio\": 0.9, \"withFeedback\": false, \"withGlobalDatasetId\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrains a dataset and updates a model. Use this API call when you want to update a model and keep the model ID instead of creating a new model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/language/retrain",
+      "method": "POST",
+      "name": "Retrain a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/language/retrain",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"algorithm\": \"intent\", \"epochs\": 20, \"learningRate\": 0.0001, \"modelId\": \"7JXCXTRXTMNLJCEF2DR5CJ46QU\", \"trainParams\": {\"trainSplitRatio\": 0.9, \"withFeedback\": false, \"withGlobalDatasetId\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrain a Dataset",
+      "url": "http://salesforce.local/v2/language/retrain"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "document": "I can't tell you how much fun it was",
+        "modelId": "WJH4YCA7YX4PCWVNCYNWYHBMY4",
+        "numResults": 3,
+        "sampleId": ""
+      },
+      "body_json": {
+        "document": "I can't tell you how much fun it was",
+        "modelId": "WJH4YCA7YX4PCWVNCYNWYHBMY4",
+        "numResults": 3,
+        "sampleId": ""
+      },
+      "body_text": "{\"document\": \"I can't tell you how much fun it was\", \"modelId\": \"WJH4YCA7YX4PCWVNCYNWYHBMY4\", \"numResults\": 3, \"sampleId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns a sentiment prediction for the given string.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/language/sentiment",
+      "method": "POST",
+      "name": "Prediction for Sentiment",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/language/sentiment",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"document\": \"I can't tell you how much fun it was\", \"modelId\": \"WJH4YCA7YX4PCWVNCYNWYHBMY4\", \"numResults\": 3, \"sampleId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Prediction for Sentiment",
+      "url": "http://salesforce.local/v2/language/sentiment"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "algorithm": "intent",
+        "datasetId": 57,
+        "epochs": 20,
+        "learningRate": 0.0,
+        "name": "",
+        "trainParams": {
+          "trainSplitRatio": 0.9,
+          "withFeedback": false,
+          "withGlobalDatasetId": 0
+        }
+      },
+      "body_json": {
+        "algorithm": "intent",
+        "datasetId": 57,
+        "epochs": 20,
+        "learningRate": 0.0,
+        "name": "",
+        "trainParams": {
+          "trainSplitRatio": 0.9,
+          "withFeedback": false,
+          "withGlobalDatasetId": 0
+        }
+      },
+      "body_text": "{\"algorithm\": \"intent\", \"datasetId\": 57, \"epochs\": 20, \"learningRate\": 0.0, \"name\": \"\", \"trainParams\": {\"trainSplitRatio\": 0.9, \"withFeedback\": false, \"withGlobalDatasetId\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Trains a dataset and creates a model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/language/train",
+      "method": "POST",
+      "name": "Train a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/language/train",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"algorithm\": \"intent\", \"datasetId\": 57, \"epochs\": 20, \"learningRate\": 0.0, \"name\": \"\", \"trainParams\": {\"trainSplitRatio\": 0.9, \"withFeedback\": false, \"withGlobalDatasetId\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Train a Dataset",
+      "url": "http://salesforce.local/v2/language/train"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the status of a model's training process. Use the progress field to determine how far the training has progressed. When training completes successfully, the status is SUCCEEDED and the progress is 1.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/language/train/{{MODEL_ID}}",
+      "method": "GET",
+      "name": "Get Training Status",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": "SomeModelId"
+        }
+      ],
+      "path": "/v2/language/train/{{MODEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": "SomeModelId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Training Status",
+      "url": "http://salesforce.local/v2/language/train/{{MODEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "assertion": "SOME_ASSERTION_STRING",
+        "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+        "refresh_token": "SomeRefreshToken",
+        "scope": "offline",
+        "valid_for": 120
+      },
+      "body_json": {
+        "assertion": "SOME_ASSERTION_STRING",
+        "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+        "refresh_token": "SomeRefreshToken",
+        "scope": "offline",
+        "valid_for": 120
+      },
+      "body_text": "{\"assertion\": \"SOME_ASSERTION_STRING\", \"grant_type\": \"urn:ietf:params:oauth:grant-type:jwt-bearer\", \"refresh_token\": \"SomeRefreshToken\", \"scope\": \"offline\", \"valid_for\": 120}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns an OAuth access token or a refresh token. You must pass a valid access token in the header of each API call.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/oauth2/token",
+      "method": "POST",
+      "name": "Generate an OAuth Token",
+      "params": [],
+      "path": "/v2/oauth2/token",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"assertion\": \"SOME_ASSERTION_STRING\", \"grant_type\": \"urn:ietf:params:oauth:grant-type:jwt-bearer\", \"refresh_token\": \"SomeRefreshToken\", \"scope\": \"offline\", \"valid_for\": 120}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Generate an OAuth Token",
+      "url": "http://salesforce.local/v2/oauth2/token"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/oauth2/tokens/{{TOKEN}}",
+      "method": "DELETE",
+      "name": "Delete a Refresh Token",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "token",
+          "value": "SOME_REFRESH_TOKEN"
+        }
+      ],
+      "path": "/v2/oauth2/tokens/{{TOKEN}}",
+      "pathParameters": [
+        {
+          "name": "token",
+          "value": "SOME_REFRESH_TOKEN"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Refresh Token",
+      "url": "http://salesforce.local/v2/oauth2/tokens/{{TOKEN}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "modelId": ""
+      },
+      "body_json": {
+        "data": "",
+        "modelId": ""
+      },
+      "body_text": "{\"data\": \"\", \"modelId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds feedback examples to the dataset associated with the specified object detection model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/vision/bulkfeedback",
+      "method": "PUT",
+      "name": "Create Feedback Examples From a Zip File",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/vision/bulkfeedback",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"modelId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Feedback Examples From a Zip File",
+      "url": "http://salesforce.local/v2/vision/bulkfeedback"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of datasets and their labels that were created by the current user. The response is sorted by dataset ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/datasets",
+      "method": "GET",
+      "name": "Get All Datasets",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "global",
+          "value": ""
+        }
+      ],
+      "path": "/v2/vision/datasets",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "global",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get All Datasets",
+      "url": "http://salesforce.local/v2/vision/datasets"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "labels": "beach,mountain",
+        "name": "Beach and Mountain",
+        "type": "image"
+      },
+      "body_json": {
+        "labels": "beach,mountain",
+        "name": "Beach and Mountain",
+        "type": "image"
+      },
+      "body_text": "{\"labels\": \"beach,mountain\", \"name\": \"Beach and Mountain\", \"type\": \"image\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a dataset and labels, if they're specified.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/vision/datasets",
+      "method": "POST",
+      "name": "Create a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/vision/datasets",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"labels\": \"beach,mountain\", \"name\": \"Beach and Mountain\", \"type\": \"image\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Dataset",
+      "url": "http://salesforce.local/v2/vision/datasets"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "name": "mountainvsbeach",
+        "path": "",
+        "type": "image"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates a dataset, labels, and examples from the specified .zip file. The call returns immediately and continues to upload the images in the background.",
+      "form_data": [
+        {
+          "name": "data",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "value": "mountainvsbeach"
+        },
+        {
+          "name": "path",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "value": "image"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /v2/vision/datasets/upload",
+      "method": "POST",
+      "name": "Create a Dataset From a Zip File Asynchronously",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [],
+      "path": "/v2/vision/datasets/upload",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"name\": \"mountainvsbeach\", \"path\": \"\", \"type\": \"image\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Dataset From a Zip File Asynchronously",
+      "url": "http://salesforce.local/v2/vision/datasets/upload"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "name": "mountainvsbeach",
+        "path": "",
+        "type": "image"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates a dataset, labels, and examples from the specified .zip file. The call returns after the dataset is created and all of the images are uploaded.",
+      "form_data": [
+        {
+          "name": "data",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "value": "mountainvsbeach"
+        },
+        {
+          "name": "path",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "value": "image"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /v2/vision/datasets/upload/sync",
+      "method": "POST",
+      "name": "Create a Dataset From a Zip File Synchronously",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [],
+      "path": "/v2/vision/datasets/upload/sync",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"name\": \"mountainvsbeach\", \"path\": \"\", \"type\": \"image\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Dataset From a Zip File Synchronously",
+      "url": "http://salesforce.local/v2/vision/datasets/upload/sync"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified dataset and associated labels and examples.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/vision/datasets/{{DATASET_ID}}",
+      "method": "DELETE",
+      "name": "Delete a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "path": "/v2/vision/datasets/{{DATASET_ID}}",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Dataset",
+      "url": "http://salesforce.local/v2/vision/datasets/{{DATASET_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a single dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/datasets/{{DATASET_ID}}",
+      "method": "GET",
+      "name": "Get a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "path": "/v2/vision/datasets/{{DATASET_ID}}",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Dataset",
+      "url": "http://salesforce.local/v2/vision/datasets/{{DATASET_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all the examples for the specified dataset. By default, returns examples created by uploading them from a .zip file.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/datasets/{{DATASET_ID}}/examples",
+      "method": "GET",
+      "name": "Get All Examples",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "source",
+          "value": ""
+        }
+      ],
+      "path": "/v2/vision/datasets/{{DATASET_ID}}/examples",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        },
+        {
+          "name": "source",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get All Examples",
+      "url": "http://salesforce.local/v2/vision/datasets/{{DATASET_ID}}/examples"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "labelId": 42,
+        "name": ""
+      },
+      "body_json": {
+        "data": "",
+        "labelId": 42,
+        "name": ""
+      },
+      "body_text": "{\"data\": \"\", \"labelId\": 42, \"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds an example with the specified label to a dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/vision/datasets/{{DATASET_ID}}/examples",
+      "method": "POST",
+      "name": "Create an Example",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "path": "/v2/vision/datasets/{{DATASET_ID}}/examples",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"labelId\": 42, \"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an Example",
+      "url": "http://salesforce.local/v2/vision/datasets/{{DATASET_ID}}/examples"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all models for the specified dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/datasets/{{DATASET_ID}}/models",
+      "method": "GET",
+      "name": "Get All Models",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "path": "/v2/vision/datasets/{{DATASET_ID}}/models",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get All Models",
+      "url": "http://salesforce.local/v2/vision/datasets/{{DATASET_ID}}/models"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "path": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Adds examples from a .zip file to a dataset. You can use this call only with a dataset that was created from a .zip file.",
+      "form_data": [
+        {
+          "name": "data",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /v2/vision/datasets/{{DATASET_ID}}/upload",
+      "method": "PUT",
+      "name": "Create Examples From a Zip File",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "path": "/v2/vision/datasets/{{DATASET_ID}}/upload",
+      "pathParameters": [
+        {
+          "name": "datasetId",
+          "value": "SomeDatasetId"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"path\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Examples From a Zip File",
+      "url": "http://salesforce.local/v2/vision/datasets/{{DATASET_ID}}/upload"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the status of an image dataset or model deletion. When you delete a dataset or model, the deletion may not occur immediately. Use this call to find out when the deletion is complete.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/deletion/{{ID}}",
+      "method": "GET",
+      "name": "Get Deletion Status",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "Z2JTFBF3A7XKIJC5QEJXMO4HSY"
+        }
+      ],
+      "path": "/v2/vision/deletion/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "Z2JTFBF3A7XKIJC5QEJXMO4HSY"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Deletion Status",
+      "url": "http://salesforce.local/v2/vision/deletion/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "modelId": "YCQ4ZACEPJFGXZNRA6ERF3GL5E",
+        "sampleBase64Content": "SomeBase64EncodedImage",
+        "sampleId": "",
+        "sampleLocation": ""
+      },
+      "body_json": {
+        "modelId": "YCQ4ZACEPJFGXZNRA6ERF3GL5E",
+        "sampleBase64Content": "SomeBase64EncodedImage",
+        "sampleId": "",
+        "sampleLocation": ""
+      },
+      "body_text": "{\"modelId\": \"YCQ4ZACEPJFGXZNRA6ERF3GL5E\", \"sampleBase64Content\": \"SomeBase64EncodedImage\", \"sampleId\": \"\", \"sampleLocation\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns labels, probabilities, and bounding box coordinates for items detected in the specified local image file.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/vision/detect",
+      "method": "POST",
+      "name": "Detection with Image File",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/vision/detect",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"modelId\": \"YCQ4ZACEPJFGXZNRA6ERF3GL5E\", \"sampleBase64Content\": \"SomeBase64EncodedImage\", \"sampleId\": \"\", \"sampleLocation\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Detection with Image File",
+      "url": "http://salesforce.local/v2/vision/detect"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all the examples for the specified label. Returns both uploaded examples and feedback examples.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/examples",
+      "method": "GET",
+      "name": "Get All Examples for Label",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "labelId",
+          "value": "SomeLabelId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "path": "/v2/vision/examples",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "labelId",
+          "value": "SomeLabelId"
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get All Examples for Label",
+      "url": "http://salesforce.local/v2/vision/examples"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": "",
+        "expectedLabel": "",
+        "modelId": "",
+        "name": "feedback-1"
+      },
+      "body_json": {
+        "data": "",
+        "expectedLabel": "",
+        "modelId": "",
+        "name": "feedback-1"
+      },
+      "body_text": "{\"data\": \"\", \"expectedLabel\": \"\", \"modelId\": \"\", \"name\": \"feedback-1\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds a feedback example to the dataset associated with the specified model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/vision/feedback",
+      "method": "POST",
+      "name": "Create a Feedback Example",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/vision/feedback",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"expectedLabel\": \"\", \"modelId\": \"\", \"name\": \"feedback-1\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Feedback Example",
+      "url": "http://salesforce.local/v2/vision/feedback"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/vision/models/{{MODEL_ID}}",
+      "method": "DELETE",
+      "name": "Delete a Model",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/vision/models/{{MODEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Model",
+      "url": "http://salesforce.local/v2/vision/models/{{MODEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the metrics for a model",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/models/{{MODEL_ID}}",
+      "method": "GET",
+      "name": "Get Model Metrics",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/vision/models/{{MODEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Model Metrics",
+      "url": "http://salesforce.local/v2/vision/models/{{MODEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the metrics for each epoch in a model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/models/{{MODEL_ID}}/lc",
+      "method": "GET",
+      "name": "Get Model Learning Curve",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "path": "/v2/vision/models/{{MODEL_ID}}/lc",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "count",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Model Learning Curve",
+      "url": "http://salesforce.local/v2/vision/models/{{MODEL_ID}}/lc"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "modelId": "WJH4YCA7YX4PCWVNCYNWYHBMY4",
+        "sampleContent": "",
+        "sampleId": "",
+        "sampleLocation": "",
+        "task": "table"
+      },
+      "body_json": {
+        "modelId": "WJH4YCA7YX4PCWVNCYNWYHBMY4",
+        "sampleContent": "",
+        "sampleId": "",
+        "sampleLocation": "",
+        "task": "table"
+      },
+      "body_text": "{\"modelId\": \"WJH4YCA7YX4PCWVNCYNWYHBMY4\", \"sampleContent\": \"\", \"sampleId\": \"\", \"sampleLocation\": \"\", \"task\": \"table\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns a prediction from an OCR model for the specified image URL or local image file.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/vision/ocr",
+      "method": "POST",
+      "name": "Detect Text",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/vision/ocr",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"modelId\": \"WJH4YCA7YX4PCWVNCYNWYHBMY4\", \"sampleContent\": \"\", \"sampleId\": \"\", \"sampleLocation\": \"\", \"task\": \"table\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Detect Text",
+      "url": "http://salesforce.local/v2/vision/ocr"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "modelId": "WJH4YCA7YX4PCWVNCYNWYHBMY4",
+        "numResults": 3,
+        "sampleBase64Content": "SomeBase64EncodedImage",
+        "sampleId": "",
+        "sampleLocation": ""
+      },
+      "body_json": {
+        "modelId": "WJH4YCA7YX4PCWVNCYNWYHBMY4",
+        "numResults": 3,
+        "sampleBase64Content": "SomeBase64EncodedImage",
+        "sampleId": "",
+        "sampleLocation": ""
+      },
+      "body_text": "{\"modelId\": \"WJH4YCA7YX4PCWVNCYNWYHBMY4\", \"numResults\": 3, \"sampleBase64Content\": \"SomeBase64EncodedImage\", \"sampleId\": \"\", \"sampleLocation\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns a prediction from an image or multi-label model for the specified image.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/vision/predict",
+      "method": "POST",
+      "name": "Make Prediction",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/vision/predict",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"modelId\": \"WJH4YCA7YX4PCWVNCYNWYHBMY4\", \"numResults\": 3, \"sampleBase64Content\": \"SomeBase64EncodedImage\", \"sampleId\": \"\", \"sampleLocation\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Make Prediction",
+      "url": "http://salesforce.local/v2/vision/predict"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "algorithm": "object-detection",
+        "epochs": 20,
+        "learningRate": 0.0001,
+        "modelId": "7JXCXTRXTMNLJCEF2DR5CJ46QU",
+        "trainParams": {
+          "trainSplitRatio": 0.9,
+          "withFeedback": false,
+          "withGlobalDatasetId": 0
+        }
+      },
+      "body_json": {
+        "algorithm": "object-detection",
+        "epochs": 20,
+        "learningRate": 0.0001,
+        "modelId": "7JXCXTRXTMNLJCEF2DR5CJ46QU",
+        "trainParams": {
+          "trainSplitRatio": 0.9,
+          "withFeedback": false,
+          "withGlobalDatasetId": 0
+        }
+      },
+      "body_text": "{\"algorithm\": \"object-detection\", \"epochs\": 20, \"learningRate\": 0.0001, \"modelId\": \"7JXCXTRXTMNLJCEF2DR5CJ46QU\", \"trainParams\": {\"trainSplitRatio\": 0.9, \"withFeedback\": false, \"withGlobalDatasetId\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrains a dataset and updates a model. Use this API call when you want to update a model and keep the model ID instead of creating a new model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/vision/retrain",
+      "method": "POST",
+      "name": "Retrain a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/vision/retrain",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"algorithm\": \"object-detection\", \"epochs\": 20, \"learningRate\": 0.0001, \"modelId\": \"7JXCXTRXTMNLJCEF2DR5CJ46QU\", \"trainParams\": {\"trainSplitRatio\": 0.9, \"withFeedback\": false, \"withGlobalDatasetId\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrain a Dataset",
+      "url": "http://salesforce.local/v2/vision/retrain"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "algorithm": "object-detection",
+        "datasetId": 57,
+        "epochs": 20,
+        "learningRate": 0.0001,
+        "name": "",
+        "trainParams": {
+          "trainSplitRatio": 0.9,
+          "withFeedback": false,
+          "withGlobalDatasetId": 0
+        }
+      },
+      "body_json": {
+        "algorithm": "object-detection",
+        "datasetId": 57,
+        "epochs": 20,
+        "learningRate": 0.0001,
+        "name": "",
+        "trainParams": {
+          "trainSplitRatio": 0.9,
+          "withFeedback": false,
+          "withGlobalDatasetId": 0
+        }
+      },
+      "body_text": "{\"algorithm\": \"object-detection\", \"datasetId\": 57, \"epochs\": 20, \"learningRate\": 0.0001, \"name\": \"\", \"trainParams\": {\"trainSplitRatio\": 0.9, \"withFeedback\": false, \"withGlobalDatasetId\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Trains a dataset and creates a model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/vision/train",
+      "method": "POST",
+      "name": "Train a Dataset",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/vision/train",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"algorithm\": \"object-detection\", \"datasetId\": 57, \"epochs\": 20, \"learningRate\": 0.0001, \"name\": \"\", \"trainParams\": {\"trainSplitRatio\": 0.9, \"withFeedback\": false, \"withGlobalDatasetId\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Train a Dataset",
+      "url": "http://salesforce.local/v2/vision/train"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the status of a model's training process. Use the progress field to determine how far the training has progressed. When training completes successfully, the status is SUCCEEDED and the progress is 1.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/vision/train/{{MODEL_ID}}",
+      "method": "GET",
+      "name": "Get Training Status",
+      "note": "Replace {{EINSTEIN_VISION_AND_EINSTEIN_LANGUAGE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/vision/train/{{MODEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Training Status",
+      "url": "http://salesforce.local/v2/vision/train/{{MODEL_ID}}"
+    }
+  ]
+}

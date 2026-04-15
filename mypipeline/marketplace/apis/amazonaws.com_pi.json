@@ -1,0 +1,733 @@
+{
+  "id": "amazonaws.com_pi",
+  "info": {
+    "base_url": "http://pi.{region}.amazonaws.com",
+    "description": "Retrieve metrics of the specified types that can be queried for a specified DB instance.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "AWS Performance Insights",
+    "version": "2018-02-27"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_PERFORMANCE_INSIGHTS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "AdditionalMetrics": {},
+        "EndTime": {},
+        "Filter": {},
+        "GroupBy": {
+          "Dimensions": {},
+          "Group": {},
+          "Limit": {}
+        },
+        "Identifier": {},
+        "MaxResults": {},
+        "Metric": {},
+        "NextToken": {},
+        "PartitionBy": {
+          "Dimensions": {},
+          "Group": {},
+          "Limit": {}
+        },
+        "PeriodInSeconds": {},
+        "ServiceType": {},
+        "StartTime": {}
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "<p>For a specific time period, retrieve the top <code>N</code> dimension keys for a metric. </p> <note> <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p> </note>",
+      "form_data": [
+        {
+          "name": "ServiceType",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Identifier",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "StartTime",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "EndTime",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Metric",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "PeriodInSeconds",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "GroupBy",
+          "type": "text",
+          "value": {
+            "Dimensions": {},
+            "Group": {},
+            "Limit": {}
+          }
+        },
+        {
+          "name": "AdditionalMetrics",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "PartitionBy",
+          "type": "text",
+          "value": {
+            "Dimensions": {},
+            "Group": {},
+            "Limit": {}
+          }
+        },
+        {
+          "name": "Filter",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "MaxResults",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "NextToken",
+          "type": "text",
+          "value": {}
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=PerformanceInsightsv20180227.DescribeDimensionKeys",
+      "note": "Replace {{AWS_PERFORMANCE_INSIGHTS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"ServiceType\": {}, \"Identifier\": {}, \"StartTime\": {}, \"EndTime\": {}, \"Metric\": {}, \"PeriodInSeconds\": {}, \"GroupBy\": {\"Group\": {}, \"Dimensions\": {}, \"Limit\": {}}, \"AdditionalMetrics\": {}, \"PartitionBy\": {\"Group\": {}, \"Dimensions\": {}, \"Limit\": {}}, \"Filter\": {}, \"MaxResults\": {}, \"NextToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=PerformanceInsightsv20180227.DescribeDimensionKeys",
+      "url": "http://pi.{{REGION}}.amazonaws.com/#X-Amz-Target=PerformanceInsightsv20180227.DescribeDimensionKeys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_PERFORMANCE_INSIGHTS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Group": {},
+        "GroupIdentifier": {},
+        "Identifier": {},
+        "RequestedDimensions": {},
+        "ServiceType": {}
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension <code>db.sql.statement</code> associated with this ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL statement text.",
+      "form_data": [
+        {
+          "name": "ServiceType",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Identifier",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Group",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "GroupIdentifier",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "RequestedDimensions",
+          "type": "text",
+          "value": {}
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=PerformanceInsightsv20180227.GetDimensionKeyDetails",
+      "note": "Replace {{AWS_PERFORMANCE_INSIGHTS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ServiceType\": {}, \"Identifier\": {}, \"Group\": {}, \"GroupIdentifier\": {}, \"RequestedDimensions\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=PerformanceInsightsv20180227.GetDimensionKeyDetails",
+      "url": "http://pi.{{REGION}}.amazonaws.com/#X-Amz-Target=PerformanceInsightsv20180227.GetDimensionKeyDetails"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_PERFORMANCE_INSIGHTS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Identifier": {},
+        "ServiceType": {}
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Retrieve the metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance. ",
+      "form_data": [
+        {
+          "name": "ServiceType",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Identifier",
+          "type": "text",
+          "value": {}
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=PerformanceInsightsv20180227.GetResourceMetadata",
+      "note": "Replace {{AWS_PERFORMANCE_INSIGHTS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ServiceType\": {}, \"Identifier\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=PerformanceInsightsv20180227.GetResourceMetadata",
+      "url": "http://pi.{{REGION}}.amazonaws.com/#X-Amz-Target=PerformanceInsightsv20180227.GetResourceMetadata"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_PERFORMANCE_INSIGHTS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "EndTime": {},
+        "Identifier": {},
+        "MaxResults": {},
+        "MetricQueries": {},
+        "NextToken": {},
+        "PeriodAlignment": {},
+        "PeriodInSeconds": {},
+        "ServiceType": {},
+        "StartTime": {}
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "<p>Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific dimension groups and dimensions, and provide aggregation and filtering criteria for each group.</p> <note> <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p> </note>",
+      "form_data": [
+        {
+          "name": "ServiceType",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Identifier",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "MetricQueries",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "StartTime",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "EndTime",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "PeriodInSeconds",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "MaxResults",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "NextToken",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "PeriodAlignment",
+          "type": "text",
+          "value": {}
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=PerformanceInsightsv20180227.GetResourceMetrics",
+      "note": "Replace {{AWS_PERFORMANCE_INSIGHTS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"ServiceType\": {}, \"Identifier\": {}, \"MetricQueries\": {}, \"StartTime\": {}, \"EndTime\": {}, \"PeriodInSeconds\": {}, \"MaxResults\": {}, \"NextToken\": {}, \"PeriodAlignment\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=PerformanceInsightsv20180227.GetResourceMetrics",
+      "url": "http://pi.{{REGION}}.amazonaws.com/#X-Amz-Target=PerformanceInsightsv20180227.GetResourceMetrics"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_PERFORMANCE_INSIGHTS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Identifier": {},
+        "MaxResults": {},
+        "Metrics": {},
+        "NextToken": {},
+        "ServiceType": {}
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Retrieve the dimensions that can be queried for each specified metric type on a specified DB instance.",
+      "form_data": [
+        {
+          "name": "ServiceType",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Identifier",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Metrics",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "MaxResults",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "NextToken",
+          "type": "text",
+          "value": {}
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=PerformanceInsightsv20180227.ListAvailableResourceDimensions",
+      "note": "Replace {{AWS_PERFORMANCE_INSIGHTS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"ServiceType\": {}, \"Identifier\": {}, \"Metrics\": {}, \"MaxResults\": {}, \"NextToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=PerformanceInsightsv20180227.ListAvailableResourceDimensions",
+      "url": "http://pi.{{REGION}}.amazonaws.com/#X-Amz-Target=PerformanceInsightsv20180227.ListAvailableResourceDimensions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_PERFORMANCE_INSIGHTS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Identifier": {},
+        "MaxResults": {},
+        "MetricTypes": {},
+        "NextToken": {},
+        "ServiceType": {}
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Retrieve metrics of the specified types that can be queried for a specified DB instance. ",
+      "form_data": [
+        {
+          "name": "ServiceType",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Identifier",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "MetricTypes",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "NextToken",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "MaxResults",
+          "type": "text",
+          "value": {}
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_PERFORMANCE_INSIGHTS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=PerformanceInsightsv20180227.ListAvailableResourceMetrics",
+      "note": "Replace {{AWS_PERFORMANCE_INSIGHTS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"ServiceType\": {}, \"Identifier\": {}, \"MetricTypes\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=PerformanceInsightsv20180227.ListAvailableResourceMetrics",
+      "url": "http://pi.{{REGION}}.amazonaws.com/#X-Amz-Target=PerformanceInsightsv20180227.ListAvailableResourceMetrics"
+    }
+  ]
+}

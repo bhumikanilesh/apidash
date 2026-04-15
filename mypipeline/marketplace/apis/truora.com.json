@@ -1,0 +1,1673 @@
+{
+  "id": "truora.com",
+  "info": {
+    "base_url": "https://api.truora.com",
+    "description": "Upload multiple checks and associate them to the report. The inputs for these checks must be sent in an xlsx file, please use the following templates:\n\n**Person:**...",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Checks API",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "birth_date": "",
+        "country": {},
+        "document_id": "",
+        "document_type": {},
+        "email": "",
+        "feedback_date": "",
+        "first_name": "",
+        "last_name": "",
+        "phone_number": "",
+        "reason": {}
+      },
+      "body_json": {
+        "birth_date": "",
+        "country": {},
+        "document_id": "",
+        "document_type": {},
+        "email": "",
+        "feedback_date": "",
+        "first_name": "",
+        "last_name": "",
+        "phone_number": "",
+        "reason": {}
+      },
+      "body_text": "{\"birth_date\": \"\", \"country\": {}, \"document_id\": \"\", \"document_type\": {}, \"email\": \"\", \"feedback_date\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"phone_number\": \"\", \"reason\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a behavior item to report employee conducts that do not or might not be included in their background check. This report includes both possitive and negative behaviors and sorts them by severity.\n\n### Reasons to report a person\n\n<table>\n  <tr>\n    <td style=\"width: 100px\"><center><b>Very High</b><br>(Score: 1)</td>\n    <td>Rape, Drug Dealing, Sexual Harassment</td>\n  </tr>\n  <tr>\n    <td><center><b>High</b><br>(Score: 0.8)</td>\n    <td>Theft, Fights, Aggressive Behaviour, Identity Fraud, Drunk, Drug Possession</td>\n  </tr>\n  <tr>\n    <td><center><b>Medium</b><br>(Score: 0.6)</td>\n    <td>Absences</td>\n  </tr>\n  <tr>\n    <td><center><b>Low</b><br>(Score: 0.4)</td>\n    <td>Tardiness, Confidentiality Breach</td>\n  </tr>\n  <tr>\n    <td><center><b>None</b><br>(Score: 0)</td>\n    <td>Good Reputation</td>\n  </tr>\n  <tr>\n    <td><center><b>Unknown</b></td>\n    <td>No information</td>\n  </tr>\n</table>\n\n**NOTE:** If the reason of your report is not here, please contact Truora support team.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/behavior",
+      "method": "POST",
+      "name": "Report Behavior",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/behavior",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"birth_date\": \"\", \"country\": {}, \"document_id\": \"\", \"document_type\": {}, \"email\": \"\", \"feedback_date\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"phone_number\": \"\", \"reason\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Report Behavior",
+      "url": "https://api.truora.com/v1/behavior"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the existing checks in the account or in a specified report.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/checks",
+      "method": "GET",
+      "name": "List Checks",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "start_key",
+          "value": ""
+        },
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/checks",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "start_key",
+          "value": ""
+        },
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Checks",
+      "url": "https://api.truora.com/v1/checks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "country": {},
+        "date_of_birth": "string",
+        "expedition_date": "string",
+        "first_name": "string",
+        "force_creation": true,
+        "last_name": "string",
+        "license_plate": "string",
+        "national_id": "string",
+        "report_id": "string"
+      },
+      "body_json": {
+        "country": {},
+        "date_of_birth": "string",
+        "expedition_date": "string",
+        "first_name": "string",
+        "force_creation": true,
+        "last_name": "string",
+        "license_plate": "string",
+        "national_id": "string",
+        "report_id": "string"
+      },
+      "body_text": "{\"country\": {}, \"date_of_birth\": \"string\", \"expedition_date\": \"string\", \"first_name\": \"string\", \"force_creation\": true, \"last_name\": \"string\", \"license_plate\": \"string\", \"national_id\": \"string\", \"report_id\": \"string\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a background check and queues it to start collecting information. The full details of background checks can be retrieved with their respective Check IDs using getCheck endpoint. Keep in mind that, depending on the check type, input document, and country of a search, certain inputs are required. You should always provide as many inputs as possible in order to get the highest accuracy.\n\nIf your check type is not referenced in the following table, please reach out to find out the fields that apply for you.\n\n| Country | Person-National | PersonForeigner | Company | Vehicle-National | Vehicle-Foreigner |\n|:-------:|:---------------:|:---------------:|:-------:|:----------------:|:-----------------:|\n| Chile<br>CL | national_id*<br>date_of_birth<br>phone_number | foreign_id*<br>date_of_birth*<br>phone_number<br>first_name*<br>last_name*<br>native_country* | N/A | national_id*<br>license_plate*<br>payment_date (Santiago only)<br>driver_license (Santiago only) | foreign_id*<br>first_name*<br>last_name*<br>date_of_birth*<br>native_country*<br>license_plate*<br>payment_date (Santiago only)<br>driver_license (Santiago only) |\n| Colombia<br>CO | national_id*<br>date_of_birth<br>issue_date<br>phone_number | foreign_id* or PEP*<br>date_of_birth<br>phone_number<br>issue_date* | tax_id*<br>national_id | national_id*<br>date_of_birth<br>phone_number<br>license_plate*<br>owner_document_type<br>owner_document_id | foreign_id*<br>date_of_birth<br>phone_number<br>license_plate*<br>issue_date* |\n| Mexico<br>MX | national_id*<br>phone_number | foreign_id* | tax_id* | license_plate*<br>national_id<br>vehicle_id<br>driver_license(Estado de Mexico only) | N/A |\n| Brazil<br>BR | national_id*<br>date_of_birth*<br>region*<br>phone_number | N/A | tax_id* | license_plate* | N/A |\n| Costa Rica<br>CR | national_id*<br>phone_number | foreign_id* | N/A | license_plate* | N/A |\n| Ecuador<br>EC | national_id*<br>phone_number | foreign_id* | tax_id* | license_plate* | N/A |\n| Peru<br>PE | national_id*<br>date_of_birth<br>phone_number | foreign_id*<br>ptp<br>date_of_birth*<br>phone_number | N/A | national_id*<br>date_of_birth<br>license_plate* | foreign_id*<br>ptp<br>date_of_birth*<br>license_plate* |\n| Argentina<br>AR | national_id* | N/A | N/A | national_id* | N/A |\n| International<br>ALL | name* | name* | company_name* | N/A | N/A |\n\n(*) Required field",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/checks",
+      "method": "POST",
+      "name": "Create a background check",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Truora-Priority",
+          "value": ""
+        }
+      ],
+      "path": "/v1/checks",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"country\": {}, \"date_of_birth\": \"string\", \"expedition_date\": \"string\", \"first_name\": \"string\", \"force_creation\": true, \"last_name\": \"string\", \"license_plate\": \"string\", \"national_id\": \"string\", \"report_id\": \"string\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a background check",
+      "url": "https://api.truora.com/v1/checks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the status of a database",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/checks/health",
+      "method": "GET",
+      "name": "Get Health Dashboard",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "country",
+          "value": ""
+        },
+        {
+          "name": "unixTimestampSeconds",
+          "value": ""
+        },
+        {
+          "name": "unixtimezoneOffsetSeconds",
+          "value": ""
+        }
+      ],
+      "path": "/v1/checks/health",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "country",
+          "value": ""
+        },
+        {
+          "name": "unixTimestampSeconds",
+          "value": ""
+        },
+        {
+          "name": "unixtimezoneOffsetSeconds",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Health Dashboard",
+      "url": "https://api.truora.com/v1/checks/health"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the results of the check that matches the ID provided, complete with a set of scores explained below.\n\n### Scores:\n\n\n- **Global Score**: Average risk associated with a person, company or vehicle, according to  the background check results. The global score considers results that are validated with the  ID number provided. The score ranges from 0 to 1, where 0 represents high risk and 1 low risk.\n\n\n- **ID Score**: Average risk associated with a person according to the background check  results. The ID score considers the results that are validated with a person identity  document. The score ranges from 0 to 1, where 0 represents high risk and 1 low risk. \n\n\n- **Homonym Score**: Average risk associated with a person according to the background check  results. The homonym score considers results that are validated against the name of a person and could not be validated with their ID number. These results might have homonyms associated with them. The score ranges from 0 to 1, where 0 represents high risk and 1 low risk.\n\n\nIn order to calculate these scores, a weighted average is considered with different weights allocated to each dataset. Scores can be customized using the config endpoints by assigning a weight to each dataset according to its relevance.\n\nKeep in mind that results from the API vary depending on the country, check type and the inputs entered on check creation.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/checks/{{CHECK_ID}}",
+      "method": "GET",
+      "name": "Get Background Check",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "check_id",
+          "value": ""
+        },
+        {
+          "name": "check_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/checks/{{CHECK_ID}}",
+      "pathParameters": [
+        {
+          "name": "check_id",
+          "value": ""
+        },
+        {
+          "name": "check_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Background Check",
+      "url": "https://api.truora.com/v1/checks/{{CHECK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all details associated with a Check. It can be paginated.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/checks/{{CHECK_ID}}/details",
+      "method": "GET",
+      "name": "List Check Details",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "check_id",
+          "value": ""
+        },
+        {
+          "name": "start_key",
+          "value": ""
+        },
+        {
+          "name": "lang",
+          "value": ""
+        }
+      ],
+      "path": "/v1/checks/{{CHECK_ID}}/details",
+      "pathParameters": [
+        {
+          "name": "check_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "start_key",
+          "value": ""
+        },
+        {
+          "name": "lang",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Check Details",
+      "url": "https://api.truora.com/v1/checks/{{CHECK_ID}}/details"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Downloads the PDF in the specified language, Spanish by default.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/checks/{{CHECK_ID}}/pdf",
+      "method": "GET",
+      "name": "Get PDF",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "check_id",
+          "value": ""
+        },
+        {
+          "name": "lang",
+          "value": ""
+        }
+      ],
+      "path": "/v1/checks/{{CHECK_ID}}/pdf",
+      "pathParameters": [
+        {
+          "name": "check_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "lang",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get PDF",
+      "url": "https://api.truora.com/v1/checks/{{CHECK_ID}}/pdf"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Creates a PDF containing the background check results.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "POST /v1/checks/{{CHECK_ID}}/pdf",
+      "method": "POST",
+      "name": "Create PDF",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "check_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/checks/{{CHECK_ID}}/pdf",
+      "pathParameters": [
+        {
+          "name": "check_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create PDF",
+      "url": "https://api.truora.com/v1/checks/{{CHECK_ID}}/pdf"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Allows deleting a custom type. Person, vehicle, and company types cannot be deleted",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/config",
+      "method": "DELETE",
+      "name": "Delete Custom Type",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "country",
+          "value": ""
+        }
+      ],
+      "path": "/v1/config",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "country",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Custom Type",
+      "url": "https://api.truora.com/v1/config"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the custom score configurations of the associated account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/config",
+      "method": "GET",
+      "name": "List Score Configurations",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "start_key",
+          "value": ""
+        }
+      ],
+      "path": "/v1/config",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "start_key",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Score Configurations",
+      "url": "https://api.truora.com/v1/config"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "country": "ALL",
+        "dataset_affiliations_and_insurances": 0.0,
+        "dataset_alert_in_media": 0.0,
+        "dataset_business_background": 0.0,
+        "dataset_criminal_record": 0.0,
+        "dataset_driving_licenses": 0.0,
+        "dataset_international_background": 0.0,
+        "dataset_legal_background": 0.0,
+        "dataset_personal_identity": 0.0,
+        "dataset_professional_background": 0.0,
+        "dataset_taxes_and_finances": 0.0,
+        "dataset_traffic_fines": 0.0,
+        "dataset_vehicle_information": 0.0,
+        "dataset_vehicle_permits": 0.0,
+        "type": ""
+      },
+      "body_json": {
+        "country": "ALL",
+        "dataset_affiliations_and_insurances": 0.0,
+        "dataset_alert_in_media": 0.0,
+        "dataset_business_background": 0.0,
+        "dataset_criminal_record": 0.0,
+        "dataset_driving_licenses": 0.0,
+        "dataset_international_background": 0.0,
+        "dataset_legal_background": 0.0,
+        "dataset_personal_identity": 0.0,
+        "dataset_professional_background": 0.0,
+        "dataset_taxes_and_finances": 0.0,
+        "dataset_traffic_fines": 0.0,
+        "dataset_vehicle_information": 0.0,
+        "dataset_vehicle_permits": 0.0,
+        "type": ""
+      },
+      "body_text": "{\"country\": \"ALL\", \"dataset_affiliations_and_insurances\": 0.0, \"dataset_alert_in_media\": 0.0, \"dataset_business_background\": 0.0, \"dataset_criminal_record\": 0.0, \"dataset_driving_licenses\": 0.0, \"dataset_international_background\": 0.0, \"dataset_legal_background\": 0.0, \"dataset_personal_identity\": 0.0, \"dataset_professional_background\": 0.0, \"dataset_taxes_and_finances\": 0.0, \"dataset_traffic_fines\": 0.0, \"dataset_vehicle_information\": 0.0, \"dataset_vehicle_permits\": 0.0, \"type\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a custom score configuration selecting the weight for each background check dataset and the country where it applies. Weights are numbers between 0 and 1 that represent how impactful the dataset is for the score. Keep in mind that the sum of all weights must equal 1.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/config",
+      "method": "POST",
+      "name": "Create Score Configurations",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/config",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"country\": \"ALL\", \"dataset_affiliations_and_insurances\": 0.0, \"dataset_alert_in_media\": 0.0, \"dataset_business_background\": 0.0, \"dataset_criminal_record\": 0.0, \"dataset_driving_licenses\": 0.0, \"dataset_international_background\": 0.0, \"dataset_legal_background\": 0.0, \"dataset_personal_identity\": 0.0, \"dataset_professional_background\": 0.0, \"dataset_taxes_and_finances\": 0.0, \"dataset_traffic_fines\": 0.0, \"dataset_vehicle_information\": 0.0, \"dataset_vehicle_permits\": 0.0, \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Score Configurations",
+      "url": "https://api.truora.com/v1/config"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "country": "ALL",
+        "dataset_affiliations_and_insurances": 0.0,
+        "dataset_alert_in_media": 0.0,
+        "dataset_business_background": 0.0,
+        "dataset_criminal_record": 0.0,
+        "dataset_driving_licenses": 0.0,
+        "dataset_international_background": 0.0,
+        "dataset_legal_background": 0.0,
+        "dataset_personal_identity": 0.0,
+        "dataset_professional_background": 0.0,
+        "dataset_taxes_and_finances": 0.0,
+        "dataset_traffic_fines": 0.0,
+        "dataset_vehicle_information": 0.0,
+        "dataset_vehicle_permits": 0.0,
+        "type": ""
+      },
+      "body_json": {
+        "country": "ALL",
+        "dataset_affiliations_and_insurances": 0.0,
+        "dataset_alert_in_media": 0.0,
+        "dataset_business_background": 0.0,
+        "dataset_criminal_record": 0.0,
+        "dataset_driving_licenses": 0.0,
+        "dataset_international_background": 0.0,
+        "dataset_legal_background": 0.0,
+        "dataset_personal_identity": 0.0,
+        "dataset_professional_background": 0.0,
+        "dataset_taxes_and_finances": 0.0,
+        "dataset_traffic_fines": 0.0,
+        "dataset_vehicle_information": 0.0,
+        "dataset_vehicle_permits": 0.0,
+        "type": ""
+      },
+      "body_text": "{\"country\": \"ALL\", \"dataset_affiliations_and_insurances\": 0.0, \"dataset_alert_in_media\": 0.0, \"dataset_business_background\": 0.0, \"dataset_criminal_record\": 0.0, \"dataset_driving_licenses\": 0.0, \"dataset_international_background\": 0.0, \"dataset_legal_background\": 0.0, \"dataset_personal_identity\": 0.0, \"dataset_professional_background\": 0.0, \"dataset_taxes_and_finances\": 0.0, \"dataset_traffic_fines\": 0.0, \"dataset_vehicle_information\": 0.0, \"dataset_vehicle_permits\": 0.0, \"type\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Allows updating a custom type. Person, vehicle, and company types are not modifiable",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/config",
+      "method": "PUT",
+      "name": "Update Custom Type",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/config",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"country\": \"ALL\", \"dataset_affiliations_and_insurances\": 0.0, \"dataset_alert_in_media\": 0.0, \"dataset_business_background\": 0.0, \"dataset_criminal_record\": 0.0, \"dataset_driving_licenses\": 0.0, \"dataset_international_background\": 0.0, \"dataset_legal_background\": 0.0, \"dataset_personal_identity\": 0.0, \"dataset_professional_background\": 0.0, \"dataset_taxes_and_finances\": 0.0, \"dataset_traffic_fines\": 0.0, \"dataset_vehicle_information\": 0.0, \"dataset_vehicle_permits\": 0.0, \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Custom Type",
+      "url": "https://api.truora.com/v1/config"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all continuous checks",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/continuous-checks",
+      "method": "GET",
+      "name": "GET /v1/continuous-checks",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/continuous-checks",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/continuous-checks",
+      "url": "https://api.truora.com/v1/continuous-checks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "check_id": "",
+        "frequency": "",
+        "status": ""
+      },
+      "body_json": {
+        "check_id": "",
+        "frequency": "",
+        "status": ""
+      },
+      "body_text": "{\"check_id\": \"\", \"frequency\": \"\", \"status\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a continuous check that will run background checks recurrently according to the frequency provided.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/continuous-checks",
+      "method": "POST",
+      "name": "POST /v1/continuous-checks",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/continuous-checks",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"check_id\": \"\", \"frequency\": \"\", \"status\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/continuous-checks",
+      "url": "https://api.truora.com/v1/continuous-checks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists history associated with a Check. It can be paginated",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}",
+      "method": "GET",
+      "name": "GET /v1/continuous-checks/{continuous_check_id}",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "continuous_check_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}",
+      "pathParameters": [
+        {
+          "name": "continuous_check_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/continuous-checks/{continuous_check_id}",
+      "url": "https://api.truora.com/v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "frequency": "",
+        "status": "enabled"
+      },
+      "body_json": {
+        "frequency": "",
+        "status": "enabled"
+      },
+      "body_text": "{\"frequency\": \"\", \"status\": \"enabled\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates a continuous check",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}",
+      "method": "PUT",
+      "name": "PUT /v1/continuous-checks/{continuous_check_id}",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "continuous_check_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}",
+      "pathParameters": [
+        {
+          "name": "continuous_check_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"frequency\": \"\", \"status\": \"enabled\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /v1/continuous-checks/{continuous_check_id}",
+      "url": "https://api.truora.com/v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists background check logs. It can be paginated\r\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}/history",
+      "method": "GET",
+      "name": "GET /v1/continuous-checks/{continuous_check_id}/history",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "continuous_check_id",
+          "value": ""
+        },
+        {
+          "name": "continuous_check_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}/history",
+      "pathParameters": [
+        {
+          "name": "continuous_check_id",
+          "value": ""
+        },
+        {
+          "name": "continuous_check_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/continuous-checks/{continuous_check_id}/history",
+      "url": "https://api.truora.com/v1/continuous-checks/{{CONTINUOUS_CHECK_ID}}/history"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all the configured hooks in your account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/hooks",
+      "method": "GET",
+      "name": "Lists all hooks",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/hooks",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Lists all hooks",
+      "url": "https://api.truora.com/v1/hooks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "actions": [
+          ""
+        ],
+        "event_type": "all",
+        "status": "enabled",
+        "subscriber_address": "",
+        "subscriber_language": "af",
+        "subscriber_name": "",
+        "subscriber_type": "web",
+        "subscriber_url": ""
+      },
+      "body_json": {
+        "actions": [
+          ""
+        ],
+        "event_type": "all",
+        "status": "enabled",
+        "subscriber_address": "",
+        "subscriber_language": "af",
+        "subscriber_name": "",
+        "subscriber_type": "web",
+        "subscriber_url": ""
+      },
+      "body_text": "{\"actions\": [\"\"], \"event_type\": \"all\", \"status\": \"enabled\", \"subscriber_address\": \"\", \"subscriber_language\": \"af\", \"subscriber_name\": \"\", \"subscriber_type\": \"web\", \"subscriber_url\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a hook subscription to notify events in Truora plataform. Subscriptions broadcast data as events occur and additional subscription instances are not required in order to refresh the information. Events are received in an array as a JWT and are decoded using the signing key returned by this endpoint. Their structure is as follows:\n\n```\n{\n    \"events\": [\n        {\n            \"event_action\": \"created\",\n            \"event_type\": \"check\",\n            \"id\": \"HKEdd28c569cf5eb74e45f0f4c092096e62c1c95ba2\",\n            \"object\": {\n                \"check_id\": \"CHK9c39003424c521aec8566ce59e1ddc86\",\n                \"country\": \"CO\",\n                \"creation_date\": \"2020-04-01T23:00:30.581232281Z\",\n                \"homonym_score\": 0,\n                \"id_score\": 0,\n                \"national_id\": \"1151959906\",\n                \"previous_check\": \"CHK4ec814fecd147eaae41027081d7d5caf\",\n                \"score\": -1,\n                \"status\": \"not_started\",\n                \"type\": \"person\",\n                \"update_date\": \"2020-04-01T23:00:30.680937413Z\"\n            },\n            \"timestamp\": \"2020-04-01T23:00:30Z\",\n            \"version\": \"1.0\"\n        }\n    ],\n    \"iat\": 1585782031,\n    \"iss\": \"Truora\"\n}\n```\n\nKeep in mind that the object attribute varies depending on the event_type.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/hooks",
+      "method": "POST",
+      "name": "Creates a hook subscription",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/hooks",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"actions\": [\"\"], \"event_type\": \"all\", \"status\": \"enabled\", \"subscriber_address\": \"\", \"subscriber_language\": \"af\", \"subscriber_name\": \"\", \"subscriber_type\": \"web\", \"subscriber_url\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Creates a hook subscription",
+      "url": "https://api.truora.com/v1/hooks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes hook configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/hooks/{{HOOK_ID}}",
+      "method": "DELETE",
+      "name": "Deletes hook",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "hook_id",
+          "value": ""
+        },
+        {
+          "name": "hook_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/hooks/{{HOOK_ID}}",
+      "pathParameters": [
+        {
+          "name": "hook_id",
+          "value": ""
+        },
+        {
+          "name": "hook_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Deletes hook",
+      "url": "https://api.truora.com/v1/hooks/{{HOOK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "actions": [
+          ""
+        ],
+        "event_type": "all",
+        "status": "enabled",
+        "subscriber_address": "",
+        "subscriber_language": "af",
+        "subscriber_name": "",
+        "subscriber_type": "web",
+        "subscriber_url": ""
+      },
+      "body_json": {
+        "actions": [
+          ""
+        ],
+        "event_type": "all",
+        "status": "enabled",
+        "subscriber_address": "",
+        "subscriber_language": "af",
+        "subscriber_name": "",
+        "subscriber_type": "web",
+        "subscriber_url": ""
+      },
+      "body_text": "{\"actions\": [\"\"], \"event_type\": \"all\", \"status\": \"enabled\", \"subscriber_address\": \"\", \"subscriber_language\": \"af\", \"subscriber_name\": \"\", \"subscriber_type\": \"web\", \"subscriber_url\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates a hook configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/hooks/{{HOOK_ID}}",
+      "method": "PUT",
+      "name": "Updates hook",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "hook_id",
+          "value": ""
+        },
+        {
+          "name": "hook_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/hooks/{{HOOK_ID}}",
+      "pathParameters": [
+        {
+          "name": "hook_id",
+          "value": ""
+        },
+        {
+          "name": "hook_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"actions\": [\"\"], \"event_type\": \"all\", \"status\": \"enabled\", \"subscriber_address\": \"\", \"subscriber_language\": \"af\", \"subscriber_name\": \"\", \"subscriber_type\": \"web\", \"subscriber_url\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Updates hook",
+      "url": "https://api.truora.com/v1/hooks/{{HOOK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all reports asociated with the client or user requesting.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/reports",
+      "method": "GET",
+      "name": "List Reports",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "start_key",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "path": "/v1/reports",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "start_key",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Reports",
+      "url": "https://api.truora.com/v1/reports"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": ""
+      },
+      "body_json": {
+        "name": ""
+      },
+      "body_text": "{\"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a Report to which it is possible to associate multiple Checks.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/reports",
+      "method": "POST",
+      "name": "Create Report",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/reports",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Report",
+      "url": "https://api.truora.com/v1/reports"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a report with the given ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/reports/{{REPORT_ID}}",
+      "method": "GET",
+      "name": "Get Report",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/reports/{{REPORT_ID}}",
+      "pathParameters": [
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Report",
+      "url": "https://api.truora.com/v1/reports/{{REPORT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "file": [
+          ""
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Upload multiple checks and associate them to the report. The inputs for these checks must be sent in an xlsx file, please use the following templates:\n\n**Person:** [Chile](https://app.truora.com/files/person/person-input-cl.xlsx), [Colombia](https://app.truora.com/files/person/person-input-co.xlsx), [Mexico](https://app.truora.com/files/person/person-input-mx.xlsx), [Peru](https://app.truora.com/files/person/person-input-pe.xlsx), [Costa Rica](https://app.truora.com/files/person/person-input-cr.xlsx), [Brazil](https://app.truora.com/files/person/person-input-br.xlsx)\n\n**Vehicle:** [Chile](https://app.truora.com/files/vehicle/vehicle-input-cl.xlsx), [Colombia](https://app.truora.com/files/vehicle/vehicle-input-co.xlsx), [Mexico](https://app.truora.com/files/vehicle/vehicle-input-mx.xlsx), [Peru](https://app.truora.com/files/vehicle/vehicle-input-pe.xlsx)\n\n**Company** [Colombia](https://app.truora.com/files/company/company-input-co.xlsx), [Mexico](https://app.truora.com/files/company/company-input-mx.xlsx), [Brazil](https://app.truora.com/files/company/company-input-br.xlsx)\n\nKeep in mind that we currently do not support batch uploads for custom check types. Background checks created by batch upload are processed with low priority.",
+      "form_data": [
+        {
+          "name": "file",
+          "type": "text",
+          "value": [
+            ""
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /v1/reports/{{REPORT_ID}}/upload",
+      "method": "POST",
+      "name": "Batch Upload",
+      "note": "Replace {{CHECKS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/reports/{{REPORT_ID}}/upload",
+      "pathParameters": [
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"file\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Batch Upload",
+      "url": "https://api.truora.com/v1/reports/{{REPORT_ID}}/upload"
+    }
+  ]
+}

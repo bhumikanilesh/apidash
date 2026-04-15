@@ -1,0 +1,2099 @@
+{
+  "id": "vtex.local_Profile-System",
+  "info": {
+    "base_url": "https://vtex.local",
+    "description": "Retrieves unmasked information of a specific prospect, by its `prospectId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API...",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Profile System",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "birthDate": "1925-11-17",
+        "document": "12345678900",
+        "documentType": "CPF",
+        "email": "john.doe@example.com",
+        "firstName": "John",
+        "lastName": "Doe"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates new client profile.\n\r\n\r> Since your store's profile schema is customizable, the schema and examples presented below may differ from yours. Your integration must be adapted accordingly.\n\r\n\r> The `id` field returned by this request is the `profileId` used to retrieve information on a specific profile later.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [
+        {
+          "name": "birthDate",
+          "type": "text",
+          "value": "1925-11-17"
+        },
+        {
+          "name": "document",
+          "type": "text",
+          "value": "12345678900"
+        },
+        {
+          "name": "documentType",
+          "type": "text",
+          "value": "CPF"
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "value": "john.doe@example.com"
+        },
+        {
+          "name": "firstName",
+          "type": "text",
+          "value": "John"
+        },
+        {
+          "name": "lastName",
+          "type": "text",
+          "value": "Doe"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /api/storage/profile-system/profiles",
+      "method": "POST",
+      "name": "Create client profile",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "ttl",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "ttl",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"birthDate\": \"1925-11-17\", \"document\": \"12345678900\", \"documentType\": \"CPF\", \"email\": \"john.doe@example.com\", \"firstName\": \"John\", \"lastName\": \"Doe\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create client profile",
+      "url": "https://vtex.local/api/storage/profile-system/profiles"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "description": "This schema describes a b2c customer profile.",
+        "documentTTL": 1825,
+        "properties": {
+          "{fieldName}": {
+            "items": {
+              "type": "string"
+            },
+            "pii": true,
+            "sensitive": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "document",
+          "documentType"
+        ],
+        "title": "Client profile schema",
+        "type": "object",
+        "v-indexed": [
+          "email",
+          "document"
+        ],
+        "v-unique": [
+          "email",
+          "document"
+        ],
+        "version": 1
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates or updates profile schema.\n\r\n\r> Each account has one profile schema. Updating it with this request will substitute the previous version.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [
+        {
+          "name": "description",
+          "type": "text",
+          "value": "This schema describes a b2c customer profile."
+        },
+        {
+          "name": "documentTTL",
+          "type": "text",
+          "value": 1825
+        },
+        {
+          "name": "properties",
+          "type": "text",
+          "value": {
+            "{fieldName}": {
+              "items": {
+                "type": "string"
+              },
+              "pii": true,
+              "sensitive": true,
+              "type": "string"
+            }
+          }
+        },
+        {
+          "name": "required",
+          "type": "text",
+          "value": [
+            "firstName",
+            "lastName",
+            "email",
+            "document",
+            "documentType"
+          ]
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "value": "Client profile schema"
+        },
+        {
+          "name": "type",
+          "type": "text",
+          "value": "object"
+        },
+        {
+          "name": "v-indexed",
+          "type": "text",
+          "value": [
+            "email",
+            "document"
+          ]
+        },
+        {
+          "name": "v-unique",
+          "type": "text",
+          "value": [
+            "email",
+            "document"
+          ]
+        },
+        {
+          "name": "version",
+          "type": "text",
+          "value": 1
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /api/storage/profile-system/profiles/schema",
+      "method": "PUT",
+      "name": "Create or update profile schema",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/schema",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"This schema describes a b2c customer profile.\", \"documentTTL\": 1825, \"properties\": {\"{fieldName}\": {\"items\": {\"type\": \"string\"}, \"pii\": true, \"sensitive\": true, \"type\": \"string\"}}, \"required\": [\"firstName\", \"lastName\", \"email\", \"document\", \"documentType\"], \"title\": \"Client profile schema\", \"type\": \"object\", \"v-indexed\": [\"email\", \"document\"], \"v-unique\": [\"email\", \"document\"], \"version\": 1}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create or update profile schema",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/schema"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a client profile by `profileId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/storage/profile-system/profiles/{{PROFILE_ID}}",
+      "method": "DELETE",
+      "name": "Delete client profile",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete client profile",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the information of a specific client, by its `profileId`.\n\r\n\r> Since your store's profile schema is customizable, the schema and examples presented below may differ from yours. Your integration must be adapted accordingly.\n\r\n\r> For security and privacy reasons, this request returns masked profile data. For unmasked information, see Get unmasked profile.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}",
+      "method": "GET",
+      "name": "Get profile",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get profile",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "birthDate": "1925-11-17",
+        "document": "12345678900",
+        "documentType": "CPF",
+        "email": "john.doe@example.com",
+        "firstName": "John",
+        "lastName": "Doe"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Updates one or more fields of an existing client profile.\n\r\n\r> Since your store's profile schema is customizable, the schema and examples presented below may differ from yours. Your integration must be adapted accordingly.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [
+        {
+          "name": "birthDate",
+          "type": "text",
+          "value": "1925-11-17"
+        },
+        {
+          "name": "document",
+          "type": "text",
+          "value": "12345678900"
+        },
+        {
+          "name": "documentType",
+          "type": "text",
+          "value": "CPF"
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "value": "john.doe@example.com"
+        },
+        {
+          "name": "firstName",
+          "type": "text",
+          "value": "John"
+        },
+        {
+          "name": "lastName",
+          "type": "text",
+          "value": "Doe"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PATCH /api/storage/profile-system/profiles/{{PROFILE_ID}}",
+      "method": "PATCH",
+      "name": "Updates client profile",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        },
+        {
+          "name": "ttl",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        },
+        {
+          "name": "ttl",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"birthDate\": \"1925-11-17\", \"document\": \"12345678900\", \"documentType\": \"CPF\", \"email\": \"john.doe@example.com\", \"firstName\": \"John\", \"lastName\": \"Doe\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Updates client profile",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information of all addresses of a given client, by its `profileId`.\n\r\n\r> For security and privacy reasons, this request returns masked address data. For unmasked information, see Get unmasked client addresses.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses",
+      "method": "GET",
+      "name": "Get client addresses",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get client addresses",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "administrativeAreaLevel1": "RJ",
+        "countryCode": "BR",
+        "countryName": "Brasil",
+        "locality": "Locality",
+        "localityAreaLevel1": "Locality area",
+        "postalCode": "20200-000",
+        "route": "51",
+        "streetNumber": "999"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates new address for a given client profile.\n\r\n\r> The `id` field returned by this request is the `addressId` used to retrieve or update information of a specific address later.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [
+        {
+          "name": "administrativeAreaLevel1",
+          "type": "text",
+          "value": "RJ"
+        },
+        {
+          "name": "countryCode",
+          "type": "text",
+          "value": "BR"
+        },
+        {
+          "name": "countryName",
+          "type": "text",
+          "value": "Brasil"
+        },
+        {
+          "name": "locality",
+          "type": "text",
+          "value": "Locality"
+        },
+        {
+          "name": "localityAreaLevel1",
+          "type": "text",
+          "value": "Locality area"
+        },
+        {
+          "name": "postalCode",
+          "type": "text",
+          "value": "20200-000"
+        },
+        {
+          "name": "route",
+          "type": "text",
+          "value": "51"
+        },
+        {
+          "name": "streetNumber",
+          "type": "text",
+          "value": "999"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses",
+      "method": "POST",
+      "name": "Create client address",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"administrativeAreaLevel1\": \"RJ\", \"countryCode\": \"BR\", \"countryName\": \"Brasil\", \"locality\": \"Locality\", \"localityAreaLevel1\": \"Locality area\", \"postalCode\": \"20200-000\", \"route\": \"51\", \"streetNumber\": \"999\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create client address",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves unmasked information of all addresses of a given client, by its `profileId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/unmask",
+      "method": "GET",
+      "name": "Get unmasked client addresses",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/unmask",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get unmasked client addresses",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/unmask"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a client's address by `profileId` and `addressId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}",
+      "method": "DELETE",
+      "name": "Delete address",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete address",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information of a specific address of a given client, by its respectives `adderssId` and `profileId`.\n\r\n\r> For security and privacy reasons, this request returns masked address data. For unmasked information, see Get unmasked address.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}",
+      "method": "GET",
+      "name": "Get address",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get address",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "administrativeAreaLevel1": "RJ",
+        "countryCode": "BR",
+        "countryName": "Brasil",
+        "locality": "Locality",
+        "localityAreaLevel1": "Locality area",
+        "postalCode": "20200-000",
+        "route": "Brasil",
+        "streetNumber": "Brasil"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Updates one or more fields of an existing address for a given client profile.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [
+        {
+          "name": "administrativeAreaLevel1",
+          "type": "text",
+          "value": "RJ"
+        },
+        {
+          "name": "countryCode",
+          "type": "text",
+          "value": "BR"
+        },
+        {
+          "name": "countryName",
+          "type": "text",
+          "value": "Brasil"
+        },
+        {
+          "name": "locality",
+          "type": "text",
+          "value": "Locality"
+        },
+        {
+          "name": "localityAreaLevel1",
+          "type": "text",
+          "value": "Locality area"
+        },
+        {
+          "name": "postalCode",
+          "type": "text",
+          "value": "20200-000"
+        },
+        {
+          "name": "route",
+          "type": "text",
+          "value": "Brasil"
+        },
+        {
+          "name": "streetNumber",
+          "type": "text",
+          "value": "Brasil"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PATCH /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}",
+      "method": "PATCH",
+      "name": "Update client address",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"administrativeAreaLevel1\": \"RJ\", \"countryCode\": \"BR\", \"countryName\": \"Brasil\", \"locality\": \"Locality\", \"localityAreaLevel1\": \"Locality area\", \"postalCode\": \"20200-000\", \"route\": \"Brasil\", \"streetNumber\": \"Brasil\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update client address",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves unmasked information of a specific address of a given client, by its respectives `adderssId` and `profileId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/unmask",
+      "method": "GET",
+      "name": "Get unmasked address",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        },
+        {
+          "name": "reason",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/unmask",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "reason",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get unmasked address",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/unmask"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information of a specific version address of a given client.\n\r\n\r> For security and privacy reasons, this request returns masked address data by version. For unmasked information, see Get unmasked address by version.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/versions/{{ADDRESS_VERSION_ID}}",
+      "method": "GET",
+      "name": "Get address by version",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        },
+        {
+          "name": "addressVersionId",
+          "value": ""
+        },
+        {
+          "name": "reason",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/versions/{{ADDRESS_VERSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        },
+        {
+          "name": "addressVersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "reason",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get address by version",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/versions/{{ADDRESS_VERSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves unmasked information of a specific address version of a given client.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/versions/{{ADDRESS_VERSION_ID}}/unmask",
+      "method": "GET",
+      "name": "Get unmasked address by version",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        },
+        {
+          "name": "addressVersionId",
+          "value": ""
+        },
+        {
+          "name": "reason",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/versions/{{ADDRESS_VERSION_ID}}/unmask",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "addressId",
+          "value": ""
+        },
+        {
+          "name": "addressVersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "reason",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get unmasked address by version",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/addresses/{{ADDRESS_ID}}/versions/{{ADDRESS_VERSION_ID}}/unmask"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes purchase informaiton by `profileId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info",
+      "method": "DELETE",
+      "name": "Delete purchase information",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete purchase information",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves purchase information of a given client, by its `profileId`.\n\r\n\r> For security and privacy reasons, this request returns masked data. For unmasked information, see Get unmasked purchase information.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info",
+      "method": "GET",
+      "name": "Get purchase information",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get purchase information",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Updates one or more fields of existing purchase information for a given client profile.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "PATCH /api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info",
+      "method": "PATCH",
+      "name": "Update purchase information",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update purchase information",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Creates purchase information for a given client profile.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "POST /api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info",
+      "method": "POST",
+      "name": "Create purchase information",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create purchase information",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves unmasked purchase information of a given client, by its `profileId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info/unmask",
+      "method": "GET",
+      "name": "Get unmasked purchase information",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info/unmask",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get unmasked purchase information",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/purchase-info/unmask"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves unmasked information of a specific client, by its `profileId`.\n\r\n\r> Since your store's profile schema is customizable, the schema and examples presented below may differ from yours. Your integration must be adapted accordingly.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/unmask",
+      "method": "GET",
+      "name": "Get unmasked profile",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "reason",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/unmask",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "reason",
+          "value": ""
+        },
+        {
+          "name": "alternativeKey",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get unmasked profile",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/unmask"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the information of a specific version of a client profile.\n\r\n\r> Since your store's profile schema is customizable, the schema and examples presented below may differ from yours. Your integration must be adapted accordingly.\n\r\n\r> For security and privacy reasons, this request returns masked profile data. For unmasked information, see Get unmasked profile by version.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/versions/{{PROFILE_VERSION_ID}}",
+      "method": "GET",
+      "name": "Get profile by version",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "profileVersionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/versions/{{PROFILE_VERSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "profileVersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get profile by version",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/versions/{{PROFILE_VERSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves unmasked information of a specific version of a client profile.\n\r\n\r> Since your store's profile schema is customizable, the schema and examples presented below may differ from yours. Your integration must be adapted accordingly.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/profiles/{{PROFILE_ID}}/versions/{{PROFILE_VERSION_ID}}/unmask",
+      "method": "GET",
+      "name": "Get unmasked profile by version",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "profileVersionId",
+          "value": ""
+        },
+        {
+          "name": "reason",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/profiles/{{PROFILE_ID}}/versions/{{PROFILE_VERSION_ID}}/unmask",
+      "pathParameters": [
+        {
+          "name": "profileId",
+          "value": ""
+        },
+        {
+          "name": "profileVersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "reason",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get unmasked profile by version",
+      "url": "https://vtex.local/api/storage/profile-system/profiles/{{PROFILE_ID}}/versions/{{PROFILE_VERSION_ID}}/unmask"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Creates new prospect.\n\r\n\r> The `id` field returned by this request is the `prospectId` used to retrieve information on a specific prospect later.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "POST /api/storage/profile-system/prospects",
+      "method": "POST",
+      "name": "Create prospect",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/prospects",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create prospect",
+      "url": "https://vtex.local/api/storage/profile-system/prospects"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a prospect by `prospectId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/storage/profile-system/prospects/{{PROSPECT_ID}}",
+      "method": "DELETE",
+      "name": "Delete prospect",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "prospectId",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/prospects/{{PROSPECT_ID}}",
+      "pathParameters": [
+        {
+          "name": "prospectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete prospect",
+      "url": "https://vtex.local/api/storage/profile-system/prospects/{{PROSPECT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the information of a specific prospect, by its `prospectId`.\n\r\n\r> For security and privacy reasons, this request returns masked prospect data. For unmasked information, see Get unmasked prospect.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/prospects/{{PROSPECT_ID}}",
+      "method": "GET",
+      "name": "Get prospect",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "prospectId",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/prospects/{{PROSPECT_ID}}",
+      "pathParameters": [
+        {
+          "name": "prospectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get prospect",
+      "url": "https://vtex.local/api/storage/profile-system/prospects/{{PROSPECT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Updates one or more fields of an existing prospect.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "PATCH /api/storage/profile-system/prospects/{{PROSPECT_ID}}",
+      "method": "PATCH",
+      "name": "Update prospect",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "prospectId",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/prospects/{{PROSPECT_ID}}",
+      "pathParameters": [
+        {
+          "name": "prospectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update prospect",
+      "url": "https://vtex.local/api/storage/profile-system/prospects/{{PROSPECT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PROFILE_SYSTEM_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves unmasked information of a specific prospect, by its `prospectId`.\n\r\n\r> Learn more about the [Profile System](https://developers.vtex.com/vtex-rest-api/docs/profile-system) and its other API endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PROFILE_SYSTEM_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/storage/profile-system/prospects/{{PROSPECT_ID}}/unmask",
+      "method": "GET",
+      "name": "Get unmasked prospect",
+      "note": "Replace {{PROFILE_SYSTEM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "prospectId",
+          "value": ""
+        },
+        {
+          "name": "reason",
+          "value": ""
+        }
+      ],
+      "path": "/api/storage/profile-system/prospects/{{PROSPECT_ID}}/unmask",
+      "pathParameters": [
+        {
+          "name": "prospectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "reason",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get unmasked prospect",
+      "url": "https://vtex.local/api/storage/profile-system/prospects/{{PROSPECT_ID}}/unmask"
+    }
+  ]
+}

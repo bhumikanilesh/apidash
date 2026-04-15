@@ -1,0 +1,105 @@
+{
+  "id": "ebay.com_sell-negotiation",
+  "info": {
+    "base_url": "https://api.ebay.com{basePath}",
+    "description": "This method sends eligible buyers offers to purchase items in a listing at a discount. When a buyer has shown interest in a listing, they become &quot;eligible&quot; to receive a seller-initiated...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Negotiation API",
+    "version": "v1.1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{NEGOTIATION_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{NEGOTIATION_API_KEY_ACCESS_TOKEN}}"
+      },
+      "method": "GET",
+      "name": "GET /find_eligible_items",
+      "note": "Replace {{NEGOTIATION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.ebay.com{{BASE_PATH}}/find_eligible_items"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "allowCounterOffer": false,
+        "message": "",
+        "offerDuration": {
+          "unit": "",
+          "value": 0
+        },
+        "offeredItems": [
+          {
+            "discountPercentage": "",
+            "listingId": "",
+            "price": {
+              "currency": "",
+              "value": ""
+            },
+            "quantity": 0
+          }
+        ]
+      },
+      "body_json": {
+        "allowCounterOffer": false,
+        "message": "",
+        "offerDuration": {
+          "unit": "",
+          "value": 0
+        },
+        "offeredItems": [
+          {
+            "discountPercentage": "",
+            "listingId": "",
+            "price": {
+              "currency": "",
+              "value": ""
+            },
+            "quantity": 0
+          }
+        ]
+      },
+      "body_text": "{\"allowCounterOffer\": false, \"message\": \"\", \"offerDuration\": {\"unit\": \"\", \"value\": 0}, \"offeredItems\": [{\"discountPercentage\": \"\", \"listingId\": \"\", \"price\": {\"currency\": \"\", \"value\": \"\"}, \"quantity\": 0}]}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{NEGOTIATION_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{NEGOTIATION_API_KEY_ACCESS_TOKEN}}",
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "POST /send_offer_to_interested_buyers",
+      "note": "Replace {{NEGOTIATION_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.ebay.com{{BASE_PATH}}/send_offer_to_interested_buyers"
+    }
+  ]
+}

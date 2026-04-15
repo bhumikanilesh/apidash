@@ -1,0 +1,1455 @@
+{
+  "id": "amazonaws.com_qldb",
+  "info": {
+    "base_url": "http://qldb.{region}.amazonaws.com",
+    "description": "Updates the permissions mode of a ledger.  Before you switch to the STANDARD permissions mode, you must first create all required IAM policies and table tags to avoid disruption to your users. To...",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Amazon QLDB",
+    "version": "2019-01-02"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be <code>ACTIVE</code>.</p> <p>You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention period, so they are automatically deleted after this limit expires.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /ledgers/{{NAME}}/journal-kinesis-streams/{{STREAM_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /ledgers/{name}/journal-kinesis-streams/{streamId}",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "streamId",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/journal-kinesis-streams/{{STREAM_ID}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "streamId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /ledgers/{name}/journal-kinesis-streams/{streamId}",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/journal-kinesis-streams/{{STREAM_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource Name (ARN), stream name, current status, creation time, and the parameters of the original stream creation request.</p> <p>This action does not return any expired journal streams. For more information, see <a href=\"https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration\">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "GET /ledgers/{{NAME}}/journal-kinesis-streams/{{STREAM_ID}}",
+      "method": "GET",
+      "name": "GET /ledgers/{name}/journal-kinesis-streams/{streamId}",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "streamId",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/journal-kinesis-streams/{{STREAM_ID}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "streamId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /ledgers/{name}/journal-kinesis-streams/{streamId}",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/journal-kinesis-streams/{{STREAM_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DeletionProtection": false,
+        "KmsKey": "",
+        "Name": "",
+        "PermissionsMode": "ALLOW_ALL",
+        "Tags": {}
+      },
+      "body_json": {
+        "DeletionProtection": false,
+        "KmsKey": "",
+        "Name": "",
+        "PermissionsMode": "ALLOW_ALL",
+        "Tags": {}
+      },
+      "body_text": "{\"Name\": \"\", \"Tags\": {}, \"PermissionsMode\": \"ALLOW_ALL\", \"DeletionProtection\": false, \"KmsKey\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new ledger in your Amazon Web Services account in the current Region.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /ledgers",
+      "method": "POST",
+      "name": "POST /ledgers",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Tags\": {}, \"PermissionsMode\": \"ALLOW_ALL\", \"DeletionProtection\": false, \"KmsKey\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /ledgers",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Returns an array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p> <p>This action returns a maximum of 100 items and is paginated so that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "GET /ledgers",
+      "method": "GET",
+      "name": "GET /ledgers",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /ledgers",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Deletes a ledger and all of its contents. This action is irreversible.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /ledgers/{{NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /ledgers/{name}",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /ledgers/{name}",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about a ledger, including its state, permissions mode, encryption at rest settings, and when it was created.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "GET /ledgers/{{NAME}}",
+      "method": "GET",
+      "name": "GET /ledgers/{name}",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /ledgers/{name}",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DeletionProtection": false,
+        "KmsKey": ""
+      },
+      "body_json": {
+        "DeletionProtection": false,
+        "KmsKey": ""
+      },
+      "body_text": "{\"DeletionProtection\": false, \"KmsKey\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates properties on a ledger.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /ledgers/{{NAME}}",
+      "method": "PATCH",
+      "name": "PATCH /ledgers/{name}",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"DeletionProtection\": false, \"KmsKey\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /ledgers/{name}",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Returns information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.</p> <p>This action does not return any expired export jobs. For more information, see <a href=\"https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration\">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the export job with the given <code>ExportId</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "GET /ledgers/{{NAME}}/journal-s3-exports/{{EXPORT_ID}}",
+      "method": "GET",
+      "name": "GET /ledgers/{name}/journal-s3-exports/{exportId}",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "exportId",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/journal-s3-exports/{{EXPORT_ID}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "exportId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /ledgers/{name}/journal-s3-exports/{exportId}",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/journal-s3-exports/{{EXPORT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ExclusiveEndTime": "",
+        "InclusiveStartTime": "",
+        "OutputFormat": "ION_BINARY",
+        "RoleArn": "",
+        "S3ExportConfiguration": {
+          "Bucket": {},
+          "EncryptionConfiguration": {
+            "KmsKeyArn": {},
+            "ObjectEncryptionType": {}
+          },
+          "Prefix": {}
+        }
+      },
+      "body_json": {
+        "ExclusiveEndTime": "",
+        "InclusiveStartTime": "",
+        "OutputFormat": "ION_BINARY",
+        "RoleArn": "",
+        "S3ExportConfiguration": {
+          "Bucket": {},
+          "EncryptionConfiguration": {
+            "KmsKeyArn": {},
+            "ObjectEncryptionType": {}
+          },
+          "Prefix": {}
+        }
+      },
+      "body_text": "{\"InclusiveStartTime\": \"\", \"ExclusiveEndTime\": \"\", \"S3ExportConfiguration\": {\"Bucket\": {}, \"Prefix\": {}, \"EncryptionConfiguration\": {\"ObjectEncryptionType\": {}, \"KmsKeyArn\": {}}}, \"RoleArn\": \"\", \"OutputFormat\": \"ION_BINARY\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Exports journal contents within a date and time range from a ledger into a specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export job can write the data objects in either the text or binary representation of Amazon Ion format, or in <i>JSON Lines</i> text format.</p> <p>In JSON Lines format, each journal block in the exported data object is a valid JSON object that is delimited by a newline. You can use this format to easily integrate JSON exports with analytics tools such as Glue and Amazon Athena because these services can parse newline-delimited JSON automatically. For more information about the format, see <a href=\"https://jsonlines.org/\">JSON Lines</a>.</p> <p>If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given <code>Name</code> is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.</p> <p>You can initiate up to two concurrent journal export requests for each ledger. Beyond this limit, journal export requests throw <code>LimitExceededException</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /ledgers/{{NAME}}/journal-s3-exports",
+      "method": "POST",
+      "name": "POST /ledgers/{name}/journal-s3-exports",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/journal-s3-exports",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"InclusiveStartTime\": \"\", \"ExclusiveEndTime\": \"\", \"S3ExportConfiguration\": {\"Bucket\": {}, \"Prefix\": {}, \"EncryptionConfiguration\": {\"ObjectEncryptionType\": {}, \"KmsKeyArn\": {}}}, \"RoleArn\": \"\", \"OutputFormat\": \"ION_BINARY\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /ledgers/{name}/journal-s3-exports",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/journal-s3-exports"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Returns an array of journal export job descriptions for a specified ledger.</p> <p>This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action does not return any expired export jobs. For more information, see <a href=\"https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration\">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "GET /ledgers/{{NAME}}/journal-s3-exports",
+      "method": "GET",
+      "name": "GET /ledgers/{name}/journal-s3-exports",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/journal-s3-exports",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /ledgers/{name}/journal-s3-exports",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/journal-s3-exports"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "BlockAddress": {
+          "IonText": {}
+        },
+        "DigestTipAddress": {
+          "IonText": {}
+        }
+      },
+      "body_json": {
+        "BlockAddress": {
+          "IonText": {}
+        },
+        "DigestTipAddress": {
+          "IonText": {}
+        }
+      },
+      "body_text": "{\"BlockAddress\": {\"IonText\": {}}, \"DigestTipAddress\": {\"IonText\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Returns a block object at a specified address in a journal. Also returns a proof of the specified block for verification if <code>DigestTipAddress</code> is provided.</p> <p>For information about the data contents in a block, see <a href=\"https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html\">Journal contents</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the specified ledger doesn't exist or is in <code>DELETING</code> status, then throws <code>ResourceNotFoundException</code>.</p> <p>If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.</p> <p>If no block exists with the specified address, then throws <code>InvalidParameterException</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /ledgers/{{NAME}}/block",
+      "method": "POST",
+      "name": "POST /ledgers/{name}/block",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/block",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"BlockAddress\": {\"IonText\": {}}, \"DigestTipAddress\": {\"IonText\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /ledgers/{name}/block",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/block"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the digest of a ledger at the latest committed block in the journal. The response includes a 256-bit hash value and a block address.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "POST /ledgers/{{NAME}}/digest",
+      "method": "POST",
+      "name": "POST /ledgers/{name}/digest",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/digest",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /ledgers/{name}/digest",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/digest"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "BlockAddress": {
+          "IonText": {}
+        },
+        "DigestTipAddress": {
+          "IonText": {}
+        },
+        "DocumentId": ""
+      },
+      "body_json": {
+        "BlockAddress": {
+          "IonText": {}
+        },
+        "DigestTipAddress": {
+          "IonText": {}
+        },
+        "DocumentId": ""
+      },
+      "body_text": "{\"BlockAddress\": {\"IonText\": {}}, \"DocumentId\": \"\", \"DigestTipAddress\": {\"IonText\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns a revision data object for a specified document ID and block address. Also returns a proof of the specified revision for verification if <code>DigestTipAddress</code> is provided.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /ledgers/{{NAME}}/revision",
+      "method": "POST",
+      "name": "POST /ledgers/{name}/revision",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/revision",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"BlockAddress\": {\"IonText\": {}}, \"DocumentId\": \"\", \"DigestTipAddress\": {\"IonText\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /ledgers/{name}/revision",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/revision"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Returns an array of all Amazon QLDB journal stream descriptors for a given ledger. The output of each stream descriptor includes the same details that are returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action does not return any expired journal streams. For more information, see <a href=\"https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration\">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "GET /ledgers/{{NAME}}/journal-kinesis-streams",
+      "method": "GET",
+      "name": "GET /ledgers/{name}/journal-kinesis-streams",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/journal-kinesis-streams",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /ledgers/{name}/journal-kinesis-streams",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/journal-kinesis-streams"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ExclusiveEndTime": "",
+        "InclusiveStartTime": "",
+        "KinesisConfiguration": {
+          "AggregationEnabled": {},
+          "StreamArn": {}
+        },
+        "RoleArn": "",
+        "StreamName": "",
+        "Tags": {}
+      },
+      "body_json": {
+        "ExclusiveEndTime": "",
+        "InclusiveStartTime": "",
+        "KinesisConfiguration": {
+          "AggregationEnabled": {},
+          "StreamArn": {}
+        },
+        "RoleArn": "",
+        "StreamName": "",
+        "Tags": {}
+      },
+      "body_text": "{\"RoleArn\": \"\", \"Tags\": {}, \"InclusiveStartTime\": \"\", \"ExclusiveEndTime\": \"\", \"KinesisConfiguration\": {\"StreamArn\": {}, \"AggregationEnabled\": {}}, \"StreamName\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is committed to the ledger's journal and delivers the data to a specified Amazon Kinesis Data Streams resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /ledgers/{{NAME}}/journal-kinesis-streams",
+      "method": "POST",
+      "name": "POST /ledgers/{name}/journal-kinesis-streams",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/journal-kinesis-streams",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"RoleArn\": \"\", \"Tags\": {}, \"InclusiveStartTime\": \"\", \"ExclusiveEndTime\": \"\", \"KinesisConfiguration\": {\"StreamArn\": {}, \"AggregationEnabled\": {}}, \"StreamName\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /ledgers/{name}/journal-kinesis-streams",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/journal-kinesis-streams"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Returns an array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p> <p>This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple times.</p> <p>This action does not return any expired export jobs. For more information, see <a href=\"https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration\">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "GET /journal-s3-exports",
+      "method": "GET",
+      "name": "GET /journal-s3-exports",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/journal-s3-exports",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /journal-s3-exports",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/journal-s3-exports"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all tags for a specified Amazon QLDB resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "GET /tags/{{RESOURCE_ARN}}",
+      "method": "GET",
+      "name": "GET /tags/{resourceArn}",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /tags/{resourceArn}",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Tags": {}
+      },
+      "body_json": {
+        "Tags": {}
+      },
+      "body_text": "{\"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Adds one or more tags to a specified Amazon QLDB resource.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /tags/{{RESOURCE_ARN}}",
+      "method": "POST",
+      "name": "POST /tags/{resourceArn}",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /tags/{resourceArn}",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Removes one or more tags from a specified Amazon QLDB resource. You can specify up to 50 tag keys to remove.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /tags/{{RESOURCE_ARN}}",
+      "method": "DELETE",
+      "name": "DELETE /tags/{resourceArn}#tagKeys",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        },
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "resourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /tags/{resourceArn}#tagKeys",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}#tagKeys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_QLDB_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "PermissionsMode": "ALLOW_ALL"
+      },
+      "body_json": {
+        "PermissionsMode": "ALLOW_ALL"
+      },
+      "body_text": "{\"PermissionsMode\": \"ALLOW_ALL\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates the permissions mode of a ledger.</p> <important> <p>Before you switch to the <code>STANDARD</code> permissions mode, you must first create all required IAM policies and table tags to avoid disruption to your users. To learn more, see <a href=\"https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating\">Migrating to the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </important>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_QLDB_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /ledgers/{{NAME}}/permissions-mode",
+      "method": "PATCH",
+      "name": "PATCH /ledgers/{name}/permissions-mode",
+      "note": "Replace {{AMAZON_QLDB_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/ledgers/{{NAME}}/permissions-mode",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"PermissionsMode\": \"ALLOW_ALL\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /ledgers/{name}/permissions-mode",
+      "url": "http://qldb.{{REGION}}.amazonaws.com/ledgers/{{NAME}}/permissions-mode"
+    }
+  ]
+}

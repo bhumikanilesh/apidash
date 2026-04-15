@@ -1,0 +1,3954 @@
+{
+  "id": "squareup.com",
+  "info": {
+    "base_url": "https://connect.squareup.com",
+    "description": "Searches for catalog items or item variations by matching supported search attribute values, including\ncustom attribute values, against one or more of the specified query expressions.\n\nThis...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation",
+      "embedding"
+    ],
+    "title": "Square Connect API",
+    "version": "2.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "location_id": "YOUR_LOCATION_ID"
+        },
+        "request_url": "/mobile/authorization-code"
+      },
+      "body_json": {
+        "request_body": {
+          "location_id": "YOUR_LOCATION_ID"
+        },
+        "request_url": "/mobile/authorization-code"
+      },
+      "body_text": "{\"request_body\": {\"location_id\": \"YOUR_LOCATION_ID\"}, \"request_url\": \"/mobile/authorization-code\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Generates code to authorize a mobile application to connect to a Square card reader\n\nAuthorization codes are one-time-use and expire __60 minutes__ after being issued.\n\n__Important:__ The `Authorization` header you provide to this endpoint must have the following format:\n\n```\nAuthorization: Bearer ACCESS_TOKEN\n```\n\nReplace `ACCESS_TOKEN` with a\n[valid production authorization credential](https://developer.squareup.com/docs/build-basics/access-tokens).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /mobile/authorization-code",
+      "method": "POST",
+      "name": "CreateMobileAuthorizationCode",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/mobile/authorization-code",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"location_id\": \"YOUR_LOCATION_ID\"}, \"request_url\": \"/mobile/authorization-code\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CreateMobileAuthorizationCode",
+      "url": "https://connect.squareup.com/mobile/authorization-code"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "request_body": {
+          "access_token": "ACCESS_TOKEN"
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "access_token": "ACCESS_TOKEN"
+        }
+      },
+      "body_text": "{\"request_body\": {\"access_token\": \"ACCESS_TOKEN\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`RenewToken` is deprecated. For information about refreshing OAuth access tokens, see\n[Migrate from Renew to Refresh OAuth Tokens](https://developer.squareup.com/docs/oauth-api/migrate-to-refresh-tokens).\n\n\nRenews an OAuth access token before it expires.\n\nOAuth access tokens besides your application's personal access token expire after __30 days__.\nYou can also renew expired tokens within __15 days__ of their expiration.\nYou cannot renew an access token that has been expired for more than 15 days.\nInstead, the associated user must re-complete the OAuth flow from the beginning.\n\n__Important:__ The `Authorization` header for this endpoint must have the\nfollowing format:\n\n```\nAuthorization: Client APPLICATION_SECRET\n```\n\nReplace `APPLICATION_SECRET` with the application secret on the Credentials\npage in the [developer dashboard](https://developer.squareup.com/apps).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SQUARE_CONNECT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SQUARE_CONNECT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /oauth2/clients/{{CLIENT_ID}}/access-token/renew",
+      "method": "POST",
+      "name": "RenewToken",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "client_id",
+          "value": ""
+        }
+      ],
+      "path": "/oauth2/clients/{{CLIENT_ID}}/access-token/renew",
+      "pathParameters": [
+        {
+          "name": "client_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"access_token\": \"ACCESS_TOKEN\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RenewToken",
+      "url": "https://connect.squareup.com/oauth2/clients/{{CLIENT_ID}}/access-token/renew"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "request_body": {
+          "access_token": "ACCESS_TOKEN",
+          "client_id": "CLIENT_ID"
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "access_token": "ACCESS_TOKEN",
+          "client_id": "CLIENT_ID"
+        }
+      },
+      "body_text": "{\"request_body\": {\"access_token\": \"ACCESS_TOKEN\", \"client_id\": \"CLIENT_ID\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Revokes an access token generated with the OAuth flow.\n\nIf an account has more than one OAuth access token for your application, this\nendpoint revokes all of them, regardless of which token you specify. When an\nOAuth access token is revoked, all of the active subscriptions associated\nwith that OAuth token are canceled immediately.\n\n__Important:__ The `Authorization` header for this endpoint must have the\nfollowing format:\n\n```\nAuthorization: Client APPLICATION_SECRET\n```\n\nReplace `APPLICATION_SECRET` with the application secret on the OAuth\npage in the [developer dashboard](https://developer.squareup.com/apps).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{SQUARE_CONNECT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{SQUARE_CONNECT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /oauth2/revoke",
+      "method": "POST",
+      "name": "RevokeToken",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/oauth2/revoke",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"access_token\": \"ACCESS_TOKEN\", \"client_id\": \"CLIENT_ID\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RevokeToken",
+      "url": "https://connect.squareup.com/oauth2/revoke"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "request_body": {
+          "client_id": "APPLICATION_ID",
+          "client_secret": "APPLICATION_SECRET",
+          "code": "CODE_FROM_AUTHORIZE",
+          "grant_type": "authorization_code"
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "client_id": "APPLICATION_ID",
+          "client_secret": "APPLICATION_SECRET",
+          "code": "CODE_FROM_AUTHORIZE",
+          "grant_type": "authorization_code"
+        }
+      },
+      "body_text": "{\"request_body\": {\"client_id\": \"APPLICATION_ID\", \"client_secret\": \"APPLICATION_SECRET\", \"code\": \"CODE_FROM_AUTHORIZE\", \"grant_type\": \"authorization_code\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns an OAuth access token.\n\nThe endpoint supports distinct methods of obtaining OAuth access tokens.\nApplications specify a method by adding the `grant_type` parameter\nin the request and also provide relevant information.\n\n__Note:__ Regardless of the method application specified,\nthe endpoint always returns two items; an OAuth access token and\na refresh token in the response.\n\n__OAuth tokens should only live on secure servers. Application clients\nshould never interact directly with OAuth tokens__.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /oauth2/token",
+      "method": "POST",
+      "name": "ObtainToken",
+      "params": [],
+      "path": "/oauth2/token",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"client_id\": \"APPLICATION_ID\", \"client_secret\": \"APPLICATION_SECRET\", \"code\": \"CODE_FROM_AUTHORIZE\", \"grant_type\": \"authorization_code\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ObtainToken",
+      "url": "https://connect.squareup.com/oauth2/token"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides summary information for all of a business's employees.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/me/employees",
+      "method": "GET",
+      "name": "ListEmployees",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "begin_updated_at",
+          "value": ""
+        },
+        {
+          "name": "end_updated_at",
+          "value": ""
+        },
+        {
+          "name": "begin_created_at",
+          "value": ""
+        },
+        {
+          "name": "end_created_at",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "external_id",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "path": "/v1/me/employees",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "begin_updated_at",
+          "value": ""
+        },
+        {
+          "name": "end_updated_at",
+          "value": ""
+        },
+        {
+          "name": "begin_created_at",
+          "value": ""
+        },
+        {
+          "name": "end_created_at",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "external_id",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListEmployees",
+      "url": "https://connect.squareup.com/v1/me/employees"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "authorized_location_ids": [
+          ""
+        ],
+        "created_at": "",
+        "email": "",
+        "external_id": "",
+        "first_name": "",
+        "id": "",
+        "last_name": "",
+        "role_ids": [
+          ""
+        ],
+        "status": "",
+        "updated_at": ""
+      },
+      "body_json": {
+        "authorized_location_ids": [
+          ""
+        ],
+        "created_at": "",
+        "email": "",
+        "external_id": "",
+        "first_name": "",
+        "id": "",
+        "last_name": "",
+        "role_ids": [
+          ""
+        ],
+        "status": "",
+        "updated_at": ""
+      },
+      "body_text": "{\"authorized_location_ids\": [\"\"], \"created_at\": \"\", \"email\": \"\", \"external_id\": \"\", \"first_name\": \"\", \"id\": \"\", \"last_name\": \"\", \"role_ids\": [\"\"], \"status\": \"\", \"updated_at\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": " Use the CreateEmployee endpoint to add an employee to a Square\naccount. Employees created with the Connect API have an initial status\nof `INACTIVE`. Inactive employees cannot sign in to Square Point of Sale\nuntil they are activated from the Square Dashboard. Employee status\ncannot be changed with the Connect API.\n\nEmployee entities cannot be deleted. To disable employee profiles,\nset the employee's status to <code>INACTIVE</code>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/me/employees",
+      "method": "POST",
+      "name": "CreateEmployee",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/me/employees",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"authorized_location_ids\": [\"\"], \"created_at\": \"\", \"email\": \"\", \"external_id\": \"\", \"first_name\": \"\", \"id\": \"\", \"last_name\": \"\", \"role_ids\": [\"\"], \"status\": \"\", \"updated_at\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CreateEmployee",
+      "url": "https://connect.squareup.com/v1/me/employees"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides the details for a single employee.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/me/employees/{{EMPLOYEE_ID}}",
+      "method": "GET",
+      "name": "RetrieveEmployee",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "employee_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/me/employees/{{EMPLOYEE_ID}}",
+      "pathParameters": [
+        {
+          "name": "employee_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveEmployee",
+      "url": "https://connect.squareup.com/v1/me/employees/{{EMPLOYEE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "authorized_location_ids": [
+          ""
+        ],
+        "created_at": "",
+        "email": "",
+        "external_id": "",
+        "first_name": "",
+        "id": "",
+        "last_name": "",
+        "role_ids": [
+          ""
+        ],
+        "status": "",
+        "updated_at": ""
+      },
+      "body_json": {
+        "authorized_location_ids": [
+          ""
+        ],
+        "created_at": "",
+        "email": "",
+        "external_id": "",
+        "first_name": "",
+        "id": "",
+        "last_name": "",
+        "role_ids": [
+          ""
+        ],
+        "status": "",
+        "updated_at": ""
+      },
+      "body_text": "{\"authorized_location_ids\": [\"\"], \"created_at\": \"\", \"email\": \"\", \"external_id\": \"\", \"first_name\": \"\", \"id\": \"\", \"last_name\": \"\", \"role_ids\": [\"\"], \"status\": \"\", \"updated_at\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/me/employees/{{EMPLOYEE_ID}}",
+      "method": "PUT",
+      "name": "UpdateEmployee",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "employee_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/me/employees/{{EMPLOYEE_ID}}",
+      "pathParameters": [
+        {
+          "name": "employee_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"authorized_location_ids\": [\"\"], \"created_at\": \"\", \"email\": \"\", \"external_id\": \"\", \"first_name\": \"\", \"id\": \"\", \"last_name\": \"\", \"role_ids\": [\"\"], \"status\": \"\", \"updated_at\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "UpdateEmployee",
+      "url": "https://connect.squareup.com/v1/me/employees/{{EMPLOYEE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides summary information for all of a business's employee roles.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/me/roles",
+      "method": "GET",
+      "name": "ListEmployeeRoles",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "path": "/v1/me/roles",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListEmployeeRoles",
+      "url": "https://connect.squareup.com/v1/me/roles"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "created_at": "",
+        "id": "",
+        "is_owner": false,
+        "name": "",
+        "permissions": [
+          ""
+        ],
+        "updated_at": ""
+      },
+      "body_json": {
+        "created_at": "",
+        "id": "",
+        "is_owner": false,
+        "name": "",
+        "permissions": [
+          ""
+        ],
+        "updated_at": ""
+      },
+      "body_text": "{\"created_at\": \"\", \"id\": \"\", \"is_owner\": false, \"name\": \"\", \"permissions\": [\"\"], \"updated_at\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates an employee role you can then assign to employees.\n\nSquare accounts can include any number of roles that can be assigned to\nemployees. These roles define the actions and permissions granted to an\nemployee with that role. For example, an employee with a \"Shift Manager\"\nrole might be able to issue refunds in Square Point of Sale, whereas an\nemployee with a \"Clerk\" role might not.\n\nRoles are assigned with the [V1UpdateEmployee](https://developer.squareup.com/reference/square_2021-08-18/v1-employees-api/update-employee-role)\nendpoint. An employee can have only one role at a time.\n\nIf an employee has no role, they have none of the permissions associated\nwith roles. All employees can accept payments with Square Point of Sale.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/me/roles",
+      "method": "POST",
+      "name": "CreateEmployeeRole",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/me/roles",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"created_at\": \"\", \"id\": \"\", \"is_owner\": false, \"name\": \"\", \"permissions\": [\"\"], \"updated_at\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CreateEmployeeRole",
+      "url": "https://connect.squareup.com/v1/me/roles"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides the details for a single employee role.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/me/roles/{{ROLE_ID}}",
+      "method": "GET",
+      "name": "RetrieveEmployeeRole",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "role_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/me/roles/{{ROLE_ID}}",
+      "pathParameters": [
+        {
+          "name": "role_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveEmployeeRole",
+      "url": "https://connect.squareup.com/v1/me/roles/{{ROLE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "created_at": "",
+        "id": "",
+        "is_owner": false,
+        "name": "",
+        "permissions": [
+          ""
+        ],
+        "updated_at": ""
+      },
+      "body_json": {
+        "created_at": "",
+        "id": "",
+        "is_owner": false,
+        "name": "",
+        "permissions": [
+          ""
+        ],
+        "updated_at": ""
+      },
+      "body_text": "{\"created_at\": \"\", \"id\": \"\", \"is_owner\": false, \"name\": \"\", \"permissions\": [\"\"], \"updated_at\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Modifies the details of an employee role.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/me/roles/{{ROLE_ID}}",
+      "method": "PUT",
+      "name": "UpdateEmployeeRole",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "role_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/me/roles/{{ROLE_ID}}",
+      "pathParameters": [
+        {
+          "name": "role_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"created_at\": \"\", \"id\": \"\", \"is_owner\": false, \"name\": \"\", \"permissions\": [\"\"], \"updated_at\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "UpdateEmployeeRole",
+      "url": "https://connect.squareup.com/v1/me/roles/{{ROLE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides summary information for a merchant's online store orders.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/{{LOCATION_ID}}/orders",
+      "method": "GET",
+      "name": "ListOrders",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/orders",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListOrders",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/orders"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides comprehensive information for a single online store order, including the order's history.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/{{LOCATION_ID}}/orders/{{ORDER_ID}}",
+      "method": "GET",
+      "name": "RetrieveOrder",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "order_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/orders/{{ORDER_ID}}",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "order_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveOrder",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/orders/{{ORDER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "action": "",
+        "canceled_note": "",
+        "completed_note": "",
+        "refunded_note": "",
+        "shipped_tracking_number": ""
+      },
+      "body_json": {
+        "action": "",
+        "canceled_note": "",
+        "completed_note": "",
+        "refunded_note": "",
+        "shipped_tracking_number": ""
+      },
+      "body_text": "{\"action\": \"\", \"canceled_note\": \"\", \"completed_note\": \"\", \"refunded_note\": \"\", \"shipped_tracking_number\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the details of an online store order. Every update you perform on an order corresponds to one of three actions:",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/{{LOCATION_ID}}/orders/{{ORDER_ID}}",
+      "method": "PUT",
+      "name": "UpdateOrder",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "order_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/orders/{{ORDER_ID}}",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "order_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"action\": \"\", \"canceled_note\": \"\", \"completed_note\": \"\", \"refunded_note\": \"\", \"shipped_tracking_number\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "UpdateOrder",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/orders/{{ORDER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides summary information for all payments taken for a given\nSquare account during a date range. Date ranges cannot exceed 1 year in\nlength. See Date ranges for details of inclusive and exclusive dates.\n\n*Note**: Details for payments processed with Square Point of Sale while\nin offline mode may not be transmitted to Square for up to 72 hours.\nOffline payments have a `created_at` value that reflects the time the\npayment was originally processed, not the time it was subsequently\ntransmitted to Square. Consequently, the ListPayments endpoint might\nlist an offline payment chronologically between online payments that\nwere seen in a previous request.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/{{LOCATION_ID}}/payments",
+      "method": "GET",
+      "name": "ListPayments",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "begin_time",
+          "value": ""
+        },
+        {
+          "name": "end_time",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        },
+        {
+          "name": "include_partial",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/payments",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "begin_time",
+          "value": ""
+        },
+        {
+          "name": "end_time",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        },
+        {
+          "name": "include_partial",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListPayments",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/payments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides comprehensive information for a single payment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/{{LOCATION_ID}}/payments/{{PAYMENT_ID}}",
+      "method": "GET",
+      "name": "RetrievePayment",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "payment_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/payments/{{PAYMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "payment_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrievePayment",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/payments/{{PAYMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides the details for all refunds initiated by a merchant or any of the merchant's mobile staff during a date range. Date ranges cannot exceed one year in length.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/{{LOCATION_ID}}/refunds",
+      "method": "GET",
+      "name": "ListRefunds",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "begin_time",
+          "value": ""
+        },
+        {
+          "name": "end_time",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/refunds",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "begin_time",
+          "value": ""
+        },
+        {
+          "name": "end_time",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListRefunds",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/refunds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "payment_id": "",
+        "reason": "",
+        "refunded_money": {
+          "amount": 0,
+          "currency_code": ""
+        },
+        "request_idempotence_key": "",
+        "type": ""
+      },
+      "body_json": {
+        "payment_id": "",
+        "reason": "",
+        "refunded_money": {
+          "amount": 0,
+          "currency_code": ""
+        },
+        "request_idempotence_key": "",
+        "type": ""
+      },
+      "body_text": "{\"payment_id\": \"\", \"reason\": \"\", \"refunded_money\": {\"amount\": 0, \"currency_code\": \"\"}, \"request_idempotence_key\": \"\", \"type\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Issues a refund for a previously processed payment. You must issue\na refund within 60 days of the associated payment.\n\nYou cannot issue a partial refund for a split tender payment. You must\ninstead issue a full or partial refund for a particular tender, by\nproviding the applicable tender id to the V1CreateRefund endpoint.\nIssuing a full refund for a split tender payment refunds all tenders\nassociated with the payment.\n\nIssuing a refund for a card payment is not reversible. For development\npurposes, you can create fake cash payments in Square Point of Sale and\nrefund them.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/{{LOCATION_ID}}/refunds",
+      "method": "POST",
+      "name": "CreateRefund",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/refunds",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"payment_id\": \"\", \"reason\": \"\", \"refunded_money\": {\"amount\": 0, \"currency_code\": \"\"}, \"request_idempotence_key\": \"\", \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CreateRefund",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/refunds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides summary information for all deposits and withdrawals\ninitiated by Square to a linked bank account during a date range. Date\nranges cannot exceed one year in length.\n\n*Note**: the ListSettlements endpoint does not provide entry\ninformation.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/{{LOCATION_ID}}/settlements",
+      "method": "GET",
+      "name": "ListSettlements",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "begin_time",
+          "value": ""
+        },
+        {
+          "name": "end_time",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/settlements",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "begin_time",
+          "value": ""
+        },
+        {
+          "name": "end_time",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "batch_token",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListSettlements",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/settlements"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides comprehensive information for a single settlement.\n\nThe returned `Settlement` objects include an `entries` field that lists\nthe transactions that contribute to the settlement total. Most\nsettlement entries correspond to a payment payout, but settlement\nentries are also generated for less common events, like refunds, manual\nadjustments, or chargeback holds.\n\nSquare initiates its regular deposits as indicated in the\n[Deposit Options with Square](https://squareup.com/help/us/en/article/3807)\nhelp article. Details for a regular deposit are usually not available\nfrom Connect API endpoints before 10 p.m. PST the same day.\n\nSquare does not know when an initiated settlement **completes**, only\nwhether it has failed. A completed settlement is typically reflected in\na bank account within 3 business days, but in exceptional cases it may\ntake longer.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/{{LOCATION_ID}}/settlements/{{SETTLEMENT_ID}}",
+      "method": "GET",
+      "name": "RetrieveSettlement",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "settlement_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/{{LOCATION_ID}}/settlements/{{SETTLEMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "settlement_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveSettlement",
+      "url": "https://connect.squareup.com/v1/{{LOCATION_ID}}/settlements/{{SETTLEMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "domain_name": "example.com"
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "domain_name": "example.com"
+        }
+      },
+      "body_text": "{\"request_body\": {\"domain_name\": \"example.com\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Activates a domain for use with Apple Pay on the Web and Square. A validation\nis performed on this domain by Apple to ensure that it is properly set up as\nan Apple Pay enabled domain.\n\nThis endpoint provides an easy way for platform developers to bulk activate\nApple Pay on the Web with Square for merchants using their platform.\n\nTo learn more about Web Apple Pay, see\n[Add the Apple Pay on the Web Button](https://developer.squareup.com/docs/payment-form/add-digital-wallets/apple-pay).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/apple-pay/domains",
+      "method": "POST",
+      "name": "RegisterDomain",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/apple-pay/domains",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"domain_name\": \"example.com\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RegisterDomain",
+      "url": "https://connect.squareup.com/v2/apple-pay/domains"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of [BankAccount](https://developer.squareup.com/reference/square_2021-08-18/objects/BankAccount) objects linked to a Square account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/bank-accounts",
+      "method": "GET",
+      "name": "ListBankAccounts",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/bank-accounts",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListBankAccounts",
+      "url": "https://connect.squareup.com/v2/bank-accounts"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns details of a [BankAccount](https://developer.squareup.com/reference/square_2021-08-18/objects/BankAccount) identified by V1 bank account ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/bank-accounts/by-v1-id/{{V1_BANK_ACCOUNT_ID}}",
+      "method": "GET",
+      "name": "GetBankAccountByV1Id",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "v1_bank_account_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/bank-accounts/by-v1-id/{{V1_BANK_ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "v1_bank_account_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GetBankAccountByV1Id",
+      "url": "https://connect.squareup.com/v2/bank-accounts/by-v1-id/{{V1_BANK_ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns details of a [BankAccount](https://developer.squareup.com/reference/square_2021-08-18/objects/BankAccount)\nlinked to a Square account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/bank-accounts/{{BANK_ACCOUNT_ID}}",
+      "method": "GET",
+      "name": "GetBankAccount",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "bank_account_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/bank-accounts/{{BANK_ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "bank_account_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GetBankAccount",
+      "url": "https://connect.squareup.com/v2/bank-accounts/{{BANK_ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "booking": {
+          "appointment_segments": [
+            {
+              "duration_minutes": 60,
+              "service_variation_id": "RU3PBTZTK7DXZDQFCJHOK2MC",
+              "service_variation_version": 1599775456731,
+              "team_member_id": "TMXUrsBWWcHTt79t"
+            }
+          ],
+          "customer_id": "EX2QSVGTZN4K1E5QE1CBFNVQ8M",
+          "location_id": "LEQHH0YY8B42M",
+          "start_at": "2020-11-26T13:00:00Z"
+        }
+      },
+      "body_json": {
+        "booking": {
+          "appointment_segments": [
+            {
+              "duration_minutes": 60,
+              "service_variation_id": "RU3PBTZTK7DXZDQFCJHOK2MC",
+              "service_variation_version": 1599775456731,
+              "team_member_id": "TMXUrsBWWcHTt79t"
+            }
+          ],
+          "customer_id": "EX2QSVGTZN4K1E5QE1CBFNVQ8M",
+          "location_id": "LEQHH0YY8B42M",
+          "start_at": "2020-11-26T13:00:00Z"
+        }
+      },
+      "body_text": "{\"booking\": {\"appointment_segments\": [{\"duration_minutes\": 60, \"service_variation_id\": \"RU3PBTZTK7DXZDQFCJHOK2MC\", \"service_variation_version\": 1599775456731, \"team_member_id\": \"TMXUrsBWWcHTt79t\"}], \"customer_id\": \"EX2QSVGTZN4K1E5QE1CBFNVQ8M\", \"location_id\": \"LEQHH0YY8B42M\", \"start_at\": \"2020-11-26T13:00:00Z\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a booking.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/bookings",
+      "method": "POST",
+      "name": "CreateBooking",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/bookings",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"booking\": {\"appointment_segments\": [{\"duration_minutes\": 60, \"service_variation_id\": \"RU3PBTZTK7DXZDQFCJHOK2MC\", \"service_variation_version\": 1599775456731, \"team_member_id\": \"TMXUrsBWWcHTt79t\"}], \"customer_id\": \"EX2QSVGTZN4K1E5QE1CBFNVQ8M\", \"location_id\": \"LEQHH0YY8B42M\", \"start_at\": \"2020-11-26T13:00:00Z\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CreateBooking",
+      "url": "https://connect.squareup.com/v2/bookings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "query": {
+          "filter": {
+            "location_id": "LEQHH0YY8B42M",
+            "segment_filters": [
+              {
+                "service_variation_id": "RU3PBTZTK7DXZDQFCJHOK2MC",
+                "team_member_id_filter": {
+                  "any": [
+                    "TMXUrsBWWcHTt79t",
+                    "TMaJcbiRqPIGZuS9"
+                  ]
+                }
+              }
+            ],
+            "start_at_range": {
+              "end_at": "2020-11-27T13:00:00Z",
+              "start_at": "2020-11-26T13:00:00Z"
+            }
+          }
+        }
+      },
+      "body_json": {
+        "query": {
+          "filter": {
+            "location_id": "LEQHH0YY8B42M",
+            "segment_filters": [
+              {
+                "service_variation_id": "RU3PBTZTK7DXZDQFCJHOK2MC",
+                "team_member_id_filter": {
+                  "any": [
+                    "TMXUrsBWWcHTt79t",
+                    "TMaJcbiRqPIGZuS9"
+                  ]
+                }
+              }
+            ],
+            "start_at_range": {
+              "end_at": "2020-11-27T13:00:00Z",
+              "start_at": "2020-11-26T13:00:00Z"
+            }
+          }
+        }
+      },
+      "body_text": "{\"query\": {\"filter\": {\"location_id\": \"LEQHH0YY8B42M\", \"segment_filters\": [{\"service_variation_id\": \"RU3PBTZTK7DXZDQFCJHOK2MC\", \"team_member_id_filter\": {\"any\": [\"TMXUrsBWWcHTt79t\", \"TMaJcbiRqPIGZuS9\"]}}], \"start_at_range\": {\"end_at\": \"2020-11-27T13:00:00Z\", \"start_at\": \"2020-11-26T13:00:00Z\"}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Searches for availabilities for booking.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/bookings/availability/search",
+      "method": "POST",
+      "name": "SearchAvailability",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/bookings/availability/search",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"query\": {\"filter\": {\"location_id\": \"LEQHH0YY8B42M\", \"segment_filters\": [{\"service_variation_id\": \"RU3PBTZTK7DXZDQFCJHOK2MC\", \"team_member_id_filter\": {\"any\": [\"TMXUrsBWWcHTt79t\", \"TMaJcbiRqPIGZuS9\"]}}], \"start_at_range\": {\"end_at\": \"2020-11-27T13:00:00Z\", \"start_at\": \"2020-11-26T13:00:00Z\"}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "SearchAvailability",
+      "url": "https://connect.squareup.com/v2/bookings/availability/search"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a seller's booking profile.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/bookings/business-booking-profile",
+      "method": "GET",
+      "name": "RetrieveBusinessBookingProfile",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [],
+      "path": "/v2/bookings/business-booking-profile",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveBusinessBookingProfile",
+      "url": "https://connect.squareup.com/v2/bookings/business-booking-profile"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists booking profiles for team members.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/bookings/team-member-booking-profiles",
+      "method": "GET",
+      "name": "ListTeamMemberBookingProfiles",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "bookable_only",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/bookings/team-member-booking-profiles",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "bookable_only",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListTeamMemberBookingProfiles",
+      "url": "https://connect.squareup.com/v2/bookings/team-member-booking-profiles"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a team member's booking profile.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/bookings/team-member-booking-profiles/{{TEAM_MEMBER_ID}}",
+      "method": "GET",
+      "name": "RetrieveTeamMemberBookingProfile",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "team_member_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/bookings/team-member-booking-profiles/{{TEAM_MEMBER_ID}}",
+      "pathParameters": [
+        {
+          "name": "team_member_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveTeamMemberBookingProfile",
+      "url": "https://connect.squareup.com/v2/bookings/team-member-booking-profiles/{{TEAM_MEMBER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a booking.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/bookings/{{BOOKING_ID}}",
+      "method": "GET",
+      "name": "RetrieveBooking",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "booking_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/bookings/{{BOOKING_ID}}",
+      "pathParameters": [
+        {
+          "name": "booking_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveBooking",
+      "url": "https://connect.squareup.com/v2/bookings/{{BOOKING_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "booking": {
+          "customer_note": "I would like to sit near the window please",
+          "version": 1
+        }
+      },
+      "body_json": {
+        "booking": {
+          "customer_note": "I would like to sit near the window please",
+          "version": 1
+        }
+      },
+      "body_text": "{\"booking\": {\"customer_note\": \"I would like to sit near the window please\", \"version\": 1}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates a booking.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/bookings/{{BOOKING_ID}}",
+      "method": "PUT",
+      "name": "UpdateBooking",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "booking_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/bookings/{{BOOKING_ID}}",
+      "pathParameters": [
+        {
+          "name": "booking_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"booking\": {\"customer_note\": \"I would like to sit near the window please\", \"version\": 1}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "UpdateBooking",
+      "url": "https://connect.squareup.com/v2/bookings/{{BOOKING_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "booking_version": 1
+      },
+      "body_json": {
+        "booking_version": 1
+      },
+      "body_text": "{\"booking_version\": 1}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Cancels an existing booking.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/bookings/{{BOOKING_ID}}/cancel",
+      "method": "POST",
+      "name": "CancelBooking",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "booking_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/bookings/{{BOOKING_ID}}/cancel",
+      "pathParameters": [
+        {
+          "name": "booking_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"booking_version\": 1}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CancelBooking",
+      "url": "https://connect.squareup.com/v2/bookings/{{BOOKING_ID}}/cancel"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a list of cards owned by the account making the request.\nA max of 25 cards will be returned.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/cards",
+      "method": "GET",
+      "name": "ListCards",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "customer_id",
+          "value": ""
+        },
+        {
+          "name": "include_disabled",
+          "value": ""
+        },
+        {
+          "name": "reference_id",
+          "value": ""
+        },
+        {
+          "name": "sort_order",
+          "value": ""
+        }
+      ],
+      "path": "/v2/cards",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "customer_id",
+          "value": ""
+        },
+        {
+          "name": "include_disabled",
+          "value": ""
+        },
+        {
+          "name": "reference_id",
+          "value": ""
+        },
+        {
+          "name": "sort_order",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListCards",
+      "url": "https://connect.squareup.com/v2/cards"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "card": {
+            "billing_address": {
+              "address_line_1": "500 Electric Ave",
+              "address_line_2": "Suite 600",
+              "administrative_district_level_1": "NY",
+              "country": "US",
+              "locality": "New York",
+              "postal_code": "10003"
+            },
+            "cardholder_name": "Amelia Earhart",
+            "customer_id": "VDKXEEKPJN48QDG3BGGFAK05P8",
+            "reference_id": "user-id-1"
+          },
+          "idempotency_key": "4935a656-a929-4792-b97c-8848be85c27c",
+          "source_id": "cnon:uIbfJXhXETSP197M3GB"
+        },
+        "request_url": "/v2/cards"
+      },
+      "body_json": {
+        "request_body": {
+          "card": {
+            "billing_address": {
+              "address_line_1": "500 Electric Ave",
+              "address_line_2": "Suite 600",
+              "administrative_district_level_1": "NY",
+              "country": "US",
+              "locality": "New York",
+              "postal_code": "10003"
+            },
+            "cardholder_name": "Amelia Earhart",
+            "customer_id": "VDKXEEKPJN48QDG3BGGFAK05P8",
+            "reference_id": "user-id-1"
+          },
+          "idempotency_key": "4935a656-a929-4792-b97c-8848be85c27c",
+          "source_id": "cnon:uIbfJXhXETSP197M3GB"
+        },
+        "request_url": "/v2/cards"
+      },
+      "body_text": "{\"request_body\": {\"card\": {\"billing_address\": {\"address_line_1\": \"500 Electric Ave\", \"address_line_2\": \"Suite 600\", \"administrative_district_level_1\": \"NY\", \"country\": \"US\", \"locality\": \"New York\", \"postal_code\": \"10003\"}, \"cardholder_name\": \"Amelia Earhart\", \"customer_id\": \"VDKXEEKPJN48QDG3BGGFAK05P8\", \"reference_id\": \"user-id-1\"}, \"idempotency_key\": \"4935a656-a929-4792-b97c-8848be85c27c\", \"source_id\": \"cnon:uIbfJXhXETSP197M3GB\"}, \"request_url\": \"/v2/cards\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds a card on file to an existing merchant.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/cards",
+      "method": "POST",
+      "name": "CreateCard",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/cards",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"card\": {\"billing_address\": {\"address_line_1\": \"500 Electric Ave\", \"address_line_2\": \"Suite 600\", \"administrative_district_level_1\": \"NY\", \"country\": \"US\", \"locality\": \"New York\", \"postal_code\": \"10003\"}, \"cardholder_name\": \"Amelia Earhart\", \"customer_id\": \"VDKXEEKPJN48QDG3BGGFAK05P8\", \"reference_id\": \"user-id-1\"}, \"idempotency_key\": \"4935a656-a929-4792-b97c-8848be85c27c\", \"source_id\": \"cnon:uIbfJXhXETSP197M3GB\"}, \"request_url\": \"/v2/cards\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CreateCard",
+      "url": "https://connect.squareup.com/v2/cards"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves details for a specific Card.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/cards/{{CARD_ID}}",
+      "method": "GET",
+      "name": "RetrieveCard",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "card_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/cards/{{CARD_ID}}",
+      "pathParameters": [
+        {
+          "name": "card_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveCard",
+      "url": "https://connect.squareup.com/v2/cards/{{CARD_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Disables the card, preventing any further updates or charges.\nDisabling an already disabled card is allowed but has no effect.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /v2/cards/{{CARD_ID}}/disable",
+      "method": "POST",
+      "name": "DisableCard",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "card_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/cards/{{CARD_ID}}/disable",
+      "pathParameters": [
+        {
+          "name": "card_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DisableCard",
+      "url": "https://connect.squareup.com/v2/cards/{{CARD_ID}}/disable"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides the details for all of the cash drawer shifts for a location\nin a date range.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/cash-drawers/shifts",
+      "method": "GET",
+      "name": "ListCashDrawerShifts",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "sort_order",
+          "value": ""
+        },
+        {
+          "name": "begin_time",
+          "value": ""
+        },
+        {
+          "name": "end_time",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "cursor",
+          "value": ""
+        }
+      ],
+      "path": "/v2/cash-drawers/shifts",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "sort_order",
+          "value": ""
+        },
+        {
+          "name": "begin_time",
+          "value": ""
+        },
+        {
+          "name": "end_time",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "cursor",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListCashDrawerShifts",
+      "url": "https://connect.squareup.com/v2/cash-drawers/shifts"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides the summary details for a single cash drawer shift. See\n[ListCashDrawerShiftEvents](https://developer.squareup.com/reference/square_2021-08-18/cash-drawers-api/list-cash-drawer-shift-events) for a list of cash drawer shift events.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/cash-drawers/shifts/{{SHIFT_ID}}",
+      "method": "GET",
+      "name": "RetrieveCashDrawerShift",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "shift_id",
+          "value": ""
+        },
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/cash-drawers/shifts/{{SHIFT_ID}}",
+      "pathParameters": [
+        {
+          "name": "shift_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveCashDrawerShift",
+      "url": "https://connect.squareup.com/v2/cash-drawers/shifts/{{SHIFT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Provides a paginated list of events for a single cash drawer shift.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/cash-drawers/shifts/{{SHIFT_ID}}/events",
+      "method": "GET",
+      "name": "ListCashDrawerShiftEvents",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "shift_id",
+          "value": ""
+        },
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "cursor",
+          "value": ""
+        }
+      ],
+      "path": "/v2/cash-drawers/shifts/{{SHIFT_ID}}/events",
+      "pathParameters": [
+        {
+          "name": "shift_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "location_id",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "cursor",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListCashDrawerShiftEvents",
+      "url": "https://connect.squareup.com/v2/cash-drawers/shifts/{{SHIFT_ID}}/events"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "object_ids": [
+            "W62UWFY35CWMYGVWK6TWJDNI",
+            "AA27W3M2GGTF3H6AVPNB77CK"
+          ]
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "object_ids": [
+            "W62UWFY35CWMYGVWK6TWJDNI",
+            "AA27W3M2GGTF3H6AVPNB77CK"
+          ]
+        }
+      },
+      "body_text": "{\"request_body\": {\"object_ids\": [\"W62UWFY35CWMYGVWK6TWJDNI\", \"AA27W3M2GGTF3H6AVPNB77CK\"]}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a set of [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem)s based on the\nprovided list of target IDs and returns a set of successfully deleted IDs in\nthe response. Deletion is a cascading event such that all children of the\ntargeted object are also deleted. For example, deleting a CatalogItem will\nalso delete all of its [CatalogItemVariation](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItemVariation)\nchildren.\n\n`BatchDeleteCatalogObjects` succeeds even if only a portion of the targeted\nIDs can be deleted. The response will only include IDs that were\nactually deleted.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/catalog/batch-delete",
+      "method": "POST",
+      "name": "BatchDeleteCatalogObjects",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/catalog/batch-delete",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"object_ids\": [\"W62UWFY35CWMYGVWK6TWJDNI\", \"AA27W3M2GGTF3H6AVPNB77CK\"]}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "BatchDeleteCatalogObjects",
+      "url": "https://connect.squareup.com/v2/catalog/batch-delete"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "include_related_objects": true,
+          "object_ids": [
+            "W62UWFY35CWMYGVWK6TWJDNI",
+            "AA27W3M2GGTF3H6AVPNB77CK"
+          ]
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "include_related_objects": true,
+          "object_ids": [
+            "W62UWFY35CWMYGVWK6TWJDNI",
+            "AA27W3M2GGTF3H6AVPNB77CK"
+          ]
+        }
+      },
+      "body_text": "{\"request_body\": {\"include_related_objects\": true, \"object_ids\": [\"W62UWFY35CWMYGVWK6TWJDNI\", \"AA27W3M2GGTF3H6AVPNB77CK\"]}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns a set of objects based on the provided ID.\nEach [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem) returned in the set includes all of its\nchild information including: all of its\n[CatalogItemVariation](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItemVariation) objects, references to\nits [CatalogModifierList](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogModifierList) objects, and the ids of\nany [CatalogTax](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogTax) objects that apply to it.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/catalog/batch-retrieve",
+      "method": "POST",
+      "name": "BatchRetrieveCatalogObjects",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/catalog/batch-retrieve",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"include_related_objects\": true, \"object_ids\": [\"W62UWFY35CWMYGVWK6TWJDNI\", \"AA27W3M2GGTF3H6AVPNB77CK\"]}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "BatchRetrieveCatalogObjects",
+      "url": "https://connect.squareup.com/v2/catalog/batch-retrieve"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "batches": [
+            {
+              "objects": [
+                {
+                  "id": "#Tea",
+                  "item_data": {
+                    "category_id": "#Beverages",
+                    "description": "Hot Leaf Juice",
+                    "name": "Tea",
+                    "tax_ids": [
+                      "#SalesTax"
+                    ],
+                    "variations": [
+                      {
+                        "id": "#Tea_Mug",
+                        "item_variation_data": {
+                          "item_id": "#Tea",
+                          "name": "Mug",
+                          "price_money": {
+                            "amount": 150,
+                            "currency": "USD"
+                          },
+                          "pricing_type": "FIXED_PRICING"
+                        },
+                        "present_at_all_locations": true,
+                        "type": "ITEM_VARIATION"
+                      }
+                    ]
+                  },
+                  "present_at_all_locations": true,
+                  "type": "ITEM"
+                },
+                {
+                  "id": "#Coffee",
+                  "item_data": {
+                    "category_id": "#Beverages",
+                    "description": "Hot Bean Juice",
+                    "name": "Coffee",
+                    "tax_ids": [
+                      "#SalesTax"
+                    ],
+                    "variations": [
+                      {
+                        "id": "#Coffee_Regular",
+                        "item_variation_data": {
+                          "item_id": "#Coffee",
+                          "name": "Regular",
+                          "price_money": {
+                            "amount": 250,
+                            "currency": "USD"
+                          },
+                          "pricing_type": "FIXED_PRICING"
+                        },
+                        "present_at_all_locations": true,
+                        "type": "ITEM_VARIATION"
+                      },
+                      {
+                        "id": "#Coffee_Large",
+                        "item_variation_data": {
+                          "item_id": "#Coffee",
+                          "name": "Large",
+                          "price_money": {
+                            "amount": 350,
+                            "currency": "USD"
+                          },
+                          "pricing_type": "FIXED_PRICING"
+                        },
+                        "present_at_all_locations": true,
+                        "type": "ITEM_VARIATION"
+                      }
+                    ]
+                  },
+                  "present_at_all_locations": true,
+                  "type": "ITEM"
+                },
+                {
+                  "category_data": {
+                    "name": "Beverages"
+                  },
+                  "id": "#Beverages",
+                  "present_at_all_locations": true,
+                  "type": "CATEGORY"
+                },
+                {
+                  "id": "#SalesTax",
+                  "present_at_all_locations": true,
+                  "tax_data": {
+                    "applies_to_custom_amounts": true,
+                    "calculation_phase": "TAX_SUBTOTAL_PHASE",
+                    "enabled": true,
+                    "inclusion_type": "ADDITIVE",
+                    "name": "Sales Tax",
+                    "percentage": "5.0"
+                  },
+                  "type": "TAX"
+                }
+              ]
+            }
+          ],
+          "idempotency_key": "789ff020-f723-43a9-b4b5-43b5dc1fa3dc"
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "batches": [
+            {
+              "objects": [
+                {
+                  "id": "#Tea",
+                  "item_data": {
+                    "category_id": "#Beverages",
+                    "description": "Hot Leaf Juice",
+                    "name": "Tea",
+                    "tax_ids": [
+                      "#SalesTax"
+                    ],
+                    "variations": [
+                      {
+                        "id": "#Tea_Mug",
+                        "item_variation_data": {
+                          "item_id": "#Tea",
+                          "name": "Mug",
+                          "price_money": {
+                            "amount": 150,
+                            "currency": "USD"
+                          },
+                          "pricing_type": "FIXED_PRICING"
+                        },
+                        "present_at_all_locations": true,
+                        "type": "ITEM_VARIATION"
+                      }
+                    ]
+                  },
+                  "present_at_all_locations": true,
+                  "type": "ITEM"
+                },
+                {
+                  "id": "#Coffee",
+                  "item_data": {
+                    "category_id": "#Beverages",
+                    "description": "Hot Bean Juice",
+                    "name": "Coffee",
+                    "tax_ids": [
+                      "#SalesTax"
+                    ],
+                    "variations": [
+                      {
+                        "id": "#Coffee_Regular",
+                        "item_variation_data": {
+                          "item_id": "#Coffee",
+                          "name": "Regular",
+                          "price_money": {
+                            "amount": 250,
+                            "currency": "USD"
+                          },
+                          "pricing_type": "FIXED_PRICING"
+                        },
+                        "present_at_all_locations": true,
+                        "type": "ITEM_VARIATION"
+                      },
+                      {
+                        "id": "#Coffee_Large",
+                        "item_variation_data": {
+                          "item_id": "#Coffee",
+                          "name": "Large",
+                          "price_money": {
+                            "amount": 350,
+                            "currency": "USD"
+                          },
+                          "pricing_type": "FIXED_PRICING"
+                        },
+                        "present_at_all_locations": true,
+                        "type": "ITEM_VARIATION"
+                      }
+                    ]
+                  },
+                  "present_at_all_locations": true,
+                  "type": "ITEM"
+                },
+                {
+                  "category_data": {
+                    "name": "Beverages"
+                  },
+                  "id": "#Beverages",
+                  "present_at_all_locations": true,
+                  "type": "CATEGORY"
+                },
+                {
+                  "id": "#SalesTax",
+                  "present_at_all_locations": true,
+                  "tax_data": {
+                    "applies_to_custom_amounts": true,
+                    "calculation_phase": "TAX_SUBTOTAL_PHASE",
+                    "enabled": true,
+                    "inclusion_type": "ADDITIVE",
+                    "name": "Sales Tax",
+                    "percentage": "5.0"
+                  },
+                  "type": "TAX"
+                }
+              ]
+            }
+          ],
+          "idempotency_key": "789ff020-f723-43a9-b4b5-43b5dc1fa3dc"
+        }
+      },
+      "body_text": "{\"request_body\": {\"batches\": [{\"objects\": [{\"id\": \"#Tea\", \"item_data\": {\"category_id\": \"#Beverages\", \"description\": \"Hot Leaf Juice\", \"name\": \"Tea\", \"tax_ids\": [\"#SalesTax\"], \"variations\": [{\"id\": \"#Tea_Mug\", \"item_variation_data\": {\"item_id\": \"#Tea\", \"name\": \"Mug\", \"price_money\": {\"amount\": 150, \"currency\": \"USD\"}, \"pricing_type\": \"FIXED_PRICING\"}, \"present_at_all_locations\": true, \"type\": \"ITEM_VARIATION\"}]}, \"present_at_all_locations\": true, \"type\": \"ITEM\"}, {\"id\": \"#Coffee\", \"item_data\": {\"category_id\": \"#Beverages\", \"description\": \"Hot Bean Juice\", \"name\": \"Coffee\", \"tax_ids\": [\"#SalesTax\"], \"variations\": [{\"id\": \"#Coffee_Regular\", \"item_variation_data\": {\"item_id\": \"#Coffee\", \"name\": \"Regular\", \"price_money\": {\"amount\": 250, \"currency\": \"USD\"}, \"pricing_type\": \"FIXED_PRICING\"}, \"present_at_all_locations\": true, \"type\": \"ITEM_VARIATION\"}, {\"id\": \"#Coffee_Large\", \"item_variation_data\": {\"item_id\": \"#Coffee\", \"name\": \"Large\", \"price_money\": {\"amount\": 350, \"currency\": \"USD\"}, \"pricing_type\": \"FIXED_PRICING\"}, \"present_at_all_locations\": true, \"type\": \"ITEM_VARIATION\"}]}, \"present_at_all_locations\": true, \"type\": \"ITEM\"}, {\"category_data\": {\"name\": \"Beverages\"}, \"id\": \"#Beverages\", \"present_at_all_locations\": true, \"type\": \"CATEGORY\"}, {\"id\": \"#SalesTax\", \"present_at_all_locations\": true, \"tax_data\": {\"applies_to_custom_amounts\": true, \"calculation_phase\": \"TAX_SUBTOTAL_PHASE\", \"enabled\": true, \"inclusion_type\": \"ADDITIVE\", \"name\": \"Sales Tax\", \"percentage\": \"5.0\"}, \"type\": \"TAX\"}]}], \"idempotency_key\": \"789ff020-f723-43a9-b4b5-43b5dc1fa3dc\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates or updates up to 10,000 target objects based on the provided\nlist of objects. The target objects are grouped into batches and each batch is\ninserted/updated in an all-or-nothing manner. If an object within a batch is\nmalformed in some way, or violates a database constraint, the entire batch\ncontaining that item will be disregarded. However, other batches in the same\nrequest may still succeed. Each batch may contain up to 1,000 objects, and\nbatches will be processed in order as long as the total object count for the\nrequest (items, variations, modifier lists, discounts, and taxes) is no more\nthan 10,000.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/catalog/batch-upsert",
+      "method": "POST",
+      "name": "BatchUpsertCatalogObjects",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/catalog/batch-upsert",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"batches\": [{\"objects\": [{\"id\": \"#Tea\", \"item_data\": {\"category_id\": \"#Beverages\", \"description\": \"Hot Leaf Juice\", \"name\": \"Tea\", \"tax_ids\": [\"#SalesTax\"], \"variations\": [{\"id\": \"#Tea_Mug\", \"item_variation_data\": {\"item_id\": \"#Tea\", \"name\": \"Mug\", \"price_money\": {\"amount\": 150, \"currency\": \"USD\"}, \"pricing_type\": \"FIXED_PRICING\"}, \"present_at_all_locations\": true, \"type\": \"ITEM_VARIATION\"}]}, \"present_at_all_locations\": true, \"type\": \"ITEM\"}, {\"id\": \"#Coffee\", \"item_data\": {\"category_id\": \"#Beverages\", \"description\": \"Hot Bean Juice\", \"name\": \"Coffee\", \"tax_ids\": [\"#SalesTax\"], \"variations\": [{\"id\": \"#Coffee_Regular\", \"item_variation_data\": {\"item_id\": \"#Coffee\", \"name\": \"Regular\", \"price_money\": {\"amount\": 250, \"currency\": \"USD\"}, \"pricing_type\": \"FIXED_PRICING\"}, \"present_at_all_locations\": true, \"type\": \"ITEM_VARIATION\"}, {\"id\": \"#Coffee_Large\", \"item_variation_data\": {\"item_id\": \"#Coffee\", \"name\": \"Large\", \"price_money\": {\"amount\": 350, \"currency\": \"USD\"}, \"pricing_type\": \"FIXED_PRICING\"}, \"present_at_all_locations\": true, \"type\": \"ITEM_VARIATION\"}]}, \"present_at_all_locations\": true, \"type\": \"ITEM\"}, {\"category_data\": {\"name\": \"Beverages\"}, \"id\": \"#Beverages\", \"present_at_all_locations\": true, \"type\": \"CATEGORY\"}, {\"id\": \"#SalesTax\", \"present_at_all_locations\": true, \"tax_data\": {\"applies_to_custom_amounts\": true, \"calculation_phase\": \"TAX_SUBTOTAL_PHASE\", \"enabled\": true, \"inclusion_type\": \"ADDITIVE\", \"name\": \"Sales Tax\", \"percentage\": \"5.0\"}, \"type\": \"TAX\"}]}], \"idempotency_key\": \"789ff020-f723-43a9-b4b5-43b5dc1fa3dc\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "BatchUpsertCatalogObjects",
+      "url": "https://connect.squareup.com/v2/catalog/batch-upsert"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about the Square Catalog API, such as batch size\nlimits that can be used by the `BatchUpsertCatalogObjects` endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/catalog/info",
+      "method": "GET",
+      "name": "CatalogInfo",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/catalog/info",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "CatalogInfo",
+      "url": "https://connect.squareup.com/v2/catalog/info"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject)s that includes\nall objects of a set of desired types (for example, all [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem)\nand [CatalogTax](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogTax) objects) in the catalog. The `types` parameter\nis specified as a comma-separated list of valid [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) types:\n`ITEM`, `ITEM_VARIATION`, `MODIFIER`, `MODIFIER_LIST`, `CATEGORY`, `DISCOUNT`, `TAX`, `IMAGE`.\n\n__Important:__ ListCatalog does not return deleted catalog items. To retrieve\ndeleted catalog items, use [SearchCatalogObjects](https://developer.squareup.com/reference/square_2021-08-18/catalog-api/search-catalog-objects)\nand set the `include_deleted_objects` attribute value to `true`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/catalog/list",
+      "method": "GET",
+      "name": "ListCatalog",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "types",
+          "value": ""
+        },
+        {
+          "name": "catalog_version",
+          "value": ""
+        }
+      ],
+      "path": "/v2/catalog/list",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "types",
+          "value": ""
+        },
+        {
+          "name": "catalog_version",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "ListCatalog",
+      "url": "https://connect.squareup.com/v2/catalog/list"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "idempotency_key": "af3d1afc-7212-4300-b463-0bfc5314a5ae",
+          "object": {
+            "id": "#Cocoa",
+            "item_data": {
+              "abbreviation": "Ch",
+              "description": "Hot Chocolate",
+              "name": "Cocoa",
+              "variations": [
+                {
+                  "id": "#Small",
+                  "item_variation_data": {
+                    "item_id": "#Cocoa",
+                    "name": "Small",
+                    "pricing_type": "VARIABLE_PRICING"
+                  },
+                  "type": "ITEM_VARIATION"
+                },
+                {
+                  "id": "#Large",
+                  "item_variation_data": {
+                    "item_id": "#Cocoa",
+                    "name": "Large",
+                    "price_money": {
+                      "amount": 400,
+                      "currency": "USD"
+                    },
+                    "pricing_type": "FIXED_PRICING"
+                  },
+                  "type": "ITEM_VARIATION"
+                }
+              ]
+            },
+            "type": "ITEM"
+          }
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "idempotency_key": "af3d1afc-7212-4300-b463-0bfc5314a5ae",
+          "object": {
+            "id": "#Cocoa",
+            "item_data": {
+              "abbreviation": "Ch",
+              "description": "Hot Chocolate",
+              "name": "Cocoa",
+              "variations": [
+                {
+                  "id": "#Small",
+                  "item_variation_data": {
+                    "item_id": "#Cocoa",
+                    "name": "Small",
+                    "pricing_type": "VARIABLE_PRICING"
+                  },
+                  "type": "ITEM_VARIATION"
+                },
+                {
+                  "id": "#Large",
+                  "item_variation_data": {
+                    "item_id": "#Cocoa",
+                    "name": "Large",
+                    "price_money": {
+                      "amount": 400,
+                      "currency": "USD"
+                    },
+                    "pricing_type": "FIXED_PRICING"
+                  },
+                  "type": "ITEM_VARIATION"
+                }
+              ]
+            },
+            "type": "ITEM"
+          }
+        }
+      },
+      "body_text": "{\"request_body\": {\"idempotency_key\": \"af3d1afc-7212-4300-b463-0bfc5314a5ae\", \"object\": {\"id\": \"#Cocoa\", \"item_data\": {\"abbreviation\": \"Ch\", \"description\": \"Hot Chocolate\", \"name\": \"Cocoa\", \"variations\": [{\"id\": \"#Small\", \"item_variation_data\": {\"item_id\": \"#Cocoa\", \"name\": \"Small\", \"pricing_type\": \"VARIABLE_PRICING\"}, \"type\": \"ITEM_VARIATION\"}, {\"id\": \"#Large\", \"item_variation_data\": {\"item_id\": \"#Cocoa\", \"name\": \"Large\", \"price_money\": {\"amount\": 400, \"currency\": \"USD\"}, \"pricing_type\": \"FIXED_PRICING\"}, \"type\": \"ITEM_VARIATION\"}]}, \"type\": \"ITEM\"}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates or updates the target [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/catalog/object",
+      "method": "POST",
+      "name": "UpsertCatalogObject",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/catalog/object",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"idempotency_key\": \"af3d1afc-7212-4300-b463-0bfc5314a5ae\", \"object\": {\"id\": \"#Cocoa\", \"item_data\": {\"abbreviation\": \"Ch\", \"description\": \"Hot Chocolate\", \"name\": \"Cocoa\", \"variations\": [{\"id\": \"#Small\", \"item_variation_data\": {\"item_id\": \"#Cocoa\", \"name\": \"Small\", \"pricing_type\": \"VARIABLE_PRICING\"}, \"type\": \"ITEM_VARIATION\"}, {\"id\": \"#Large\", \"item_variation_data\": {\"item_id\": \"#Cocoa\", \"name\": \"Large\", \"price_money\": {\"amount\": 400, \"currency\": \"USD\"}, \"pricing_type\": \"FIXED_PRICING\"}, \"type\": \"ITEM_VARIATION\"}]}, \"type\": \"ITEM\"}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "UpsertCatalogObject",
+      "url": "https://connect.squareup.com/v2/catalog/object"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a single [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) based on the\nprovided ID and returns the set of successfully deleted IDs in the response.\nDeletion is a cascading event such that all children of the targeted object\nare also deleted. For example, deleting a [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem)\nwill also delete all of its\n[CatalogItemVariation](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItemVariation) children.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/catalog/object/{{OBJECT_ID}}",
+      "method": "DELETE",
+      "name": "DeleteCatalogObject",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "object_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/catalog/object/{{OBJECT_ID}}",
+      "pathParameters": [
+        {
+          "name": "object_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DeleteCatalogObject",
+      "url": "https://connect.squareup.com/v2/catalog/object/{{OBJECT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a single [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem) as a\n[CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) based on the provided ID. The returned\nobject includes all of the relevant [CatalogItem](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItem)\ninformation including: [CatalogItemVariation](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogItemVariation)\nchildren, references to its\n[CatalogModifierList](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogModifierList) objects, and the ids of\nany [CatalogTax](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogTax) objects that apply to it.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/catalog/object/{{OBJECT_ID}}",
+      "method": "GET",
+      "name": "RetrieveCatalogObject",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "object_id",
+          "value": ""
+        },
+        {
+          "name": "include_related_objects",
+          "value": ""
+        },
+        {
+          "name": "catalog_version",
+          "value": ""
+        }
+      ],
+      "path": "/v2/catalog/object/{{OBJECT_ID}}",
+      "pathParameters": [
+        {
+          "name": "object_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "include_related_objects",
+          "value": ""
+        },
+        {
+          "name": "catalog_version",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "RetrieveCatalogObject",
+      "url": "https://connect.squareup.com/v2/catalog/object/{{OBJECT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "limit": 100,
+          "object_types": [
+            "ITEM"
+          ],
+          "query": {
+            "prefix_query": {
+              "attribute_name": "name",
+              "attribute_prefix": "tea"
+            }
+          }
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "limit": 100,
+          "object_types": [
+            "ITEM"
+          ],
+          "query": {
+            "prefix_query": {
+              "attribute_name": "name",
+              "attribute_prefix": "tea"
+            }
+          }
+        }
+      },
+      "body_text": "{\"request_body\": {\"limit\": 100, \"object_types\": [\"ITEM\"], \"query\": {\"prefix_query\": {\"attribute_name\": \"name\", \"attribute_prefix\": \"tea\"}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Searches for [CatalogObject](https://developer.squareup.com/reference/square_2021-08-18/objects/CatalogObject) of any type by matching supported search attribute values,\nexcluding custom attribute values on items or item variations, against one or more of the specified query expressions.\n\nThis (`SearchCatalogObjects`) endpoint differs from the [SearchCatalogItems](https://developer.squareup.com/reference/square_2021-08-18/catalog-api/search-catalog-items)\nendpoint in the following aspects:\n\n- `SearchCatalogItems` can only search for items or item variations, whereas `SearchCatalogObjects` can search for any type of catalog objects.\n- `SearchCatalogItems` supports the custom attribute query filters to return items or item variations that contain custom attribute values, where `SearchCatalogObjects` does not.\n- `SearchCatalogItems` does not support the `include_deleted_objects` filter to search for deleted items or item variations, whereas `SearchCatalogObjects` does.\n- The both endpoints have different call conventions, including the query filter formats.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/catalog/search",
+      "method": "POST",
+      "name": "SearchCatalogObjects",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/catalog/search",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"limit\": 100, \"object_types\": [\"ITEM\"], \"query\": {\"prefix_query\": {\"attribute_name\": \"name\", \"attribute_prefix\": \"tea\"}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "SearchCatalogObjects",
+      "url": "https://connect.squareup.com/v2/catalog/search"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "SQUARE_CONNECT_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "request_body": {
+          "category_ids": [
+            "WINE_CATEGORY_ID"
+          ],
+          "custom_attribute_filters": [
+            {
+              "bool_filter": true,
+              "custom_attribute_definition_id": "VEGAN_DEFINITION_ID"
+            },
+            {
+              "custom_attribute_definition_id": "BRAND_DEFINITION_ID",
+              "string_filter": "Dark Horse"
+            },
+            {
+              "key": "VINTAGE",
+              "number_filter": {
+                "max": 2018,
+                "min": 2017
+              }
+            },
+            {
+              "custom_attribute_definition_id": "VARIETAL_DEFINITION_ID",
+              "selection_ids_filter": "MERLOT_SELECTION_ID"
+            }
+          ],
+          "enabled_location_ids": [
+            "ATL_LOCATION_ID"
+          ],
+          "limit": 100,
+          "product_types": [
+            "REGULAR"
+          ],
+          "sort_order": "ASC",
+          "stock_levels": [
+            "OUT",
+            "LOW"
+          ],
+          "text_filter": "red"
+        }
+      },
+      "body_json": {
+        "request_body": {
+          "category_ids": [
+            "WINE_CATEGORY_ID"
+          ],
+          "custom_attribute_filters": [
+            {
+              "bool_filter": true,
+              "custom_attribute_definition_id": "VEGAN_DEFINITION_ID"
+            },
+            {
+              "custom_attribute_definition_id": "BRAND_DEFINITION_ID",
+              "string_filter": "Dark Horse"
+            },
+            {
+              "key": "VINTAGE",
+              "number_filter": {
+                "max": 2018,
+                "min": 2017
+              }
+            },
+            {
+              "custom_attribute_definition_id": "VARIETAL_DEFINITION_ID",
+              "selection_ids_filter": "MERLOT_SELECTION_ID"
+            }
+          ],
+          "enabled_location_ids": [
+            "ATL_LOCATION_ID"
+          ],
+          "limit": 100,
+          "product_types": [
+            "REGULAR"
+          ],
+          "sort_order": "ASC",
+          "stock_levels": [
+            "OUT",
+            "LOW"
+          ],
+          "text_filter": "red"
+        }
+      },
+      "body_text": "{\"request_body\": {\"category_ids\": [\"WINE_CATEGORY_ID\"], \"custom_attribute_filters\": [{\"bool_filter\": true, \"custom_attribute_definition_id\": \"VEGAN_DEFINITION_ID\"}, {\"custom_attribute_definition_id\": \"BRAND_DEFINITION_ID\", \"string_filter\": \"Dark Horse\"}, {\"key\": \"VINTAGE\", \"number_filter\": {\"max\": 2018, \"min\": 2017}}, {\"custom_attribute_definition_id\": \"VARIETAL_DEFINITION_ID\", \"selection_ids_filter\": \"MERLOT_SELECTION_ID\"}], \"enabled_location_ids\": [\"ATL_LOCATION_ID\"], \"limit\": 100, \"product_types\": [\"REGULAR\"], \"sort_order\": \"ASC\", \"stock_levels\": [\"OUT\", \"LOW\"], \"text_filter\": \"red\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Searches for catalog items or item variations by matching supported search attribute values, including\ncustom attribute values, against one or more of the specified query expressions.\n\nThis (`SearchCatalogItems`) endpoint differs from the [SearchCatalogObjects](https://developer.squareup.com/reference/square_2021-08-18/catalog-api/search-catalog-objects)\nendpoint in the following aspects:\n\n- `SearchCatalogItems` can only search for items or item variations, whereas `SearchCatalogObjects` can search for any type of catalog objects.\n- `SearchCatalogItems` supports the custom attribute query filters to return items or item variations that contain custom attribute values, where `SearchCatalogObjects` does not.\n- `SearchCatalogItems` does not support the `include_deleted_objects` filter to search for deleted items or item variations, whereas `SearchCatalogObjects` does.\n- The both endpoints use different call conventions, including the query filter formats.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{SQUARE_CONNECT_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/catalog/search-catalog-items",
+      "method": "POST",
+      "name": "SearchCatalogItems",
+      "note": "Replace {{SQUARE_CONNECT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/catalog/search-catalog-items",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"request_body\": {\"category_ids\": [\"WINE_CATEGORY_ID\"], \"custom_attribute_filters\": [{\"bool_filter\": true, \"custom_attribute_definition_id\": \"VEGAN_DEFINITION_ID\"}, {\"custom_attribute_definition_id\": \"BRAND_DEFINITION_ID\", \"string_filter\": \"Dark Horse\"}, {\"key\": \"VINTAGE\", \"number_filter\": {\"max\": 2018, \"min\": 2017}}, {\"custom_attribute_definition_id\": \"VARIETAL_DEFINITION_ID\", \"selection_ids_filter\": \"MERLOT_SELECTION_ID\"}], \"enabled_location_ids\": [\"ATL_LOCATION_ID\"], \"limit\": 100, \"product_types\": [\"REGULAR\"], \"sort_order\": \"ASC\", \"stock_levels\": [\"OUT\", \"LOW\"], \"text_filter\": \"red\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "SearchCatalogItems",
+      "url": "https://connect.squareup.com/v2/catalog/search-catalog-items"
+    }
+  ]
+}

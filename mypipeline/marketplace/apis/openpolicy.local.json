@@ -1,0 +1,1012 @@
+{
+  "id": "openpolicy.local",
+  "info": {
+    "base_url": "http://openpolicy.local",
+    "description": "This API endpoint returns bindings for the variables in the query.\n\nFor simpler JSON queries, you may use `GET /v1/query` instead.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Open Policy Agent (OPA) REST API",
+    "version": "0.28.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": "{\n  \"user\": [\"alice\"]\n}",
+      "body_json": null,
+      "body_text": "{\n  \"user\": [\"alice\"]\n}",
+      "body_type": "text",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API queries the document at */data/system/main* by default (however, you can [configure OPA](https://www.openpolicyagent.org/docs/latest/configuration/) to use a different path to serve these queries). That document defines the response.\nFor example, use the following in `PUT /v1/policies/{path}`) to define a rule that will produce a value for the */data/system/main* document:\n\n  ```yaml\n  package system\n  main = msg {\n    msg := sprintf(\"hello, %v\", input.user)\n  }\n  ```\n\nThe server will return a *not found* (404) response if */data/system/main* is undefined.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "Execute a simple query",
+      "params": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": "{\n  \"user\": [\"alice\"]\n}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Execute a simple query",
+      "url": "http://openpolicy.local/"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API endpoint verifies that the server is operational.\n\nThe response from the server is either 200 or 500:\n- **200** - OPA service is healthy. If `bundles` is true, then all configured bundles have been activated. If `plugins` is true, then all plugins are in an 'OK' state.\n- **500** - OPA service is *not* healthy. If `bundles` is true, at least one of configured bundles has not yet been activated. If `plugins` is true, at least one plugins is in a 'not OK' state.\n\n---\n**Note**\nThis check is only for initial bundle activation. Subsequent downloads will not affect the health check.\n\nUse the **status** endpoint (in the (management API)[management.html]) for more fine-grained bundle status monitoring.\n\n---",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /health",
+      "method": "GET",
+      "name": "Health",
+      "params": [
+        {
+          "name": "bundles",
+          "value": "True"
+        },
+        {
+          "name": "plugins",
+          "value": "False"
+        }
+      ],
+      "path": "/health",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "bundles",
+          "value": "True"
+        },
+        {
+          "name": "plugins",
+          "value": "False"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Health",
+      "url": "http://openpolicy.local/health"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": "{\n  \"example\": {\n    \"flag\": true\n    }\n }",
+      "body_json": null,
+      "body_text": "{\n  \"example\": {\n    \"flag\": true\n    }\n }",
+      "body_type": "text",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The example given here assumes you have created a policy (with `PUT /v1/policies/{path}`), such as:\n\n  ```yaml\n  package opa.examples\n  import input.example.flag\n  allow_request { flag == true }\n  ```\n\nThe server will return a *not found* (404) response if the requested document is missing or undefined.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v0/data/{{PATH}}",
+      "method": "POST",
+      "name": "Get a document (with webhook)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "path",
+          "value": "opa/examples/allow_request"
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "path": "/v0/data/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "path",
+          "value": "opa/examples/allow_request"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": "{\n  \"example\": {\n    \"flag\": true\n    }\n }",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a document (with webhook)",
+      "url": "http://openpolicy.local/v0/data/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": "{\n  \"query\": \"data.example.allow == true\",\n  \"input\": {\n    \"subject\": {\n      \"clearance_level\": 4\n    }\n  },\n  \"unknowns\": [\n    \"data.reports\"\n    ]\n}",
+      "body_json": null,
+      "body_text": "{\n  \"query\": \"data.example.allow == true\",\n  \"input\": {\n    \"subject\": {\n      \"clearance_level\": 4\n    }\n  },\n  \"unknowns\": [\n    \"data.reports\"\n    ]\n}",
+      "body_type": "text",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API endpoint allows you to partially evaluate Rego queries and obtain a simplified version of the policy. The example below assumes that OPA has been given the following policy (use `PUT /v1/policies/{path}`):\n\n```yaml\npackage example\nallow {\n  input.subject.clearance_level >= data.reports[_].clearance_level\n}\n```\nCompile API **request body** so that it contain the following fields:\n\n| Field | Type | Required | Description |\n| --- | --- | --- | --- |\n| `query` | `string` | Yes | The query to partially evaluate and compile. |\n| `input` | `any` | No | The input document to use during partial evaluation (default: undefined). |\n| `unknowns` | `array[string]` | No | The terms to treat as unknown during partial evaluation (default: `[\"input\"]`]). |\n\nFor example:\n\n```json\n{\n  \"query\": \"data.example.allow == true\",\n  \"input\": {\n    \"subject\": {\n      \"clearance_level\": 4\n    }\n  },\n  \"unknowns\": [\n    \"data.reports\"\n    ]\n}\n```\n### Partial evaluation\nIn some cases, the result of partial valuation is a conclusive, unconditional answer. See [the guidance](https://www.openpolicyagent.org/docs/latest/rest-api/#unconditional-results-from-partial-evaluation) for details.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/compile",
+      "method": "POST",
+      "name": "Compile",
+      "params": [
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        },
+        {
+          "name": "instrument",
+          "value": "False"
+        }
+      ],
+      "path": "/v1/compile",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        },
+        {
+          "name": "instrument",
+          "value": "False"
+        }
+      ],
+      "requestBodyExample": "{\n  \"query\": \"data.example.allow == true\",\n  \"input\": {\n    \"subject\": {\n      \"clearance_level\": 4\n    }\n  },\n  \"unknowns\": [\n    \"data.reports\"\n    ]\n}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Compile",
+      "url": "http://openpolicy.local/v1/compile"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API endpoint responds with active configuration (result response)\n\n---\n**Note**\nThe `credentials` field in the `services` configuration and\n\nThe `private_key` and `key` fields in the `keys` configuration will be omitted from the API response\n\n---",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/config",
+      "method": "GET",
+      "name": "Get configurations",
+      "params": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "path": "/v1/config",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get configurations",
+      "url": "http://openpolicy.local/v1/config"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API endpoint deletes an existing document from the server",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1/data/{{PATH}}",
+      "method": "DELETE",
+      "name": "Delete a document",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        }
+      ],
+      "path": "/v1/data/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a document",
+      "url": "http://openpolicy.local/v1/data/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API endpoint returns the document specified by `path`.\n\nThe server will return a *bad request* (400) response if either:\n- The query requires an input document and you do not provide it\n- You provide the input document but the query has already defined it.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/data/{{PATH}}",
+      "method": "GET",
+      "name": "Get a document",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        },
+        {
+          "name": "input",
+          "value": ""
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "provenance",
+          "value": "False"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        },
+        {
+          "name": "instrument",
+          "value": "False"
+        }
+      ],
+      "path": "/v1/data/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "input",
+          "value": ""
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "provenance",
+          "value": "False"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        },
+        {
+          "name": "instrument",
+          "value": "False"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a document",
+      "url": "http://openpolicy.local/v1/data/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": [
+        {
+          "op": "add",
+          "path": "-",
+          "value": "{\n  \"id\": \"s5\",\n  \"name\": \"job\",\n  \"protocols\": [\"amqp\"],\n  \"ports\": [\"p3\"]\n}"
+        }
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API endpoint updates an existing document on the server by describing the changes required (using [JSON patch operations](http://jsonpatch.com/))",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v1/data/{{PATH}}",
+      "method": "PATCH",
+      "name": "Update a document",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        }
+      ],
+      "path": "/v1/data/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a document",
+      "url": "http://openpolicy.local/v1/data/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": "{\n  \"input\": {\n   \"example\": {\n     \"flag\": true\n     }\n   }\n }",
+      "body_json": null,
+      "body_text": "{\n  \"input\": {\n   \"example\": {\n     \"flag\": true\n     }\n   }\n }",
+      "body_type": "text",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The server will return a *bad request* (400) response if either:\n- The query requires an input document and you do not provide it\n- You provided an input document but the query has already defined it.\n\nIf `path` indexes into an array, the server will attempt to convert the array index to an integer. If the path element cannot be converted to an integer, a *not found* response (404) will be returned.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/data/{{PATH}}",
+      "method": "POST",
+      "name": "Get a document (with input)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "provenance",
+          "value": "False"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        },
+        {
+          "name": "instrument",
+          "value": "False"
+        }
+      ],
+      "path": "/v1/data/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "provenance",
+          "value": "False"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        },
+        {
+          "name": "instrument",
+          "value": "False"
+        }
+      ],
+      "requestBodyExample": "{\n  \"input\": {\n   \"example\": {\n     \"flag\": true\n     }\n   }\n }",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a document (with input)",
+      "url": "http://openpolicy.local/v1/data/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": "{\n  \"users\": {\n    \"user-id-1\": {\n      \"isAdmin\": true\n    }\n  }\n}",
+      "body_json": null,
+      "body_text": "{\n  \"users\": {\n    \"user-id-1\": {\n      \"isAdmin\": true\n    }\n  }\n}",
+      "body_type": "text",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "If the path does not refer to an existing document (for example *us-west/servers*), the server will attempt to create all the necessary containing documents.\n\nThis behavior is similar to the Unix command [mkdir -p](https://en.wikipedia.org/wiki/Mkdir#Options).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/data/{{PATH}}",
+      "method": "PUT",
+      "name": "Create or overwrite a document",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        }
+      ],
+      "path": "/v1/data/{{PATH}}",
+      "pathParameters": [
+        {
+          "name": "path",
+          "value": "opa/examples/public_servers"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\n  \"users\": {\n    \"user-id-1\": {\n      \"isAdmin\": true\n    }\n  }\n}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create or overwrite a document",
+      "url": "http://openpolicy.local/v1/data/{{PATH}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API endpoint responds with a list of all policy modules on the server (result response)",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/policies",
+      "method": "GET",
+      "name": "List policies",
+      "params": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "path": "/v1/policies",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List policies",
+      "url": "http://openpolicy.local/v1/policies"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API endpoint removes an existing policy module from the server",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1/policies/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete a policy module",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "example1"
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "path": "/v1/policies/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "example1"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a policy module",
+      "url": "http://openpolicy.local/v1/policies/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API endpoint returns the details of the specified policy module (`{id}`)",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/policies/{{ID}}",
+      "method": "GET",
+      "name": "Get a policy module",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "example1"
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "path": "/v1/policies/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "example1"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a policy module",
+      "url": "http://openpolicy.local/v1/policies/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": "package opa.examples\n\nimport data.servers\nimport data.networks\nimport data.ports\n\npublic_servers[server] {\n  some k, m\n  \tserver := servers[_]\n  \tserver.ports[_] == ports[k].id\n  \tports[k].networks[_] == networks[m].id\n  \tnetworks[m].public == true\n}",
+      "body_json": null,
+      "body_text": "package opa.examples\n\nimport data.servers\nimport data.networks\nimport data.ports\n\npublic_servers[server] {\n  some k, m\n  \tserver := servers[_]\n  \tserver.ports[_] == ports[k].id\n  \tports[k].networks[_] == networks[m].id\n  \tnetworks[m].public == true\n}",
+      "body_type": "text",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "- If the policy module does not exist, it is created.\n- If the policy module already exists, it is replaced.\n\nIf the policy module isn't correctly defined, a *bad request* (400) response is returned.\n\n### Example policy module\n```yaml\npackage opa.examples\n\nimport data.servers\nimport data.networks\nimport data.ports\n\npublic_servers[server] {\n  some k, m\n  \tserver := servers[_]\n  \tserver.ports[_] == ports[k].id\n  \tports[k].networks[_] == networks[m].id\n  \tnetworks[m].public == true\n}\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/policies/{{ID}}",
+      "method": "PUT",
+      "name": "Create or update a policy module",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "example1"
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        }
+      ],
+      "path": "/v1/policies/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "example1"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        }
+      ],
+      "requestBodyExample": "package opa.examples\n\nimport data.servers\nimport data.networks\nimport data.ports\n\npublic_servers[server] {\n  some k, m\n  \tserver := servers[_]\n  \tserver.ports[_] == ports[k].id\n  \tports[k].networks[_] == networks[m].id\n  \tnetworks[m].public == true\n}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create or update a policy module",
+      "url": "http://openpolicy.local/v1/policies/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API endpoint returns bindings for the variables in the query.\n\nFor more complex JSON queries, use `POST /v1/query` instead.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/query",
+      "method": "GET",
+      "name": "Execute an ad-hoc query (simple)",
+      "params": [
+        {
+          "name": "q",
+          "value": "{\"query\": \"data.servers[i].ports[_] = \\\"p2\\\"; data.servers[i].name = name\"}"
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        }
+      ],
+      "path": "/v1/query",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "q",
+          "value": "{\"query\": \"data.servers[i].ports[_] = \\\"p2\\\"; data.servers[i].name = name\"}"
+        },
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Execute an ad-hoc query (simple)",
+      "url": "http://openpolicy.local/v1/query"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": "{\n  \"query\": \"data.servers[i].ports[_] = \\\"p2\\\"; data.servers[i].name = name\"\n}",
+      "body_json": null,
+      "body_text": "{\n  \"query\": \"data.servers[i].ports[_] = \\\"p2\\\"; data.servers[i].name = name\"\n}",
+      "body_type": "text",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API endpoint returns bindings for the variables in the query.\n\nFor simpler JSON queries, you may use `GET /v1/query` instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/query",
+      "method": "POST",
+      "name": "Execute an ad-hoc query (complex)",
+      "params": [
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        }
+      ],
+      "path": "/v1/query",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "pretty",
+          "value": "True"
+        },
+        {
+          "name": "explain",
+          "value": "full"
+        },
+        {
+          "name": "metrics",
+          "value": "False"
+        }
+      ],
+      "requestBodyExample": "{\n  \"query\": \"data.servers[i].ports[_] = \\\"p2\\\"; data.servers[i].name = name\"\n}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Execute an ad-hoc query (complex)",
+      "url": "http://openpolicy.local/v1/query"
+    }
+  ]
+}

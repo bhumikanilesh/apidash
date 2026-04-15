@@ -1,0 +1,3575 @@
+{
+  "id": "amazonaws.com_workdocs",
+  "info": {
+    "base_url": "http://workdocs.{region}.amazonaws.com",
+    "description": "Searches metadata and the content of folders, documents, document versions, and comments.",
+    "source": "apis.guru",
+    "tags": [
+      "embedding"
+    ],
+    "title": "Amazon WorkDocs",
+    "version": "2016-05-01"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/documents/{DocumentId}/versions/{VersionId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/documents/{DocumentId}/versions/{VersionId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves version metadata for the specified document.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}",
+      "method": "GET",
+      "name": "GET /api/v1/documents/{DocumentId}/versions/{VersionId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "includeCustomMetadata",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "includeCustomMetadata",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/documents/{DocumentId}/versions/{VersionId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "VersionStatus": "ACTIVE"
+      },
+      "body_json": {
+        "VersionStatus": "ACTIVE"
+      },
+      "body_text": "{\"VersionStatus\": \"ACTIVE\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Changes the status of the document version to ACTIVE. </p> <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <a>InitiateDocumentVersionUpload</a>. </p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /api/v1/documents/{DocumentId}/versions/{VersionId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VersionStatus\": \"ACTIVE\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /api/v1/documents/{DocumentId}/versions/{VersionId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Activates the specified user. Only active users can access Amazon WorkDocs.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "POST /api/v1/users/{{USER_ID}}/activation",
+      "method": "POST",
+      "name": "POST /api/v1/users/{UserId}/activation",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "UserId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/users/{{USER_ID}}/activation",
+      "pathParameters": [
+        {
+          "name": "UserId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/users/{UserId}/activation",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/users/{{USER_ID}}/activation"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/users/{{USER_ID}}/activation",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/users/{UserId}/activation",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "UserId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/users/{{USER_ID}}/activation",
+      "pathParameters": [
+        {
+          "name": "UserId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/users/{UserId}/activation",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/users/{{USER_ID}}/activation"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "NotificationOptions": {
+          "EmailMessage": {},
+          "SendEmail": {}
+        },
+        "Principals": [
+          {
+            "Id": {},
+            "Role": {},
+            "Type": {}
+          }
+        ]
+      },
+      "body_json": {
+        "NotificationOptions": {
+          "EmailMessage": {},
+          "SendEmail": {}
+        },
+        "Principals": [
+          {
+            "Id": {},
+            "Role": {},
+            "Type": {}
+          }
+        ]
+      },
+      "body_text": "{\"Principals\": [{\"Id\": {}, \"Type\": {}, \"Role\": {}}], \"NotificationOptions\": {\"SendEmail\": {}, \"EmailMessage\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/resources/{{RESOURCE_ID}}/permissions",
+      "method": "POST",
+      "name": "POST /api/v1/resources/{ResourceId}/permissions",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources/{{RESOURCE_ID}}/permissions",
+      "pathParameters": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Principals\": [{\"Id\": {}, \"Type\": {}, \"Role\": {}}], \"NotificationOptions\": {\"SendEmail\": {}, \"EmailMessage\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/resources/{ResourceId}/permissions",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources/{{RESOURCE_ID}}/permissions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Describes the permissions of a specified resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/resources/{{RESOURCE_ID}}/permissions",
+      "method": "GET",
+      "name": "GET /api/v1/resources/{ResourceId}/permissions",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        },
+        {
+          "name": "principalId",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources/{{RESOURCE_ID}}/permissions",
+      "pathParameters": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "principalId",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/resources/{ResourceId}/permissions",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources/{{RESOURCE_ID}}/permissions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Removes all the permissions from the specified resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/resources/{{RESOURCE_ID}}/permissions",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/resources/{ResourceId}/permissions",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources/{{RESOURCE_ID}}/permissions",
+      "pathParameters": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/resources/{ResourceId}/permissions",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources/{{RESOURCE_ID}}/permissions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "NotifyCollaborators": false,
+        "ParentId": "",
+        "Text": "",
+        "ThreadId": "",
+        "Visibility": "PUBLIC"
+      },
+      "body_json": {
+        "NotifyCollaborators": false,
+        "ParentId": "",
+        "Text": "",
+        "ThreadId": "",
+        "Visibility": "PUBLIC"
+      },
+      "body_text": "{\"ParentId\": \"\", \"ThreadId\": \"\", \"Text\": \"\", \"Visibility\": \"PUBLIC\", \"NotifyCollaborators\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds a new comment to the specified document version.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comment",
+      "method": "POST",
+      "name": "POST /api/v1/documents/{DocumentId}/versions/{VersionId}/comment",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comment",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ParentId\": \"\", \"ThreadId\": \"\", \"Text\": \"\", \"Visibility\": \"PUBLIC\", \"NotifyCollaborators\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/documents/{DocumentId}/versions/{VersionId}/comment",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comment"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CustomMetadata": {}
+      },
+      "body_json": {
+        "CustomMetadata": {}
+      },
+      "body_text": "{\"CustomMetadata\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds one or more custom properties to the specified resource (a folder, document, or version).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/v1/resources/{{RESOURCE_ID}}/customMetadata",
+      "method": "PUT",
+      "name": "PUT /api/v1/resources/{ResourceId}/customMetadata",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        },
+        {
+          "name": "versionid",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources/{{RESOURCE_ID}}/customMetadata",
+      "pathParameters": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "versionid",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"CustomMetadata\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /api/v1/resources/{ResourceId}/customMetadata",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources/{{RESOURCE_ID}}/customMetadata"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes custom metadata from the specified resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/resources/{{RESOURCE_ID}}/customMetadata",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/resources/{ResourceId}/customMetadata",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        },
+        {
+          "name": "versionId",
+          "value": ""
+        },
+        {
+          "name": "keys",
+          "value": ""
+        },
+        {
+          "name": "deleteAll",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources/{{RESOURCE_ID}}/customMetadata",
+      "pathParameters": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "versionId",
+          "value": ""
+        },
+        {
+          "name": "keys",
+          "value": ""
+        },
+        {
+          "name": "deleteAll",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/resources/{ResourceId}/customMetadata",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources/{{RESOURCE_ID}}/customMetadata"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Name": "",
+        "ParentFolderId": ""
+      },
+      "body_json": {
+        "Name": "",
+        "ParentFolderId": ""
+      },
+      "body_text": "{\"Name\": \"\", \"ParentFolderId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a folder with the specified name and parent folder.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/folders",
+      "method": "POST",
+      "name": "POST /api/v1/folders",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "Authentication",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/folders",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"ParentFolderId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/folders",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/folders"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Labels": [
+          ""
+        ]
+      },
+      "body_json": {
+        "Labels": [
+          ""
+        ]
+      },
+      "body_text": "{\"Labels\": [\"\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds the specified list of labels to the given resource (a document or folder)",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/v1/resources/{{RESOURCE_ID}}/labels",
+      "method": "PUT",
+      "name": "PUT /api/v1/resources/{ResourceId}/labels",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources/{{RESOURCE_ID}}/labels",
+      "pathParameters": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Labels\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /api/v1/resources/{ResourceId}/labels",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources/{{RESOURCE_ID}}/labels"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified list of labels from a resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/resources/{{RESOURCE_ID}}/labels",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/resources/{ResourceId}/labels",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        },
+        {
+          "name": "labels",
+          "value": ""
+        },
+        {
+          "name": "deleteAll",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources/{{RESOURCE_ID}}/labels",
+      "pathParameters": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "labels",
+          "value": ""
+        },
+        {
+          "name": "deleteAll",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/resources/{ResourceId}/labels",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources/{{RESOURCE_ID}}/labels"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Endpoint": "",
+        "Protocol": "HTTPS",
+        "SubscriptionType": "ALL"
+      },
+      "body_json": {
+        "Endpoint": "",
+        "Protocol": "HTTPS",
+        "SubscriptionType": "ALL"
+      },
+      "body_text": "{\"Endpoint\": \"\", \"Protocol\": \"HTTPS\", \"SubscriptionType\": \"ALL\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html\">Setting up notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions",
+      "method": "POST",
+      "name": "POST /api/v1/organizations/{OrganizationId}/subscriptions",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "OrganizationId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions",
+      "pathParameters": [
+        {
+          "name": "OrganizationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Endpoint\": \"\", \"Protocol\": \"HTTPS\", \"SubscriptionType\": \"ALL\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/organizations/{OrganizationId}/subscriptions",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the specified notification subscriptions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions",
+      "method": "GET",
+      "name": "GET /api/v1/organizations/{OrganizationId}/subscriptions",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "OrganizationId",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions",
+      "pathParameters": [
+        {
+          "name": "OrganizationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/organizations/{OrganizationId}/subscriptions",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "EmailAddress": "",
+        "GivenName": "",
+        "OrganizationId": "",
+        "Password": "",
+        "StorageRule": {
+          "StorageAllocatedInBytes": {},
+          "StorageType": {}
+        },
+        "Surname": "",
+        "TimeZoneId": "",
+        "Username": ""
+      },
+      "body_json": {
+        "EmailAddress": "",
+        "GivenName": "",
+        "OrganizationId": "",
+        "Password": "",
+        "StorageRule": {
+          "StorageAllocatedInBytes": {},
+          "StorageType": {}
+        },
+        "Surname": "",
+        "TimeZoneId": "",
+        "Username": ""
+      },
+      "body_text": "{\"OrganizationId\": \"\", \"Username\": \"\", \"EmailAddress\": \"\", \"GivenName\": \"\", \"Surname\": \"\", \"Password\": \"\", \"TimeZoneId\": \"\", \"StorageRule\": {\"StorageAllocatedInBytes\": {}, \"StorageType\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is \"ACTIVE\". New users can access Amazon WorkDocs.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/users",
+      "method": "POST",
+      "name": "POST /api/v1/users",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "Authentication",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/users",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"OrganizationId\": \"\", \"Username\": \"\", \"EmailAddress\": \"\", \"GivenName\": \"\", \"Surname\": \"\", \"Password\": \"\", \"TimeZoneId\": \"\", \"StorageRule\": {\"StorageAllocatedInBytes\": {}, \"StorageType\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/users",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/users"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p> <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/users",
+      "method": "GET",
+      "name": "GET /api/v1/users",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "organizationId",
+          "value": ""
+        },
+        {
+          "name": "userIds",
+          "value": ""
+        },
+        {
+          "name": "query",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/users",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "organizationId",
+          "value": ""
+        },
+        {
+          "name": "userIds",
+          "value": ""
+        },
+        {
+          "name": "query",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/users",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/users"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified comment from the document version.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comment/{{COMMENT_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/documents/{DocumentId}/versions/{VersionId}/comment/{CommentId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        },
+        {
+          "name": "CommentId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comment/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        },
+        {
+          "name": "CommentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/documents/{DocumentId}/versions/{VersionId}/comment/{CommentId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comment/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Permanently deletes the specified document and its associated metadata.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/documents/{{DOCUMENT_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/documents/{DocumentId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/documents/{DocumentId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves details of a document.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/documents/{{DOCUMENT_ID}}",
+      "method": "GET",
+      "name": "GET /api/v1/documents/{DocumentId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "includeCustomMetadata",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "includeCustomMetadata",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/documents/{DocumentId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Name": "",
+        "ParentFolderId": "",
+        "ResourceState": "ACTIVE"
+      },
+      "body_json": {
+        "Name": "",
+        "ParentFolderId": "",
+        "ResourceState": "ACTIVE"
+      },
+      "body_text": "{\"Name\": \"\", \"ParentFolderId\": \"\", \"ResourceState\": \"ACTIVE\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /api/v1/documents/{{DOCUMENT_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /api/v1/documents/{DocumentId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"ParentFolderId\": \"\", \"ResourceState\": \"ACTIVE\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /api/v1/documents/{DocumentId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a specific version of a document.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/documentVersions/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/documentVersions/{DocumentId}/versions/{VersionId}#deletePriorVersions",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        },
+        {
+          "name": "deletePriorVersions",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documentVersions/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "deletePriorVersions",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/documentVersions/{DocumentId}/versions/{VersionId}#deletePriorVersions",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documentVersions/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}#deletePriorVersions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Permanently deletes the specified folder and its contents.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/folders/{{FOLDER_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/folders/{FolderId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/folders/{{FOLDER_ID}}",
+      "pathParameters": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/folders/{FolderId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/folders/{{FOLDER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the metadata of the specified folder.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/folders/{{FOLDER_ID}}",
+      "method": "GET",
+      "name": "GET /api/v1/folders/{FolderId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FolderId",
+          "value": ""
+        },
+        {
+          "name": "includeCustomMetadata",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/folders/{{FOLDER_ID}}",
+      "pathParameters": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "includeCustomMetadata",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/folders/{FolderId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/folders/{{FOLDER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Name": "",
+        "ParentFolderId": "",
+        "ResourceState": "ACTIVE"
+      },
+      "body_json": {
+        "Name": "",
+        "ParentFolderId": "",
+        "ResourceState": "ACTIVE"
+      },
+      "body_text": "{\"Name\": \"\", \"ParentFolderId\": \"\", \"ResourceState\": \"ACTIVE\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /api/v1/folders/{{FOLDER_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /api/v1/folders/{FolderId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/folders/{{FOLDER_ID}}",
+      "pathParameters": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"ParentFolderId\": \"\", \"ResourceState\": \"ACTIVE\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /api/v1/folders/{FolderId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/folders/{{FOLDER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the contents of the specified folder.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/folders/{{FOLDER_ID}}/contents",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/folders/{FolderId}/contents",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/folders/{{FOLDER_ID}}/contents",
+      "pathParameters": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/folders/{FolderId}/contents",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/folders/{{FOLDER_ID}}/contents"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Describes the contents of the specified folder, including its documents and subfolders.</p> <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/folders/{{FOLDER_ID}}/contents",
+      "method": "GET",
+      "name": "GET /api/v1/folders/{FolderId}/contents",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FolderId",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/folders/{{FOLDER_ID}}/contents",
+      "pathParameters": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/folders/{FolderId}/contents",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/folders/{{FOLDER_ID}}/contents"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified subscription from the specified organization.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions/{{SUBSCRIPTION_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "SubscriptionId",
+          "value": ""
+        },
+        {
+          "name": "OrganizationId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions/{{SUBSCRIPTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "SubscriptionId",
+          "value": ""
+        },
+        {
+          "name": "OrganizationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/organizations/{{ORGANIZATION_ID}}/subscriptions/{{SUBSCRIPTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p> <important> <p>Deleting a user immediately and permanently deletes all content in that user's folder structure. Site retention policies do NOT apply to this type of deletion.</p> </important>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/users/{{USER_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/users/{UserId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "UserId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/users/{{USER_ID}}",
+      "pathParameters": [
+        {
+          "name": "UserId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/users/{UserId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/users/{{USER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "GivenName": "",
+        "GrantPoweruserPrivileges": "TRUE",
+        "Locale": "en",
+        "StorageRule": {
+          "StorageAllocatedInBytes": {},
+          "StorageType": {}
+        },
+        "Surname": "",
+        "TimeZoneId": "",
+        "Type": "USER"
+      },
+      "body_json": {
+        "GivenName": "",
+        "GrantPoweruserPrivileges": "TRUE",
+        "Locale": "en",
+        "StorageRule": {
+          "StorageAllocatedInBytes": {},
+          "StorageType": {}
+        },
+        "Surname": "",
+        "TimeZoneId": "",
+        "Type": "USER"
+      },
+      "body_text": "{\"GivenName\": \"\", \"Surname\": \"\", \"Type\": \"USER\", \"StorageRule\": {\"StorageAllocatedInBytes\": {}, \"StorageType\": {}}, \"TimeZoneId\": \"\", \"Locale\": \"en\", \"GrantPoweruserPrivileges\": \"TRUE\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /api/v1/users/{{USER_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /api/v1/users/{UserId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "UserId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/users/{{USER_ID}}",
+      "pathParameters": [
+        {
+          "name": "UserId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"GivenName\": \"\", \"Surname\": \"\", \"Type\": \"USER\", \"StorageRule\": {\"StorageAllocatedInBytes\": {}, \"StorageType\": {}}, \"TimeZoneId\": \"\", \"Locale\": \"en\", \"GrantPoweruserPrivileges\": \"TRUE\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /api/v1/users/{UserId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/users/{{USER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Describes the user activities in a specified time period.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/activities",
+      "method": "GET",
+      "name": "GET /api/v1/activities",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "startTime",
+          "value": ""
+        },
+        {
+          "name": "endTime",
+          "value": ""
+        },
+        {
+          "name": "organizationId",
+          "value": ""
+        },
+        {
+          "name": "activityTypes",
+          "value": ""
+        },
+        {
+          "name": "resourceId",
+          "value": ""
+        },
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "includeIndirectActivities",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/activities",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "startTime",
+          "value": ""
+        },
+        {
+          "name": "endTime",
+          "value": ""
+        },
+        {
+          "name": "organizationId",
+          "value": ""
+        },
+        {
+          "name": "activityTypes",
+          "value": ""
+        },
+        {
+          "name": "resourceId",
+          "value": ""
+        },
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "includeIndirectActivities",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/activities",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/activities"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all the comments for the specified document version.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comments",
+      "method": "GET",
+      "name": "GET /api/v1/documents/{DocumentId}/versions/{VersionId}/comments",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comments",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "VersionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/documents/{DocumentId}/versions/{VersionId}/comments",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}/versions/{{VERSION_ID}}/comments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Retrieves the document versions for the specified document.</p> <p>By default, only active versions are returned.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/documents/{{DOCUMENT_ID}}/versions",
+      "method": "GET",
+      "name": "GET /api/v1/documents/{DocumentId}/versions",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}/versions",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "include",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/documents/{DocumentId}/versions",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}/versions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Describes the groups specified by the query. Groups are defined by the underlying Active Directory.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/groups",
+      "method": "GET",
+      "name": "GET /api/v1/groups#searchQuery",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "searchQuery",
+          "value": ""
+        },
+        {
+          "name": "organizationId",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/groups",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "searchQuery",
+          "value": ""
+        },
+        {
+          "name": "organizationId",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/groups#searchQuery",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/groups#searchQuery"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.</p> <p>This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see <a href=\"https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html\">Authentication and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/me/root",
+      "method": "GET",
+      "name": "GET /api/v1/me/root#Authentication",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/me/root",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        },
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/me/root#Authentication",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/me/root#Authentication"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Retrieves details of the current user for whom the authentication token was generated. This is not a valid action for SigV4 (administrative API) clients.</p> <p>This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see <a href=\"https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html\">Authentication and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/me",
+      "method": "GET",
+      "name": "GET /api/v1/me#Authentication",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "Authentication",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/me",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/me#Authentication",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/me#Authentication"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/documents/{{DOCUMENT_ID}}/path",
+      "method": "GET",
+      "name": "GET /api/v1/documents/{DocumentId}/path",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents/{{DOCUMENT_ID}}/path",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/documents/{DocumentId}/path",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents/{{DOCUMENT_ID}}/path"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p> <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/folders/{{FOLDER_ID}}/path",
+      "method": "GET",
+      "name": "GET /api/v1/folders/{FolderId}/path",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FolderId",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/folders/{{FOLDER_ID}}/path",
+      "pathParameters": [
+        {
+          "name": "FolderId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/folders/{FolderId}/path",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/folders/{{FOLDER_ID}}/path"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code> supported is <code>SHARED_WITH_ME</code>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/resources",
+      "method": "GET",
+      "name": "GET /api/v1/resources",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "collectionType",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "collectionType",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /api/v1/resources",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ContentCreatedTimestamp": "",
+        "ContentModifiedTimestamp": "",
+        "ContentType": "",
+        "DocumentSizeInBytes": 0,
+        "Id": "",
+        "Name": "",
+        "ParentFolderId": ""
+      },
+      "body_json": {
+        "ContentCreatedTimestamp": "",
+        "ContentModifiedTimestamp": "",
+        "ContentType": "",
+        "DocumentSizeInBytes": 0,
+        "Id": "",
+        "Name": "",
+        "ParentFolderId": ""
+      },
+      "body_text": "{\"Id\": \"\", \"Name\": \"\", \"ContentCreatedTimestamp\": \"\", \"ContentModifiedTimestamp\": \"\", \"ContentType\": \"\", \"DocumentSizeInBytes\": 0, \"ParentFolderId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new document object and version object.</p> <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <a>UpdateDocumentVersion</a>.</p> <p>To cancel the document upload, call <a>AbortDocumentVersionUpload</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/documents",
+      "method": "POST",
+      "name": "POST /api/v1/documents",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "Authentication",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documents",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Id\": \"\", \"Name\": \"\", \"ContentCreatedTimestamp\": \"\", \"ContentModifiedTimestamp\": \"\", \"ContentType\": \"\", \"DocumentSizeInBytes\": 0, \"ParentFolderId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/documents",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documents"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Removes the permission for the specified principal from the specified resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/resources/{{RESOURCE_ID}}/permissions/{{PRINCIPAL_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /api/v1/resources/{ResourceId}/permissions/{PrincipalId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        },
+        {
+          "name": "PrincipalId",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/resources/{{RESOURCE_ID}}/permissions/{{PRINCIPAL_ID}}",
+      "pathParameters": [
+        {
+          "name": "ResourceId",
+          "value": ""
+        },
+        {
+          "name": "PrincipalId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /api/v1/resources/{ResourceId}/permissions/{PrincipalId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/resources/{{RESOURCE_ID}}/permissions/{{PRINCIPAL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Recovers a deleted version of an Amazon WorkDocs document.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        }
+      ],
+      "id": "POST /api/v1/documentVersions/restore/{{DOCUMENT_ID}}",
+      "method": "POST",
+      "name": "POST /api/v1/documentVersions/restore/{DocumentId}",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/documentVersions/restore/{{DOCUMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "DocumentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/documentVersions/restore/{DocumentId}",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/documentVersions/restore/{{DOCUMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_WORKDOCS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "AdditionalResponseFields": [
+          "WEBURL"
+        ],
+        "Filters": {
+          "AncestorIds": {},
+          "ContentCategories": {},
+          "CreatedRange": {
+            "EndValue": {},
+            "StartValue": {}
+          },
+          "Labels": {},
+          "ModifiedRange": {
+            "EndValue": {},
+            "StartValue": {}
+          },
+          "Principals": {},
+          "ResourceTypes": {},
+          "SearchCollectionTypes": {},
+          "SizeRange": {
+            "EndValue": {},
+            "StartValue": {}
+          },
+          "TextLocales": {}
+        },
+        "Limit": 0,
+        "Marker": "",
+        "OrderBy": [
+          {
+            "Field": {},
+            "Order": {}
+          }
+        ],
+        "OrganizationId": "",
+        "QueryScopes": [
+          "NAME"
+        ],
+        "QueryText": ""
+      },
+      "body_json": {
+        "AdditionalResponseFields": [
+          "WEBURL"
+        ],
+        "Filters": {
+          "AncestorIds": {},
+          "ContentCategories": {},
+          "CreatedRange": {
+            "EndValue": {},
+            "StartValue": {}
+          },
+          "Labels": {},
+          "ModifiedRange": {
+            "EndValue": {},
+            "StartValue": {}
+          },
+          "Principals": {},
+          "ResourceTypes": {},
+          "SearchCollectionTypes": {},
+          "SizeRange": {
+            "EndValue": {},
+            "StartValue": {}
+          },
+          "TextLocales": {}
+        },
+        "Limit": 0,
+        "Marker": "",
+        "OrderBy": [
+          {
+            "Field": {},
+            "Order": {}
+          }
+        ],
+        "OrganizationId": "",
+        "QueryScopes": [
+          "NAME"
+        ],
+        "QueryText": ""
+      },
+      "body_text": "{\"QueryText\": \"\", \"QueryScopes\": [\"NAME\"], \"OrganizationId\": \"\", \"AdditionalResponseFields\": [\"WEBURL\"], \"Filters\": {\"TextLocales\": {}, \"ContentCategories\": {}, \"ResourceTypes\": {}, \"Labels\": {}, \"Principals\": {}, \"AncestorIds\": {}, \"SearchCollectionTypes\": {}, \"SizeRange\": {\"StartValue\": {}, \"EndValue\": {}}, \"CreatedRange\": {\"StartValue\": {}, \"EndValue\": {}}, \"ModifiedRange\": {\"StartValue\": {}, \"EndValue\": {}}}, \"OrderBy\": [{\"Field\": {}, \"Order\": {}}], \"Limit\": 0, \"Marker\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Searches metadata and the content of folders, documents, document versions, and comments.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_WORKDOCS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/search",
+      "method": "POST",
+      "name": "POST /api/v1/search",
+      "note": "Replace {{AMAZON_WORKDOCS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "path": "/api/v1/search",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "Limit",
+          "value": ""
+        },
+        {
+          "name": "Marker",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"QueryText\": \"\", \"QueryScopes\": [\"NAME\"], \"OrganizationId\": \"\", \"AdditionalResponseFields\": [\"WEBURL\"], \"Filters\": {\"TextLocales\": {}, \"ContentCategories\": {}, \"ResourceTypes\": {}, \"Labels\": {}, \"Principals\": {}, \"AncestorIds\": {}, \"SearchCollectionTypes\": {}, \"SizeRange\": {\"StartValue\": {}, \"EndValue\": {}}, \"CreatedRange\": {\"StartValue\": {}, \"EndValue\": {}}, \"ModifiedRange\": {\"StartValue\": {}, \"EndValue\": {}}}, \"OrderBy\": [{\"Field\": {}, \"Order\": {}}], \"Limit\": 0, \"Marker\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /api/v1/search",
+      "url": "http://workdocs.{{REGION}}.amazonaws.com/api/v1/search"
+    }
+  ]
+}

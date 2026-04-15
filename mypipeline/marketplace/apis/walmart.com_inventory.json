@@ -1,0 +1,540 @@
+{
+  "id": "walmart.com_inventory",
+  "info": {
+    "base_url": "https://marketplace.walmartapis.com",
+    "description": "Updates the inventory for a given item.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Inventory Management",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "INVENTORY_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "file": ""
+      },
+      "body_json": {
+        "file": ""
+      },
+      "body_text": "{\"file\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates inventory for items in bulk. \nSeller Can either use feed type \"inventory\" or \"MP_INVENTORY\" \n* Inventory spec 1.4 feed type: inventory \n* Inventory spec 1.5 feed type: MP_INVENTORY \n\nPlease Note: Multi Node Inventory Update Feed (feedType=MP_INVENTORY) only supports JSON Request and Responses. Refer to \"MultiNode_Bulk_Inventory_Update_Request.json\" for the corresponding request sample \n \nRefer to the <a href=\"https://developer.walmart.com/doc/us/us-mp/us-mp-inventory/\">guide section</a> for more detailed guide around each of the feed types \n\n Refer to the throttling limits before uploading the Feed Files.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/feeds",
+      "method": "POST",
+      "name": "Bulk Item Inventory Update",
+      "note": "Replace {{INVENTORY_MANAGEMENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "feedType",
+          "value": ""
+        },
+        {
+          "name": "shipNode",
+          "value": ""
+        }
+      ],
+      "path": "/v3/feeds",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "feedType",
+          "value": ""
+        },
+        {
+          "name": "shipNode",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"file\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Bulk Item Inventory Update",
+      "url": "https://marketplace.walmartapis.com/v3/feeds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "INVENTORY_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You can use this API to get the current Available to Sell inventory quantities for all WFS items in your catalog. You can also query specific SKUs or filter to only items updated after a specific date in order to reduce the response size.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/fulfillment/inventory",
+      "method": "GET",
+      "name": "WFS Inventory",
+      "note": "Replace {{INVENTORY_MANAGEMENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "sku",
+          "value": ""
+        },
+        {
+          "name": "fromModifiedDate",
+          "value": ""
+        },
+        {
+          "name": "toModifiedDate",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "path": "/v3/fulfillment/inventory",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sku",
+          "value": ""
+        },
+        {
+          "name": "fromModifiedDate",
+          "value": ""
+        },
+        {
+          "name": "toModifiedDate",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "WFS Inventory",
+      "url": "https://marketplace.walmartapis.com/v3/fulfillment/inventory"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "INVENTORY_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API will retrieve the inventory count for all of a seller's items across all ship nodes by item to ship node mapping. Inventory can be zero or non-zero. Please note that NextCursor value changes and it needs to be passed on from the previous call to next call.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/inventories",
+      "method": "GET",
+      "name": "Multiple Item Inventory for All Ship Nodes",
+      "note": "Replace {{INVENTORY_MANAGEMENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "nextCursor",
+          "value": ""
+        }
+      ],
+      "path": "/v3/inventories",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "nextCursor",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Multiple Item Inventory for All Ship Nodes",
+      "url": "https://marketplace.walmartapis.com/v3/inventories"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "INVENTORY_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API will retrieve the inventory count for an item across all ship nodes or one specific ship node. You can specify the ship node for which you want to fetch the inventory",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/inventories/{{SKU}}",
+      "method": "GET",
+      "name": "Single Item Inventory by Ship Node",
+      "note": "Replace {{INVENTORY_MANAGEMENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sku",
+          "value": ""
+        },
+        {
+          "name": "shipNode",
+          "value": ""
+        }
+      ],
+      "path": "/v3/inventories/{{SKU}}",
+      "pathParameters": [
+        {
+          "name": "sku",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "shipNode",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Single Item Inventory by Ship Node",
+      "url": "https://marketplace.walmartapis.com/v3/inventories/{{SKU}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "INVENTORY_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "inventories": {
+          "nodes": [
+            {
+              "inputQty": {
+                "amount": 0.0,
+                "unit": "EACH"
+              },
+              "shipNode": ""
+            }
+          ]
+        }
+      },
+      "body_json": {
+        "inventories": {
+          "nodes": [
+            {
+              "inputQty": {
+                "amount": 0.0,
+                "unit": "EACH"
+              },
+              "shipNode": ""
+            }
+          ]
+        }
+      },
+      "body_text": "{\"inventories\": {\"nodes\": [{\"inputQty\": {\"amount\": 0.0, \"unit\": \"EACH\"}, \"shipNode\": \"\"}]}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API will update the inventory for an item across one or more fulfillment centers, known as ship nodes.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v3/inventories/{{SKU}}",
+      "method": "PUT",
+      "name": "Update Item Inventory per Ship Node",
+      "note": "Replace {{INVENTORY_MANAGEMENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sku",
+          "value": ""
+        }
+      ],
+      "path": "/v3/inventories/{{SKU}}",
+      "pathParameters": [
+        {
+          "name": "sku",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"inventories\": {\"nodes\": [{\"inputQty\": {\"amount\": 0.0, \"unit\": \"EACH\"}, \"shipNode\": \"\"}]}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Item Inventory per Ship Node",
+      "url": "https://marketplace.walmartapis.com/v3/inventories/{{SKU}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "INVENTORY_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You can use this API to get the inventory for a given item.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/inventory",
+      "method": "GET",
+      "name": "Inventory",
+      "note": "Replace {{INVENTORY_MANAGEMENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "sku",
+          "value": ""
+        },
+        {
+          "name": "shipNode",
+          "value": ""
+        }
+      ],
+      "path": "/v3/inventory",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sku",
+          "value": ""
+        },
+        {
+          "name": "shipNode",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Inventory",
+      "url": "https://marketplace.walmartapis.com/v3/inventory"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "INVENTORY_MANAGEMENT_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "quantity": {
+          "amount": 0.0,
+          "unit": "EACH"
+        },
+        "sku": ""
+      },
+      "body_json": {
+        "quantity": {
+          "amount": 0.0,
+          "unit": "EACH"
+        },
+        "sku": ""
+      },
+      "body_text": "{\"quantity\": {\"amount\": 0.0, \"unit\": \"EACH\"}, \"sku\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the inventory for a given item.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{INVENTORY_MANAGEMENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v3/inventory",
+      "method": "PUT",
+      "name": "Update inventory",
+      "note": "Replace {{INVENTORY_MANAGEMENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "sku",
+          "value": ""
+        },
+        {
+          "name": "shipNode",
+          "value": ""
+        }
+      ],
+      "path": "/v3/inventory",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sku",
+          "value": ""
+        },
+        {
+          "name": "shipNode",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"quantity\": {\"amount\": 0.0, \"unit\": \"EACH\"}, \"sku\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update inventory",
+      "url": "https://marketplace.walmartapis.com/v3/inventory"
+    }
+  ]
+}

@@ -1,0 +1,1700 @@
+{
+  "id": "google.home",
+  "info": {
+    "base_url": "http://example.com/setup",
+    "description": "This can only set new equalizer values. To get already set values, use /setup/eureka_info.\n\nThe body is mandatory. It can either contain `low_shelf` or `high_shelf` or both.\n\n`low_shelf.gain_db` and...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Google Home",
+    "version": "2.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "All licenses of programs used by Home.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/NOTICE.html.gz",
+      "method": "GET",
+      "name": "Legal Notice",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/NOTICE.html.gz",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Legal Notice",
+      "url": "http://example.com/setup/NOTICE.html.gz"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "endpoint_enabled": false,
+        "hotword_enabled": false
+      },
+      "body_json": {
+        "endpoint_enabled": false,
+        "hotword_enabled": false
+      },
+      "body_text": "{\"endpoint_enabled\": false, \"hotword_enabled\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This controls Accessibility sounds. `hotword_enabled` is for 'Play start sound' and `endpoint_enabled` is for 'Play end sound'.  \nSending an empty-body POST request returns the current values.  \nEither of the fields or both can be sent and new values will be saved.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/assistant/a11y_mode",
+      "method": "POST",
+      "name": "Accessibility",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/assistant/a11y_mode",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"endpoint_enabled\": false, \"hotword_enabled\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Accessibility",
+      "url": "http://example.com/setup/assistant/a11y_mode"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This gives a list of all active alarms and timers.\n\nBoth alarms and timers have `id`s which can be used to delete them. (There is no known way of creating/deleting yet). The value of `status` have different meanings for alarms and timers (given below).\n\nAlarms have `date_pattern` and `time_pattern` with day, month, year, hour, minute, second. `fire_time` is the same in unix time (milliseconds, not seconds).  \n`status` is 1 for set up and 2 for ringing.\n\nTimers have `original_duration` is the original duration.  \n`status` is 1 for set up and 3 for ringing.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/assistant/alarms",
+      "method": "GET",
+      "name": "Get Alarms and Timers",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/assistant/alarms",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Alarms and Timers",
+      "url": "http://example.com/setup/assistant/alarms"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ids": [
+          "timer/xxx",
+          "alarm/xxx"
+        ]
+      },
+      "body_json": {
+        "ids": [
+          "timer/xxx",
+          "alarm/xxx"
+        ]
+      },
+      "body_text": "{\"ids\": [\"timer/xxx\", \"alarm/xxx\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This deletes alarms and timers by their id.\n\n`ids` is a list of ids to be deleted. Sending invalid id still returns a 200 OK. The `/` in the ids have to be escaped like `\\/`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/assistant/alarms/delete",
+      "method": "POST",
+      "name": "Delete Alarms and Timers",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/assistant/alarms/delete",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ids\": [\"timer/xxx\", \"alarm/xxx\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Alarms and Timers",
+      "url": "http://example.com/setup/assistant/alarms/delete"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "volume": 1
+      },
+      "body_json": {
+        "volume": 1
+      },
+      "body_text": "{\"volume\": 1}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This gets and sets alarms and timers volume.  \n**Note:** This is not the same as normal volume.\n\nVolume is a float number in [0, 1] where 0 is minimum and 1 is maximum.  \nSending an empty body gets the volume. Sending `volume` sets the volume.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/assistant/alarms/volume",
+      "method": "POST",
+      "name": "Alarm Volume",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/assistant/alarms/volume",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"volume\": 1}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Alarm Volume",
+      "url": "http://example.com/setup/assistant/alarms/volume"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "play_ready_message": true,
+        "user_id": "xxxxx"
+      },
+      "body_json": {
+        "play_ready_message": true,
+        "user_id": "xxxxx"
+      },
+      "body_text": "{\"play_ready_message\": true, \"user_id\": \"xxxxx\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**Update:** This seems to have changed now and is no longer possible. The error is also new.\n\nSetting `play_ready_message` to true plays a welcome message on the device saying \"Hi, I'm your Google Assistant. I'm here to help. To learn a few things you can do, continue in the Google Home app.\"",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/assistant/check_ready_status",
+      "method": "POST",
+      "name": "Check Ready Status",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/assistant/check_ready_status",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"play_ready_message\": true, \"user_id\": \"xxxxx\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check Ready Status",
+      "url": "http://example.com/setup/assistant/check_ready_status"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This is for the Do Not Disturb option. Sending an empty-body POST returns the current value. Sending a new value changes it.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "POST /setup/assistant/notifications",
+      "method": "POST",
+      "name": "Do Not Disturb",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Content-Type",
+          "value": ""
+        }
+      ],
+      "path": "/setup/assistant/notifications",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Do Not Disturb",
+      "url": "http://example.com/setup/assistant/notifications"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "demo_to_user": true,
+        "do_not_disturb": true,
+        "enabled": false,
+        "led_brightness": 0.44999998807907104,
+        "volume": 0.46000000834465027,
+        "windows": [
+          {
+            "days": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "length_hours": 8,
+            "start_hour": 22
+          }
+        ]
+      },
+      "body_json": {
+        "demo_to_user": true,
+        "do_not_disturb": true,
+        "enabled": false,
+        "led_brightness": 0.44999998807907104,
+        "volume": 0.46000000834465027,
+        "windows": [
+          {
+            "days": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "length_hours": 8,
+            "start_hour": 22
+          }
+        ]
+      },
+      "body_text": "{\"demo_to_user\": true, \"do_not_disturb\": true, \"enabled\": false, \"led_brightness\": 0.44999998807907104, \"volume\": 0.46000000834465027, \"windows\": [{\"days\": [0, 1, 2, 3, 4, 5, 6], \"length_hours\": 8, \"start_hour\": 22}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This sets night mode options.  \nTo view currently set values, use /setup/eureka_info.  \nIf `enabled` is set to false, night mode is disabled and the other values do not matter.  \n`led_brightness` and `volume` refer to the maximum LED Brightness and Volume that is set during night mode.  \n`demo_to_user` is always set to `true` so change in values will be visible in realtime (like brightness).  \n`windows`: A combination of `length_hours` and `start_hour` is used to define start and end times for night mode. In this example, night mode starts at 10 PM (22) and ends at 6 AM (8 hours later). `windows.days` is an array of days of week when night mode will be enabled. Example: 0->Sunday, 1-> Monday, ..., 6->Saturday.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/assistant/set_night_mode_params",
+      "method": "POST",
+      "name": "Night Mode settings",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/assistant/set_night_mode_params",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"demo_to_user\": true, \"do_not_disturb\": true, \"enabled\": false, \"led_brightness\": 0.44999998807907104, \"volume\": 0.46000000834465027, \"windows\": [{\"days\": [0, 1, 2, 3, 4, 5, 6], \"length_hours\": 8, \"start_hour\": 22}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Night Mode settings",
+      "url": "http://example.com/setup/assistant/set_night_mode_params"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "bond": false,
+        "mac_address": "xx:xx:xx:xx:xx:xx"
+      },
+      "body_json": {
+        "bond": false,
+        "mac_address": "xx:xx:xx:xx:xx:xx"
+      },
+      "body_text": "{\"bond\": false, \"mac_address\": \"xx:xx:xx:xx:xx:xx\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For both parts**\n\nThis is to forget paired devices by mac address. Works for both kinds of devices (Part 1 and Part 2).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/bluetooth/bond",
+      "method": "POST",
+      "name": "Forget paired device",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/bluetooth/bond",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"bond\": false, \"mac_address\": \"xx:xx:xx:xx:xx:xx\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Forget paired device",
+      "url": "http://example.com/setup/bluetooth/bond"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "connect": true,
+        "mac_address": "54:13:79:49:19:22",
+        "profile": 2
+      },
+      "body_json": {
+        "connect": true,
+        "mac_address": "54:13:79:49:19:22",
+        "profile": 2
+      },
+      "body_text": "{\"connect\": true, \"mac_address\": \"54:13:79:49:19:22\", \"profile\": 2}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For Part 2 only**\n\nThis pairs with other bluetooth speakers by mac address.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/bluetooth/connect",
+      "method": "POST",
+      "name": "Pair with Speaker",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/bluetooth/connect",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"connect\": true, \"mac_address\": \"54:13:79:49:19:22\", \"profile\": 2}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Pair with Speaker",
+      "url": "http://example.com/setup/bluetooth/connect"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "enable_discovery": true
+      },
+      "body_json": {
+        "enable_discovery": true
+      },
+      "body_text": "{\"enable_discovery\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For Part 1 only**\n\nThis enables/disables Home's bluetooth discovery and other devices can pair with Home (where Home acts as a speaker).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/bluetooth/discovery",
+      "method": "POST",
+      "name": "Change Discoverability",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/bluetooth/discovery",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"enable_discovery\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change Discoverability",
+      "url": "http://example.com/setup/bluetooth/discovery"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For both parts**\n\nThis gives a list of all paired or 'bonded' devices. The response field names are self-descriptive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/bluetooth/get_bonded",
+      "method": "GET",
+      "name": "Get Paired Devices",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/bluetooth/get_bonded",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Paired Devices",
+      "url": "http://example.com/setup/bluetooth/get_bonded"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "clear_results": true,
+        "enable": true,
+        "timeout": 60
+      },
+      "body_json": {
+        "clear_results": true,
+        "enable": true,
+        "timeout": 60
+      },
+      "body_text": "{\"clear_results\": true, \"enable\": true, \"timeout\": 60}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For Part 2 only**\n\nThis initiates scan for other bluetooth speakers/devices. Scan results will be updated continuously for `timeout` seconds.  \nTo get the scan results, see /setup/bluetooth/scan_results.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/bluetooth/scan",
+      "method": "POST",
+      "name": "Scan for devices",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/bluetooth/scan",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"clear_results\": true, \"enable\": true, \"timeout\": 60}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Scan for devices",
+      "url": "http://example.com/setup/bluetooth/scan"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "*See note for Bluetooth under `/setup/bluetooth/status`*\n\n**For Part 2 only**\n\nThis returns a list of all nearby bluetooth devices. While the Home app only shows speakers, this list contains all devices including TVs, mobiles, etc.\n\n`rssi` is signal strength, `name` is name, `mac_address` is mac address.  \n`device_class` and `device_type` are bluetooth codes.  \n\nThe Home app only lists those devices with `expected_profiles` > 0. Basically, the device should function as a speaker.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/bluetooth/scan_results",
+      "method": "GET",
+      "name": "Get Scan Results",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/bluetooth/scan_results",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Scan Results",
+      "url": "http://example.com/setup/bluetooth/scan_results"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "> **There are 2 parts of Bluetooth.**\n>\n> *Part 1*: Devices like phones connect to Home and play audio through Home.  \n> For this, /setup/bluetooth/discovery is used to make Home discoverable. Then devices can connect to it as if Home is just another bluetooth speaker.\n>\n> *Part 2*: Bluetooth speakers connect to Home and Home plays audio through the speakers.\n> For this, /setup/bluetooth/scan and /setup/bluetooth/scan_results are used to connect to other speakers.\n>\n> The other endpoints are common for both parts.\n\n\n**For both parts**\n\nThis gives the status of all bluetooth things.\n- Not sure what `audio_mode` is.\n- `discovery_enabled` states whether Home is discoverable. (**Part 1**)\n- `connecting_devices` is a list of all media sources (like phones) connected to Home. (**Part 1**)\n- `scanning_enabled` states whether Home scanning for other bluetooth speakers/devices. (**Part 2**)\n- `connected_devices` is a list of all speakers connected to Home. (**Part 2**)",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/bluetooth/status",
+      "method": "GET",
+      "name": "Status",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/bluetooth/status",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Status",
+      "url": "http://example.com/setup/bluetooth/status"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This gets a list of all saved Wi-Fi networks.\n\nEach network has `ssid`, `wpa_auth`, `wpa_cipher` and `wpa_id`.  \n`wpa_id` is an incrementing number used to identify a saved network.  \n#TODO: Add values for `wpa_auth` and `wpa_cipher`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/configured_networks",
+      "method": "GET",
+      "name": "Get Saved Networks",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/configured_networks",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Saved Networks",
+      "url": "http://example.com/setup/configured_networks"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "bssid": "5c:0a:xx:xx:xx:xx",
+        "enc_passwd": "xxxxxfPY=",
+        "signal_level": -42,
+        "ssid": "myotherssid",
+        "wpa_auth": 7,
+        "wpa_cipher": 4
+      },
+      "body_json": {
+        "bssid": "5c:0a:xx:xx:xx:xx",
+        "enc_passwd": "xxxxxfPY=",
+        "signal_level": -42,
+        "ssid": "myotherssid",
+        "wpa_auth": 7,
+        "wpa_cipher": 4
+      },
+      "body_text": "{\"bssid\": \"5c:0a:xx:xx:xx:xx\", \"enc_passwd\": \"xxxxxfPY=\", \"signal_level\": -42, \"ssid\": \"myotherssid\", \"wpa_auth\": 7, \"wpa_cipher\": 4}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**Note:** Not sure how the password is encrypted. Might be using the public certificate from /setup/eureka_info. So this cannot be used as of now. If someone figures it out, please [create a new issue here](https://github.com/rithvikvibhu/GHLocalApi/issues/new).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/connect_wifi",
+      "method": "POST",
+      "name": "Connect to Wi-Fi Network",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/connect_wifi",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"bssid\": \"5c:0a:xx:xx:xx:xx\", \"enc_passwd\": \"xxxxxfPY=\", \"signal_level\": -42, \"ssid\": \"myotherssid\", \"wpa_auth\": 7, \"wpa_cipher\": 4}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Connect to Wi-Fi Network",
+      "url": "http://example.com/setup/connect_wifi"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This gives most of the device info. The GET parameter `param` is a comma separated list of json keys to fetch. Currently, these params are known: `version,audio,name,build_info,detail,device_info,net,wifi,setup,settings,opt_in,opencast,multizone,proxy,night_mode_params,user_eq,room_equalizer,sign,aogh,ultrasound,mesh`\n\nNested items can also be filtered using the dot notation. Example: `audio.digital`\n\nThe `options` GET parameter is always set to `detail` or `detail,sign`. `sign` signs the `nonce` and returns some value.\n\nThe `nonce` GET parameter is an integer value signed with needed (see `option` parameter above).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/eureka_info",
+      "method": "GET",
+      "name": "Eureka Info",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "params",
+          "value": ""
+        },
+        {
+          "name": "options",
+          "value": ""
+        },
+        {
+          "name": "nonce",
+          "value": ""
+        }
+      ],
+      "path": "/setup/eureka_info",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "params",
+          "value": ""
+        },
+        {
+          "name": "options",
+          "value": ""
+        },
+        {
+          "name": "nonce",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Eureka Info",
+      "url": "http://example.com/setup/eureka_info"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "wpa_id": 0
+      },
+      "body_json": {
+        "wpa_id": 0
+      },
+      "body_text": "{\"wpa_id\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This is to forget a saved network by `wpa_id`. Get the `wpa_id` from /setup/configured_networks",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/forget_wifi",
+      "method": "POST",
+      "name": "Forget Wi-Fi Network",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/forget_wifi",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"wpa_id\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Forget Wi-Fi Network",
+      "url": "http://example.com/setup/forget_wifi"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "app_id": "E8C28D3C"
+      },
+      "body_json": {
+        "app_id": "E8C28D3C"
+      },
+      "body_text": "{\"app_id\": \"E8C28D3C\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This gives \"app device id\", \"certificate\" and \"signed data\".  \nThe `app_id` in the request is mandatory and refers to Chromecast backdrop/screensaver app. It has to be set to `E8C28D3C`.  \n\nThe certificate is valid and issued by `Chromecast ICA 6 (Audio Assist), Google Inc`.\n\nNot sure what the other two are.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/get_app_device_id",
+      "method": "POST",
+      "name": "App Device ID",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/get_app_device_id",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"app_id\": \"E8C28D3C\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "App Device ID",
+      "url": "http://example.com/setup/get_app_device_id"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**Update:** This no longer exists. It's not useful, anyway.\n\nA redirect to `http://www.gstatic.com/eureka/images/eureka_device.png`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/icon.png",
+      "method": "GET",
+      "name": "Chromecast Icon",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/icon.png",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Chromecast Icon",
+      "url": "http://example.com/setup/icon.png"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This gives a token which is used by the Home app to get offers. The offers themselves are not stored on the device.  \nA new token is generated for every request.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/offer",
+      "method": "GET",
+      "name": "Offer",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/offer",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Offer",
+      "url": "http://example.com/setup/offer"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "params": "now"
+      },
+      "body_json": {
+        "params": "now"
+      },
+      "body_text": "{\"params\": \"now\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This can simply reboot the device (`params: \"now\"`) or factory reset the device (`params: \"fdr\"`).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/reboot",
+      "method": "POST",
+      "name": "Reboot and Factory Reset",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/reboot",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"params\": \"now\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Reboot and Factory Reset",
+      "url": "http://example.com/setup/reboot"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This gets a list of all nearby Wi-Fi access points.\n\nThe list only has the connected AP by default. Once a scan is triggered by `/setup/scan_wifi`, the whole list is cached for ~3 minutes. Then it will revert to returning only the connected AP again.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/scan_results",
+      "method": "GET",
+      "name": "Get Wi-Fi Scan Results",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/scan_results",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Wi-Fi Scan Results",
+      "url": "http://example.com/setup/scan_results"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This initiates scanning for Wi-Fi networks.\n\nThe results can be obtained with `/setup/scan_results` after triggering the scan with this request.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "POST /setup/scan_wifi",
+      "method": "POST",
+      "name": "Scan for Networks",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/scan_wifi",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Scan for Networks",
+      "url": "http://example.com/setup/scan_wifi"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "Living Room",
+        "opt_in": {
+          "opencast": true,
+          "preview_channel": true,
+          "remote_ducking": true,
+          "stats": true
+        },
+        "settings": {
+          "control_notifications": 2
+        }
+      },
+      "body_json": {
+        "name": "Living Room",
+        "opt_in": {
+          "opencast": true,
+          "preview_channel": true,
+          "remote_ducking": true,
+          "stats": true
+        },
+        "settings": {
+          "control_notifications": 2
+        }
+      },
+      "body_text": "{\"name\": \"Living Room\", \"opt_in\": {\"opencast\": true, \"preview_channel\": true, \"remote_ducking\": true, \"stats\": true}, \"settings\": {\"control_notifications\": 2}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This can set custom values to some options.\n\nOnly fields to be modified need to be sent, not all. The example has some modifiable fields.\n\nTODO: List all modifiable fields.\n\nSending non-existant fields will still return a 200 OK, but they are not saved.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/set_eureka_info",
+      "method": "POST",
+      "name": "Set Eureka Info",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/set_eureka_info",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"Living Room\", \"opt_in\": {\"opencast\": true, \"preview_channel\": true, \"remote_ducking\": true, \"stats\": true}, \"settings\": {\"control_notifications\": 2}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set Eureka Info",
+      "url": "http://example.com/setup/set_eureka_info"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Simply returns a list of all supported locales.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/supported_locales",
+      "method": "GET",
+      "name": "Locales",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/supported_locales",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Locales",
+      "url": "http://example.com/setup/supported_locales"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Simply returns a list of all supported timezones.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        }
+      ],
+      "id": "GET /setup/supported_timezones",
+      "method": "GET",
+      "name": "Timezones",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/supported_timezones",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Timezones",
+      "url": "http://example.com/setup/supported_timezones"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "url": "https://storage.googleapis.com/reliability-speedtest/random.txt"
+      },
+      "body_json": {
+        "url": "https://storage.googleapis.com/reliability-speedtest/random.txt"
+      },
+      "body_text": "{\"url\": \"https://storage.googleapis.com/reliability-speedtest/random.txt\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**Update:** This seems to have been removed. Returns 404 Not Found.\n\nThis endpoint tests internet download speed. Any sample file URL can be provided.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/test_internet_download_speed",
+      "method": "POST",
+      "name": "Test Internet Download Speed",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/test_internet_download_speed",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"url\": \"https://storage.googleapis.com/reliability-speedtest/random.txt\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Test Internet Download Speed",
+      "url": "http://example.com/setup/test_internet_download_speed"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "GOOGLE_HOME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "high_shelf": {
+          "gain_db": 0
+        },
+        "low_shelf": {
+          "gain_db": 0
+        }
+      },
+      "body_json": {
+        "high_shelf": {
+          "gain_db": 0
+        },
+        "low_shelf": {
+          "gain_db": 0
+        }
+      },
+      "body_text": "{\"high_shelf\": {\"gain_db\": 0}, \"low_shelf\": {\"gain_db\": 0}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This can only set new equalizer values. To get already set values, use /setup/eureka_info.\n\nThe body is mandatory. It can either contain `low_shelf` or `high_shelf` or both.\n\n`low_shelf.gain_db` and `high_shelf.gain_db` refer to **bass** and **treble** respectively.\n\nDefault values are 0 for both.  \nWhile the slider in the Home app only ranges from -6 to +6, they can be set to any integer like 50 or -100. These changes persist.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{GOOGLE_HOME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /setup/user_eq/set_equalizer",
+      "method": "POST",
+      "name": "Set Equalizer Values",
+      "note": "Replace {{GOOGLE_HOME_API_KEY}} with your API key",
+      "params": [],
+      "path": "/setup/user_eq/set_equalizer",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"high_shelf\": {\"gain_db\": 0}, \"low_shelf\": {\"gain_db\": 0}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set Equalizer Values",
+      "url": "http://example.com/setup/user_eq/set_equalizer"
+    }
+  ]
+}

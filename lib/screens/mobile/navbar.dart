@@ -70,6 +70,15 @@ class BottomNavBar extends ConsumerWidget {
                   child: NavbarButton(
                     railIdx: railIdx,
                     buttonIdx: 4,
+                    selectedIcon: Icons.travel_explore,
+                    icon: Icons.travel_explore_outlined,
+                    label: 'Explorer',
+                  ),
+                ),
+                Expanded(
+                  child: NavbarButton(
+                    railIdx: railIdx,
+                    buttonIdx: 5,
                     selectedIcon: Icons.settings,
                     icon: Icons.settings_outlined,
                     label: 'Settings',

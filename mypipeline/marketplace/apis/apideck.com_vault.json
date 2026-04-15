@@ -1,0 +1,2185 @@
+{
+  "id": "apideck.com_vault",
+  "info": {
+    "base_url": "https://unify.apideck.com",
+    "description": "Making a POST request to this endpoint will initiate a Hosted Vault session. Redirect the consumer to the returned\nURL to allow temporary access to manage their integrations and settings.\n\nNote: This...",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Vault API",
+    "version": "9.3.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "__In most cases the authorize link is provided in the ``/connections`` endpoint. Normally you don't need to manually generate these links.__\n\nUse this endpoint to authenticate a user with a connector. It will return a 301 redirect to the downstream connector endpoints.\n\nAuth links will have a state parameter included to verify the validity of the request. This is the url your users will use to activate OAuth supported integration providers.\n\nVault handles the complete Authorization Code Grant Type Flow for you and will redirect you to the dynamic redirect uri you have appended to the url in case this is missing the default redirect uri you have configured for your Unify application.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /vault/authorize/{{SERVICE_ID}}/{{APPLICATION_ID}}",
+      "method": "GET",
+      "name": "Authorize",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "application_id",
+          "value": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+        },
+        {
+          "name": "state",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsInVuaWZpZWRfYXBpIjoiZGVmYXVsdCIsInNlcnZpY2VfaWQiOiJ0ZWFtbGVhZGVyIiwiYXBwbGljYXRpb25faWQiOiIxMTExIiwiaWF0IjoxNjIyMTI2Nzg3fQ.97_pn1UAXc7mctXBdr15czUNO1jjdQ9sJUOIE_Myzbk"
+        },
+        {
+          "name": "redirect_uri",
+          "value": "http://example.com/integrations"
+        },
+        {
+          "name": "scope",
+          "value": "['openid', 'leads:write', 'profile:read']"
+        }
+      ],
+      "path": "/vault/authorize/{{SERVICE_ID}}/{{APPLICATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "application_id",
+          "value": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "state",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsInVuaWZpZWRfYXBpIjoiZGVmYXVsdCIsInNlcnZpY2VfaWQiOiJ0ZWFtbGVhZGVyIiwiYXBwbGljYXRpb25faWQiOiIxMTExIiwiaWF0IjoxNjIyMTI2Nzg3fQ.97_pn1UAXc7mctXBdr15czUNO1jjdQ9sJUOIE_Myzbk"
+        },
+        {
+          "name": "redirect_uri",
+          "value": "http://example.com/integrations"
+        },
+        {
+          "name": "scope",
+          "value": "['openid', 'leads:write', 'profile:read']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Authorize",
+      "url": "https://unify.apideck.com/vault/authorize/{{SERVICE_ID}}/{{APPLICATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint gets called after the triggering the authorize flow.\n\nCallback links need a state and code parameter to verify the validity of the request.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /vault/callback",
+      "method": "GET",
+      "name": "Callback",
+      "params": [
+        {
+          "name": "state",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsInVuaWZpZWRfYXBpIjoiZGVmYXVsdCIsInNlcnZpY2VfaWQiOiJ0ZWFtbGVhZGVyIiwiYXBwbGljYXRpb25faWQiOiIxMTExIiwiaWF0IjoxNjIyMTI2Nzg3fQ.97_pn1UAXc7mctXBdr15czUNO1jjdQ9sJUOIE_Myzbk"
+        },
+        {
+          "name": "code",
+          "value": "g0ZGZmNjVmOWI"
+        }
+      ],
+      "path": "/vault/callback",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "state",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsInVuaWZpZWRfYXBpIjoiZGVmYXVsdCIsInNlcnZpY2VfaWQiOiJ0ZWFtbGVhZGVyIiwiYXBwbGljYXRpb25faWQiOiIxMTExIiwiaWF0IjoxNjIyMTI2Nzg3fQ.97_pn1UAXc7mctXBdr15czUNO1jjdQ9sJUOIE_Myzbk"
+        },
+        {
+          "name": "code",
+          "value": "g0ZGZmNjVmOWI"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Callback",
+      "url": "https://unify.apideck.com/vault/callback"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint includes all the configured integrations and contains the required assets\nto build an integrations page where your users can install integrations.\nOAuth2 supported integrations will contain authorize and revoke links to handle the authentication flows.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "GET /vault/connections",
+      "method": "GET",
+      "name": "Get all connections",
+      "note": "Replace {{VAULT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "api",
+          "value": "crm"
+        },
+        {
+          "name": "configured",
+          "value": "True"
+        }
+      ],
+      "path": "/vault/connections",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "api",
+          "value": "crm"
+        },
+        {
+          "name": "configured",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all connections",
+      "url": "https://unify.apideck.com/vault/connections"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a connection",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}",
+      "method": "DELETE",
+      "name": "Deletes a connection",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "path": "/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Deletes a connection",
+      "url": "https://unify.apideck.com/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a connection",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "GET /vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}",
+      "method": "GET",
+      "name": "Get connection",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "path": "/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get connection",
+      "url": "https://unify.apideck.com/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "auth_type": "oauth2",
+        "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>",
+        "configurable_resources": [
+          "opportunities",
+          "companies",
+          "contacts",
+          "leads"
+        ],
+        "configuration": [
+          {
+            "defaults": [
+              {
+                "id": "ProductInterest",
+                "options": [
+                  {}
+                ],
+                "target": "custom_fields",
+                "value": {}
+              }
+            ],
+            "resource": "leads"
+          }
+        ],
+        "created_at": 1615563533390,
+        "enabled": true,
+        "form_fields": [
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "instance_url",
+            "label": "Instance url",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": false,
+            "type": "text",
+            "value": "https://eu28.salesforce.com"
+          },
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "api_key",
+            "label": "API Key",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": true,
+            "type": "text",
+            "value": "123455677"
+          }
+        ],
+        "has_guide": true,
+        "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png",
+        "id": "crm+salesforce",
+        "integration_state": "configured",
+        "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg",
+        "metadata": {
+          "account": {
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            "name": "My Company"
+          },
+          "plan": "enterprise"
+        },
+        "name": "Salesforce",
+        "oauth_grant_type": "authorization_code",
+        "resource_schema_support": [
+          "leads"
+        ],
+        "resource_settings_support": [
+          "leads"
+        ],
+        "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>",
+        "service_id": "salesforce",
+        "settings": {
+          "api_key": "12345xxxxxx",
+          "instance_url": "https://eu28.salesforce.com"
+        },
+        "settings_required_for_authorization": [
+          "client_id",
+          "client_secret"
+        ],
+        "state": "authorized",
+        "status": "live",
+        "subscriptions": [
+          {
+            "created_at": "2020-10-01T12:00:00.000Z",
+            "downstream_event_types": [
+              "contacts.CREATED"
+            ],
+            "downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f",
+            "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}",
+            "unify_event_types": [
+              "crm.contact.created"
+            ]
+          }
+        ],
+        "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.",
+        "unified_api": "crm",
+        "updated_at": 1616662325753,
+        "validation_support": false,
+        "website": "https://www.salesforce.com"
+      },
+      "body_json": {
+        "auth_type": "oauth2",
+        "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>",
+        "configurable_resources": [
+          "opportunities",
+          "companies",
+          "contacts",
+          "leads"
+        ],
+        "configuration": [
+          {
+            "defaults": [
+              {
+                "id": "ProductInterest",
+                "options": [
+                  {}
+                ],
+                "target": "custom_fields",
+                "value": {}
+              }
+            ],
+            "resource": "leads"
+          }
+        ],
+        "created_at": 1615563533390,
+        "enabled": true,
+        "form_fields": [
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "instance_url",
+            "label": "Instance url",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": false,
+            "type": "text",
+            "value": "https://eu28.salesforce.com"
+          },
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "api_key",
+            "label": "API Key",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": true,
+            "type": "text",
+            "value": "123455677"
+          }
+        ],
+        "has_guide": true,
+        "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png",
+        "id": "crm+salesforce",
+        "integration_state": "configured",
+        "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg",
+        "metadata": {
+          "account": {
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            "name": "My Company"
+          },
+          "plan": "enterprise"
+        },
+        "name": "Salesforce",
+        "oauth_grant_type": "authorization_code",
+        "resource_schema_support": [
+          "leads"
+        ],
+        "resource_settings_support": [
+          "leads"
+        ],
+        "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>",
+        "service_id": "salesforce",
+        "settings": {
+          "api_key": "12345xxxxxx",
+          "instance_url": "https://eu28.salesforce.com"
+        },
+        "settings_required_for_authorization": [
+          "client_id",
+          "client_secret"
+        ],
+        "state": "authorized",
+        "status": "live",
+        "subscriptions": [
+          {
+            "created_at": "2020-10-01T12:00:00.000Z",
+            "downstream_event_types": [
+              "contacts.CREATED"
+            ],
+            "downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f",
+            "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}",
+            "unify_event_types": [
+              "crm.contact.created"
+            ]
+          }
+        ],
+        "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.",
+        "unified_api": "crm",
+        "updated_at": 1616662325753,
+        "validation_support": false,
+        "website": "https://www.salesforce.com"
+      },
+      "body_text": "{\"auth_type\": \"oauth2\", \"authorize_url\": \"https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>\", \"configurable_resources\": [\"opportunities\", \"companies\", \"contacts\", \"leads\"], \"configuration\": [{\"defaults\": [{\"id\": \"ProductInterest\", \"options\": [{}], \"target\": \"custom_fields\", \"value\": {}}], \"resource\": \"leads\"}], \"created_at\": 1615563533390, \"enabled\": true, \"form_fields\": [{\"custom_field\": false, \"disabled\": false, \"id\": \"instance_url\", \"label\": \"Instance url\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": false, \"type\": \"text\", \"value\": \"https://eu28.salesforce.com\"}, {\"custom_field\": false, \"disabled\": false, \"id\": \"api_key\", \"label\": \"API Key\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": true, \"type\": \"text\", \"value\": \"123455677\"}], \"has_guide\": true, \"icon\": \"https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png\", \"id\": \"crm+salesforce\", \"integration_state\": \"configured\", \"logo\": \"https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg\", \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"name\": \"Salesforce\", \"oauth_grant_type\": \"authorization_code\", \"resource_schema_support\": [\"leads\"], \"resource_settings_support\": [\"leads\"], \"revoke_url\": \"https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>\", \"service_id\": \"salesforce\", \"settings\": {\"api_key\": \"12345xxxxxx\", \"instance_url\": \"https://eu28.salesforce.com\"}, \"settings_required_for_authorization\": [\"client_id\", \"client_secret\"], \"state\": \"authorized\", \"status\": \"live\", \"subscriptions\": [{\"created_at\": \"2020-10-01T12:00:00.000Z\", \"downstream_event_types\": [\"contacts.CREATED\"], \"downstream_id\": \"5f5f5f5f5f5f5f5f5f5f5f5f\", \"execute_url\": \"https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}\", \"unify_event_types\": [\"crm.contact.created\"]}], \"tag_line\": \"CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.\", \"unified_api\": \"crm\", \"updated_at\": 1616662325753, \"validation_support\": false, \"website\": \"https://www.salesforce.com\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update a connection",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}",
+      "method": "PATCH",
+      "name": "Update connection",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "path": "/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"auth_type\": \"oauth2\", \"authorize_url\": \"https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>\", \"configurable_resources\": [\"opportunities\", \"companies\", \"contacts\", \"leads\"], \"configuration\": [{\"defaults\": [{\"id\": \"ProductInterest\", \"options\": [{}], \"target\": \"custom_fields\", \"value\": {}}], \"resource\": \"leads\"}], \"created_at\": 1615563533390, \"enabled\": true, \"form_fields\": [{\"custom_field\": false, \"disabled\": false, \"id\": \"instance_url\", \"label\": \"Instance url\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": false, \"type\": \"text\", \"value\": \"https://eu28.salesforce.com\"}, {\"custom_field\": false, \"disabled\": false, \"id\": \"api_key\", \"label\": \"API Key\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": true, \"type\": \"text\", \"value\": \"123455677\"}], \"has_guide\": true, \"icon\": \"https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png\", \"id\": \"crm+salesforce\", \"integration_state\": \"configured\", \"logo\": \"https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg\", \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"name\": \"Salesforce\", \"oauth_grant_type\": \"authorization_code\", \"resource_schema_support\": [\"leads\"], \"resource_settings_support\": [\"leads\"], \"revoke_url\": \"https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>\", \"service_id\": \"salesforce\", \"settings\": {\"api_key\": \"12345xxxxxx\", \"instance_url\": \"https://eu28.salesforce.com\"}, \"settings_required_for_authorization\": [\"client_id\", \"client_secret\"], \"state\": \"authorized\", \"status\": \"live\", \"subscriptions\": [{\"created_at\": \"2020-10-01T12:00:00.000Z\", \"downstream_event_types\": [\"contacts.CREATED\"], \"downstream_id\": \"5f5f5f5f5f5f5f5f5f5f5f5f\", \"execute_url\": \"https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}\", \"unify_event_types\": [\"crm.contact.created\"]}], \"tag_line\": \"CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.\", \"unified_api\": \"crm\", \"updated_at\": 1616662325753, \"validation_support\": false, \"website\": \"https://www.salesforce.com\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update connection",
+      "url": "https://unify.apideck.com/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "auth_type": "oauth2",
+        "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>",
+        "configurable_resources": [
+          "opportunities",
+          "companies",
+          "contacts",
+          "leads"
+        ],
+        "configuration": [
+          {
+            "defaults": [
+              {
+                "id": "ProductInterest",
+                "options": [
+                  {}
+                ],
+                "target": "custom_fields",
+                "value": {}
+              }
+            ],
+            "resource": "leads"
+          }
+        ],
+        "created_at": 1615563533390,
+        "enabled": true,
+        "form_fields": [
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "instance_url",
+            "label": "Instance url",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": false,
+            "type": "text",
+            "value": "https://eu28.salesforce.com"
+          },
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "api_key",
+            "label": "API Key",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": true,
+            "type": "text",
+            "value": "123455677"
+          }
+        ],
+        "has_guide": true,
+        "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png",
+        "id": "crm+salesforce",
+        "integration_state": "configured",
+        "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg",
+        "metadata": {
+          "account": {
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            "name": "My Company"
+          },
+          "plan": "enterprise"
+        },
+        "name": "Salesforce",
+        "oauth_grant_type": "authorization_code",
+        "resource_schema_support": [
+          "leads"
+        ],
+        "resource_settings_support": [
+          "leads"
+        ],
+        "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>",
+        "service_id": "salesforce",
+        "settings": {
+          "api_key": "12345xxxxxx",
+          "instance_url": "https://eu28.salesforce.com"
+        },
+        "settings_required_for_authorization": [
+          "client_id",
+          "client_secret"
+        ],
+        "state": "authorized",
+        "status": "live",
+        "subscriptions": [
+          {
+            "created_at": "2020-10-01T12:00:00.000Z",
+            "downstream_event_types": [
+              "contacts.CREATED"
+            ],
+            "downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f",
+            "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}",
+            "unify_event_types": [
+              "crm.contact.created"
+            ]
+          }
+        ],
+        "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.",
+        "unified_api": "crm",
+        "updated_at": 1616662325753,
+        "validation_support": false,
+        "website": "https://www.salesforce.com"
+      },
+      "body_json": {
+        "auth_type": "oauth2",
+        "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>",
+        "configurable_resources": [
+          "opportunities",
+          "companies",
+          "contacts",
+          "leads"
+        ],
+        "configuration": [
+          {
+            "defaults": [
+              {
+                "id": "ProductInterest",
+                "options": [
+                  {}
+                ],
+                "target": "custom_fields",
+                "value": {}
+              }
+            ],
+            "resource": "leads"
+          }
+        ],
+        "created_at": 1615563533390,
+        "enabled": true,
+        "form_fields": [
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "instance_url",
+            "label": "Instance url",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": false,
+            "type": "text",
+            "value": "https://eu28.salesforce.com"
+          },
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "api_key",
+            "label": "API Key",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": true,
+            "type": "text",
+            "value": "123455677"
+          }
+        ],
+        "has_guide": true,
+        "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png",
+        "id": "crm+salesforce",
+        "integration_state": "configured",
+        "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg",
+        "metadata": {
+          "account": {
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            "name": "My Company"
+          },
+          "plan": "enterprise"
+        },
+        "name": "Salesforce",
+        "oauth_grant_type": "authorization_code",
+        "resource_schema_support": [
+          "leads"
+        ],
+        "resource_settings_support": [
+          "leads"
+        ],
+        "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>",
+        "service_id": "salesforce",
+        "settings": {
+          "api_key": "12345xxxxxx",
+          "instance_url": "https://eu28.salesforce.com"
+        },
+        "settings_required_for_authorization": [
+          "client_id",
+          "client_secret"
+        ],
+        "state": "authorized",
+        "status": "live",
+        "subscriptions": [
+          {
+            "created_at": "2020-10-01T12:00:00.000Z",
+            "downstream_event_types": [
+              "contacts.CREATED"
+            ],
+            "downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f",
+            "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}",
+            "unify_event_types": [
+              "crm.contact.created"
+            ]
+          }
+        ],
+        "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.",
+        "unified_api": "crm",
+        "updated_at": 1616662325753,
+        "validation_support": false,
+        "website": "https://www.salesforce.com"
+      },
+      "body_text": "{\"auth_type\": \"oauth2\", \"authorize_url\": \"https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>\", \"configurable_resources\": [\"opportunities\", \"companies\", \"contacts\", \"leads\"], \"configuration\": [{\"defaults\": [{\"id\": \"ProductInterest\", \"options\": [{}], \"target\": \"custom_fields\", \"value\": {}}], \"resource\": \"leads\"}], \"created_at\": 1615563533390, \"enabled\": true, \"form_fields\": [{\"custom_field\": false, \"disabled\": false, \"id\": \"instance_url\", \"label\": \"Instance url\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": false, \"type\": \"text\", \"value\": \"https://eu28.salesforce.com\"}, {\"custom_field\": false, \"disabled\": false, \"id\": \"api_key\", \"label\": \"API Key\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": true, \"type\": \"text\", \"value\": \"123455677\"}], \"has_guide\": true, \"icon\": \"https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png\", \"id\": \"crm+salesforce\", \"integration_state\": \"configured\", \"logo\": \"https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg\", \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"name\": \"Salesforce\", \"oauth_grant_type\": \"authorization_code\", \"resource_schema_support\": [\"leads\"], \"resource_settings_support\": [\"leads\"], \"revoke_url\": \"https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>\", \"service_id\": \"salesforce\", \"settings\": {\"api_key\": \"12345xxxxxx\", \"instance_url\": \"https://eu28.salesforce.com\"}, \"settings_required_for_authorization\": [\"client_id\", \"client_secret\"], \"state\": \"authorized\", \"status\": \"live\", \"subscriptions\": [{\"created_at\": \"2020-10-01T12:00:00.000Z\", \"downstream_event_types\": [\"contacts.CREATED\"], \"downstream_id\": \"5f5f5f5f5f5f5f5f5f5f5f5f\", \"execute_url\": \"https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}\", \"unify_event_types\": [\"crm.contact.created\"]}], \"tag_line\": \"CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.\", \"unified_api\": \"crm\", \"updated_at\": 1616662325753, \"validation_support\": false, \"website\": \"https://www.salesforce.com\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create an authorized connection\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}",
+      "method": "POST",
+      "name": "Create connection",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "path": "/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"auth_type\": \"oauth2\", \"authorize_url\": \"https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>\", \"configurable_resources\": [\"opportunities\", \"companies\", \"contacts\", \"leads\"], \"configuration\": [{\"defaults\": [{\"id\": \"ProductInterest\", \"options\": [{}], \"target\": \"custom_fields\", \"value\": {}}], \"resource\": \"leads\"}], \"created_at\": 1615563533390, \"enabled\": true, \"form_fields\": [{\"custom_field\": false, \"disabled\": false, \"id\": \"instance_url\", \"label\": \"Instance url\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": false, \"type\": \"text\", \"value\": \"https://eu28.salesforce.com\"}, {\"custom_field\": false, \"disabled\": false, \"id\": \"api_key\", \"label\": \"API Key\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": true, \"type\": \"text\", \"value\": \"123455677\"}], \"has_guide\": true, \"icon\": \"https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png\", \"id\": \"crm+salesforce\", \"integration_state\": \"configured\", \"logo\": \"https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg\", \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"name\": \"Salesforce\", \"oauth_grant_type\": \"authorization_code\", \"resource_schema_support\": [\"leads\"], \"resource_settings_support\": [\"leads\"], \"revoke_url\": \"https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>\", \"service_id\": \"salesforce\", \"settings\": {\"api_key\": \"12345xxxxxx\", \"instance_url\": \"https://eu28.salesforce.com\"}, \"settings_required_for_authorization\": [\"client_id\", \"client_secret\"], \"state\": \"authorized\", \"status\": \"live\", \"subscriptions\": [{\"created_at\": \"2020-10-01T12:00:00.000Z\", \"downstream_event_types\": [\"contacts.CREATED\"], \"downstream_id\": \"5f5f5f5f5f5f5f5f5f5f5f5f\", \"execute_url\": \"https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}\", \"unify_event_types\": [\"crm.contact.created\"]}], \"tag_line\": \"CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.\", \"unified_api\": \"crm\", \"updated_at\": 1616662325753, \"validation_support\": false, \"website\": \"https://www.salesforce.com\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create connection",
+      "url": "https://unify.apideck.com/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "credentials": {
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"
+        },
+        "metadata": {
+          "account": {
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            "name": "My Company"
+          },
+          "plan": "enterprise"
+        },
+        "settings": {
+          "instance_url": "https://eu28.salesforce.com"
+        }
+      },
+      "body_json": {
+        "credentials": {
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"
+        },
+        "metadata": {
+          "account": {
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            "name": "My Company"
+          },
+          "plan": "enterprise"
+        },
+        "settings": {
+          "instance_url": "https://eu28.salesforce.com"
+        }
+      },
+      "body_text": "{\"credentials\": {\"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\", \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ\"}, \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"settings\": {\"instance_url\": \"https://eu28.salesforce.com\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Import an authorized connection.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/import",
+      "method": "POST",
+      "name": "Import connection",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "path": "/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/import",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"credentials\": {\"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\", \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ\"}, \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"settings\": {\"instance_url\": \"https://eu28.salesforce.com\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Import connection",
+      "url": "https://unify.apideck.com/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/import"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get an access token for a connection and store it in Vault. Currently only supported for connections with the client_credentials OAuth grant type.\n\nNote that the access token will not be returned in the response. A 200 response code indicates a valid access token was stored on the connection.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "POST /vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/token",
+      "method": "POST",
+      "name": "Get Access Token",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "path": "/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/token",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Access Token",
+      "url": "https://unify.apideck.com/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/token"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint returns custom settings and their defaults required by connection for a given resource.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "GET /vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/{{RESOURCE}}/config",
+      "method": "GET",
+      "name": "Get resource settings",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "unified_api",
+          "value": "crm"
+        },
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "resource",
+          "value": "leads"
+        }
+      ],
+      "path": "/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/{{RESOURCE}}/config",
+      "pathParameters": [
+        {
+          "name": "unified_api",
+          "value": "crm"
+        },
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "resource",
+          "value": "leads"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get resource settings",
+      "url": "https://unify.apideck.com/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/{{RESOURCE}}/config"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "auth_type": "oauth2",
+        "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>",
+        "configurable_resources": [
+          "opportunities",
+          "companies",
+          "contacts",
+          "leads"
+        ],
+        "configuration": [
+          {
+            "defaults": [
+              {
+                "id": "ProductInterest",
+                "options": [
+                  {}
+                ],
+                "target": "custom_fields",
+                "value": {}
+              }
+            ],
+            "resource": "leads"
+          }
+        ],
+        "created_at": 1615563533390,
+        "enabled": true,
+        "form_fields": [
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "instance_url",
+            "label": "Instance url",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": false,
+            "type": "text",
+            "value": "https://eu28.salesforce.com"
+          },
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "api_key",
+            "label": "API Key",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": true,
+            "type": "text",
+            "value": "123455677"
+          }
+        ],
+        "has_guide": true,
+        "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png",
+        "id": "crm+salesforce",
+        "integration_state": "configured",
+        "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg",
+        "metadata": {
+          "account": {
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            "name": "My Company"
+          },
+          "plan": "enterprise"
+        },
+        "name": "Salesforce",
+        "oauth_grant_type": "authorization_code",
+        "resource_schema_support": [
+          "leads"
+        ],
+        "resource_settings_support": [
+          "leads"
+        ],
+        "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>",
+        "service_id": "salesforce",
+        "settings": {
+          "api_key": "12345xxxxxx",
+          "instance_url": "https://eu28.salesforce.com"
+        },
+        "settings_required_for_authorization": [
+          "client_id",
+          "client_secret"
+        ],
+        "state": "authorized",
+        "status": "live",
+        "subscriptions": [
+          {
+            "created_at": "2020-10-01T12:00:00.000Z",
+            "downstream_event_types": [
+              "contacts.CREATED"
+            ],
+            "downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f",
+            "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}",
+            "unify_event_types": [
+              "crm.contact.created"
+            ]
+          }
+        ],
+        "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.",
+        "unified_api": "crm",
+        "updated_at": 1616662325753,
+        "validation_support": false,
+        "website": "https://www.salesforce.com"
+      },
+      "body_json": {
+        "auth_type": "oauth2",
+        "authorize_url": "https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>",
+        "configurable_resources": [
+          "opportunities",
+          "companies",
+          "contacts",
+          "leads"
+        ],
+        "configuration": [
+          {
+            "defaults": [
+              {
+                "id": "ProductInterest",
+                "options": [
+                  {}
+                ],
+                "target": "custom_fields",
+                "value": {}
+              }
+            ],
+            "resource": "leads"
+          }
+        ],
+        "created_at": 1615563533390,
+        "enabled": true,
+        "form_fields": [
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "instance_url",
+            "label": "Instance url",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": false,
+            "type": "text",
+            "value": "https://eu28.salesforce.com"
+          },
+          {
+            "custom_field": false,
+            "disabled": false,
+            "id": "api_key",
+            "label": "API Key",
+            "mask": false,
+            "placeholder": "",
+            "required": true,
+            "sensitive": true,
+            "type": "text",
+            "value": "123455677"
+          }
+        ],
+        "has_guide": true,
+        "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png",
+        "id": "crm+salesforce",
+        "integration_state": "configured",
+        "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg",
+        "metadata": {
+          "account": {
+            "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+            "name": "My Company"
+          },
+          "plan": "enterprise"
+        },
+        "name": "Salesforce",
+        "oauth_grant_type": "authorization_code",
+        "resource_schema_support": [
+          "leads"
+        ],
+        "resource_settings_support": [
+          "leads"
+        ],
+        "revoke_url": "https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>",
+        "service_id": "salesforce",
+        "settings": {
+          "api_key": "12345xxxxxx",
+          "instance_url": "https://eu28.salesforce.com"
+        },
+        "settings_required_for_authorization": [
+          "client_id",
+          "client_secret"
+        ],
+        "state": "authorized",
+        "status": "live",
+        "subscriptions": [
+          {
+            "created_at": "2020-10-01T12:00:00.000Z",
+            "downstream_event_types": [
+              "contacts.CREATED"
+            ],
+            "downstream_id": "5f5f5f5f5f5f5f5f5f5f5f5f",
+            "execute_url": "https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}",
+            "unify_event_types": [
+              "crm.contact.created"
+            ]
+          }
+        ],
+        "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.",
+        "unified_api": "crm",
+        "updated_at": 1616662325753,
+        "validation_support": false,
+        "website": "https://www.salesforce.com"
+      },
+      "body_text": "{\"auth_type\": \"oauth2\", \"authorize_url\": \"https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>\", \"configurable_resources\": [\"opportunities\", \"companies\", \"contacts\", \"leads\"], \"configuration\": [{\"defaults\": [{\"id\": \"ProductInterest\", \"options\": [{}], \"target\": \"custom_fields\", \"value\": {}}], \"resource\": \"leads\"}], \"created_at\": 1615563533390, \"enabled\": true, \"form_fields\": [{\"custom_field\": false, \"disabled\": false, \"id\": \"instance_url\", \"label\": \"Instance url\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": false, \"type\": \"text\", \"value\": \"https://eu28.salesforce.com\"}, {\"custom_field\": false, \"disabled\": false, \"id\": \"api_key\", \"label\": \"API Key\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": true, \"type\": \"text\", \"value\": \"123455677\"}], \"has_guide\": true, \"icon\": \"https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png\", \"id\": \"crm+salesforce\", \"integration_state\": \"configured\", \"logo\": \"https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg\", \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"name\": \"Salesforce\", \"oauth_grant_type\": \"authorization_code\", \"resource_schema_support\": [\"leads\"], \"resource_settings_support\": [\"leads\"], \"revoke_url\": \"https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>\", \"service_id\": \"salesforce\", \"settings\": {\"api_key\": \"12345xxxxxx\", \"instance_url\": \"https://eu28.salesforce.com\"}, \"settings_required_for_authorization\": [\"client_id\", \"client_secret\"], \"state\": \"authorized\", \"status\": \"live\", \"subscriptions\": [{\"created_at\": \"2020-10-01T12:00:00.000Z\", \"downstream_event_types\": [\"contacts.CREATED\"], \"downstream_id\": \"5f5f5f5f5f5f5f5f5f5f5f5f\", \"execute_url\": \"https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}\", \"unify_event_types\": [\"crm.contact.created\"]}], \"tag_line\": \"CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.\", \"unified_api\": \"crm\", \"updated_at\": 1616662325753, \"validation_support\": false, \"website\": \"https://www.salesforce.com\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update default values for a connection's resource settings",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/{{RESOURCE}}/config",
+      "method": "PATCH",
+      "name": "Update settings",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        },
+        {
+          "name": "resource",
+          "value": "leads"
+        }
+      ],
+      "path": "/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/{{RESOURCE}}/config",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "unified_api",
+          "value": "crm"
+        },
+        {
+          "name": "resource",
+          "value": "leads"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"auth_type\": \"oauth2\", \"authorize_url\": \"https://unify.apideck.com/vault/authorize/salesforce/<application-id>?state=<state>\", \"configurable_resources\": [\"opportunities\", \"companies\", \"contacts\", \"leads\"], \"configuration\": [{\"defaults\": [{\"id\": \"ProductInterest\", \"options\": [{}], \"target\": \"custom_fields\", \"value\": {}}], \"resource\": \"leads\"}], \"created_at\": 1615563533390, \"enabled\": true, \"form_fields\": [{\"custom_field\": false, \"disabled\": false, \"id\": \"instance_url\", \"label\": \"Instance url\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": false, \"type\": \"text\", \"value\": \"https://eu28.salesforce.com\"}, {\"custom_field\": false, \"disabled\": false, \"id\": \"api_key\", \"label\": \"API Key\", \"mask\": false, \"placeholder\": \"\", \"required\": true, \"sensitive\": true, \"type\": \"text\", \"value\": \"123455677\"}], \"has_guide\": true, \"icon\": \"https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png\", \"id\": \"crm+salesforce\", \"integration_state\": \"configured\", \"logo\": \"https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg\", \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"name\": \"Salesforce\", \"oauth_grant_type\": \"authorization_code\", \"resource_schema_support\": [\"leads\"], \"resource_settings_support\": [\"leads\"], \"revoke_url\": \"https://unify.apideck.com/vault/revoke/salesforce/<application-id>?state=<state>\", \"service_id\": \"salesforce\", \"settings\": {\"api_key\": \"12345xxxxxx\", \"instance_url\": \"https://eu28.salesforce.com\"}, \"settings_required_for_authorization\": [\"client_id\", \"client_secret\"], \"state\": \"authorized\", \"status\": \"live\", \"subscriptions\": [{\"created_at\": \"2020-10-01T12:00:00.000Z\", \"downstream_event_types\": [\"contacts.CREATED\"], \"downstream_id\": \"5f5f5f5f5f5f5f5f5f5f5f5f\", \"execute_url\": \"https://unify.apideck.com/webhook/w/{lookupIdToken}/{serviceId}?e={downstreamEventType}\", \"unify_event_types\": [\"crm.contact.created\"]}], \"tag_line\": \"CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.\", \"unified_api\": \"crm\", \"updated_at\": 1616662325753, \"validation_support\": false, \"website\": \"https://www.salesforce.com\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update settings",
+      "url": "https://unify.apideck.com/vault/connections/{{UNIFIED_API}}/{{SERVICE_ID}}/{{RESOURCE}}/config"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint includes all application consumers, along with an aggregated count of requests made.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "GET /vault/consumers",
+      "method": "GET",
+      "name": "Get all consumers",
+      "note": "Replace {{VAULT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/vault/consumers",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all consumers",
+      "url": "https://unify.apideck.com/vault/consumers"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "aggregated_request_count": 101,
+        "application_id": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+        "connections": [
+          {
+            "auth_type": "oauth2",
+            "consumer_id": "test_user_id",
+            "created_at": "2020-09-19T12:18:37.071Z",
+            "enabled": true,
+            "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png",
+            "id": "1111+test_user_id",
+            "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg",
+            "metadata": {
+              "account": {
+                "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+                "name": "My Company"
+              },
+              "plan": "enterprise"
+            },
+            "name": "Salesforce",
+            "service_id": "teamleader",
+            "settings": {
+              "instance_url": "https://eu28.salesforce.com"
+            },
+            "state": "authorized",
+            "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.",
+            "unified_api": "crm",
+            "updated_at": "2020-09-19T12:18:37.071Z",
+            "website": "https://www.salesforce.com"
+          }
+        ],
+        "consumer_id": "test_consumer_id",
+        "created": "2021-05-07T12:55:42.242Z",
+        "metadata": {
+          "account_name": "SpaceX",
+          "email": "elon@musk.com",
+          "image": "https://www.spacex.com/static/images/share.jpg",
+          "user_name": "Elon Musk"
+        },
+        "modified": "2021-05-07T12:55:42.242Z",
+        "request_count_updated": "2021-05-07T12:55:42.242Z",
+        "request_counts": {
+          "proxy": 10,
+          "unify": 100,
+          "vault": 21
+        },
+        "services": [
+          "salesforce",
+          "stripe"
+        ]
+      },
+      "body_json": {
+        "aggregated_request_count": 101,
+        "application_id": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX",
+        "connections": [
+          {
+            "auth_type": "oauth2",
+            "consumer_id": "test_user_id",
+            "created_at": "2020-09-19T12:18:37.071Z",
+            "enabled": true,
+            "icon": "https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png",
+            "id": "1111+test_user_id",
+            "logo": "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg",
+            "metadata": {
+              "account": {
+                "id": "c01458a5-7276-41ce-bc19-639906b0450a",
+                "name": "My Company"
+              },
+              "plan": "enterprise"
+            },
+            "name": "Salesforce",
+            "service_id": "teamleader",
+            "settings": {
+              "instance_url": "https://eu28.salesforce.com"
+            },
+            "state": "authorized",
+            "tag_line": "CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.",
+            "unified_api": "crm",
+            "updated_at": "2020-09-19T12:18:37.071Z",
+            "website": "https://www.salesforce.com"
+          }
+        ],
+        "consumer_id": "test_consumer_id",
+        "created": "2021-05-07T12:55:42.242Z",
+        "metadata": {
+          "account_name": "SpaceX",
+          "email": "elon@musk.com",
+          "image": "https://www.spacex.com/static/images/share.jpg",
+          "user_name": "Elon Musk"
+        },
+        "modified": "2021-05-07T12:55:42.242Z",
+        "request_count_updated": "2021-05-07T12:55:42.242Z",
+        "request_counts": {
+          "proxy": 10,
+          "unify": 100,
+          "vault": 21
+        },
+        "services": [
+          "salesforce",
+          "stripe"
+        ]
+      },
+      "body_text": "{\"aggregated_request_count\": 101, \"application_id\": \"dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX\", \"connections\": [{\"auth_type\": \"oauth2\", \"consumer_id\": \"test_user_id\", \"created_at\": \"2020-09-19T12:18:37.071Z\", \"enabled\": true, \"icon\": \"https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png\", \"id\": \"1111+test_user_id\", \"logo\": \"https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg\", \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"name\": \"Salesforce\", \"service_id\": \"teamleader\", \"settings\": {\"instance_url\": \"https://eu28.salesforce.com\"}, \"state\": \"authorized\", \"tag_line\": \"CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.\", \"unified_api\": \"crm\", \"updated_at\": \"2020-09-19T12:18:37.071Z\", \"website\": \"https://www.salesforce.com\"}], \"consumer_id\": \"test_consumer_id\", \"created\": \"2021-05-07T12:55:42.242Z\", \"metadata\": {\"account_name\": \"SpaceX\", \"email\": \"elon@musk.com\", \"image\": \"https://www.spacex.com/static/images/share.jpg\", \"user_name\": \"Elon Musk\"}, \"modified\": \"2021-05-07T12:55:42.242Z\", \"request_count_updated\": \"2021-05-07T12:55:42.242Z\", \"request_counts\": {\"proxy\": 10, \"unify\": 100, \"vault\": 21}, \"services\": [\"salesforce\", \"stripe\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a consumer",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /vault/consumers",
+      "method": "POST",
+      "name": "Create consumer",
+      "note": "Replace {{VAULT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "x-apideck-app-id",
+          "value": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+        }
+      ],
+      "path": "/vault/consumers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"aggregated_request_count\": 101, \"application_id\": \"dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX\", \"connections\": [{\"auth_type\": \"oauth2\", \"consumer_id\": \"test_user_id\", \"created_at\": \"2020-09-19T12:18:37.071Z\", \"enabled\": true, \"icon\": \"https://res.cloudinary.com/apideck/image/upload/v1529456047/catalog/salesforce/icon128x128.png\", \"id\": \"1111+test_user_id\", \"logo\": \"https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg\", \"metadata\": {\"account\": {\"id\": \"c01458a5-7276-41ce-bc19-639906b0450a\", \"name\": \"My Company\"}, \"plan\": \"enterprise\"}, \"name\": \"Salesforce\", \"service_id\": \"teamleader\", \"settings\": {\"instance_url\": \"https://eu28.salesforce.com\"}, \"state\": \"authorized\", \"tag_line\": \"CRM software solutions and enterprise cloud computing from Salesforce, the leader in customer relationship management (CRM) and PaaS. Free 30 day trial.\", \"unified_api\": \"crm\", \"updated_at\": \"2020-09-19T12:18:37.071Z\", \"website\": \"https://www.salesforce.com\"}], \"consumer_id\": \"test_consumer_id\", \"created\": \"2021-05-07T12:55:42.242Z\", \"metadata\": {\"account_name\": \"SpaceX\", \"email\": \"elon@musk.com\", \"image\": \"https://www.spacex.com/static/images/share.jpg\", \"user_name\": \"Elon Musk\"}, \"modified\": \"2021-05-07T12:55:42.242Z\", \"request_count_updated\": \"2021-05-07T12:55:42.242Z\", \"request_counts\": {\"proxy\": 10, \"unify\": 100, \"vault\": 21}, \"services\": [\"salesforce\", \"stripe\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create consumer",
+      "url": "https://unify.apideck.com/vault/consumers"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete consumer and all their connections, including credentials.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /vault/consumers/{{CONSUMER_ID}}",
+      "method": "DELETE",
+      "name": "Delete consumer",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "consumer_id",
+          "value": "test_user_id"
+        }
+      ],
+      "path": "/vault/consumers/{{CONSUMER_ID}}",
+      "pathParameters": [
+        {
+          "name": "consumer_id",
+          "value": "test_user_id"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete consumer",
+      "url": "https://unify.apideck.com/vault/consumers/{{CONSUMER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Consumer detail including their aggregated counts with the connections they have authorized.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "GET /vault/consumers/{{CONSUMER_ID}}",
+      "method": "GET",
+      "name": "Get consumer",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "consumer_id",
+          "value": "test_user_id"
+        }
+      ],
+      "path": "/vault/consumers/{{CONSUMER_ID}}",
+      "pathParameters": [
+        {
+          "name": "consumer_id",
+          "value": "test_user_id"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get consumer",
+      "url": "https://unify.apideck.com/vault/consumers/{{CONSUMER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "metadata": {
+          "account_name": "SpaceX",
+          "email": "elon@musk.com",
+          "image": "https://www.spacex.com/static/images/share.jpg",
+          "user_name": "Elon Musk"
+        }
+      },
+      "body_json": {
+        "metadata": {
+          "account_name": "SpaceX",
+          "email": "elon@musk.com",
+          "image": "https://www.spacex.com/static/images/share.jpg",
+          "user_name": "Elon Musk"
+        }
+      },
+      "body_text": "{\"metadata\": {\"account_name\": \"SpaceX\", \"email\": \"elon@musk.com\", \"image\": \"https://www.spacex.com/static/images/share.jpg\", \"user_name\": \"Elon Musk\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update consumer metadata such as name and email.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /vault/consumers/{{CONSUMER_ID}}",
+      "method": "PATCH",
+      "name": "Update consumer",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "consumer_id",
+          "value": "test_user_id"
+        }
+      ],
+      "path": "/vault/consumers/{{CONSUMER_ID}}",
+      "pathParameters": [
+        {
+          "name": "consumer_id",
+          "value": "test_user_id"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"metadata\": {\"account_name\": \"SpaceX\", \"email\": \"elon@musk.com\", \"image\": \"https://www.spacex.com/static/images/share.jpg\", \"user_name\": \"Elon Musk\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update consumer",
+      "url": "https://unify.apideck.com/vault/consumers/{{CONSUMER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get consumer request counts within a given datetime range.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "GET /vault/consumers/{{CONSUMER_ID}}/stats",
+      "method": "GET",
+      "name": "Consumer request counts",
+      "note": "Replace {{VAULT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "consumer_id",
+          "value": "test_user_id"
+        },
+        {
+          "name": "start_datetime",
+          "value": "2021-05-01T12:00:00.000Z"
+        },
+        {
+          "name": "end_datetime",
+          "value": "2021-05-30T12:00:00.000Z"
+        }
+      ],
+      "path": "/vault/consumers/{{CONSUMER_ID}}/stats",
+      "pathParameters": [
+        {
+          "name": "consumer_id",
+          "value": "test_user_id"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "start_datetime",
+          "value": "2021-05-01T12:00:00.000Z"
+        },
+        {
+          "name": "end_datetime",
+          "value": "2021-05-30T12:00:00.000Z"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Consumer request counts",
+      "url": "https://unify.apideck.com/vault/consumers/{{CONSUMER_ID}}/stats"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint includes all consumer request logs.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        }
+      ],
+      "id": "GET /vault/logs",
+      "method": "GET",
+      "name": "Get all consumer request logs",
+      "note": "Replace {{VAULT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/vault/logs",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "cursor",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all consumer request logs",
+      "url": "https://unify.apideck.com/vault/logs"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "__In most cases the authorize link is provided in the ``/connections`` endpoint. Normally you don't need to manually generate these links.__\n\nUse this endpoint to revoke an existing OAuth connector.\n\nAuth links will have a state parameter included to verify the validity of the request. This is the url your users will use to activate OAuth supported integration providers.\n\nVault handles the complete revoke flow for you and will redirect you to the dynamic redirect uri you have appended to the url in case this is missing the default redirect uri you have configured for your Unify application.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /vault/revoke/{{SERVICE_ID}}/{{APPLICATION_ID}}",
+      "method": "GET",
+      "name": "Revoke connection",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "application_id",
+          "value": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+        },
+        {
+          "name": "state",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsInVuaWZpZWRfYXBpIjoiZGVmYXVsdCIsInNlcnZpY2VfaWQiOiJ0ZWFtbGVhZGVyIiwiYXBwbGljYXRpb25faWQiOiIxMTExIiwiaWF0IjoxNjIyMTI2Nzg3fQ.97_pn1UAXc7mctXBdr15czUNO1jjdQ9sJUOIE_Myzbk"
+        },
+        {
+          "name": "redirect_uri",
+          "value": "http://example.com/integrations"
+        }
+      ],
+      "path": "/vault/revoke/{{SERVICE_ID}}/{{APPLICATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "service_id",
+          "value": "pipedrive"
+        },
+        {
+          "name": "application_id",
+          "value": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "state",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25zdW1lcl9pZCI6InRlc3RfdXNlcl9pZCIsInVuaWZpZWRfYXBpIjoiZGVmYXVsdCIsInNlcnZpY2VfaWQiOiJ0ZWFtbGVhZGVyIiwiYXBwbGljYXRpb25faWQiOiIxMTExIiwiaWF0IjoxNjIyMTI2Nzg3fQ.97_pn1UAXc7mctXBdr15czUNO1jjdQ9sJUOIE_Myzbk"
+        },
+        {
+          "name": "redirect_uri",
+          "value": "http://example.com/integrations"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Revoke connection",
+      "url": "https://unify.apideck.com/vault/revoke/{{SERVICE_ID}}/{{APPLICATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VAULT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "consumer_metadata": {
+          "account_name": "SpaceX",
+          "email": "elon@musk.com",
+          "image": "https://www.spacex.com/static/images/share.jpg",
+          "user_name": "Elon Musk"
+        },
+        "custom_consumer_settings": {
+          "feature_flag_1": true,
+          "tax_rates": [
+            {
+              "id": "6",
+              "label": "6%"
+            },
+            {
+              "id": "21",
+              "label": "21%"
+            }
+          ]
+        },
+        "redirect_uri": "https://mysaas.com/dashboard",
+        "settings": {
+          "allow_actions": [
+            "delete"
+          ],
+          "auto_redirect": false,
+          "hide_guides": false,
+          "hide_resource_settings": false,
+          "isolation_mode": false,
+          "sandbox_mode": false,
+          "session_length": "30m",
+          "show_logs": true,
+          "show_sidebar": true,
+          "show_suggestions": false,
+          "unified_apis": [
+            "crm"
+          ]
+        },
+        "theme": {
+          "favicon": "https://res.cloudinary.com/apideck/icons/intercom",
+          "logo": "https://res.cloudinary.com/apideck/icons/intercom",
+          "primary_color": "#286efa",
+          "privacy_url": "https://compliance.apideck.com/privacy-policy",
+          "sidepanel_background_color": "#286efa",
+          "sidepanel_text_color": "#FFFFFF",
+          "terms_url": "https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e",
+          "vault_name": "Intercom"
+        }
+      },
+      "body_json": {
+        "consumer_metadata": {
+          "account_name": "SpaceX",
+          "email": "elon@musk.com",
+          "image": "https://www.spacex.com/static/images/share.jpg",
+          "user_name": "Elon Musk"
+        },
+        "custom_consumer_settings": {
+          "feature_flag_1": true,
+          "tax_rates": [
+            {
+              "id": "6",
+              "label": "6%"
+            },
+            {
+              "id": "21",
+              "label": "21%"
+            }
+          ]
+        },
+        "redirect_uri": "https://mysaas.com/dashboard",
+        "settings": {
+          "allow_actions": [
+            "delete"
+          ],
+          "auto_redirect": false,
+          "hide_guides": false,
+          "hide_resource_settings": false,
+          "isolation_mode": false,
+          "sandbox_mode": false,
+          "session_length": "30m",
+          "show_logs": true,
+          "show_sidebar": true,
+          "show_suggestions": false,
+          "unified_apis": [
+            "crm"
+          ]
+        },
+        "theme": {
+          "favicon": "https://res.cloudinary.com/apideck/icons/intercom",
+          "logo": "https://res.cloudinary.com/apideck/icons/intercom",
+          "primary_color": "#286efa",
+          "privacy_url": "https://compliance.apideck.com/privacy-policy",
+          "sidepanel_background_color": "#286efa",
+          "sidepanel_text_color": "#FFFFFF",
+          "terms_url": "https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e",
+          "vault_name": "Intercom"
+        }
+      },
+      "body_text": "{\"consumer_metadata\": {\"account_name\": \"SpaceX\", \"email\": \"elon@musk.com\", \"image\": \"https://www.spacex.com/static/images/share.jpg\", \"user_name\": \"Elon Musk\"}, \"custom_consumer_settings\": {\"feature_flag_1\": true, \"tax_rates\": [{\"id\": \"6\", \"label\": \"6%\"}, {\"id\": \"21\", \"label\": \"21%\"}]}, \"redirect_uri\": \"https://mysaas.com/dashboard\", \"settings\": {\"allow_actions\": [\"delete\"], \"auto_redirect\": false, \"hide_guides\": false, \"hide_resource_settings\": false, \"isolation_mode\": false, \"sandbox_mode\": false, \"session_length\": \"30m\", \"show_logs\": true, \"show_sidebar\": true, \"show_suggestions\": false, \"unified_apis\": [\"crm\"]}, \"theme\": {\"favicon\": \"https://res.cloudinary.com/apideck/icons/intercom\", \"logo\": \"https://res.cloudinary.com/apideck/icons/intercom\", \"primary_color\": \"#286efa\", \"privacy_url\": \"https://compliance.apideck.com/privacy-policy\", \"sidepanel_background_color\": \"#286efa\", \"sidepanel_text_color\": \"#FFFFFF\", \"terms_url\": \"https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e\", \"vault_name\": \"Intercom\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Making a POST request to this endpoint will initiate a Hosted Vault session. Redirect the consumer to the returned\nURL to allow temporary access to manage their integrations and settings.\n\nNote: This is a short lived token that will expire after 1 hour (TTL: 3600).\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VAULT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /vault/sessions",
+      "method": "POST",
+      "name": "Create Session",
+      "note": "Replace {{VAULT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "x-apideck-consumer-id",
+          "value": ""
+        },
+        {
+          "name": "x-apideck-app-id",
+          "value": "dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX"
+        }
+      ],
+      "path": "/vault/sessions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"consumer_metadata\": {\"account_name\": \"SpaceX\", \"email\": \"elon@musk.com\", \"image\": \"https://www.spacex.com/static/images/share.jpg\", \"user_name\": \"Elon Musk\"}, \"custom_consumer_settings\": {\"feature_flag_1\": true, \"tax_rates\": [{\"id\": \"6\", \"label\": \"6%\"}, {\"id\": \"21\", \"label\": \"21%\"}]}, \"redirect_uri\": \"https://mysaas.com/dashboard\", \"settings\": {\"allow_actions\": [\"delete\"], \"auto_redirect\": false, \"hide_guides\": false, \"hide_resource_settings\": false, \"isolation_mode\": false, \"sandbox_mode\": false, \"session_length\": \"30m\", \"show_logs\": true, \"show_sidebar\": true, \"show_suggestions\": false, \"unified_apis\": [\"crm\"]}, \"theme\": {\"favicon\": \"https://res.cloudinary.com/apideck/icons/intercom\", \"logo\": \"https://res.cloudinary.com/apideck/icons/intercom\", \"primary_color\": \"#286efa\", \"privacy_url\": \"https://compliance.apideck.com/privacy-policy\", \"sidepanel_background_color\": \"#286efa\", \"sidepanel_text_color\": \"#FFFFFF\", \"terms_url\": \"https://www.termsfeed.com/terms-conditions/957c85c1b089ae9e3219c83eff65377e\", \"vault_name\": \"Intercom\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Session",
+      "url": "https://unify.apideck.com/vault/sessions"
+    }
+  ]
+}

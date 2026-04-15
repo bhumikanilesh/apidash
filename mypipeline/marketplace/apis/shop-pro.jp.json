@@ -1,0 +1,1083 @@
+{
+  "id": "shop-pro.jp",
+  "info": {
+    "base_url": "https://api.shop-pro.jp",
+    "description": "カラーミーショップアプリストア API provides Other capabilities via REST API.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "カラーミーショップアプリストア API",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "application_charge": {
+          "application_charge_source_id": "5S1DAG"
+        }
+      },
+      "body_json": {
+        "application_charge": {
+          "application_charge_source_id": "5S1DAG"
+        }
+      },
+      "body_text": "{\"application_charge\": {\"application_charge_source_id\": \"5S1DAG\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "「アプリ内課金」はすでにインストール済みのアプリ上において、利用者が追加の買い切りによる課金によって新たなアプリ内の機能を提供される場合などに、利用者へ買い切りの課金分の請求を行うための課金形式です。\n\nこの課金はプラン課金の情報に紐付かないため、リクエストされたタイミングで課金データが作成されます。また、同一のアプリ内課金IDで同じ利用者へ複数回請求を行うことも可能です。\n\nただし、アプリの基本機能として提供しているサービスを利用した量やその頻度などに伴って毎月異なった額の請求を行うような課金については、プラン課金の「従量による課金」の機能を使って請求を行う必要があります。\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /appstore/v1/application_charges.json",
+      "method": "POST",
+      "name": "アプリ内課金データの作成",
+      "note": "Replace {{API_API_KEY}} with your API key",
+      "params": [],
+      "path": "/appstore/v1/application_charges.json",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"application_charge\": {\"application_charge_source_id\": \"5S1DAG\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "アプリ内課金データの作成",
+      "url": "https://api.shop-pro.jp/appstore/v1/application_charges.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "このAPIは OAuth のアクセストークンに紐付くアプリケーションをショップから削除します。\nこのAPIを利用した場合、ショップオーナーがアンインストールした場合と異なり、アンインストールフックは実行されません。\n代わりにアンインストールフックで通知される情報は、このAPIのレスポンスに含まれています。\n\nアンインストール時の注意点については、[アプリのアンインストール](https://app.shop-pro.jp/open_api#section/API/アプリのインストール)を参照して下さい。\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /appstore/v1/installation.json",
+      "method": "DELETE",
+      "name": "アプリストアアプリのアンインストール",
+      "note": "Replace {{API_API_KEY}} with your API key",
+      "params": [],
+      "path": "/appstore/v1/installation.json",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "アプリストアアプリのアンインストール",
+      "url": "https://api.shop-pro.jp/appstore/v1/installation.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "usage_charge": {
+          "description": "2019/4 メール送信分",
+          "point": 100
+        }
+      },
+      "body_json": {
+        "usage_charge": {
+          "description": "2019/4 メール送信分",
+          "point": 100
+        }
+      },
+      "body_text": "{\"usage_charge\": {\"description\": \"2019/4 メール送信分\", \"point\": 100}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "アプリ内で基本機能が利用された頻度に伴って毎月の請求が変動するようなアプリの場合は「従量課金」を使って利用者に変動分の請求を行うことができます。\n※無料お試し期間中のショップに対しては従量課金データを作成できません。\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /appstore/v1/recurring_application_charges/{{RECURRING_APPLICATION_CHARGE_ID}}/usage_charges.json",
+      "method": "POST",
+      "name": "従量課金データの作成",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "recurringApplicationChargeId",
+          "value": ""
+        }
+      ],
+      "path": "/appstore/v1/recurring_application_charges/{{RECURRING_APPLICATION_CHARGE_ID}}/usage_charges.json",
+      "pathParameters": [
+        {
+          "name": "recurringApplicationChargeId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"usage_charge\": {\"description\": \"2019/4 メール送信分\", \"point\": 100}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "従量課金データの作成",
+      "url": "https://api.shop-pro.jp/appstore/v1/recurring_application_charges/{{RECURRING_APPLICATION_CHARGE_ID}}/usage_charges.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /appstore/v1/script_tags.json",
+      "method": "GET",
+      "name": "スクリプトタグの取得",
+      "note": "Replace {{API_API_KEY}} with your API key",
+      "params": [],
+      "path": "/appstore/v1/script_tags.json",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの取得",
+      "url": "https://api.shop-pro.jp/appstore/v1/script_tags.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "script_tag": {
+          "display_scope": "shop",
+          "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+          "src": "https://example.com/example.js"
+        }
+      },
+      "body_json": {
+        "script_tag": {
+          "display_scope": "shop",
+          "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+          "src": "https://example.com/example.js"
+        }
+      },
+      "body_text": "{\"script_tag\": {\"display_scope\": \"shop\", \"integrity\": \"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC\", \"src\": \"https://example.com/example.js\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{API_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /appstore/v1/script_tags.json",
+      "method": "POST",
+      "name": "スクリプトタグの作成",
+      "note": "Replace {{API_API_KEY}} with your API key",
+      "params": [],
+      "path": "/appstore/v1/script_tags.json",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"script_tag\": {\"display_scope\": \"shop\", \"integrity\": \"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC\", \"src\": \"https://example.com/example.js\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの作成",
+      "url": "https://api.shop-pro.jp/appstore/v1/script_tags.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "method": "DELETE",
+      "name": "スクリプトタグの削除",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの削除",
+      "url": "https://api.shop-pro.jp/appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "method": "GET",
+      "name": "スクリプトタグの取得",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの取得",
+      "url": "https://api.shop-pro.jp/appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "script_tag": {
+          "display_scope": "shop",
+          "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+          "src": "https://example.com/example.js"
+        }
+      },
+      "body_json": {
+        "script_tag": {
+          "display_scope": "shop",
+          "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC",
+          "src": "https://example.com/example.js"
+        }
+      },
+      "body_text": "{\"script_tag\": {\"display_scope\": \"shop\", \"integrity\": \"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC\", \"src\": \"https://example.com/example.js\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "method": "PUT",
+      "name": "スクリプトタグの更新",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"script_tag\": {\"display_scope\": \"shop\", \"integrity\": \"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC\", \"src\": \"https://example.com/example.js\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの更新",
+      "url": "https://api.shop-pro.jp/appstore/v1/script_tags/{{SCRIPT_TAG_ID}}.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/inline_script_tags.json",
+      "method": "GET",
+      "name": "インラインスクリプトタグの取得",
+      "note": "Replace {{API_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/inline_script_tags.json",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "インラインスクリプトタグの取得",
+      "url": "https://api.shop-pro.jp/v1/inline_script_tags.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "inline_script_tag": {
+          "display_scope": "shop",
+          "script": "console.log(\"aaaaa\")",
+          "trigger_event": "object_builded"
+        }
+      },
+      "body_json": {
+        "inline_script_tag": {
+          "display_scope": "shop",
+          "script": "console.log(\"aaaaa\")",
+          "trigger_event": "object_builded"
+        }
+      },
+      "body_text": "{\"inline_script_tag\": {\"display_scope\": \"shop\", \"script\": \"console.log(\\\"aaaaa\\\")\", \"trigger_event\": \"object_builded\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{API_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/inline_script_tags.json",
+      "method": "POST",
+      "name": "インラインスクリプトタグの登録",
+      "note": "Replace {{API_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/inline_script_tags.json",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"inline_script_tag\": {\"display_scope\": \"shop\", \"script\": \"console.log(\\\"aaaaa\\\")\", \"trigger_event\": \"object_builded\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "インラインスクリプトタグの登録",
+      "url": "https://api.shop-pro.jp/v1/inline_script_tags.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json",
+      "method": "DELETE",
+      "name": "インラインスクリプトタグの削除",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "inlineScriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "inlineScriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "インラインスクリプトタグの削除",
+      "url": "https://api.shop-pro.jp/v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json",
+      "method": "GET",
+      "name": "インラインスクリプトタグの取得",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "inlineScriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "inlineScriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "インラインスクリプトタグの取得",
+      "url": "https://api.shop-pro.jp/v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "inline_script_tag": {
+          "display_scope": "shop",
+          "script": "console.log(\"aaaaa\")",
+          "trigger_event": "object_builded"
+        }
+      },
+      "body_json": {
+        "inline_script_tag": {
+          "display_scope": "shop",
+          "script": "console.log(\"aaaaa\")",
+          "trigger_event": "object_builded"
+        }
+      },
+      "body_text": "{\"inline_script_tag\": {\"display_scope\": \"shop\", \"script\": \"console.log(\\\"aaaaa\\\")\", \"trigger_event\": \"object_builded\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json",
+      "method": "PUT",
+      "name": "インラインスクリプトタグの更新",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "inlineScriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "inlineScriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"inline_script_tag\": {\"display_scope\": \"shop\", \"script\": \"console.log(\\\"aaaaa\\\")\", \"trigger_event\": \"object_builded\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "インラインスクリプトタグの更新",
+      "url": "https://api.shop-pro.jp/v1/inline_script_tags/{{INLINE_SCRIPT_TAG_ID}}.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/script_tags.json",
+      "method": "GET",
+      "name": "スクリプトタグの取得",
+      "note": "Replace {{API_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/script_tags.json",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの取得",
+      "url": "https://api.shop-pro.jp/v1/script_tags.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "script_tag": {
+          "display_scope": "shop",
+          "src": "https://example.com/example.js"
+        }
+      },
+      "body_json": {
+        "script_tag": {
+          "display_scope": "shop",
+          "src": "https://example.com/example.js"
+        }
+      },
+      "body_text": "{\"script_tag\": {\"display_scope\": \"shop\", \"src\": \"https://example.com/example.js\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{API_API_KEY}} with your API key",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/script_tags.json",
+      "method": "POST",
+      "name": "スクリプトタグの作成",
+      "note": "Replace {{API_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1/script_tags.json",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"script_tag\": {\"display_scope\": \"shop\", \"src\": \"https://example.com/example.js\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの作成",
+      "url": "https://api.shop-pro.jp/v1/script_tags.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "method": "DELETE",
+      "name": "スクリプトタグの削除",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの削除",
+      "url": "https://api.shop-pro.jp/v1/script_tags/{{SCRIPT_TAG_ID}}.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "method": "GET",
+      "name": "スクリプトタグの取得",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの取得",
+      "url": "https://api.shop-pro.jp/v1/script_tags/{{SCRIPT_TAG_ID}}.json"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "script_tag": {
+          "display_scope": "shop",
+          "src": "https://example.com/example.js"
+        }
+      },
+      "body_json": {
+        "script_tag": {
+          "display_scope": "shop",
+          "src": "https://example.com/example.js"
+        }
+      },
+      "body_text": "{\"script_tag\": {\"display_scope\": \"shop\", \"src\": \"https://example.com/example.js\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "method": "PUT",
+      "name": "スクリプトタグの更新",
+      "note": "Replace {{API_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "path": "/v1/script_tags/{{SCRIPT_TAG_ID}}.json",
+      "pathParameters": [
+        {
+          "name": "scriptTagId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"script_tag\": {\"display_scope\": \"shop\", \"src\": \"https://example.com/example.js\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "スクリプトタグの更新",
+      "url": "https://api.shop-pro.jp/v1/script_tags/{{SCRIPT_TAG_ID}}.json"
+    }
+  ]
+}

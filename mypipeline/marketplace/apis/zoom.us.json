@@ -1,0 +1,4365 @@
+{
+  "id": "zoom.us",
+  "info": {
+    "base_url": "https://api.zoom.us/v2",
+    "description": "If you're no longer interested in being a member of an existing channel, you can leave the channel at any time. Use this API to leave a specific channel. After leaving the channel, you can no longer...",
+    "source": "apis.guru",
+    "tags": [
+      "communication",
+      "text-generation"
+    ],
+    "title": "Zoom API",
+    "version": "2.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all the sub accounts that have been created by a master account.<br><br>Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts. Email the partner programs team at **partner-success@zoom.us** for more details.\n\n<br>**Prerequisites:**<br>\n* Pro or a higher paid account with master account option enabled. <br>\n\n**Scope**: `account:read:admin`\n<br>**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts",
+      "method": "GET",
+      "name": "List sub accounts",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "page_size",
+          "value": ""
+        },
+        {
+          "name": "page_number",
+          "value": ""
+        },
+        {
+          "name": "next_page_token",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page_size",
+          "value": ""
+        },
+        {
+          "name": "page_number",
+          "value": ""
+        },
+        {
+          "name": "next_page_token",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List sub accounts",
+      "url": "https://api.zoom.us/v2/accounts"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "account_name": "",
+        "email": "",
+        "first_name": "",
+        "last_name": "",
+        "options": {
+          "billing_auto_renew": false,
+          "meeting_connector_list": [
+            ""
+          ],
+          "pay_mode": "master",
+          "room_connector_list": [
+            ""
+          ],
+          "share_mc": false,
+          "share_rc": false
+        },
+        "password": ""
+      },
+      "body_json": {
+        "account_name": "",
+        "email": "",
+        "first_name": "",
+        "last_name": "",
+        "options": {
+          "billing_auto_renew": false,
+          "meeting_connector_list": [
+            ""
+          ],
+          "pay_mode": "master",
+          "room_connector_list": [
+            ""
+          ],
+          "share_mc": false,
+          "share_rc": false
+        },
+        "password": ""
+      },
+      "body_text": "{\"account_name\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"options\": {\"billing_auto_renew\": false, \"meeting_connector_list\": [\"\"], \"pay_mode\": \"master\", \"room_connector_list\": [\"\"], \"share_mc\": false, \"share_rc\": false}, \"password\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a sub account under a master account. Your account must be a master account in order to create sub accounts. \n<br><br>Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts. Email the partner programs team at partner-success@zoom.us. for more details. Please note that the created account user will receive a confirmation email.<br><br>\n<br>\n**Prerequisites:**<br>\n* Pro or a higher paid account with master account option enabled. <br>\n\n**Scope**: `account:write:admin`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts",
+      "method": "POST",
+      "name": "Create a sub account",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/accounts",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account_name\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"options\": {\"billing_auto_renew\": false, \"meeting_connector_list\": [\"\"], \"pay_mode\": \"master\", \"room_connector_list\": [\"\"], \"share_mc\": false, \"share_rc\": false}, \"password\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a sub account",
+      "url": "https://api.zoom.us/v2/accounts"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Disassociate a sub account from its master account. This will leave the sub account intact but it will no longer be associated with the master account.<br>  \n\n**Prerequisites:**\n* Pro or a higher paid account with master account option enabled. <br>\n* The account making this API request must be a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis).<br><br>\n\n\n**Scope**: `account:write:admin`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/accounts/{{ACCOUNT_ID}}",
+      "method": "DELETE",
+      "name": "Disassociate a sub account",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Disassociate a sub account",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get details of a sub account that is listed under a master account. Your account must be a master account in order to retrieve sub accounts' details. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and create sub accounts. Email the partner programs team at **partner-success@zoom.us** for more details.\n\n**Prerequisites:**\n* Pro or a higher paid account with master account option enabled. <br>\n\n**Scope**: `account:write:admin`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n\n \n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}",
+      "method": "GET",
+      "name": "Get sub account details",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get sub account details",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get [billing information](https://support.zoom.us/hc/en-us/articles/201363263-About-Billing) of a sub account.<br><br>Only master accounts can use this API. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' billing information. Email the partner programs team at **partner-success@zoom.us** for more details.<br>\n\n**Prerequisites:**\n* Pro or a higher paid account with master account option enabled. <br>\n\n**Scope**:`billing:master`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/billing",
+      "method": "GET",
+      "name": "Get billing information",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/billing",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get billing information",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/billing"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "address": "",
+        "apt": "",
+        "city": "",
+        "country": "",
+        "email": "",
+        "first_name": "",
+        "last_name": "",
+        "phone_number": "",
+        "state": "",
+        "zip": ""
+      },
+      "body_json": {
+        "address": "",
+        "apt": "",
+        "city": "",
+        "country": "",
+        "email": "",
+        "first_name": "",
+        "last_name": "",
+        "phone_number": "",
+        "state": "",
+        "zip": ""
+      },
+      "body_text": "{\"address\": \"\", \"apt\": \"\", \"city\": \"\", \"country\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"phone_number\": \"\", \"state\": \"\", \"zip\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update [billing information](https://support.zoom.us/hc/en-us/articles/201363263-About-Billing) of a sub account.<br><br>\nThis API can only be used by master accounts that pay all billiing charges of their associated sub accounts. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' billing information. Email the partner programs team at **partner-success@zoom.us** for more details.<br><br>\n\n**Prerequisites:**\n* Pro or a higher paid account with master account option enabled. <br>\n\n**Scope**:`billing:master`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/billing",
+      "method": "PATCH",
+      "name": "Update billing information",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/billing",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"address\": \"\", \"apt\": \"\", \"city\": \"\", \"country\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"phone_number\": \"\", \"state\": \"\", \"zip\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update billing information",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/billing"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List [invoices](https://support.zoom.us/hc/en-us/articles/207276556-Viewing-your-invoice-history#h_6710542f-23cc-4059-9cc7-ff02bec7314e) of a Zoom account.\n\nTo list a regular Zoom account's invoices or a master account's invoices, provide `me` as the value of the `accountId` path parameter. To list a sub account's invoices, provide the account ID of the sub account in the `accountId` path parameter. \n\n**Prerequisites:**\n* Account must be enrolled in Pro or a higher plan.<br>\n\n**Scope**:`billing:master`<br>**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n**Additional Rate Limit:** You can make **one** API request per account(`accountId`) every **five** minutes until the daily limit is reached. This API has a daily limit of **6** requests per account(`accountId`).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/billing/invoices",
+      "method": "GET",
+      "name": "List billing invoices",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/billing/invoices",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List billing invoices",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/billing/invoices"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get detailed information about a specific [invoice](https://support.zoom.us/hc/en-us/articles/207276556-Viewing-your-invoice-history#h_6710542f-23cc-4059-9cc7-ff02bec7314e). <br>To retrieve a regular Zoom account's invoice details or a master account's invoice details, provide `me` as the value of `accountId` path parameter. To list a sub account's invoice details, provide the account ID of the sub account in the `accountId` path parameter. \n\n**Prerequisites:**\n* Account must be enrolled in Pro or a higher plan. <br>\n\n**Scope**:`billing:master`<br>\n<br>**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n**Additional Rate Limit:** You can make **one** API request every **thirty** minutes until the daily limit is reached. This API has a daily limit of **100** requests per **account**.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/billing/invoices/{{INVOICE_ID}}",
+      "method": "GET",
+      "name": "Get invoice details",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "invoiceId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/billing/invoices/{{INVOICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "invoiceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get invoice details",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/billing/invoices/{{INVOICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "[Account Locked Settings](https://support.zoom.us/hc/en-us/articles/115005269866) allow you turn settings on or off for all users in your account. No user except the account admin or account owner can change these settings. With lock settings, you force the settings on for all users.\nUse this API to retrieve an account's locked settings. \n\n**Note:** This API can be used by Zoom Accounts that are on a Pro or a higher plan as well accounts that have master and sub accounts options enabled. <br><br>\n**Prerequisites:**\n* Pro or a higher paid account. <br>\n\n**Scope**: `account:read:admin`.\n<br> **[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`<br>\n\n\n\n\n\n**Scope:** account:read:admin",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/lock_settings",
+      "method": "GET",
+      "name": "Get locked settings",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "option",
+          "value": ""
+        },
+        {
+          "name": "custom_query_fields",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/lock_settings",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "option",
+          "value": ""
+        },
+        {
+          "name": "custom_query_fields",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get locked settings",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/lock_settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "email_notification": {
+          "alternative_host_reminder": false,
+          "cancel_meeting_reminder": false,
+          "cloud_recording_available_reminder": false,
+          "jbh_reminder": false,
+          "schedule_for_host_reminder": false
+        },
+        "in_meeting": {
+          "alert_guest_join": false,
+          "allow_show_zoom_windows": false,
+          "annotation": false,
+          "anonymous_question_answer": false,
+          "attendee_on_hold": false,
+          "auto_answer": false,
+          "auto_saving_chat": false,
+          "breakout_room": false,
+          "chat": false,
+          "closed_caption": false,
+          "co_host": false,
+          "custom_data_center_regions": false,
+          "dscp_marking": false,
+          "e2e_encryption": false,
+          "entry_exit_chime": "",
+          "far_end_camera_control": false,
+          "feedback": false,
+          "file_transfer": false,
+          "group_hd": false,
+          "original_audio": false,
+          "polling": false,
+          "post_meeting_feedback": false,
+          "private_chat": false,
+          "remote_control": false,
+          "request_permission_to_unmute": false,
+          "screen_sharing": false,
+          "sending_default_email_invites": false,
+          "show_meeting_control_toolbar": false,
+          "stereo_audio": false,
+          "use_html_format_email": false,
+          "virtual_background": false,
+          "webinar_question_answer": false,
+          "whiteboard": false
+        },
+        "recording": {
+          "account_user_access_recording": false,
+          "auto_delete_cmr": false,
+          "auto_recording": "",
+          "cloud_recording": false,
+          "cloud_recording_download": false,
+          "host_delete_cloud_recording": false,
+          "ip_address_access_control": {
+            "enable": false,
+            "ip_addresses_or_ranges": ""
+          },
+          "local_recording": false,
+          "prevent_host_access_recording": false,
+          "recording_authentication": ""
+        },
+        "schedule_meeting": {
+          "audio_type": false,
+          "embed_password_in_join_link": false,
+          "enforce_login": false,
+          "enforce_login_domains": "",
+          "enforce_login_with_domains": false,
+          "host_video": false,
+          "join_before_host": false,
+          "meeting_authentication": false,
+          "not_store_meeting_topic": false,
+          "participant_video": false,
+          "personal_meeting": false,
+          "require_password_for_instant_meetings": false,
+          "require_password_for_pmi_meetings": false,
+          "require_password_for_scheduling_new_meetings": false
+        },
+        "telephony": {
+          "telephony_regions": false,
+          "third_party_audio": false
+        },
+        "tsp": {
+          "call_out": false,
+          "show_international_numbers_link": false
+        }
+      },
+      "body_json": {
+        "email_notification": {
+          "alternative_host_reminder": false,
+          "cancel_meeting_reminder": false,
+          "cloud_recording_available_reminder": false,
+          "jbh_reminder": false,
+          "schedule_for_host_reminder": false
+        },
+        "in_meeting": {
+          "alert_guest_join": false,
+          "allow_show_zoom_windows": false,
+          "annotation": false,
+          "anonymous_question_answer": false,
+          "attendee_on_hold": false,
+          "auto_answer": false,
+          "auto_saving_chat": false,
+          "breakout_room": false,
+          "chat": false,
+          "closed_caption": false,
+          "co_host": false,
+          "custom_data_center_regions": false,
+          "dscp_marking": false,
+          "e2e_encryption": false,
+          "entry_exit_chime": "",
+          "far_end_camera_control": false,
+          "feedback": false,
+          "file_transfer": false,
+          "group_hd": false,
+          "original_audio": false,
+          "polling": false,
+          "post_meeting_feedback": false,
+          "private_chat": false,
+          "remote_control": false,
+          "request_permission_to_unmute": false,
+          "screen_sharing": false,
+          "sending_default_email_invites": false,
+          "show_meeting_control_toolbar": false,
+          "stereo_audio": false,
+          "use_html_format_email": false,
+          "virtual_background": false,
+          "webinar_question_answer": false,
+          "whiteboard": false
+        },
+        "recording": {
+          "account_user_access_recording": false,
+          "auto_delete_cmr": false,
+          "auto_recording": "",
+          "cloud_recording": false,
+          "cloud_recording_download": false,
+          "host_delete_cloud_recording": false,
+          "ip_address_access_control": {
+            "enable": false,
+            "ip_addresses_or_ranges": ""
+          },
+          "local_recording": false,
+          "prevent_host_access_recording": false,
+          "recording_authentication": ""
+        },
+        "schedule_meeting": {
+          "audio_type": false,
+          "embed_password_in_join_link": false,
+          "enforce_login": false,
+          "enforce_login_domains": "",
+          "enforce_login_with_domains": false,
+          "host_video": false,
+          "join_before_host": false,
+          "meeting_authentication": false,
+          "not_store_meeting_topic": false,
+          "participant_video": false,
+          "personal_meeting": false,
+          "require_password_for_instant_meetings": false,
+          "require_password_for_pmi_meetings": false,
+          "require_password_for_scheduling_new_meetings": false
+        },
+        "telephony": {
+          "telephony_regions": false,
+          "third_party_audio": false
+        },
+        "tsp": {
+          "call_out": false,
+          "show_international_numbers_link": false
+        }
+      },
+      "body_text": "{\"email_notification\": {\"alternative_host_reminder\": false, \"cancel_meeting_reminder\": false, \"cloud_recording_available_reminder\": false, \"jbh_reminder\": false, \"schedule_for_host_reminder\": false}, \"in_meeting\": {\"alert_guest_join\": false, \"allow_show_zoom_windows\": false, \"annotation\": false, \"anonymous_question_answer\": false, \"attendee_on_hold\": false, \"auto_answer\": false, \"auto_saving_chat\": false, \"breakout_room\": false, \"chat\": false, \"closed_caption\": false, \"co_host\": false, \"custom_data_center_regions\": false, \"dscp_marking\": false, \"e2e_encryption\": false, \"entry_exit_chime\": \"\", \"far_end_camera_control\": false, \"feedback\": false, \"file_transfer\": false, \"group_hd\": false, \"original_audio\": false, \"polling\": false, \"post_meeting_feedback\": false, \"private_chat\": false, \"remote_control\": false, \"request_permission_to_unmute\": false, \"screen_sharing\": false, \"sending_default_email_invites\": false, \"show_meeting_control_toolbar\": false, \"stereo_audio\": false, \"use_html_format_email\": false, \"virtual_background\": false, \"webinar_question_answer\": false, \"whiteboard\": false}, \"recording\": {\"account_user_access_recording\": false, \"auto_delete_cmr\": false, \"auto_recording\": \"\", \"cloud_recording\": false, \"cloud_recording_download\": false, \"host_delete_cloud_recording\": false, \"ip_address_access_control\": {\"enable\": false, \"ip_addresses_or_ranges\": \"\"}, \"local_recording\": false, \"prevent_host_access_recording\": false, \"recording_authentication\": \"\"}, \"schedule_meeting\": {\"audio_type\": false, \"embed_password_in_join_link\": false, \"enforce_login\": false, \"enforce_login_domains\": \"\", \"enforce_login_with_domains\": false, \"host_video\": false, \"join_before_host\": false, \"meeting_authentication\": false, \"not_store_meeting_topic\": false, \"participant_video\": false, \"personal_meeting\": false, \"require_password_for_instant_meetings\": false, \"require_password_for_pmi_meetings\": false, \"require_password_for_scheduling_new_meetings\": false}, \"telephony\": {\"telephony_regions\": false, \"third_party_audio\": false}, \"tsp\": {\"call_out\": false, \"show_international_numbers_link\": false}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "[Account Locked Settings](https://support.zoom.us/hc/en-us/articles/115005269866) allow you turn settings on or off for all users in your account. No user except the account admin or account owner can change these settings. With lock settings, you force the settings on for all users. Use this API to update an account's locked settings.\n\n**Note:** This API can be used by Zoom Accounts that are on a Pro or a higher plan as well accounts that have master and sub accounts options enabled.<br><br>\n**Prerequisites:**<br>\n* Pro or a higher paid account. <br>\n\n**Scope:** `account:write:admin`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`<br>\n\n\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/lock_settings",
+      "method": "PATCH",
+      "name": "Update locked settings",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/lock_settings",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email_notification\": {\"alternative_host_reminder\": false, \"cancel_meeting_reminder\": false, \"cloud_recording_available_reminder\": false, \"jbh_reminder\": false, \"schedule_for_host_reminder\": false}, \"in_meeting\": {\"alert_guest_join\": false, \"allow_show_zoom_windows\": false, \"annotation\": false, \"anonymous_question_answer\": false, \"attendee_on_hold\": false, \"auto_answer\": false, \"auto_saving_chat\": false, \"breakout_room\": false, \"chat\": false, \"closed_caption\": false, \"co_host\": false, \"custom_data_center_regions\": false, \"dscp_marking\": false, \"e2e_encryption\": false, \"entry_exit_chime\": \"\", \"far_end_camera_control\": false, \"feedback\": false, \"file_transfer\": false, \"group_hd\": false, \"original_audio\": false, \"polling\": false, \"post_meeting_feedback\": false, \"private_chat\": false, \"remote_control\": false, \"request_permission_to_unmute\": false, \"screen_sharing\": false, \"sending_default_email_invites\": false, \"show_meeting_control_toolbar\": false, \"stereo_audio\": false, \"use_html_format_email\": false, \"virtual_background\": false, \"webinar_question_answer\": false, \"whiteboard\": false}, \"recording\": {\"account_user_access_recording\": false, \"auto_delete_cmr\": false, \"auto_recording\": \"\", \"cloud_recording\": false, \"cloud_recording_download\": false, \"host_delete_cloud_recording\": false, \"ip_address_access_control\": {\"enable\": false, \"ip_addresses_or_ranges\": \"\"}, \"local_recording\": false, \"prevent_host_access_recording\": false, \"recording_authentication\": \"\"}, \"schedule_meeting\": {\"audio_type\": false, \"embed_password_in_join_link\": false, \"enforce_login\": false, \"enforce_login_domains\": \"\", \"enforce_login_with_domains\": false, \"host_video\": false, \"join_before_host\": false, \"meeting_authentication\": false, \"not_store_meeting_topic\": false, \"participant_video\": false, \"personal_meeting\": false, \"require_password_for_instant_meetings\": false, \"require_password_for_pmi_meetings\": false, \"require_password_for_scheduling_new_meetings\": false}, \"telephony\": {\"telephony_regions\": false, \"third_party_audio\": false}, \"tsp\": {\"call_out\": false, \"show_international_numbers_link\": false}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update locked settings",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/lock_settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a sub account's [managed domains](https://support.zoom.us/hc/en-us/articles/203395207-What-is-Managed-Domain-).<br><br>\n\n**Note:** This API can be used by Zoom Accounts that are on a Pro or a higher plan as well accounts that have master and sub accounts options enabled. <br><br>\nTo get managed domains of the master account, provide `me` as the value for accountId in the path parameter. Provide the sub account's Account ID as the value of accountId path parameter to get managed domains of the sub account.<br><br>\n**Prerequisites:**<br>\n* Pro or a higher paid account with master account option enabled. <br>\n\n**Scope:** `account:read:admin`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/managed_domains",
+      "method": "GET",
+      "name": "Get managed domains",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/managed_domains",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get managed domains",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/managed_domains"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "billing_auto_renew": false,
+        "meeting_connector_list": [
+          ""
+        ],
+        "pay_mode": "master",
+        "room_connector_list": [
+          ""
+        ],
+        "share_mc": false,
+        "share_rc": false
+      },
+      "body_json": {
+        "billing_auto_renew": false,
+        "meeting_connector_list": [
+          ""
+        ],
+        "pay_mode": "master",
+        "room_connector_list": [
+          ""
+        ],
+        "share_mc": false,
+        "share_rc": false
+      },
+      "body_text": "{\"billing_auto_renew\": false, \"meeting_connector_list\": [\"\"], \"pay_mode\": \"master\", \"room_connector_list\": [\"\"], \"share_mc\": false, \"share_rc\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update a sub account's options under the master account.<br> <aside>Your account must be a master account in order to update the options for sub accounts. Zoom only assigns this privilege to trusted partners. </aside>\n\n**Prerequisites:**\n* Pro or a higher paid account with master account option enabled.\n* The account making this API request must be a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis).<br><br>\n\n**Scope**: `account:write:admin`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/options",
+      "method": "PATCH",
+      "name": "Update options",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/options",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"billing_auto_renew\": false, \"meeting_connector_list\": [\"\"], \"pay_mode\": \"master\", \"room_connector_list\": [\"\"], \"share_mc\": false, \"share_rc\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update options",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/options"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "email": ""
+      },
+      "body_json": {
+        "email": ""
+      },
+      "body_text": "{\"email\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The current account owner can [change the owner of an account](https://support.zoom.us/hc/en-us/articles/115005686983-Change-Account-Owner) to another user on the same account.<br> Use this API to change the owner of a sub account.\n \n**Prerequisites**: <br>\n* Account owner or admin permissions of an account.\n* The account making this API request must be on a pro or a hiigher plan with [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis) privilege.<br><br>\n\n**Scopes:**  `account:write:admin` or `account:master`<br>**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n\n\n<br> ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/accounts/{{ACCOUNT_ID}}/owner",
+      "method": "PUT",
+      "name": "Update the account owner",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/owner",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update the account owner",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/owner"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "byoc": {
+          "enable": false
+        }
+      },
+      "body_json": {
+        "byoc": {
+          "enable": false
+        }
+      },
+      "body_text": "{\"byoc\": {\"enable\": false}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Only [master account owners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) can use this API to enable BYOC(Bring your own carrier) option for a sub account.<br>\n\n**Scope**:<br>\n* `phone:master` <br>\n\n**Prerequisites**: <br>\n* Business or enterprise Account.<br>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/phone/settings",
+      "method": "PATCH",
+      "name": "Update BYOC settings",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/phone/settings",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"byoc\": {\"enable\": false}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update BYOC settings",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/phone/settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "emergency_address": {
+          "address_line1": "",
+          "address_line2": "",
+          "city": "",
+          "country": "",
+          "state_code": "",
+          "zip": ""
+        },
+        "extension_number": "800"
+      },
+      "body_json": {
+        "emergency_address": {
+          "address_line1": "",
+          "address_line2": "",
+          "city": "",
+          "country": "",
+          "state_code": "",
+          "zip": ""
+        },
+        "extension_number": "800"
+      },
+      "body_text": "{\"emergency_address\": {\"address_line1\": \"\", \"address_line2\": \"\", \"city\": \"\", \"country\": \"\", \"state_code\": \"\", \"zip\": \"\"}, \"extension_number\": \"800\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "After assigning a Zoom phone license to an account, an admin or account owner can proceed with the [initial Zoom phone set up](https://support.zoom.us/hc/en-us/articles/360001297663-Getting-started-with-Zoom-Phone-admin-#h_5ae26a3a-290c-4a8d-b3b0-6384ed267b13) using this API.\n\n**Scope**:<br>\n* `phone:write:admin` `phone:write`\n\n**Prerequisites**: <br>\n* Pro or a higher paid account with master account option enabled.\n\n<br>**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/phone/setup",
+      "method": "POST",
+      "name": "Set up a Zoom Phone account",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/phone/setup",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"emergency_address\": {\"address_line1\": \"\", \"address_line2\": \"\", \"city\": \"\", \"country\": \"\", \"state_code\": \"\", \"zip\": \"\"}, \"extension_number\": \"800\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set up a Zoom Phone account",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/phone/setup"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "sip_trunks": [
+          {
+            "carrier_account": "",
+            "id": "",
+            "name": "master SIP Trunk name"
+          }
+        ]
+      },
+      "body_json": {
+        "sip_trunks": [
+          {
+            "carrier_account": "",
+            "id": "",
+            "name": "master SIP Trunk name"
+          }
+        ]
+      },
+      "body_text": "{\"sip_trunks\": [{\"carrier_account\": \"\", \"id\": \"\", \"name\": \"master SIP Trunk name\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Using this API, a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis) owner can assign SIP trunk(s) to a sub account.<br>\n\n**Scope**:<br>\n* `phone:master` <br>\n\n**Prerequisites**:<br>\n* Business or enterprise Account.<br>\n<br>**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/phone/sip_trunk/trunks",
+      "method": "POST",
+      "name": "Assign SIP trunks",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/phone/sip_trunk/trunks",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"sip_trunks\": [{\"carrier_account\": \"\", \"id\": \"\", \"name\": \"master SIP Trunk name\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Assign SIP trunks",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/phone/sip_trunk/trunks"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "carrier_account": "",
+        "name": ""
+      },
+      "body_json": {
+        "carrier_account": "",
+        "name": ""
+      },
+      "body_text": "{\"carrier_account\": \"\", \"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update details of a SIP trunk that is assigned to a sub account.<br>\n\n**Scope**:<br>\n* `phone:master` <br>\n\n**Prerequisites**:<br>\nBusiness or Enterprise Account.<br>\n<br>**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/phone/sip_trunk/trunks/{{SIP_TRUNK_ID}}",
+      "method": "PATCH",
+      "name": "Update SIP trunk details",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sipTrunkId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/phone/sip_trunk/trunks/{{SIP_TRUNK_ID}}",
+      "pathParameters": [
+        {
+          "name": "sipTrunkId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"carrier_account\": \"\", \"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update SIP trunk details",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/phone/sip_trunk/trunks/{{SIP_TRUNK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get plan information of a sub account that is managed by a master account. <br><br>This API can only be used by master accounts that pay all billiing charges of their associated Pro or higher sub accounts. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' billing information. Email the partner programs team at **partner-success@zoom.us** for more details.<br><br>\n**Scopes:** `billing:master`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`<br>\n\n\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/plans",
+      "method": "GET",
+      "name": "Get plan Information",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/plans",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get plan Information",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/plans"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "contact": {
+          "address": "",
+          "apt": "",
+          "city": "",
+          "country": "",
+          "email": "",
+          "first_name": "",
+          "last_name": "",
+          "phone_number": "",
+          "state": "",
+          "zip": ""
+        },
+        "plan_audio": {
+          "callout_countries": "",
+          "ddi_numbers": 0,
+          "premium_countries": "",
+          "tollfree_countries": "",
+          "type": ""
+        },
+        "plan_base": {
+          "hosts": 0,
+          "type": ""
+        },
+        "plan_large_meeting": [
+          {
+            "hosts": 0,
+            "type": ""
+          }
+        ],
+        "plan_phone": {
+          "plan_base": {
+            "callout_countries": "",
+            "type": ""
+          },
+          "plan_calling": [
+            {
+              "hosts": 0,
+              "type": ""
+            }
+          ],
+          "plan_number": [
+            {
+              "hosts": 0,
+              "type": ""
+            }
+          ]
+        },
+        "plan_recording": "",
+        "plan_room_connector": {
+          "hosts": 0,
+          "type": ""
+        },
+        "plan_webinar": [
+          {
+            "hosts": 0,
+            "type": ""
+          }
+        ],
+        "plan_zoom_rooms": {
+          "hosts": 0,
+          "type": ""
+        }
+      },
+      "body_json": {
+        "contact": {
+          "address": "",
+          "apt": "",
+          "city": "",
+          "country": "",
+          "email": "",
+          "first_name": "",
+          "last_name": "",
+          "phone_number": "",
+          "state": "",
+          "zip": ""
+        },
+        "plan_audio": {
+          "callout_countries": "",
+          "ddi_numbers": 0,
+          "premium_countries": "",
+          "tollfree_countries": "",
+          "type": ""
+        },
+        "plan_base": {
+          "hosts": 0,
+          "type": ""
+        },
+        "plan_large_meeting": [
+          {
+            "hosts": 0,
+            "type": ""
+          }
+        ],
+        "plan_phone": {
+          "plan_base": {
+            "callout_countries": "",
+            "type": ""
+          },
+          "plan_calling": [
+            {
+              "hosts": 0,
+              "type": ""
+            }
+          ],
+          "plan_number": [
+            {
+              "hosts": 0,
+              "type": ""
+            }
+          ]
+        },
+        "plan_recording": "",
+        "plan_room_connector": {
+          "hosts": 0,
+          "type": ""
+        },
+        "plan_webinar": [
+          {
+            "hosts": 0,
+            "type": ""
+          }
+        ],
+        "plan_zoom_rooms": {
+          "hosts": 0,
+          "type": ""
+        }
+      },
+      "body_text": "{\"contact\": {\"address\": \"\", \"apt\": \"\", \"city\": \"\", \"country\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"phone_number\": \"\", \"state\": \"\", \"zip\": \"\"}, \"plan_audio\": {\"callout_countries\": \"\", \"ddi_numbers\": 0, \"premium_countries\": \"\", \"tollfree_countries\": \"\", \"type\": \"\"}, \"plan_base\": {\"hosts\": 0, \"type\": \"\"}, \"plan_large_meeting\": [{\"hosts\": 0, \"type\": \"\"}], \"plan_phone\": {\"plan_base\": {\"callout_countries\": \"\", \"type\": \"\"}, \"plan_calling\": [{\"hosts\": 0, \"type\": \"\"}], \"plan_number\": [{\"hosts\": 0, \"type\": \"\"}]}, \"plan_recording\": \"\", \"plan_room_connector\": {\"hosts\": 0, \"type\": \"\"}, \"plan_webinar\": [{\"hosts\": 0, \"type\": \"\"}], \"plan_zoom_rooms\": {\"hosts\": 0, \"type\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Subscribe a sub account to a Zoom plan using your master account. This API can only be used by master accounts that pay all billiing charges of their associated Pro or higher sub accounts. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' subscriptions. Email the partner programs team at **partner-success@zoom.us** for more details.<br><br>\n**Scopes**: `billing:master`<br>\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/plans",
+      "method": "POST",
+      "name": "Subscribe plans",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/plans",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"contact\": {\"address\": \"\", \"apt\": \"\", \"city\": \"\", \"country\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"phone_number\": \"\", \"state\": \"\", \"zip\": \"\"}, \"plan_audio\": {\"callout_countries\": \"\", \"ddi_numbers\": 0, \"premium_countries\": \"\", \"tollfree_countries\": \"\", \"type\": \"\"}, \"plan_base\": {\"hosts\": 0, \"type\": \"\"}, \"plan_large_meeting\": [{\"hosts\": 0, \"type\": \"\"}], \"plan_phone\": {\"plan_base\": {\"callout_countries\": \"\", \"type\": \"\"}, \"plan_calling\": [{\"hosts\": 0, \"type\": \"\"}], \"plan_number\": [{\"hosts\": 0, \"type\": \"\"}]}, \"plan_recording\": \"\", \"plan_room_connector\": {\"hosts\": 0, \"type\": \"\"}, \"plan_webinar\": [{\"hosts\": 0, \"type\": \"\"}], \"plan_zoom_rooms\": {\"hosts\": 0, \"type\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Subscribe plans",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/plans"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "hosts": 0,
+        "type": ""
+      },
+      "body_json": {
+        "hosts": 0,
+        "type": ""
+      },
+      "body_text": "{\"hosts\": 0, \"type\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Subscribe a sub account to a Zoom addon plan. This API can only be used by master accounts that pay all billiing charges of their associated Pro or higher sub accounts. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' subscriptions. Email the partner programs team at **partner-success@zoom.us** for more details.<br><br>\n<br>**Prerequisites:**<br>\n* Pro or a higher plan with master account option enabled.\n* The sub account must be a paid account. The billing charges for the sub account must be paid by its master account.<br><br>\n\n**Scopes**: `billing:master`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/plans/addons",
+      "method": "POST",
+      "name": "Subscribe additional plan",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/plans/addons",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"hosts\": 0, \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Subscribe additional plan",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/plans/addons"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "hosts": 0,
+        "type": ""
+      },
+      "body_json": {
+        "hosts": 0,
+        "type": ""
+      },
+      "body_text": "{\"hosts\": 0, \"type\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update an additional plan for a sub account.\n\nThis API can only be used by master accounts that pay all billiing charges of their associated Pro or higher sub accounts. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' subscriptions. Email the partner programs team at **partner-success@zoom.us** for more details.<br><br>\n<br>**Prerequisites:**<br>\n* Pro or a higher plan with master account enabled.\n* The sub account must be a paid account. The billing charges for the sub account must be paid by the master account.<br><br>\n\n**Scopes**: `billing:master`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n\n\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/accounts/{{ACCOUNT_ID}}/plans/addons",
+      "method": "PUT",
+      "name": "Update an additional plan",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/plans/addons",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"hosts\": 0, \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an additional plan",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/plans/addons"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "action": "cancel",
+        "comment": "",
+        "reason": 0,
+        "type": ""
+      },
+      "body_json": {
+        "action": "cancel",
+        "comment": "",
+        "reason": 0,
+        "type": ""
+      },
+      "body_text": "{\"action\": \"cancel\", \"comment\": \"\", \"reason\": 0, \"type\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "[Cancel additional plan](https://support.zoom.us/hc/en-us/articles/203634215-How-Do-I-Cancel-My-Subscription-) of a sub account. The cancellation does not provide refund for the current subscription. The service remains active for the current session.\n\nThis API can only be used by master accounts that pay all billiing charges of their associated Pro or higher sub accounts. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' subscriptions. Email the partner programs team at **partner-success@zoom.us** for more details.<br><br>\n\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n\n**Prerequisites:**<br>\n* Pro or a higher plan with master account option enabled.\n* The sub account must be a paid account.<br>\n**Scope:** `billing:master`<br>\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/plans/addons/status",
+      "method": "PATCH",
+      "name": "Cancel additional plans",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/plans/addons/status",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"action\": \"cancel\", \"comment\": \"\", \"reason\": 0, \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel additional plans",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/plans/addons/status"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "hosts": 0,
+        "type": ""
+      },
+      "body_json": {
+        "hosts": 0,
+        "type": ""
+      },
+      "body_text": "{\"hosts\": 0, \"type\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update a base plan of a sub account. \n\nThis API can only be used by master accounts that pay all billiing charges of their associated Pro or higher sub accounts. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' subscriptions. Email the partner programs team at **partner-success@zoom.us** for more details.<br><br>\n**Scopes:** `billing:master`<br><br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n**Prerequisites:**<br>\n* The sub account must have a Pro or a higher plan.\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/accounts/{{ACCOUNT_ID}}/plans/base",
+      "method": "PUT",
+      "name": "Update a base plan",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/plans/base",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"hosts\": 0, \"type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a base plan",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/plans/base"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "action": "",
+        "comment": "",
+        "reason": 0
+      },
+      "body_json": {
+        "action": "",
+        "comment": "",
+        "reason": 0
+      },
+      "body_text": "{\"action\": \"\", \"comment\": \"\", \"reason\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "[Cancel a base plan](https://support.zoom.us/hc/en-us/articles/203634215-How-Do-I-Cancel-My-Subscription-) for a sub account.\n\nThis API can only be used by master accounts that pay all billiing charges of their associated Pro or higher sub accounts. Zoom allows only [approved partners](https://marketplace.zoom.us/docs/api-reference/master-account-apis) to use master APIs and manage sub accounts' subscriptions. Email the partner programs team at **partner-success@zoom.us** for more details.<br><br>\n\n**Scopes**: `billing:master`<br> \n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`<br>\n**Prerequisites:**<br>\n* The sub account must have a Pro or a higher plan.\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/plans/base/status",
+      "method": "PATCH",
+      "name": "Cancel a base plan",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/plans/base/status",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"action\": \"\", \"comment\": \"\", \"reason\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel a base plan",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/plans/base/status"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get information on usage of [plans](https://marketplace.zoom.us/docs/api-reference/other-references/plans) of an account. This API supports regular accounts as well as master and sub accounts. To get plan usage of a regular account, use the `account:read:admin` scope and provide “me” as the value of the  `accountId` path parameter.To get plan usage of a master account, provide the keyword \"me\" as the value of the `accountId` path parameter and use the `billing:master` scope. To get plan usage of a sub account, provide the actual account Id of the sub account as the value of the `accountId` path parameter and use the `billing:master` scope. \n\n**Prerequisite**:<br>\nAccount type: master account on a paid Pro, Business or Enterprise plan.<br>\n**Scope:** `billing:master` for master and sub accounts. `account:read:admin` for regular Zoom accounts.<br>\n **[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Heavy`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/plans/usage",
+      "method": "GET",
+      "name": "Get plan usage",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/plans/usage",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get plan usage",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/plans/usage"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List [Cloud Recordings](https://support.zoom.us/hc/en-us/articles/203741855-Cloud-Recording) available on an Account.\n\n> To access a password protected cloud recording, add an \"access_token\" parameter to the download URL and provide [JWT](https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-jwt-app) as the value of the \"access_token\".\n<br>\n**Prerequisites**:<br>\n* A Pro or a higher paid plan with Cloud Recording option enabled.<br>\n**Scopes**: `recording:read:admin` or `account:read:admin`\n\nIf the scope `recording:read:admin` is used, the Account ID of the Account must be provided in the `accountId` path parameter to list recordings that belong to the Account. This scope only works for sub accounts. \n\nTo list recordings of a master account, the scope must be `account:read:admin` and the value of `accountId` should be `me`.<br>  **[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`<br>\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/recordings",
+      "method": "GET",
+      "name": "List recordings of an account",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "page_size",
+          "value": ""
+        },
+        {
+          "name": "next_page_token",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/recordings",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "page_size",
+          "value": ""
+        },
+        {
+          "name": "next_page_token",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List recordings of an account",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/recordings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the settings of an account.<br>\nTo get the settings of a master account, use `me` as the value for the `accountId` path parameter.<br><br>\n **Prerequisites**:\n * The account must be a paid account.<br>\n**Scopes**: `account:read:admin`\n<br> \n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/settings",
+      "method": "GET",
+      "name": "Get settings",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "option",
+          "value": ""
+        },
+        {
+          "name": "custom_query_fields",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/settings",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "option",
+          "value": ""
+        },
+        {
+          "name": "custom_query_fields",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get settings",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "email_notification": {
+          "alternative_host_reminder": false,
+          "cancel_meeting_reminder": false,
+          "cloud_recording_avaliable_reminder": false,
+          "jbh_reminder": false,
+          "low_host_count_reminder": false,
+          "schedule_for_reminder": false
+        },
+        "feature": {
+          "meeting_capacity": 0
+        },
+        "in_meeting": {
+          "alert_guest_join": false,
+          "allow_live_streaming": false,
+          "allow_participants_to_rename": false,
+          "allow_show_zoom_windows": false,
+          "annotation": false,
+          "anonymous_question_answer": false,
+          "attendee_on_hold": false,
+          "auto_answer": false,
+          "auto_saving_chat": false,
+          "breakout_room": false,
+          "chat": false,
+          "closed_caption": false,
+          "co_host": false,
+          "custom_data_center_regions": false,
+          "custom_live_streaming_service": false,
+          "custom_service_instructions": "",
+          "data_center_regions": [
+            ""
+          ],
+          "dscp_audio": 0,
+          "dscp_marking": false,
+          "dscp_video": 0,
+          "e2e_encryption": false,
+          "entry_exit_chime": "host",
+          "far_end_camera_control": false,
+          "feedback": false,
+          "file_transfer": false,
+          "group_hd": false,
+          "meeting_reactions": false,
+          "original_audio": false,
+          "p2p_connetion": false,
+          "p2p_ports": false,
+          "polling": false,
+          "ports_range": "",
+          "post_meeting_feedback": false,
+          "private_chat": false,
+          "record_play_own_voice": false,
+          "remote_control": false,
+          "request_permission_to_unmute": false,
+          "screen_sharing": false,
+          "sending_default_email_invites": false,
+          "show_a_join_from_your_browser_link": false,
+          "show_meeting_control_toolbar": false,
+          "stereo_audio": false,
+          "use_html_format_email": false,
+          "virtual_background": false,
+          "virtual_background_settings": {
+            "allow_upload_custom": false,
+            "allow_videos": false,
+            "enable": false,
+            "files": [
+              {
+                "id": {},
+                "is_default": {},
+                "name": {},
+                "size": {},
+                "type": {}
+              }
+            ]
+          },
+          "watermark": false,
+          "webinar_question_answer": false,
+          "whiteboard": false,
+          "who_can_share_screen": "host",
+          "who_can_share_screen_when_someone_is_sharing": "host",
+          "workplace_by_facebook": false
+        },
+        "integration": {
+          "box": false,
+          "dropbox": false,
+          "google_calendar": false,
+          "google_drive": false,
+          "kubi": false,
+          "microsoft_one_drive": false
+        },
+        "profile": {
+          "recording_storage_location": {
+            "allowed_values": [
+              ""
+            ],
+            "value": ""
+          }
+        },
+        "recording": {
+          "account_user_access_recording": false,
+          "allow_recovery_deleted_cloud_recordings": false,
+          "archive": {
+            "enable": false,
+            "settings": {
+              "audio_file": false,
+              "cc_transcript_file": false,
+              "chat_file": false,
+              "chat_with_sender_email": false,
+              "video_file": false
+            },
+            "type": 0
+          },
+          "auto_delete_cmr": false,
+          "auto_delete_cmr_days": 0,
+          "auto_recording": "local",
+          "cloud_recording": false,
+          "cloud_recording_download": false,
+          "cloud_recording_download_host": false,
+          "host_delete_cloud_recording": false,
+          "ip_address_access_control": {
+            "enable": false,
+            "ip_addresses_or_ranges": ""
+          },
+          "local_recording": false,
+          "prevent_host_access_recording": false,
+          "record_audio_file": false,
+          "record_gallery_view": false,
+          "record_speaker_view": false,
+          "recording_audio_transcript": false,
+          "recording_disclaimer": false,
+          "recording_password_requirement": {
+            "have_letter": false,
+            "have_number": false,
+            "have_special_character": false,
+            "length": 0,
+            "only_allow_numeric": false
+          },
+          "required_password_for_existing_cloud_recordings": false,
+          "save_chat_text": false,
+          "show_timestamp": false
+        },
+        "schedule_meeting": {
+          "audio_type": "both",
+          "enforce_login": false,
+          "enforce_login_domains": "",
+          "enforce_login_with_domains": false,
+          "force_pmi_jbh_password": false,
+          "host_video": false,
+          "join_before_host": false,
+          "meeting_password_requirement": {
+            "consecutive_characters_length": 0,
+            "have_letter": false,
+            "have_number": false,
+            "have_special_character": false,
+            "have_upper_and_lower_characters": false,
+            "length": 0,
+            "only_allow_numeric": false,
+            "weak_enhance_detection": false
+          },
+          "not_store_meeting_topic": false,
+          "participant_video": false,
+          "personal_meeting": false,
+          "require_password_for_instant_meetings": false,
+          "require_password_for_pmi_meetings": "jbh_only",
+          "require_password_for_scheduled_meetings": false,
+          "require_password_for_scheduling_new_meetings": false,
+          "use_pmi_for_instant_meetings": false,
+          "use_pmi_for_scheduled_meetings": false
+        },
+        "security": {
+          "admin_change_name_pic": false,
+          "hide_billing_info": false,
+          "import_photos_from_devices": false,
+          "password_requirement": {
+            "consecutive_characters_length": 0,
+            "have_special_character": false,
+            "minimum_password_length": 0,
+            "weak_enhance_detection": false
+          },
+          "sign_again_period_for_inactivity_on_client": 0,
+          "sign_again_period_for_inactivity_on_web": 0,
+          "sign_in_with_two_factor_auth": "all",
+          "sign_in_with_two_factor_auth_groups": [
+            ""
+          ],
+          "sign_in_with_two_factor_auth_roles": [
+            ""
+          ]
+        },
+        "telephony": {
+          "audio_conference_info": "",
+          "telephony_regions": {
+            "selection_values": [
+              ""
+            ]
+          },
+          "third_party_audio": false
+        },
+        "tsp": {
+          "call_out": false,
+          "call_out_countries": [
+            {}
+          ],
+          "display_toll_free_numbers": false,
+          "show_international_numbers_link": false
+        },
+        "zoom_rooms": {
+          "auto_start_stop_scheduled_meetings": false,
+          "cmr_for_instant_meeting": false,
+          "force_private_meeting": false,
+          "hide_host_information": false,
+          "list_meetings_with_calendar": false,
+          "start_airplay_manually": false,
+          "ultrasonic": false,
+          "upcoming_meeting_alert": false,
+          "weekly_system_restart": false,
+          "zr_post_meeting_feedback": false
+        }
+      },
+      "body_json": {
+        "email_notification": {
+          "alternative_host_reminder": false,
+          "cancel_meeting_reminder": false,
+          "cloud_recording_avaliable_reminder": false,
+          "jbh_reminder": false,
+          "low_host_count_reminder": false,
+          "schedule_for_reminder": false
+        },
+        "feature": {
+          "meeting_capacity": 0
+        },
+        "in_meeting": {
+          "alert_guest_join": false,
+          "allow_live_streaming": false,
+          "allow_participants_to_rename": false,
+          "allow_show_zoom_windows": false,
+          "annotation": false,
+          "anonymous_question_answer": false,
+          "attendee_on_hold": false,
+          "auto_answer": false,
+          "auto_saving_chat": false,
+          "breakout_room": false,
+          "chat": false,
+          "closed_caption": false,
+          "co_host": false,
+          "custom_data_center_regions": false,
+          "custom_live_streaming_service": false,
+          "custom_service_instructions": "",
+          "data_center_regions": [
+            ""
+          ],
+          "dscp_audio": 0,
+          "dscp_marking": false,
+          "dscp_video": 0,
+          "e2e_encryption": false,
+          "entry_exit_chime": "host",
+          "far_end_camera_control": false,
+          "feedback": false,
+          "file_transfer": false,
+          "group_hd": false,
+          "meeting_reactions": false,
+          "original_audio": false,
+          "p2p_connetion": false,
+          "p2p_ports": false,
+          "polling": false,
+          "ports_range": "",
+          "post_meeting_feedback": false,
+          "private_chat": false,
+          "record_play_own_voice": false,
+          "remote_control": false,
+          "request_permission_to_unmute": false,
+          "screen_sharing": false,
+          "sending_default_email_invites": false,
+          "show_a_join_from_your_browser_link": false,
+          "show_meeting_control_toolbar": false,
+          "stereo_audio": false,
+          "use_html_format_email": false,
+          "virtual_background": false,
+          "virtual_background_settings": {
+            "allow_upload_custom": false,
+            "allow_videos": false,
+            "enable": false,
+            "files": [
+              {
+                "id": {},
+                "is_default": {},
+                "name": {},
+                "size": {},
+                "type": {}
+              }
+            ]
+          },
+          "watermark": false,
+          "webinar_question_answer": false,
+          "whiteboard": false,
+          "who_can_share_screen": "host",
+          "who_can_share_screen_when_someone_is_sharing": "host",
+          "workplace_by_facebook": false
+        },
+        "integration": {
+          "box": false,
+          "dropbox": false,
+          "google_calendar": false,
+          "google_drive": false,
+          "kubi": false,
+          "microsoft_one_drive": false
+        },
+        "profile": {
+          "recording_storage_location": {
+            "allowed_values": [
+              ""
+            ],
+            "value": ""
+          }
+        },
+        "recording": {
+          "account_user_access_recording": false,
+          "allow_recovery_deleted_cloud_recordings": false,
+          "archive": {
+            "enable": false,
+            "settings": {
+              "audio_file": false,
+              "cc_transcript_file": false,
+              "chat_file": false,
+              "chat_with_sender_email": false,
+              "video_file": false
+            },
+            "type": 0
+          },
+          "auto_delete_cmr": false,
+          "auto_delete_cmr_days": 0,
+          "auto_recording": "local",
+          "cloud_recording": false,
+          "cloud_recording_download": false,
+          "cloud_recording_download_host": false,
+          "host_delete_cloud_recording": false,
+          "ip_address_access_control": {
+            "enable": false,
+            "ip_addresses_or_ranges": ""
+          },
+          "local_recording": false,
+          "prevent_host_access_recording": false,
+          "record_audio_file": false,
+          "record_gallery_view": false,
+          "record_speaker_view": false,
+          "recording_audio_transcript": false,
+          "recording_disclaimer": false,
+          "recording_password_requirement": {
+            "have_letter": false,
+            "have_number": false,
+            "have_special_character": false,
+            "length": 0,
+            "only_allow_numeric": false
+          },
+          "required_password_for_existing_cloud_recordings": false,
+          "save_chat_text": false,
+          "show_timestamp": false
+        },
+        "schedule_meeting": {
+          "audio_type": "both",
+          "enforce_login": false,
+          "enforce_login_domains": "",
+          "enforce_login_with_domains": false,
+          "force_pmi_jbh_password": false,
+          "host_video": false,
+          "join_before_host": false,
+          "meeting_password_requirement": {
+            "consecutive_characters_length": 0,
+            "have_letter": false,
+            "have_number": false,
+            "have_special_character": false,
+            "have_upper_and_lower_characters": false,
+            "length": 0,
+            "only_allow_numeric": false,
+            "weak_enhance_detection": false
+          },
+          "not_store_meeting_topic": false,
+          "participant_video": false,
+          "personal_meeting": false,
+          "require_password_for_instant_meetings": false,
+          "require_password_for_pmi_meetings": "jbh_only",
+          "require_password_for_scheduled_meetings": false,
+          "require_password_for_scheduling_new_meetings": false,
+          "use_pmi_for_instant_meetings": false,
+          "use_pmi_for_scheduled_meetings": false
+        },
+        "security": {
+          "admin_change_name_pic": false,
+          "hide_billing_info": false,
+          "import_photos_from_devices": false,
+          "password_requirement": {
+            "consecutive_characters_length": 0,
+            "have_special_character": false,
+            "minimum_password_length": 0,
+            "weak_enhance_detection": false
+          },
+          "sign_again_period_for_inactivity_on_client": 0,
+          "sign_again_period_for_inactivity_on_web": 0,
+          "sign_in_with_two_factor_auth": "all",
+          "sign_in_with_two_factor_auth_groups": [
+            ""
+          ],
+          "sign_in_with_two_factor_auth_roles": [
+            ""
+          ]
+        },
+        "telephony": {
+          "audio_conference_info": "",
+          "telephony_regions": {
+            "selection_values": [
+              ""
+            ]
+          },
+          "third_party_audio": false
+        },
+        "tsp": {
+          "call_out": false,
+          "call_out_countries": [
+            {}
+          ],
+          "display_toll_free_numbers": false,
+          "show_international_numbers_link": false
+        },
+        "zoom_rooms": {
+          "auto_start_stop_scheduled_meetings": false,
+          "cmr_for_instant_meeting": false,
+          "force_private_meeting": false,
+          "hide_host_information": false,
+          "list_meetings_with_calendar": false,
+          "start_airplay_manually": false,
+          "ultrasonic": false,
+          "upcoming_meeting_alert": false,
+          "weekly_system_restart": false,
+          "zr_post_meeting_feedback": false
+        }
+      },
+      "body_text": "{\"email_notification\": {\"alternative_host_reminder\": false, \"cancel_meeting_reminder\": false, \"cloud_recording_avaliable_reminder\": false, \"jbh_reminder\": false, \"low_host_count_reminder\": false, \"schedule_for_reminder\": false}, \"feature\": {\"meeting_capacity\": 0}, \"in_meeting\": {\"alert_guest_join\": false, \"allow_live_streaming\": false, \"allow_participants_to_rename\": false, \"allow_show_zoom_windows\": false, \"annotation\": false, \"anonymous_question_answer\": false, \"attendee_on_hold\": false, \"auto_answer\": false, \"auto_saving_chat\": false, \"breakout_room\": false, \"chat\": false, \"closed_caption\": false, \"co_host\": false, \"custom_data_center_regions\": false, \"custom_live_streaming_service\": false, \"custom_service_instructions\": \"\", \"data_center_regions\": [\"\"], \"dscp_audio\": 0, \"dscp_marking\": false, \"dscp_video\": 0, \"e2e_encryption\": false, \"entry_exit_chime\": \"host\", \"far_end_camera_control\": false, \"feedback\": false, \"file_transfer\": false, \"group_hd\": false, \"meeting_reactions\": false, \"original_audio\": false, \"p2p_connetion\": false, \"p2p_ports\": false, \"polling\": false, \"ports_range\": \"\", \"post_meeting_feedback\": false, \"private_chat\": false, \"record_play_own_voice\": false, \"remote_control\": false, \"request_permission_to_unmute\": false, \"screen_sharing\": false, \"sending_default_email_invites\": false, \"show_a_join_from_your_browser_link\": false, \"show_meeting_control_toolbar\": false, \"stereo_audio\": false, \"use_html_format_email\": false, \"virtual_background\": false, \"virtual_background_settings\": {\"allow_upload_custom\": false, \"allow_videos\": false, \"enable\": false, \"files\": [{\"id\": {}, \"is_default\": {}, \"name\": {}, \"size\": {}, \"type\": {}}]}, \"watermark\": false, \"webinar_question_answer\": false, \"whiteboard\": false, \"who_can_share_screen\": \"host\", \"who_can_share_screen_when_someone_is_sharing\": \"host\", \"workplace_by_facebook\": false}, \"integration\": {\"box\": false, \"dropbox\": false, \"google_calendar\": false, \"google_drive\": false, \"kubi\": false, \"microsoft_one_drive\": false}, \"profile\": {\"recording_storage_location\": {\"allowed_values\": [\"\"], \"value\": \"\"}}, \"recording\": {\"account_user_access_recording\": false, \"allow_recovery_deleted_cloud_recordings\": false, \"archive\": {\"enable\": false, \"settings\": {\"audio_file\": false, \"cc_transcript_file\": false, \"chat_file\": false, \"chat_with_sender_email\": false, \"video_file\": false}, \"type\": 0}, \"auto_delete_cmr\": false, \"auto_delete_cmr_days\": 0, \"auto_recording\": \"local\", \"cloud_recording\": false, \"cloud_recording_download\": false, \"cloud_recording_download_host\": false, \"host_delete_cloud_recording\": false, \"ip_address_access_control\": {\"enable\": false, \"ip_addresses_or_ranges\": \"\"}, \"local_recording\": false, \"prevent_host_access_recording\": false, \"record_audio_file\": false, \"record_gallery_view\": false, \"record_speaker_view\": false, \"recording_audio_transcript\": false, \"recording_disclaimer\": false, \"recording_password_requirement\": {\"have_letter\": false, \"have_number\": false, \"have_special_character\": false, \"length\": 0, \"only_allow_numeric\": false}, \"required_password_for_existing_cloud_recordings\": false, \"save_chat_text\": false, \"show_timestamp\": false}, \"schedule_meeting\": {\"audio_type\": \"both\", \"enforce_login\": false, \"enforce_login_domains\": \"\", \"enforce_login_with_domains\": false, \"force_pmi_jbh_password\": false, \"host_video\": false, \"join_before_host\": false, \"meeting_password_requirement\": {\"consecutive_characters_length\": 0, \"have_letter\": false, \"have_number\": false, \"have_special_character\": false, \"have_upper_and_lower_characters\": false, \"length\": 0, \"only_allow_numeric\": false, \"weak_enhance_detection\": false}, \"not_store_meeting_topic\": false, \"participant_video\": false, \"personal_meeting\": false, \"require_password_for_instant_meetings\": false, \"require_password_for_pmi_meetings\": \"jbh_only\", \"require_password_for_scheduled_meetings\": false, \"require_password_for_scheduling_new_meetings\": false, \"use_pmi_for_instant_meetings\": false, \"use_pmi_for_scheduled_meetings\": false}, \"security\": {\"admin_change_name_pic\": false, \"hide_billing_info\": false, \"import_photos_from_devices\": false, \"password_requirement\": {\"consecutive_characters_length\": 0, \"have_special_character\": false, \"minimum_password_length\": 0, \"weak_enhance_detection\": false}, \"sign_again_period_for_inactivity_on_client\": 0, \"sign_again_period_for_inactivity_on_web\": 0, \"sign_in_with_two_factor_auth\": \"all\", \"sign_in_with_two_factor_auth_groups\": [\"\"], \"sign_in_with_two_factor_auth_roles\": [\"\"]}, \"telephony\": {\"audio_conference_info\": \"\", \"telephony_regions\": {\"selection_values\": [\"\"]}, \"third_party_audio\": false}, \"tsp\": {\"call_out\": false, \"call_out_countries\": [{}], \"display_toll_free_numbers\": false, \"show_international_numbers_link\": false}, \"zoom_rooms\": {\"auto_start_stop_scheduled_meetings\": false, \"cmr_for_instant_meeting\": false, \"force_private_meeting\": false, \"hide_host_information\": false, \"list_meetings_with_calendar\": false, \"start_airplay_manually\": false, \"ultrasonic\": false, \"upcoming_meeting_alert\": false, \"weekly_system_restart\": false, \"zr_post_meeting_feedback\": false}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update the settings of a sub account that is under a master account.<br> To update the settings of the master account, use `me` as the value of the `accountId` path parameter.<br><br>\n**Prerequisites**:\n * The sub account must be a paid account.<br>\n**Scopes**: `account:write:admin`\n<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/settings",
+      "method": "PATCH",
+      "name": "Update settings",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "option",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/settings",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "option",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"email_notification\": {\"alternative_host_reminder\": false, \"cancel_meeting_reminder\": false, \"cloud_recording_avaliable_reminder\": false, \"jbh_reminder\": false, \"low_host_count_reminder\": false, \"schedule_for_reminder\": false}, \"feature\": {\"meeting_capacity\": 0}, \"in_meeting\": {\"alert_guest_join\": false, \"allow_live_streaming\": false, \"allow_participants_to_rename\": false, \"allow_show_zoom_windows\": false, \"annotation\": false, \"anonymous_question_answer\": false, \"attendee_on_hold\": false, \"auto_answer\": false, \"auto_saving_chat\": false, \"breakout_room\": false, \"chat\": false, \"closed_caption\": false, \"co_host\": false, \"custom_data_center_regions\": false, \"custom_live_streaming_service\": false, \"custom_service_instructions\": \"\", \"data_center_regions\": [\"\"], \"dscp_audio\": 0, \"dscp_marking\": false, \"dscp_video\": 0, \"e2e_encryption\": false, \"entry_exit_chime\": \"host\", \"far_end_camera_control\": false, \"feedback\": false, \"file_transfer\": false, \"group_hd\": false, \"meeting_reactions\": false, \"original_audio\": false, \"p2p_connetion\": false, \"p2p_ports\": false, \"polling\": false, \"ports_range\": \"\", \"post_meeting_feedback\": false, \"private_chat\": false, \"record_play_own_voice\": false, \"remote_control\": false, \"request_permission_to_unmute\": false, \"screen_sharing\": false, \"sending_default_email_invites\": false, \"show_a_join_from_your_browser_link\": false, \"show_meeting_control_toolbar\": false, \"stereo_audio\": false, \"use_html_format_email\": false, \"virtual_background\": false, \"virtual_background_settings\": {\"allow_upload_custom\": false, \"allow_videos\": false, \"enable\": false, \"files\": [{\"id\": {}, \"is_default\": {}, \"name\": {}, \"size\": {}, \"type\": {}}]}, \"watermark\": false, \"webinar_question_answer\": false, \"whiteboard\": false, \"who_can_share_screen\": \"host\", \"who_can_share_screen_when_someone_is_sharing\": \"host\", \"workplace_by_facebook\": false}, \"integration\": {\"box\": false, \"dropbox\": false, \"google_calendar\": false, \"google_drive\": false, \"kubi\": false, \"microsoft_one_drive\": false}, \"profile\": {\"recording_storage_location\": {\"allowed_values\": [\"\"], \"value\": \"\"}}, \"recording\": {\"account_user_access_recording\": false, \"allow_recovery_deleted_cloud_recordings\": false, \"archive\": {\"enable\": false, \"settings\": {\"audio_file\": false, \"cc_transcript_file\": false, \"chat_file\": false, \"chat_with_sender_email\": false, \"video_file\": false}, \"type\": 0}, \"auto_delete_cmr\": false, \"auto_delete_cmr_days\": 0, \"auto_recording\": \"local\", \"cloud_recording\": false, \"cloud_recording_download\": false, \"cloud_recording_download_host\": false, \"host_delete_cloud_recording\": false, \"ip_address_access_control\": {\"enable\": false, \"ip_addresses_or_ranges\": \"\"}, \"local_recording\": false, \"prevent_host_access_recording\": false, \"record_audio_file\": false, \"record_gallery_view\": false, \"record_speaker_view\": false, \"recording_audio_transcript\": false, \"recording_disclaimer\": false, \"recording_password_requirement\": {\"have_letter\": false, \"have_number\": false, \"have_special_character\": false, \"length\": 0, \"only_allow_numeric\": false}, \"required_password_for_existing_cloud_recordings\": false, \"save_chat_text\": false, \"show_timestamp\": false}, \"schedule_meeting\": {\"audio_type\": \"both\", \"enforce_login\": false, \"enforce_login_domains\": \"\", \"enforce_login_with_domains\": false, \"force_pmi_jbh_password\": false, \"host_video\": false, \"join_before_host\": false, \"meeting_password_requirement\": {\"consecutive_characters_length\": 0, \"have_letter\": false, \"have_number\": false, \"have_special_character\": false, \"have_upper_and_lower_characters\": false, \"length\": 0, \"only_allow_numeric\": false, \"weak_enhance_detection\": false}, \"not_store_meeting_topic\": false, \"participant_video\": false, \"personal_meeting\": false, \"require_password_for_instant_meetings\": false, \"require_password_for_pmi_meetings\": \"jbh_only\", \"require_password_for_scheduled_meetings\": false, \"require_password_for_scheduling_new_meetings\": false, \"use_pmi_for_instant_meetings\": false, \"use_pmi_for_scheduled_meetings\": false}, \"security\": {\"admin_change_name_pic\": false, \"hide_billing_info\": false, \"import_photos_from_devices\": false, \"password_requirement\": {\"consecutive_characters_length\": 0, \"have_special_character\": false, \"minimum_password_length\": 0, \"weak_enhance_detection\": false}, \"sign_again_period_for_inactivity_on_client\": 0, \"sign_again_period_for_inactivity_on_web\": 0, \"sign_in_with_two_factor_auth\": \"all\", \"sign_in_with_two_factor_auth_groups\": [\"\"], \"sign_in_with_two_factor_auth_roles\": [\"\"]}, \"telephony\": {\"audio_conference_info\": \"\", \"telephony_regions\": {\"selection_values\": [\"\"]}, \"third_party_audio\": false}, \"tsp\": {\"call_out\": false, \"call_out_countries\": [{}], \"display_toll_free_numbers\": false, \"show_international_numbers_link\": false}, \"zoom_rooms\": {\"auto_start_stop_scheduled_meetings\": false, \"cmr_for_instant_meeting\": false, \"force_private_meeting\": false, \"hide_host_information\": false, \"list_meetings_with_calendar\": false, \"start_airplay_manually\": false, \"ultrasonic\": false, \"upcoming_meeting_alert\": false, \"weekly_system_restart\": false, \"zr_post_meeting_feedback\": false}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update settings",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete existing virtual background file(s) from an account. \n\n**Prerequisites:**<br>\n* Virtual background feature must be [enabled](https://support.zoom.us/hc/en-us/articles/210707503-Virtual-Background#h_2ef28080-fce9-4ac2-b567-dc958afab1b7) on the account.\n<br> **Scope:** `account:write:admin`<br> <br> \n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/accounts/{{ACCOUNT_ID}}/settings/virtual_backgrounds",
+      "method": "DELETE",
+      "name": "Delete virtual background files",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "file_ids",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/settings/virtual_backgrounds",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "file_ids",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete virtual background files",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/settings/virtual_backgrounds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "file": ""
+      },
+      "body_json": {
+        "file": ""
+      },
+      "body_text": "{\"file\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this API to [upload virtual background files](https://support.zoom.us/hc/en-us/articles/210707503-Virtual-Background#h_01EJF3YFEWGT8YA0ZJ079JEDQE) for all users on the account to use. \n\n\n**Prerequisites:**<br>\n* Virtual background feature must be [enabled](https://support.zoom.us/hc/en-us/articles/210707503-Virtual-Background#h_2ef28080-fce9-4ac2-b567-dc958afab1b7) on the account.\n<br> **Scope:** `account:write:admin`<br><br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`<br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/settings/virtual_backgrounds",
+      "method": "POST",
+      "name": "Upload virtual background files",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/settings/virtual_backgrounds",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"file\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Upload virtual background files",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/settings/virtual_backgrounds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the list of internal [call-out](https://support.zoom.us/hc/en-us/articles/200942859-How-To-Use-Telephone-Call-Out-) countries of a master account or a sub account. To list call-out enabled countries of a sub account, provide the account ID of the sub account in the `accountId` path parameter. To list call-out enabled countries of a master account, provide `me` as the value of the `accountId` path parameter.\n<br><b>Prerequisites:</b><br>\n* The account making this API request must be a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis) with SIP Connected Audio Plan.<br><br>\n**Scope:** `sip_trunk:master`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries",
+      "method": "GET",
+      "name": "List internal call-out countries",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List internal call-out countries",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "callout_countries": [
+          {
+            "id": ""
+          }
+        ]
+      },
+      "body_json": {
+        "callout_countries": [
+          {
+            "id": ""
+          }
+        ]
+      },
+      "body_text": "{\"callout_countries\": [{\"id\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Specify the list of [call-out](https://support.zoom.us/hc/en-us/articles/200942859-How-To-Use-Telephone-Call-Out-) countries for a master account or a sub account. To add call-out enabled countries to a sub account, provide the account ID of the sub account in the `accountId` path parameter. To add call-out enabled countries to a master account, provide `me` as the value of the `accountId` path parameter.\n<br><b>Prerequisites:</b><br>\n* The account making this API request must be a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis) with SIP Connected Audio Plan.<br><br>\n**Scope:** `sip_trunk:master`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries",
+      "method": "POST",
+      "name": "Add internal call-out countries",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"callout_countries\": [{\"id\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add internal call-out countries",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a previously assigned [call-out](https://support.zoom.us/hc/en-us/articles/200942859-How-To-Use-Telephone-Call-Out-) country from a master account or a sub account. To remove call-out country from a sub account, provide the account ID of the sub account in the `accountId` path parameter. To remove call-out country from a master account, provide `me` as the value of the `accountId` path parameter.\n<br><b>Prerequisites:</b><br>\n* The account making this API request must be a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis) with SIP Connected Audio Plan.<br><br>\n**Scope:** `sip_trunk:master`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries/{{COUNTRY_ID}}",
+      "method": "DELETE",
+      "name": "Delete internal call-out country",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "countryId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "countryId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries/{{COUNTRY_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "countryId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "countryId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete internal call-out country",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/callout_countries/{{COUNTRY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API allows a master account with SIP Connected Audio plan to list internal phone numbers (i.e., numbers that are not provided by Zoom but are owned by the organization consuming the API) assigned to a master account or a sub account.<br><br>To list internal numbers of a sub account, provide the account ID of the sub account in the `accountId` path parameter. To list internal numbers of a  master account, provide `me` as the value of the `accountId` path parameter.\n<br><b>Prerequisites:</b><br>\n* The account making this API request must be a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis) with SIP Connected Audio Plan.<br><br>\n**Scope:** `sip_trunk:master`\n\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers",
+      "method": "GET",
+      "name": "List internal numbers",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "page_size",
+          "value": ""
+        },
+        {
+          "name": "next_page_token",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "page_size",
+          "value": ""
+        },
+        {
+          "name": "next_page_token",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List internal numbers",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "internal_numbers": [
+          {
+            "allow_for_external_meetings": false,
+            "allow_join": false,
+            "country": "",
+            "display_number": "",
+            "labels": "",
+            "languages": "en-GB",
+            "number": "",
+            "type": 0,
+            "visible": false
+          }
+        ]
+      },
+      "body_json": {
+        "internal_numbers": [
+          {
+            "allow_for_external_meetings": false,
+            "allow_join": false,
+            "country": "",
+            "display_number": "",
+            "labels": "",
+            "languages": "en-GB",
+            "number": "",
+            "type": 0,
+            "visible": false
+          }
+        ]
+      },
+      "body_text": "{\"internal_numbers\": [{\"allow_for_external_meetings\": false, \"allow_join\": false, \"country\": \"\", \"display_number\": \"\", \"labels\": \"\", \"languages\": \"en-GB\", \"number\": \"\", \"type\": 0, \"visible\": false}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This API allows a master account with SIP Connected Audio plan to assign internal phone numbers (i.e., numbers that are not provided by Zoom but are owned by the organization consuming the API) to a master account or a sub account.<br><br>To add internal numbers to a sub account, provide the account ID of the sub account in the `accountId` path parameter. To add internal numbers to a master account, provide `me` as the value of the `accountId` path parameter.\n<br><b>Prerequisites:</b><br>\n* The account making this API request must be a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis) with SIP Connected Audio Plan.<br><br>\n**Scope:** `sip_trunk:master`\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers",
+      "method": "POST",
+      "name": "Add internal numbers",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"internal_numbers\": [{\"allow_for_external_meetings\": false, \"allow_join\": false, \"country\": \"\", \"display_number\": \"\", \"labels\": \"\", \"languages\": \"en-GB\", \"number\": \"\", \"type\": 0, \"visible\": false}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add internal numbers",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This API allows a master account with SIP Connected Audio plan to delete a previously assigned internal phone number from a master account or a sub account.<br><br>To delete an internal number from a sub account, provide the account ID of the sub account in the `accountId` path parameter. To delete an internal number from a master account, provide `me` as the value of the `accountId` path parameter.\n<br><b>Prerequisites:</b><br>\n* The account making this API request must be a [master account](https://marketplace.zoom.us/docs/api-reference/master-account-apis) with SIP Connected Audio Plan.<br><br>\n**Scope:** `sip_trunk:master`\n\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers/{{NUMBER_ID}}",
+      "method": "DELETE",
+      "name": "Delete an internal number",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "numberId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "numberId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers/{{NUMBER_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "numberId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "numberId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an internal number",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/internal_numbers/{{NUMBER_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "With SIP-connected audio, Zoom establishes a SIP trunk (a network connection specifically designed to make and deliver phone calls) over a direct and private connection between the customer’s network and the Zoom cloud. Meeting participants that dial into a meeting or have the meeting call them, and are On-Net from the perspective of the customers' IP telephony network, will be connected over this trunk rather than over the PSTN. <br><br>Use this API to delete all internal numbers assigned to a sub account.\n**Prerequisites:**<br>\n\n* Pro or a higher account with SIP Connected Audio plan enabled.\n* The account must be a master account<br>\n**Scopes:** `sip_trunk:master`<br>\n **[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/numbers",
+      "method": "DELETE",
+      "name": "Delete all numbers",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/numbers",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete all numbers",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/numbers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "phone_numbers": [
+          ""
+        ]
+      },
+      "body_json": {
+        "phone_numbers": [
+          ""
+        ]
+      },
+      "body_text": "{\"phone_numbers\": [\"\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "With SIP-connected audio, Zoom establishes a SIP trunk (a network connection specifically designed to make and deliver phone calls) over a direct and private connection between the customer’s network and the Zoom cloud. Meeting participants that dial into a meeting or have the meeting call them, and are On-Net from the perspective of the customers' IP telephony network, will be connected over this trunk rather than over the PSTN. <br><br>Use this API to assign internal numbers to a sub account.\n\n**Prerequisites:**<br>\n* Pro or a higher account with SIP Connected Audio plan enabled.\n* The account must be a master account<br>\n**Scopes:** `sip_trunk:master`<br> \n **[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/numbers",
+      "method": "POST",
+      "name": "Assign numbers",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/numbers",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"phone_numbers\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Assign numbers",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/numbers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "enable": false,
+        "show_callout_internal_number": false,
+        "show_zoom_provided_callout_countries": 0,
+        "show_zoom_provided_numbers": 0
+      },
+      "body_json": {
+        "enable": false,
+        "show_callout_internal_number": false,
+        "show_zoom_provided_callout_countries": 0,
+        "show_zoom_provided_numbers": 0
+      },
+      "body_text": "{\"enable\": false, \"show_callout_internal_number\": false, \"show_zoom_provided_callout_countries\": 0, \"show_zoom_provided_numbers\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "With SIP-connected audio, Zoom establishes a SIP trunk (a network connection specifically designed to make and deliver phone calls) over a direct and private connection between the customer’s network and the Zoom cloud. Meeting participants that dial into a meeting or have the meeting call them, and are On-Net from the perspective of the customers' IP telephony network, will be connected over this trunk rather than over the PSTN. <br><br> Using this API, a master account owner can copy the SIP Connected Audio configurations applied on the master account and enable those configurations on a sub account. The owner can also disable the configuration in the sub account where it was previously enabled. \n**Prerequisites:**<br>\n* Pro or a higher account with SIP Connected Audio plan enabled.\n* master account Owner<br>\n**Scopes:** `sip_trunk:master`<br> \n\n **[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/settings",
+      "method": "PATCH",
+      "name": "Assign SIP trunk configuration",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/settings",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"enable\": false, \"show_callout_internal_number\": false, \"show_zoom_provided_callout_countries\": 0, \"show_zoom_provided_numbers\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Assign SIP trunk configuration",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "With SIP-connected audio, Zoom establishes a SIP trunk (a network connection specifically designed to make and deliver phone calls) over a direct and private connection between the customer’s network and the Zoom cloud. Meeting participants that dial into a meeting or have the meeting call them, and are On-Net from the perspective of the customers’ IP telephony network, will be connected over this trunk rather than over the PSTN.<br><br>\nUse this API to list all the SIP trunks assigned to a master account or a sub account of the master account. To retrieve SIP trunks assigned to a sub account, provide the account ID of the sub account in the `accountId` path parameter. To retrieve SIP trunks of a master account, provide `me` as the value of the `accountId` path parameter. <br><br> **Scope:** `sip_trunk:read:admin`\n<br><b>Prerequisites:</b><br>\n* The account must either be a master account or a sub account with [API Partner Plan](https://zoom.us/plan/api) and SIP Connected Audio Plan.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks",
+      "method": "GET",
+      "name": "List SIP trunks",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List SIP trunks",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "sip_trunks": [
+          {
+            "dnis": "",
+            "id": "",
+            "outbound_caller_id": ""
+          }
+        ]
+      },
+      "body_json": {
+        "sip_trunks": [
+          {
+            "dnis": "",
+            "id": "",
+            "outbound_caller_id": ""
+          }
+        ]
+      },
+      "body_text": "{\"sip_trunks\": [{\"dnis\": \"\", \"id\": \"\", \"outbound_caller_id\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "With SIP-connected audio, Zoom establishes a SIP trunk (a network connection specifically designed to make and deliver phone calls) over a direct and private connection between the customer’s network and the Zoom cloud. Meeting participants that dial into a meeting or have the meeting call them, and are On-Net from the perspective of the customers’ IP telephony network, will be connected over this trunk rather than over the PSTN.<br><br>Use this API to assign SIP trunk(s) that are available on a master account to a sub account. <br><b>Prerequisites:</b><br>\n* The account making this API request must be a master account with [API Partner Plan](https://zoom.us/plan/api) and SIP Connected Audio Plan.<br><br>\n**Scope:** `sip_trunk:master`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks",
+      "method": "POST",
+      "name": "Assign SIP trunks",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"sip_trunks\": [{\"dnis\": \"\", \"id\": \"\", \"outbound_caller_id\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Assign SIP trunks",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this API to remove existing SIP trunk of a sub account.<br>\n<br><b>Prerequisites:</b><br>\n* The account making this API request must be a master account with [API Partner Plan](https://zoom.us/plan/api) and SIP Connected Audio Plan.<br><br>\n**Scope:** `sip_trunk:master`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks/{{TRUNK_ID}}",
+      "method": "DELETE",
+      "name": "Delete a SIP trunk",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "trunkId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "trunkId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks/{{TRUNK_ID}}",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "trunkId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "trunkId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a SIP trunk",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/sip_trunk/trunks/{{TRUNK_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get trusted domains of a sub account. To get the trusted domains of a master account, use `me` as the value for the `accountId` path parameter.\n\n**Prerequisites:**<br>\n* The sub account must be a paid account.<br>\n**Scope:** `account:read:admin`<br>\n **[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/accounts/{{ACCOUNT_ID}}/trusted_domains",
+      "method": "GET",
+      "name": "Get trusted domains",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/trusted_domains",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get trusted domains",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/trusted_domains"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "account_id": ""
+      },
+      "body_json": {
+        "account_id": ""
+      },
+      "body_text": "{\"account_id\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Disassociate a user from one Account and move the user to another Account under the same master account. \n\nWith this API, a user under a master account or a sub account can be moved to another sub account within the same master account. To move a user from a master account to a sub account, use `me` as the value for `accountId`. In this scenario, \"me\" refers to the Account ID of the master account. \n\nTo move a user from one sub account to another sub account, provide the sub account's Account ID as the value for `accountId`. \n\n**Prerequisites**:\n* The account should have Pro or a higher plan with master account option enabled.\n* The user whose account needs to be switched should not be an admin or an owner of that account.\n* The user should not have the same [managed domain](https://support.zoom.us/hc/en-us/articles/203395207-What-is-Managed-Domain-) as the account owner.\n\n**Scope:** `user:master`<br> \n\n **[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Light`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/accounts/{{ACCOUNT_ID}}/users/{{USER_ID}}/account",
+      "method": "PUT",
+      "name": "Switch a user's account",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/accounts/{{ACCOUNT_ID}}/users/{{USER_ID}}/account",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": ""
+        },
+        {
+          "name": "userId",
+          "value": ""
+        },
+        {
+          "name": "accountId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account_id\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Switch a user's account",
+      "url": "https://api.zoom.us/v2/accounts/{{ACCOUNT_ID}}/users/{{USER_ID}}/account"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Download a [billed](https://support.zoom.us/hc/en-us/articles/201363263-About-Billing) invoice file of a Zoom account in PDF format. To download a regular account's invoice or a  master account's invoice, provide `me` as the value of `accountId` path parameter. To download a sub account's invoice, provide the account ID of the sub account in the `accountId` path parameter. \n\n\n**Prerequisites:**\n* Account must be enrolled in Pro or a higher plan.<br>\n\n**Scope**:`billing:master`<br>\n**Rate Limit:** You can make **one** request to this API every **thirty** minutes until the daily limit is reached. This API has a daily limit of **100** requests per **account**.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/api/download/billing/invoices/{{INVOICE_ID}}",
+      "method": "GET",
+      "name": "Download an invoice file",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "invoiceId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/api/download/billing/invoices/{{INVOICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "invoiceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Download an invoice file",
+      "url": "https://api.zoom.us/v2/api/download/billing/invoices/{{INVOICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Zoom’s [archiving solution](https://support.zoom.us/hc/en-us/articles/360050431572-Archiving-Meeting-and-Webinar-data) allows account administrators to set up an automated mechanism to record, collect and archive meeting data to a 3rd party platform of their choice and hence, satisfy FINRA and/ or other compliance requirements.<br><br>\nUse this API to retrieve archived meeting or webinar files of an account.\n\n**Scope:** `recording:read:admin`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`<br><br>\n**Prerequisites:** <br>\n* Enable cloud recording.\n* Follow the [enablement process](https://support.zoom.us/hc/en-us/articles/360050431572-Archiving-Meeting-and-Webinar-data#h_01ENPBD3WR68D7FAKTBY92SG45) to access the archiving feature.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/archive_files",
+      "method": "GET",
+      "name": "List archived files",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "page_size",
+          "value": ""
+        },
+        {
+          "name": "next_page_token",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        },
+        {
+          "name": "query_data_type",
+          "value": ""
+        }
+      ],
+      "path": "/v2/archive_files",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page_size",
+          "value": ""
+        },
+        {
+          "name": "next_page_token",
+          "value": ""
+        },
+        {
+          "name": "from",
+          "value": ""
+        },
+        {
+          "name": "to",
+          "value": ""
+        },
+        {
+          "name": "query_data_type",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List archived files",
+      "url": "https://api.zoom.us/v2/archive_files"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Zoom chat [channels](https://support.zoom.us/hc/en-us/articles/200912909-Getting-Started-With-Channels-Group-Messaging-) allow users to communicate via chat in private or public groups. Use this API to delete a specific channel. \n\n**Scope:** `chat_channel:write`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`\n\n<p style=\"background-color:#e1f5fe; color:#01579b; padding:8px\"> <b>Note: </b> This API only supports <b>user-managed</b> <a href=\"https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app\">OAuth app</a>.</p><br>\n\n\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/chat/channels/{{CHANNEL_ID}}",
+      "method": "DELETE",
+      "name": "Delete a channel",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "channelId",
+          "value": ""
+        },
+        {
+          "name": "channelId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/chat/channels/{{CHANNEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "channelId",
+          "value": ""
+        },
+        {
+          "name": "channelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a channel",
+      "url": "https://api.zoom.us/v2/chat/channels/{{CHANNEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Zoom chat [channels](https://support.zoom.us/hc/en-us/articles/200912909-Getting-Started-With-Channels-Group-Messaging-) allow users to communicate via chat in private or public groups. Use this API to get information about a specific channel. \n\n**Scope:** `chat_channel:read`\t<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`\n\n<p style=\"background-color:#e1f5fe; color:#01579b; padding:8px\"> <b>Note: </b> This API only supports <b>user-managed</b> <a href=\"https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app\">OAuth app</a>.</p><br>\n\n\n ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/chat/channels/{{CHANNEL_ID}}",
+      "method": "GET",
+      "name": "Get a channel",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "channelId",
+          "value": ""
+        },
+        {
+          "name": "channelId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/chat/channels/{{CHANNEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "channelId",
+          "value": ""
+        },
+        {
+          "name": "channelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a channel",
+      "url": "https://api.zoom.us/v2/chat/channels/{{CHANNEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "name": ""
+      },
+      "body_json": {
+        "name": ""
+      },
+      "body_text": "{\"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Zoom chat channels allow users to communicate via chat in private or public channels. Use this API to update the name of a specific channel that you created. \n\n**Scope:** `chat_channel:write`\t<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`\n\n<p style=\"background-color:#e1f5fe; color:#01579b; padding:8px\"> <b>Note: </b> This API only supports <b>user-managed</b> <a href=\"https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app\">OAuth app</a>.</p><br>\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v2/chat/channels/{{CHANNEL_ID}}",
+      "method": "PATCH",
+      "name": "Update a channel",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "channelId",
+          "value": ""
+        },
+        {
+          "name": "channelId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/chat/channels/{{CHANNEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "channelId",
+          "value": ""
+        },
+        {
+          "name": "channelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a channel",
+      "url": "https://api.zoom.us/v2/chat/channels/{{CHANNEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ZOOM_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "If you're no longer interested in being a member of an existing channel, you can leave the channel at any time. Use this API to leave a specific channel. After leaving the channel, you can no longer access information from that channel.\n\n<p style=\"background-color:#e1f5fe; color:#01579b; padding:8px\"> <b>Note: </b>This API only supports <b>user-managed</b> <a href=\"https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app\">OAuth app</a>.</p><br>\n\n**Scope:** `chat_channel:write`<br>\n**[Rate Limit Label](https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits):** `Medium`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ZOOM_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/chat/channels/{{CHANNEL_ID}}/members/me",
+      "method": "DELETE",
+      "name": "Leave a channel",
+      "note": "Replace {{ZOOM_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "channelId",
+          "value": ""
+        },
+        {
+          "name": "channelId",
+          "value": ""
+        }
+      ],
+      "path": "/v2/chat/channels/{{CHANNEL_ID}}/members/me",
+      "pathParameters": [
+        {
+          "name": "channelId",
+          "value": ""
+        },
+        {
+          "name": "channelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Leave a channel",
+      "url": "https://api.zoom.us/v2/chat/channels/{{CHANNEL_ID}}/members/me"
+    }
+  ]
+}

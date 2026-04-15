@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Explorer Marketplace</title>
+  <style>
+    :root {
+      --bg: #0a1220;
+      --panel: #111c30;
+      --panel-2: #16243c;
+      --text: #eaf2ff;
+      --muted: #a7bad7;
+      --line: #294060;
+      --accent: #f2b84b;
+      --accent-2: #67d5c4;
+      --good: #89e3a8;
+      --warn: #ffd670;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #07101d 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+    .shell {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      min-height: 100vh;
+    }
+    .sidebar, .main {
+      padding: 22px;
+    }
+    .sidebar {
+      border-right: 1px solid var(--line);
+      background: rgba(8, 14, 24, 0.45);
+      backdrop-filter: blur(10px);
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .api-card {
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .api-card:hover {
+      transform: translateY(-1px);
+    }
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .chip, .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin: 6px 6px 0 0;
+    }
+    .chip {
+      background: rgba(103, 213, 196, 0.14);
+      color: var(--accent-2);
+      border: 1px solid rgba(103, 213, 196, 0.28);
+    }
+    .badge {
+      background: rgba(242, 184, 75, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(242, 184, 75, 0.24);
+    }
+    .pill-good {
+      color: var(--good);
+      border: 1px solid rgba(137, 227, 168, 0.35);
+      background: rgba(137, 227, 168, 0.08);
+    }
+    .pill-warn {
+      color: var(--warn);
+      border: 1px solid rgba(255, 214, 112, 0.35);
+      background: rgba(255, 214, 112, 0.08);
+    }
+    input, select {
+      width: 100%;
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #0e1728;
+      color: var(--text);
+    }
+    button {
+      border: 0;
+      background: var(--accent);
+      color: #09111f;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 10px 8px 0 0;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .stat {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .stat strong {
+      font-size: 20px;
+      display: block;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #0c1525;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      overflow: auto;
+    }
+    .endpoint {
+      border-top: 1px solid var(--line);
+      padding: 14px 0;
+    }
+    .tool-result-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .method {
+      color: var(--accent-2);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .stage {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      min-height: 110px;
+    }
+    @media (max-width: 960px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidebar { border-right: 0; border-bottom: 1px solid var(--line); }
+      .stats, .pipeline { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="card">
+        <div class="small">Pipeline + MCP + UI integration</div>
+        <h1>API Explorer</h1>
+        <p class="small">
+          This page can run standalone from the published marketplace files, or
+          inside an MCP host using bootstrapped data.
+        </p>
+        <input id="search" placeholder="Search title, tags, description" />
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+        </select>
+        <select id="authFilter">
+          <option value="">Any auth</option>
+          <option value="true">Requires auth</option>
+          <option value="false">No auth</option>
+        </select>
+      </div>
+      <div id="apiList"></div>
+    </aside>
+
+    <main class="main">
+      <div class="card">
+        <div class="small">7-stage pipeline placement</div>
+        <h2>How your pipeline and MCP fit together</h2>
+        <div class="pipeline">
+          <div class="stage"><strong>1. Fetch</strong><br><span class="small">fetcher.py builds raw source inventory.</span></div>
+          <div class="stage"><strong>2. Parse</strong><br><span class="small">parser.py normalizes OpenAPI, Swagger, HTML, and Markdown.</span></div>
+          <div class="stage"><strong>3. Enrich</strong><br><span class="small">enricher.py adds categories, auth placeholders, and notes.</span></div>
+          <div class="stage"><strong>4. Publish</strong><br><span class="small">publisher.py writes marketplace/index.json and apis/*.json.</span></div>
+          <div class="stage"><strong>5. Validate</strong><br><span class="small">validator.py removes malformed or unsafe templates.</span></div>
+          <div class="stage"><strong>6. Deploy</strong><br><span class="small">deployer.py prepares GitHub Pages structure.</span></div>
+          <div class="stage"><strong>7. Search</strong><br><span class="small">search_indexer.py supports fast browsing. MCP now sits here.</span></div>
+        </div>
+      </div>
+
+      <div class="card" id="pipelineStatus"></div>
+      <div class="card" id="toolResults">
+        <div class="tool-result-title">
+          <div>
+            <div class="small">MCP tool bridge</div>
+            <h2>Inline tool output</h2>
+          </div>
+          <button id="validationBtn">Validation Report</button>
+        </div>
+        <p class="small">Button clicks in this UI now render MCP tool output here. In standalone mode, the page simulates the tool result from the published marketplace files. In embedded mode, it can receive a JSON-RPC tool response from the host.</p>
+        <pre id="toolResultBody">No tool call yet.</pre>
+      </div>
+      <div id="detail"></div>
+    </main>
+  </div>
+
+  <script>
+    window.__PIPELINE_BOOTSTRAP__ = window.__PIPELINE_BOOTSTRAP__ || null;
+
+    const state = {
+      index: {},
+      selectedApiId: null,
+      search: "",
+      category: "",
+      requiresAuth: "",
+      detailsCache: new Map(),
+      pipelineStatus: null,
+      pendingToolCalls: new Map(),
+    };
+
+    async function initData() {
+      if (window.__PIPELINE_BOOTSTRAP__) {
+        state.index = window.__PIPELINE_BOOTSTRAP__.index || {};
+        state.pipelineStatus = window.__PIPELINE_BOOTSTRAP__.pipelineStatus || null;
+        renderCategoryOptions(window.__PIPELINE_BOOTSTRAP__.categories || []);
+      } else {
+        state.index = await fetchJson("marketplace/index.json");
+        renderCategoryOptions(collectCategories());
+        try {
+          state.pipelineStatus = {
+            published_api_count: Object.keys(state.index).length,
+            categories: collectCategories(),
+            invalid_templates: 0,
+          };
+        } catch (_) {
+          state.pipelineStatus = null;
+        }
+      }
+      state.selectedApiId = Object.keys(state.index)[0] || null;
+      renderPipelineStatus();
+      renderList();
+      bindGlobalActions();
+      await renderDetail();
+    }
+
+    function collectCategories() {
+      const values = new Set();
+      Object.values(state.index).forEach(entry => {
+        (entry.categories || []).forEach(category => values.add(category));
+      });
+      return [...values].sort();
+    }
+
+    function renderCategoryOptions(categories) {
+      const select = document.getElementById("categoryFilter");
+      select.innerHTML = '<option value="">All categories</option>' +
+        categories.map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join("");
+    }
+
+    function filteredApis() {
+      const query = state.search.toLowerCase();
+      return Object.values(state.index).filter(entry => {
+        const haystack = JSON.stringify(entry).toLowerCase();
+        const matchesQuery = !query || haystack.includes(query);
+        const matchesCategory = !state.category || (entry.categories || []).includes(state.category);
+        const matchesAuth = state.requiresAuth === ""
+          || String(Boolean(entry.requires_auth)) === state.requiresAuth;
+        return matchesQuery && matchesCategory && matchesAuth;
+      }).sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+    }
+
+    async function getApiDetail(apiId) {
+      if (state.detailsCache.has(apiId)) {
+        return state.detailsCache.get(apiId);
+      }
+
+      let detail = null;
+      if (window.__PIPELINE_BOOTSTRAP__ && window.parent !== window) {
+        detail = null;
+      }
+      if (!detail) {
+        const entry = state.index[apiId];
+        if (!entry) return null;
+        detail = await fetchJson(`marketplace/${entry.filename}`);
+      }
+      detail.suggested_sequence = suggestSequence(detail);
+      state.detailsCache.set(apiId, detail);
+      return detail;
+    }
+
+    function suggestSequence(detail) {
+      const requests = detail.requests || [];
+      return requests
+        .map(request => {
+          const method = String(request.method || "GET").toUpperCase();
+          const url = String(request.url || "").toLowerCase();
+          let rank = 50;
+          if (url.includes("auth") || url.includes("login") || url.includes("token")) rank = 0;
+          else if (method === "POST" && !url.includes("{")) rank = 10;
+          else if (method === "GET" && !url.includes("{")) rank = 20;
+          else if (method === "POST") rank = 30;
+          else if (method === "GET") rank = 40;
+          return { rank, name: request.name || request.url };
+        })
+        .sort((a, b) => a.rank - b.rank)
+        .map(item => item.name);
+    }
+
+    function renderPipelineStatus() {
+      const node = document.getElementById("pipelineStatus");
+      const status = state.pipelineStatus;
+      if (!status) {
+        node.innerHTML = "<h2>Pipeline status unavailable</h2>";
+        return;
+      }
+      node.innerHTML = `
+        <div class="small">Integration point</div>
+        <h2>MCP reads the outputs after stage 7</h2>
+        <p class="small">The MCP server does not replace your pipeline. It reads the published marketplace, validation report, and metrics, then gives AI agents a structured way to search, inspect, import, and reason about the catalog.</p>
+        <div class="stats">
+          <div class="stat"><strong>${status.published_api_count || 0}</strong><span class="small">published APIs</span></div>
+          <div class="stat"><strong>${(status.categories || []).length}</strong><span class="small">categories</span></div>
+          <div class="stat"><strong>${status.invalid_templates || 0}</strong><span class="small">invalid templates</span></div>
+        </div>
+      `;
+    }
+
+    function renderList() {
+      const node = document.getElementById("apiList");
+      const apis = filteredApis();
+      node.innerHTML = apis.map(entry => `
+        <div class="card api-card" data-api-id="${escapeHtml(entry.id)}">
+          <div class="header">
+            <div>
+              <strong>${escapeHtml(entry.title || entry.id)}</strong>
+              <div class="small">${escapeHtml(entry.description || "No description")}</div>
+            </div>
+            <span class="chip">${entry.endpoint_count || 0} endpoints</span>
+          </div>
+          <div>${(entry.categories || []).map(category => `<span class="badge">${escapeHtml(category)}</span>`).join("")}</div>
+          <div style="margin-top:8px">
+            <span class="badge ${entry.requires_auth ? "pill-warn" : "pill-good"}">${entry.requires_auth ? "Requires auth" : "No auth"}</span>
+          </div>
+        </div>
+      `).join("");
+
+      node.querySelectorAll("[data-api-id]").forEach(element => {
+        element.addEventListener("click", async () => {
+          state.selectedApiId = element.getAttribute("data-api-id");
+          await renderDetail();
+        });
+      });
+    }
+
+    async function renderDetail() {
+      const container = document.getElementById("detail");
+      if (!state.selectedApiId) {
+        container.innerHTML = '<div class="card"><h2>No API selected</h2></div>';
+        return;
+      }
+
+      const detail = await getApiDetail(state.selectedApiId);
+      if (!detail) {
+        container.innerHTML = '<div class="card"><h2>Unable to load API details</h2></div>';
+        return;
+      }
+
+      const info = detail.info || {};
+      container.innerHTML = `
+        <div class="card">
+          <div class="header">
+            <div>
+              <div class="small">Published API template</div>
+              <h2>${escapeHtml(info.title || detail.id)}</h2>
+              <p class="small">${escapeHtml(info.description || "No description available.")}</p>
+            </div>
+            <div>
+              <button id="importBtn">Generate API Dash Import</button>
+              <button id="sequenceBtn">Show Suggested Flow</button>
+            </div>
+          </div>
+          <p><strong>Base URL:</strong> ${escapeHtml(info.base_url || "Not documented")}</p>
+          <p><strong>Source:</strong> ${escapeHtml(info.source || "unknown")}</p>
+          <div>${(info.tags || []).map(tag => `<span class="badge">${escapeHtml(tag)}</span>`).join("")}</div>
+          <h3>Suggested request sequence</h3>
+          <pre>${escapeHtml(JSON.stringify(detail.suggested_sequence || [], null, 2))}</pre>
+        </div>
+        <div class="card">
+          <h3>Requests</h3>
+          ${(detail.requests || []).map(request => `
+            <div class="endpoint">
+              <div><span class="method">${escapeHtml(request.method || "GET")}</span>${escapeHtml(request.url || "")}</div>
+              <div><strong>${escapeHtml(request.name || "Unnamed request")}</strong></div>
+              <div class="small">${escapeHtml(request.note || request.description || "No note available.")}</div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+
+      document.getElementById("importBtn").addEventListener("click", () => {
+        callHostTool("generate_apidash_collection", { api_id: detail.id });
+      });
+      document.getElementById("sequenceBtn").addEventListener("click", () => {
+        callHostTool("suggest_sequence", { api_id: detail.id });
+      });
+    }
+
+    function bindGlobalActions() {
+      document.getElementById("validationBtn").addEventListener("click", () => {
+        callHostTool("read_validation_report", { limit: 10 });
+      });
+    }
+
+    async function callHostTool(name, args) {
+      const message = {
+        jsonrpc: "2.0",
+        id: Date.now(),
+        method: "tools/call",
+        params: { name, arguments: args },
+      };
+
+      renderToolResult(`Calling ${name}...`);
+
+      if (window.parent !== window) {
+        state.pendingToolCalls.set(message.id, { name, args });
+        window.parent.postMessage(message, "*");
+      } else {
+        const result = await localToolCall(name, args);
+        renderToolResult(JSON.stringify(result, null, 2));
+        console.log("Local tool call", message, result);
+      }
+    }
+
+    async function localToolCall(name, args) {
+      if (name === "generate_apidash_collection") {
+        const detail = await getApiDetail(args.api_id);
+        return {
+          collection_name: `${detail.info?.title || detail.id} - API Dash Import`,
+          api_id: detail.id,
+          base_url: detail.info?.base_url || "",
+          description: detail.info?.description || "",
+          requests: (detail.requests || []).map(request => ({
+            name: request.name || "",
+            method: request.method || "GET",
+            url: request.url || "",
+            headers: Object.entries(request.headers || {}).map(([key, value]) => ({
+              name: key,
+              value,
+              enabled: true,
+            })),
+            body: request.body || {},
+            auth: request.auth || { type: "none" },
+            note: request.note || "",
+          })),
+        };
+      }
+      if (name === "suggest_sequence") {
+        const detail = await getApiDetail(args.api_id);
+        return { api_id: args.api_id, sequence: suggestSequence(detail) };
+      }
+      if (name === "read_validation_report") {
+        const report = await fetchJson("logs/validation_report.json");
+        const invalid = report.filter(entry => !entry.is_valid);
+        return {
+          invalid_count: invalid.length,
+          entries: invalid.slice(0, Number(args.limit || 20)),
+        };
+      }
+      if (name === "get_pipeline_status") {
+        return state.pipelineStatus || {};
+      }
+      return { error: `Unsupported local tool call: ${name}` };
+    }
+
+    function renderToolResult(text) {
+      document.getElementById("toolResultBody").textContent = text;
+    }
+
+    window.addEventListener("message", event => {
+      const data = event.data;
+      if (!data || typeof data !== "object") return;
+      if (data.jsonrpc !== "2.0" || !("id" in data)) return;
+      if (!state.pendingToolCalls.has(data.id)) return;
+
+      state.pendingToolCalls.delete(data.id);
+      if (data.result && Array.isArray(data.result.content) && data.result.content[0]?.text) {
+        renderToolResult(data.result.content[0].text);
+        return;
+      }
+      renderToolResult(JSON.stringify(data.result || data.error || data, null, 2));
+    });
+
+    async function fetchJson(path) {
+      const response = await fetch(path);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${path}: ${response.status}`);
+      }
+      return await response.json();
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll("\"", "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    document.getElementById("search").addEventListener("input", async event => {
+      state.search = event.target.value;
+      renderList();
+      await renderDetail();
+    });
+    document.getElementById("categoryFilter").addEventListener("change", async event => {
+      state.category = event.target.value;
+      renderList();
+      await renderDetail();
+    });
+    document.getElementById("authFilter").addEventListener("change", async event => {
+      state.requiresAuth = event.target.value;
+      renderList();
+      await renderDetail();
+    });
+
+    initData().catch(error => {
+      document.getElementById("detail").innerHTML = `<div class="card"><h2>Explorer failed to load</h2><pre>${escapeHtml(error.stack || String(error))}</pre></div>`;
+    });
+  </script>
+</body>
+</html>

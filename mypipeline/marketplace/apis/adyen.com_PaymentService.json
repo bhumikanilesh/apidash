@@ -1,0 +1,3366 @@
+{
+  "id": "adyen.com_PaymentService",
+  "info": {
+    "base_url": "https://pal-test.adyen.com/pal/servlet/Payment/v68",
+    "description": "This endpoint allows you to cancel an unreferenced refund request before it has been completed.\n\nIn your call, you can refer to the original refund request either by using the `tenderReference`, or...",
+    "source": "apis.guru",
+    "tags": [
+      "finance",
+      "text-generation"
+    ],
+    "title": "Adyen Payment API",
+    "version": "68"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_json": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_text": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Allows you to increase or decrease the authorised amount after the initial authorisation has taken place. This functionality enables for example tipping, improving the chances your authorisation will be valid, or charging the shopper when they have already left the merchant premises.\n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce).\n> If you have a [newer integration](https://docs.adyen.com/online-payments), and are doing:\n> * [Asynchronous adjustments](https://docs.adyen.com/online-payments/adjust-authorisation#asynchronous-or-synchronous-adjustment), use the [`/payments/{paymentPspReference}/amountUpdates`](https://docs.adyen.com/api-explorer/#/CheckoutService/v67/post/payments/{paymentPspReference}/amountUpdates) endpoint on Checkout API.\n> * [Synchronous adjustments](https://docs.adyen.com/online-payments/adjust-authorisation#asynchronous-or-synchronous-adjustment), use this endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/adjustAuthorisation",
+      "method": "POST",
+      "name": "Change the authorised amount",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/adjustAuthorisation",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change the authorised amount",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/adjustAuthorisation"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "accountInfo": {
+          "accountAgeIndicator": "notApplicable",
+          "accountChangeDate": "",
+          "accountChangeIndicator": "thisTransaction",
+          "accountCreationDate": "",
+          "accountType": "notApplicable",
+          "addCardAttemptsDay": 0,
+          "deliveryAddressUsageDate": "",
+          "deliveryAddressUsageIndicator": "thisTransaction",
+          "homePhone": "",
+          "mobilePhone": "",
+          "passwordChangeDate": "",
+          "passwordChangeIndicator": "notApplicable",
+          "pastTransactionsDay": 0,
+          "pastTransactionsYear": 0,
+          "paymentAccountAge": "",
+          "paymentAccountIndicator": "notApplicable",
+          "purchasesLast6Months": 0,
+          "suspiciousActivity": false,
+          "workPhone": ""
+        },
+        "additionalAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "applicationInfo": {
+          "adyenLibrary": {
+            "name": "",
+            "version": ""
+          },
+          "adyenPaymentSource": {
+            "name": "",
+            "version": ""
+          },
+          "externalPlatform": {
+            "integrator": "",
+            "name": "",
+            "version": ""
+          },
+          "merchantApplication": {
+            "name": "",
+            "version": ""
+          },
+          "merchantDevice": {
+            "os": "",
+            "osVersion": "",
+            "reference": ""
+          },
+          "shopperInteractionDevice": {
+            "locale": "",
+            "os": "",
+            "osVersion": ""
+          }
+        },
+        "bankAccount": {
+          "bankAccountNumber": "",
+          "bankCity": "",
+          "bankLocationId": "",
+          "bankName": "",
+          "bic": "",
+          "countryCode": "",
+          "iban": "",
+          "ownerName": "",
+          "taxId": ""
+        },
+        "billingAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "browserInfo": {
+          "acceptHeader": "",
+          "colorDepth": 0,
+          "javaEnabled": false,
+          "javaScriptEnabled": true,
+          "language": "",
+          "screenHeight": 0,
+          "screenWidth": 0,
+          "timeZoneOffset": 0,
+          "userAgent": ""
+        },
+        "captureDelayHours": 0,
+        "card": {
+          "cvc": "",
+          "expiryMonth": "",
+          "expiryYear": "",
+          "holderName": "",
+          "issueNumber": "",
+          "number": "",
+          "startMonth": "",
+          "startYear": ""
+        },
+        "dateOfBirth": "",
+        "dccQuote": {
+          "account": "",
+          "accountType": "",
+          "baseAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "basePoints": 0,
+          "buy": {
+            "currency": "",
+            "value": 0
+          },
+          "interbank": {
+            "currency": "",
+            "value": 0
+          },
+          "reference": "",
+          "sell": {
+            "currency": "",
+            "value": 0
+          },
+          "signature": "",
+          "source": "",
+          "type": "",
+          "validTill": ""
+        },
+        "deliveryAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "deliveryDate": "",
+        "deviceFingerprint": "",
+        "entityType": "NaturalPerson",
+        "fraudOffset": 0,
+        "fundDestination": {
+          "additionalData": {},
+          "billingAddress": {
+            "city": "",
+            "country": "",
+            "houseNumberOrName": "",
+            "postalCode": "",
+            "stateOrProvince": "",
+            "street": ""
+          },
+          "card": {
+            "cvc": "",
+            "expiryMonth": "",
+            "expiryYear": "",
+            "holderName": "",
+            "issueNumber": "",
+            "number": "",
+            "startMonth": "",
+            "startYear": ""
+          },
+          "selectedRecurringDetailReference": "",
+          "shopperEmail": "",
+          "shopperName": {
+            "firstName": "",
+            "lastName": ""
+          },
+          "shopperReference": "",
+          "subMerchant": {
+            "city": "",
+            "country": "",
+            "mcc": "",
+            "name": "",
+            "taxId": ""
+          },
+          "telephoneNumber": ""
+        },
+        "fundSource": {
+          "additionalData": {},
+          "billingAddress": {
+            "city": "",
+            "country": "",
+            "houseNumberOrName": "",
+            "postalCode": "",
+            "stateOrProvince": "",
+            "street": ""
+          },
+          "card": {
+            "cvc": "",
+            "expiryMonth": "",
+            "expiryYear": "",
+            "holderName": "",
+            "issueNumber": "",
+            "number": "",
+            "startMonth": "",
+            "startYear": ""
+          },
+          "shopperEmail": "",
+          "shopperName": {
+            "firstName": "",
+            "lastName": ""
+          },
+          "telephoneNumber": ""
+        },
+        "fundingSource": "debit",
+        "installments": {
+          "plan": "regular",
+          "value": 0
+        },
+        "localizedShopperStatement": {},
+        "mandate": {
+          "amount": "",
+          "amountRule": "max",
+          "billingAttemptsRule": "on",
+          "billingDay": "",
+          "endsAt": "",
+          "frequency": "adhoc",
+          "remarks": "",
+          "startsAt": ""
+        },
+        "mcc": "",
+        "merchantAccount": "",
+        "merchantOrderReference": "",
+        "merchantRiskIndicator": {
+          "addressMatch": false,
+          "deliveryAddressIndicator": "shipToBillingAddress",
+          "deliveryEmail": "",
+          "deliveryEmailAddress": "",
+          "deliveryTimeframe": "electronicDelivery",
+          "giftCardAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "giftCardCount": 0,
+          "giftCardCurr": "",
+          "preOrderDate": "",
+          "preOrderPurchase": false,
+          "preOrderPurchaseInd": "",
+          "reorderItems": false,
+          "reorderItemsInd": "",
+          "shipIndicator": ""
+        },
+        "metadata": {},
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "nationality": "",
+        "orderReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "recurring": {
+          "contract": "ONECLICK",
+          "recurringDetailName": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "tokenService": "VISATOKENSERVICE"
+        },
+        "recurringProcessingModel": "CardOnFile",
+        "reference": "",
+        "selectedBrand": "",
+        "selectedRecurringDetailReference": "",
+        "sessionId": "",
+        "shopperEmail": "",
+        "shopperIP": "",
+        "shopperInteraction": "Ecommerce",
+        "shopperLocale": "",
+        "shopperName": {
+          "firstName": "",
+          "lastName": ""
+        },
+        "shopperReference": "",
+        "shopperStatement": "",
+        "socialSecurityNumber": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "store": "",
+        "telephoneNumber": "",
+        "threeDS2RequestData": {
+          "acctInfo": {
+            "chAccAgeInd": "01",
+            "chAccChange": "",
+            "chAccChangeInd": "01",
+            "chAccPwChange": "",
+            "chAccPwChangeInd": "01",
+            "chAccString": "",
+            "nbPurchaseAccount": "",
+            "paymentAccAge": "",
+            "paymentAccInd": "01",
+            "provisionAttemptsDay": "",
+            "shipAddressUsage": "",
+            "shipAddressUsageInd": "01",
+            "shipNameIndicator": "01",
+            "suspiciousAccActivity": "01",
+            "txnActivityDay": "",
+            "txnActivityYear": ""
+          },
+          "acctType": "01",
+          "acquirerBIN": "",
+          "acquirerMerchantID": "",
+          "addrMatch": "Y",
+          "authenticationOnly": false,
+          "challengeIndicator": "noPreference",
+          "deviceChannel": "",
+          "deviceRenderOptions": {
+            "sdkInterface": "native",
+            "sdkUiType": [
+              "multiSelect"
+            ]
+          },
+          "homePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "mcc": "",
+          "merchantName": "",
+          "messageVersion": "2.1.0",
+          "mobilePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "notificationURL": "",
+          "payTokenInd": false,
+          "paymentAuthenticationUseCase": "",
+          "purchaseInstalData": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "sdkAppID": "",
+          "sdkEncData": "",
+          "sdkEphemPubKey": {
+            "crv": "",
+            "kty": "",
+            "x": "",
+            "y": ""
+          },
+          "sdkMaxTimeout": 60,
+          "sdkReferenceNumber": "",
+          "sdkTransID": "",
+          "sdkVersion": "",
+          "threeDSCompInd": "",
+          "threeDSRequestorAuthenticationInd": "",
+          "threeDSRequestorAuthenticationInfo": {
+            "threeDSReqAuthData": "",
+            "threeDSReqAuthMethod": "01",
+            "threeDSReqAuthTimestamp": ""
+          },
+          "threeDSRequestorChallengeInd": "01",
+          "threeDSRequestorID": "",
+          "threeDSRequestorName": "",
+          "threeDSRequestorPriorAuthenticationInfo": {
+            "threeDSReqPriorAuthData": "",
+            "threeDSReqPriorAuthMethod": "01",
+            "threeDSReqPriorAuthTimestamp": "",
+            "threeDSReqPriorRef": ""
+          },
+          "threeDSRequestorURL": "",
+          "transType": "01",
+          "transactionType": "goodsOrServicePurchase",
+          "whiteListStatus": "",
+          "workPhone": {
+            "cc": "",
+            "subscriber": ""
+          }
+        },
+        "threeDSAuthenticationOnly": false,
+        "totalsGroup": "",
+        "trustedShopper": false
+      },
+      "body_json": {
+        "accountInfo": {
+          "accountAgeIndicator": "notApplicable",
+          "accountChangeDate": "",
+          "accountChangeIndicator": "thisTransaction",
+          "accountCreationDate": "",
+          "accountType": "notApplicable",
+          "addCardAttemptsDay": 0,
+          "deliveryAddressUsageDate": "",
+          "deliveryAddressUsageIndicator": "thisTransaction",
+          "homePhone": "",
+          "mobilePhone": "",
+          "passwordChangeDate": "",
+          "passwordChangeIndicator": "notApplicable",
+          "pastTransactionsDay": 0,
+          "pastTransactionsYear": 0,
+          "paymentAccountAge": "",
+          "paymentAccountIndicator": "notApplicable",
+          "purchasesLast6Months": 0,
+          "suspiciousActivity": false,
+          "workPhone": ""
+        },
+        "additionalAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "applicationInfo": {
+          "adyenLibrary": {
+            "name": "",
+            "version": ""
+          },
+          "adyenPaymentSource": {
+            "name": "",
+            "version": ""
+          },
+          "externalPlatform": {
+            "integrator": "",
+            "name": "",
+            "version": ""
+          },
+          "merchantApplication": {
+            "name": "",
+            "version": ""
+          },
+          "merchantDevice": {
+            "os": "",
+            "osVersion": "",
+            "reference": ""
+          },
+          "shopperInteractionDevice": {
+            "locale": "",
+            "os": "",
+            "osVersion": ""
+          }
+        },
+        "bankAccount": {
+          "bankAccountNumber": "",
+          "bankCity": "",
+          "bankLocationId": "",
+          "bankName": "",
+          "bic": "",
+          "countryCode": "",
+          "iban": "",
+          "ownerName": "",
+          "taxId": ""
+        },
+        "billingAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "browserInfo": {
+          "acceptHeader": "",
+          "colorDepth": 0,
+          "javaEnabled": false,
+          "javaScriptEnabled": true,
+          "language": "",
+          "screenHeight": 0,
+          "screenWidth": 0,
+          "timeZoneOffset": 0,
+          "userAgent": ""
+        },
+        "captureDelayHours": 0,
+        "card": {
+          "cvc": "",
+          "expiryMonth": "",
+          "expiryYear": "",
+          "holderName": "",
+          "issueNumber": "",
+          "number": "",
+          "startMonth": "",
+          "startYear": ""
+        },
+        "dateOfBirth": "",
+        "dccQuote": {
+          "account": "",
+          "accountType": "",
+          "baseAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "basePoints": 0,
+          "buy": {
+            "currency": "",
+            "value": 0
+          },
+          "interbank": {
+            "currency": "",
+            "value": 0
+          },
+          "reference": "",
+          "sell": {
+            "currency": "",
+            "value": 0
+          },
+          "signature": "",
+          "source": "",
+          "type": "",
+          "validTill": ""
+        },
+        "deliveryAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "deliveryDate": "",
+        "deviceFingerprint": "",
+        "entityType": "NaturalPerson",
+        "fraudOffset": 0,
+        "fundDestination": {
+          "additionalData": {},
+          "billingAddress": {
+            "city": "",
+            "country": "",
+            "houseNumberOrName": "",
+            "postalCode": "",
+            "stateOrProvince": "",
+            "street": ""
+          },
+          "card": {
+            "cvc": "",
+            "expiryMonth": "",
+            "expiryYear": "",
+            "holderName": "",
+            "issueNumber": "",
+            "number": "",
+            "startMonth": "",
+            "startYear": ""
+          },
+          "selectedRecurringDetailReference": "",
+          "shopperEmail": "",
+          "shopperName": {
+            "firstName": "",
+            "lastName": ""
+          },
+          "shopperReference": "",
+          "subMerchant": {
+            "city": "",
+            "country": "",
+            "mcc": "",
+            "name": "",
+            "taxId": ""
+          },
+          "telephoneNumber": ""
+        },
+        "fundSource": {
+          "additionalData": {},
+          "billingAddress": {
+            "city": "",
+            "country": "",
+            "houseNumberOrName": "",
+            "postalCode": "",
+            "stateOrProvince": "",
+            "street": ""
+          },
+          "card": {
+            "cvc": "",
+            "expiryMonth": "",
+            "expiryYear": "",
+            "holderName": "",
+            "issueNumber": "",
+            "number": "",
+            "startMonth": "",
+            "startYear": ""
+          },
+          "shopperEmail": "",
+          "shopperName": {
+            "firstName": "",
+            "lastName": ""
+          },
+          "telephoneNumber": ""
+        },
+        "fundingSource": "debit",
+        "installments": {
+          "plan": "regular",
+          "value": 0
+        },
+        "localizedShopperStatement": {},
+        "mandate": {
+          "amount": "",
+          "amountRule": "max",
+          "billingAttemptsRule": "on",
+          "billingDay": "",
+          "endsAt": "",
+          "frequency": "adhoc",
+          "remarks": "",
+          "startsAt": ""
+        },
+        "mcc": "",
+        "merchantAccount": "",
+        "merchantOrderReference": "",
+        "merchantRiskIndicator": {
+          "addressMatch": false,
+          "deliveryAddressIndicator": "shipToBillingAddress",
+          "deliveryEmail": "",
+          "deliveryEmailAddress": "",
+          "deliveryTimeframe": "electronicDelivery",
+          "giftCardAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "giftCardCount": 0,
+          "giftCardCurr": "",
+          "preOrderDate": "",
+          "preOrderPurchase": false,
+          "preOrderPurchaseInd": "",
+          "reorderItems": false,
+          "reorderItemsInd": "",
+          "shipIndicator": ""
+        },
+        "metadata": {},
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "nationality": "",
+        "orderReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "recurring": {
+          "contract": "ONECLICK",
+          "recurringDetailName": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "tokenService": "VISATOKENSERVICE"
+        },
+        "recurringProcessingModel": "CardOnFile",
+        "reference": "",
+        "selectedBrand": "",
+        "selectedRecurringDetailReference": "",
+        "sessionId": "",
+        "shopperEmail": "",
+        "shopperIP": "",
+        "shopperInteraction": "Ecommerce",
+        "shopperLocale": "",
+        "shopperName": {
+          "firstName": "",
+          "lastName": ""
+        },
+        "shopperReference": "",
+        "shopperStatement": "",
+        "socialSecurityNumber": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "store": "",
+        "telephoneNumber": "",
+        "threeDS2RequestData": {
+          "acctInfo": {
+            "chAccAgeInd": "01",
+            "chAccChange": "",
+            "chAccChangeInd": "01",
+            "chAccPwChange": "",
+            "chAccPwChangeInd": "01",
+            "chAccString": "",
+            "nbPurchaseAccount": "",
+            "paymentAccAge": "",
+            "paymentAccInd": "01",
+            "provisionAttemptsDay": "",
+            "shipAddressUsage": "",
+            "shipAddressUsageInd": "01",
+            "shipNameIndicator": "01",
+            "suspiciousAccActivity": "01",
+            "txnActivityDay": "",
+            "txnActivityYear": ""
+          },
+          "acctType": "01",
+          "acquirerBIN": "",
+          "acquirerMerchantID": "",
+          "addrMatch": "Y",
+          "authenticationOnly": false,
+          "challengeIndicator": "noPreference",
+          "deviceChannel": "",
+          "deviceRenderOptions": {
+            "sdkInterface": "native",
+            "sdkUiType": [
+              "multiSelect"
+            ]
+          },
+          "homePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "mcc": "",
+          "merchantName": "",
+          "messageVersion": "2.1.0",
+          "mobilePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "notificationURL": "",
+          "payTokenInd": false,
+          "paymentAuthenticationUseCase": "",
+          "purchaseInstalData": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "sdkAppID": "",
+          "sdkEncData": "",
+          "sdkEphemPubKey": {
+            "crv": "",
+            "kty": "",
+            "x": "",
+            "y": ""
+          },
+          "sdkMaxTimeout": 60,
+          "sdkReferenceNumber": "",
+          "sdkTransID": "",
+          "sdkVersion": "",
+          "threeDSCompInd": "",
+          "threeDSRequestorAuthenticationInd": "",
+          "threeDSRequestorAuthenticationInfo": {
+            "threeDSReqAuthData": "",
+            "threeDSReqAuthMethod": "01",
+            "threeDSReqAuthTimestamp": ""
+          },
+          "threeDSRequestorChallengeInd": "01",
+          "threeDSRequestorID": "",
+          "threeDSRequestorName": "",
+          "threeDSRequestorPriorAuthenticationInfo": {
+            "threeDSReqPriorAuthData": "",
+            "threeDSReqPriorAuthMethod": "01",
+            "threeDSReqPriorAuthTimestamp": "",
+            "threeDSReqPriorRef": ""
+          },
+          "threeDSRequestorURL": "",
+          "transType": "01",
+          "transactionType": "goodsOrServicePurchase",
+          "whiteListStatus": "",
+          "workPhone": {
+            "cc": "",
+            "subscriber": ""
+          }
+        },
+        "threeDSAuthenticationOnly": false,
+        "totalsGroup": "",
+        "trustedShopper": false
+      },
+      "body_text": "{\"accountInfo\": {\"accountAgeIndicator\": \"notApplicable\", \"accountChangeDate\": \"\", \"accountChangeIndicator\": \"thisTransaction\", \"accountCreationDate\": \"\", \"accountType\": \"notApplicable\", \"addCardAttemptsDay\": 0, \"deliveryAddressUsageDate\": \"\", \"deliveryAddressUsageIndicator\": \"thisTransaction\", \"homePhone\": \"\", \"mobilePhone\": \"\", \"passwordChangeDate\": \"\", \"passwordChangeIndicator\": \"notApplicable\", \"pastTransactionsDay\": 0, \"pastTransactionsYear\": 0, \"paymentAccountAge\": \"\", \"paymentAccountIndicator\": \"notApplicable\", \"purchasesLast6Months\": 0, \"suspiciousActivity\": false, \"workPhone\": \"\"}, \"additionalAmount\": {\"currency\": \"\", \"value\": 0}, \"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"amount\": {\"currency\": \"\", \"value\": 0}, \"applicationInfo\": {\"adyenLibrary\": {\"name\": \"\", \"version\": \"\"}, \"adyenPaymentSource\": {\"name\": \"\", \"version\": \"\"}, \"externalPlatform\": {\"integrator\": \"\", \"name\": \"\", \"version\": \"\"}, \"merchantApplication\": {\"name\": \"\", \"version\": \"\"}, \"merchantDevice\": {\"os\": \"\", \"osVersion\": \"\", \"reference\": \"\"}, \"shopperInteractionDevice\": {\"locale\": \"\", \"os\": \"\", \"osVersion\": \"\"}}, \"bankAccount\": {\"bankAccountNumber\": \"\", \"bankCity\": \"\", \"bankLocationId\": \"\", \"bankName\": \"\", \"bic\": \"\", \"countryCode\": \"\", \"iban\": \"\", \"ownerName\": \"\", \"taxId\": \"\"}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"browserInfo\": {\"acceptHeader\": \"\", \"colorDepth\": 0, \"javaEnabled\": false, \"javaScriptEnabled\": true, \"language\": \"\", \"screenHeight\": 0, \"screenWidth\": 0, \"timeZoneOffset\": 0, \"userAgent\": \"\"}, \"captureDelayHours\": 0, \"card\": {\"cvc\": \"\", \"expiryMonth\": \"\", \"expiryYear\": \"\", \"holderName\": \"\", \"issueNumber\": \"\", \"number\": \"\", \"startMonth\": \"\", \"startYear\": \"\"}, \"dateOfBirth\": \"\", \"dccQuote\": {\"account\": \"\", \"accountType\": \"\", \"baseAmount\": {\"currency\": \"\", \"value\": 0}, \"basePoints\": 0, \"buy\": {\"currency\": \"\", \"value\": 0}, \"interbank\": {\"currency\": \"\", \"value\": 0}, \"reference\": \"\", \"sell\": {\"currency\": \"\", \"value\": 0}, \"signature\": \"\", \"source\": \"\", \"type\": \"\", \"validTill\": \"\"}, \"deliveryAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"deliveryDate\": \"\", \"deviceFingerprint\": \"\", \"entityType\": \"NaturalPerson\", \"fraudOffset\": 0, \"fundDestination\": {\"additionalData\": {}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"card\": {\"cvc\": \"\", \"expiryMonth\": \"\", \"expiryYear\": \"\", \"holderName\": \"\", \"issueNumber\": \"\", \"number\": \"\", \"startMonth\": \"\", \"startYear\": \"\"}, \"selectedRecurringDetailReference\": \"\", \"shopperEmail\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"shopperReference\": \"\", \"subMerchant\": {\"city\": \"\", \"country\": \"\", \"mcc\": \"\", \"name\": \"\", \"taxId\": \"\"}, \"telephoneNumber\": \"\"}, \"fundSource\": {\"additionalData\": {}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"card\": {\"cvc\": \"\", \"expiryMonth\": \"\", \"expiryYear\": \"\", \"holderName\": \"\", \"issueNumber\": \"\", \"number\": \"\", \"startMonth\": \"\", \"startYear\": \"\"}, \"shopperEmail\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"telephoneNumber\": \"\"}, \"fundingSource\": \"debit\", \"installments\": {\"plan\": \"regular\", \"value\": 0}, \"localizedShopperStatement\": {}, \"mandate\": {\"amount\": \"\", \"amountRule\": \"max\", \"billingAttemptsRule\": \"on\", \"billingDay\": \"\", \"endsAt\": \"\", \"frequency\": \"adhoc\", \"remarks\": \"\", \"startsAt\": \"\"}, \"mcc\": \"\", \"merchantAccount\": \"\", \"merchantOrderReference\": \"\", \"merchantRiskIndicator\": {\"addressMatch\": false, \"deliveryAddressIndicator\": \"shipToBillingAddress\", \"deliveryEmail\": \"\", \"deliveryEmailAddress\": \"\", \"deliveryTimeframe\": \"electronicDelivery\", \"giftCardAmount\": {\"currency\": \"\", \"value\": 0}, \"giftCardCount\": 0, \"giftCardCurr\": \"\", \"preOrderDate\": \"\", \"preOrderPurchase\": false, \"preOrderPurchaseInd\": \"\", \"reorderItems\": false, \"reorderItemsInd\": \"\", \"shipIndicator\": \"\"}, \"metadata\": {}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"nationality\": \"\", \"orderReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"recurring\": {\"contract\": \"ONECLICK\", \"recurringDetailName\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"tokenService\": \"VISATOKENSERVICE\"}, \"recurringProcessingModel\": \"CardOnFile\", \"reference\": \"\", \"selectedBrand\": \"\", \"selectedRecurringDetailReference\": \"\", \"sessionId\": \"\", \"shopperEmail\": \"\", \"shopperIP\": \"\", \"shopperInteraction\": \"Ecommerce\", \"shopperLocale\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"shopperReference\": \"\", \"shopperStatement\": \"\", \"socialSecurityNumber\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"store\": \"\", \"telephoneNumber\": \"\", \"threeDS2RequestData\": {\"acctInfo\": {\"chAccAgeInd\": \"01\", \"chAccChange\": \"\", \"chAccChangeInd\": \"01\", \"chAccPwChange\": \"\", \"chAccPwChangeInd\": \"01\", \"chAccString\": \"\", \"nbPurchaseAccount\": \"\", \"paymentAccAge\": \"\", \"paymentAccInd\": \"01\", \"provisionAttemptsDay\": \"\", \"shipAddressUsage\": \"\", \"shipAddressUsageInd\": \"01\", \"shipNameIndicator\": \"01\", \"suspiciousAccActivity\": \"01\", \"txnActivityDay\": \"\", \"txnActivityYear\": \"\"}, \"acctType\": \"01\", \"acquirerBIN\": \"\", \"acquirerMerchantID\": \"\", \"addrMatch\": \"Y\", \"authenticationOnly\": false, \"challengeIndicator\": \"noPreference\", \"deviceChannel\": \"\", \"deviceRenderOptions\": {\"sdkInterface\": \"native\", \"sdkUiType\": [\"multiSelect\"]}, \"homePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"mcc\": \"\", \"merchantName\": \"\", \"messageVersion\": \"2.1.0\", \"mobilePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"notificationURL\": \"\", \"payTokenInd\": false, \"paymentAuthenticationUseCase\": \"\", \"purchaseInstalData\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"sdkAppID\": \"\", \"sdkEncData\": \"\", \"sdkEphemPubKey\": {\"crv\": \"\", \"kty\": \"\", \"x\": \"\", \"y\": \"\"}, \"sdkMaxTimeout\": 60, \"sdkReferenceNumber\": \"\", \"sdkTransID\": \"\", \"sdkVersion\": \"\", \"threeDSCompInd\": \"\", \"threeDSRequestorAuthenticationInd\": \"\", \"threeDSRequestorAuthenticationInfo\": {\"threeDSReqAuthData\": \"\", \"threeDSReqAuthMethod\": \"01\", \"threeDSReqAuthTimestamp\": \"\"}, \"threeDSRequestorChallengeInd\": \"01\", \"threeDSRequestorID\": \"\", \"threeDSRequestorName\": \"\", \"threeDSRequestorPriorAuthenticationInfo\": {\"threeDSReqPriorAuthData\": \"\", \"threeDSReqPriorAuthMethod\": \"01\", \"threeDSReqPriorAuthTimestamp\": \"\", \"threeDSReqPriorRef\": \"\"}, \"threeDSRequestorURL\": \"\", \"transType\": \"01\", \"transactionType\": \"goodsOrServicePurchase\", \"whiteListStatus\": \"\", \"workPhone\": {\"cc\": \"\", \"subscriber\": \"\"}}, \"threeDSAuthenticationOnly\": false, \"totalsGroup\": \"\", \"trustedShopper\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a payment with a unique reference (`pspReference`) and attempts to obtain an authorisation hold. For cards, this amount can be captured or cancelled later. Non-card payment methods typically don't support this and will automatically capture as part of the authorisation.\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/payments`](https://docs.adyen.com/api-explorer/#/CheckoutService/payments) endpoint under Checkout API instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/authorise",
+      "method": "POST",
+      "name": "Create an authorisation",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/authorise",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"accountInfo\": {\"accountAgeIndicator\": \"notApplicable\", \"accountChangeDate\": \"\", \"accountChangeIndicator\": \"thisTransaction\", \"accountCreationDate\": \"\", \"accountType\": \"notApplicable\", \"addCardAttemptsDay\": 0, \"deliveryAddressUsageDate\": \"\", \"deliveryAddressUsageIndicator\": \"thisTransaction\", \"homePhone\": \"\", \"mobilePhone\": \"\", \"passwordChangeDate\": \"\", \"passwordChangeIndicator\": \"notApplicable\", \"pastTransactionsDay\": 0, \"pastTransactionsYear\": 0, \"paymentAccountAge\": \"\", \"paymentAccountIndicator\": \"notApplicable\", \"purchasesLast6Months\": 0, \"suspiciousActivity\": false, \"workPhone\": \"\"}, \"additionalAmount\": {\"currency\": \"\", \"value\": 0}, \"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"amount\": {\"currency\": \"\", \"value\": 0}, \"applicationInfo\": {\"adyenLibrary\": {\"name\": \"\", \"version\": \"\"}, \"adyenPaymentSource\": {\"name\": \"\", \"version\": \"\"}, \"externalPlatform\": {\"integrator\": \"\", \"name\": \"\", \"version\": \"\"}, \"merchantApplication\": {\"name\": \"\", \"version\": \"\"}, \"merchantDevice\": {\"os\": \"\", \"osVersion\": \"\", \"reference\": \"\"}, \"shopperInteractionDevice\": {\"locale\": \"\", \"os\": \"\", \"osVersion\": \"\"}}, \"bankAccount\": {\"bankAccountNumber\": \"\", \"bankCity\": \"\", \"bankLocationId\": \"\", \"bankName\": \"\", \"bic\": \"\", \"countryCode\": \"\", \"iban\": \"\", \"ownerName\": \"\", \"taxId\": \"\"}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"browserInfo\": {\"acceptHeader\": \"\", \"colorDepth\": 0, \"javaEnabled\": false, \"javaScriptEnabled\": true, \"language\": \"\", \"screenHeight\": 0, \"screenWidth\": 0, \"timeZoneOffset\": 0, \"userAgent\": \"\"}, \"captureDelayHours\": 0, \"card\": {\"cvc\": \"\", \"expiryMonth\": \"\", \"expiryYear\": \"\", \"holderName\": \"\", \"issueNumber\": \"\", \"number\": \"\", \"startMonth\": \"\", \"startYear\": \"\"}, \"dateOfBirth\": \"\", \"dccQuote\": {\"account\": \"\", \"accountType\": \"\", \"baseAmount\": {\"currency\": \"\", \"value\": 0}, \"basePoints\": 0, \"buy\": {\"currency\": \"\", \"value\": 0}, \"interbank\": {\"currency\": \"\", \"value\": 0}, \"reference\": \"\", \"sell\": {\"currency\": \"\", \"value\": 0}, \"signature\": \"\", \"source\": \"\", \"type\": \"\", \"validTill\": \"\"}, \"deliveryAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"deliveryDate\": \"\", \"deviceFingerprint\": \"\", \"entityType\": \"NaturalPerson\", \"fraudOffset\": 0, \"fundDestination\": {\"additionalData\": {}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"card\": {\"cvc\": \"\", \"expiryMonth\": \"\", \"expiryYear\": \"\", \"holderName\": \"\", \"issueNumber\": \"\", \"number\": \"\", \"startMonth\": \"\", \"startYear\": \"\"}, \"selectedRecurringDetailReference\": \"\", \"shopperEmail\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"shopperReference\": \"\", \"subMerchant\": {\"city\": \"\", \"country\": \"\", \"mcc\": \"\", \"name\": \"\", \"taxId\": \"\"}, \"telephoneNumber\": \"\"}, \"fundSource\": {\"additionalData\": {}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"card\": {\"cvc\": \"\", \"expiryMonth\": \"\", \"expiryYear\": \"\", \"holderName\": \"\", \"issueNumber\": \"\", \"number\": \"\", \"startMonth\": \"\", \"startYear\": \"\"}, \"shopperEmail\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"telephoneNumber\": \"\"}, \"fundingSource\": \"debit\", \"installments\": {\"plan\": \"regular\", \"value\": 0}, \"localizedShopperStatement\": {}, \"mandate\": {\"amount\": \"\", \"amountRule\": \"max\", \"billingAttemptsRule\": \"on\", \"billingDay\": \"\", \"endsAt\": \"\", \"frequency\": \"adhoc\", \"remarks\": \"\", \"startsAt\": \"\"}, \"mcc\": \"\", \"merchantAccount\": \"\", \"merchantOrderReference\": \"\", \"merchantRiskIndicator\": {\"addressMatch\": false, \"deliveryAddressIndicator\": \"shipToBillingAddress\", \"deliveryEmail\": \"\", \"deliveryEmailAddress\": \"\", \"deliveryTimeframe\": \"electronicDelivery\", \"giftCardAmount\": {\"currency\": \"\", \"value\": 0}, \"giftCardCount\": 0, \"giftCardCurr\": \"\", \"preOrderDate\": \"\", \"preOrderPurchase\": false, \"preOrderPurchaseInd\": \"\", \"reorderItems\": false, \"reorderItemsInd\": \"\", \"shipIndicator\": \"\"}, \"metadata\": {}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"nationality\": \"\", \"orderReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"recurring\": {\"contract\": \"ONECLICK\", \"recurringDetailName\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"tokenService\": \"VISATOKENSERVICE\"}, \"recurringProcessingModel\": \"CardOnFile\", \"reference\": \"\", \"selectedBrand\": \"\", \"selectedRecurringDetailReference\": \"\", \"sessionId\": \"\", \"shopperEmail\": \"\", \"shopperIP\": \"\", \"shopperInteraction\": \"Ecommerce\", \"shopperLocale\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"shopperReference\": \"\", \"shopperStatement\": \"\", \"socialSecurityNumber\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"store\": \"\", \"telephoneNumber\": \"\", \"threeDS2RequestData\": {\"acctInfo\": {\"chAccAgeInd\": \"01\", \"chAccChange\": \"\", \"chAccChangeInd\": \"01\", \"chAccPwChange\": \"\", \"chAccPwChangeInd\": \"01\", \"chAccString\": \"\", \"nbPurchaseAccount\": \"\", \"paymentAccAge\": \"\", \"paymentAccInd\": \"01\", \"provisionAttemptsDay\": \"\", \"shipAddressUsage\": \"\", \"shipAddressUsageInd\": \"01\", \"shipNameIndicator\": \"01\", \"suspiciousAccActivity\": \"01\", \"txnActivityDay\": \"\", \"txnActivityYear\": \"\"}, \"acctType\": \"01\", \"acquirerBIN\": \"\", \"acquirerMerchantID\": \"\", \"addrMatch\": \"Y\", \"authenticationOnly\": false, \"challengeIndicator\": \"noPreference\", \"deviceChannel\": \"\", \"deviceRenderOptions\": {\"sdkInterface\": \"native\", \"sdkUiType\": [\"multiSelect\"]}, \"homePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"mcc\": \"\", \"merchantName\": \"\", \"messageVersion\": \"2.1.0\", \"mobilePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"notificationURL\": \"\", \"payTokenInd\": false, \"paymentAuthenticationUseCase\": \"\", \"purchaseInstalData\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"sdkAppID\": \"\", \"sdkEncData\": \"\", \"sdkEphemPubKey\": {\"crv\": \"\", \"kty\": \"\", \"x\": \"\", \"y\": \"\"}, \"sdkMaxTimeout\": 60, \"sdkReferenceNumber\": \"\", \"sdkTransID\": \"\", \"sdkVersion\": \"\", \"threeDSCompInd\": \"\", \"threeDSRequestorAuthenticationInd\": \"\", \"threeDSRequestorAuthenticationInfo\": {\"threeDSReqAuthData\": \"\", \"threeDSReqAuthMethod\": \"01\", \"threeDSReqAuthTimestamp\": \"\"}, \"threeDSRequestorChallengeInd\": \"01\", \"threeDSRequestorID\": \"\", \"threeDSRequestorName\": \"\", \"threeDSRequestorPriorAuthenticationInfo\": {\"threeDSReqPriorAuthData\": \"\", \"threeDSReqPriorAuthMethod\": \"01\", \"threeDSReqPriorAuthTimestamp\": \"\", \"threeDSReqPriorRef\": \"\"}, \"threeDSRequestorURL\": \"\", \"transType\": \"01\", \"transactionType\": \"goodsOrServicePurchase\", \"whiteListStatus\": \"\", \"workPhone\": {\"cc\": \"\", \"subscriber\": \"\"}}, \"threeDSAuthenticationOnly\": false, \"totalsGroup\": \"\", \"trustedShopper\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an authorisation",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/authorise"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "accountInfo": {
+          "accountAgeIndicator": "notApplicable",
+          "accountChangeDate": "",
+          "accountChangeIndicator": "thisTransaction",
+          "accountCreationDate": "",
+          "accountType": "notApplicable",
+          "addCardAttemptsDay": 0,
+          "deliveryAddressUsageDate": "",
+          "deliveryAddressUsageIndicator": "thisTransaction",
+          "homePhone": "",
+          "mobilePhone": "",
+          "passwordChangeDate": "",
+          "passwordChangeIndicator": "notApplicable",
+          "pastTransactionsDay": 0,
+          "pastTransactionsYear": 0,
+          "paymentAccountAge": "",
+          "paymentAccountIndicator": "notApplicable",
+          "purchasesLast6Months": 0,
+          "suspiciousActivity": false,
+          "workPhone": ""
+        },
+        "additionalAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "applicationInfo": {
+          "adyenLibrary": {
+            "name": "",
+            "version": ""
+          },
+          "adyenPaymentSource": {
+            "name": "",
+            "version": ""
+          },
+          "externalPlatform": {
+            "integrator": "",
+            "name": "",
+            "version": ""
+          },
+          "merchantApplication": {
+            "name": "",
+            "version": ""
+          },
+          "merchantDevice": {
+            "os": "",
+            "osVersion": "",
+            "reference": ""
+          },
+          "shopperInteractionDevice": {
+            "locale": "",
+            "os": "",
+            "osVersion": ""
+          }
+        },
+        "billingAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "browserInfo": {
+          "acceptHeader": "",
+          "colorDepth": 0,
+          "javaEnabled": false,
+          "javaScriptEnabled": true,
+          "language": "",
+          "screenHeight": 0,
+          "screenWidth": 0,
+          "timeZoneOffset": 0,
+          "userAgent": ""
+        },
+        "captureDelayHours": 0,
+        "dateOfBirth": "",
+        "dccQuote": {
+          "account": "",
+          "accountType": "",
+          "baseAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "basePoints": 0,
+          "buy": {
+            "currency": "",
+            "value": 0
+          },
+          "interbank": {
+            "currency": "",
+            "value": 0
+          },
+          "reference": "",
+          "sell": {
+            "currency": "",
+            "value": 0
+          },
+          "signature": "",
+          "source": "",
+          "type": "",
+          "validTill": ""
+        },
+        "deliveryAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "deliveryDate": "",
+        "deviceFingerprint": "",
+        "fraudOffset": 0,
+        "installments": {
+          "plan": "regular",
+          "value": 0
+        },
+        "localizedShopperStatement": {},
+        "mcc": "",
+        "md": "",
+        "merchantAccount": "",
+        "merchantOrderReference": "",
+        "merchantRiskIndicator": {
+          "addressMatch": false,
+          "deliveryAddressIndicator": "shipToBillingAddress",
+          "deliveryEmail": "",
+          "deliveryEmailAddress": "",
+          "deliveryTimeframe": "electronicDelivery",
+          "giftCardAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "giftCardCount": 0,
+          "giftCardCurr": "",
+          "preOrderDate": "",
+          "preOrderPurchase": false,
+          "preOrderPurchaseInd": "",
+          "reorderItems": false,
+          "reorderItemsInd": "",
+          "shipIndicator": ""
+        },
+        "metadata": {},
+        "orderReference": "",
+        "paResponse": "",
+        "recurring": {
+          "contract": "ONECLICK",
+          "recurringDetailName": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "tokenService": "VISATOKENSERVICE"
+        },
+        "recurringProcessingModel": "CardOnFile",
+        "reference": "",
+        "selectedBrand": "",
+        "selectedRecurringDetailReference": "",
+        "sessionId": "",
+        "shopperEmail": "",
+        "shopperIP": "",
+        "shopperInteraction": "Ecommerce",
+        "shopperLocale": "",
+        "shopperName": {
+          "firstName": "",
+          "lastName": ""
+        },
+        "shopperReference": "",
+        "shopperStatement": "",
+        "socialSecurityNumber": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "store": "",
+        "telephoneNumber": "",
+        "threeDS2RequestData": {
+          "acctInfo": {
+            "chAccAgeInd": "01",
+            "chAccChange": "",
+            "chAccChangeInd": "01",
+            "chAccPwChange": "",
+            "chAccPwChangeInd": "01",
+            "chAccString": "",
+            "nbPurchaseAccount": "",
+            "paymentAccAge": "",
+            "paymentAccInd": "01",
+            "provisionAttemptsDay": "",
+            "shipAddressUsage": "",
+            "shipAddressUsageInd": "01",
+            "shipNameIndicator": "01",
+            "suspiciousAccActivity": "01",
+            "txnActivityDay": "",
+            "txnActivityYear": ""
+          },
+          "acctType": "01",
+          "acquirerBIN": "",
+          "acquirerMerchantID": "",
+          "addrMatch": "Y",
+          "authenticationOnly": false,
+          "challengeIndicator": "noPreference",
+          "deviceChannel": "",
+          "deviceRenderOptions": {
+            "sdkInterface": "native",
+            "sdkUiType": [
+              "multiSelect"
+            ]
+          },
+          "homePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "mcc": "",
+          "merchantName": "",
+          "messageVersion": "2.1.0",
+          "mobilePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "notificationURL": "",
+          "payTokenInd": false,
+          "paymentAuthenticationUseCase": "",
+          "purchaseInstalData": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "sdkAppID": "",
+          "sdkEncData": "",
+          "sdkEphemPubKey": {
+            "crv": "",
+            "kty": "",
+            "x": "",
+            "y": ""
+          },
+          "sdkMaxTimeout": 60,
+          "sdkReferenceNumber": "",
+          "sdkTransID": "",
+          "sdkVersion": "",
+          "threeDSCompInd": "",
+          "threeDSRequestorAuthenticationInd": "",
+          "threeDSRequestorAuthenticationInfo": {
+            "threeDSReqAuthData": "",
+            "threeDSReqAuthMethod": "01",
+            "threeDSReqAuthTimestamp": ""
+          },
+          "threeDSRequestorChallengeInd": "01",
+          "threeDSRequestorID": "",
+          "threeDSRequestorName": "",
+          "threeDSRequestorPriorAuthenticationInfo": {
+            "threeDSReqPriorAuthData": "",
+            "threeDSReqPriorAuthMethod": "01",
+            "threeDSReqPriorAuthTimestamp": "",
+            "threeDSReqPriorRef": ""
+          },
+          "threeDSRequestorURL": "",
+          "transType": "01",
+          "transactionType": "goodsOrServicePurchase",
+          "whiteListStatus": "",
+          "workPhone": {
+            "cc": "",
+            "subscriber": ""
+          }
+        },
+        "threeDSAuthenticationOnly": false,
+        "totalsGroup": "",
+        "trustedShopper": false
+      },
+      "body_json": {
+        "accountInfo": {
+          "accountAgeIndicator": "notApplicable",
+          "accountChangeDate": "",
+          "accountChangeIndicator": "thisTransaction",
+          "accountCreationDate": "",
+          "accountType": "notApplicable",
+          "addCardAttemptsDay": 0,
+          "deliveryAddressUsageDate": "",
+          "deliveryAddressUsageIndicator": "thisTransaction",
+          "homePhone": "",
+          "mobilePhone": "",
+          "passwordChangeDate": "",
+          "passwordChangeIndicator": "notApplicable",
+          "pastTransactionsDay": 0,
+          "pastTransactionsYear": 0,
+          "paymentAccountAge": "",
+          "paymentAccountIndicator": "notApplicable",
+          "purchasesLast6Months": 0,
+          "suspiciousActivity": false,
+          "workPhone": ""
+        },
+        "additionalAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "applicationInfo": {
+          "adyenLibrary": {
+            "name": "",
+            "version": ""
+          },
+          "adyenPaymentSource": {
+            "name": "",
+            "version": ""
+          },
+          "externalPlatform": {
+            "integrator": "",
+            "name": "",
+            "version": ""
+          },
+          "merchantApplication": {
+            "name": "",
+            "version": ""
+          },
+          "merchantDevice": {
+            "os": "",
+            "osVersion": "",
+            "reference": ""
+          },
+          "shopperInteractionDevice": {
+            "locale": "",
+            "os": "",
+            "osVersion": ""
+          }
+        },
+        "billingAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "browserInfo": {
+          "acceptHeader": "",
+          "colorDepth": 0,
+          "javaEnabled": false,
+          "javaScriptEnabled": true,
+          "language": "",
+          "screenHeight": 0,
+          "screenWidth": 0,
+          "timeZoneOffset": 0,
+          "userAgent": ""
+        },
+        "captureDelayHours": 0,
+        "dateOfBirth": "",
+        "dccQuote": {
+          "account": "",
+          "accountType": "",
+          "baseAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "basePoints": 0,
+          "buy": {
+            "currency": "",
+            "value": 0
+          },
+          "interbank": {
+            "currency": "",
+            "value": 0
+          },
+          "reference": "",
+          "sell": {
+            "currency": "",
+            "value": 0
+          },
+          "signature": "",
+          "source": "",
+          "type": "",
+          "validTill": ""
+        },
+        "deliveryAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "deliveryDate": "",
+        "deviceFingerprint": "",
+        "fraudOffset": 0,
+        "installments": {
+          "plan": "regular",
+          "value": 0
+        },
+        "localizedShopperStatement": {},
+        "mcc": "",
+        "md": "",
+        "merchantAccount": "",
+        "merchantOrderReference": "",
+        "merchantRiskIndicator": {
+          "addressMatch": false,
+          "deliveryAddressIndicator": "shipToBillingAddress",
+          "deliveryEmail": "",
+          "deliveryEmailAddress": "",
+          "deliveryTimeframe": "electronicDelivery",
+          "giftCardAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "giftCardCount": 0,
+          "giftCardCurr": "",
+          "preOrderDate": "",
+          "preOrderPurchase": false,
+          "preOrderPurchaseInd": "",
+          "reorderItems": false,
+          "reorderItemsInd": "",
+          "shipIndicator": ""
+        },
+        "metadata": {},
+        "orderReference": "",
+        "paResponse": "",
+        "recurring": {
+          "contract": "ONECLICK",
+          "recurringDetailName": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "tokenService": "VISATOKENSERVICE"
+        },
+        "recurringProcessingModel": "CardOnFile",
+        "reference": "",
+        "selectedBrand": "",
+        "selectedRecurringDetailReference": "",
+        "sessionId": "",
+        "shopperEmail": "",
+        "shopperIP": "",
+        "shopperInteraction": "Ecommerce",
+        "shopperLocale": "",
+        "shopperName": {
+          "firstName": "",
+          "lastName": ""
+        },
+        "shopperReference": "",
+        "shopperStatement": "",
+        "socialSecurityNumber": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "store": "",
+        "telephoneNumber": "",
+        "threeDS2RequestData": {
+          "acctInfo": {
+            "chAccAgeInd": "01",
+            "chAccChange": "",
+            "chAccChangeInd": "01",
+            "chAccPwChange": "",
+            "chAccPwChangeInd": "01",
+            "chAccString": "",
+            "nbPurchaseAccount": "",
+            "paymentAccAge": "",
+            "paymentAccInd": "01",
+            "provisionAttemptsDay": "",
+            "shipAddressUsage": "",
+            "shipAddressUsageInd": "01",
+            "shipNameIndicator": "01",
+            "suspiciousAccActivity": "01",
+            "txnActivityDay": "",
+            "txnActivityYear": ""
+          },
+          "acctType": "01",
+          "acquirerBIN": "",
+          "acquirerMerchantID": "",
+          "addrMatch": "Y",
+          "authenticationOnly": false,
+          "challengeIndicator": "noPreference",
+          "deviceChannel": "",
+          "deviceRenderOptions": {
+            "sdkInterface": "native",
+            "sdkUiType": [
+              "multiSelect"
+            ]
+          },
+          "homePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "mcc": "",
+          "merchantName": "",
+          "messageVersion": "2.1.0",
+          "mobilePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "notificationURL": "",
+          "payTokenInd": false,
+          "paymentAuthenticationUseCase": "",
+          "purchaseInstalData": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "sdkAppID": "",
+          "sdkEncData": "",
+          "sdkEphemPubKey": {
+            "crv": "",
+            "kty": "",
+            "x": "",
+            "y": ""
+          },
+          "sdkMaxTimeout": 60,
+          "sdkReferenceNumber": "",
+          "sdkTransID": "",
+          "sdkVersion": "",
+          "threeDSCompInd": "",
+          "threeDSRequestorAuthenticationInd": "",
+          "threeDSRequestorAuthenticationInfo": {
+            "threeDSReqAuthData": "",
+            "threeDSReqAuthMethod": "01",
+            "threeDSReqAuthTimestamp": ""
+          },
+          "threeDSRequestorChallengeInd": "01",
+          "threeDSRequestorID": "",
+          "threeDSRequestorName": "",
+          "threeDSRequestorPriorAuthenticationInfo": {
+            "threeDSReqPriorAuthData": "",
+            "threeDSReqPriorAuthMethod": "01",
+            "threeDSReqPriorAuthTimestamp": "",
+            "threeDSReqPriorRef": ""
+          },
+          "threeDSRequestorURL": "",
+          "transType": "01",
+          "transactionType": "goodsOrServicePurchase",
+          "whiteListStatus": "",
+          "workPhone": {
+            "cc": "",
+            "subscriber": ""
+          }
+        },
+        "threeDSAuthenticationOnly": false,
+        "totalsGroup": "",
+        "trustedShopper": false
+      },
+      "body_text": "{\"accountInfo\": {\"accountAgeIndicator\": \"notApplicable\", \"accountChangeDate\": \"\", \"accountChangeIndicator\": \"thisTransaction\", \"accountCreationDate\": \"\", \"accountType\": \"notApplicable\", \"addCardAttemptsDay\": 0, \"deliveryAddressUsageDate\": \"\", \"deliveryAddressUsageIndicator\": \"thisTransaction\", \"homePhone\": \"\", \"mobilePhone\": \"\", \"passwordChangeDate\": \"\", \"passwordChangeIndicator\": \"notApplicable\", \"pastTransactionsDay\": 0, \"pastTransactionsYear\": 0, \"paymentAccountAge\": \"\", \"paymentAccountIndicator\": \"notApplicable\", \"purchasesLast6Months\": 0, \"suspiciousActivity\": false, \"workPhone\": \"\"}, \"additionalAmount\": {\"currency\": \"\", \"value\": 0}, \"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"amount\": {\"currency\": \"\", \"value\": 0}, \"applicationInfo\": {\"adyenLibrary\": {\"name\": \"\", \"version\": \"\"}, \"adyenPaymentSource\": {\"name\": \"\", \"version\": \"\"}, \"externalPlatform\": {\"integrator\": \"\", \"name\": \"\", \"version\": \"\"}, \"merchantApplication\": {\"name\": \"\", \"version\": \"\"}, \"merchantDevice\": {\"os\": \"\", \"osVersion\": \"\", \"reference\": \"\"}, \"shopperInteractionDevice\": {\"locale\": \"\", \"os\": \"\", \"osVersion\": \"\"}}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"browserInfo\": {\"acceptHeader\": \"\", \"colorDepth\": 0, \"javaEnabled\": false, \"javaScriptEnabled\": true, \"language\": \"\", \"screenHeight\": 0, \"screenWidth\": 0, \"timeZoneOffset\": 0, \"userAgent\": \"\"}, \"captureDelayHours\": 0, \"dateOfBirth\": \"\", \"dccQuote\": {\"account\": \"\", \"accountType\": \"\", \"baseAmount\": {\"currency\": \"\", \"value\": 0}, \"basePoints\": 0, \"buy\": {\"currency\": \"\", \"value\": 0}, \"interbank\": {\"currency\": \"\", \"value\": 0}, \"reference\": \"\", \"sell\": {\"currency\": \"\", \"value\": 0}, \"signature\": \"\", \"source\": \"\", \"type\": \"\", \"validTill\": \"\"}, \"deliveryAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"deliveryDate\": \"\", \"deviceFingerprint\": \"\", \"fraudOffset\": 0, \"installments\": {\"plan\": \"regular\", \"value\": 0}, \"localizedShopperStatement\": {}, \"mcc\": \"\", \"md\": \"\", \"merchantAccount\": \"\", \"merchantOrderReference\": \"\", \"merchantRiskIndicator\": {\"addressMatch\": false, \"deliveryAddressIndicator\": \"shipToBillingAddress\", \"deliveryEmail\": \"\", \"deliveryEmailAddress\": \"\", \"deliveryTimeframe\": \"electronicDelivery\", \"giftCardAmount\": {\"currency\": \"\", \"value\": 0}, \"giftCardCount\": 0, \"giftCardCurr\": \"\", \"preOrderDate\": \"\", \"preOrderPurchase\": false, \"preOrderPurchaseInd\": \"\", \"reorderItems\": false, \"reorderItemsInd\": \"\", \"shipIndicator\": \"\"}, \"metadata\": {}, \"orderReference\": \"\", \"paResponse\": \"\", \"recurring\": {\"contract\": \"ONECLICK\", \"recurringDetailName\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"tokenService\": \"VISATOKENSERVICE\"}, \"recurringProcessingModel\": \"CardOnFile\", \"reference\": \"\", \"selectedBrand\": \"\", \"selectedRecurringDetailReference\": \"\", \"sessionId\": \"\", \"shopperEmail\": \"\", \"shopperIP\": \"\", \"shopperInteraction\": \"Ecommerce\", \"shopperLocale\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"shopperReference\": \"\", \"shopperStatement\": \"\", \"socialSecurityNumber\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"store\": \"\", \"telephoneNumber\": \"\", \"threeDS2RequestData\": {\"acctInfo\": {\"chAccAgeInd\": \"01\", \"chAccChange\": \"\", \"chAccChangeInd\": \"01\", \"chAccPwChange\": \"\", \"chAccPwChangeInd\": \"01\", \"chAccString\": \"\", \"nbPurchaseAccount\": \"\", \"paymentAccAge\": \"\", \"paymentAccInd\": \"01\", \"provisionAttemptsDay\": \"\", \"shipAddressUsage\": \"\", \"shipAddressUsageInd\": \"01\", \"shipNameIndicator\": \"01\", \"suspiciousAccActivity\": \"01\", \"txnActivityDay\": \"\", \"txnActivityYear\": \"\"}, \"acctType\": \"01\", \"acquirerBIN\": \"\", \"acquirerMerchantID\": \"\", \"addrMatch\": \"Y\", \"authenticationOnly\": false, \"challengeIndicator\": \"noPreference\", \"deviceChannel\": \"\", \"deviceRenderOptions\": {\"sdkInterface\": \"native\", \"sdkUiType\": [\"multiSelect\"]}, \"homePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"mcc\": \"\", \"merchantName\": \"\", \"messageVersion\": \"2.1.0\", \"mobilePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"notificationURL\": \"\", \"payTokenInd\": false, \"paymentAuthenticationUseCase\": \"\", \"purchaseInstalData\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"sdkAppID\": \"\", \"sdkEncData\": \"\", \"sdkEphemPubKey\": {\"crv\": \"\", \"kty\": \"\", \"x\": \"\", \"y\": \"\"}, \"sdkMaxTimeout\": 60, \"sdkReferenceNumber\": \"\", \"sdkTransID\": \"\", \"sdkVersion\": \"\", \"threeDSCompInd\": \"\", \"threeDSRequestorAuthenticationInd\": \"\", \"threeDSRequestorAuthenticationInfo\": {\"threeDSReqAuthData\": \"\", \"threeDSReqAuthMethod\": \"01\", \"threeDSReqAuthTimestamp\": \"\"}, \"threeDSRequestorChallengeInd\": \"01\", \"threeDSRequestorID\": \"\", \"threeDSRequestorName\": \"\", \"threeDSRequestorPriorAuthenticationInfo\": {\"threeDSReqPriorAuthData\": \"\", \"threeDSReqPriorAuthMethod\": \"01\", \"threeDSReqPriorAuthTimestamp\": \"\", \"threeDSReqPriorRef\": \"\"}, \"threeDSRequestorURL\": \"\", \"transType\": \"01\", \"transactionType\": \"goodsOrServicePurchase\", \"whiteListStatus\": \"\", \"workPhone\": {\"cc\": \"\", \"subscriber\": \"\"}}, \"threeDSAuthenticationOnly\": false, \"totalsGroup\": \"\", \"trustedShopper\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "For an authenticated 3D Secure session, completes the payment authorisation. This endpoint must receive the `md` and `paResponse` parameters that you get from the card issuer after a shopper pays via 3D Secure.\n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce/3d-secure). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/payments/details`](https://docs.adyen.com/api-explorer/#/CheckoutService/payments/details) endpoint under Checkout API instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/authorise3d",
+      "method": "POST",
+      "name": "Complete a 3DS authorisation",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/authorise3d",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"accountInfo\": {\"accountAgeIndicator\": \"notApplicable\", \"accountChangeDate\": \"\", \"accountChangeIndicator\": \"thisTransaction\", \"accountCreationDate\": \"\", \"accountType\": \"notApplicable\", \"addCardAttemptsDay\": 0, \"deliveryAddressUsageDate\": \"\", \"deliveryAddressUsageIndicator\": \"thisTransaction\", \"homePhone\": \"\", \"mobilePhone\": \"\", \"passwordChangeDate\": \"\", \"passwordChangeIndicator\": \"notApplicable\", \"pastTransactionsDay\": 0, \"pastTransactionsYear\": 0, \"paymentAccountAge\": \"\", \"paymentAccountIndicator\": \"notApplicable\", \"purchasesLast6Months\": 0, \"suspiciousActivity\": false, \"workPhone\": \"\"}, \"additionalAmount\": {\"currency\": \"\", \"value\": 0}, \"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"amount\": {\"currency\": \"\", \"value\": 0}, \"applicationInfo\": {\"adyenLibrary\": {\"name\": \"\", \"version\": \"\"}, \"adyenPaymentSource\": {\"name\": \"\", \"version\": \"\"}, \"externalPlatform\": {\"integrator\": \"\", \"name\": \"\", \"version\": \"\"}, \"merchantApplication\": {\"name\": \"\", \"version\": \"\"}, \"merchantDevice\": {\"os\": \"\", \"osVersion\": \"\", \"reference\": \"\"}, \"shopperInteractionDevice\": {\"locale\": \"\", \"os\": \"\", \"osVersion\": \"\"}}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"browserInfo\": {\"acceptHeader\": \"\", \"colorDepth\": 0, \"javaEnabled\": false, \"javaScriptEnabled\": true, \"language\": \"\", \"screenHeight\": 0, \"screenWidth\": 0, \"timeZoneOffset\": 0, \"userAgent\": \"\"}, \"captureDelayHours\": 0, \"dateOfBirth\": \"\", \"dccQuote\": {\"account\": \"\", \"accountType\": \"\", \"baseAmount\": {\"currency\": \"\", \"value\": 0}, \"basePoints\": 0, \"buy\": {\"currency\": \"\", \"value\": 0}, \"interbank\": {\"currency\": \"\", \"value\": 0}, \"reference\": \"\", \"sell\": {\"currency\": \"\", \"value\": 0}, \"signature\": \"\", \"source\": \"\", \"type\": \"\", \"validTill\": \"\"}, \"deliveryAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"deliveryDate\": \"\", \"deviceFingerprint\": \"\", \"fraudOffset\": 0, \"installments\": {\"plan\": \"regular\", \"value\": 0}, \"localizedShopperStatement\": {}, \"mcc\": \"\", \"md\": \"\", \"merchantAccount\": \"\", \"merchantOrderReference\": \"\", \"merchantRiskIndicator\": {\"addressMatch\": false, \"deliveryAddressIndicator\": \"shipToBillingAddress\", \"deliveryEmail\": \"\", \"deliveryEmailAddress\": \"\", \"deliveryTimeframe\": \"electronicDelivery\", \"giftCardAmount\": {\"currency\": \"\", \"value\": 0}, \"giftCardCount\": 0, \"giftCardCurr\": \"\", \"preOrderDate\": \"\", \"preOrderPurchase\": false, \"preOrderPurchaseInd\": \"\", \"reorderItems\": false, \"reorderItemsInd\": \"\", \"shipIndicator\": \"\"}, \"metadata\": {}, \"orderReference\": \"\", \"paResponse\": \"\", \"recurring\": {\"contract\": \"ONECLICK\", \"recurringDetailName\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"tokenService\": \"VISATOKENSERVICE\"}, \"recurringProcessingModel\": \"CardOnFile\", \"reference\": \"\", \"selectedBrand\": \"\", \"selectedRecurringDetailReference\": \"\", \"sessionId\": \"\", \"shopperEmail\": \"\", \"shopperIP\": \"\", \"shopperInteraction\": \"Ecommerce\", \"shopperLocale\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"shopperReference\": \"\", \"shopperStatement\": \"\", \"socialSecurityNumber\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"store\": \"\", \"telephoneNumber\": \"\", \"threeDS2RequestData\": {\"acctInfo\": {\"chAccAgeInd\": \"01\", \"chAccChange\": \"\", \"chAccChangeInd\": \"01\", \"chAccPwChange\": \"\", \"chAccPwChangeInd\": \"01\", \"chAccString\": \"\", \"nbPurchaseAccount\": \"\", \"paymentAccAge\": \"\", \"paymentAccInd\": \"01\", \"provisionAttemptsDay\": \"\", \"shipAddressUsage\": \"\", \"shipAddressUsageInd\": \"01\", \"shipNameIndicator\": \"01\", \"suspiciousAccActivity\": \"01\", \"txnActivityDay\": \"\", \"txnActivityYear\": \"\"}, \"acctType\": \"01\", \"acquirerBIN\": \"\", \"acquirerMerchantID\": \"\", \"addrMatch\": \"Y\", \"authenticationOnly\": false, \"challengeIndicator\": \"noPreference\", \"deviceChannel\": \"\", \"deviceRenderOptions\": {\"sdkInterface\": \"native\", \"sdkUiType\": [\"multiSelect\"]}, \"homePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"mcc\": \"\", \"merchantName\": \"\", \"messageVersion\": \"2.1.0\", \"mobilePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"notificationURL\": \"\", \"payTokenInd\": false, \"paymentAuthenticationUseCase\": \"\", \"purchaseInstalData\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"sdkAppID\": \"\", \"sdkEncData\": \"\", \"sdkEphemPubKey\": {\"crv\": \"\", \"kty\": \"\", \"x\": \"\", \"y\": \"\"}, \"sdkMaxTimeout\": 60, \"sdkReferenceNumber\": \"\", \"sdkTransID\": \"\", \"sdkVersion\": \"\", \"threeDSCompInd\": \"\", \"threeDSRequestorAuthenticationInd\": \"\", \"threeDSRequestorAuthenticationInfo\": {\"threeDSReqAuthData\": \"\", \"threeDSReqAuthMethod\": \"01\", \"threeDSReqAuthTimestamp\": \"\"}, \"threeDSRequestorChallengeInd\": \"01\", \"threeDSRequestorID\": \"\", \"threeDSRequestorName\": \"\", \"threeDSRequestorPriorAuthenticationInfo\": {\"threeDSReqPriorAuthData\": \"\", \"threeDSReqPriorAuthMethod\": \"01\", \"threeDSReqPriorAuthTimestamp\": \"\", \"threeDSReqPriorRef\": \"\"}, \"threeDSRequestorURL\": \"\", \"transType\": \"01\", \"transactionType\": \"goodsOrServicePurchase\", \"whiteListStatus\": \"\", \"workPhone\": {\"cc\": \"\", \"subscriber\": \"\"}}, \"threeDSAuthenticationOnly\": false, \"totalsGroup\": \"\", \"trustedShopper\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Complete a 3DS authorisation",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/authorise3d"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "accountInfo": {
+          "accountAgeIndicator": "notApplicable",
+          "accountChangeDate": "",
+          "accountChangeIndicator": "thisTransaction",
+          "accountCreationDate": "",
+          "accountType": "notApplicable",
+          "addCardAttemptsDay": 0,
+          "deliveryAddressUsageDate": "",
+          "deliveryAddressUsageIndicator": "thisTransaction",
+          "homePhone": "",
+          "mobilePhone": "",
+          "passwordChangeDate": "",
+          "passwordChangeIndicator": "notApplicable",
+          "pastTransactionsDay": 0,
+          "pastTransactionsYear": 0,
+          "paymentAccountAge": "",
+          "paymentAccountIndicator": "notApplicable",
+          "purchasesLast6Months": 0,
+          "suspiciousActivity": false,
+          "workPhone": ""
+        },
+        "additionalAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "applicationInfo": {
+          "adyenLibrary": {
+            "name": "",
+            "version": ""
+          },
+          "adyenPaymentSource": {
+            "name": "",
+            "version": ""
+          },
+          "externalPlatform": {
+            "integrator": "",
+            "name": "",
+            "version": ""
+          },
+          "merchantApplication": {
+            "name": "",
+            "version": ""
+          },
+          "merchantDevice": {
+            "os": "",
+            "osVersion": "",
+            "reference": ""
+          },
+          "shopperInteractionDevice": {
+            "locale": "",
+            "os": "",
+            "osVersion": ""
+          }
+        },
+        "billingAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "browserInfo": {
+          "acceptHeader": "",
+          "colorDepth": 0,
+          "javaEnabled": false,
+          "javaScriptEnabled": true,
+          "language": "",
+          "screenHeight": 0,
+          "screenWidth": 0,
+          "timeZoneOffset": 0,
+          "userAgent": ""
+        },
+        "captureDelayHours": 0,
+        "dateOfBirth": "",
+        "dccQuote": {
+          "account": "",
+          "accountType": "",
+          "baseAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "basePoints": 0,
+          "buy": {
+            "currency": "",
+            "value": 0
+          },
+          "interbank": {
+            "currency": "",
+            "value": 0
+          },
+          "reference": "",
+          "sell": {
+            "currency": "",
+            "value": 0
+          },
+          "signature": "",
+          "source": "",
+          "type": "",
+          "validTill": ""
+        },
+        "deliveryAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "deliveryDate": "",
+        "deviceFingerprint": "",
+        "fraudOffset": 0,
+        "installments": {
+          "plan": "regular",
+          "value": 0
+        },
+        "localizedShopperStatement": {},
+        "mcc": "",
+        "merchantAccount": "",
+        "merchantOrderReference": "",
+        "merchantRiskIndicator": {
+          "addressMatch": false,
+          "deliveryAddressIndicator": "shipToBillingAddress",
+          "deliveryEmail": "",
+          "deliveryEmailAddress": "",
+          "deliveryTimeframe": "electronicDelivery",
+          "giftCardAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "giftCardCount": 0,
+          "giftCardCurr": "",
+          "preOrderDate": "",
+          "preOrderPurchase": false,
+          "preOrderPurchaseInd": "",
+          "reorderItems": false,
+          "reorderItemsInd": "",
+          "shipIndicator": ""
+        },
+        "metadata": {},
+        "orderReference": "",
+        "recurring": {
+          "contract": "ONECLICK",
+          "recurringDetailName": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "tokenService": "VISATOKENSERVICE"
+        },
+        "recurringProcessingModel": "CardOnFile",
+        "reference": "",
+        "selectedBrand": "",
+        "selectedRecurringDetailReference": "",
+        "sessionId": "",
+        "shopperEmail": "",
+        "shopperIP": "",
+        "shopperInteraction": "Ecommerce",
+        "shopperLocale": "",
+        "shopperName": {
+          "firstName": "",
+          "lastName": ""
+        },
+        "shopperReference": "",
+        "shopperStatement": "",
+        "socialSecurityNumber": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "store": "",
+        "telephoneNumber": "",
+        "threeDS2RequestData": {
+          "acctInfo": {
+            "chAccAgeInd": "01",
+            "chAccChange": "",
+            "chAccChangeInd": "01",
+            "chAccPwChange": "",
+            "chAccPwChangeInd": "01",
+            "chAccString": "",
+            "nbPurchaseAccount": "",
+            "paymentAccAge": "",
+            "paymentAccInd": "01",
+            "provisionAttemptsDay": "",
+            "shipAddressUsage": "",
+            "shipAddressUsageInd": "01",
+            "shipNameIndicator": "01",
+            "suspiciousAccActivity": "01",
+            "txnActivityDay": "",
+            "txnActivityYear": ""
+          },
+          "acctType": "01",
+          "acquirerBIN": "",
+          "acquirerMerchantID": "",
+          "addrMatch": "Y",
+          "authenticationOnly": false,
+          "challengeIndicator": "noPreference",
+          "deviceChannel": "",
+          "deviceRenderOptions": {
+            "sdkInterface": "native",
+            "sdkUiType": [
+              "multiSelect"
+            ]
+          },
+          "homePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "mcc": "",
+          "merchantName": "",
+          "messageVersion": "2.1.0",
+          "mobilePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "notificationURL": "",
+          "payTokenInd": false,
+          "paymentAuthenticationUseCase": "",
+          "purchaseInstalData": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "sdkAppID": "",
+          "sdkEncData": "",
+          "sdkEphemPubKey": {
+            "crv": "",
+            "kty": "",
+            "x": "",
+            "y": ""
+          },
+          "sdkMaxTimeout": 60,
+          "sdkReferenceNumber": "",
+          "sdkTransID": "",
+          "sdkVersion": "",
+          "threeDSCompInd": "",
+          "threeDSRequestorAuthenticationInd": "",
+          "threeDSRequestorAuthenticationInfo": {
+            "threeDSReqAuthData": "",
+            "threeDSReqAuthMethod": "01",
+            "threeDSReqAuthTimestamp": ""
+          },
+          "threeDSRequestorChallengeInd": "01",
+          "threeDSRequestorID": "",
+          "threeDSRequestorName": "",
+          "threeDSRequestorPriorAuthenticationInfo": {
+            "threeDSReqPriorAuthData": "",
+            "threeDSReqPriorAuthMethod": "01",
+            "threeDSReqPriorAuthTimestamp": "",
+            "threeDSReqPriorRef": ""
+          },
+          "threeDSRequestorURL": "",
+          "transType": "01",
+          "transactionType": "goodsOrServicePurchase",
+          "whiteListStatus": "",
+          "workPhone": {
+            "cc": "",
+            "subscriber": ""
+          }
+        },
+        "threeDS2Result": {
+          "authenticationValue": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "challengeIndicator": "noPreference",
+          "dsTransID": "",
+          "eci": "",
+          "exemptionIndicator": "lowValue",
+          "messageVersion": "",
+          "riskScore": "",
+          "threeDSServerTransID": "",
+          "timestamp": "",
+          "transStatus": "",
+          "transStatusReason": "",
+          "whiteListStatus": ""
+        },
+        "threeDS2Token": "",
+        "threeDSAuthenticationOnly": false,
+        "totalsGroup": "",
+        "trustedShopper": false
+      },
+      "body_json": {
+        "accountInfo": {
+          "accountAgeIndicator": "notApplicable",
+          "accountChangeDate": "",
+          "accountChangeIndicator": "thisTransaction",
+          "accountCreationDate": "",
+          "accountType": "notApplicable",
+          "addCardAttemptsDay": 0,
+          "deliveryAddressUsageDate": "",
+          "deliveryAddressUsageIndicator": "thisTransaction",
+          "homePhone": "",
+          "mobilePhone": "",
+          "passwordChangeDate": "",
+          "passwordChangeIndicator": "notApplicable",
+          "pastTransactionsDay": 0,
+          "pastTransactionsYear": 0,
+          "paymentAccountAge": "",
+          "paymentAccountIndicator": "notApplicable",
+          "purchasesLast6Months": 0,
+          "suspiciousActivity": false,
+          "workPhone": ""
+        },
+        "additionalAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "amount": {
+          "currency": "",
+          "value": 0
+        },
+        "applicationInfo": {
+          "adyenLibrary": {
+            "name": "",
+            "version": ""
+          },
+          "adyenPaymentSource": {
+            "name": "",
+            "version": ""
+          },
+          "externalPlatform": {
+            "integrator": "",
+            "name": "",
+            "version": ""
+          },
+          "merchantApplication": {
+            "name": "",
+            "version": ""
+          },
+          "merchantDevice": {
+            "os": "",
+            "osVersion": "",
+            "reference": ""
+          },
+          "shopperInteractionDevice": {
+            "locale": "",
+            "os": "",
+            "osVersion": ""
+          }
+        },
+        "billingAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "browserInfo": {
+          "acceptHeader": "",
+          "colorDepth": 0,
+          "javaEnabled": false,
+          "javaScriptEnabled": true,
+          "language": "",
+          "screenHeight": 0,
+          "screenWidth": 0,
+          "timeZoneOffset": 0,
+          "userAgent": ""
+        },
+        "captureDelayHours": 0,
+        "dateOfBirth": "",
+        "dccQuote": {
+          "account": "",
+          "accountType": "",
+          "baseAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "basePoints": 0,
+          "buy": {
+            "currency": "",
+            "value": 0
+          },
+          "interbank": {
+            "currency": "",
+            "value": 0
+          },
+          "reference": "",
+          "sell": {
+            "currency": "",
+            "value": 0
+          },
+          "signature": "",
+          "source": "",
+          "type": "",
+          "validTill": ""
+        },
+        "deliveryAddress": {
+          "city": "",
+          "country": "",
+          "houseNumberOrName": "",
+          "postalCode": "",
+          "stateOrProvince": "",
+          "street": ""
+        },
+        "deliveryDate": "",
+        "deviceFingerprint": "",
+        "fraudOffset": 0,
+        "installments": {
+          "plan": "regular",
+          "value": 0
+        },
+        "localizedShopperStatement": {},
+        "mcc": "",
+        "merchantAccount": "",
+        "merchantOrderReference": "",
+        "merchantRiskIndicator": {
+          "addressMatch": false,
+          "deliveryAddressIndicator": "shipToBillingAddress",
+          "deliveryEmail": "",
+          "deliveryEmailAddress": "",
+          "deliveryTimeframe": "electronicDelivery",
+          "giftCardAmount": {
+            "currency": "",
+            "value": 0
+          },
+          "giftCardCount": 0,
+          "giftCardCurr": "",
+          "preOrderDate": "",
+          "preOrderPurchase": false,
+          "preOrderPurchaseInd": "",
+          "reorderItems": false,
+          "reorderItemsInd": "",
+          "shipIndicator": ""
+        },
+        "metadata": {},
+        "orderReference": "",
+        "recurring": {
+          "contract": "ONECLICK",
+          "recurringDetailName": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "tokenService": "VISATOKENSERVICE"
+        },
+        "recurringProcessingModel": "CardOnFile",
+        "reference": "",
+        "selectedBrand": "",
+        "selectedRecurringDetailReference": "",
+        "sessionId": "",
+        "shopperEmail": "",
+        "shopperIP": "",
+        "shopperInteraction": "Ecommerce",
+        "shopperLocale": "",
+        "shopperName": {
+          "firstName": "",
+          "lastName": ""
+        },
+        "shopperReference": "",
+        "shopperStatement": "",
+        "socialSecurityNumber": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "store": "",
+        "telephoneNumber": "",
+        "threeDS2RequestData": {
+          "acctInfo": {
+            "chAccAgeInd": "01",
+            "chAccChange": "",
+            "chAccChangeInd": "01",
+            "chAccPwChange": "",
+            "chAccPwChangeInd": "01",
+            "chAccString": "",
+            "nbPurchaseAccount": "",
+            "paymentAccAge": "",
+            "paymentAccInd": "01",
+            "provisionAttemptsDay": "",
+            "shipAddressUsage": "",
+            "shipAddressUsageInd": "01",
+            "shipNameIndicator": "01",
+            "suspiciousAccActivity": "01",
+            "txnActivityDay": "",
+            "txnActivityYear": ""
+          },
+          "acctType": "01",
+          "acquirerBIN": "",
+          "acquirerMerchantID": "",
+          "addrMatch": "Y",
+          "authenticationOnly": false,
+          "challengeIndicator": "noPreference",
+          "deviceChannel": "",
+          "deviceRenderOptions": {
+            "sdkInterface": "native",
+            "sdkUiType": [
+              "multiSelect"
+            ]
+          },
+          "homePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "mcc": "",
+          "merchantName": "",
+          "messageVersion": "2.1.0",
+          "mobilePhone": {
+            "cc": "",
+            "subscriber": ""
+          },
+          "notificationURL": "",
+          "payTokenInd": false,
+          "paymentAuthenticationUseCase": "",
+          "purchaseInstalData": "",
+          "recurringExpiry": "",
+          "recurringFrequency": "",
+          "sdkAppID": "",
+          "sdkEncData": "",
+          "sdkEphemPubKey": {
+            "crv": "",
+            "kty": "",
+            "x": "",
+            "y": ""
+          },
+          "sdkMaxTimeout": 60,
+          "sdkReferenceNumber": "",
+          "sdkTransID": "",
+          "sdkVersion": "",
+          "threeDSCompInd": "",
+          "threeDSRequestorAuthenticationInd": "",
+          "threeDSRequestorAuthenticationInfo": {
+            "threeDSReqAuthData": "",
+            "threeDSReqAuthMethod": "01",
+            "threeDSReqAuthTimestamp": ""
+          },
+          "threeDSRequestorChallengeInd": "01",
+          "threeDSRequestorID": "",
+          "threeDSRequestorName": "",
+          "threeDSRequestorPriorAuthenticationInfo": {
+            "threeDSReqPriorAuthData": "",
+            "threeDSReqPriorAuthMethod": "01",
+            "threeDSReqPriorAuthTimestamp": "",
+            "threeDSReqPriorRef": ""
+          },
+          "threeDSRequestorURL": "",
+          "transType": "01",
+          "transactionType": "goodsOrServicePurchase",
+          "whiteListStatus": "",
+          "workPhone": {
+            "cc": "",
+            "subscriber": ""
+          }
+        },
+        "threeDS2Result": {
+          "authenticationValue": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "challengeIndicator": "noPreference",
+          "dsTransID": "",
+          "eci": "",
+          "exemptionIndicator": "lowValue",
+          "messageVersion": "",
+          "riskScore": "",
+          "threeDSServerTransID": "",
+          "timestamp": "",
+          "transStatus": "",
+          "transStatusReason": "",
+          "whiteListStatus": ""
+        },
+        "threeDS2Token": "",
+        "threeDSAuthenticationOnly": false,
+        "totalsGroup": "",
+        "trustedShopper": false
+      },
+      "body_text": "{\"accountInfo\": {\"accountAgeIndicator\": \"notApplicable\", \"accountChangeDate\": \"\", \"accountChangeIndicator\": \"thisTransaction\", \"accountCreationDate\": \"\", \"accountType\": \"notApplicable\", \"addCardAttemptsDay\": 0, \"deliveryAddressUsageDate\": \"\", \"deliveryAddressUsageIndicator\": \"thisTransaction\", \"homePhone\": \"\", \"mobilePhone\": \"\", \"passwordChangeDate\": \"\", \"passwordChangeIndicator\": \"notApplicable\", \"pastTransactionsDay\": 0, \"pastTransactionsYear\": 0, \"paymentAccountAge\": \"\", \"paymentAccountIndicator\": \"notApplicable\", \"purchasesLast6Months\": 0, \"suspiciousActivity\": false, \"workPhone\": \"\"}, \"additionalAmount\": {\"currency\": \"\", \"value\": 0}, \"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"amount\": {\"currency\": \"\", \"value\": 0}, \"applicationInfo\": {\"adyenLibrary\": {\"name\": \"\", \"version\": \"\"}, \"adyenPaymentSource\": {\"name\": \"\", \"version\": \"\"}, \"externalPlatform\": {\"integrator\": \"\", \"name\": \"\", \"version\": \"\"}, \"merchantApplication\": {\"name\": \"\", \"version\": \"\"}, \"merchantDevice\": {\"os\": \"\", \"osVersion\": \"\", \"reference\": \"\"}, \"shopperInteractionDevice\": {\"locale\": \"\", \"os\": \"\", \"osVersion\": \"\"}}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"browserInfo\": {\"acceptHeader\": \"\", \"colorDepth\": 0, \"javaEnabled\": false, \"javaScriptEnabled\": true, \"language\": \"\", \"screenHeight\": 0, \"screenWidth\": 0, \"timeZoneOffset\": 0, \"userAgent\": \"\"}, \"captureDelayHours\": 0, \"dateOfBirth\": \"\", \"dccQuote\": {\"account\": \"\", \"accountType\": \"\", \"baseAmount\": {\"currency\": \"\", \"value\": 0}, \"basePoints\": 0, \"buy\": {\"currency\": \"\", \"value\": 0}, \"interbank\": {\"currency\": \"\", \"value\": 0}, \"reference\": \"\", \"sell\": {\"currency\": \"\", \"value\": 0}, \"signature\": \"\", \"source\": \"\", \"type\": \"\", \"validTill\": \"\"}, \"deliveryAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"deliveryDate\": \"\", \"deviceFingerprint\": \"\", \"fraudOffset\": 0, \"installments\": {\"plan\": \"regular\", \"value\": 0}, \"localizedShopperStatement\": {}, \"mcc\": \"\", \"merchantAccount\": \"\", \"merchantOrderReference\": \"\", \"merchantRiskIndicator\": {\"addressMatch\": false, \"deliveryAddressIndicator\": \"shipToBillingAddress\", \"deliveryEmail\": \"\", \"deliveryEmailAddress\": \"\", \"deliveryTimeframe\": \"electronicDelivery\", \"giftCardAmount\": {\"currency\": \"\", \"value\": 0}, \"giftCardCount\": 0, \"giftCardCurr\": \"\", \"preOrderDate\": \"\", \"preOrderPurchase\": false, \"preOrderPurchaseInd\": \"\", \"reorderItems\": false, \"reorderItemsInd\": \"\", \"shipIndicator\": \"\"}, \"metadata\": {}, \"orderReference\": \"\", \"recurring\": {\"contract\": \"ONECLICK\", \"recurringDetailName\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"tokenService\": \"VISATOKENSERVICE\"}, \"recurringProcessingModel\": \"CardOnFile\", \"reference\": \"\", \"selectedBrand\": \"\", \"selectedRecurringDetailReference\": \"\", \"sessionId\": \"\", \"shopperEmail\": \"\", \"shopperIP\": \"\", \"shopperInteraction\": \"Ecommerce\", \"shopperLocale\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"shopperReference\": \"\", \"shopperStatement\": \"\", \"socialSecurityNumber\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"store\": \"\", \"telephoneNumber\": \"\", \"threeDS2RequestData\": {\"acctInfo\": {\"chAccAgeInd\": \"01\", \"chAccChange\": \"\", \"chAccChangeInd\": \"01\", \"chAccPwChange\": \"\", \"chAccPwChangeInd\": \"01\", \"chAccString\": \"\", \"nbPurchaseAccount\": \"\", \"paymentAccAge\": \"\", \"paymentAccInd\": \"01\", \"provisionAttemptsDay\": \"\", \"shipAddressUsage\": \"\", \"shipAddressUsageInd\": \"01\", \"shipNameIndicator\": \"01\", \"suspiciousAccActivity\": \"01\", \"txnActivityDay\": \"\", \"txnActivityYear\": \"\"}, \"acctType\": \"01\", \"acquirerBIN\": \"\", \"acquirerMerchantID\": \"\", \"addrMatch\": \"Y\", \"authenticationOnly\": false, \"challengeIndicator\": \"noPreference\", \"deviceChannel\": \"\", \"deviceRenderOptions\": {\"sdkInterface\": \"native\", \"sdkUiType\": [\"multiSelect\"]}, \"homePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"mcc\": \"\", \"merchantName\": \"\", \"messageVersion\": \"2.1.0\", \"mobilePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"notificationURL\": \"\", \"payTokenInd\": false, \"paymentAuthenticationUseCase\": \"\", \"purchaseInstalData\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"sdkAppID\": \"\", \"sdkEncData\": \"\", \"sdkEphemPubKey\": {\"crv\": \"\", \"kty\": \"\", \"x\": \"\", \"y\": \"\"}, \"sdkMaxTimeout\": 60, \"sdkReferenceNumber\": \"\", \"sdkTransID\": \"\", \"sdkVersion\": \"\", \"threeDSCompInd\": \"\", \"threeDSRequestorAuthenticationInd\": \"\", \"threeDSRequestorAuthenticationInfo\": {\"threeDSReqAuthData\": \"\", \"threeDSReqAuthMethod\": \"01\", \"threeDSReqAuthTimestamp\": \"\"}, \"threeDSRequestorChallengeInd\": \"01\", \"threeDSRequestorID\": \"\", \"threeDSRequestorName\": \"\", \"threeDSRequestorPriorAuthenticationInfo\": {\"threeDSReqPriorAuthData\": \"\", \"threeDSReqPriorAuthMethod\": \"01\", \"threeDSReqPriorAuthTimestamp\": \"\", \"threeDSReqPriorRef\": \"\"}, \"threeDSRequestorURL\": \"\", \"transType\": \"01\", \"transactionType\": \"goodsOrServicePurchase\", \"whiteListStatus\": \"\", \"workPhone\": {\"cc\": \"\", \"subscriber\": \"\"}}, \"threeDS2Result\": {\"authenticationValue\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"challengeIndicator\": \"noPreference\", \"dsTransID\": \"\", \"eci\": \"\", \"exemptionIndicator\": \"lowValue\", \"messageVersion\": \"\", \"riskScore\": \"\", \"threeDSServerTransID\": \"\", \"timestamp\": \"\", \"transStatus\": \"\", \"transStatusReason\": \"\", \"whiteListStatus\": \"\"}, \"threeDS2Token\": \"\", \"threeDSAuthenticationOnly\": false, \"totalsGroup\": \"\", \"trustedShopper\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "For an authenticated 3D Secure 2 session, completes the payment authorisation. This endpoint must receive the `threeDS2Token` and `threeDS2Result` parameters.\n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce/3d-secure). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/payments/details`](https://docs.adyen.com/api-explorer/#/CheckoutService/payments/details) endpoint under Checkout API instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/authorise3ds2",
+      "method": "POST",
+      "name": "Complete a 3DS2 authorisation",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/authorise3ds2",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"accountInfo\": {\"accountAgeIndicator\": \"notApplicable\", \"accountChangeDate\": \"\", \"accountChangeIndicator\": \"thisTransaction\", \"accountCreationDate\": \"\", \"accountType\": \"notApplicable\", \"addCardAttemptsDay\": 0, \"deliveryAddressUsageDate\": \"\", \"deliveryAddressUsageIndicator\": \"thisTransaction\", \"homePhone\": \"\", \"mobilePhone\": \"\", \"passwordChangeDate\": \"\", \"passwordChangeIndicator\": \"notApplicable\", \"pastTransactionsDay\": 0, \"pastTransactionsYear\": 0, \"paymentAccountAge\": \"\", \"paymentAccountIndicator\": \"notApplicable\", \"purchasesLast6Months\": 0, \"suspiciousActivity\": false, \"workPhone\": \"\"}, \"additionalAmount\": {\"currency\": \"\", \"value\": 0}, \"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"amount\": {\"currency\": \"\", \"value\": 0}, \"applicationInfo\": {\"adyenLibrary\": {\"name\": \"\", \"version\": \"\"}, \"adyenPaymentSource\": {\"name\": \"\", \"version\": \"\"}, \"externalPlatform\": {\"integrator\": \"\", \"name\": \"\", \"version\": \"\"}, \"merchantApplication\": {\"name\": \"\", \"version\": \"\"}, \"merchantDevice\": {\"os\": \"\", \"osVersion\": \"\", \"reference\": \"\"}, \"shopperInteractionDevice\": {\"locale\": \"\", \"os\": \"\", \"osVersion\": \"\"}}, \"billingAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"browserInfo\": {\"acceptHeader\": \"\", \"colorDepth\": 0, \"javaEnabled\": false, \"javaScriptEnabled\": true, \"language\": \"\", \"screenHeight\": 0, \"screenWidth\": 0, \"timeZoneOffset\": 0, \"userAgent\": \"\"}, \"captureDelayHours\": 0, \"dateOfBirth\": \"\", \"dccQuote\": {\"account\": \"\", \"accountType\": \"\", \"baseAmount\": {\"currency\": \"\", \"value\": 0}, \"basePoints\": 0, \"buy\": {\"currency\": \"\", \"value\": 0}, \"interbank\": {\"currency\": \"\", \"value\": 0}, \"reference\": \"\", \"sell\": {\"currency\": \"\", \"value\": 0}, \"signature\": \"\", \"source\": \"\", \"type\": \"\", \"validTill\": \"\"}, \"deliveryAddress\": {\"city\": \"\", \"country\": \"\", \"houseNumberOrName\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\", \"street\": \"\"}, \"deliveryDate\": \"\", \"deviceFingerprint\": \"\", \"fraudOffset\": 0, \"installments\": {\"plan\": \"regular\", \"value\": 0}, \"localizedShopperStatement\": {}, \"mcc\": \"\", \"merchantAccount\": \"\", \"merchantOrderReference\": \"\", \"merchantRiskIndicator\": {\"addressMatch\": false, \"deliveryAddressIndicator\": \"shipToBillingAddress\", \"deliveryEmail\": \"\", \"deliveryEmailAddress\": \"\", \"deliveryTimeframe\": \"electronicDelivery\", \"giftCardAmount\": {\"currency\": \"\", \"value\": 0}, \"giftCardCount\": 0, \"giftCardCurr\": \"\", \"preOrderDate\": \"\", \"preOrderPurchase\": false, \"preOrderPurchaseInd\": \"\", \"reorderItems\": false, \"reorderItemsInd\": \"\", \"shipIndicator\": \"\"}, \"metadata\": {}, \"orderReference\": \"\", \"recurring\": {\"contract\": \"ONECLICK\", \"recurringDetailName\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"tokenService\": \"VISATOKENSERVICE\"}, \"recurringProcessingModel\": \"CardOnFile\", \"reference\": \"\", \"selectedBrand\": \"\", \"selectedRecurringDetailReference\": \"\", \"sessionId\": \"\", \"shopperEmail\": \"\", \"shopperIP\": \"\", \"shopperInteraction\": \"Ecommerce\", \"shopperLocale\": \"\", \"shopperName\": {\"firstName\": \"\", \"lastName\": \"\"}, \"shopperReference\": \"\", \"shopperStatement\": \"\", \"socialSecurityNumber\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"store\": \"\", \"telephoneNumber\": \"\", \"threeDS2RequestData\": {\"acctInfo\": {\"chAccAgeInd\": \"01\", \"chAccChange\": \"\", \"chAccChangeInd\": \"01\", \"chAccPwChange\": \"\", \"chAccPwChangeInd\": \"01\", \"chAccString\": \"\", \"nbPurchaseAccount\": \"\", \"paymentAccAge\": \"\", \"paymentAccInd\": \"01\", \"provisionAttemptsDay\": \"\", \"shipAddressUsage\": \"\", \"shipAddressUsageInd\": \"01\", \"shipNameIndicator\": \"01\", \"suspiciousAccActivity\": \"01\", \"txnActivityDay\": \"\", \"txnActivityYear\": \"\"}, \"acctType\": \"01\", \"acquirerBIN\": \"\", \"acquirerMerchantID\": \"\", \"addrMatch\": \"Y\", \"authenticationOnly\": false, \"challengeIndicator\": \"noPreference\", \"deviceChannel\": \"\", \"deviceRenderOptions\": {\"sdkInterface\": \"native\", \"sdkUiType\": [\"multiSelect\"]}, \"homePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"mcc\": \"\", \"merchantName\": \"\", \"messageVersion\": \"2.1.0\", \"mobilePhone\": {\"cc\": \"\", \"subscriber\": \"\"}, \"notificationURL\": \"\", \"payTokenInd\": false, \"paymentAuthenticationUseCase\": \"\", \"purchaseInstalData\": \"\", \"recurringExpiry\": \"\", \"recurringFrequency\": \"\", \"sdkAppID\": \"\", \"sdkEncData\": \"\", \"sdkEphemPubKey\": {\"crv\": \"\", \"kty\": \"\", \"x\": \"\", \"y\": \"\"}, \"sdkMaxTimeout\": 60, \"sdkReferenceNumber\": \"\", \"sdkTransID\": \"\", \"sdkVersion\": \"\", \"threeDSCompInd\": \"\", \"threeDSRequestorAuthenticationInd\": \"\", \"threeDSRequestorAuthenticationInfo\": {\"threeDSReqAuthData\": \"\", \"threeDSReqAuthMethod\": \"01\", \"threeDSReqAuthTimestamp\": \"\"}, \"threeDSRequestorChallengeInd\": \"01\", \"threeDSRequestorID\": \"\", \"threeDSRequestorName\": \"\", \"threeDSRequestorPriorAuthenticationInfo\": {\"threeDSReqPriorAuthData\": \"\", \"threeDSReqPriorAuthMethod\": \"01\", \"threeDSReqPriorAuthTimestamp\": \"\", \"threeDSReqPriorRef\": \"\"}, \"threeDSRequestorURL\": \"\", \"transType\": \"01\", \"transactionType\": \"goodsOrServicePurchase\", \"whiteListStatus\": \"\", \"workPhone\": {\"cc\": \"\", \"subscriber\": \"\"}}, \"threeDS2Result\": {\"authenticationValue\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"challengeIndicator\": \"noPreference\", \"dsTransID\": \"\", \"eci\": \"\", \"exemptionIndicator\": \"lowValue\", \"messageVersion\": \"\", \"riskScore\": \"\", \"threeDSServerTransID\": \"\", \"timestamp\": \"\", \"transStatus\": \"\", \"transStatusReason\": \"\", \"whiteListStatus\": \"\"}, \"threeDS2Token\": \"\", \"threeDSAuthenticationOnly\": false, \"totalsGroup\": \"\", \"trustedShopper\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Complete a 3DS2 authorisation",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/authorise3ds2"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_json": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_text": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Cancels the authorisation hold on a payment, returning a unique reference for this request. You can cancel payments after authorisation only for payment methods that support distinct authorisations and captures.\n\nFor more information, refer to [Cancel](https://docs.adyen.com/online-payments/classic-integrations/modify-payments/cancel).\n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/payments/{paymentPspReference}/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/payments/{paymentPspReference}/cancels) endpoint under Checkout API instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/cancel",
+      "method": "POST",
+      "name": "Cancel an authorisation",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/cancel",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel an authorisation",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/cancel"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_json": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_text": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Cancels a payment if it has not been captured yet, or refunds it if it has already been captured. This is useful when it is not certain if the payment has been captured or not (for example, when using auto-capture).\n\nDo not use this endpoint for payments that involve:\n * [Multiple partial captures](https://docs.adyen.com/online-payments/capture).\n * [Split data](https://docs.adyen.com/marketplaces-and-platforms/processing-payments#providing-split-information) either at time of payment or capture for Adyen for Platforms.\n\n Instead, check if the payment has been captured and make a corresponding [`/refund`](https://docs.adyen.com/api-explorer/#/Payment/refund) or [`/cancel`](https://docs.adyen.com/api-explorer/#/Payment/cancel) call.\n\nFor more information, refer to [Cancel or refund](https://docs.adyen.com/online-payments/classic-integrations/modify-payments/cancel-or-refund).\n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/payments/{paymentPspReference}/reversals) endpoint under Checkout API instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/cancelOrRefund",
+      "method": "POST",
+      "name": "Cancel or refund a payment",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/cancelOrRefund",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel or refund a payment",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/cancelOrRefund"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_json": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_text": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Captures the authorisation hold on a payment, returning a unique reference for this request. Usually the full authorisation amount is captured, however it's also possible to capture a smaller amount, which results in cancelling the remaining authorisation balance.\n\nPayment methods that are captured automatically after authorisation don't need to be captured. However, submitting a capture request on these transactions will not result in double charges. If immediate or delayed auto-capture is enabled, calling the capture method is not neccessary.\n\nFor more information refer to [Capture](https://docs.adyen.com/online-payments/classic-integrations/modify-payments/capture).\n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/payments/{paymentPspReference}/captures`](https://docs.adyen.com/api-explorer/#/CheckoutService/v67/post/payments/{paymentPspReference}/captures) endpoint on Checkout API instead.\n\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/capture",
+      "method": "POST",
+      "name": "Capture an authorisation",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/capture",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Capture an authorisation",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/capture"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "donationAccount": "",
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": ""
+      },
+      "body_json": {
+        "donationAccount": "",
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": ""
+      },
+      "body_text": "{\"donationAccount\": \"\", \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Schedules a new payment to be created (including a new authorisation request) for the specified donation using the payment details of the original payment.\n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/donations`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/donations) endpoint under Checkout API instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/donate",
+      "method": "POST",
+      "name": "Create a donation",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/donate",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"donationAccount\": \"\", \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a donation",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/donate"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "merchantAccount": "",
+        "pspReference": ""
+      },
+      "body_json": {
+        "merchantAccount": "",
+        "pspReference": ""
+      },
+      "body_text": "{\"merchantAccount\": \"\", \"pspReference\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Return the authentication result after doing a 3D Secure authentication only.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/getAuthenticationResult",
+      "method": "POST",
+      "name": "Get the 3DS authentication result",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/getAuthenticationResult",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"merchantAccount\": \"\", \"pspReference\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the 3DS authentication result",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/getAuthenticationResult"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_json": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_text": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Refunds a payment that has previously been captured, returning a unique reference for this request. Refunding can be done on the full captured amount or a partial amount. Multiple (partial) refunds will be accepted as long as their sum doesn't exceed the captured amount. Payments which have been authorised, but not captured, cannot be refunded, use the /cancel method instead.\n\nSome payment methods/gateways do not support partial/multiple refunds.\nA margin above the captured limit can be configured to cover shipping/handling costs.\n\nFor more information, refer to [Refund](https://docs.adyen.com/online-payments/classic-integrations/modify-payments/refund).\n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/payments/{paymentPspReference}/refunds`](https://docs.adyen.com/api-explorer/#/CheckoutService/payments/{paymentPspReference}/refunds) endpoint under Checkout API instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/refund",
+      "method": "POST",
+      "name": "Refund a captured payment",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/refund",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refund a captured payment",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/refund"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "merchantAccount": "",
+        "pspReference": ""
+      },
+      "body_json": {
+        "merchantAccount": "",
+        "pspReference": ""
+      },
+      "body_text": "{\"merchantAccount\": \"\", \"pspReference\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves the `threeDS2Result` after doing a 3D Secure 2 authentication only.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/retrieve3ds2Result",
+      "method": "POST",
+      "name": "Get the 3DS2 authentication result",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/retrieve3ds2Result",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"merchantAccount\": \"\", \"pspReference\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the 3DS2 authentication result",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/retrieve3ds2Result"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_json": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_text": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint allows you to cancel a payment if you do not have the PSP reference of the original payment request available.\n\nIn your call, refer to the original payment by using the `reference` that you specified in your payment request.\n\nFor more information, see [Technical cancel](https://docs.adyen.com/online-payments/classic-integrations/modify-payments/cancel#technical-cancel). \n\n> This endpoint is part of our [classic API integration](https://docs.adyen.com/online-payments/classic-integrations/api-integration-ecommerce). If using a [newer integration](https://docs.adyen.com/online-payments), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/cancels) endpoint under Checkout API instead.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/technicalCancel",
+      "method": "POST",
+      "name": "Cancel an authorisation using your reference",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/technicalCancel",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel an authorisation using your reference",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/technicalCancel"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ADYEN_PAYMENT_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_json": {
+        "additionalData": {
+          "allow3DS2": "",
+          "challengeWindowSize": "01",
+          "executeThreeD": "",
+          "mpiImplementationType": "",
+          "scaExemption": "",
+          "threeDSVersion": ""
+        },
+        "merchantAccount": "",
+        "modificationAmount": {
+          "currency": "",
+          "value": 0
+        },
+        "mpiData": {
+          "authenticationResponse": "Y",
+          "cavv": "",
+          "cavvAlgorithm": "",
+          "challengeCancel": "01",
+          "directoryResponse": "A",
+          "dsTransID": "",
+          "eci": "",
+          "riskScore": "",
+          "threeDSVersion": "",
+          "tokenAuthenticationVerificationValue": "",
+          "transStatusReason": "",
+          "xid": ""
+        },
+        "originalMerchantReference": "",
+        "originalReference": "",
+        "platformChargebackLogic": {
+          "behavior": "deductAccordingToSplitRatio",
+          "costAllocationAccount": "",
+          "targetAccount": ""
+        },
+        "reference": "",
+        "splits": [
+          {
+            "account": "",
+            "amount": {
+              "currency": "",
+              "value": 0
+            },
+            "description": "",
+            "reference": "",
+            "type": "BalanceAccount"
+          }
+        ],
+        "tenderReference": "",
+        "uniqueTerminalId": ""
+      },
+      "body_text": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint allows you to cancel an unreferenced refund request before it has been completed.\n\nIn your call, you can refer to the original refund request either by using the `tenderReference`, or the `pspReference`. We recommend implementing based on the `tenderReference`, as this is generated for both offline and online transactions.\n\nFor more information, refer to [Cancel an unreferenced refund](https://docs.adyen.com/point-of-sale/refund-payment/cancel-unreferenced).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{ADYEN_PAYMENT_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pal/servlet/Payment/v68/voidPendingRefund",
+      "method": "POST",
+      "name": "Cancel an in-person refund",
+      "note": "Replace {{ADYEN_PAYMENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pal/servlet/Payment/v68/voidPendingRefund",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"additionalData\": {\"allow3DS2\": \"\", \"challengeWindowSize\": \"01\", \"executeThreeD\": \"\", \"mpiImplementationType\": \"\", \"scaExemption\": \"\", \"threeDSVersion\": \"\"}, \"merchantAccount\": \"\", \"modificationAmount\": {\"currency\": \"\", \"value\": 0}, \"mpiData\": {\"authenticationResponse\": \"Y\", \"cavv\": \"\", \"cavvAlgorithm\": \"\", \"challengeCancel\": \"01\", \"directoryResponse\": \"A\", \"dsTransID\": \"\", \"eci\": \"\", \"riskScore\": \"\", \"threeDSVersion\": \"\", \"tokenAuthenticationVerificationValue\": \"\", \"transStatusReason\": \"\", \"xid\": \"\"}, \"originalMerchantReference\": \"\", \"originalReference\": \"\", \"platformChargebackLogic\": {\"behavior\": \"deductAccordingToSplitRatio\", \"costAllocationAccount\": \"\", \"targetAccount\": \"\"}, \"reference\": \"\", \"splits\": [{\"account\": \"\", \"amount\": {\"currency\": \"\", \"value\": 0}, \"description\": \"\", \"reference\": \"\", \"type\": \"BalanceAccount\"}], \"tenderReference\": \"\", \"uniqueTerminalId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel an in-person refund",
+      "url": "https://pal-test.adyen.com/pal/servlet/Payment/v68/voidPendingRefund"
+    }
+  ]
+}

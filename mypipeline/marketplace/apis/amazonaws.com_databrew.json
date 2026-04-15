@@ -1,0 +1,3960 @@
+{
+  "id": "amazonaws.com_databrew",
+  "info": {
+    "base_url": "http://databrew.{region}.amazonaws.com",
+    "description": "Modifies the definition of an existing DataBrew recipe job.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "AWS Glue DataBrew",
+    "version": "2017-07-25"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "RecipeVersions": [
+          ""
+        ]
+      },
+      "body_json": {
+        "RecipeVersions": [
+          ""
+        ]
+      },
+      "body_text": "{\"RecipeVersions\": [\"\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request will be rejected if:</p> <ul> <li> <p>The recipe does not exist.</p> </li> <li> <p>There is an invalid version identifier in the list of versions.</p> </li> <li> <p>The version list is empty.</p> </li> <li> <p>The version list size exceeds 50.</p> </li> <li> <p>The version list contains duplicate entries.</p> </li> </ul> <p>The request will complete successfully, but with partial failures, if:</p> <ul> <li> <p>A version does not exist.</p> </li> <li> <p>A version is being used by a job.</p> </li> <li> <p>You specify <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li> <li> <p>The version fails to be deleted.</p> </li> </ul> <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /recipes/{{NAME}}/batchDeleteRecipeVersion",
+      "method": "POST",
+      "name": "POST /recipes/{name}/batchDeleteRecipeVersion",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/recipes/{{NAME}}/batchDeleteRecipeVersion",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"RecipeVersions\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /recipes/{name}/batchDeleteRecipeVersion",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipes/{{NAME}}/batchDeleteRecipeVersion"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Format": "CSV",
+        "FormatOptions": {
+          "Csv": {
+            "Delimiter": {},
+            "HeaderRow": {}
+          },
+          "Excel": {
+            "HeaderRow": {},
+            "SheetIndexes": {},
+            "SheetNames": {}
+          },
+          "Json": {
+            "MultiLine": {}
+          }
+        },
+        "Input": {
+          "DataCatalogInputDefinition": {
+            "CatalogId": {},
+            "DatabaseName": {},
+            "TableName": {},
+            "TempDirectory": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            }
+          },
+          "DatabaseInputDefinition": {
+            "DatabaseTableName": {},
+            "GlueConnectionName": {},
+            "QueryString": {},
+            "TempDirectory": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            }
+          },
+          "Metadata": {
+            "SourceArn": {}
+          },
+          "S3InputDefinition": {
+            "Bucket": {},
+            "BucketOwner": {},
+            "Key": {}
+          }
+        },
+        "Name": "",
+        "PathOptions": {
+          "FilesLimit": {
+            "MaxFiles": {},
+            "Order": {},
+            "OrderedBy": {}
+          },
+          "LastModifiedDateCondition": {
+            "Expression": {},
+            "ValuesMap": {}
+          },
+          "Parameters": {}
+        },
+        "Tags": {}
+      },
+      "body_json": {
+        "Format": "CSV",
+        "FormatOptions": {
+          "Csv": {
+            "Delimiter": {},
+            "HeaderRow": {}
+          },
+          "Excel": {
+            "HeaderRow": {},
+            "SheetIndexes": {},
+            "SheetNames": {}
+          },
+          "Json": {
+            "MultiLine": {}
+          }
+        },
+        "Input": {
+          "DataCatalogInputDefinition": {
+            "CatalogId": {},
+            "DatabaseName": {},
+            "TableName": {},
+            "TempDirectory": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            }
+          },
+          "DatabaseInputDefinition": {
+            "DatabaseTableName": {},
+            "GlueConnectionName": {},
+            "QueryString": {},
+            "TempDirectory": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            }
+          },
+          "Metadata": {
+            "SourceArn": {}
+          },
+          "S3InputDefinition": {
+            "Bucket": {},
+            "BucketOwner": {},
+            "Key": {}
+          }
+        },
+        "Name": "",
+        "PathOptions": {
+          "FilesLimit": {
+            "MaxFiles": {},
+            "Order": {},
+            "OrderedBy": {}
+          },
+          "LastModifiedDateCondition": {
+            "Expression": {},
+            "ValuesMap": {}
+          },
+          "Parameters": {}
+        },
+        "Tags": {}
+      },
+      "body_text": "{\"Name\": \"\", \"Format\": \"CSV\", \"FormatOptions\": {\"Json\": {\"MultiLine\": {}}, \"Excel\": {\"SheetNames\": {}, \"SheetIndexes\": {}, \"HeaderRow\": {}}, \"Csv\": {\"Delimiter\": {}, \"HeaderRow\": {}}}, \"Input\": {\"S3InputDefinition\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"DataCatalogInputDefinition\": {\"CatalogId\": {}, \"DatabaseName\": {}, \"TableName\": {}, \"TempDirectory\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}}, \"DatabaseInputDefinition\": {\"GlueConnectionName\": {}, \"DatabaseTableName\": {}, \"TempDirectory\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"QueryString\": {}}, \"Metadata\": {\"SourceArn\": {}}}, \"PathOptions\": {\"LastModifiedDateCondition\": {\"Expression\": {}, \"ValuesMap\": {}}, \"FilesLimit\": {\"MaxFiles\": {}, \"OrderedBy\": {}, \"Order\": {}}, \"Parameters\": {}}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new DataBrew dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /datasets",
+      "method": "POST",
+      "name": "POST /datasets",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/datasets",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Format\": \"CSV\", \"FormatOptions\": {\"Json\": {\"MultiLine\": {}}, \"Excel\": {\"SheetNames\": {}, \"SheetIndexes\": {}, \"HeaderRow\": {}}, \"Csv\": {\"Delimiter\": {}, \"HeaderRow\": {}}}, \"Input\": {\"S3InputDefinition\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"DataCatalogInputDefinition\": {\"CatalogId\": {}, \"DatabaseName\": {}, \"TableName\": {}, \"TempDirectory\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}}, \"DatabaseInputDefinition\": {\"GlueConnectionName\": {}, \"DatabaseTableName\": {}, \"TempDirectory\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"QueryString\": {}}, \"Metadata\": {\"SourceArn\": {}}}, \"PathOptions\": {\"LastModifiedDateCondition\": {\"Expression\": {}, \"ValuesMap\": {}}, \"FilesLimit\": {\"MaxFiles\": {}, \"OrderedBy\": {}, \"Order\": {}}, \"Parameters\": {}}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /datasets",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/datasets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all of the DataBrew datasets.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /datasets",
+      "method": "GET",
+      "name": "GET /datasets",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/datasets",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /datasets",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/datasets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Configuration": {
+          "ColumnStatisticsConfigurations": {},
+          "DatasetStatisticsConfiguration": {
+            "IncludedStatistics": {},
+            "Overrides": {}
+          },
+          "EntityDetectorConfiguration": {
+            "AllowedStatistics": {},
+            "EntityTypes": {}
+          },
+          "ProfileColumns": {}
+        },
+        "DatasetName": "",
+        "EncryptionKeyArn": "",
+        "EncryptionMode": "SSE-KMS",
+        "JobSample": {
+          "Mode": {},
+          "Size": {}
+        },
+        "LogSubscription": "ENABLE",
+        "MaxCapacity": 0,
+        "MaxRetries": 0,
+        "Name": "",
+        "OutputLocation": {
+          "Bucket": {},
+          "BucketOwner": {},
+          "Key": {}
+        },
+        "RoleArn": "",
+        "Tags": {},
+        "Timeout": 0,
+        "ValidationConfigurations": [
+          {
+            "RulesetArn": {},
+            "ValidationMode": {}
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates a new job to analyze a dataset and create its data profile.",
+      "form_data": [
+        {
+          "name": "DatasetName",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "EncryptionKeyArn",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "EncryptionMode",
+          "type": "text",
+          "value": "SSE-KMS"
+        },
+        {
+          "name": "Name",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "LogSubscription",
+          "type": "text",
+          "value": "ENABLE"
+        },
+        {
+          "name": "MaxCapacity",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "MaxRetries",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "OutputLocation",
+          "type": "text",
+          "value": {
+            "Bucket": {},
+            "BucketOwner": {},
+            "Key": {}
+          }
+        },
+        {
+          "name": "Configuration",
+          "type": "text",
+          "value": {
+            "ColumnStatisticsConfigurations": {},
+            "DatasetStatisticsConfiguration": {
+              "IncludedStatistics": {},
+              "Overrides": {}
+            },
+            "EntityDetectorConfiguration": {
+              "AllowedStatistics": {},
+              "EntityTypes": {}
+            },
+            "ProfileColumns": {}
+          }
+        },
+        {
+          "name": "ValidationConfigurations",
+          "type": "text",
+          "value": [
+            {
+              "RulesetArn": {},
+              "ValidationMode": {}
+            }
+          ]
+        },
+        {
+          "name": "RoleArn",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "Tags",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Timeout",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "JobSample",
+          "type": "text",
+          "value": {
+            "Mode": {},
+            "Size": {}
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /profileJobs",
+      "method": "POST",
+      "name": "POST /profileJobs",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/profileJobs",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"DatasetName\": \"\", \"EncryptionKeyArn\": \"\", \"EncryptionMode\": \"SSE-KMS\", \"Name\": \"\", \"LogSubscription\": \"ENABLE\", \"MaxCapacity\": 0, \"MaxRetries\": 0, \"OutputLocation\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"Configuration\": {\"DatasetStatisticsConfiguration\": {\"IncludedStatistics\": {}, \"Overrides\": {}}, \"ProfileColumns\": {}, \"ColumnStatisticsConfigurations\": {}, \"EntityDetectorConfiguration\": {\"EntityTypes\": {}, \"AllowedStatistics\": {}}}, \"ValidationConfigurations\": [{\"RulesetArn\": {}, \"ValidationMode\": {}}], \"RoleArn\": \"\", \"Tags\": {}, \"Timeout\": 0, \"JobSample\": {\"Mode\": {}, \"Size\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /profileJobs",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/profileJobs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DatasetName": "",
+        "Name": "",
+        "RecipeName": "",
+        "RoleArn": "",
+        "Sample": {
+          "Size": {},
+          "Type": {}
+        },
+        "Tags": {}
+      },
+      "body_json": {
+        "DatasetName": "",
+        "Name": "",
+        "RecipeName": "",
+        "RoleArn": "",
+        "Sample": {
+          "Size": {},
+          "Type": {}
+        },
+        "Tags": {}
+      },
+      "body_text": "{\"DatasetName\": \"\", \"Name\": \"\", \"RecipeName\": \"\", \"Sample\": {\"Size\": {}, \"Type\": {}}, \"RoleArn\": \"\", \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new DataBrew project.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /projects",
+      "method": "POST",
+      "name": "POST /projects",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/projects",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"DatasetName\": \"\", \"Name\": \"\", \"RecipeName\": \"\", \"Sample\": {\"Size\": {}, \"Type\": {}}, \"RoleArn\": \"\", \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /projects",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/projects"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all of the DataBrew projects that are defined.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /projects",
+      "method": "GET",
+      "name": "GET /projects",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/projects",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /projects",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/projects"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Name": "",
+        "Steps": [
+          {
+            "Action": {
+              "Operation": {},
+              "Parameters": {}
+            },
+            "ConditionExpressions": {}
+          }
+        ],
+        "Tags": {}
+      },
+      "body_json": {
+        "Description": "",
+        "Name": "",
+        "Steps": [
+          {
+            "Action": {
+              "Operation": {},
+              "Parameters": {}
+            },
+            "ConditionExpressions": {}
+          }
+        ],
+        "Tags": {}
+      },
+      "body_text": "{\"Description\": \"\", \"Name\": \"\", \"Steps\": [{\"Action\": {\"Operation\": {}, \"Parameters\": {}}, \"ConditionExpressions\": {}}], \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new DataBrew recipe.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /recipes",
+      "method": "POST",
+      "name": "POST /recipes",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/recipes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Description\": \"\", \"Name\": \"\", \"Steps\": [{\"Action\": {\"Operation\": {}, \"Parameters\": {}}, \"ConditionExpressions\": {}}], \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /recipes",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipes"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all of the DataBrew recipes that are defined.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /recipes",
+      "method": "GET",
+      "name": "GET /recipes",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "recipeVersion",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/recipes",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "recipeVersion",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /recipes",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipes"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DataCatalogOutputs": [
+          {
+            "CatalogId": {},
+            "DatabaseName": {},
+            "DatabaseOptions": {
+              "TableName": {},
+              "TempDirectory": {}
+            },
+            "Overwrite": {},
+            "S3Options": {
+              "Location": {}
+            },
+            "TableName": {}
+          }
+        ],
+        "DatabaseOutputs": [
+          {
+            "DatabaseOptions": {
+              "TableName": {},
+              "TempDirectory": {}
+            },
+            "DatabaseOutputMode": {},
+            "GlueConnectionName": {}
+          }
+        ],
+        "DatasetName": "",
+        "EncryptionKeyArn": "",
+        "EncryptionMode": "SSE-KMS",
+        "LogSubscription": "ENABLE",
+        "MaxCapacity": 0,
+        "MaxRetries": 0,
+        "Name": "",
+        "Outputs": [
+          {
+            "CompressionFormat": {},
+            "Format": {},
+            "FormatOptions": {
+              "Csv": {}
+            },
+            "Location": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            },
+            "MaxOutputFiles": {},
+            "Overwrite": {},
+            "PartitionColumns": {}
+          }
+        ],
+        "ProjectName": "",
+        "RecipeReference": {
+          "Name": {},
+          "RecipeVersion": {}
+        },
+        "RoleArn": "",
+        "Tags": {},
+        "Timeout": 0
+      },
+      "body_json": {
+        "DataCatalogOutputs": [
+          {
+            "CatalogId": {},
+            "DatabaseName": {},
+            "DatabaseOptions": {
+              "TableName": {},
+              "TempDirectory": {}
+            },
+            "Overwrite": {},
+            "S3Options": {
+              "Location": {}
+            },
+            "TableName": {}
+          }
+        ],
+        "DatabaseOutputs": [
+          {
+            "DatabaseOptions": {
+              "TableName": {},
+              "TempDirectory": {}
+            },
+            "DatabaseOutputMode": {},
+            "GlueConnectionName": {}
+          }
+        ],
+        "DatasetName": "",
+        "EncryptionKeyArn": "",
+        "EncryptionMode": "SSE-KMS",
+        "LogSubscription": "ENABLE",
+        "MaxCapacity": 0,
+        "MaxRetries": 0,
+        "Name": "",
+        "Outputs": [
+          {
+            "CompressionFormat": {},
+            "Format": {},
+            "FormatOptions": {
+              "Csv": {}
+            },
+            "Location": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            },
+            "MaxOutputFiles": {},
+            "Overwrite": {},
+            "PartitionColumns": {}
+          }
+        ],
+        "ProjectName": "",
+        "RecipeReference": {
+          "Name": {},
+          "RecipeVersion": {}
+        },
+        "RoleArn": "",
+        "Tags": {},
+        "Timeout": 0
+      },
+      "body_text": "{\"DatasetName\": \"\", \"EncryptionKeyArn\": \"\", \"EncryptionMode\": \"SSE-KMS\", \"Name\": \"\", \"LogSubscription\": \"ENABLE\", \"MaxCapacity\": 0, \"MaxRetries\": 0, \"Outputs\": [{\"CompressionFormat\": {}, \"Format\": {}, \"PartitionColumns\": {}, \"Location\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"Overwrite\": {}, \"FormatOptions\": {\"Csv\": {}}, \"MaxOutputFiles\": {}}], \"DataCatalogOutputs\": [{\"CatalogId\": {}, \"DatabaseName\": {}, \"TableName\": {}, \"S3Options\": {\"Location\": {}}, \"DatabaseOptions\": {\"TempDirectory\": {}, \"TableName\": {}}, \"Overwrite\": {}}], \"DatabaseOutputs\": [{\"GlueConnectionName\": {}, \"DatabaseOptions\": {\"TempDirectory\": {}, \"TableName\": {}}, \"DatabaseOutputMode\": {}}], \"ProjectName\": \"\", \"RecipeReference\": {\"Name\": {}, \"RecipeVersion\": {}}, \"RoleArn\": \"\", \"Tags\": {}, \"Timeout\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /recipeJobs",
+      "method": "POST",
+      "name": "POST /recipeJobs",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/recipeJobs",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"DatasetName\": \"\", \"EncryptionKeyArn\": \"\", \"EncryptionMode\": \"SSE-KMS\", \"Name\": \"\", \"LogSubscription\": \"ENABLE\", \"MaxCapacity\": 0, \"MaxRetries\": 0, \"Outputs\": [{\"CompressionFormat\": {}, \"Format\": {}, \"PartitionColumns\": {}, \"Location\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"Overwrite\": {}, \"FormatOptions\": {\"Csv\": {}}, \"MaxOutputFiles\": {}}], \"DataCatalogOutputs\": [{\"CatalogId\": {}, \"DatabaseName\": {}, \"TableName\": {}, \"S3Options\": {\"Location\": {}}, \"DatabaseOptions\": {\"TempDirectory\": {}, \"TableName\": {}}, \"Overwrite\": {}}], \"DatabaseOutputs\": [{\"GlueConnectionName\": {}, \"DatabaseOptions\": {\"TempDirectory\": {}, \"TableName\": {}}, \"DatabaseOutputMode\": {}}], \"ProjectName\": \"\", \"RecipeReference\": {\"Name\": {}, \"RecipeVersion\": {}}, \"RoleArn\": \"\", \"Tags\": {}, \"Timeout\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /recipeJobs",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipeJobs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Name": "",
+        "Rules": [
+          {
+            "CheckExpression": {},
+            "ColumnSelectors": {},
+            "Disabled": {},
+            "Name": {},
+            "SubstitutionMap": {},
+            "Threshold": {
+              "Type": {},
+              "Unit": {},
+              "Value": {}
+            }
+          }
+        ],
+        "Tags": {},
+        "TargetArn": ""
+      },
+      "body_json": {
+        "Description": "",
+        "Name": "",
+        "Rules": [
+          {
+            "CheckExpression": {},
+            "ColumnSelectors": {},
+            "Disabled": {},
+            "Name": {},
+            "SubstitutionMap": {},
+            "Threshold": {
+              "Type": {},
+              "Unit": {},
+              "Value": {}
+            }
+          }
+        ],
+        "Tags": {},
+        "TargetArn": ""
+      },
+      "body_text": "{\"Name\": \"\", \"Description\": \"\", \"TargetArn\": \"\", \"Rules\": [{\"Name\": {}, \"Disabled\": {}, \"CheckExpression\": {}, \"SubstitutionMap\": {}, \"Threshold\": {\"Value\": {}, \"Type\": {}, \"Unit\": {}}, \"ColumnSelectors\": {}}], \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /rulesets",
+      "method": "POST",
+      "name": "POST /rulesets",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/rulesets",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\", \"TargetArn\": \"\", \"Rules\": [{\"Name\": {}, \"Disabled\": {}, \"CheckExpression\": {}, \"SubstitutionMap\": {}, \"Threshold\": {\"Value\": {}, \"Type\": {}, \"Unit\": {}}, \"ColumnSelectors\": {}}], \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /rulesets",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/rulesets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all rulesets available in the current account or rulesets associated with a specific resource (dataset).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /rulesets",
+      "method": "GET",
+      "name": "GET /rulesets",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "targetArn",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/rulesets",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "targetArn",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /rulesets",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/rulesets"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CronExpression": "",
+        "JobNames": [
+          ""
+        ],
+        "Name": "",
+        "Tags": {}
+      },
+      "body_json": {
+        "CronExpression": "",
+        "JobNames": [
+          ""
+        ],
+        "Name": "",
+        "Tags": {}
+      },
+      "body_text": "{\"JobNames\": [\"\"], \"CronExpression\": \"\", \"Tags\": {}, \"Name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /schedules",
+      "method": "POST",
+      "name": "POST /schedules",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/schedules",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"JobNames\": [\"\"], \"CronExpression\": \"\", \"Tags\": {}, \"Name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /schedules",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/schedules"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the DataBrew schedules that are defined.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /schedules",
+      "method": "GET",
+      "name": "GET /schedules",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "jobName",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/schedules",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "jobName",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /schedules",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/schedules"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a dataset from DataBrew.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /datasets/{{NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /datasets/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/datasets/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /datasets/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/datasets/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the definition of a specific DataBrew dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /datasets/{{NAME}}",
+      "method": "GET",
+      "name": "GET /datasets/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/datasets/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /datasets/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/datasets/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Format": "CSV",
+        "FormatOptions": {
+          "Csv": {
+            "Delimiter": {},
+            "HeaderRow": {}
+          },
+          "Excel": {
+            "HeaderRow": {},
+            "SheetIndexes": {},
+            "SheetNames": {}
+          },
+          "Json": {
+            "MultiLine": {}
+          }
+        },
+        "Input": {
+          "DataCatalogInputDefinition": {
+            "CatalogId": {},
+            "DatabaseName": {},
+            "TableName": {},
+            "TempDirectory": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            }
+          },
+          "DatabaseInputDefinition": {
+            "DatabaseTableName": {},
+            "GlueConnectionName": {},
+            "QueryString": {},
+            "TempDirectory": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            }
+          },
+          "Metadata": {
+            "SourceArn": {}
+          },
+          "S3InputDefinition": {
+            "Bucket": {},
+            "BucketOwner": {},
+            "Key": {}
+          }
+        },
+        "PathOptions": {
+          "FilesLimit": {
+            "MaxFiles": {},
+            "Order": {},
+            "OrderedBy": {}
+          },
+          "LastModifiedDateCondition": {
+            "Expression": {},
+            "ValuesMap": {}
+          },
+          "Parameters": {}
+        }
+      },
+      "body_json": {
+        "Format": "CSV",
+        "FormatOptions": {
+          "Csv": {
+            "Delimiter": {},
+            "HeaderRow": {}
+          },
+          "Excel": {
+            "HeaderRow": {},
+            "SheetIndexes": {},
+            "SheetNames": {}
+          },
+          "Json": {
+            "MultiLine": {}
+          }
+        },
+        "Input": {
+          "DataCatalogInputDefinition": {
+            "CatalogId": {},
+            "DatabaseName": {},
+            "TableName": {},
+            "TempDirectory": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            }
+          },
+          "DatabaseInputDefinition": {
+            "DatabaseTableName": {},
+            "GlueConnectionName": {},
+            "QueryString": {},
+            "TempDirectory": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            }
+          },
+          "Metadata": {
+            "SourceArn": {}
+          },
+          "S3InputDefinition": {
+            "Bucket": {},
+            "BucketOwner": {},
+            "Key": {}
+          }
+        },
+        "PathOptions": {
+          "FilesLimit": {
+            "MaxFiles": {},
+            "Order": {},
+            "OrderedBy": {}
+          },
+          "LastModifiedDateCondition": {
+            "Expression": {},
+            "ValuesMap": {}
+          },
+          "Parameters": {}
+        }
+      },
+      "body_text": "{\"Format\": \"CSV\", \"FormatOptions\": {\"Json\": {\"MultiLine\": {}}, \"Excel\": {\"SheetNames\": {}, \"SheetIndexes\": {}, \"HeaderRow\": {}}, \"Csv\": {\"Delimiter\": {}, \"HeaderRow\": {}}}, \"Input\": {\"S3InputDefinition\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"DataCatalogInputDefinition\": {\"CatalogId\": {}, \"DatabaseName\": {}, \"TableName\": {}, \"TempDirectory\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}}, \"DatabaseInputDefinition\": {\"GlueConnectionName\": {}, \"DatabaseTableName\": {}, \"TempDirectory\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"QueryString\": {}}, \"Metadata\": {\"SourceArn\": {}}}, \"PathOptions\": {\"LastModifiedDateCondition\": {\"Expression\": {}, \"ValuesMap\": {}}, \"FilesLimit\": {\"MaxFiles\": {}, \"OrderedBy\": {}, \"Order\": {}}, \"Parameters\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Modifies the definition of an existing DataBrew dataset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /datasets/{{NAME}}",
+      "method": "PUT",
+      "name": "PUT /datasets/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/datasets/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Format\": \"CSV\", \"FormatOptions\": {\"Json\": {\"MultiLine\": {}}, \"Excel\": {\"SheetNames\": {}, \"SheetIndexes\": {}, \"HeaderRow\": {}}, \"Csv\": {\"Delimiter\": {}, \"HeaderRow\": {}}}, \"Input\": {\"S3InputDefinition\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"DataCatalogInputDefinition\": {\"CatalogId\": {}, \"DatabaseName\": {}, \"TableName\": {}, \"TempDirectory\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}}, \"DatabaseInputDefinition\": {\"GlueConnectionName\": {}, \"DatabaseTableName\": {}, \"TempDirectory\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"QueryString\": {}}, \"Metadata\": {\"SourceArn\": {}}}, \"PathOptions\": {\"LastModifiedDateCondition\": {\"Expression\": {}, \"ValuesMap\": {}}, \"FilesLimit\": {\"MaxFiles\": {}, \"OrderedBy\": {}, \"Order\": {}}, \"Parameters\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /datasets/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/datasets/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified DataBrew job.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /jobs/{{NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /jobs/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/jobs/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /jobs/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/jobs/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the definition of a specific DataBrew job.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /jobs/{{NAME}}",
+      "method": "GET",
+      "name": "GET /jobs/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/jobs/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /jobs/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/jobs/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an existing DataBrew project.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /projects/{{NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /projects/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/projects/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /projects/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/projects/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the definition of a specific DataBrew project.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /projects/{{NAME}}",
+      "method": "GET",
+      "name": "GET /projects/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/projects/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /projects/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/projects/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "RoleArn": "",
+        "Sample": {
+          "Size": {},
+          "Type": {}
+        }
+      },
+      "body_json": {
+        "RoleArn": "",
+        "Sample": {
+          "Size": {},
+          "Type": {}
+        }
+      },
+      "body_text": "{\"Sample\": {\"Size\": {}, \"Type\": {}}, \"RoleArn\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Modifies the definition of an existing DataBrew project.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /projects/{{NAME}}",
+      "method": "PUT",
+      "name": "PUT /projects/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/projects/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Sample\": {\"Size\": {}, \"Type\": {}}, \"RoleArn\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /projects/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/projects/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a single version of a DataBrew recipe.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /recipes/{{NAME}}/recipeVersion/{{RECIPE_VERSION}}",
+      "method": "DELETE",
+      "name": "DELETE /recipes/{name}/recipeVersion/{recipeVersion}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "recipeVersion",
+          "value": ""
+        }
+      ],
+      "path": "/recipes/{{NAME}}/recipeVersion/{{RECIPE_VERSION}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "recipeVersion",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /recipes/{name}/recipeVersion/{recipeVersion}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipes/{{NAME}}/recipeVersion/{{RECIPE_VERSION}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a ruleset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /rulesets/{{NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /rulesets/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/rulesets/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /rulesets/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/rulesets/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves detailed information about the ruleset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /rulesets/{{NAME}}",
+      "method": "GET",
+      "name": "GET /rulesets/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/rulesets/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /rulesets/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/rulesets/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Rules": [
+          {
+            "CheckExpression": {},
+            "ColumnSelectors": {},
+            "Disabled": {},
+            "Name": {},
+            "SubstitutionMap": {},
+            "Threshold": {
+              "Type": {},
+              "Unit": {},
+              "Value": {}
+            }
+          }
+        ]
+      },
+      "body_json": {
+        "Description": "",
+        "Rules": [
+          {
+            "CheckExpression": {},
+            "ColumnSelectors": {},
+            "Disabled": {},
+            "Name": {},
+            "SubstitutionMap": {},
+            "Threshold": {
+              "Type": {},
+              "Unit": {},
+              "Value": {}
+            }
+          }
+        ]
+      },
+      "body_text": "{\"Description\": \"\", \"Rules\": [{\"Name\": {}, \"Disabled\": {}, \"CheckExpression\": {}, \"SubstitutionMap\": {}, \"Threshold\": {\"Value\": {}, \"Type\": {}, \"Unit\": {}}, \"ColumnSelectors\": {}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates specified ruleset.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /rulesets/{{NAME}}",
+      "method": "PUT",
+      "name": "PUT /rulesets/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/rulesets/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Description\": \"\", \"Rules\": [{\"Name\": {}, \"Disabled\": {}, \"CheckExpression\": {}, \"SubstitutionMap\": {}, \"Threshold\": {\"Value\": {}, \"Type\": {}, \"Unit\": {}}, \"ColumnSelectors\": {}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /rulesets/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/rulesets/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified DataBrew schedule.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /schedules/{{NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /schedules/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/schedules/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /schedules/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/schedules/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the definition of a specific DataBrew schedule.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /schedules/{{NAME}}",
+      "method": "GET",
+      "name": "GET /schedules/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/schedules/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /schedules/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/schedules/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CronExpression": "",
+        "JobNames": [
+          ""
+        ]
+      },
+      "body_json": {
+        "CronExpression": "",
+        "JobNames": [
+          ""
+        ]
+      },
+      "body_text": "{\"JobNames\": [\"\"], \"CronExpression\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Modifies the definition of an existing DataBrew schedule.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /schedules/{{NAME}}",
+      "method": "PUT",
+      "name": "PUT /schedules/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/schedules/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"JobNames\": [\"\"], \"CronExpression\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /schedules/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/schedules/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Represents one run of a DataBrew job.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /jobs/{{NAME}}/jobRun/{{RUN_ID}}",
+      "method": "GET",
+      "name": "GET /jobs/{name}/jobRun/{runId}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "runId",
+          "value": ""
+        }
+      ],
+      "path": "/jobs/{{NAME}}/jobRun/{{RUN_ID}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "runId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /jobs/{name}/jobRun/{runId}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/jobs/{{NAME}}/jobRun/{{RUN_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the definition of a specific DataBrew recipe corresponding to a particular version.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /recipes/{{NAME}}",
+      "method": "GET",
+      "name": "GET /recipes/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "recipeVersion",
+          "value": ""
+        }
+      ],
+      "path": "/recipes/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "recipeVersion",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /recipes/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipes/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Steps": [
+          {
+            "Action": {
+              "Operation": {},
+              "Parameters": {}
+            },
+            "ConditionExpressions": {}
+          }
+        ]
+      },
+      "body_json": {
+        "Description": "",
+        "Steps": [
+          {
+            "Action": {
+              "Operation": {},
+              "Parameters": {}
+            },
+            "ConditionExpressions": {}
+          }
+        ]
+      },
+      "body_text": "{\"Description\": \"\", \"Steps\": [{\"Action\": {\"Operation\": {}, \"Parameters\": {}}, \"ConditionExpressions\": {}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /recipes/{{NAME}}",
+      "method": "PUT",
+      "name": "PUT /recipes/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/recipes/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Description\": \"\", \"Steps\": [{\"Action\": {\"Operation\": {}, \"Parameters\": {}}, \"ConditionExpressions\": {}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /recipes/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipes/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all of the previous runs of a particular DataBrew job.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /jobs/{{NAME}}/jobRuns",
+      "method": "GET",
+      "name": "GET /jobs/{name}/jobRuns",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/jobs/{{NAME}}/jobRuns",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /jobs/{name}/jobRuns",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/jobs/{{NAME}}/jobRuns"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all of the DataBrew jobs that are defined.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /jobs",
+      "method": "GET",
+      "name": "GET /jobs",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "datasetName",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/jobs",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "datasetName",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "projectName",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /jobs",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/jobs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /recipeVersions",
+      "method": "GET",
+      "name": "GET /recipeVersions#name",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/recipeVersions",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /recipeVersions#name",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipeVersions#name"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all the tags for a DataBrew resource. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "GET /tags/{{RESOURCE_ARN}}",
+      "method": "GET",
+      "name": "GET /tags/{ResourceArn}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /tags/{ResourceArn}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Tags": {}
+      },
+      "body_json": {
+        "Tags": {}
+      },
+      "body_text": "{\"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or schedule.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /tags/{{RESOURCE_ARN}}",
+      "method": "POST",
+      "name": "POST /tags/{ResourceArn}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /tags/{ResourceArn}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": ""
+      },
+      "body_json": {
+        "Description": ""
+      },
+      "body_text": "{\"Description\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Publishes a new version of a DataBrew recipe.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /recipes/{{NAME}}/publishRecipe",
+      "method": "POST",
+      "name": "POST /recipes/{name}/publishRecipe",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/recipes/{{NAME}}/publishRecipe",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Description\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /recipes/{name}/publishRecipe",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipes/{{NAME}}/publishRecipe"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ClientSessionId": "",
+        "Preview": false,
+        "RecipeStep": {
+          "Action": {
+            "Operation": {},
+            "Parameters": {}
+          },
+          "ConditionExpressions": {}
+        },
+        "StepIndex": 0,
+        "ViewFrame": {
+          "Analytics": {},
+          "ColumnRange": {},
+          "HiddenColumns": {},
+          "RowRange": {},
+          "StartColumnIndex": {},
+          "StartRowIndex": {}
+        }
+      },
+      "body_json": {
+        "ClientSessionId": "",
+        "Preview": false,
+        "RecipeStep": {
+          "Action": {
+            "Operation": {},
+            "Parameters": {}
+          },
+          "ConditionExpressions": {}
+        },
+        "StepIndex": 0,
+        "ViewFrame": {
+          "Analytics": {},
+          "ColumnRange": {},
+          "HiddenColumns": {},
+          "RowRange": {},
+          "StartColumnIndex": {},
+          "StartRowIndex": {}
+        }
+      },
+      "body_text": "{\"Preview\": false, \"RecipeStep\": {\"Action\": {\"Operation\": {}, \"Parameters\": {}}, \"ConditionExpressions\": {}}, \"StepIndex\": 0, \"ClientSessionId\": \"\", \"ViewFrame\": {\"StartColumnIndex\": {}, \"ColumnRange\": {}, \"HiddenColumns\": {}, \"StartRowIndex\": {}, \"RowRange\": {}, \"Analytics\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Performs a recipe step within an interactive DataBrew session that's currently open.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /projects/{{NAME}}/sendProjectSessionAction",
+      "method": "PUT",
+      "name": "PUT /projects/{name}/sendProjectSessionAction",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/projects/{{NAME}}/sendProjectSessionAction",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Preview\": false, \"RecipeStep\": {\"Action\": {\"Operation\": {}, \"Parameters\": {}}, \"ConditionExpressions\": {}}, \"StepIndex\": 0, \"ClientSessionId\": \"\", \"ViewFrame\": {\"StartColumnIndex\": {}, \"ColumnRange\": {}, \"HiddenColumns\": {}, \"StartRowIndex\": {}, \"RowRange\": {}, \"Analytics\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /projects/{name}/sendProjectSessionAction",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/projects/{{NAME}}/sendProjectSessionAction"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Runs a DataBrew job.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "POST /jobs/{{NAME}}/startJobRun",
+      "method": "POST",
+      "name": "POST /jobs/{name}/startJobRun",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/jobs/{{NAME}}/startJobRun",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /jobs/{name}/startJobRun",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/jobs/{{NAME}}/startJobRun"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "AssumeControl": false
+      },
+      "body_json": {
+        "AssumeControl": false
+      },
+      "body_text": "{\"AssumeControl\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates an interactive session, enabling you to manipulate data in a DataBrew project.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /projects/{{NAME}}/startProjectSession",
+      "method": "PUT",
+      "name": "PUT /projects/{name}/startProjectSession",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/projects/{{NAME}}/startProjectSession",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"AssumeControl\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /projects/{name}/startProjectSession",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/projects/{{NAME}}/startProjectSession"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Stops a particular run of a job.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "POST /jobs/{{NAME}}/jobRun/{{RUN_ID}}/stopJobRun",
+      "method": "POST",
+      "name": "POST /jobs/{name}/jobRun/{runId}/stopJobRun",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "runId",
+          "value": ""
+        }
+      ],
+      "path": "/jobs/{{NAME}}/jobRun/{{RUN_ID}}/stopJobRun",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "runId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /jobs/{name}/jobRun/{runId}/stopJobRun",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/jobs/{{NAME}}/jobRun/{{RUN_ID}}/stopJobRun"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Removes metadata tags from a DataBrew resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /tags/{{RESOURCE_ARN}}",
+      "method": "DELETE",
+      "name": "DELETE /tags/{ResourceArn}#tagKeys",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        },
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /tags/{ResourceArn}#tagKeys",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}#tagKeys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Configuration": {
+          "ColumnStatisticsConfigurations": {},
+          "DatasetStatisticsConfiguration": {
+            "IncludedStatistics": {},
+            "Overrides": {}
+          },
+          "EntityDetectorConfiguration": {
+            "AllowedStatistics": {},
+            "EntityTypes": {}
+          },
+          "ProfileColumns": {}
+        },
+        "EncryptionKeyArn": "",
+        "EncryptionMode": "SSE-KMS",
+        "JobSample": {
+          "Mode": {},
+          "Size": {}
+        },
+        "LogSubscription": "ENABLE",
+        "MaxCapacity": 0,
+        "MaxRetries": 0,
+        "OutputLocation": {
+          "Bucket": {},
+          "BucketOwner": {},
+          "Key": {}
+        },
+        "RoleArn": "",
+        "Timeout": 0,
+        "ValidationConfigurations": [
+          {
+            "RulesetArn": {},
+            "ValidationMode": {}
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Modifies the definition of an existing profile job.",
+      "form_data": [
+        {
+          "name": "Configuration",
+          "type": "text",
+          "value": {
+            "ColumnStatisticsConfigurations": {},
+            "DatasetStatisticsConfiguration": {
+              "IncludedStatistics": {},
+              "Overrides": {}
+            },
+            "EntityDetectorConfiguration": {
+              "AllowedStatistics": {},
+              "EntityTypes": {}
+            },
+            "ProfileColumns": {}
+          }
+        },
+        {
+          "name": "EncryptionKeyArn",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "EncryptionMode",
+          "type": "text",
+          "value": "SSE-KMS"
+        },
+        {
+          "name": "LogSubscription",
+          "type": "text",
+          "value": "ENABLE"
+        },
+        {
+          "name": "MaxCapacity",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "MaxRetries",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "OutputLocation",
+          "type": "text",
+          "value": {
+            "Bucket": {},
+            "BucketOwner": {},
+            "Key": {}
+          }
+        },
+        {
+          "name": "ValidationConfigurations",
+          "type": "text",
+          "value": [
+            {
+              "RulesetArn": {},
+              "ValidationMode": {}
+            }
+          ]
+        },
+        {
+          "name": "RoleArn",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "Timeout",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "JobSample",
+          "type": "text",
+          "value": {
+            "Mode": {},
+            "Size": {}
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /profileJobs/{{NAME}}",
+      "method": "PUT",
+      "name": "PUT /profileJobs/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/profileJobs/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Configuration\": {\"DatasetStatisticsConfiguration\": {\"IncludedStatistics\": {}, \"Overrides\": {}}, \"ProfileColumns\": {}, \"ColumnStatisticsConfigurations\": {}, \"EntityDetectorConfiguration\": {\"EntityTypes\": {}, \"AllowedStatistics\": {}}}, \"EncryptionKeyArn\": \"\", \"EncryptionMode\": \"SSE-KMS\", \"LogSubscription\": \"ENABLE\", \"MaxCapacity\": 0, \"MaxRetries\": 0, \"OutputLocation\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"ValidationConfigurations\": [{\"RulesetArn\": {}, \"ValidationMode\": {}}], \"RoleArn\": \"\", \"Timeout\": 0, \"JobSample\": {\"Mode\": {}, \"Size\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /profileJobs/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/profileJobs/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_GLUE_DATABREW_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DataCatalogOutputs": [
+          {
+            "CatalogId": {},
+            "DatabaseName": {},
+            "DatabaseOptions": {
+              "TableName": {},
+              "TempDirectory": {}
+            },
+            "Overwrite": {},
+            "S3Options": {
+              "Location": {}
+            },
+            "TableName": {}
+          }
+        ],
+        "DatabaseOutputs": [
+          {
+            "DatabaseOptions": {
+              "TableName": {},
+              "TempDirectory": {}
+            },
+            "DatabaseOutputMode": {},
+            "GlueConnectionName": {}
+          }
+        ],
+        "EncryptionKeyArn": "",
+        "EncryptionMode": "SSE-KMS",
+        "LogSubscription": "ENABLE",
+        "MaxCapacity": 0,
+        "MaxRetries": 0,
+        "Outputs": [
+          {
+            "CompressionFormat": {},
+            "Format": {},
+            "FormatOptions": {
+              "Csv": {}
+            },
+            "Location": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            },
+            "MaxOutputFiles": {},
+            "Overwrite": {},
+            "PartitionColumns": {}
+          }
+        ],
+        "RoleArn": "",
+        "Timeout": 0
+      },
+      "body_json": {
+        "DataCatalogOutputs": [
+          {
+            "CatalogId": {},
+            "DatabaseName": {},
+            "DatabaseOptions": {
+              "TableName": {},
+              "TempDirectory": {}
+            },
+            "Overwrite": {},
+            "S3Options": {
+              "Location": {}
+            },
+            "TableName": {}
+          }
+        ],
+        "DatabaseOutputs": [
+          {
+            "DatabaseOptions": {
+              "TableName": {},
+              "TempDirectory": {}
+            },
+            "DatabaseOutputMode": {},
+            "GlueConnectionName": {}
+          }
+        ],
+        "EncryptionKeyArn": "",
+        "EncryptionMode": "SSE-KMS",
+        "LogSubscription": "ENABLE",
+        "MaxCapacity": 0,
+        "MaxRetries": 0,
+        "Outputs": [
+          {
+            "CompressionFormat": {},
+            "Format": {},
+            "FormatOptions": {
+              "Csv": {}
+            },
+            "Location": {
+              "Bucket": {},
+              "BucketOwner": {},
+              "Key": {}
+            },
+            "MaxOutputFiles": {},
+            "Overwrite": {},
+            "PartitionColumns": {}
+          }
+        ],
+        "RoleArn": "",
+        "Timeout": 0
+      },
+      "body_text": "{\"EncryptionKeyArn\": \"\", \"EncryptionMode\": \"SSE-KMS\", \"LogSubscription\": \"ENABLE\", \"MaxCapacity\": 0, \"MaxRetries\": 0, \"Outputs\": [{\"CompressionFormat\": {}, \"Format\": {}, \"PartitionColumns\": {}, \"Location\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"Overwrite\": {}, \"FormatOptions\": {\"Csv\": {}}, \"MaxOutputFiles\": {}}], \"DataCatalogOutputs\": [{\"CatalogId\": {}, \"DatabaseName\": {}, \"TableName\": {}, \"S3Options\": {\"Location\": {}}, \"DatabaseOptions\": {\"TempDirectory\": {}, \"TableName\": {}}, \"Overwrite\": {}}], \"DatabaseOutputs\": [{\"GlueConnectionName\": {}, \"DatabaseOptions\": {\"TempDirectory\": {}, \"TableName\": {}}, \"DatabaseOutputMode\": {}}], \"RoleArn\": \"\", \"Timeout\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Modifies the definition of an existing DataBrew recipe job.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_GLUE_DATABREW_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /recipeJobs/{{NAME}}",
+      "method": "PUT",
+      "name": "PUT /recipeJobs/{name}",
+      "note": "Replace {{AWS_GLUE_DATABREW_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/recipeJobs/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"EncryptionKeyArn\": \"\", \"EncryptionMode\": \"SSE-KMS\", \"LogSubscription\": \"ENABLE\", \"MaxCapacity\": 0, \"MaxRetries\": 0, \"Outputs\": [{\"CompressionFormat\": {}, \"Format\": {}, \"PartitionColumns\": {}, \"Location\": {\"Bucket\": {}, \"Key\": {}, \"BucketOwner\": {}}, \"Overwrite\": {}, \"FormatOptions\": {\"Csv\": {}}, \"MaxOutputFiles\": {}}], \"DataCatalogOutputs\": [{\"CatalogId\": {}, \"DatabaseName\": {}, \"TableName\": {}, \"S3Options\": {\"Location\": {}}, \"DatabaseOptions\": {\"TempDirectory\": {}, \"TableName\": {}}, \"Overwrite\": {}}], \"DatabaseOutputs\": [{\"GlueConnectionName\": {}, \"DatabaseOptions\": {\"TempDirectory\": {}, \"TableName\": {}}, \"DatabaseOutputMode\": {}}], \"RoleArn\": \"\", \"Timeout\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /recipeJobs/{name}",
+      "url": "http://databrew.{{REGION}}.amazonaws.com/recipeJobs/{{NAME}}"
+    }
+  ]
+}

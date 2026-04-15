@@ -1,0 +1,3730 @@
+{
+  "id": "amazonaws.com_transcribe",
+  "info": {
+    "base_url": "http://transcribe.{region}.amazonaws.com",
+    "description": "Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all previous entries; you cannot append new terms onto an existing custom vocabulary filter.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Amazon Transcribe Service",
+    "version": "2017-10-26"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CategoryName": {},
+        "InputType": {},
+        "Rules": {}
+      },
+      "body_json": {
+        "CategoryName": {},
+        "InputType": {},
+        "Rules": {}
+      },
+      "body_text": "{\"CategoryName\": {}, \"Rules\": {}, \"InputType\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new Call Analytics category.</p> <p>All categories are automatically applied to your Call Analytics transcriptions. Note that in order to apply categories to your transcriptions, you must create them before submitting your transcription request, as categories cannot be applied retroactively.</p> <p>When creating a new category, you can use the <code>InputType</code> parameter to label the category as a <code>POST_CALL</code> or a <code>REAL_TIME</code> category. <code>POST_CALL</code> categories can only be applied to post-call transcriptions and <code>REAL_TIME</code> categories can only be applied to real-time transcriptions. If you do not include <code>InputType</code>, your category is created as a <code>POST_CALL</code> category by default.</p> <p>Call Analytics categories are composed of rules. For each category, you must create between 1 and 20 rules. Rules can include these parameters: , , , and .</p> <p>To update an existing category, see .</p> <p>To learn more about Call Analytics categories, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html\">Creating categories for post-call transcriptions</a> and <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html\">Creating categories for real-time transcriptions</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.CreateCallAnalyticsCategory",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CategoryName\": {}, \"Rules\": {}, \"InputType\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.CreateCallAnalyticsCategory",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.CreateCallAnalyticsCategory"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "BaseModelName": {},
+        "InputDataConfig": {
+          "DataAccessRoleArn": {},
+          "S3Uri": {},
+          "TuningDataS3Uri": {}
+        },
+        "LanguageCode": {},
+        "ModelName": {},
+        "Tags": {}
+      },
+      "body_json": {
+        "BaseModelName": {},
+        "InputDataConfig": {
+          "DataAccessRoleArn": {},
+          "S3Uri": {},
+          "TuningDataS3Uri": {}
+        },
+        "LanguageCode": {},
+        "ModelName": {},
+        "Tags": {}
+      },
+      "body_text": "{\"LanguageCode\": {}, \"BaseModelName\": {}, \"ModelName\": {}, \"InputDataConfig\": {\"S3Uri\": {}, \"TuningDataS3Uri\": {}, \"DataAccessRoleArn\": {}}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new custom language model.</p> <p>When creating a new custom language model, you must specify:</p> <ul> <li> <p>If you want a Wideband (audio sample rates over 16,000 Hz) or Narrowband (audio sample rates under 16,000 Hz) base model</p> </li> <li> <p>The location of your training and tuning files (this must be an Amazon S3 URI)</p> </li> <li> <p>The language of your model</p> </li> <li> <p>A unique name for your model</p> </li> </ul>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.CreateLanguageModel",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"LanguageCode\": {}, \"BaseModelName\": {}, \"ModelName\": {}, \"InputDataConfig\": {\"S3Uri\": {}, \"TuningDataS3Uri\": {}, \"DataAccessRoleArn\": {}}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.CreateLanguageModel",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.CreateLanguageModel"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "LanguageCode": {},
+        "Tags": {},
+        "VocabularyFileUri": {},
+        "VocabularyName": {}
+      },
+      "body_json": {
+        "LanguageCode": {},
+        "Tags": {},
+        "VocabularyFileUri": {},
+        "VocabularyName": {}
+      },
+      "body_text": "{\"VocabularyName\": {}, \"LanguageCode\": {}, \"VocabularyFileUri\": {}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new custom medical vocabulary.</p> <p>Before creating a new custom medical vocabulary, you must first upload a text file that contains your vocabulary table into an Amazon S3 bucket. Note that this differs from , where you can include a list of terms within your request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support the <code>Phrases</code> flag and only accepts vocabularies in table format.</p> <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary request fails. Refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html\">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html\">Custom vocabularies</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.CreateMedicalVocabulary",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyName\": {}, \"LanguageCode\": {}, \"VocabularyFileUri\": {}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.CreateMedicalVocabulary",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.CreateMedicalVocabulary"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DataAccessRoleArn": {},
+        "LanguageCode": {},
+        "Phrases": {},
+        "Tags": {},
+        "VocabularyFileUri": {},
+        "VocabularyName": {}
+      },
+      "body_json": {
+        "DataAccessRoleArn": {},
+        "LanguageCode": {},
+        "Phrases": {},
+        "Tags": {},
+        "VocabularyFileUri": {},
+        "VocabularyName": {}
+      },
+      "body_text": "{\"VocabularyName\": {}, \"LanguageCode\": {}, \"Phrases\": {}, \"VocabularyFileUri\": {}, \"Tags\": {}, \"DataAccessRoleArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new custom vocabulary.</p> <p>When creating a new custom vocabulary, you can either upload a text file that contains your new entries, phrases, and terms into an Amazon S3 bucket and include the URI in your request. Or you can include a list of terms directly in your request using the <code>Phrases</code> flag.</p> <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary request fails. Refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html\">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html\">Custom vocabularies</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.CreateVocabulary",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyName\": {}, \"LanguageCode\": {}, \"Phrases\": {}, \"VocabularyFileUri\": {}, \"Tags\": {}, \"DataAccessRoleArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.CreateVocabulary",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.CreateVocabulary"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DataAccessRoleArn": {},
+        "LanguageCode": {},
+        "Tags": {},
+        "VocabularyFilterFileUri": {},
+        "VocabularyFilterName": {},
+        "Words": {}
+      },
+      "body_json": {
+        "DataAccessRoleArn": {},
+        "LanguageCode": {},
+        "Tags": {},
+        "VocabularyFilterFileUri": {},
+        "VocabularyFilterName": {},
+        "Words": {}
+      },
+      "body_text": "{\"VocabularyFilterName\": {}, \"LanguageCode\": {}, \"Words\": {}, \"VocabularyFilterFileUri\": {}, \"Tags\": {}, \"DataAccessRoleArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a new custom vocabulary filter.</p> <p>You can use custom vocabulary filters to mask, delete, or flag specific words from your transcript. Custom vocabulary filters are commonly used to mask profanity in transcripts.</p> <p>Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html\">Character Sets for Custom Vocabularies</a> to get the character set for your language.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html\">Vocabulary filtering</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.CreateVocabularyFilter",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyFilterName\": {}, \"LanguageCode\": {}, \"Words\": {}, \"VocabularyFilterFileUri\": {}, \"Tags\": {}, \"DataAccessRoleArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.CreateVocabularyFilter",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.CreateVocabularyFilter"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CategoryName": {}
+      },
+      "body_json": {
+        "CategoryName": {}
+      },
+      "body_text": "{\"CategoryName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a Call Analytics category. To use this operation, specify the name of the category you want to delete using <code>CategoryName</code>. Category names are case sensitive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DeleteCallAnalyticsCategory",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CategoryName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DeleteCallAnalyticsCategory",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DeleteCallAnalyticsCategory"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CallAnalyticsJobName": {}
+      },
+      "body_json": {
+        "CallAnalyticsJobName": {}
+      },
+      "body_text": "{\"CallAnalyticsJobName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a Call Analytics job. To use this operation, specify the name of the job you want to delete using <code>CallAnalyticsJobName</code>. Job names are case sensitive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DeleteCallAnalyticsJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CallAnalyticsJobName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DeleteCallAnalyticsJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DeleteCallAnalyticsJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ModelName": {}
+      },
+      "body_json": {
+        "ModelName": {}
+      },
+      "body_text": "{\"ModelName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a custom language model. To use this operation, specify the name of the language model you want to delete using <code>ModelName</code>. custom language model names are case sensitive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DeleteLanguageModel",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ModelName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DeleteLanguageModel",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DeleteLanguageModel"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MedicalTranscriptionJobName": {}
+      },
+      "body_json": {
+        "MedicalTranscriptionJobName": {}
+      },
+      "body_text": "{\"MedicalTranscriptionJobName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a medical transcription job. To use this operation, specify the name of the job you want to delete using <code>MedicalTranscriptionJobName</code>. Job names are case sensitive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DeleteMedicalTranscriptionJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MedicalTranscriptionJobName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DeleteMedicalTranscriptionJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DeleteMedicalTranscriptionJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "VocabularyName": {}
+      },
+      "body_json": {
+        "VocabularyName": {}
+      },
+      "body_text": "{\"VocabularyName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a custom medical vocabulary. To use this operation, specify the name of the custom vocabulary you want to delete using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DeleteMedicalVocabulary",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DeleteMedicalVocabulary",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DeleteMedicalVocabulary"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "TranscriptionJobName": {}
+      },
+      "body_json": {
+        "TranscriptionJobName": {}
+      },
+      "body_text": "{\"TranscriptionJobName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a transcription job. To use this operation, specify the name of the job you want to delete using <code>TranscriptionJobName</code>. Job names are case sensitive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DeleteTranscriptionJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"TranscriptionJobName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DeleteTranscriptionJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DeleteTranscriptionJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "VocabularyName": {}
+      },
+      "body_json": {
+        "VocabularyName": {}
+      },
+      "body_text": "{\"VocabularyName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a custom vocabulary. To use this operation, specify the name of the custom vocabulary you want to delete using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DeleteVocabulary",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DeleteVocabulary",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DeleteVocabulary"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "VocabularyFilterName": {}
+      },
+      "body_json": {
+        "VocabularyFilterName": {}
+      },
+      "body_text": "{\"VocabularyFilterName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes a custom vocabulary filter. To use this operation, specify the name of the custom vocabulary filter you want to delete using <code>VocabularyFilterName</code>. Custom vocabulary filter names are case sensitive.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DeleteVocabularyFilter",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyFilterName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DeleteVocabularyFilter",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DeleteVocabularyFilter"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ModelName": {}
+      },
+      "body_json": {
+        "ModelName": {}
+      },
+      "body_text": "{\"ModelName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about the specified custom language model.</p> <p>This operation also shows if the base language model that you used to create your custom language model has been updated. If Amazon Transcribe has updated the base model, you can create a new custom language model using the updated base model.</p> <p>If you tried to create a new custom language model and the request wasn't successful, you can use <code>DescribeLanguageModel</code> to help identify the reason for this failure.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.DescribeLanguageModel",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ModelName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.DescribeLanguageModel",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.DescribeLanguageModel"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CategoryName": {}
+      },
+      "body_json": {
+        "CategoryName": {}
+      },
+      "body_text": "{\"CategoryName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about the specified Call Analytics category.</p> <p>To get a list of your Call Analytics categories, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.GetCallAnalyticsCategory",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CategoryName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.GetCallAnalyticsCategory",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.GetCallAnalyticsCategory"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CallAnalyticsJobName": {}
+      },
+      "body_json": {
+        "CallAnalyticsJobName": {}
+      },
+      "body_text": "{\"CallAnalyticsJobName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about the specified Call Analytics job.</p> <p>To view the job's status, refer to <code>CallAnalyticsJobStatus</code>. If the status is <code>COMPLETED</code>, the job is finished. You can find your completed transcript at the URI specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p> <p>If you enabled personally identifiable information (PII) redaction, the redacted transcript appears at the location specified in <code>RedactedTranscriptFileUri</code>.</p> <p>If you chose to redact the audio in your media file, you can find your redacted media file at the location specified in <code>RedactedMediaFileUri</code>.</p> <p>To get a list of your Call Analytics jobs, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.GetCallAnalyticsJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CallAnalyticsJobName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.GetCallAnalyticsJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.GetCallAnalyticsJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MedicalTranscriptionJobName": {}
+      },
+      "body_json": {
+        "MedicalTranscriptionJobName": {}
+      },
+      "body_text": "{\"MedicalTranscriptionJobName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about the specified medical transcription job.</p> <p>To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p> <p>To get a list of your medical transcription jobs, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.GetMedicalTranscriptionJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MedicalTranscriptionJobName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.GetMedicalTranscriptionJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.GetMedicalTranscriptionJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "VocabularyName": {}
+      },
+      "body_json": {
+        "VocabularyName": {}
+      },
+      "body_text": "{\"VocabularyName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about the specified custom medical vocabulary.</p> <p>To view the status of the specified custom medical vocabulary, check the <code>VocabularyState</code> field. If the status is <code>READY</code>, your custom vocabulary is available to use. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your vocabulary failed.</p> <p>To get a list of your custom medical vocabularies, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.GetMedicalVocabulary",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.GetMedicalVocabulary",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.GetMedicalVocabulary"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "TranscriptionJobName": {}
+      },
+      "body_json": {
+        "TranscriptionJobName": {}
+      },
+      "body_text": "{\"TranscriptionJobName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about the specified transcription job.</p> <p>To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p> <p>If you enabled content redaction, the redacted transcript can be found at the location specified in <code>RedactedTranscriptFileUri</code>.</p> <p>To get a list of your transcription jobs, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.GetTranscriptionJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"TranscriptionJobName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.GetTranscriptionJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.GetTranscriptionJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "VocabularyName": {}
+      },
+      "body_json": {
+        "VocabularyName": {}
+      },
+      "body_text": "{\"VocabularyName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about the specified custom vocabulary.</p> <p>To view the status of the specified custom vocabulary, check the <code>VocabularyState</code> field. If the status is <code>READY</code>, your custom vocabulary is available to use. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your custom vocabulary failed.</p> <p>To get a list of your custom vocabularies, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.GetVocabulary",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.GetVocabulary",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.GetVocabulary"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "VocabularyFilterName": {}
+      },
+      "body_json": {
+        "VocabularyFilterName": {}
+      },
+      "body_text": "{\"VocabularyFilterName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about the specified custom vocabulary filter.</p> <p>To get a list of your custom vocabulary filters, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.GetVocabularyFilter",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyFilterName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.GetVocabularyFilter",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.GetVocabularyFilter"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MaxResults": {},
+        "NextToken": {}
+      },
+      "body_json": {
+        "MaxResults": {},
+        "NextToken": {}
+      },
+      "body_text": "{\"NextToken\": {}, \"MaxResults\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides a list of Call Analytics categories, including all rules that make up each category.</p> <p>To get detailed information about a specific Call Analytics category, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListCallAnalyticsCategories",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"NextToken\": {}, \"MaxResults\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListCallAnalyticsCategories",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListCallAnalyticsCategories"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "JobNameContains": {},
+        "MaxResults": {},
+        "NextToken": {},
+        "Status": {}
+      },
+      "body_json": {
+        "JobNameContains": {},
+        "MaxResults": {},
+        "NextToken": {},
+        "Status": {}
+      },
+      "body_text": "{\"Status\": {}, \"JobNameContains\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides a list of Call Analytics jobs that match the specified criteria. If no criteria are specified, all Call Analytics jobs are returned.</p> <p>To get detailed information about a specific Call Analytics job, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListCallAnalyticsJobs",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"Status\": {}, \"JobNameContains\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListCallAnalyticsJobs",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListCallAnalyticsJobs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MaxResults": {},
+        "NameContains": {},
+        "NextToken": {},
+        "StatusEquals": {}
+      },
+      "body_json": {
+        "MaxResults": {},
+        "NameContains": {},
+        "NextToken": {},
+        "StatusEquals": {}
+      },
+      "body_text": "{\"StatusEquals\": {}, \"NameContains\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides a list of custom language models that match the specified criteria. If no criteria are specified, all custom language models are returned.</p> <p>To get detailed information about a specific custom language model, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListLanguageModels",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"StatusEquals\": {}, \"NameContains\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListLanguageModels",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListLanguageModels"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "JobNameContains": {},
+        "MaxResults": {},
+        "NextToken": {},
+        "Status": {}
+      },
+      "body_json": {
+        "JobNameContains": {},
+        "MaxResults": {},
+        "NextToken": {},
+        "Status": {}
+      },
+      "body_text": "{\"Status\": {}, \"JobNameContains\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides a list of medical transcription jobs that match the specified criteria. If no criteria are specified, all medical transcription jobs are returned.</p> <p>To get detailed information about a specific medical transcription job, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListMedicalTranscriptionJobs",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"Status\": {}, \"JobNameContains\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListMedicalTranscriptionJobs",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListMedicalTranscriptionJobs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MaxResults": {},
+        "NameContains": {},
+        "NextToken": {},
+        "StateEquals": {}
+      },
+      "body_json": {
+        "MaxResults": {},
+        "NameContains": {},
+        "NextToken": {},
+        "StateEquals": {}
+      },
+      "body_text": "{\"NextToken\": {}, \"MaxResults\": {}, \"StateEquals\": {}, \"NameContains\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides a list of custom medical vocabularies that match the specified criteria. If no criteria are specified, all custom medical vocabularies are returned.</p> <p>To get detailed information about a specific custom medical vocabulary, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListMedicalVocabularies",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"NextToken\": {}, \"MaxResults\": {}, \"StateEquals\": {}, \"NameContains\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListMedicalVocabularies",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListMedicalVocabularies"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {}
+      },
+      "body_json": {
+        "ResourceArn": {}
+      },
+      "body_text": "{\"ResourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Lists all tags associated with the specified transcription job, vocabulary, model, or resource.</p> <p>To learn more about using tags with Amazon Transcribe, refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html\">Tagging resources</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListTagsForResource",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListTagsForResource",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListTagsForResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "JobNameContains": {},
+        "MaxResults": {},
+        "NextToken": {},
+        "Status": {}
+      },
+      "body_json": {
+        "JobNameContains": {},
+        "MaxResults": {},
+        "NextToken": {},
+        "Status": {}
+      },
+      "body_text": "{\"Status\": {}, \"JobNameContains\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides a list of transcription jobs that match the specified criteria. If no criteria are specified, all transcription jobs are returned.</p> <p>To get detailed information about a specific transcription job, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListTranscriptionJobs",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"Status\": {}, \"JobNameContains\": {}, \"NextToken\": {}, \"MaxResults\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListTranscriptionJobs",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListTranscriptionJobs"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MaxResults": {},
+        "NameContains": {},
+        "NextToken": {},
+        "StateEquals": {}
+      },
+      "body_json": {
+        "MaxResults": {},
+        "NameContains": {},
+        "NextToken": {},
+        "StateEquals": {}
+      },
+      "body_text": "{\"NextToken\": {}, \"MaxResults\": {}, \"StateEquals\": {}, \"NameContains\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides a list of custom vocabularies that match the specified criteria. If no criteria are specified, all custom vocabularies are returned.</p> <p>To get detailed information about a specific custom vocabulary, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListVocabularies",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"NextToken\": {}, \"MaxResults\": {}, \"StateEquals\": {}, \"NameContains\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListVocabularies",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListVocabularies"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "MaxResults": {},
+        "NameContains": {},
+        "NextToken": {}
+      },
+      "body_json": {
+        "MaxResults": {},
+        "NameContains": {},
+        "NextToken": {}
+      },
+      "body_text": "{\"NextToken\": {}, \"MaxResults\": {}, \"NameContains\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides a list of custom vocabulary filters that match the specified criteria. If no criteria are specified, all custom vocabularies are returned.</p> <p>To get detailed information about a specific custom vocabulary filter, use the operation.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.ListVocabularyFilters",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"NextToken\": {}, \"MaxResults\": {}, \"NameContains\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.ListVocabularyFilters",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.ListVocabularyFilters"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CallAnalyticsJobName": {},
+        "ChannelDefinitions": {},
+        "DataAccessRoleArn": {},
+        "Media": {
+          "MediaFileUri": {},
+          "RedactedMediaFileUri": {}
+        },
+        "OutputEncryptionKMSKeyId": {},
+        "OutputLocation": {},
+        "Settings": {
+          "ContentRedaction": {
+            "PiiEntityTypes": {},
+            "RedactionOutput": {},
+            "RedactionType": {}
+          },
+          "LanguageIdSettings": {},
+          "LanguageModelName": {},
+          "LanguageOptions": {},
+          "VocabularyFilterMethod": {},
+          "VocabularyFilterName": {},
+          "VocabularyName": {}
+        }
+      },
+      "body_json": {
+        "CallAnalyticsJobName": {},
+        "ChannelDefinitions": {},
+        "DataAccessRoleArn": {},
+        "Media": {
+          "MediaFileUri": {},
+          "RedactedMediaFileUri": {}
+        },
+        "OutputEncryptionKMSKeyId": {},
+        "OutputLocation": {},
+        "Settings": {
+          "ContentRedaction": {
+            "PiiEntityTypes": {},
+            "RedactionOutput": {},
+            "RedactionType": {}
+          },
+          "LanguageIdSettings": {},
+          "LanguageModelName": {},
+          "LanguageOptions": {},
+          "VocabularyFilterMethod": {},
+          "VocabularyFilterName": {},
+          "VocabularyName": {}
+        }
+      },
+      "body_text": "{\"CallAnalyticsJobName\": {}, \"Media\": {\"MediaFileUri\": {}, \"RedactedMediaFileUri\": {}}, \"OutputLocation\": {}, \"OutputEncryptionKMSKeyId\": {}, \"DataAccessRoleArn\": {}, \"Settings\": {\"VocabularyName\": {}, \"VocabularyFilterName\": {}, \"VocabularyFilterMethod\": {}, \"LanguageModelName\": {}, \"ContentRedaction\": {\"RedactionType\": {}, \"RedactionOutput\": {}, \"PiiEntityTypes\": {}}, \"LanguageOptions\": {}, \"LanguageIdSettings\": {}}, \"ChannelDefinitions\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Transcribes the audio from a customer service call and applies any additional Request Parameters you choose to include in your request.</p> <p>In addition to many standard transcription features, Call Analytics provides you with call characteristics, call summarization, speaker sentiment, and optional redaction of your text transcript and your audio file. You can also apply custom categories to flag specified conditions. To learn more about these features and insights, refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html\">Analyzing call center audio with Call Analytics</a>.</p> <p>If you want to apply categories to your Call Analytics job, you must create them before submitting your job request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To learn more about Call Analytics categories, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html\">Creating categories for post-call transcriptions</a> and <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html\">Creating categories for real-time transcriptions</a>.</p> <p>To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.</p> <p>Note that job queuing is enabled by default for Call Analytics jobs.</p> <p>You must include the following parameters in your <code>StartCallAnalyticsJob</code> request:</p> <ul> <li> <p> <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web Services Regions supported with Amazon Transcribe, refer to <a href=\"https://docs.aws.amazon.com/general/latest/gr/transcribe.html\">Amazon Transcribe endpoints and quotas</a>.</p> </li> <li> <p> <code>CallAnalyticsJobName</code>: A custom name that you create for your transcription job that's unique within your Amazon Web Services account.</p> </li> <li> <p> <code>DataAccessRoleArn</code>: The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files.</p> </li> <li> <p> <code>Media</code> (<code>MediaFileUri</code> or <code>RedactedMediaFileUri</code>): The Amazon S3 location of your media file.</p> </li> </ul> <note> <p>With Call Analytics, you can redact the audio contained in your media file by including <code>RedactedMediaFileUri</code>, instead of <code>MediaFileUri</code>, to specify the location of your input audio. If you choose to redact your audio, you can find your redacted media at the location specified in the <code>RedactedMediaFileUri</code> field of your response.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.StartCallAnalyticsJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CallAnalyticsJobName\": {}, \"Media\": {\"MediaFileUri\": {}, \"RedactedMediaFileUri\": {}}, \"OutputLocation\": {}, \"OutputEncryptionKMSKeyId\": {}, \"DataAccessRoleArn\": {}, \"Settings\": {\"VocabularyName\": {}, \"VocabularyFilterName\": {}, \"VocabularyFilterMethod\": {}, \"LanguageModelName\": {}, \"ContentRedaction\": {\"RedactionType\": {}, \"RedactionOutput\": {}, \"PiiEntityTypes\": {}}, \"LanguageOptions\": {}, \"LanguageIdSettings\": {}}, \"ChannelDefinitions\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.StartCallAnalyticsJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.StartCallAnalyticsJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ContentIdentificationType": {},
+        "KMSEncryptionContext": {},
+        "LanguageCode": {},
+        "Media": {
+          "MediaFileUri": {},
+          "RedactedMediaFileUri": {}
+        },
+        "MediaFormat": {},
+        "MediaSampleRateHertz": {},
+        "MedicalTranscriptionJobName": {},
+        "OutputBucketName": {},
+        "OutputEncryptionKMSKeyId": {},
+        "OutputKey": {},
+        "Settings": {
+          "ChannelIdentification": {},
+          "MaxAlternatives": {},
+          "MaxSpeakerLabels": {},
+          "ShowAlternatives": {},
+          "ShowSpeakerLabels": {},
+          "VocabularyName": {}
+        },
+        "Specialty": {},
+        "Tags": {},
+        "Type": {}
+      },
+      "body_json": {
+        "ContentIdentificationType": {},
+        "KMSEncryptionContext": {},
+        "LanguageCode": {},
+        "Media": {
+          "MediaFileUri": {},
+          "RedactedMediaFileUri": {}
+        },
+        "MediaFormat": {},
+        "MediaSampleRateHertz": {},
+        "MedicalTranscriptionJobName": {},
+        "OutputBucketName": {},
+        "OutputEncryptionKMSKeyId": {},
+        "OutputKey": {},
+        "Settings": {
+          "ChannelIdentification": {},
+          "MaxAlternatives": {},
+          "MaxSpeakerLabels": {},
+          "ShowAlternatives": {},
+          "ShowSpeakerLabels": {},
+          "VocabularyName": {}
+        },
+        "Specialty": {},
+        "Tags": {},
+        "Type": {}
+      },
+      "body_text": "{\"MedicalTranscriptionJobName\": {}, \"LanguageCode\": {}, \"MediaSampleRateHertz\": {}, \"MediaFormat\": {}, \"Media\": {\"MediaFileUri\": {}, \"RedactedMediaFileUri\": {}}, \"OutputBucketName\": {}, \"OutputKey\": {}, \"OutputEncryptionKMSKeyId\": {}, \"KMSEncryptionContext\": {}, \"Settings\": {\"ShowSpeakerLabels\": {}, \"MaxSpeakerLabels\": {}, \"ChannelIdentification\": {}, \"ShowAlternatives\": {}, \"MaxAlternatives\": {}, \"VocabularyName\": {}}, \"ContentIdentificationType\": {}, \"Specialty\": {}, \"Type\": {}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Transcribes the audio from a medical dictation or conversation and applies any additional Request Parameters you choose to include in your request.</p> <p>In addition to many standard transcription features, Amazon Transcribe Medical provides you with a robust medical vocabulary and, optionally, content identification, which adds flags to personal health information (PHI). To learn more about these features, refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html\">How Amazon Transcribe Medical works</a>.</p> <p>To make a <code>StartMedicalTranscriptionJob</code> request, you must first upload your media file into an Amazon S3 bucket; you can then specify the S3 location of the file using the <code>Media</code> parameter.</p> <p>You must include the following parameters in your <code>StartMedicalTranscriptionJob</code> request:</p> <ul> <li> <p> <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web Services Regions supported with Amazon Transcribe, refer to <a href=\"https://docs.aws.amazon.com/general/latest/gr/transcribe.html\">Amazon Transcribe endpoints and quotas</a>.</p> </li> <li> <p> <code>MedicalTranscriptionJobName</code>: A custom name you create for your transcription job that is unique within your Amazon Web Services account.</p> </li> <li> <p> <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media file.</p> </li> <li> <p> <code>LanguageCode</code>: This must be <code>en-US</code>.</p> </li> <li> <p> <code>OutputBucketName</code>: The Amazon S3 bucket where you want your transcript stored. If you want your output stored in a sub-folder of this bucket, you must also include <code>OutputKey</code>.</p> </li> <li> <p> <code>Specialty</code>: This must be <code>PRIMARYCARE</code>.</p> </li> <li> <p> <code>Type</code>: Choose whether your audio is a conversation or a dictation.</p> </li> </ul>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.StartMedicalTranscriptionJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MedicalTranscriptionJobName\": {}, \"LanguageCode\": {}, \"MediaSampleRateHertz\": {}, \"MediaFormat\": {}, \"Media\": {\"MediaFileUri\": {}, \"RedactedMediaFileUri\": {}}, \"OutputBucketName\": {}, \"OutputKey\": {}, \"OutputEncryptionKMSKeyId\": {}, \"KMSEncryptionContext\": {}, \"Settings\": {\"ShowSpeakerLabels\": {}, \"MaxSpeakerLabels\": {}, \"ChannelIdentification\": {}, \"ShowAlternatives\": {}, \"MaxAlternatives\": {}, \"VocabularyName\": {}}, \"ContentIdentificationType\": {}, \"Specialty\": {}, \"Type\": {}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.StartMedicalTranscriptionJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.StartMedicalTranscriptionJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ContentRedaction": {
+          "PiiEntityTypes": {},
+          "RedactionOutput": {},
+          "RedactionType": {}
+        },
+        "IdentifyLanguage": {},
+        "IdentifyMultipleLanguages": {},
+        "JobExecutionSettings": {
+          "AllowDeferredExecution": {},
+          "DataAccessRoleArn": {}
+        },
+        "KMSEncryptionContext": {},
+        "LanguageCode": {},
+        "LanguageIdSettings": {},
+        "LanguageOptions": {},
+        "Media": {
+          "MediaFileUri": {},
+          "RedactedMediaFileUri": {}
+        },
+        "MediaFormat": {},
+        "MediaSampleRateHertz": {},
+        "ModelSettings": {
+          "LanguageModelName": {}
+        },
+        "OutputBucketName": {},
+        "OutputEncryptionKMSKeyId": {},
+        "OutputKey": {},
+        "Settings": {
+          "ChannelIdentification": {},
+          "MaxAlternatives": {},
+          "MaxSpeakerLabels": {},
+          "ShowAlternatives": {},
+          "ShowSpeakerLabels": {},
+          "VocabularyFilterMethod": {},
+          "VocabularyFilterName": {},
+          "VocabularyName": {}
+        },
+        "Subtitles": {
+          "Formats": {},
+          "OutputStartIndex": {}
+        },
+        "Tags": {},
+        "TranscriptionJobName": {}
+      },
+      "body_json": {
+        "ContentRedaction": {
+          "PiiEntityTypes": {},
+          "RedactionOutput": {},
+          "RedactionType": {}
+        },
+        "IdentifyLanguage": {},
+        "IdentifyMultipleLanguages": {},
+        "JobExecutionSettings": {
+          "AllowDeferredExecution": {},
+          "DataAccessRoleArn": {}
+        },
+        "KMSEncryptionContext": {},
+        "LanguageCode": {},
+        "LanguageIdSettings": {},
+        "LanguageOptions": {},
+        "Media": {
+          "MediaFileUri": {},
+          "RedactedMediaFileUri": {}
+        },
+        "MediaFormat": {},
+        "MediaSampleRateHertz": {},
+        "ModelSettings": {
+          "LanguageModelName": {}
+        },
+        "OutputBucketName": {},
+        "OutputEncryptionKMSKeyId": {},
+        "OutputKey": {},
+        "Settings": {
+          "ChannelIdentification": {},
+          "MaxAlternatives": {},
+          "MaxSpeakerLabels": {},
+          "ShowAlternatives": {},
+          "ShowSpeakerLabels": {},
+          "VocabularyFilterMethod": {},
+          "VocabularyFilterName": {},
+          "VocabularyName": {}
+        },
+        "Subtitles": {
+          "Formats": {},
+          "OutputStartIndex": {}
+        },
+        "Tags": {},
+        "TranscriptionJobName": {}
+      },
+      "body_text": "{\"TranscriptionJobName\": {}, \"LanguageCode\": {}, \"MediaSampleRateHertz\": {}, \"MediaFormat\": {}, \"Media\": {\"MediaFileUri\": {}, \"RedactedMediaFileUri\": {}}, \"OutputBucketName\": {}, \"OutputKey\": {}, \"OutputEncryptionKMSKeyId\": {}, \"KMSEncryptionContext\": {}, \"Settings\": {\"VocabularyName\": {}, \"ShowSpeakerLabels\": {}, \"MaxSpeakerLabels\": {}, \"ChannelIdentification\": {}, \"ShowAlternatives\": {}, \"MaxAlternatives\": {}, \"VocabularyFilterName\": {}, \"VocabularyFilterMethod\": {}}, \"ModelSettings\": {\"LanguageModelName\": {}}, \"JobExecutionSettings\": {\"AllowDeferredExecution\": {}, \"DataAccessRoleArn\": {}}, \"ContentRedaction\": {\"RedactionType\": {}, \"RedactionOutput\": {}, \"PiiEntityTypes\": {}}, \"IdentifyLanguage\": {}, \"IdentifyMultipleLanguages\": {}, \"LanguageOptions\": {}, \"Subtitles\": {\"Formats\": {}, \"OutputStartIndex\": {}}, \"Tags\": {}, \"LanguageIdSettings\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Transcribes the audio from a media file and applies any additional Request Parameters you choose to include in your request.</p> <p>To make a <code>StartTranscriptionJob</code> request, you must first upload your media file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.</p> <p>You must include the following parameters in your <code>StartTranscriptionJob</code> request:</p> <ul> <li> <p> <code>region</code>: The Amazon Web Services Region where you are making your request. For a list of Amazon Web Services Regions supported with Amazon Transcribe, refer to <a href=\"https://docs.aws.amazon.com/general/latest/gr/transcribe.html\">Amazon Transcribe endpoints and quotas</a>.</p> </li> <li> <p> <code>TranscriptionJobName</code>: A custom name you create for your transcription job that is unique within your Amazon Web Services account.</p> </li> <li> <p> <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media file.</p> </li> <li> <p>One of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code>: If you know the language of your media file, specify it using the <code>LanguageCode</code> parameter; you can find all valid language codes in the <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html\">Supported languages</a> table. If you don't know the languages spoken in your media, use either <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> and let Amazon Transcribe identify the languages for you.</p> </li> </ul>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.StartTranscriptionJob",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"TranscriptionJobName\": {}, \"LanguageCode\": {}, \"MediaSampleRateHertz\": {}, \"MediaFormat\": {}, \"Media\": {\"MediaFileUri\": {}, \"RedactedMediaFileUri\": {}}, \"OutputBucketName\": {}, \"OutputKey\": {}, \"OutputEncryptionKMSKeyId\": {}, \"KMSEncryptionContext\": {}, \"Settings\": {\"VocabularyName\": {}, \"ShowSpeakerLabels\": {}, \"MaxSpeakerLabels\": {}, \"ChannelIdentification\": {}, \"ShowAlternatives\": {}, \"MaxAlternatives\": {}, \"VocabularyFilterName\": {}, \"VocabularyFilterMethod\": {}}, \"ModelSettings\": {\"LanguageModelName\": {}}, \"JobExecutionSettings\": {\"AllowDeferredExecution\": {}, \"DataAccessRoleArn\": {}}, \"ContentRedaction\": {\"RedactionType\": {}, \"RedactionOutput\": {}, \"PiiEntityTypes\": {}}, \"IdentifyLanguage\": {}, \"IdentifyMultipleLanguages\": {}, \"LanguageOptions\": {}, \"Subtitles\": {\"Formats\": {}, \"OutputStartIndex\": {}}, \"Tags\": {}, \"LanguageIdSettings\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.StartTranscriptionJob",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.StartTranscriptionJob"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {},
+        "Tags": {}
+      },
+      "body_json": {
+        "ResourceArn": {},
+        "Tags": {}
+      },
+      "body_text": "{\"ResourceArn\": {}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Adds one or more custom tags, each in the form of a key:value pair, to the specified resource.</p> <p>To learn more about using tags with Amazon Transcribe, refer to <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html\">Tagging resources</a>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.TagResource",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.TagResource",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.TagResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ResourceArn": {},
+        "TagKeys": {}
+      },
+      "body_json": {
+        "ResourceArn": {},
+        "TagKeys": {}
+      },
+      "body_text": "{\"ResourceArn\": {}, \"TagKeys\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Removes the specified tags from the specified Amazon Transcribe resource.</p> <p>If you include <code>UntagResource</code> in your request, you must also include <code>ResourceArn</code> and <code>TagKeys</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.UntagResource",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ResourceArn\": {}, \"TagKeys\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.UntagResource",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.UntagResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "CategoryName": {},
+        "InputType": {},
+        "Rules": {}
+      },
+      "body_json": {
+        "CategoryName": {},
+        "InputType": {},
+        "Rules": {}
+      },
+      "body_text": "{\"CategoryName\": {}, \"Rules\": {}, \"InputType\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates the specified Call Analytics category with new rules. Note that the <code>UpdateCallAnalyticsCategory</code> operation overwrites all existing rules contained in the specified category. You cannot append additional rules onto an existing category.</p> <p>To create a new category, see .</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.UpdateCallAnalyticsCategory",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"CategoryName\": {}, \"Rules\": {}, \"InputType\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.UpdateCallAnalyticsCategory",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.UpdateCallAnalyticsCategory"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "LanguageCode": {},
+        "VocabularyFileUri": {},
+        "VocabularyName": {}
+      },
+      "body_json": {
+        "LanguageCode": {},
+        "VocabularyFileUri": {},
+        "VocabularyName": {}
+      },
+      "body_text": "{\"VocabularyName\": {}, \"LanguageCode\": {}, \"VocabularyFileUri\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an existing custom medical vocabulary with new values. This operation overwrites all existing information with your new values; you cannot append new terms onto an existing custom vocabulary.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.UpdateMedicalVocabulary",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyName\": {}, \"LanguageCode\": {}, \"VocabularyFileUri\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.UpdateMedicalVocabulary",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.UpdateMedicalVocabulary"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DataAccessRoleArn": {},
+        "LanguageCode": {},
+        "Phrases": {},
+        "VocabularyFileUri": {},
+        "VocabularyName": {}
+      },
+      "body_json": {
+        "DataAccessRoleArn": {},
+        "LanguageCode": {},
+        "Phrases": {},
+        "VocabularyFileUri": {},
+        "VocabularyName": {}
+      },
+      "body_text": "{\"VocabularyName\": {}, \"LanguageCode\": {}, \"Phrases\": {}, \"VocabularyFileUri\": {}, \"DataAccessRoleArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an existing custom vocabulary with new values. This operation overwrites all existing information with your new values; you cannot append new terms onto an existing custom vocabulary.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.UpdateVocabulary",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyName\": {}, \"LanguageCode\": {}, \"Phrases\": {}, \"VocabularyFileUri\": {}, \"DataAccessRoleArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.UpdateVocabulary",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.UpdateVocabulary"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_TRANSCRIBE_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DataAccessRoleArn": {},
+        "VocabularyFilterFileUri": {},
+        "VocabularyFilterName": {},
+        "Words": {}
+      },
+      "body_json": {
+        "DataAccessRoleArn": {},
+        "VocabularyFilterFileUri": {},
+        "VocabularyFilterName": {},
+        "Words": {}
+      },
+      "body_text": "{\"VocabularyFilterName\": {}, \"Words\": {}, \"VocabularyFilterFileUri\": {}, \"DataAccessRoleArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all previous entries; you cannot append new terms onto an existing custom vocabulary filter.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_TRANSCRIBE_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=Transcribe.UpdateVocabularyFilter",
+      "note": "Replace {{AMAZON_TRANSCRIBE_SERVICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"VocabularyFilterName\": {}, \"Words\": {}, \"VocabularyFilterFileUri\": {}, \"DataAccessRoleArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=Transcribe.UpdateVocabularyFilter",
+      "url": "http://transcribe.{{REGION}}.amazonaws.com/#X-Amz-Target=Transcribe.UpdateVocabularyFilter"
+    }
+  ]
+}

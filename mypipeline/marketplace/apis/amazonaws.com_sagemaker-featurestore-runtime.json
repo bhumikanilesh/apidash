@@ -1,0 +1,358 @@
+{
+  "id": "amazonaws.com_sagemaker-featurestore-runtime",
+  "info": {
+    "base_url": "http://featurestore-runtime.sagemaker.{region}.amazonaws.com",
+    "description": "Used for data ingestion into the FeatureStore. The PutRecord API writes to both the OnlineStore and OfflineStore. If the record is the latest record for the recordIdentifier, the record is written to...",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Amazon SageMaker Feature Store Runtime",
+    "version": "2020-07-01"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Identifiers": [
+          {
+            "FeatureGroupName": {},
+            "FeatureNames": {},
+            "RecordIdentifiersValueAsString": {}
+          }
+        ]
+      },
+      "body_json": {
+        "Identifiers": [
+          {
+            "FeatureGroupName": {},
+            "FeatureNames": {},
+            "RecordIdentifiersValueAsString": {}
+          }
+        ]
+      },
+      "body_text": "{\"Identifiers\": [{\"FeatureGroupName\": {}, \"RecordIdentifiersValueAsString\": {}, \"FeatureNames\": {}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /BatchGetRecord",
+      "method": "POST",
+      "name": "POST /BatchGetRecord",
+      "note": "Replace {{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/BatchGetRecord",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Identifiers\": [{\"FeatureGroupName\": {}, \"RecordIdentifiersValueAsString\": {}, \"FeatureNames\": {}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /BatchGetRecord",
+      "url": "http://featurestore-runtime.sagemaker.{{REGION}}.amazonaws.com/BatchGetRecord"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Deletes a <code>Record</code> from a <code>FeatureGroup</code> in the <code>OnlineStore</code>. Feature Store supports both <code>SOFT_DELETE</code> and <code>HARD_DELETE</code>. For <code>SOFT_DELETE</code> (default), feature columns are set to <code>null</code> and the record is no longer retrievable by <code>GetRecord</code> or <code>BatchGetRecord</code>. For<code> HARD_DELETE</code>, the complete <code>Record</code> is removed from the <code>OnlineStore</code>. In both cases, Feature Store appends the deleted record marker to the <code>OfflineStore</code> with feature values set to <code>null</code>, <code>is_deleted</code> value set to <code>True</code>, and <code>EventTime</code> set to the delete input <code>EventTime</code>.</p> <p>Note that the <code>EventTime</code> specified in <code>DeleteRecord</code> should be set later than the <code>EventTime</code> of the existing record in the <code>OnlineStore</code> for that <code>RecordIdentifer</code>. If it is not, the deletion does not occur:</p> <ul> <li> <p>For <code>SOFT_DELETE</code>, the existing (undeleted) record remains in the <code>OnlineStore</code>, though the delete record marker is still written to the <code>OfflineStore</code>.</p> </li> <li> <p> <code>HARD_DELETE</code> returns <code>EventTime</code>: <code>400 ValidationException</code> to indicate that the delete operation failed. No delete record marker is written to the <code>OfflineStore</code>.</p> </li> </ul>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /FeatureGroup/{{FEATURE_GROUP_NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /FeatureGroup/{FeatureGroupName}#RecordIdentifierValueAsString&EventTime",
+      "note": "Replace {{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FeatureGroupName",
+          "value": ""
+        },
+        {
+          "name": "RecordIdentifierValueAsString",
+          "value": ""
+        },
+        {
+          "name": "EventTime",
+          "value": ""
+        },
+        {
+          "name": "TargetStores",
+          "value": ""
+        },
+        {
+          "name": "DeletionMode",
+          "value": ""
+        }
+      ],
+      "path": "/FeatureGroup/{{FEATURE_GROUP_NAME}}",
+      "pathParameters": [
+        {
+          "name": "FeatureGroupName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "RecordIdentifierValueAsString",
+          "value": ""
+        },
+        {
+          "name": "EventTime",
+          "value": ""
+        },
+        {
+          "name": "TargetStores",
+          "value": ""
+        },
+        {
+          "name": "DeletionMode",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /FeatureGroup/{FeatureGroupName}#RecordIdentifierValueAsString&EventTime",
+      "url": "http://featurestore-runtime.sagemaker.{{REGION}}.amazonaws.com/FeatureGroup/{{FEATURE_GROUP_NAME}}#RecordIdentifierValueAsString&EventTime"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>. Only the latest records stored in the <code>OnlineStore</code> can be retrieved. If no Record with <code>RecordIdentifierValue</code> is found, then an empty result is returned. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}}"
+        }
+      ],
+      "id": "GET /FeatureGroup/{{FEATURE_GROUP_NAME}}",
+      "method": "GET",
+      "name": "GET /FeatureGroup/{FeatureGroupName}#RecordIdentifierValueAsString",
+      "note": "Replace {{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FeatureGroupName",
+          "value": ""
+        },
+        {
+          "name": "RecordIdentifierValueAsString",
+          "value": ""
+        },
+        {
+          "name": "FeatureName",
+          "value": ""
+        }
+      ],
+      "path": "/FeatureGroup/{{FEATURE_GROUP_NAME}}",
+      "pathParameters": [
+        {
+          "name": "FeatureGroupName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "RecordIdentifierValueAsString",
+          "value": ""
+        },
+        {
+          "name": "FeatureName",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /FeatureGroup/{FeatureGroupName}#RecordIdentifierValueAsString",
+      "url": "http://featurestore-runtime.sagemaker.{{REGION}}.amazonaws.com/FeatureGroup/{{FEATURE_GROUP_NAME}}#RecordIdentifierValueAsString"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Record": [
+          {
+            "FeatureName": {},
+            "ValueAsString": {}
+          }
+        ],
+        "TargetStores": [
+          "OnlineStore"
+        ]
+      },
+      "body_json": {
+        "Record": [
+          {
+            "FeatureName": {},
+            "ValueAsString": {}
+          }
+        ],
+        "TargetStores": [
+          "OnlineStore"
+        ]
+      },
+      "body_text": "{\"Record\": [{\"FeatureName\": {}, \"ValueAsString\": {}}], \"TargetStores\": [\"OnlineStore\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Used for data ingestion into the <code>FeatureStore</code>. The <code>PutRecord</code> API writes to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is the latest record for the <code>recordIdentifier</code>, the record is written to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If the record is a historic record, it is written only to the <code>OfflineStore</code>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /FeatureGroup/{{FEATURE_GROUP_NAME}}",
+      "method": "PUT",
+      "name": "PUT /FeatureGroup/{FeatureGroupName}",
+      "note": "Replace {{AMAZON_SAGEMAKER_FEATURE_STORE_RUNTIME_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "FeatureGroupName",
+          "value": ""
+        }
+      ],
+      "path": "/FeatureGroup/{{FEATURE_GROUP_NAME}}",
+      "pathParameters": [
+        {
+          "name": "FeatureGroupName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Record\": [{\"FeatureName\": {}, \"ValueAsString\": {}}], \"TargetStores\": [\"OnlineStore\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /FeatureGroup/{FeatureGroupName}",
+      "url": "http://featurestore-runtime.sagemaker.{{REGION}}.amazonaws.com/FeatureGroup/{{FEATURE_GROUP_NAME}}"
+    }
+  ]
+}

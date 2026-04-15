@@ -1,0 +1,3592 @@
+{
+  "id": "googleapis.com_datastore",
+  "info": {
+    "base_url": "https://datastore.googleapis.com/",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it...",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "Cloud Datastore API",
+    "version": "v1"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the indexes that match the specified filters. Datastore uses an eventually consistent query to fetch the list of indexes and may occasionally return stale results.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET //v1/projects/{{PROJECT_ID}}/indexes",
+      "method": "GET",
+      "name": "GET /v1/projects/{projectId}/indexes",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "pageSize",
+          "value": ""
+        },
+        {
+          "name": "pageToken",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}/indexes",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "pageSize",
+          "value": ""
+        },
+        {
+          "name": "pageToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/projects/{projectId}/indexes",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}/indexes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "ancestor": "ANCESTOR_MODE_UNSPECIFIED",
+        "indexId": "",
+        "kind": "",
+        "projectId": "",
+        "properties": [
+          {
+            "direction": "DIRECTION_UNSPECIFIED",
+            "name": ""
+          }
+        ],
+        "state": "STATE_UNSPECIFIED"
+      },
+      "body_json": {
+        "ancestor": "ANCESTOR_MODE_UNSPECIFIED",
+        "indexId": "",
+        "kind": "",
+        "projectId": "",
+        "properties": [
+          {
+            "direction": "DIRECTION_UNSPECIFIED",
+            "name": ""
+          }
+        ],
+        "state": "STATE_UNSPECIFIED"
+      },
+      "body_text": "{\"ancestor\": \"ANCESTOR_MODE_UNSPECIFIED\", \"indexId\": \"\", \"kind\": \"\", \"projectId\": \"\", \"properties\": [{\"direction\": \"DIRECTION_UNSPECIFIED\", \"name\": \"\"}], \"state\": \"STATE_UNSPECIFIED\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates the specified index. A newly created index's initial state is `CREATING`. On completion of the returned google.longrunning.Operation, the state will be `READY`. If the index already exists, the call will return an `ALREADY_EXISTS` status. During index creation, the process could result in an error, in which case the index will move to the `ERROR` state. The process can be recovered by fixing the data that caused the error, removing the index with delete, then re-creating the index with create. Indexes with a single property cannot be created.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}/indexes",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}/indexes",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}/indexes",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"ancestor\": \"ANCESTOR_MODE_UNSPECIFIED\", \"indexId\": \"\", \"kind\": \"\", \"projectId\": \"\", \"properties\": [{\"direction\": \"DIRECTION_UNSPECIFIED\", \"name\": \"\"}], \"state\": \"STATE_UNSPECIFIED\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}/indexes",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}/indexes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an existing index. An index can only be deleted if it is in a `READY` or `ERROR` state. On successful execution of the request, the index will be in a `DELETING` state. And on completion of the returned google.longrunning.Operation, the index will be removed. During index deletion, the process could result in an error, in which case the index will move to the `ERROR` state. The process can be recovered by fixing the data that caused the error, followed by calling delete again.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE //v1/projects/{{PROJECT_ID}}/indexes/{{INDEX_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /v1/projects/{projectId}/indexes/{indexId}",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "indexId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}/indexes/{{INDEX_ID}}",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "indexId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /v1/projects/{projectId}/indexes/{indexId}",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}/indexes/{{INDEX_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets an index.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET //v1/projects/{{PROJECT_ID}}/indexes/{{INDEX_ID}}",
+      "method": "GET",
+      "name": "GET /v1/projects/{projectId}/indexes/{indexId}",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "indexId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}/indexes/{{INDEX_ID}}",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "indexId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/projects/{projectId}/indexes/{indexId}",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}/indexes/{{INDEX_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "databaseId": "",
+        "keys": [
+          {
+            "partitionId": {
+              "databaseId": "",
+              "namespaceId": "",
+              "projectId": ""
+            },
+            "path": [
+              {
+                "id": "",
+                "kind": "",
+                "name": ""
+              }
+            ]
+          }
+        ]
+      },
+      "body_json": {
+        "databaseId": "",
+        "keys": [
+          {
+            "partitionId": {
+              "databaseId": "",
+              "namespaceId": "",
+              "projectId": ""
+            },
+            "path": [
+              {
+                "id": "",
+                "kind": "",
+                "name": ""
+              }
+            ]
+          }
+        ]
+      },
+      "body_text": "{\"databaseId\": \"\", \"keys\": [{\"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"path\": [{\"id\": \"\", \"kind\": \"\", \"name\": \"\"}]}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Allocates IDs for the given keys, which is useful for referencing an entity before it is inserted.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:allocateIds",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:allocateIds",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:allocateIds",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"databaseId\": \"\", \"keys\": [{\"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"path\": [{\"id\": \"\", \"kind\": \"\", \"name\": \"\"}]}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:allocateIds",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:allocateIds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "databaseId": "",
+        "transactionOptions": {
+          "readOnly": {
+            "readTime": ""
+          },
+          "readWrite": {
+            "previousTransaction": ""
+          }
+        }
+      },
+      "body_json": {
+        "databaseId": "",
+        "transactionOptions": {
+          "readOnly": {
+            "readTime": ""
+          },
+          "readWrite": {
+            "previousTransaction": ""
+          }
+        }
+      },
+      "body_text": "{\"databaseId\": \"\", \"transactionOptions\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Begins a new transaction.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:beginTransaction",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:beginTransaction",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:beginTransaction",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"databaseId\": \"\", \"transactionOptions\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:beginTransaction",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:beginTransaction"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "databaseId": "",
+        "mode": "MODE_UNSPECIFIED",
+        "mutations": [
+          {
+            "baseVersion": "",
+            "delete": {
+              "partitionId": {
+                "databaseId": "",
+                "namespaceId": "",
+                "projectId": ""
+              },
+              "path": [
+                {
+                  "id": {},
+                  "kind": {},
+                  "name": {}
+                }
+              ]
+            },
+            "insert": {
+              "key": {
+                "partitionId": {
+                  "databaseId": {},
+                  "namespaceId": {},
+                  "projectId": {}
+                },
+                "path": [
+                  {}
+                ]
+              },
+              "properties": {}
+            },
+            "update": {
+              "key": {
+                "partitionId": {
+                  "databaseId": {},
+                  "namespaceId": {},
+                  "projectId": {}
+                },
+                "path": [
+                  {}
+                ]
+              },
+              "properties": {}
+            },
+            "updateTime": "",
+            "upsert": {
+              "key": {
+                "partitionId": {
+                  "databaseId": {},
+                  "namespaceId": {},
+                  "projectId": {}
+                },
+                "path": [
+                  {}
+                ]
+              },
+              "properties": {}
+            }
+          }
+        ],
+        "singleUseTransaction": {
+          "readOnly": {
+            "readTime": ""
+          },
+          "readWrite": {
+            "previousTransaction": ""
+          }
+        },
+        "transaction": ""
+      },
+      "body_json": {
+        "databaseId": "",
+        "mode": "MODE_UNSPECIFIED",
+        "mutations": [
+          {
+            "baseVersion": "",
+            "delete": {
+              "partitionId": {
+                "databaseId": "",
+                "namespaceId": "",
+                "projectId": ""
+              },
+              "path": [
+                {
+                  "id": {},
+                  "kind": {},
+                  "name": {}
+                }
+              ]
+            },
+            "insert": {
+              "key": {
+                "partitionId": {
+                  "databaseId": {},
+                  "namespaceId": {},
+                  "projectId": {}
+                },
+                "path": [
+                  {}
+                ]
+              },
+              "properties": {}
+            },
+            "update": {
+              "key": {
+                "partitionId": {
+                  "databaseId": {},
+                  "namespaceId": {},
+                  "projectId": {}
+                },
+                "path": [
+                  {}
+                ]
+              },
+              "properties": {}
+            },
+            "updateTime": "",
+            "upsert": {
+              "key": {
+                "partitionId": {
+                  "databaseId": {},
+                  "namespaceId": {},
+                  "projectId": {}
+                },
+                "path": [
+                  {}
+                ]
+              },
+              "properties": {}
+            }
+          }
+        ],
+        "singleUseTransaction": {
+          "readOnly": {
+            "readTime": ""
+          },
+          "readWrite": {
+            "previousTransaction": ""
+          }
+        },
+        "transaction": ""
+      },
+      "body_text": "{\"databaseId\": \"\", \"mode\": \"MODE_UNSPECIFIED\", \"mutations\": [{\"baseVersion\": \"\", \"delete\": {\"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"path\": [{\"id\": {}, \"kind\": {}, \"name\": {}}]}, \"insert\": {\"key\": {\"partitionId\": {\"databaseId\": {}, \"namespaceId\": {}, \"projectId\": {}}, \"path\": [{}]}, \"properties\": {}}, \"update\": {\"key\": {\"partitionId\": {\"databaseId\": {}, \"namespaceId\": {}, \"projectId\": {}}, \"path\": [{}]}, \"properties\": {}}, \"updateTime\": \"\", \"upsert\": {\"key\": {\"partitionId\": {\"databaseId\": {}, \"namespaceId\": {}, \"projectId\": {}}, \"path\": [{}]}, \"properties\": {}}}], \"singleUseTransaction\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}, \"transaction\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Commits a transaction, optionally creating, deleting or modifying some entities.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:commit",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:commit",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:commit",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"databaseId\": \"\", \"mode\": \"MODE_UNSPECIFIED\", \"mutations\": [{\"baseVersion\": \"\", \"delete\": {\"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"path\": [{\"id\": {}, \"kind\": {}, \"name\": {}}]}, \"insert\": {\"key\": {\"partitionId\": {\"databaseId\": {}, \"namespaceId\": {}, \"projectId\": {}}, \"path\": [{}]}, \"properties\": {}}, \"update\": {\"key\": {\"partitionId\": {\"databaseId\": {}, \"namespaceId\": {}, \"projectId\": {}}, \"path\": [{}]}, \"properties\": {}}, \"updateTime\": \"\", \"upsert\": {\"key\": {\"partitionId\": {\"databaseId\": {}, \"namespaceId\": {}, \"projectId\": {}}, \"path\": [{}]}, \"properties\": {}}}], \"singleUseTransaction\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}, \"transaction\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:commit",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:commit"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "entityFilter": {
+          "kinds": [
+            ""
+          ],
+          "namespaceIds": [
+            ""
+          ]
+        },
+        "labels": {},
+        "outputUrlPrefix": ""
+      },
+      "body_json": {
+        "entityFilter": {
+          "kinds": [
+            ""
+          ],
+          "namespaceIds": [
+            ""
+          ]
+        },
+        "labels": {},
+        "outputUrlPrefix": ""
+      },
+      "body_text": "{\"entityFilter\": {\"kinds\": [\"\"], \"namespaceIds\": [\"\"]}, \"labels\": {}, \"outputUrlPrefix\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Exports a copy of all or a subset of entities from Google Cloud Datastore to another storage system, such as Google Cloud Storage. Recent updates to entities may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:export",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:export",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:export",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"entityFilter\": {\"kinds\": [\"\"], \"namespaceIds\": [\"\"]}, \"labels\": {}, \"outputUrlPrefix\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:export",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:export"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "entityFilter": {
+          "kinds": [
+            ""
+          ],
+          "namespaceIds": [
+            ""
+          ]
+        },
+        "inputUrl": "",
+        "labels": {}
+      },
+      "body_json": {
+        "entityFilter": {
+          "kinds": [
+            ""
+          ],
+          "namespaceIds": [
+            ""
+          ]
+        },
+        "inputUrl": "",
+        "labels": {}
+      },
+      "body_text": "{\"entityFilter\": {\"kinds\": [\"\"], \"namespaceIds\": [\"\"]}, \"inputUrl\": \"\", \"labels\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Imports entities into Google Cloud Datastore. Existing entities with the same key are overwritten. The import occurs in the background and its progress can be monitored and managed via the Operation resource that is created. If an ImportEntities operation is cancelled, it is possible that a subset of the data has already been imported to Cloud Datastore.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:import",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:import",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:import",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"entityFilter\": {\"kinds\": [\"\"], \"namespaceIds\": [\"\"]}, \"inputUrl\": \"\", \"labels\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:import",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:import"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "databaseId": "",
+        "keys": [
+          {
+            "partitionId": {
+              "databaseId": "",
+              "namespaceId": "",
+              "projectId": ""
+            },
+            "path": [
+              {
+                "id": "",
+                "kind": "",
+                "name": ""
+              }
+            ]
+          }
+        ],
+        "readOptions": {
+          "newTransaction": {
+            "readOnly": {
+              "readTime": ""
+            },
+            "readWrite": {
+              "previousTransaction": ""
+            }
+          },
+          "readConsistency": "READ_CONSISTENCY_UNSPECIFIED",
+          "readTime": "",
+          "transaction": ""
+        }
+      },
+      "body_json": {
+        "databaseId": "",
+        "keys": [
+          {
+            "partitionId": {
+              "databaseId": "",
+              "namespaceId": "",
+              "projectId": ""
+            },
+            "path": [
+              {
+                "id": "",
+                "kind": "",
+                "name": ""
+              }
+            ]
+          }
+        ],
+        "readOptions": {
+          "newTransaction": {
+            "readOnly": {
+              "readTime": ""
+            },
+            "readWrite": {
+              "previousTransaction": ""
+            }
+          },
+          "readConsistency": "READ_CONSISTENCY_UNSPECIFIED",
+          "readTime": "",
+          "transaction": ""
+        }
+      },
+      "body_text": "{\"databaseId\": \"\", \"keys\": [{\"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"path\": [{\"id\": \"\", \"kind\": \"\", \"name\": \"\"}]}], \"readOptions\": {\"newTransaction\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}, \"readConsistency\": \"READ_CONSISTENCY_UNSPECIFIED\", \"readTime\": \"\", \"transaction\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Looks up entities by key.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:lookup",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:lookup",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:lookup",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"databaseId\": \"\", \"keys\": [{\"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"path\": [{\"id\": \"\", \"kind\": \"\", \"name\": \"\"}]}], \"readOptions\": {\"newTransaction\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}, \"readConsistency\": \"READ_CONSISTENCY_UNSPECIFIED\", \"readTime\": \"\", \"transaction\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:lookup",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:lookup"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "databaseId": "",
+        "keys": [
+          {
+            "partitionId": {
+              "databaseId": "",
+              "namespaceId": "",
+              "projectId": ""
+            },
+            "path": [
+              {
+                "id": "",
+                "kind": "",
+                "name": ""
+              }
+            ]
+          }
+        ]
+      },
+      "body_json": {
+        "databaseId": "",
+        "keys": [
+          {
+            "partitionId": {
+              "databaseId": "",
+              "namespaceId": "",
+              "projectId": ""
+            },
+            "path": [
+              {
+                "id": "",
+                "kind": "",
+                "name": ""
+              }
+            ]
+          }
+        ]
+      },
+      "body_text": "{\"databaseId\": \"\", \"keys\": [{\"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"path\": [{\"id\": \"\", \"kind\": \"\", \"name\": \"\"}]}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:reserveIds",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:reserveIds",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:reserveIds",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"databaseId\": \"\", \"keys\": [{\"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"path\": [{\"id\": \"\", \"kind\": \"\", \"name\": \"\"}]}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:reserveIds",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:reserveIds"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "databaseId": "",
+        "transaction": ""
+      },
+      "body_json": {
+        "databaseId": "",
+        "transaction": ""
+      },
+      "body_text": "{\"databaseId\": \"\", \"transaction\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Rolls back a transaction.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:rollback",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:rollback",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:rollback",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"databaseId\": \"\", \"transaction\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:rollback",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:rollback"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "aggregationQuery": {
+          "aggregations": [
+            {
+              "alias": "",
+              "count": {
+                "upTo": ""
+              }
+            }
+          ],
+          "nestedQuery": {
+            "distinctOn": [
+              {
+                "name": ""
+              }
+            ],
+            "endCursor": "",
+            "filter": {
+              "compositeFilter": {
+                "filters": [
+                  {}
+                ],
+                "op": "OPERATOR_UNSPECIFIED"
+              },
+              "propertyFilter": {
+                "op": "OPERATOR_UNSPECIFIED",
+                "property": {},
+                "value": {}
+              }
+            },
+            "kind": [
+              {
+                "name": ""
+              }
+            ],
+            "limit": 0,
+            "offset": 0,
+            "order": [
+              {
+                "direction": "DIRECTION_UNSPECIFIED",
+                "property": {
+                  "name": {}
+                }
+              }
+            ],
+            "projection": [
+              {
+                "property": {
+                  "name": {}
+                }
+              }
+            ],
+            "startCursor": ""
+          }
+        },
+        "databaseId": "",
+        "gqlQuery": {
+          "allowLiterals": false,
+          "namedBindings": {},
+          "positionalBindings": [
+            {
+              "cursor": "",
+              "value": {
+                "arrayValue": {
+                  "values": {}
+                },
+                "blobValue": "",
+                "booleanValue": false,
+                "doubleValue": 0.0,
+                "entityValue": {
+                  "key": {},
+                  "properties": {}
+                },
+                "excludeFromIndexes": false,
+                "geoPointValue": {
+                  "latitude": {},
+                  "longitude": {}
+                },
+                "integerValue": "",
+                "keyValue": {
+                  "partitionId": {},
+                  "path": {}
+                },
+                "meaning": 0,
+                "nullValue": "NULL_VALUE",
+                "stringValue": "",
+                "timestampValue": ""
+              }
+            }
+          ],
+          "queryString": ""
+        },
+        "partitionId": {
+          "databaseId": "",
+          "namespaceId": "",
+          "projectId": ""
+        },
+        "readOptions": {
+          "newTransaction": {
+            "readOnly": {
+              "readTime": ""
+            },
+            "readWrite": {
+              "previousTransaction": ""
+            }
+          },
+          "readConsistency": "READ_CONSISTENCY_UNSPECIFIED",
+          "readTime": "",
+          "transaction": ""
+        }
+      },
+      "body_json": {
+        "aggregationQuery": {
+          "aggregations": [
+            {
+              "alias": "",
+              "count": {
+                "upTo": ""
+              }
+            }
+          ],
+          "nestedQuery": {
+            "distinctOn": [
+              {
+                "name": ""
+              }
+            ],
+            "endCursor": "",
+            "filter": {
+              "compositeFilter": {
+                "filters": [
+                  {}
+                ],
+                "op": "OPERATOR_UNSPECIFIED"
+              },
+              "propertyFilter": {
+                "op": "OPERATOR_UNSPECIFIED",
+                "property": {},
+                "value": {}
+              }
+            },
+            "kind": [
+              {
+                "name": ""
+              }
+            ],
+            "limit": 0,
+            "offset": 0,
+            "order": [
+              {
+                "direction": "DIRECTION_UNSPECIFIED",
+                "property": {
+                  "name": {}
+                }
+              }
+            ],
+            "projection": [
+              {
+                "property": {
+                  "name": {}
+                }
+              }
+            ],
+            "startCursor": ""
+          }
+        },
+        "databaseId": "",
+        "gqlQuery": {
+          "allowLiterals": false,
+          "namedBindings": {},
+          "positionalBindings": [
+            {
+              "cursor": "",
+              "value": {
+                "arrayValue": {
+                  "values": {}
+                },
+                "blobValue": "",
+                "booleanValue": false,
+                "doubleValue": 0.0,
+                "entityValue": {
+                  "key": {},
+                  "properties": {}
+                },
+                "excludeFromIndexes": false,
+                "geoPointValue": {
+                  "latitude": {},
+                  "longitude": {}
+                },
+                "integerValue": "",
+                "keyValue": {
+                  "partitionId": {},
+                  "path": {}
+                },
+                "meaning": 0,
+                "nullValue": "NULL_VALUE",
+                "stringValue": "",
+                "timestampValue": ""
+              }
+            }
+          ],
+          "queryString": ""
+        },
+        "partitionId": {
+          "databaseId": "",
+          "namespaceId": "",
+          "projectId": ""
+        },
+        "readOptions": {
+          "newTransaction": {
+            "readOnly": {
+              "readTime": ""
+            },
+            "readWrite": {
+              "previousTransaction": ""
+            }
+          },
+          "readConsistency": "READ_CONSISTENCY_UNSPECIFIED",
+          "readTime": "",
+          "transaction": ""
+        }
+      },
+      "body_text": "{\"aggregationQuery\": {\"aggregations\": [{\"alias\": \"\", \"count\": {\"upTo\": \"\"}}], \"nestedQuery\": {\"distinctOn\": [{\"name\": \"\"}], \"endCursor\": \"\", \"filter\": {\"compositeFilter\": {\"filters\": [{}], \"op\": \"OPERATOR_UNSPECIFIED\"}, \"propertyFilter\": {\"op\": \"OPERATOR_UNSPECIFIED\", \"property\": {}, \"value\": {}}}, \"kind\": [{\"name\": \"\"}], \"limit\": 0, \"offset\": 0, \"order\": [{\"direction\": \"DIRECTION_UNSPECIFIED\", \"property\": {\"name\": {}}}], \"projection\": [{\"property\": {\"name\": {}}}], \"startCursor\": \"\"}}, \"databaseId\": \"\", \"gqlQuery\": {\"allowLiterals\": false, \"namedBindings\": {}, \"positionalBindings\": [{\"cursor\": \"\", \"value\": {\"arrayValue\": {\"values\": {}}, \"blobValue\": \"\", \"booleanValue\": false, \"doubleValue\": 0.0, \"entityValue\": {\"key\": {}, \"properties\": {}}, \"excludeFromIndexes\": false, \"geoPointValue\": {\"latitude\": {}, \"longitude\": {}}, \"integerValue\": \"\", \"keyValue\": {\"partitionId\": {}, \"path\": {}}, \"meaning\": 0, \"nullValue\": \"NULL_VALUE\", \"stringValue\": \"\", \"timestampValue\": \"\"}}], \"queryString\": \"\"}, \"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"readOptions\": {\"newTransaction\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}, \"readConsistency\": \"READ_CONSISTENCY_UNSPECIFIED\", \"readTime\": \"\", \"transaction\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Runs an aggregation query.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:runAggregationQuery",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:runAggregationQuery",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:runAggregationQuery",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"aggregationQuery\": {\"aggregations\": [{\"alias\": \"\", \"count\": {\"upTo\": \"\"}}], \"nestedQuery\": {\"distinctOn\": [{\"name\": \"\"}], \"endCursor\": \"\", \"filter\": {\"compositeFilter\": {\"filters\": [{}], \"op\": \"OPERATOR_UNSPECIFIED\"}, \"propertyFilter\": {\"op\": \"OPERATOR_UNSPECIFIED\", \"property\": {}, \"value\": {}}}, \"kind\": [{\"name\": \"\"}], \"limit\": 0, \"offset\": 0, \"order\": [{\"direction\": \"DIRECTION_UNSPECIFIED\", \"property\": {\"name\": {}}}], \"projection\": [{\"property\": {\"name\": {}}}], \"startCursor\": \"\"}}, \"databaseId\": \"\", \"gqlQuery\": {\"allowLiterals\": false, \"namedBindings\": {}, \"positionalBindings\": [{\"cursor\": \"\", \"value\": {\"arrayValue\": {\"values\": {}}, \"blobValue\": \"\", \"booleanValue\": false, \"doubleValue\": 0.0, \"entityValue\": {\"key\": {}, \"properties\": {}}, \"excludeFromIndexes\": false, \"geoPointValue\": {\"latitude\": {}, \"longitude\": {}}, \"integerValue\": \"\", \"keyValue\": {\"partitionId\": {}, \"path\": {}}, \"meaning\": 0, \"nullValue\": \"NULL_VALUE\", \"stringValue\": \"\", \"timestampValue\": \"\"}}], \"queryString\": \"\"}, \"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"readOptions\": {\"newTransaction\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}, \"readConsistency\": \"READ_CONSISTENCY_UNSPECIFIED\", \"readTime\": \"\", \"transaction\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:runAggregationQuery",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:runAggregationQuery"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "databaseId": "",
+        "gqlQuery": {
+          "allowLiterals": false,
+          "namedBindings": {},
+          "positionalBindings": [
+            {
+              "cursor": "",
+              "value": {
+                "arrayValue": {
+                  "values": {}
+                },
+                "blobValue": "",
+                "booleanValue": false,
+                "doubleValue": 0.0,
+                "entityValue": {
+                  "key": {},
+                  "properties": {}
+                },
+                "excludeFromIndexes": false,
+                "geoPointValue": {
+                  "latitude": {},
+                  "longitude": {}
+                },
+                "integerValue": "",
+                "keyValue": {
+                  "partitionId": {},
+                  "path": {}
+                },
+                "meaning": 0,
+                "nullValue": "NULL_VALUE",
+                "stringValue": "",
+                "timestampValue": ""
+              }
+            }
+          ],
+          "queryString": ""
+        },
+        "partitionId": {
+          "databaseId": "",
+          "namespaceId": "",
+          "projectId": ""
+        },
+        "query": {
+          "distinctOn": [
+            {
+              "name": ""
+            }
+          ],
+          "endCursor": "",
+          "filter": {
+            "compositeFilter": {
+              "filters": [
+                {}
+              ],
+              "op": "OPERATOR_UNSPECIFIED"
+            },
+            "propertyFilter": {
+              "op": "OPERATOR_UNSPECIFIED",
+              "property": {
+                "name": ""
+              },
+              "value": {
+                "arrayValue": {},
+                "blobValue": "",
+                "booleanValue": false,
+                "doubleValue": 0.0,
+                "entityValue": {},
+                "excludeFromIndexes": false,
+                "geoPointValue": {},
+                "integerValue": "",
+                "keyValue": {},
+                "meaning": 0,
+                "nullValue": "NULL_VALUE",
+                "stringValue": "",
+                "timestampValue": ""
+              }
+            }
+          },
+          "kind": [
+            {
+              "name": ""
+            }
+          ],
+          "limit": 0,
+          "offset": 0,
+          "order": [
+            {
+              "direction": "DIRECTION_UNSPECIFIED",
+              "property": {
+                "name": ""
+              }
+            }
+          ],
+          "projection": [
+            {
+              "property": {
+                "name": ""
+              }
+            }
+          ],
+          "startCursor": ""
+        },
+        "readOptions": {
+          "newTransaction": {
+            "readOnly": {
+              "readTime": ""
+            },
+            "readWrite": {
+              "previousTransaction": ""
+            }
+          },
+          "readConsistency": "READ_CONSISTENCY_UNSPECIFIED",
+          "readTime": "",
+          "transaction": ""
+        }
+      },
+      "body_json": {
+        "databaseId": "",
+        "gqlQuery": {
+          "allowLiterals": false,
+          "namedBindings": {},
+          "positionalBindings": [
+            {
+              "cursor": "",
+              "value": {
+                "arrayValue": {
+                  "values": {}
+                },
+                "blobValue": "",
+                "booleanValue": false,
+                "doubleValue": 0.0,
+                "entityValue": {
+                  "key": {},
+                  "properties": {}
+                },
+                "excludeFromIndexes": false,
+                "geoPointValue": {
+                  "latitude": {},
+                  "longitude": {}
+                },
+                "integerValue": "",
+                "keyValue": {
+                  "partitionId": {},
+                  "path": {}
+                },
+                "meaning": 0,
+                "nullValue": "NULL_VALUE",
+                "stringValue": "",
+                "timestampValue": ""
+              }
+            }
+          ],
+          "queryString": ""
+        },
+        "partitionId": {
+          "databaseId": "",
+          "namespaceId": "",
+          "projectId": ""
+        },
+        "query": {
+          "distinctOn": [
+            {
+              "name": ""
+            }
+          ],
+          "endCursor": "",
+          "filter": {
+            "compositeFilter": {
+              "filters": [
+                {}
+              ],
+              "op": "OPERATOR_UNSPECIFIED"
+            },
+            "propertyFilter": {
+              "op": "OPERATOR_UNSPECIFIED",
+              "property": {
+                "name": ""
+              },
+              "value": {
+                "arrayValue": {},
+                "blobValue": "",
+                "booleanValue": false,
+                "doubleValue": 0.0,
+                "entityValue": {},
+                "excludeFromIndexes": false,
+                "geoPointValue": {},
+                "integerValue": "",
+                "keyValue": {},
+                "meaning": 0,
+                "nullValue": "NULL_VALUE",
+                "stringValue": "",
+                "timestampValue": ""
+              }
+            }
+          },
+          "kind": [
+            {
+              "name": ""
+            }
+          ],
+          "limit": 0,
+          "offset": 0,
+          "order": [
+            {
+              "direction": "DIRECTION_UNSPECIFIED",
+              "property": {
+                "name": ""
+              }
+            }
+          ],
+          "projection": [
+            {
+              "property": {
+                "name": ""
+              }
+            }
+          ],
+          "startCursor": ""
+        },
+        "readOptions": {
+          "newTransaction": {
+            "readOnly": {
+              "readTime": ""
+            },
+            "readWrite": {
+              "previousTransaction": ""
+            }
+          },
+          "readConsistency": "READ_CONSISTENCY_UNSPECIFIED",
+          "readTime": "",
+          "transaction": ""
+        }
+      },
+      "body_text": "{\"databaseId\": \"\", \"gqlQuery\": {\"allowLiterals\": false, \"namedBindings\": {}, \"positionalBindings\": [{\"cursor\": \"\", \"value\": {\"arrayValue\": {\"values\": {}}, \"blobValue\": \"\", \"booleanValue\": false, \"doubleValue\": 0.0, \"entityValue\": {\"key\": {}, \"properties\": {}}, \"excludeFromIndexes\": false, \"geoPointValue\": {\"latitude\": {}, \"longitude\": {}}, \"integerValue\": \"\", \"keyValue\": {\"partitionId\": {}, \"path\": {}}, \"meaning\": 0, \"nullValue\": \"NULL_VALUE\", \"stringValue\": \"\", \"timestampValue\": \"\"}}], \"queryString\": \"\"}, \"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"query\": {\"distinctOn\": [{\"name\": \"\"}], \"endCursor\": \"\", \"filter\": {\"compositeFilter\": {\"filters\": [{}], \"op\": \"OPERATOR_UNSPECIFIED\"}, \"propertyFilter\": {\"op\": \"OPERATOR_UNSPECIFIED\", \"property\": {\"name\": \"\"}, \"value\": {\"arrayValue\": {}, \"blobValue\": \"\", \"booleanValue\": false, \"doubleValue\": 0.0, \"entityValue\": {}, \"excludeFromIndexes\": false, \"geoPointValue\": {}, \"integerValue\": \"\", \"keyValue\": {}, \"meaning\": 0, \"nullValue\": \"NULL_VALUE\", \"stringValue\": \"\", \"timestampValue\": \"\"}}}, \"kind\": [{\"name\": \"\"}], \"limit\": 0, \"offset\": 0, \"order\": [{\"direction\": \"DIRECTION_UNSPECIFIED\", \"property\": {\"name\": \"\"}}], \"projection\": [{\"property\": {\"name\": \"\"}}], \"startCursor\": \"\"}, \"readOptions\": {\"newTransaction\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}, \"readConsistency\": \"READ_CONSISTENCY_UNSPECIFIED\", \"readTime\": \"\", \"transaction\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Queries for entities.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST //v1/projects/{{PROJECT_ID}}:runQuery",
+      "method": "POST",
+      "name": "POST /v1/projects/{projectId}:runQuery",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "projectId",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/projects/{{PROJECT_ID}}:runQuery",
+      "pathParameters": [
+        {
+          "name": "projectId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"databaseId\": \"\", \"gqlQuery\": {\"allowLiterals\": false, \"namedBindings\": {}, \"positionalBindings\": [{\"cursor\": \"\", \"value\": {\"arrayValue\": {\"values\": {}}, \"blobValue\": \"\", \"booleanValue\": false, \"doubleValue\": 0.0, \"entityValue\": {\"key\": {}, \"properties\": {}}, \"excludeFromIndexes\": false, \"geoPointValue\": {\"latitude\": {}, \"longitude\": {}}, \"integerValue\": \"\", \"keyValue\": {\"partitionId\": {}, \"path\": {}}, \"meaning\": 0, \"nullValue\": \"NULL_VALUE\", \"stringValue\": \"\", \"timestampValue\": \"\"}}], \"queryString\": \"\"}, \"partitionId\": {\"databaseId\": \"\", \"namespaceId\": \"\", \"projectId\": \"\"}, \"query\": {\"distinctOn\": [{\"name\": \"\"}], \"endCursor\": \"\", \"filter\": {\"compositeFilter\": {\"filters\": [{}], \"op\": \"OPERATOR_UNSPECIFIED\"}, \"propertyFilter\": {\"op\": \"OPERATOR_UNSPECIFIED\", \"property\": {\"name\": \"\"}, \"value\": {\"arrayValue\": {}, \"blobValue\": \"\", \"booleanValue\": false, \"doubleValue\": 0.0, \"entityValue\": {}, \"excludeFromIndexes\": false, \"geoPointValue\": {}, \"integerValue\": \"\", \"keyValue\": {}, \"meaning\": 0, \"nullValue\": \"NULL_VALUE\", \"stringValue\": \"\", \"timestampValue\": \"\"}}}, \"kind\": [{\"name\": \"\"}], \"limit\": 0, \"offset\": 0, \"order\": [{\"direction\": \"DIRECTION_UNSPECIFIED\", \"property\": {\"name\": \"\"}}], \"projection\": [{\"property\": {\"name\": \"\"}}], \"startCursor\": \"\"}, \"readOptions\": {\"newTransaction\": {\"readOnly\": {\"readTime\": \"\"}, \"readWrite\": {\"previousTransaction\": \"\"}}, \"readConsistency\": \"READ_CONSISTENCY_UNSPECIFIED\", \"readTime\": \"\", \"transaction\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/projects/{projectId}:runQuery",
+      "url": "https://datastore.googleapis.com//v1/projects/{{PROJECT_ID}}:runQuery"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE //v1/{{NAME}}",
+      "method": "DELETE",
+      "name": "DELETE /v1/{name}",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /v1/{name}",
+      "url": "https://datastore.googleapis.com//v1/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET //v1/{{NAME}}",
+      "method": "GET",
+      "name": "GET /v1/{name}",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/{name}",
+      "url": "https://datastore.googleapis.com//v1/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET //v1/{{NAME}}/operations",
+      "method": "GET",
+      "name": "GET /v1/{name}/operations",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "pageSize",
+          "value": ""
+        },
+        {
+          "name": "pageToken",
+          "value": ""
+        }
+      ],
+      "path": "//v1/{{NAME}}/operations",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "pageSize",
+          "value": ""
+        },
+        {
+          "name": "pageToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/{name}/operations",
+      "url": "https://datastore.googleapis.com//v1/{{NAME}}/operations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{CLOUD_DATASTORE_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST //v1/{{NAME}}:cancel",
+      "method": "POST",
+      "name": "POST /v1/{name}:cancel",
+      "note": "Replace {{CLOUD_DATASTORE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "path": "//v1/{{NAME}}:cancel",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "$.xgafv",
+          "value": ""
+        },
+        {
+          "name": "access_token",
+          "value": ""
+        },
+        {
+          "name": "alt",
+          "value": ""
+        },
+        {
+          "name": "callback",
+          "value": ""
+        },
+        {
+          "name": "fields",
+          "value": ""
+        },
+        {
+          "name": "key",
+          "value": ""
+        },
+        {
+          "name": "oauth_token",
+          "value": ""
+        },
+        {
+          "name": "prettyPrint",
+          "value": ""
+        },
+        {
+          "name": "quotaUser",
+          "value": ""
+        },
+        {
+          "name": "upload_protocol",
+          "value": ""
+        },
+        {
+          "name": "uploadType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/{name}:cancel",
+      "url": "https://datastore.googleapis.com//v1/{{NAME}}:cancel"
+    }
+  ]
+}

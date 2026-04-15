@@ -1,0 +1,1178 @@
+{
+  "id": "up.com.au",
+  "info": {
+    "base_url": "https://api.up.com.au/api/v1",
+    "description": "Send a `PING` event to a webhook by providing its unique identifier.\nThis is useful for testing and debugging purposes. The event is delivered\nasynchronously and its data is returned in the response...",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Up API",
+    "version": "v1"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a paginated list of all accounts for the currently\nauthenticated user. The returned list is paginated and can be scrolled\nby following the `prev` and `next` links where present.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/accounts",
+      "method": "GET",
+      "name": "List accounts",
+      "note": "Replace {{UP_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "page[size]",
+          "value": "30"
+        },
+        {
+          "name": "filter[accountType]",
+          "value": "SAVER"
+        },
+        {
+          "name": "filter[ownershipType]",
+          "value": "INDIVIDUAL"
+        }
+      ],
+      "path": "/api/v1/accounts",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page[size]",
+          "value": "30"
+        },
+        {
+          "name": "filter[accountType]",
+          "value": "SAVER"
+        },
+        {
+          "name": "filter[ownershipType]",
+          "value": "INDIVIDUAL"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List accounts",
+      "url": "https://api.up.com.au/api/v1/accounts"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of all transactions for a specific account. The returned\nlist is [paginated](#pagination) and can be scrolled by following the\n`next` and `prev` links where present. To narrow the results to a\nspecific date range pass one or both of `filter[since]` and\n`filter[until]` in the query string. These filter parameters\n**should not** be used for pagination. Results are ordered newest first\nto oldest last.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/accounts/{{ACCOUNT_ID}}/transactions",
+      "method": "GET",
+      "name": "List transactions by account",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "accountId",
+          "value": "b5544658-4bbd-4eb1-8f63-a9909e0f564b"
+        },
+        {
+          "name": "page[size]",
+          "value": "30"
+        },
+        {
+          "name": "filter[status]",
+          "value": "HELD"
+        },
+        {
+          "name": "filter[since]",
+          "value": "2020-01-01T01:02:03+10:00"
+        },
+        {
+          "name": "filter[until]",
+          "value": "2020-02-01T01:02:03+10:00"
+        },
+        {
+          "name": "filter[category]",
+          "value": "good-life"
+        },
+        {
+          "name": "filter[tag]",
+          "value": "Holiday"
+        }
+      ],
+      "path": "/api/v1/accounts/{{ACCOUNT_ID}}/transactions",
+      "pathParameters": [
+        {
+          "name": "accountId",
+          "value": "b5544658-4bbd-4eb1-8f63-a9909e0f564b"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "page[size]",
+          "value": "30"
+        },
+        {
+          "name": "filter[status]",
+          "value": "HELD"
+        },
+        {
+          "name": "filter[since]",
+          "value": "2020-01-01T01:02:03+10:00"
+        },
+        {
+          "name": "filter[until]",
+          "value": "2020-02-01T01:02:03+10:00"
+        },
+        {
+          "name": "filter[category]",
+          "value": "good-life"
+        },
+        {
+          "name": "filter[tag]",
+          "value": "Holiday"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List transactions by account",
+      "url": "https://api.up.com.au/api/v1/accounts/{{ACCOUNT_ID}}/transactions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a specific account by providing its unique identifier.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/accounts/{{ID}}",
+      "method": "GET",
+      "name": "Retrieve account",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "92b41408-6b7b-4fca-982b-3fb1fdd77220"
+        }
+      ],
+      "path": "/api/v1/accounts/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "92b41408-6b7b-4fca-982b-3fb1fdd77220"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve account",
+      "url": "https://api.up.com.au/api/v1/accounts/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of all categories and their ancestry. The returned list\nis not paginated.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/categories",
+      "method": "GET",
+      "name": "List categories",
+      "note": "Replace {{UP_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "filter[parent]",
+          "value": "good-life"
+        }
+      ],
+      "path": "/api/v1/categories",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "filter[parent]",
+          "value": "good-life"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List categories",
+      "url": "https://api.up.com.au/api/v1/categories"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a specific category by providing its unique identifier.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/categories/{{ID}}",
+      "method": "GET",
+      "name": "Retrieve category",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "restaurants-and-cafes"
+        }
+      ],
+      "path": "/api/v1/categories/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "restaurants-and-cafes"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve category",
+      "url": "https://api.up.com.au/api/v1/categories/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of all tags currently in use. The returned list is\n[paginated](#pagination) and can be scrolled by following the `next`\nand `prev` links where present. Results are ordered lexicographically.\nThe `transactions` relationship for each tag exposes a link\nto get the transactions with the given tag.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/tags",
+      "method": "GET",
+      "name": "List tags",
+      "note": "Replace {{UP_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "page[size]",
+          "value": "50"
+        }
+      ],
+      "path": "/api/v1/tags",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page[size]",
+          "value": "50"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List tags",
+      "url": "https://api.up.com.au/api/v1/tags"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of all transactions across all accounts for the currently\nauthenticated user. The returned list is [paginated](#pagination) and can\nbe scrolled by following the `next` and `prev` links where present. To\nnarrow the results to a specific date range pass one or both of\n`filter[since]` and `filter[until]` in the query string. These filter\nparameters **should not** be used for pagination. Results are ordered\nnewest first to oldest last.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/transactions",
+      "method": "GET",
+      "name": "List transactions",
+      "note": "Replace {{UP_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "page[size]",
+          "value": "30"
+        },
+        {
+          "name": "filter[status]",
+          "value": "HELD"
+        },
+        {
+          "name": "filter[since]",
+          "value": "2020-01-01T01:02:03+10:00"
+        },
+        {
+          "name": "filter[until]",
+          "value": "2020-02-01T01:02:03+10:00"
+        },
+        {
+          "name": "filter[category]",
+          "value": "good-life"
+        },
+        {
+          "name": "filter[tag]",
+          "value": "Holiday"
+        }
+      ],
+      "path": "/api/v1/transactions",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page[size]",
+          "value": "30"
+        },
+        {
+          "name": "filter[status]",
+          "value": "HELD"
+        },
+        {
+          "name": "filter[since]",
+          "value": "2020-01-01T01:02:03+10:00"
+        },
+        {
+          "name": "filter[until]",
+          "value": "2020-02-01T01:02:03+10:00"
+        },
+        {
+          "name": "filter[category]",
+          "value": "good-life"
+        },
+        {
+          "name": "filter[tag]",
+          "value": "Holiday"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List transactions",
+      "url": "https://api.up.com.au/api/v1/transactions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a specific transaction by providing its unique identifier.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/transactions/{{ID}}",
+      "method": "GET",
+      "name": "Retrieve transaction",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "7a9d19f9-106c-4e29-8591-52fc5d8f09c5"
+        }
+      ],
+      "path": "/api/v1/transactions/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "7a9d19f9-106c-4e29-8591-52fc5d8f09c5"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve transaction",
+      "url": "https://api.up.com.au/api/v1/transactions/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "id": "",
+          "type": ""
+        }
+      },
+      "body_json": {
+        "data": {
+          "id": "",
+          "type": ""
+        }
+      },
+      "body_text": "{\"data\": {\"id\": \"\", \"type\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the category associated with a transaction. Only transactions\nfor which `isCategorizable` is set to true support this operation. The\n`id` is taken from the list exposed on `/categories` and cannot be one of\nthe top-level (parent) categories. To de-categorize a transaction, set\nthe entire `data` key to `null`. An HTTP `204` is returned on success.\nThe associated category, along with its request URL is also exposed via\nthe `category` relationship on the transaction resource returned from\n`/transactions/{id}`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /api/v1/transactions/{{TRANSACTION_ID}}/relationships/category",
+      "method": "PATCH",
+      "name": "Categorize transaction",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": "a572c7c3-b637-433c-a4ce-c0be5dcb0a5a"
+        }
+      ],
+      "path": "/api/v1/transactions/{{TRANSACTION_ID}}/relationships/category",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": "a572c7c3-b637-433c-a4ce-c0be5dcb0a5a"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": {\"id\": \"\", \"type\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Categorize transaction",
+      "url": "https://api.up.com.au/api/v1/transactions/{{TRANSACTION_ID}}/relationships/category"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": [
+          {
+            "id": "",
+            "type": ""
+          }
+        ]
+      },
+      "body_json": {
+        "data": [
+          {
+            "id": "",
+            "type": ""
+          }
+        ]
+      },
+      "body_text": "{\"data\": [{\"id\": \"\", \"type\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "",
+      "content_type": "",
+      "description": "Disassociates one or more tags from a specific transaction. Tags that are\nnot associated are silently ignored. An HTTP `204` is returned on\nsuccess. The associated tags, along with this request URL, are also\nexposed via the `tags` relationship on the transaction resource returned\nfrom `/transactions/{id}`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/transactions/{{TRANSACTION_ID}}/relationships/tags",
+      "method": "DELETE",
+      "name": "Remove tags from transaction",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": "c3feb4ba-829c-4482-b882-1b9bd23da82d"
+        }
+      ],
+      "path": "/api/v1/transactions/{{TRANSACTION_ID}}/relationships/tags",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": "c3feb4ba-829c-4482-b882-1b9bd23da82d"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": [{\"id\": \"\", \"type\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove tags from transaction",
+      "url": "https://api.up.com.au/api/v1/transactions/{{TRANSACTION_ID}}/relationships/tags"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": [
+          {
+            "id": "",
+            "type": ""
+          }
+        ]
+      },
+      "body_json": {
+        "data": [
+          {
+            "id": "",
+            "type": ""
+          }
+        ]
+      },
+      "body_text": "{\"data\": [{\"id\": \"\", \"type\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Associates one or more tags with a specific transaction. No more than 6\ntags may be present on any single transaction. Duplicate tags are\nsilently ignored. An HTTP `204` is returned on success. The associated\ntags, along with this request URL, are also exposed via the `tags`\nrelationship on the transaction resource returned from\n`/transactions/{id}`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/transactions/{{TRANSACTION_ID}}/relationships/tags",
+      "method": "POST",
+      "name": "Add tags to transaction",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": "acde4631-db56-49a6-aea3-4e2311ef1d6a"
+        }
+      ],
+      "path": "/api/v1/transactions/{{TRANSACTION_ID}}/relationships/tags",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": "acde4631-db56-49a6-aea3-4e2311ef1d6a"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": [{\"id\": \"\", \"type\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add tags to transaction",
+      "url": "https://api.up.com.au/api/v1/transactions/{{TRANSACTION_ID}}/relationships/tags"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Make a basic ping request to the API. This is useful to verify that\nauthentication is functioning correctly. On authentication success an\nHTTP `200` status is returned. On failure an HTTP `401` error response\nis returned.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/util/ping",
+      "method": "GET",
+      "name": "Ping",
+      "note": "Replace {{UP_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/v1/util/ping",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Ping",
+      "url": "https://api.up.com.au/api/v1/util/ping"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of configured webhooks. The returned list is\n[paginated](#pagination) and can be scrolled by following the `next`\nand `prev` links where present. Results are ordered oldest first to\nnewest last.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/webhooks",
+      "method": "GET",
+      "name": "List webhooks",
+      "note": "Replace {{UP_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "page[size]",
+          "value": "30"
+        }
+      ],
+      "path": "/api/v1/webhooks",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page[size]",
+          "value": "30"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List webhooks",
+      "url": "https://api.up.com.au/api/v1/webhooks"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "attributes": {
+            "description": "",
+            "url": ""
+          }
+        }
+      },
+      "body_json": {
+        "data": {
+          "attributes": {
+            "description": "",
+            "url": ""
+          }
+        }
+      },
+      "body_text": "{\"data\": {\"attributes\": {\"description\": \"\", \"url\": \"\"}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new webhook with a given URL. The URL will receive webhook\nevents as JSON-encoded `POST` requests. The URL must respond with a HTTP\n`200` status on success.\n\nThere is currently a limit of 10 webhooks at any given time. Once this\nlimit is reached, existing webhooks will need to be deleted before new\nwebhooks can be created.\n\nEvent delivery is retried with exponential backoff if the URL is\nunreachable or it does not respond with a `200` status. The response\nincludes a `secretKey` attribute, which is used to sign requests sent to\nthe webhook URL. It will not be returned from any other endpoints within\nthe Up API. If the `secretKey` is lost, simply create a new webhook with\nthe same URL, capture its `secretKey` and then delete the original\nwebhook. See [Handling webhook events](#callback_post_webhookURL) for\ndetails on how to process webhook events.\n\nIt is probably a good idea to test the webhook by\n[sending it a `PING` event](#post_webhooks_webhookId_ping) after creating\nit.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v1/webhooks",
+      "method": "POST",
+      "name": "Create webhook",
+      "note": "Replace {{UP_API_KEY}} with your API key",
+      "params": [],
+      "path": "/api/v1/webhooks",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": {\"attributes\": {\"description\": \"\", \"url\": \"\"}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create webhook",
+      "url": "https://api.up.com.au/api/v1/webhooks"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a specific webhook by providing its unique identifier. Once\ndeleted, webhook events will no longer be sent to the configured URL.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/v1/webhooks/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete webhook",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "a940825b-80b6-4798-b378-c6284259b4c5"
+        }
+      ],
+      "path": "/api/v1/webhooks/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "a940825b-80b6-4798-b378-c6284259b4c5"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete webhook",
+      "url": "https://api.up.com.au/api/v1/webhooks/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a specific webhook by providing its unique identifier.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/webhooks/{{ID}}",
+      "method": "GET",
+      "name": "Retrieve webhook",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "c8283a72-24b0-4fd8-9b13-fccccab371e5"
+        }
+      ],
+      "path": "/api/v1/webhooks/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "c8283a72-24b0-4fd8-9b13-fccccab371e5"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve webhook",
+      "url": "https://api.up.com.au/api/v1/webhooks/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of delivery logs for a webhook by providing its unique\nidentifier. This is useful for analysis and debugging purposes. The\nreturned list is [paginated](#pagination) and can be scrolled by\nfollowing the `next` and `prev` links where present. Results are ordered\nnewest first to oldest last. Logs may be automatically purged after a\nperiod of time.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/v1/webhooks/{{WEBHOOK_ID}}/logs",
+      "method": "GET",
+      "name": "List webhook logs",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "webhookId",
+          "value": "7104f5df-4993-495f-9d29-2b4d062c03a9"
+        },
+        {
+          "name": "page[size]",
+          "value": "30"
+        }
+      ],
+      "path": "/api/v1/webhooks/{{WEBHOOK_ID}}/logs",
+      "pathParameters": [
+        {
+          "name": "webhookId",
+          "value": "7104f5df-4993-495f-9d29-2b4d062c03a9"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "page[size]",
+          "value": "30"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List webhook logs",
+      "url": "https://api.up.com.au/api/v1/webhooks/{{WEBHOOK_ID}}/logs"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "UP_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Send a `PING` event to a webhook by providing its unique identifier.\nThis is useful for testing and debugging purposes. The event is delivered\nasynchronously and its data is returned in the response to this request.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{UP_API_KEY}}"
+        }
+      ],
+      "id": "POST /api/v1/webhooks/{{WEBHOOK_ID}}/ping",
+      "method": "POST",
+      "name": "Ping webhook",
+      "note": "Replace {{UP_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "webhookId",
+          "value": "830e127d-fb89-4400-92bb-f3f48289dcba"
+        }
+      ],
+      "path": "/api/v1/webhooks/{{WEBHOOK_ID}}/ping",
+      "pathParameters": [
+        {
+          "name": "webhookId",
+          "value": "830e127d-fb89-4400-92bb-f3f48289dcba"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Ping webhook",
+      "url": "https://api.up.com.au/api/v1/webhooks/{{WEBHOOK_ID}}/ping"
+    }
+  ]
+}

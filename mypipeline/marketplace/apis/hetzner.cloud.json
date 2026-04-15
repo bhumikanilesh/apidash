@@ -1,0 +1,2993 @@
+{
+  "id": "hetzner.cloud",
+  "info": {
+    "base_url": "https://api.hetzner.cloud/v1",
+    "description": "Returns all Action objects for a Load Balancer. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Hetzner Cloud API",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Action objects. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/actions",
+      "method": "GET",
+      "name": "Get all Actions",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "path": "/v1/actions",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Actions",
+      "url": "https://api.hetzner.cloud/v1/actions"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific Action object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/actions/{{ID}}",
+      "method": "GET",
+      "name": "Get an Action",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/actions/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an Action",
+      "url": "https://api.hetzner.cloud/v1/actions/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Certificate objects.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/certificates",
+      "method": "GET",
+      "name": "Get all Certificates",
+      "params": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "path": "/v1/certificates",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Certificates",
+      "url": "https://api.hetzner.cloud/v1/certificates"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "certificate": "-----BEGIN CERTIFICATE-----\n...",
+        "domain_names": null,
+        "labels": {},
+        "name": "my website cert",
+        "private_key": "-----BEGIN PRIVATE KEY-----\n...",
+        "type": "uploaded"
+      },
+      "body_json": {
+        "certificate": "-----BEGIN CERTIFICATE-----\n...",
+        "domain_names": null,
+        "labels": {},
+        "name": "my website cert",
+        "private_key": "-----BEGIN PRIVATE KEY-----\n...",
+        "type": "uploaded"
+      },
+      "body_text": "{\"certificate\": \"-----BEGIN CERTIFICATE-----\\n...\", \"domain_names\": null, \"labels\": {}, \"name\": \"my website cert\", \"private_key\": \"-----BEGIN PRIVATE KEY-----\\n...\", \"type\": \"uploaded\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new Certificate.\n\nThe default type **uploaded** allows for uploading your existing `certificate` and `private_key` in PEM format. You have to monitor its expiration date and handle renewal yourself.\n\nIn contrast, type **managed** requests a new Certificate from *Let's Encrypt* for the specified `domain_names`. Only domains managed by *Hetzner DNS* are supported. We handle renewal and timely alert the project owner via email if problems occur.\n\nFor type `managed` Certificates the `action` key of the response contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/certificates",
+      "method": "POST",
+      "name": "Create a Certificate",
+      "params": [],
+      "path": "/v1/certificates",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"certificate\": \"-----BEGIN CERTIFICATE-----\\n...\", \"domain_names\": null, \"labels\": {}, \"name\": \"my website cert\", \"private_key\": \"-----BEGIN PRIVATE KEY-----\\n...\", \"type\": \"uploaded\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Certificate",
+      "url": "https://api.hetzner.cloud/v1/certificates"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a Certificate.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1/certificates/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete a Certificate",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/certificates/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Certificate",
+      "url": "https://api.hetzner.cloud/v1/certificates/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets a specific Certificate object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/certificates/{{ID}}",
+      "method": "GET",
+      "name": "Get a Certificate",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/certificates/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Certificate",
+      "url": "https://api.hetzner.cloud/v1/certificates/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "my website cert"
+      },
+      "body_json": {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "my website cert"
+      },
+      "body_text": "{\"labels\": {\"labelkey\": \"value\"}, \"name\": \"my website cert\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the Certificate properties.\n\nNote that when updating labels, the Certificate’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Certificate object changes during the request, the response will be a “conflict” error.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/certificates/{{ID}}",
+      "method": "PUT",
+      "name": "Update a Certificate",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/certificates/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"labels\": {\"labelkey\": \"value\"}, \"name\": \"my website cert\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a Certificate",
+      "url": "https://api.hetzner.cloud/v1/certificates/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Action objects for a Certificate. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.\n\nOnly type `managed` Certificates can have Actions. For type `uploaded` Certificates the `actions` key will always contain an empty array.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/certificates/{{ID}}/actions",
+      "method": "GET",
+      "name": "Get all Actions for a Certificate",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "path": "/v1/certificates/{{ID}}/actions",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Actions for a Certificate",
+      "url": "https://api.hetzner.cloud/v1/certificates/{{ID}}/actions"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retry a failed Certificate issuance or renewal.\n\nOnly applicable if the type of the Certificate is `managed` and the issuance or renewal status is `failed`.\n\n#### Call specific error codes\n\n| Code                                                    | Description                                                               |\n|---------------------------------------------------------|---------------------------------------------------------------------------|\n| `caa_record_does_not_allow_ca`                          | CAA record does not allow certificate authority                           |\n| `ca_dns_validation_failed`                              | Certificate Authority: DNS validation failed                              |\n| `ca_too_many_authorizations_failed_recently`            | Certificate Authority: Too many authorizations failed recently            |\n| `ca_too_many_certificates_issued_for_registered_domain` | Certificate Authority: Too many certificates issued for registered domain |\n| `ca_too_many_duplicate_certificates`                    | Certificate Authority: Too many duplicate certificates                    |\n| `could_not_verify_domain_delegated_to_zone`             | Could not verify domain delegated to zone                                 |\n| `dns_zone_not_found`                                    | DNS zone not found                                                        |\n| `dns_zone_is_secondary_zone`                            | DNS zone is a secondary zone                                              |\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1/certificates/{{ID}}/actions/retry",
+      "method": "POST",
+      "name": "Retry Issuance or Renewal",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/certificates/{{ID}}/actions/retry",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retry Issuance or Renewal",
+      "url": "https://api.hetzner.cloud/v1/certificates/{{ID}}/actions/retry"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific Action for a Certificate. Only type `managed` Certificates have Actions.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/certificates/{{ID}}/actions/{{ACTION_ID}}",
+      "method": "GET",
+      "name": "Get an Action for a Certificate",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "action_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/certificates/{{ID}}/actions/{{ACTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "action_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an Action for a Certificate",
+      "url": "https://api.hetzner.cloud/v1/certificates/{{ID}}/actions/{{ACTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Datacenter objects.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/datacenters",
+      "method": "GET",
+      "name": "Get all Datacenters",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1/datacenters",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Datacenters",
+      "url": "https://api.hetzner.cloud/v1/datacenters"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific Datacenter object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/datacenters/{{ID}}",
+      "method": "GET",
+      "name": "Get a Datacenter",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/datacenters/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Datacenter",
+      "url": "https://api.hetzner.cloud/v1/datacenters/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Firewall objects.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/firewalls",
+      "method": "GET",
+      "name": "Get all Firewalls",
+      "params": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Firewalls",
+      "url": "https://api.hetzner.cloud/v1/firewalls"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "apply_to": [
+          {
+            "label_selector": {
+              "selector": ""
+            },
+            "server": {
+              "id": 0
+            },
+            "type": "server"
+          }
+        ],
+        "labels": {},
+        "name": "Corporate Intranet Protection",
+        "rules": [
+          {
+            "direction": "in",
+            "port": "80",
+            "protocol": "tcp",
+            "source_ips": [
+              "28.239.13.1/32",
+              "28.239.14.0/24",
+              "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"
+            ]
+          }
+        ]
+      },
+      "body_json": {
+        "apply_to": [
+          {
+            "label_selector": {
+              "selector": ""
+            },
+            "server": {
+              "id": 0
+            },
+            "type": "server"
+          }
+        ],
+        "labels": {},
+        "name": "Corporate Intranet Protection",
+        "rules": [
+          {
+            "direction": "in",
+            "port": "80",
+            "protocol": "tcp",
+            "source_ips": [
+              "28.239.13.1/32",
+              "28.239.14.0/24",
+              "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"
+            ]
+          }
+        ]
+      },
+      "body_text": "{\"apply_to\": [{\"label_selector\": {\"selector\": \"\"}, \"server\": {\"id\": 0}, \"type\": \"server\"}], \"labels\": {}, \"name\": \"Corporate Intranet Protection\", \"rules\": [{\"direction\": \"in\", \"port\": \"80\", \"protocol\": \"tcp\", \"source_ips\": [\"28.239.13.1/32\", \"28.239.14.0/24\", \"ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128\"]}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new Firewall.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_already_added`        | Server added more than one time to resource                   |\n| `incompatible_network_type`   | The Network type is incompatible for the given resource       |\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/firewalls",
+      "method": "POST",
+      "name": "Create a Firewall",
+      "params": [],
+      "path": "/v1/firewalls",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"apply_to\": [{\"label_selector\": {\"selector\": \"\"}, \"server\": {\"id\": 0}, \"type\": \"server\"}], \"labels\": {}, \"name\": \"Corporate Intranet Protection\", \"rules\": [{\"direction\": \"in\", \"port\": \"80\", \"protocol\": \"tcp\", \"source_ips\": [\"28.239.13.1/32\", \"28.239.14.0/24\", \"ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128\"]}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Firewall",
+      "url": "https://api.hetzner.cloud/v1/firewalls"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a Firewall.\n\n#### Call specific error codes\n\n| Code                 | Description                               |\n|--------------------- |-------------------------------------------|\n| `resource_in_use`    | Firewall must not be in use to be deleted |\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1/firewalls/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete a Firewall",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Firewall",
+      "url": "https://api.hetzner.cloud/v1/firewalls/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets a specific Firewall object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/firewalls/{{ID}}",
+      "method": "GET",
+      "name": "Get a Firewall",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Firewall",
+      "url": "https://api.hetzner.cloud/v1/firewalls/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "new-name"
+      },
+      "body_json": {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "new-name"
+      },
+      "body_text": "{\"labels\": {\"labelkey\": \"value\"}, \"name\": \"new-name\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the Firewall.\n\nNote that when updating labels, the Firewall's current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Firewall object changes during the request, the response will be a “conflict” error.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/firewalls/{{ID}}",
+      "method": "PUT",
+      "name": "Update a Firewall",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"labels\": {\"labelkey\": \"value\"}, \"name\": \"new-name\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a Firewall",
+      "url": "https://api.hetzner.cloud/v1/firewalls/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Action objects for a Firewall. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/firewalls/{{ID}}/actions",
+      "method": "GET",
+      "name": "Get all Actions for a Firewall",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls/{{ID}}/actions",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Actions for a Firewall",
+      "url": "https://api.hetzner.cloud/v1/firewalls/{{ID}}/actions"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "apply_to": [
+          {
+            "label_selector": {
+              "selector": "env=prod"
+            },
+            "server": {
+              "id": 0
+            },
+            "type": "server"
+          }
+        ]
+      },
+      "body_json": {
+        "apply_to": [
+          {
+            "label_selector": {
+              "selector": "env=prod"
+            },
+            "server": {
+              "id": 0
+            },
+            "type": "server"
+          }
+        ]
+      },
+      "body_text": "{\"apply_to\": [{\"label_selector\": {\"selector\": \"env=prod\"}, \"server\": {\"id\": 0}, \"type\": \"server\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Applies one Firewall to multiple resources.\n\nCurrently servers (public network interface) and label selectors are supported.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|-------------------------------|---------------------------------------------------------------|\n| `firewall_already_applied`    | Firewall was already applied on resource                      |\n| `incompatible_network_type`   | The Network type is incompatible for the given resource       |\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/firewalls/{{ID}}/actions/apply_to_resources",
+      "method": "POST",
+      "name": "Apply to Resources",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls/{{ID}}/actions/apply_to_resources",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"apply_to\": [{\"label_selector\": {\"selector\": \"env=prod\"}, \"server\": {\"id\": 0}, \"type\": \"server\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Apply to Resources",
+      "url": "https://api.hetzner.cloud/v1/firewalls/{{ID}}/actions/apply_to_resources"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "remove_from": [
+          {
+            "label_selector": {
+              "selector": "env=prod"
+            },
+            "server": {
+              "id": 0
+            },
+            "type": "server"
+          }
+        ]
+      },
+      "body_json": {
+        "remove_from": [
+          {
+            "label_selector": {
+              "selector": "env=prod"
+            },
+            "server": {
+              "id": 0
+            },
+            "type": "server"
+          }
+        ]
+      },
+      "body_text": "{\"remove_from\": [{\"label_selector\": {\"selector\": \"env=prod\"}, \"server\": {\"id\": 0}, \"type\": \"server\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Removes one Firewall from multiple resources.\n\nCurrently only Servers (and their public network interfaces) are supported.\n\n#### Call specific error codes\n\n| Code                                  | Description                                                            |\n|---------------------------------------|------------------------------------------------------------------------|\n| `firewall_already_removed`            | Firewall was already removed from the resource                         |\n| `firewall_resource_not_found`         | The resource the Firewall should be attached to was not found          |\n| `firewall_managed_by_label_selector`  | Firewall was applied via label selector and cannot be removed manually |\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/firewalls/{{ID}}/actions/remove_from_resources",
+      "method": "POST",
+      "name": "Remove from Resources",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls/{{ID}}/actions/remove_from_resources",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"remove_from\": [{\"label_selector\": {\"selector\": \"env=prod\"}, \"server\": {\"id\": 0}, \"type\": \"server\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove from Resources",
+      "url": "https://api.hetzner.cloud/v1/firewalls/{{ID}}/actions/remove_from_resources"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "rules": [
+          {
+            "description": "",
+            "destination_ips": [
+              "28.239.13.1/32",
+              "28.239.14.0/24",
+              "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"
+            ],
+            "direction": "in",
+            "port": "80",
+            "protocol": "tcp",
+            "source_ips": [
+              "28.239.13.1/32",
+              "28.239.14.0/24",
+              "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"
+            ]
+          }
+        ]
+      },
+      "body_json": {
+        "rules": [
+          {
+            "description": "",
+            "destination_ips": [
+              "28.239.13.1/32",
+              "28.239.14.0/24",
+              "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"
+            ],
+            "direction": "in",
+            "port": "80",
+            "protocol": "tcp",
+            "source_ips": [
+              "28.239.13.1/32",
+              "28.239.14.0/24",
+              "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"
+            ]
+          }
+        ]
+      },
+      "body_text": "{\"rules\": [{\"description\": \"\", \"destination_ips\": [\"28.239.13.1/32\", \"28.239.14.0/24\", \"ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128\"], \"direction\": \"in\", \"port\": \"80\", \"protocol\": \"tcp\", \"source_ips\": [\"28.239.13.1/32\", \"28.239.14.0/24\", \"ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128\"]}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Sets the rules of a Firewall.\n\nAll existing rules will be overwritten. Pass an empty `rules` array to remove all rules.\nThe maximum amount of rules that can be defined is 50.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|-------------------------------|---------------------------------------------------------------|\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/firewalls/{{ID}}/actions/set_rules",
+      "method": "POST",
+      "name": "Set Rules",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls/{{ID}}/actions/set_rules",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"rules\": [{\"description\": \"\", \"destination_ips\": [\"28.239.13.1/32\", \"28.239.14.0/24\", \"ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128\"], \"direction\": \"in\", \"port\": \"80\", \"protocol\": \"tcp\", \"source_ips\": [\"28.239.13.1/32\", \"28.239.14.0/24\", \"ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128\"]}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set Rules",
+      "url": "https://api.hetzner.cloud/v1/firewalls/{{ID}}/actions/set_rules"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific Action for a Firewall.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/firewalls/{{ID}}/actions/{{ACTION_ID}}",
+      "method": "GET",
+      "name": "Get an Action for a Firewall",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "action_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/firewalls/{{ID}}/actions/{{ACTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "action_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an Action for a Firewall",
+      "url": "https://api.hetzner.cloud/v1/firewalls/{{ID}}/actions/{{ACTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Floating IP objects.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/floating_ips",
+      "method": "GET",
+      "name": "Get all Floating IPs",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Floating IPs",
+      "url": "https://api.hetzner.cloud/v1/floating_ips"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "description": "Web Frontend",
+        "home_location": "fsn1",
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "Web Frontend",
+        "server": 42,
+        "type": "ipv4"
+      },
+      "body_json": {
+        "description": "Web Frontend",
+        "home_location": "fsn1",
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "Web Frontend",
+        "server": 42,
+        "type": "ipv4"
+      },
+      "body_text": "{\"description\": \"Web Frontend\", \"home_location\": \"fsn1\", \"labels\": {\"labelkey\": \"value\"}, \"name\": \"Web Frontend\", \"server\": 42, \"type\": \"ipv4\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new Floating IP assigned to a Server. If you want to create a Floating IP that is not bound to a Server, you need to provide the `home_location` key instead of `server`. This can be either the ID or the name of the Location this IP shall be created in. Note that a Floating IP can be assigned to a Server in any Location later on. For optimal routing it is advised to use the Floating IP in the same Location it was created in.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/floating_ips",
+      "method": "POST",
+      "name": "Create a Floating IP",
+      "params": [],
+      "path": "/v1/floating_ips",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"Web Frontend\", \"home_location\": \"fsn1\", \"labels\": {\"labelkey\": \"value\"}, \"name\": \"Web Frontend\", \"server\": 42, \"type\": \"ipv4\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Floating IP",
+      "url": "https://api.hetzner.cloud/v1/floating_ips"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a Floating IP. If it is currently assigned to a Server it will automatically get unassigned.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1/floating_ips/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete a Floating IP",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Floating IP",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific Floating IP object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/floating_ips/{{ID}}",
+      "method": "GET",
+      "name": "Get a Floating IP",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Floating IP",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "description": "Web Frontend",
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "Web Frontend"
+      },
+      "body_json": {
+        "description": "Web Frontend",
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "Web Frontend"
+      },
+      "body_text": "{\"description\": \"Web Frontend\", \"labels\": {\"labelkey\": \"value\"}, \"name\": \"Web Frontend\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the description or labels of a Floating IP.\nAlso note that when updating labels, the Floating IP’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/floating_ips/{{ID}}",
+      "method": "PUT",
+      "name": "Update a Floating IP",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"Web Frontend\", \"labels\": {\"labelkey\": \"value\"}, \"name\": \"Web Frontend\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a Floating IP",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Action objects for a Floating IP. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/floating_ips/{{ID}}/actions",
+      "method": "GET",
+      "name": "Get all Actions for a Floating IP",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}/actions",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Actions for a Floating IP",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}/actions"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "server": 42
+      },
+      "body_json": {
+        "server": 42
+      },
+      "body_text": "{\"server\": 42}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Assigns a Floating IP to a Server.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/floating_ips/{{ID}}/actions/assign",
+      "method": "POST",
+      "name": "Assign a Floating IP to a Server",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}/actions/assign",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"server\": 42}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Assign a Floating IP to a Server",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}/actions/assign"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "dns_ptr": "server02.example.com",
+        "ip": "1.2.3.4"
+      },
+      "body_json": {
+        "dns_ptr": "server02.example.com",
+        "ip": "1.2.3.4"
+      },
+      "body_text": "{\"dns_ptr\": \"server02.example.com\", \"ip\": \"1.2.3.4\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Changes the hostname that will appear when getting the hostname belonging to this Floating IP.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/floating_ips/{{ID}}/actions/change_dns_ptr",
+      "method": "POST",
+      "name": "Change reverse DNS entry for a Floating IP",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}/actions/change_dns_ptr",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"dns_ptr\": \"server02.example.com\", \"ip\": \"1.2.3.4\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change reverse DNS entry for a Floating IP",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}/actions/change_dns_ptr"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "delete": true
+      },
+      "body_json": {
+        "delete": true
+      },
+      "body_text": "{\"delete\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Changes the protection configuration of the Floating IP.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/floating_ips/{{ID}}/actions/change_protection",
+      "method": "POST",
+      "name": "Change Floating IP Protection",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}/actions/change_protection",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"delete\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change Floating IP Protection",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}/actions/change_protection"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Unassigns a Floating IP, resulting in it being unreachable. You may assign it to a Server again at a later time.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1/floating_ips/{{ID}}/actions/unassign",
+      "method": "POST",
+      "name": "Unassign a Floating IP",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}/actions/unassign",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unassign a Floating IP",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}/actions/unassign"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific Action object for a Floating IP.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/floating_ips/{{ID}}/actions/{{ACTION_ID}}",
+      "method": "GET",
+      "name": "Get an Action for a Floating IP",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "action_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/floating_ips/{{ID}}/actions/{{ACTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "action_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an Action for a Floating IP",
+      "url": "https://api.hetzner.cloud/v1/floating_ips/{{ID}}/actions/{{ACTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Image objects. You can select specific Image types only and sort the results by using URI parameters.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/images",
+      "method": "GET",
+      "name": "Get all Images",
+      "params": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "bound_to",
+          "value": ""
+        },
+        {
+          "name": "include_deprecated",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        }
+      ],
+      "path": "/v1/images",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "bound_to",
+          "value": ""
+        },
+        {
+          "name": "include_deprecated",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Images",
+      "url": "https://api.hetzner.cloud/v1/images"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an Image. Only Images of type `snapshot` and `backup` can be deleted.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1/images/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete an Image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/images/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an Image",
+      "url": "https://api.hetzner.cloud/v1/images/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific Image object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/images/{{ID}}",
+      "method": "GET",
+      "name": "Get an Image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/images/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an Image",
+      "url": "https://api.hetzner.cloud/v1/images/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "description": "My new Image description",
+        "labels": {
+          "labelkey": "value"
+        },
+        "type": "snapshot"
+      },
+      "body_json": {
+        "description": "My new Image description",
+        "labels": {
+          "labelkey": "value"
+        },
+        "type": "snapshot"
+      },
+      "body_text": "{\"description\": \"My new Image description\", \"labels\": {\"labelkey\": \"value\"}, \"type\": \"snapshot\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the Image. You may change the description, convert a Backup Image to a Snapshot Image or change the Image labels. Only Images of type `snapshot` and `backup` can be updated.\n\nNote that when updating labels, the current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/images/{{ID}}",
+      "method": "PUT",
+      "name": "Update an Image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/images/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"My new Image description\", \"labels\": {\"labelkey\": \"value\"}, \"type\": \"snapshot\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an Image",
+      "url": "https://api.hetzner.cloud/v1/images/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Action objects for an Image. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/images/{{ID}}/actions",
+      "method": "GET",
+      "name": "Get all Actions for an Image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "path": "/v1/images/{{ID}}/actions",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Actions for an Image",
+      "url": "https://api.hetzner.cloud/v1/images/{{ID}}/actions"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "delete": true
+      },
+      "body_json": {
+        "delete": true
+      },
+      "body_text": "{\"delete\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Changes the protection configuration of the Image. Can only be used on snapshots.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/images/{{ID}}/actions/change_protection",
+      "method": "POST",
+      "name": "Change Image Protection",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/images/{{ID}}/actions/change_protection",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"delete\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change Image Protection",
+      "url": "https://api.hetzner.cloud/v1/images/{{ID}}/actions/change_protection"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific Action for an Image.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/images/{{ID}}/actions/{{ACTION_ID}}",
+      "method": "GET",
+      "name": "Get an Action for an Image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "action_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/images/{{ID}}/actions/{{ACTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "action_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an Action for an Image",
+      "url": "https://api.hetzner.cloud/v1/images/{{ID}}/actions/{{ACTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all available ISO objects.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/isos",
+      "method": "GET",
+      "name": "Get all ISOs",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1/isos",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all ISOs",
+      "url": "https://api.hetzner.cloud/v1/isos"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific ISO object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/isos/{{ID}}",
+      "method": "GET",
+      "name": "Get an ISO",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/isos/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an ISO",
+      "url": "https://api.hetzner.cloud/v1/isos/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets all Load Balancer type objects.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/load_balancer_types",
+      "method": "GET",
+      "name": "Get all Load Balancer Types",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1/load_balancer_types",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Load Balancer Types",
+      "url": "https://api.hetzner.cloud/v1/load_balancer_types"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets a specific Load Balancer type object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/load_balancer_types/{{ID}}",
+      "method": "GET",
+      "name": "Get a Load Balancer Type",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/load_balancer_types/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Load Balancer Type",
+      "url": "https://api.hetzner.cloud/v1/load_balancer_types/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets all existing Load Balancers that you have available.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/load_balancers",
+      "method": "GET",
+      "name": "Get all Load Balancers",
+      "params": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        }
+      ],
+      "path": "/v1/load_balancers",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "label_selector",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Load Balancers",
+      "url": "https://api.hetzner.cloud/v1/load_balancers"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "algorithm": {
+          "type": "round_robin"
+        },
+        "labels": {
+          "labelkey": "value"
+        },
+        "load_balancer_type": "lb11",
+        "location": "",
+        "name": "Web Frontend",
+        "network": 123,
+        "network_zone": "eu-central",
+        "public_interface": true,
+        "services": [
+          {
+            "destination_port": 80,
+            "health_check": {
+              "http": {
+                "domain": "example.com",
+                "path": "/",
+                "response": "{\"status\": \"ok\"}",
+                "status_codes": [
+                  "2??",
+                  "3??"
+                ],
+                "tls": false
+              },
+              "interval": 15,
+              "port": 4711,
+              "protocol": "http",
+              "retries": 3,
+              "timeout": 10
+            },
+            "http": {
+              "certificates": [
+                897
+              ],
+              "cookie_lifetime": 300,
+              "cookie_name": "HCLBSTICKY",
+              "redirect_http": true,
+              "sticky_sessions": true
+            },
+            "listen_port": 443,
+            "protocol": "https",
+            "proxyprotocol": false
+          }
+        ],
+        "targets": [
+          {
+            "health_status": [
+              {
+                "listen_port": 443,
+                "status": "healthy"
+              }
+            ],
+            "ip": {
+              "ip": "203.0.113.1"
+            },
+            "label_selector": {
+              "selector": "env=prod"
+            },
+            "server": {
+              "id": 80
+            },
+            "targets": [
+              {
+                "health_status": [
+                  {}
+                ],
+                "server": {
+                  "id": {}
+                },
+                "type": "server",
+                "use_private_ip": false
+              }
+            ],
+            "type": "server",
+            "use_private_ip": false
+          }
+        ]
+      },
+      "body_json": {
+        "algorithm": {
+          "type": "round_robin"
+        },
+        "labels": {
+          "labelkey": "value"
+        },
+        "load_balancer_type": "lb11",
+        "location": "",
+        "name": "Web Frontend",
+        "network": 123,
+        "network_zone": "eu-central",
+        "public_interface": true,
+        "services": [
+          {
+            "destination_port": 80,
+            "health_check": {
+              "http": {
+                "domain": "example.com",
+                "path": "/",
+                "response": "{\"status\": \"ok\"}",
+                "status_codes": [
+                  "2??",
+                  "3??"
+                ],
+                "tls": false
+              },
+              "interval": 15,
+              "port": 4711,
+              "protocol": "http",
+              "retries": 3,
+              "timeout": 10
+            },
+            "http": {
+              "certificates": [
+                897
+              ],
+              "cookie_lifetime": 300,
+              "cookie_name": "HCLBSTICKY",
+              "redirect_http": true,
+              "sticky_sessions": true
+            },
+            "listen_port": 443,
+            "protocol": "https",
+            "proxyprotocol": false
+          }
+        ],
+        "targets": [
+          {
+            "health_status": [
+              {
+                "listen_port": 443,
+                "status": "healthy"
+              }
+            ],
+            "ip": {
+              "ip": "203.0.113.1"
+            },
+            "label_selector": {
+              "selector": "env=prod"
+            },
+            "server": {
+              "id": 80
+            },
+            "targets": [
+              {
+                "health_status": [
+                  {}
+                ],
+                "server": {
+                  "id": {}
+                },
+                "type": "server",
+                "use_private_ip": false
+              }
+            ],
+            "type": "server",
+            "use_private_ip": false
+          }
+        ]
+      },
+      "body_text": "{\"algorithm\": {\"type\": \"round_robin\"}, \"labels\": {\"labelkey\": \"value\"}, \"load_balancer_type\": \"lb11\", \"location\": \"\", \"name\": \"Web Frontend\", \"network\": 123, \"network_zone\": \"eu-central\", \"public_interface\": true, \"services\": [{\"destination_port\": 80, \"health_check\": {\"http\": {\"domain\": \"example.com\", \"path\": \"/\", \"response\": \"{\\\"status\\\": \\\"ok\\\"}\", \"status_codes\": [\"2??\", \"3??\"], \"tls\": false}, \"interval\": 15, \"port\": 4711, \"protocol\": \"http\", \"retries\": 3, \"timeout\": 10}, \"http\": {\"certificates\": [897], \"cookie_lifetime\": 300, \"cookie_name\": \"HCLBSTICKY\", \"redirect_http\": true, \"sticky_sessions\": true}, \"listen_port\": 443, \"protocol\": \"https\", \"proxyprotocol\": false}], \"targets\": [{\"health_status\": [{\"listen_port\": 443, \"status\": \"healthy\"}], \"ip\": {\"ip\": \"203.0.113.1\"}, \"label_selector\": {\"selector\": \"env=prod\"}, \"server\": {\"id\": 80}, \"targets\": [{\"health_status\": [{}], \"server\": {\"id\": {}}, \"type\": \"server\", \"use_private_ip\": false}], \"type\": \"server\", \"use_private_ip\": false}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a Load Balancer.\n\n#### Call specific error codes\n\n| Code                                    | Description                                                                                           |\n|-----------------------------------------|-------------------------------------------------------------------------------------------------------|\n| `cloud_resource_ip_not_allowed`         | The IP you are trying to add as a target belongs to a Hetzner Cloud resource                          |\n| `ip_not_owned`                          | The IP is not owned by the owner of the project of the Load Balancer                                  |\n| `load_balancer_not_attached_to_network` | The Load Balancer is not attached to a network                                                        |\n| `robot_unavailable`                     | Robot was not available. The caller may retry the operation after a short delay.                      |\n| `server_not_attached_to_network`        | The server you are trying to add as a target is not attached to the same network as the Load Balancer |\n| `source_port_already_used`              | The source port you are trying to add is already in use                                               |\n| `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/load_balancers",
+      "method": "POST",
+      "name": "Create a Load Balancer",
+      "params": [],
+      "path": "/v1/load_balancers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"algorithm\": {\"type\": \"round_robin\"}, \"labels\": {\"labelkey\": \"value\"}, \"load_balancer_type\": \"lb11\", \"location\": \"\", \"name\": \"Web Frontend\", \"network\": 123, \"network_zone\": \"eu-central\", \"public_interface\": true, \"services\": [{\"destination_port\": 80, \"health_check\": {\"http\": {\"domain\": \"example.com\", \"path\": \"/\", \"response\": \"{\\\"status\\\": \\\"ok\\\"}\", \"status_codes\": [\"2??\", \"3??\"], \"tls\": false}, \"interval\": 15, \"port\": 4711, \"protocol\": \"http\", \"retries\": 3, \"timeout\": 10}, \"http\": {\"certificates\": [897], \"cookie_lifetime\": 300, \"cookie_name\": \"HCLBSTICKY\", \"redirect_http\": true, \"sticky_sessions\": true}, \"listen_port\": 443, \"protocol\": \"https\", \"proxyprotocol\": false}], \"targets\": [{\"health_status\": [{\"listen_port\": 443, \"status\": \"healthy\"}], \"ip\": {\"ip\": \"203.0.113.1\"}, \"label_selector\": {\"selector\": \"env=prod\"}, \"server\": {\"id\": 80}, \"targets\": [{\"health_status\": [{}], \"server\": {\"id\": {}}, \"type\": \"server\", \"use_private_ip\": false}], \"type\": \"server\", \"use_private_ip\": false}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Load Balancer",
+      "url": "https://api.hetzner.cloud/v1/load_balancers"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a Load Balancer.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1/load_balancers/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete a Load Balancer",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/load_balancers/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Load Balancer",
+      "url": "https://api.hetzner.cloud/v1/load_balancers/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets a specific Load Balancer object.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/load_balancers/{{ID}}",
+      "method": "GET",
+      "name": "Get a Load Balancer",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/load_balancers/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a Load Balancer",
+      "url": "https://api.hetzner.cloud/v1/load_balancers/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "new-name"
+      },
+      "body_json": {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "new-name"
+      },
+      "body_text": "{\"labels\": {\"labelkey\": \"value\"}, \"name\": \"new-name\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates a Load Balancer. You can update a Load Balancer’s name and a Load Balancer’s labels.\n\nNote that when updating labels, the Load Balancer’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Load Balancer object changes during the request, the response will be a “conflict” error.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/load_balancers/{{ID}}",
+      "method": "PUT",
+      "name": "Update a Load Balancer",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/load_balancers/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"labels\": {\"labelkey\": \"value\"}, \"name\": \"new-name\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a Load Balancer",
+      "url": "https://api.hetzner.cloud/v1/load_balancers/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all Action objects for a Load Balancer. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/load_balancers/{{ID}}/actions",
+      "method": "GET",
+      "name": "Get all Actions for a Load Balancer",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "path": "/v1/load_balancers/{{ID}}/actions",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all Actions for a Load Balancer",
+      "url": "https://api.hetzner.cloud/v1/load_balancers/{{ID}}/actions"
+    }
+  ]
+}

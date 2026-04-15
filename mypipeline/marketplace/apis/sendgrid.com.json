@@ -1,0 +1,3268 @@
+{
+  "id": "sendgrid.com",
+  "info": {
+    "base_url": "http://api.sendgrid.com/v3",
+    "description": "**This endpoint allows you to create a custom field.**\n\n**You can create up to 120 custom fields.**",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "communication"
+    ],
+    "title": "Email Activity (beta)",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a list of all of the IP addresses that recently attempted to access your account either through the User Interface or the API.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/access_settings/activity",
+      "method": "GET",
+      "name": "Retrieve all recent access attempts",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/v3/access_settings/activity",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all recent access attempts",
+      "url": "http://api.sendgrid.com/v3/access_settings/activity"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ids": [
+          1,
+          2,
+          3
+        ]
+      },
+      "body_json": {
+        "ids": [
+          1,
+          2,
+          3
+        ]
+      },
+      "body_text": "{\"ids\": [1, 2, 3]}",
+      "body_type": "json",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to remove one or more IP addresses from your list of allowed addresses.**\n\nTo remove one or more IP addresses, pass this endpoint an array containing the ID(s) associated with the IP(s) you intend to remove. You can retrieve the IDs associated with your allowed IP addresses using the \"Retrieve a list of currently allowed IPs\" endpoint.\n\nIt is possible to remove your own IP address, which will block access to your account. You will need to submit a [support ticket](https://sendgrid.com/docs/ui/account-and-settings/support/) if this happens. For this reason, it is important to double check that you are removing only the IPs you intend to remove when using this endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/access_settings/whitelist",
+      "method": "DELETE",
+      "name": "Remove one or more IPs from the allow list",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/access_settings/whitelist",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ids\": [1, 2, 3]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove one or more IPs from the allow list",
+      "url": "http://api.sendgrid.com/v3/access_settings/whitelist"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a list of IP addresses that are currently allowed to access your account.**\n\nEach IP address returned to you will have `created_at` and `updated_at` dates. Each IP will also be associated with an `id` that can be used to remove the address from your allow list.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/access_settings/whitelist",
+      "method": "GET",
+      "name": "Retrieve a list of currently allowed IPs",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/access_settings/whitelist",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a list of currently allowed IPs",
+      "url": "http://api.sendgrid.com/v3/access_settings/whitelist"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ips": [
+          {
+            "ip": "192.168.1.1"
+          },
+          {
+            "ip": "192.*.*.*"
+          },
+          {
+            "ip": "192.168.1.3/32"
+          }
+        ]
+      },
+      "body_json": {
+        "ips": [
+          {
+            "ip": "192.168.1.1"
+          },
+          {
+            "ip": "192.*.*.*"
+          },
+          {
+            "ip": "192.168.1.3/32"
+          }
+        ]
+      },
+      "body_text": "{\"ips\": [{\"ip\": \"192.168.1.1\"}, {\"ip\": \"192.*.*.*\"}, {\"ip\": \"192.168.1.3/32\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to add one or more allowed IP addresses.**\n\nTo allow one or more IP addresses, pass them to this endpoint in an array. Once an IP address is added to your allow list, it will be assigned an `id` that can be used to remove the address. You can retrieve the ID associated with an IP using the \"Retrieve a list of currently allowed IPs\" endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/access_settings/whitelist",
+      "method": "POST",
+      "name": "Add one or more IPs to the allow list",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/access_settings/whitelist",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ips\": [{\"ip\": \"192.168.1.1\"}, {\"ip\": \"192.*.*.*\"}, {\"ip\": \"192.168.1.3/32\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add one or more IPs to the allow list",
+      "url": "http://api.sendgrid.com/v3/access_settings/whitelist"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to remove a specific IP address from your list of allowed addresses.**\n\nWhen removing a specific IP address from your list, you must include the ID in your call.  You can retrieve the IDs associated with your allowed IP addresses using the \"Retrieve a list of currently allowed IPs\" endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/access_settings/whitelist/{{RULE_ID}}",
+      "method": "DELETE",
+      "name": "Remove a specific IP from the allowed list",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "rule_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/access_settings/whitelist/{{RULE_ID}}",
+      "pathParameters": [
+        {
+          "name": "rule_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove a specific IP from the allowed list",
+      "url": "http://api.sendgrid.com/v3/access_settings/whitelist/{{RULE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retreive a specific IP address that has been allowed to access your account.**\n\nYou must include the ID for the specific IP address you want to retrieve in your call. You can retrieve the IDs associated with your allowed IP addresses using the \"Retrieve a  list of currently allowed IPs\" endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/access_settings/whitelist/{{RULE_ID}}",
+      "method": "GET",
+      "name": "Retrieve a specific allowed IP",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "rule_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/access_settings/whitelist/{{RULE_ID}}",
+      "pathParameters": [
+        {
+          "name": "rule_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a specific allowed IP",
+      "url": "http://api.sendgrid.com/v3/access_settings/whitelist/{{RULE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve all of your alerts.**\n\nAlerts allow you to specify an email address to receive notifications regarding your email usage or statistics. \n* Usage alerts allow you to set the threshold at which an alert will be sent.\n* Stats notifications allow you to set how frequently you would like to receive email statistics reports. For example, \"daily\", \"weekly\", or \"monthly\".\n\nFor more information about alerts, please see our [Alerts documentation](https://sendgrid.com/docs/ui/account-and-settings/alerts/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/alerts",
+      "method": "GET",
+      "name": "Retrieve all alerts",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Authorization",
+          "value": ""
+        },
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/alerts",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all alerts",
+      "url": "http://api.sendgrid.com/v3/alerts"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "email_to": "example@example.com",
+        "frequency": "daily",
+        "type": "stats_notification"
+      },
+      "body_json": {
+        "email_to": "example@example.com",
+        "frequency": "daily",
+        "type": "stats_notification"
+      },
+      "body_text": "{\"email_to\": \"example@example.com\", \"frequency\": \"daily\", \"type\": \"stats_notification\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to create a new alert.**\n\nAlerts allow you to specify an email address to receive notifications regarding your email usage or statistics. There are two types of alerts that can be created with this endpoint:\n\n* `usage_limit` allows you to set the threshold at which an alert will be sent.\n* `stats_notification` allows you to set how frequently you would like to receive email statistics reports. For example, \"daily\", \"weekly\", or \"monthly\".\n\nFor more information about alerts, please see our [Alerts documentation](https://sendgrid.com/docs/ui/account-and-settings/alerts/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/alerts",
+      "method": "POST",
+      "name": "Create a new Alert",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Authorization",
+          "value": ""
+        },
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/alerts",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email_to\": \"example@example.com\", \"frequency\": \"daily\", \"type\": \"stats_notification\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new Alert",
+      "url": "http://api.sendgrid.com/v3/alerts"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to delete an alert.**\n\nAlerts allow you to specify an email address to receive notifications regarding your email usage or statistics. \n* Usage alerts allow you to set the threshold at which an alert will be sent.\n* Stats notifications allow you to set how frequently you would like to receive email statistics reports. For example, \"daily\", \"weekly\", or \"monthly\".\n\nFor more information about alerts, please see our [Alerts documentation](https://sendgrid.com/docs/ui/account-and-settings/alerts/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/alerts/{{ALERT_ID}}",
+      "method": "DELETE",
+      "name": "Delete an alert",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "alert_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/alerts/{{ALERT_ID}}",
+      "pathParameters": [
+        {
+          "name": "alert_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an alert",
+      "url": "http://api.sendgrid.com/v3/alerts/{{ALERT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a specific alert.**\n\nAlerts allow you to specify an email address to receive notifications regarding your email usage or statistics. \n* Usage alerts allow you to set the threshold at which an alert will be sent.\n* Stats notifications allow you to set how frequently you would like to receive email statistics reports. For example, \"daily\", \"weekly\", or \"monthly\".\n\nFor more information about alerts, please see our [Alerts documentation](https://sendgrid.com/docs/ui/account-and-settings/alerts/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/alerts/{{ALERT_ID}}",
+      "method": "GET",
+      "name": "Retrieve a specific alert",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "alert_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/alerts/{{ALERT_ID}}",
+      "pathParameters": [
+        {
+          "name": "alert_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a specific alert",
+      "url": "http://api.sendgrid.com/v3/alerts/{{ALERT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "email_to": "example@example.com"
+      },
+      "body_json": {
+        "email_to": "example@example.com"
+      },
+      "body_text": "{\"email_to\": \"example@example.com\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to update an alert.**\n\nAlerts allow you to specify an email address to receive notifications regarding your email usage or statistics. \n* Usage alerts allow you to set the threshold at which an alert will be sent.\n* Stats notifications allow you to set how frequently you would like to receive email statistics reports. For example, \"daily\", \"weekly\", or \"monthly\".\n\nFor more information about alerts, please see our [Alerts documentation](https://sendgrid.com/docs/ui/account-and-settings/alerts/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v3/alerts/{{ALERT_ID}}",
+      "method": "PATCH",
+      "name": "Update an alert",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "alert_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/alerts/{{ALERT_ID}}",
+      "pathParameters": [
+        {
+          "name": "alert_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"email_to\": \"example@example.com\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an alert",
+      "url": "http://api.sendgrid.com/v3/alerts/{{ALERT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve all API Keys that belong to the authenticated user.**\n\nA successful response from this API will include all available API keys' names and IDs.\n\nFor security reasons, there is not a way to retrieve the key itself after it's created. If you lose your API key, you must create a new one. Only the \"Create API keys\" endpoint will return a key to you and only at the time of creation.\n\nAn `api_key_id` can be used to update or delete the key, as well as retrieve the key's details, such as its scopes.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/api_keys",
+      "method": "GET",
+      "name": "Retrieve all API Keys belonging to the authenticated user",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/v3/api_keys",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all API Keys belonging to the authenticated user",
+      "url": "http://api.sendgrid.com/v3/api_keys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "My API Key",
+        "scopes": [
+          "mail.send",
+          "alerts.create",
+          "alerts.read"
+        ]
+      },
+      "body_json": {
+        "name": "My API Key",
+        "scopes": [
+          "mail.send",
+          "alerts.create",
+          "alerts.read"
+        ]
+      },
+      "body_text": "{\"name\": \"My API Key\", \"scopes\": [\"mail.send\", \"alerts.create\", \"alerts.read\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to create a new API Key for the user.**\n\nTo create your initial SendGrid API Key, you should [use the SendGrid App](https://app.sendgrid.com/settings/api_keys). Once you have created a first key with scopes to manage additional API keys, you can use this API for all other key management.\n\n> There is a limit of 100 API Keys on your account.\n\nA JSON request body containing a `name` property is required when making requests to this endpoint. If the number of maximum keys, 100, is reached, a `403` status will be returned.\n\nThough the `name` field is required, it does not need to be unique. A unique API key ID will be generated for each key you create and returned in the response body.\n\nIt is not necessary to pass a `scopes` field to the API when creating a key, but you should be aware that omitting the `scopes` field from your request will create a key with \"Full Access\" permissions by default.\n\nSee the [API Key Permissions List](https://sendgrid.api-docs.io/v3.0/how-to-use-the-sendgrid-v3-api/api-authorization) for all available scopes. An API key's scopes can be updated after creation using the \"Update API keys\" endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/api_keys",
+      "method": "POST",
+      "name": "Create API keys",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/api_keys",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"My API Key\", \"scopes\": [\"mail.send\", \"alerts.create\", \"alerts.read\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create API keys",
+      "url": "http://api.sendgrid.com/v3/api_keys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to revoke an existing API Key using an `api_key_id`**\n\nAuthentications using a revoked API Key will fail after after some small propogation delay. If the API Key ID does not exist, a `404` status will be returned.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/api_keys/{{API_KEY_ID}}",
+      "method": "DELETE",
+      "name": "Delete API keys",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "api_key_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/api_keys/{{API_KEY_ID}}",
+      "pathParameters": [
+        {
+          "name": "api_key_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete API keys",
+      "url": "http://api.sendgrid.com/v3/api_keys/{{API_KEY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a single API key using an `api_key_id`.**\n\nThe endpoint will return a key's name, ID, and scopes. If the API Key ID does not, exist a `404` status will be returned.\n\nSee the [API Key Permissions List](https://sendgrid.api-docs.io/v3.0/how-to-use-the-sendgrid-v3-api/api-authorization) for all available scopes. An API key's scopes can be updated after creation using the \"Update API keys\" endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/api_keys/{{API_KEY_ID}}",
+      "method": "GET",
+      "name": "Retrieve an existing API Key",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "api_key_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/api_keys/{{API_KEY_ID}}",
+      "pathParameters": [
+        {
+          "name": "api_key_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an existing API Key",
+      "url": "http://api.sendgrid.com/v3/api_keys/{{API_KEY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "A New Hope"
+      },
+      "body_json": {
+        "name": "A New Hope"
+      },
+      "body_text": "{\"name\": \"A New Hope\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to update the name of an existing API Key.**\n\nYou must pass this endpoint a JSON request body with a `name` property, which will be used to rename the key associated with the `api_key_id` passed in the URL.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v3/api_keys/{{API_KEY_ID}}",
+      "method": "PATCH",
+      "name": "Update API key name",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "api_key_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/api_keys/{{API_KEY_ID}}",
+      "pathParameters": [
+        {
+          "name": "api_key_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"A New Hope\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update API key name",
+      "url": "http://api.sendgrid.com/v3/api_keys/{{API_KEY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "Profiles key",
+        "scopes": [
+          "user.profile.read",
+          "user.profile.update"
+        ]
+      },
+      "body_json": {
+        "name": "Profiles key",
+        "scopes": [
+          "user.profile.read",
+          "user.profile.update"
+        ]
+      },
+      "body_text": "{\"name\": \"Profiles key\", \"scopes\": [\"user.profile.read\", \"user.profile.update\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to update the name and scopes of a given API key.**\n\nYou must pass this endpoint a JSON request body with a `name` field and a `scopes` array containing at least one scope. The `name` and `scopes` fields will be used to update the key associated with the `api_key_id` in the request URL.\n\nIf you need to update a key's scopes only, pass the `name` field with the key's existing name; the `name` will not be modified. If you need to update a key's name only, use the \"Update API key name\" endpoint.\n\nSee the [API Key Permissions List](https://sendgrid.api-docs.io/v3.0/how-to-use-the-sendgrid-v3-api/api-authorization) for all available scopes.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v3/api_keys/{{API_KEY_ID}}",
+      "method": "PUT",
+      "name": "Update API key name and scopes",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "api_key_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/api_keys/{{API_KEY_ID}}",
+      "pathParameters": [
+        {
+          "name": "api_key_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"Profiles key\", \"scopes\": [\"user.profile.read\", \"user.profile.update\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update API key name and scopes",
+      "url": "http://api.sendgrid.com/v3/api_keys/{{API_KEY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a list of all suppression groups created by this user.**\n\nThis endpoint can also return information for multiple group IDs that you include in your request. To add a group ID to your request, simply append `?id=123456&id=123456`, with the appropriate group IDs.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/asm/groups",
+      "method": "GET",
+      "name": "Retrieve all suppression groups associated with the user.",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all suppression groups associated with the user.",
+      "url": "http://api.sendgrid.com/v3/asm/groups"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "description": "",
+        "is_default": false,
+        "name": ""
+      },
+      "body_json": {
+        "description": "",
+        "is_default": false,
+        "name": ""
+      },
+      "body_text": "{\"description\": \"\", \"is_default\": false, \"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to create a new suppression group.**\n\nTo add an email address to the suppression group, [create a Suppression](https://sendgrid.api-docs.io/v3.0/suppressions-suppressions/add-suppressions-to-a-suppression-group).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/asm/groups",
+      "method": "POST",
+      "name": "Create a new suppression group",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"\", \"is_default\": false, \"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new suppression group",
+      "url": "http://api.sendgrid.com/v3/asm/groups"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to delete a suppression group.**\n\nIf a recipient uses the \"one-click unsubscribe\" option on an email associated with a deleted group, that recipient will be added to the global suppression list.\n\nDeleting a suppression group will remove the suppression, meaning email will once again be sent to the previously suppressed addresses. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/asm/groups/{{GROUP_ID}}",
+      "method": "DELETE",
+      "name": "Delete a Suppression Group",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups/{{GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Suppression Group",
+      "url": "http://api.sendgrid.com/v3/asm/groups/{{GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a single suppression group.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/asm/groups/{{GROUP_ID}}",
+      "method": "GET",
+      "name": "Get information on a single suppression group.",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups/{{GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get information on a single suppression group.",
+      "url": "http://api.sendgrid.com/v3/asm/groups/{{GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "description": "Suggestions for items our users might like.",
+        "id": 103,
+        "name": "Item Suggestions"
+      },
+      "body_json": {
+        "description": "Suggestions for items our users might like.",
+        "id": 103,
+        "name": "Item Suggestions"
+      },
+      "body_text": "{\"description\": \"Suggestions for items our users might like.\", \"id\": 103, \"name\": \"Item Suggestions\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to update or change a suppression group.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v3/asm/groups/{{GROUP_ID}}",
+      "method": "PATCH",
+      "name": "Update a suppression group.",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups/{{GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"description\": \"Suggestions for items our users might like.\", \"id\": 103, \"name\": \"Item Suggestions\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a suppression group.",
+      "url": "http://api.sendgrid.com/v3/asm/groups/{{GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve all suppressed email addresses belonging to the given group.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/asm/groups/{{GROUP_ID}}/suppressions",
+      "method": "GET",
+      "name": "Retrieve all suppressions for a suppression group",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups/{{GROUP_ID}}/suppressions",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all suppressions for a suppression group",
+      "url": "http://api.sendgrid.com/v3/asm/groups/{{GROUP_ID}}/suppressions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "recipient_emails": [
+          "test1@example.com",
+          "test2@example.com"
+        ]
+      },
+      "body_json": {
+        "recipient_emails": [
+          "test1@example.com",
+          "test2@example.com"
+        ]
+      },
+      "body_text": "{\"recipient_emails\": [\"test1@example.com\", \"test2@example.com\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to add email addresses to an unsubscribe group.**\n\nIf you attempt to add suppressions to a group that has been deleted or does not exist, the suppressions will be added to the global suppressions list.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/asm/groups/{{GROUP_ID}}/suppressions",
+      "method": "POST",
+      "name": "Add suppressions to a suppression group",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups/{{GROUP_ID}}/suppressions",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"recipient_emails\": [\"test1@example.com\", \"test2@example.com\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add suppressions to a suppression group",
+      "url": "http://api.sendgrid.com/v3/asm/groups/{{GROUP_ID}}/suppressions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "recipient_emails": [
+          "test1@example.com",
+          "test2@example.com"
+        ]
+      },
+      "body_json": {
+        "recipient_emails": [
+          "test1@example.com",
+          "test2@example.com"
+        ]
+      },
+      "body_text": "{\"recipient_emails\": [\"test1@example.com\", \"test2@example.com\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to search a suppression group for multiple suppressions.**\n\nWhen given a list of email addresses and a group ID, this endpoint will only return the email addresses that have been unsubscribed from the given group.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/asm/groups/{{GROUP_ID}}/suppressions/search",
+      "method": "POST",
+      "name": "Search for suppressions within a group",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups/{{GROUP_ID}}/suppressions/search",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"recipient_emails\": [\"test1@example.com\", \"test2@example.com\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Search for suppressions within a group",
+      "url": "http://api.sendgrid.com/v3/asm/groups/{{GROUP_ID}}/suppressions/search"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to remove a suppressed email address from the given suppression group.**\n\nRemoving an address will remove the suppression, meaning email will once again be sent to the previously suppressed addresses. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/asm/groups/{{GROUP_ID}}/suppressions/{{EMAIL}}",
+      "method": "DELETE",
+      "name": "Delete a suppression from a suppression group",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        },
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/groups/{{GROUP_ID}}/suppressions/{{EMAIL}}",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        },
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a suppression from a suppression group",
+      "url": "http://api.sendgrid.com/v3/asm/groups/{{GROUP_ID}}/suppressions/{{EMAIL}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a list of all suppressions.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/asm/suppressions",
+      "method": "GET",
+      "name": "Retrieve all suppressions",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/suppressions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all suppressions",
+      "url": "http://api.sendgrid.com/v3/asm/suppressions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "recipient_emails": [
+          "test1@example.com",
+          "test2@example.com"
+        ]
+      },
+      "body_json": {
+        "recipient_emails": [
+          "test1@example.com",
+          "test2@example.com"
+        ]
+      },
+      "body_text": "{\"recipient_emails\": [\"test1@example.com\", \"test2@example.com\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to add one or more email addresses to the global suppressions group.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/asm/suppressions/global",
+      "method": "POST",
+      "name": "Add recipient addresses to the global suppression group.",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/suppressions/global",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"recipient_emails\": [\"test1@example.com\", \"test2@example.com\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add recipient addresses to the global suppression group.",
+      "url": "http://api.sendgrid.com/v3/asm/suppressions/global"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to remove an email address from the global suppressions group.**\n\nDeleting a suppression group will remove the suppression, meaning email will once again be sent to the previously suppressed addresses. This should be avoided unless a recipient indicates they wish to receive email from you again. You can use our [bypass filters](https://sendgrid.com/docs/ui/sending-email/index-suppressions/#bypass-suppressions) to deliver messages to otherwise suppressed addresses when exceptions are required.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/asm/suppressions/global/{{EMAIL}}",
+      "method": "DELETE",
+      "name": "Delete a Global Suppression",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/suppressions/global/{{EMAIL}}",
+      "pathParameters": [
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Global Suppression",
+      "url": "http://api.sendgrid.com/v3/asm/suppressions/global/{{EMAIL}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a global suppression. You can also use this endpoint to confirm if an email address is already globally suppresed.**\n\nIf the email address you include in the URL path parameter `{email}` is already globally suppressed, the response will include that email address. If the address you enter for `{email}` is not globally suppressed, an empty JSON object `{}` will be returned.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/asm/suppressions/global/{{EMAIL}}",
+      "method": "GET",
+      "name": "Retrieve a Global Suppression",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/suppressions/global/{{EMAIL}}",
+      "pathParameters": [
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a Global Suppression",
+      "url": "http://api.sendgrid.com/v3/asm/suppressions/global/{{EMAIL}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint returns a list of all groups from which the given email address has been unsubscribed.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/asm/suppressions/{{EMAIL}}",
+      "method": "GET",
+      "name": "Retrieve all suppression groups for an email address",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "path": "/v3/asm/suppressions/{{EMAIL}}",
+      "pathParameters": [
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all suppression groups for an email address",
+      "url": "http://api.sendgrid.com/v3/asm/suppressions/{{EMAIL}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve your email statistics segmented by browser type.**\n\n**We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.\n\nAdvanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/browsers/stats",
+      "method": "GET",
+      "name": "Retrieve email statistics by browser.",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "browsers",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        },
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        }
+      ],
+      "path": "/v3/browsers/stats",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "browsers",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        },
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve email statistics by browser.",
+      "url": "http://api.sendgrid.com/v3/browsers/stats"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a list of all of your campaigns.**\n\nReturns campaigns in reverse order they were created (newest first).\n\nReturns an empty array if no campaigns exist.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/campaigns",
+      "method": "GET",
+      "name": "Retrieve all Campaigns",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all Campaigns",
+      "url": "http://api.sendgrid.com/v3/campaigns"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "categories": [
+          "summer line"
+        ],
+        "custom_unsubscribe_url": "",
+        "html_content": "<html><head><title></title></head><body><p>Check out our summer line!</p></body></html>",
+        "id": 986724,
+        "ip_pool": "marketing",
+        "list_ids": [
+          110,
+          124
+        ],
+        "plain_content": "Check out our summer line!",
+        "segment_ids": [
+          110
+        ],
+        "sender_id": 124451,
+        "status": "Draft",
+        "subject": "New Products for Summer!",
+        "suppression_group_id": 42,
+        "title": "May Newsletter"
+      },
+      "body_json": {
+        "categories": [
+          "summer line"
+        ],
+        "custom_unsubscribe_url": "",
+        "html_content": "<html><head><title></title></head><body><p>Check out our summer line!</p></body></html>",
+        "id": 986724,
+        "ip_pool": "marketing",
+        "list_ids": [
+          110,
+          124
+        ],
+        "plain_content": "Check out our summer line!",
+        "segment_ids": [
+          110
+        ],
+        "sender_id": 124451,
+        "status": "Draft",
+        "subject": "New Products for Summer!",
+        "suppression_group_id": 42,
+        "title": "May Newsletter"
+      },
+      "body_text": "{\"categories\": [\"summer line\"], \"custom_unsubscribe_url\": \"\", \"html_content\": \"<html><head><title></title></head><body><p>Check out our summer line!</p></body></html>\", \"id\": 986724, \"ip_pool\": \"marketing\", \"list_ids\": [110, 124], \"plain_content\": \"Check out our summer line!\", \"segment_ids\": [110], \"sender_id\": 124451, \"status\": \"Draft\", \"subject\": \"New Products for Summer!\", \"suppression_group_id\": 42, \"title\": \"May Newsletter\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to create a campaign.**\n\nIn order to send or schedule the campaign, you will be required to provide a subject, sender ID, content (we suggest both html and plain text), and at least one list or segment ID. This information is not required when you create a campaign.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/campaigns",
+      "method": "POST",
+      "name": "Create a Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categories\": [\"summer line\"], \"custom_unsubscribe_url\": \"\", \"html_content\": \"<html><head><title></title></head><body><p>Check out our summer line!</p></body></html>\", \"id\": 986724, \"ip_pool\": \"marketing\", \"list_ids\": [110, 124], \"plain_content\": \"Check out our summer line!\", \"segment_ids\": [110], \"sender_id\": 124451, \"status\": \"Draft\", \"subject\": \"New Products for Summer!\", \"suppression_group_id\": 42, \"title\": \"May Newsletter\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to delete a specific campaign.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/campaigns/{{CAMPAIGN_ID}}",
+      "method": "DELETE",
+      "name": "Delete a Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a specific campaign.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/campaigns/{{CAMPAIGN_ID}}",
+      "method": "GET",
+      "name": "Retrieve a single campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a single campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "categories": [
+          "summer line"
+        ],
+        "html_content": "<html><head><title></title></head><body><p>Check out our summer line!</p></body></html>",
+        "plain_content": "Check out our summer line!",
+        "subject": "New Products for Summer!",
+        "title": "May Newsletter"
+      },
+      "body_json": {
+        "categories": [
+          "summer line"
+        ],
+        "html_content": "<html><head><title></title></head><body><p>Check out our summer line!</p></body></html>",
+        "plain_content": "Check out our summer line!",
+        "subject": "New Products for Summer!",
+        "title": "May Newsletter"
+      },
+      "body_text": "{\"categories\": [\"summer line\"], \"html_content\": \"<html><head><title></title></head><body><p>Check out our summer line!</p></body></html>\", \"plain_content\": \"Check out our summer line!\", \"subject\": \"New Products for Summer!\", \"title\": \"May Newsletter\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to update a specific campaign.**\n\nThis is especially useful if you only set up the campaign using POST /campaigns, but didn't set many of the parameters.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v3/campaigns/{{CAMPAIGN_ID}}",
+      "method": "PATCH",
+      "name": "Update a Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"categories\": [\"summer line\"], \"html_content\": \"<html><head><title></title></head><body><p>Check out our summer line!</p></body></html>\", \"plain_content\": \"Check out our summer line!\", \"subject\": \"New Products for Summer!\", \"title\": \"May Newsletter\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to unschedule a campaign that has already been scheduled to be sent.**\n\nA successful unschedule will return a 204.\nIf the specified campaign is in the process of being sent, the only option is to cancel (a different method).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v3/campaigns/{{CAMPAIGN_ID}}/schedules",
+      "method": "DELETE",
+      "name": "Unschedule a Scheduled Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}/schedules",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unschedule a Scheduled Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}/schedules"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve the date and time that a campaign has been scheduled to be sent.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/campaigns/{{CAMPAIGN_ID}}/schedules",
+      "method": "GET",
+      "name": "View Scheduled Time of a Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}/schedules",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "View Scheduled Time of a Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}/schedules"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "send_at": 1489451436
+      },
+      "body_json": {
+        "send_at": 1489451436
+      },
+      "body_text": "{\"send_at\": 1489451436}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows to you change the scheduled time and date for a campaign to be sent.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v3/campaigns/{{CAMPAIGN_ID}}/schedules",
+      "method": "PATCH",
+      "name": "Update a Scheduled Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}/schedules",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"send_at\": 1489451436}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a Scheduled Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}/schedules"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "send_at": 1489771528
+      },
+      "body_json": {
+        "send_at": 1489771528
+      },
+      "body_text": "{\"send_at\": 1489771528}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to schedule a specific date and time for your campaign to be sent.**\n\nIf you have the flexibility, it's better to schedule mail for off-peak times. Most emails are scheduled and sent at the top of the hour or half hour. Scheduling email to avoid those times (for example, scheduling at 10:53) can result in lower deferral rates because it won't be going through our servers at the same times as everyone else's mail.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/campaigns/{{CAMPAIGN_ID}}/schedules",
+      "method": "POST",
+      "name": "Schedule a Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}/schedules",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"send_at\": 1489771528}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Schedule a Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}/schedules"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to immediately send an existing campaign.**\n\nNormally a POST request would have a body, but since this endpoint is telling us to send a resource that is already created, a request body is not needed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "POST /v3/campaigns/{{CAMPAIGN_ID}}/schedules/now",
+      "method": "POST",
+      "name": "Send a Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}/schedules/now",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Send a Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}/schedules/now"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "to": "your.email@example.com"
+      },
+      "body_json": {
+        "to": "your.email@example.com"
+      },
+      "body_text": "{\"to\": \"your.email@example.com\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to send a test campaign.**\n\nTo send to multiple addresses, use an array for the JSON \"to\" value [\"one@address\",\"two@address\"]",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/campaigns/{{CAMPAIGN_ID}}/schedules/test",
+      "method": "POST",
+      "name": "Send a Test Campaign",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/campaigns/{{CAMPAIGN_ID}}/schedules/test",
+      "pathParameters": [
+        {
+          "name": "campaign_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"to\": \"your.email@example.com\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Send a Test Campaign",
+      "url": "http://api.sendgrid.com/v3/campaigns/{{CAMPAIGN_ID}}/schedules/test"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve a list of all of your categories.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/categories",
+      "method": "GET",
+      "name": "Retrieve all categories",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "category",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "path": "/v3/categories",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "category",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all categories",
+      "url": "http://api.sendgrid.com/v3/categories"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve all of your email statistics for each of your categories.**\n\nIf you do not define any query parameters, this endpoint will return a sum for each category in groups of 10.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/categories/stats",
+      "method": "GET",
+      "name": "Retrieve Email Statistics for Categories",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        },
+        {
+          "name": "categories",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        }
+      ],
+      "path": "/v3/categories/stats",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        },
+        {
+          "name": "categories",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Email Statistics for Categories",
+      "url": "http://api.sendgrid.com/v3/categories/stats"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve the total sum of each email statistic for every category over the given date range.**\n\nIf you do not define any query parameters, this endpoint will return a sum for each category in groups of 10.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/categories/stats/sums",
+      "method": "GET",
+      "name": "Retrieve sums of email stats for each category [Needs: Stats object defined, has category ID?]",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "sort_by_metric",
+          "value": ""
+        },
+        {
+          "name": "sort_by_direction",
+          "value": ""
+        },
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        }
+      ],
+      "path": "/v3/categories/stats/sums",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sort_by_metric",
+          "value": ""
+        },
+        {
+          "name": "sort_by_direction",
+          "value": ""
+        },
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve sums of email stats for each category [Needs: Stats object defined, has category ID?]",
+      "url": "http://api.sendgrid.com/v3/categories/stats/sums"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve your email statistics segmented by client type.**\n\n**We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.\n\nAdvanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/clients/stats",
+      "method": "GET",
+      "name": "Retrieve email statistics by client type.",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        }
+      ],
+      "path": "/v3/clients/stats",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve email statistics by client type.",
+      "url": "http://api.sendgrid.com/v3/clients/stats"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve your email statistics segmented by a specific client type.**\n\n**We only store up to 7 days of email activity in our database.** By default, 500 items will be returned per request via the Advanced Stats API endpoints.\n\n## Available Client Types\n- phone\n- tablet\n- webmail\n- desktop\n\nAdvanced Stats provide a more in-depth view of your email statistics and the actions taken by your recipients. You can segment these statistics by geographic location, device type, client type, browser, and mailbox provider. For more information about statistics, please see our [Statistics Overview](https://sendgrid.com/docs/ui/analytics-and-reporting/stats-overview/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/clients/{{CLIENT_TYPE}}/stats",
+      "method": "GET",
+      "name": "Retrieve stats by a specific client type.",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "client_type",
+          "value": ""
+        },
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        }
+      ],
+      "path": "/v3/clients/{{CLIENT_TYPE}}/stats",
+      "pathParameters": [
+        {
+          "name": "client_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "start_date",
+          "value": ""
+        },
+        {
+          "name": "end_date",
+          "value": ""
+        },
+        {
+          "name": "aggregated_by",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve stats by a specific client type.",
+      "url": "http://api.sendgrid.com/v3/clients/{{CLIENT_TYPE}}/stats"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "**This endpoint allows you to retrieve all custom fields.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        }
+      ],
+      "id": "GET /v3/contactdb/custom_fields",
+      "method": "GET",
+      "name": "Retrieve all custom fields",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/contactdb/custom_fields",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all custom fields",
+      "url": "http://api.sendgrid.com/v3/contactdb/custom_fields"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "EMAIL_ACTIVITY_BETA_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "pet",
+        "type": "text"
+      },
+      "body_json": {
+        "name": "pet",
+        "type": "text"
+      },
+      "body_text": "{\"name\": \"pet\", \"type\": \"text\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "**This endpoint allows you to create a custom field.**\n\n**You can create up to 120 custom fields.**",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{EMAIL_ACTIVITY_BETA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v3/contactdb/custom_fields",
+      "method": "POST",
+      "name": "Create a Custom Field",
+      "note": "Replace {{EMAIL_ACTIVITY_BETA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "on-behalf-of",
+          "value": ""
+        }
+      ],
+      "path": "/v3/contactdb/custom_fields",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"pet\", \"type\": \"text\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a Custom Field",
+      "url": "http://api.sendgrid.com/v3/contactdb/custom_fields"
+    }
+  ]
+}

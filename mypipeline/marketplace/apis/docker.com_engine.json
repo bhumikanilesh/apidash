@@ -1,0 +1,3379 @@
+{
+  "id": "docker.com_engine",
+  "info": {
+    "base_url": "/v1.33",
+    "description": "Return low-level information about an image.",
+    "source": "apis.guru",
+    "tags": [
+      "image-generation"
+    ],
+    "title": "Docker Engine API",
+    "version": "1.33"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This is a dummy endpoint you can use to test if the server is accessible.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/_ping",
+      "method": "GET",
+      "name": "Ping",
+      "params": [],
+      "path": "/v1.33/_ping",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Ping",
+      "url": "/v1.33/_ping"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "password": "xxxx",
+        "serveraddress": "https://index.docker.io/v1/",
+        "username": "hannibal"
+      },
+      "body_json": {
+        "password": "xxxx",
+        "serveraddress": "https://index.docker.io/v1/",
+        "username": "hannibal"
+      },
+      "body_text": "{\"password\": \"xxxx\", \"serveraddress\": \"https://index.docker.io/v1/\", \"username\": \"hannibal\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Validate credentials for a registry and, if available, get an identity token for accessing the registry without password.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.33/auth",
+      "method": "POST",
+      "name": "Check auth configuration",
+      "params": [],
+      "path": "/v1.33/auth",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"password\": \"xxxx\", \"serveraddress\": \"https://index.docker.io/v1/\", \"username\": \"hannibal\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check auth configuration",
+      "url": "/v1.33/auth"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Build an image from a tar archive with a `Dockerfile` in it.\n\nThe `Dockerfile` specifies how the image is built from the tar archive. It is typically in the archive's root, but can be at a different path or have a different name by specifying the `dockerfile` parameter. [See the `Dockerfile` reference for more information](https://docs.docker.com/engine/reference/builder/).\n\nThe Docker daemon performs a preliminary validation of the `Dockerfile` before starting the build, and returns an error if the syntax is incorrect. After that, each instruction is run one-by-one until the ID of the new image is output.\n\nThe build is canceled if the client drops the connection by quitting or being killed.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/build",
+      "method": "POST",
+      "name": "Build an image",
+      "params": [
+        {
+          "name": "dockerfile",
+          "value": ""
+        },
+        {
+          "name": "t",
+          "value": ""
+        },
+        {
+          "name": "extrahosts",
+          "value": ""
+        },
+        {
+          "name": "remote",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "nocache",
+          "value": ""
+        },
+        {
+          "name": "cachefrom",
+          "value": ""
+        },
+        {
+          "name": "pull",
+          "value": ""
+        },
+        {
+          "name": "rm",
+          "value": ""
+        },
+        {
+          "name": "forcerm",
+          "value": ""
+        },
+        {
+          "name": "memory",
+          "value": ""
+        },
+        {
+          "name": "memswap",
+          "value": ""
+        },
+        {
+          "name": "cpushares",
+          "value": ""
+        },
+        {
+          "name": "cpusetcpus",
+          "value": ""
+        },
+        {
+          "name": "cpuperiod",
+          "value": ""
+        },
+        {
+          "name": "cpuquota",
+          "value": ""
+        },
+        {
+          "name": "buildargs",
+          "value": ""
+        },
+        {
+          "name": "shmsize",
+          "value": ""
+        },
+        {
+          "name": "squash",
+          "value": ""
+        },
+        {
+          "name": "labels",
+          "value": ""
+        },
+        {
+          "name": "networkmode",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/build",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "dockerfile",
+          "value": ""
+        },
+        {
+          "name": "t",
+          "value": ""
+        },
+        {
+          "name": "extrahosts",
+          "value": ""
+        },
+        {
+          "name": "remote",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "nocache",
+          "value": ""
+        },
+        {
+          "name": "cachefrom",
+          "value": ""
+        },
+        {
+          "name": "pull",
+          "value": ""
+        },
+        {
+          "name": "rm",
+          "value": ""
+        },
+        {
+          "name": "forcerm",
+          "value": ""
+        },
+        {
+          "name": "memory",
+          "value": ""
+        },
+        {
+          "name": "memswap",
+          "value": ""
+        },
+        {
+          "name": "cpushares",
+          "value": ""
+        },
+        {
+          "name": "cpusetcpus",
+          "value": ""
+        },
+        {
+          "name": "cpuperiod",
+          "value": ""
+        },
+        {
+          "name": "cpuquota",
+          "value": ""
+        },
+        {
+          "name": "buildargs",
+          "value": ""
+        },
+        {
+          "name": "shmsize",
+          "value": ""
+        },
+        {
+          "name": "squash",
+          "value": ""
+        },
+        {
+          "name": "labels",
+          "value": ""
+        },
+        {
+          "name": "networkmode",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Build an image",
+      "url": "/v1.33/build"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/build/prune",
+      "method": "POST",
+      "name": "Delete builder cache",
+      "params": [],
+      "path": "/v1.33/build/prune",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete builder cache",
+      "url": "/v1.33/build/prune"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "ArgsEscaped": false,
+        "AttachStderr": true,
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "Cmd": [
+          {}
+        ],
+        "Domainname": "",
+        "Entrypoint": [
+          {}
+        ],
+        "Env": [
+          ""
+        ],
+        "ExposedPorts": {},
+        "Healthcheck": {
+          "Interval": 0,
+          "Retries": 0,
+          "StartPeriod": 0,
+          "Test": [
+            ""
+          ],
+          "Timeout": 0
+        },
+        "Hostname": "",
+        "Image": "",
+        "Labels": {},
+        "MacAddress": "",
+        "NetworkDisabled": false,
+        "OnBuild": [
+          ""
+        ],
+        "OpenStdin": false,
+        "Shell": [
+          ""
+        ],
+        "StdinOnce": false,
+        "StopSignal": "SIGTERM",
+        "StopTimeout": 10,
+        "Tty": false,
+        "User": "",
+        "Volumes": {
+          "additionalProperties": {}
+        },
+        "WorkingDir": ""
+      },
+      "body_json": {
+        "ArgsEscaped": false,
+        "AttachStderr": true,
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "Cmd": [
+          {}
+        ],
+        "Domainname": "",
+        "Entrypoint": [
+          {}
+        ],
+        "Env": [
+          ""
+        ],
+        "ExposedPorts": {},
+        "Healthcheck": {
+          "Interval": 0,
+          "Retries": 0,
+          "StartPeriod": 0,
+          "Test": [
+            ""
+          ],
+          "Timeout": 0
+        },
+        "Hostname": "",
+        "Image": "",
+        "Labels": {},
+        "MacAddress": "",
+        "NetworkDisabled": false,
+        "OnBuild": [
+          ""
+        ],
+        "OpenStdin": false,
+        "Shell": [
+          ""
+        ],
+        "StdinOnce": false,
+        "StopSignal": "SIGTERM",
+        "StopTimeout": 10,
+        "Tty": false,
+        "User": "",
+        "Volumes": {
+          "additionalProperties": {}
+        },
+        "WorkingDir": ""
+      },
+      "body_text": "{\"ArgsEscaped\": false, \"AttachStderr\": true, \"AttachStdin\": false, \"AttachStdout\": true, \"Cmd\": [{}], \"Domainname\": \"\", \"Entrypoint\": [{}], \"Env\": [\"\"], \"ExposedPorts\": {}, \"Healthcheck\": {\"Interval\": 0, \"Retries\": 0, \"StartPeriod\": 0, \"Test\": [\"\"], \"Timeout\": 0}, \"Hostname\": \"\", \"Image\": \"\", \"Labels\": {}, \"MacAddress\": \"\", \"NetworkDisabled\": false, \"OnBuild\": [\"\"], \"OpenStdin\": false, \"Shell\": [\"\"], \"StdinOnce\": false, \"StopSignal\": \"SIGTERM\", \"StopTimeout\": 10, \"Tty\": false, \"User\": \"\", \"Volumes\": {\"additionalProperties\": {}}, \"WorkingDir\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.33/commit",
+      "method": "POST",
+      "name": "Create a new image from a container",
+      "params": [
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "repo",
+          "value": ""
+        },
+        {
+          "name": "tag",
+          "value": ""
+        },
+        {
+          "name": "comment",
+          "value": ""
+        },
+        {
+          "name": "author",
+          "value": ""
+        },
+        {
+          "name": "pause",
+          "value": ""
+        },
+        {
+          "name": "changes",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/commit",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "container",
+          "value": ""
+        },
+        {
+          "name": "repo",
+          "value": ""
+        },
+        {
+          "name": "tag",
+          "value": ""
+        },
+        {
+          "name": "comment",
+          "value": ""
+        },
+        {
+          "name": "author",
+          "value": ""
+        },
+        {
+          "name": "pause",
+          "value": ""
+        },
+        {
+          "name": "changes",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"ArgsEscaped\": false, \"AttachStderr\": true, \"AttachStdin\": false, \"AttachStdout\": true, \"Cmd\": [{}], \"Domainname\": \"\", \"Entrypoint\": [{}], \"Env\": [\"\"], \"ExposedPorts\": {}, \"Healthcheck\": {\"Interval\": 0, \"Retries\": 0, \"StartPeriod\": 0, \"Test\": [\"\"], \"Timeout\": 0}, \"Hostname\": \"\", \"Image\": \"\", \"Labels\": {}, \"MacAddress\": \"\", \"NetworkDisabled\": false, \"OnBuild\": [\"\"], \"OpenStdin\": false, \"Shell\": [\"\"], \"StdinOnce\": false, \"StopSignal\": \"SIGTERM\", \"StopTimeout\": 10, \"Tty\": false, \"User\": \"\", \"Volumes\": {\"additionalProperties\": {}}, \"WorkingDir\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new image from a container",
+      "url": "/v1.33/commit"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/configs",
+      "method": "GET",
+      "name": "List configs",
+      "params": [
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/configs",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List configs",
+      "url": "/v1.33/configs"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "Data": "VEhJUyBJUyBOT1QgQSBSRUFMIENFUlRJRklDQVRFCg==",
+        "Labels": {
+          "foo": "bar"
+        },
+        "Name": "server.conf"
+      },
+      "body_json": {
+        "Data": "VEhJUyBJUyBOT1QgQSBSRUFMIENFUlRJRklDQVRFCg==",
+        "Labels": {
+          "foo": "bar"
+        },
+        "Name": "server.conf"
+      },
+      "body_text": "{\"Data\": \"VEhJUyBJUyBOT1QgQSBSRUFMIENFUlRJRklDQVRFCg==\", \"Labels\": {\"foo\": \"bar\"}, \"Name\": \"server.conf\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.33/configs/create",
+      "method": "POST",
+      "name": "Create a config",
+      "params": [],
+      "path": "/v1.33/configs/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Data\": \"VEhJUyBJUyBOT1QgQSBSRUFMIENFUlRJRklDQVRFCg==\", \"Labels\": {\"foo\": \"bar\"}, \"Name\": \"server.conf\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a config",
+      "url": "/v1.33/configs/create"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1.33/configs/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete a config",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/configs/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a config",
+      "url": "/v1.33/configs/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/configs/{{ID}}",
+      "method": "GET",
+      "name": "Inspect a config",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/configs/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Inspect a config",
+      "url": "/v1.33/configs/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "Data": "",
+        "Labels": {},
+        "Name": ""
+      },
+      "body_json": {
+        "Data": "",
+        "Labels": {},
+        "Name": ""
+      },
+      "body_text": "{\"Data\": \"\", \"Labels\": {}, \"Name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.33/configs/{{ID}}/update",
+      "method": "POST",
+      "name": "Update a Config",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "version",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/configs/{{ID}}/update",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "version",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"Data\": \"\", \"Labels\": {}, \"Name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a Config",
+      "url": "/v1.33/configs/{{ID}}/update"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "AttachStderr": true,
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "Cmd": [
+          "date"
+        ],
+        "Domainname": "",
+        "Entrypoint": "",
+        "Env": [
+          "FOO=bar",
+          "BAZ=quux"
+        ],
+        "ExposedPorts": {
+          "22/tcp": {}
+        },
+        "HostConfig": {
+          "AutoRemove": true,
+          "Binds": [
+            "/tmp:/tmp"
+          ],
+          "BlkioDeviceReadBps": [
+            {}
+          ],
+          "BlkioDeviceReadIOps": [
+            {}
+          ],
+          "BlkioDeviceWriteBps": [
+            {}
+          ],
+          "BlkioDeviceWriteIOps": [
+            {}
+          ],
+          "BlkioWeight": 300,
+          "BlkioWeightDevice": [
+            {}
+          ],
+          "CapAdd": [
+            "NET_ADMIN"
+          ],
+          "CapDrop": [
+            "MKNOD"
+          ],
+          "CgroupParent": "",
+          "CpuPercent": 80,
+          "CpuPeriod": 100000,
+          "CpuQuota": 50000,
+          "CpuRealtimePeriod": 1000000,
+          "CpuRealtimeRuntime": 10000,
+          "CpuShares": 512,
+          "CpusetCpus": "0,1",
+          "CpusetMems": "0,1",
+          "Devices": [],
+          "Dns": [
+            "8.8.8.8"
+          ],
+          "DnsOptions": [
+            ""
+          ],
+          "DnsSearch": [
+            ""
+          ],
+          "GroupAdd": [
+            "newgroup"
+          ],
+          "KernelMemory": 0,
+          "Links": [
+            "redis3:redis"
+          ],
+          "LogConfig": {
+            "Config": {},
+            "Type": "json-file"
+          },
+          "MaximumIOBps": 0,
+          "MaximumIOps": 0,
+          "Memory": 0,
+          "MemoryReservation": 0,
+          "MemorySwap": 0,
+          "MemorySwappiness": 60,
+          "NanoCPUs": 500000,
+          "NetworkMode": "bridge",
+          "OomKillDisable": false,
+          "OomScoreAdj": 500,
+          "PidMode": "",
+          "PidsLimit": -1,
+          "PortBindings": {
+            "22/tcp": [
+              {
+                "HostPort": "11022"
+              }
+            ]
+          },
+          "Privileged": false,
+          "PublishAllPorts": false,
+          "ReadonlyRootfs": false,
+          "RestartPolicy": {
+            "MaximumRetryCount": 0,
+            "Name": ""
+          },
+          "SecurityOpt": [],
+          "ShmSize": 67108864,
+          "StorageOpt": {},
+          "Ulimits": [
+            {}
+          ],
+          "VolumeDriver": "",
+          "VolumesFrom": [
+            "parent",
+            "other:ro"
+          ]
+        },
+        "Hostname": "",
+        "Image": "ubuntu",
+        "Labels": {
+          "com.example.license": "GPL",
+          "com.example.vendor": "Acme",
+          "com.example.version": "1.0"
+        },
+        "MacAddress": "12:34:56:78:9a:bc",
+        "NetworkDisabled": false,
+        "NetworkingConfig": {
+          "EndpointsConfig": {
+            "isolated_nw": {
+              "Aliases": [
+                "server_x",
+                "server_y"
+              ],
+              "IPAMConfig": {
+                "IPv4Address": "172.20.30.33",
+                "IPv6Address": "2001:db8:abcd::3033",
+                "LinkLocalIPs": [
+                  "169.254.34.68",
+                  "fe80::3468"
+                ]
+              },
+              "Links": [
+                "container_1",
+                "container_2"
+              ]
+            }
+          }
+        },
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "StopSignal": "SIGTERM",
+        "StopTimeout": 10,
+        "Tty": false,
+        "User": "",
+        "Volumes": {
+          "/volumes/data": {}
+        },
+        "WorkingDir": ""
+      },
+      "body_json": {
+        "AttachStderr": true,
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "Cmd": [
+          "date"
+        ],
+        "Domainname": "",
+        "Entrypoint": "",
+        "Env": [
+          "FOO=bar",
+          "BAZ=quux"
+        ],
+        "ExposedPorts": {
+          "22/tcp": {}
+        },
+        "HostConfig": {
+          "AutoRemove": true,
+          "Binds": [
+            "/tmp:/tmp"
+          ],
+          "BlkioDeviceReadBps": [
+            {}
+          ],
+          "BlkioDeviceReadIOps": [
+            {}
+          ],
+          "BlkioDeviceWriteBps": [
+            {}
+          ],
+          "BlkioDeviceWriteIOps": [
+            {}
+          ],
+          "BlkioWeight": 300,
+          "BlkioWeightDevice": [
+            {}
+          ],
+          "CapAdd": [
+            "NET_ADMIN"
+          ],
+          "CapDrop": [
+            "MKNOD"
+          ],
+          "CgroupParent": "",
+          "CpuPercent": 80,
+          "CpuPeriod": 100000,
+          "CpuQuota": 50000,
+          "CpuRealtimePeriod": 1000000,
+          "CpuRealtimeRuntime": 10000,
+          "CpuShares": 512,
+          "CpusetCpus": "0,1",
+          "CpusetMems": "0,1",
+          "Devices": [],
+          "Dns": [
+            "8.8.8.8"
+          ],
+          "DnsOptions": [
+            ""
+          ],
+          "DnsSearch": [
+            ""
+          ],
+          "GroupAdd": [
+            "newgroup"
+          ],
+          "KernelMemory": 0,
+          "Links": [
+            "redis3:redis"
+          ],
+          "LogConfig": {
+            "Config": {},
+            "Type": "json-file"
+          },
+          "MaximumIOBps": 0,
+          "MaximumIOps": 0,
+          "Memory": 0,
+          "MemoryReservation": 0,
+          "MemorySwap": 0,
+          "MemorySwappiness": 60,
+          "NanoCPUs": 500000,
+          "NetworkMode": "bridge",
+          "OomKillDisable": false,
+          "OomScoreAdj": 500,
+          "PidMode": "",
+          "PidsLimit": -1,
+          "PortBindings": {
+            "22/tcp": [
+              {
+                "HostPort": "11022"
+              }
+            ]
+          },
+          "Privileged": false,
+          "PublishAllPorts": false,
+          "ReadonlyRootfs": false,
+          "RestartPolicy": {
+            "MaximumRetryCount": 0,
+            "Name": ""
+          },
+          "SecurityOpt": [],
+          "ShmSize": 67108864,
+          "StorageOpt": {},
+          "Ulimits": [
+            {}
+          ],
+          "VolumeDriver": "",
+          "VolumesFrom": [
+            "parent",
+            "other:ro"
+          ]
+        },
+        "Hostname": "",
+        "Image": "ubuntu",
+        "Labels": {
+          "com.example.license": "GPL",
+          "com.example.vendor": "Acme",
+          "com.example.version": "1.0"
+        },
+        "MacAddress": "12:34:56:78:9a:bc",
+        "NetworkDisabled": false,
+        "NetworkingConfig": {
+          "EndpointsConfig": {
+            "isolated_nw": {
+              "Aliases": [
+                "server_x",
+                "server_y"
+              ],
+              "IPAMConfig": {
+                "IPv4Address": "172.20.30.33",
+                "IPv6Address": "2001:db8:abcd::3033",
+                "LinkLocalIPs": [
+                  "169.254.34.68",
+                  "fe80::3468"
+                ]
+              },
+              "Links": [
+                "container_1",
+                "container_2"
+              ]
+            }
+          }
+        },
+        "OpenStdin": false,
+        "StdinOnce": false,
+        "StopSignal": "SIGTERM",
+        "StopTimeout": 10,
+        "Tty": false,
+        "User": "",
+        "Volumes": {
+          "/volumes/data": {}
+        },
+        "WorkingDir": ""
+      },
+      "body_text": "{\"AttachStderr\": true, \"AttachStdin\": false, \"AttachStdout\": true, \"Cmd\": [\"date\"], \"Domainname\": \"\", \"Entrypoint\": \"\", \"Env\": [\"FOO=bar\", \"BAZ=quux\"], \"ExposedPorts\": {\"22/tcp\": {}}, \"HostConfig\": {\"AutoRemove\": true, \"Binds\": [\"/tmp:/tmp\"], \"BlkioDeviceReadBps\": [{}], \"BlkioDeviceReadIOps\": [{}], \"BlkioDeviceWriteBps\": [{}], \"BlkioDeviceWriteIOps\": [{}], \"BlkioWeight\": 300, \"BlkioWeightDevice\": [{}], \"CapAdd\": [\"NET_ADMIN\"], \"CapDrop\": [\"MKNOD\"], \"CgroupParent\": \"\", \"CpuPercent\": 80, \"CpuPeriod\": 100000, \"CpuQuota\": 50000, \"CpuRealtimePeriod\": 1000000, \"CpuRealtimeRuntime\": 10000, \"CpuShares\": 512, \"CpusetCpus\": \"0,1\", \"CpusetMems\": \"0,1\", \"Devices\": [], \"Dns\": [\"8.8.8.8\"], \"DnsOptions\": [\"\"], \"DnsSearch\": [\"\"], \"GroupAdd\": [\"newgroup\"], \"KernelMemory\": 0, \"Links\": [\"redis3:redis\"], \"LogConfig\": {\"Config\": {}, \"Type\": \"json-file\"}, \"MaximumIOBps\": 0, \"MaximumIOps\": 0, \"Memory\": 0, \"MemoryReservation\": 0, \"MemorySwap\": 0, \"MemorySwappiness\": 60, \"NanoCPUs\": 500000, \"NetworkMode\": \"bridge\", \"OomKillDisable\": false, \"OomScoreAdj\": 500, \"PidMode\": \"\", \"PidsLimit\": -1, \"PortBindings\": {\"22/tcp\": [{\"HostPort\": \"11022\"}]}, \"Privileged\": false, \"PublishAllPorts\": false, \"ReadonlyRootfs\": false, \"RestartPolicy\": {\"MaximumRetryCount\": 0, \"Name\": \"\"}, \"SecurityOpt\": [], \"ShmSize\": 67108864, \"StorageOpt\": {}, \"Ulimits\": [{}], \"VolumeDriver\": \"\", \"VolumesFrom\": [\"parent\", \"other:ro\"]}, \"Hostname\": \"\", \"Image\": \"ubuntu\", \"Labels\": {\"com.example.license\": \"GPL\", \"com.example.vendor\": \"Acme\", \"com.example.version\": \"1.0\"}, \"MacAddress\": \"12:34:56:78:9a:bc\", \"NetworkDisabled\": false, \"NetworkingConfig\": {\"EndpointsConfig\": {\"isolated_nw\": {\"Aliases\": [\"server_x\", \"server_y\"], \"IPAMConfig\": {\"IPv4Address\": \"172.20.30.33\", \"IPv6Address\": \"2001:db8:abcd::3033\", \"LinkLocalIPs\": [\"169.254.34.68\", \"fe80::3468\"]}, \"Links\": [\"container_1\", \"container_2\"]}}}, \"OpenStdin\": false, \"StdinOnce\": false, \"StopSignal\": \"SIGTERM\", \"StopTimeout\": 10, \"Tty\": false, \"User\": \"\", \"Volumes\": {\"/volumes/data\": {}}, \"WorkingDir\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.33/containers/create",
+      "method": "POST",
+      "name": "Create a container",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/create",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"AttachStderr\": true, \"AttachStdin\": false, \"AttachStdout\": true, \"Cmd\": [\"date\"], \"Domainname\": \"\", \"Entrypoint\": \"\", \"Env\": [\"FOO=bar\", \"BAZ=quux\"], \"ExposedPorts\": {\"22/tcp\": {}}, \"HostConfig\": {\"AutoRemove\": true, \"Binds\": [\"/tmp:/tmp\"], \"BlkioDeviceReadBps\": [{}], \"BlkioDeviceReadIOps\": [{}], \"BlkioDeviceWriteBps\": [{}], \"BlkioDeviceWriteIOps\": [{}], \"BlkioWeight\": 300, \"BlkioWeightDevice\": [{}], \"CapAdd\": [\"NET_ADMIN\"], \"CapDrop\": [\"MKNOD\"], \"CgroupParent\": \"\", \"CpuPercent\": 80, \"CpuPeriod\": 100000, \"CpuQuota\": 50000, \"CpuRealtimePeriod\": 1000000, \"CpuRealtimeRuntime\": 10000, \"CpuShares\": 512, \"CpusetCpus\": \"0,1\", \"CpusetMems\": \"0,1\", \"Devices\": [], \"Dns\": [\"8.8.8.8\"], \"DnsOptions\": [\"\"], \"DnsSearch\": [\"\"], \"GroupAdd\": [\"newgroup\"], \"KernelMemory\": 0, \"Links\": [\"redis3:redis\"], \"LogConfig\": {\"Config\": {}, \"Type\": \"json-file\"}, \"MaximumIOBps\": 0, \"MaximumIOps\": 0, \"Memory\": 0, \"MemoryReservation\": 0, \"MemorySwap\": 0, \"MemorySwappiness\": 60, \"NanoCPUs\": 500000, \"NetworkMode\": \"bridge\", \"OomKillDisable\": false, \"OomScoreAdj\": 500, \"PidMode\": \"\", \"PidsLimit\": -1, \"PortBindings\": {\"22/tcp\": [{\"HostPort\": \"11022\"}]}, \"Privileged\": false, \"PublishAllPorts\": false, \"ReadonlyRootfs\": false, \"RestartPolicy\": {\"MaximumRetryCount\": 0, \"Name\": \"\"}, \"SecurityOpt\": [], \"ShmSize\": 67108864, \"StorageOpt\": {}, \"Ulimits\": [{}], \"VolumeDriver\": \"\", \"VolumesFrom\": [\"parent\", \"other:ro\"]}, \"Hostname\": \"\", \"Image\": \"ubuntu\", \"Labels\": {\"com.example.license\": \"GPL\", \"com.example.vendor\": \"Acme\", \"com.example.version\": \"1.0\"}, \"MacAddress\": \"12:34:56:78:9a:bc\", \"NetworkDisabled\": false, \"NetworkingConfig\": {\"EndpointsConfig\": {\"isolated_nw\": {\"Aliases\": [\"server_x\", \"server_y\"], \"IPAMConfig\": {\"IPv4Address\": \"172.20.30.33\", \"IPv6Address\": \"2001:db8:abcd::3033\", \"LinkLocalIPs\": [\"169.254.34.68\", \"fe80::3468\"]}, \"Links\": [\"container_1\", \"container_2\"]}}}, \"OpenStdin\": false, \"StdinOnce\": false, \"StopSignal\": \"SIGTERM\", \"StopTimeout\": 10, \"Tty\": false, \"User\": \"\", \"Volumes\": {\"/volumes/data\": {}}, \"WorkingDir\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a container",
+      "url": "/v1.33/containers/create"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of containers. For details on the format, see [the inspect endpoint](#operation/ContainerInspect).\n\nNote that it uses a different, smaller representation of a container than inspecting a single container. For example,\nthe list of linked containers is not propagated .\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/json",
+      "method": "GET",
+      "name": "List containers",
+      "params": [
+        {
+          "name": "all",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "size",
+          "value": ""
+        },
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/json",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "all",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "size",
+          "value": ""
+        },
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List containers",
+      "url": "/v1.33/containers/json"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/prune",
+      "method": "POST",
+      "name": "Delete stopped containers",
+      "params": [
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/prune",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete stopped containers",
+      "url": "/v1.33/containers/prune"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1.33/containers/{{ID}}",
+      "method": "DELETE",
+      "name": "Remove a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "v",
+          "value": ""
+        },
+        {
+          "name": "force",
+          "value": ""
+        },
+        {
+          "name": "link",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "v",
+          "value": ""
+        },
+        {
+          "name": "force",
+          "value": ""
+        },
+        {
+          "name": "link",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove a container",
+      "url": "/v1.33/containers/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a tar archive of a resource in the filesystem of container id.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/{{ID}}/archive",
+      "method": "GET",
+      "name": "Get an archive of a filesystem resource in a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/archive",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "path",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an archive of a filesystem resource in a container",
+      "url": "/v1.33/containers/{{ID}}/archive"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Upload a tar archive to be extracted to a path in the filesystem of container id.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PUT /v1.33/containers/{{ID}}/archive",
+      "method": "PUT",
+      "name": "Extract an archive of files or folders to a directory in a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "path",
+          "value": ""
+        },
+        {
+          "name": "noOverwriteDirNonDir",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/archive",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "path",
+          "value": ""
+        },
+        {
+          "name": "noOverwriteDirNonDir",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Extract an archive of files or folders to a directory in a container",
+      "url": "/v1.33/containers/{{ID}}/archive"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Attach to a container to read its output or send it input. You can attach to the same container multiple times and you can reattach to containers that have been detached.\n\nEither the `stream` or `logs` parameter must be `true` for this endpoint to do anything.\n\nSee [the documentation for the `docker attach` command](https://docs.docker.com/engine/reference/commandline/attach/) for more details.\n\n### Hijacking\n\nThis endpoint hijacks the HTTP connection to transport `stdin`, `stdout`, and `stderr` on the same socket.\n\nThis is the response from the daemon for an attach request:\n\n```\nHTTP/1.1 200 OK\nContent-Type: application/vnd.docker.raw-stream\n\n[STREAM]\n```\n\nAfter the headers and two new lines, the TCP connection can now be used for raw, bidirectional communication between the client and server.\n\nTo hint potential proxies about connection hijacking, the Docker client can also optionally send connection upgrade headers.\n\nFor example, the client sends this request to upgrade the connection:\n\n```\nPOST /containers/16253994b7c4/attach?stream=1&stdout=1 HTTP/1.1\nUpgrade: tcp\nConnection: Upgrade\n```\n\nThe Docker daemon will respond with a `101 UPGRADED` response, and will similarly follow with the raw stream:\n\n```\nHTTP/1.1 101 UPGRADED\nContent-Type: application/vnd.docker.raw-stream\nConnection: Upgrade\nUpgrade: tcp\n\n[STREAM]\n```\n\n### Stream format\n\nWhen the TTY setting is disabled in [`POST /containers/create`](#operation/ContainerCreate), the stream over the hijacked connected is multiplexed to separate out `stdout` and `stderr`. The stream consists of a series of frames, each containing a header and a payload.\n\nThe header contains the information which the stream writes (`stdout` or `stderr`). It also contains the size of the associated frame encoded in the last four bytes (`uint32`).\n\nIt is encoded on the first eight bytes like this:\n\n```go\nheader := [8]byte{STREAM_TYPE, 0, 0, 0, SIZE1, SIZE2, SIZE3, SIZE4}\n```\n\n`STREAM_TYPE` can be:\n\n- 0: `stdin` (is written on `stdout`)\n- 1: `stdout`\n- 2: `stderr`\n\n`SIZE1, SIZE2, SIZE3, SIZE4` are the four bytes of the `uint32` size encoded as big endian.\n\nFollowing the header is the payload, which is the specified number of bytes of `STREAM_TYPE`.\n\nThe simplest way to implement this protocol is the following:\n\n1. Read 8 bytes.\n2. Choose `stdout` or `stderr` depending on the first byte.\n3. Extract the frame size from the last four bytes.\n4. Read the extracted size and output it on the correct output.\n5. Goto 1.\n\n### Stream format when using a TTY\n\nWhen the TTY setting is enabled in [`POST /containers/create`](#operation/ContainerCreate), the stream is not multiplexed. The data exchanged over the hijacked connection is simply the raw data from the process PTY and client's `stdin`.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/attach",
+      "method": "POST",
+      "name": "Attach to a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "detachKeys",
+          "value": ""
+        },
+        {
+          "name": "logs",
+          "value": ""
+        },
+        {
+          "name": "stream",
+          "value": ""
+        },
+        {
+          "name": "stdin",
+          "value": ""
+        },
+        {
+          "name": "stdout",
+          "value": ""
+        },
+        {
+          "name": "stderr",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/attach",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "detachKeys",
+          "value": ""
+        },
+        {
+          "name": "logs",
+          "value": ""
+        },
+        {
+          "name": "stream",
+          "value": ""
+        },
+        {
+          "name": "stdin",
+          "value": ""
+        },
+        {
+          "name": "stdout",
+          "value": ""
+        },
+        {
+          "name": "stderr",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Attach to a container",
+      "url": "/v1.33/containers/{{ID}}/attach"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/{{ID}}/attach/ws",
+      "method": "GET",
+      "name": "Attach to a container via a websocket",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "detachKeys",
+          "value": ""
+        },
+        {
+          "name": "logs",
+          "value": ""
+        },
+        {
+          "name": "stream",
+          "value": ""
+        },
+        {
+          "name": "stdin",
+          "value": ""
+        },
+        {
+          "name": "stdout",
+          "value": ""
+        },
+        {
+          "name": "stderr",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/attach/ws",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "detachKeys",
+          "value": ""
+        },
+        {
+          "name": "logs",
+          "value": ""
+        },
+        {
+          "name": "stream",
+          "value": ""
+        },
+        {
+          "name": "stdin",
+          "value": ""
+        },
+        {
+          "name": "stdout",
+          "value": ""
+        },
+        {
+          "name": "stderr",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Attach to a container via a websocket",
+      "url": "/v1.33/containers/{{ID}}/attach/ws"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns which files in a container's filesystem have been added, deleted,\nor modified. The `Kind` of modification can be one of:\n\n- `0`: Modified\n- `1`: Added\n- `2`: Deleted\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/{{ID}}/changes",
+      "method": "GET",
+      "name": "Get changes on a container’s filesystem",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/changes",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get changes on a container’s filesystem",
+      "url": "/v1.33/containers/{{ID}}/changes"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "AttachStderr": true,
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "Cmd": [
+          "date"
+        ],
+        "DetachKeys": "ctrl-p,ctrl-q",
+        "Env": [
+          "FOO=bar",
+          "BAZ=quux"
+        ],
+        "Tty": false
+      },
+      "body_json": {
+        "AttachStderr": true,
+        "AttachStdin": false,
+        "AttachStdout": true,
+        "Cmd": [
+          "date"
+        ],
+        "DetachKeys": "ctrl-p,ctrl-q",
+        "Env": [
+          "FOO=bar",
+          "BAZ=quux"
+        ],
+        "Tty": false
+      },
+      "body_text": "{\"AttachStderr\": true, \"AttachStdin\": false, \"AttachStdout\": true, \"Cmd\": [\"date\"], \"DetachKeys\": \"ctrl-p,ctrl-q\", \"Env\": [\"FOO=bar\", \"BAZ=quux\"], \"Tty\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Run a command inside a running container.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.33/containers/{{ID}}/exec",
+      "method": "POST",
+      "name": "Create an exec instance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/exec",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"AttachStderr\": true, \"AttachStdin\": false, \"AttachStdout\": true, \"Cmd\": [\"date\"], \"DetachKeys\": \"ctrl-p,ctrl-q\", \"Env\": [\"FOO=bar\", \"BAZ=quux\"], \"Tty\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an exec instance",
+      "url": "/v1.33/containers/{{ID}}/exec"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Export the contents of a container as a tarball.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/{{ID}}/export",
+      "method": "GET",
+      "name": "Export a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/export",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Export a container",
+      "url": "/v1.33/containers/{{ID}}/export"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return low-level information about a container.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/{{ID}}/json",
+      "method": "GET",
+      "name": "Inspect a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "size",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/json",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "size",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Inspect a container",
+      "url": "/v1.33/containers/{{ID}}/json"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Send a POSIX signal to a container, defaulting to killing to the container.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/kill",
+      "method": "POST",
+      "name": "Kill a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "signal",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/kill",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "signal",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Kill a container",
+      "url": "/v1.33/containers/{{ID}}/kill"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get `stdout` and `stderr` logs from a container.\n\nNote: This endpoint works only for containers with the `json-file` or `journald` logging driver.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/{{ID}}/logs",
+      "method": "GET",
+      "name": "Get container logs",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "follow",
+          "value": ""
+        },
+        {
+          "name": "stdout",
+          "value": ""
+        },
+        {
+          "name": "stderr",
+          "value": ""
+        },
+        {
+          "name": "since",
+          "value": ""
+        },
+        {
+          "name": "timestamps",
+          "value": ""
+        },
+        {
+          "name": "tail",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/logs",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "follow",
+          "value": ""
+        },
+        {
+          "name": "stdout",
+          "value": ""
+        },
+        {
+          "name": "stderr",
+          "value": ""
+        },
+        {
+          "name": "since",
+          "value": ""
+        },
+        {
+          "name": "timestamps",
+          "value": ""
+        },
+        {
+          "name": "tail",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get container logs",
+      "url": "/v1.33/containers/{{ID}}/logs"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use the cgroups freezer to suspend all processes in a container.\n\nTraditionally, when suspending a process the `SIGSTOP` signal is used, which is observable by the process being suspended. With the cgroups freezer the process is unaware, and unable to capture, that it is being suspended, and subsequently resumed.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/pause",
+      "method": "POST",
+      "name": "Pause a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/pause",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Pause a container",
+      "url": "/v1.33/containers/{{ID}}/pause"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/rename",
+      "method": "POST",
+      "name": "Rename a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/rename",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Rename a container",
+      "url": "/v1.33/containers/{{ID}}/rename"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Resize the TTY for a container. You must restart the container for the resize to take effect.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/resize",
+      "method": "POST",
+      "name": "Resize a container TTY",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "h",
+          "value": ""
+        },
+        {
+          "name": "w",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/resize",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "h",
+          "value": ""
+        },
+        {
+          "name": "w",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Resize a container TTY",
+      "url": "/v1.33/containers/{{ID}}/resize"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/restart",
+      "method": "POST",
+      "name": "Restart a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "t",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/restart",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "t",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Restart a container",
+      "url": "/v1.33/containers/{{ID}}/restart"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/start",
+      "method": "POST",
+      "name": "Start a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "detachKeys",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/start",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "detachKeys",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Start a container",
+      "url": "/v1.33/containers/{{ID}}/start"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint returns a live stream of a container’s resource usage\nstatistics.\n\nThe `precpu_stats` is the CPU statistic of last read, which is used\nfor calculating the CPU usage percentage. It is not the same as the\n`cpu_stats` field.\n\nIf either `precpu_stats.online_cpus` or `cpu_stats.online_cpus` is\nnil then for compatibility with older daemons the length of the\ncorresponding `cpu_usage.percpu_usage` array should be used.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/{{ID}}/stats",
+      "method": "GET",
+      "name": "Get container stats based on resource usage",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "stream",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/stats",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "stream",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get container stats based on resource usage",
+      "url": "/v1.33/containers/{{ID}}/stats"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/stop",
+      "method": "POST",
+      "name": "Stop a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "t",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/stop",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "t",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Stop a container",
+      "url": "/v1.33/containers/{{ID}}/stop"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "On Unix systems, this is done by running the `ps` command. This endpoint is not supported on Windows.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/containers/{{ID}}/top",
+      "method": "GET",
+      "name": "List processes running inside a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "ps_args",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/top",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "ps_args",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List processes running inside a container",
+      "url": "/v1.33/containers/{{ID}}/top"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Resume a container which has been paused.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/unpause",
+      "method": "POST",
+      "name": "Unpause a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/unpause",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unpause a container",
+      "url": "/v1.33/containers/{{ID}}/unpause"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "BlkioWeight": 300,
+        "CpuPeriod": 100000,
+        "CpuQuota": 50000,
+        "CpuRealtimePeriod": 1000000,
+        "CpuRealtimeRuntime": 10000,
+        "CpuShares": 512,
+        "CpusetCpus": "0,1",
+        "CpusetMems": "0",
+        "KernelMemory": 52428800,
+        "Memory": 314572800,
+        "MemoryReservation": 209715200,
+        "MemorySwap": 514288000,
+        "RestartPolicy": {
+          "MaximumRetryCount": 4,
+          "Name": "on-failure"
+        }
+      },
+      "body_json": {
+        "BlkioWeight": 300,
+        "CpuPeriod": 100000,
+        "CpuQuota": 50000,
+        "CpuRealtimePeriod": 1000000,
+        "CpuRealtimeRuntime": 10000,
+        "CpuShares": 512,
+        "CpusetCpus": "0,1",
+        "CpusetMems": "0",
+        "KernelMemory": 52428800,
+        "Memory": 314572800,
+        "MemoryReservation": 209715200,
+        "MemorySwap": 514288000,
+        "RestartPolicy": {
+          "MaximumRetryCount": 4,
+          "Name": "on-failure"
+        }
+      },
+      "body_text": "{\"BlkioWeight\": 300, \"CpuPeriod\": 100000, \"CpuQuota\": 50000, \"CpuRealtimePeriod\": 1000000, \"CpuRealtimeRuntime\": 10000, \"CpuShares\": 512, \"CpusetCpus\": \"0,1\", \"CpusetMems\": \"0\", \"KernelMemory\": 52428800, \"Memory\": 314572800, \"MemoryReservation\": 209715200, \"MemorySwap\": 514288000, \"RestartPolicy\": {\"MaximumRetryCount\": 4, \"Name\": \"on-failure\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Change various configuration options of a container without having to recreate it.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.33/containers/{{ID}}/update",
+      "method": "POST",
+      "name": "Update a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/update",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"BlkioWeight\": 300, \"CpuPeriod\": 100000, \"CpuQuota\": 50000, \"CpuRealtimePeriod\": 1000000, \"CpuRealtimeRuntime\": 10000, \"CpuShares\": 512, \"CpusetCpus\": \"0,1\", \"CpusetMems\": \"0\", \"KernelMemory\": 52428800, \"Memory\": 314572800, \"MemoryReservation\": 209715200, \"MemorySwap\": 514288000, \"RestartPolicy\": {\"MaximumRetryCount\": 4, \"Name\": \"on-failure\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a container",
+      "url": "/v1.33/containers/{{ID}}/update"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Block until a container stops, then returns the exit code.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/containers/{{ID}}/wait",
+      "method": "POST",
+      "name": "Wait for a container",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "condition",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/containers/{{ID}}/wait",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "condition",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Wait for a container",
+      "url": "/v1.33/containers/{{ID}}/wait"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return image digest and platform information by contacting the registry.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/distribution/{{NAME}}/json",
+      "method": "GET",
+      "name": "Get image information from the registry",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/distribution/{{NAME}}/json",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get image information from the registry",
+      "url": "/v1.33/distribution/{{NAME}}/json"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Stream real-time events from the server.\n\nVarious objects within Docker report events when something happens to them.\n\nContainers report these events: `attach`, `commit`, `copy`, `create`, `destroy`, `detach`, `die`, `exec_create`, `exec_detach`, `exec_start`, `export`, `health_status`, `kill`, `oom`, `pause`, `rename`, `resize`, `restart`, `start`, `stop`, `top`, `unpause`, and `update`\n\nImages report these events: `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, and `untag`\n\nVolumes report these events: `create`, `mount`, `unmount`, and `destroy`\n\nNetworks report these events: `create`, `connect`, `disconnect`, `destroy`, `update`, and `remove`\n\nThe Docker daemon reports these events: `reload`\n\nServices report these events: `create`, `update`, and `remove`\n\nNodes report these events: `create`, `update`, and `remove`\n\nSecrets report these events: `create`, `update`, and `remove`\n\nConfigs report these events: `create`, `update`, and `remove`\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/events",
+      "method": "GET",
+      "name": "Monitor events",
+      "params": [
+        {
+          "name": "since",
+          "value": ""
+        },
+        {
+          "name": "until",
+          "value": ""
+        },
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/events",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "since",
+          "value": ""
+        },
+        {
+          "name": "until",
+          "value": ""
+        },
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Monitor events",
+      "url": "/v1.33/events"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return low-level information about an exec instance.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/exec/{{ID}}/json",
+      "method": "GET",
+      "name": "Inspect an exec instance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/exec/{{ID}}/json",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Inspect an exec instance",
+      "url": "/v1.33/exec/{{ID}}/json"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Resize the TTY session used by an exec instance. This endpoint only works if `tty` was specified as part of creating and starting the exec instance.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/exec/{{ID}}/resize",
+      "method": "POST",
+      "name": "Resize an exec instance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "h",
+          "value": ""
+        },
+        {
+          "name": "w",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/exec/{{ID}}/resize",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "h",
+          "value": ""
+        },
+        {
+          "name": "w",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Resize an exec instance",
+      "url": "/v1.33/exec/{{ID}}/resize"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "Detach": false,
+        "Tty": false
+      },
+      "body_json": {
+        "Detach": false,
+        "Tty": false
+      },
+      "body_text": "{\"Detach\": false, \"Tty\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Starts a previously set up exec instance. If detach is true, this endpoint returns immediately after starting the command. Otherwise, it sets up an interactive session with the command.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.33/exec/{{ID}}/start",
+      "method": "POST",
+      "name": "Start an exec instance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/exec/{{ID}}/start",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Detach\": false, \"Tty\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Start an exec instance",
+      "url": "/v1.33/exec/{{ID}}/start"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Create an image by either pulling it from a registry or importing it.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/images/create",
+      "method": "POST",
+      "name": "Create an image",
+      "params": [
+        {
+          "name": "fromImage",
+          "value": ""
+        },
+        {
+          "name": "fromSrc",
+          "value": ""
+        },
+        {
+          "name": "repo",
+          "value": ""
+        },
+        {
+          "name": "tag",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/create",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "fromImage",
+          "value": ""
+        },
+        {
+          "name": "fromSrc",
+          "value": ""
+        },
+        {
+          "name": "repo",
+          "value": ""
+        },
+        {
+          "name": "tag",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an image",
+      "url": "/v1.33/images/create"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a tarball containing all images and metadata for several image repositories.\n\nFor each value of the `names` parameter: if it is a specific name and tag (e.g. `ubuntu:latest`), then only that image (and its parents) are returned; if it is an image ID, similarly only that image (and its parents) are returned and there would be no names referenced in the 'repositories' file for this image ID.\n\nFor details on the format, see [the export image endpoint](#operation/ImageGet).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/images/get",
+      "method": "GET",
+      "name": "Export several images",
+      "params": [
+        {
+          "name": "names",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/get",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "names",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Export several images",
+      "url": "/v1.33/images/get"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of images on the server. Note that it uses a different, smaller representation of an image than inspecting a single image.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/images/json",
+      "method": "GET",
+      "name": "List Images",
+      "params": [
+        {
+          "name": "all",
+          "value": ""
+        },
+        {
+          "name": "filters",
+          "value": ""
+        },
+        {
+          "name": "digests",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/json",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "all",
+          "value": ""
+        },
+        {
+          "name": "filters",
+          "value": ""
+        },
+        {
+          "name": "digests",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Images",
+      "url": "/v1.33/images/json"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Load a set of images and tags into a repository.\n\nFor details on the format, see [the export image endpoint](#operation/ImageGet).\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/images/load",
+      "method": "POST",
+      "name": "Import images",
+      "params": [
+        {
+          "name": "quiet",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/load",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "quiet",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Import images",
+      "url": "/v1.33/images/load"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1.33/images/prune",
+      "method": "POST",
+      "name": "Delete unused images",
+      "params": [
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/prune",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete unused images",
+      "url": "/v1.33/images/prune"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Search for an image on Docker Hub.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/images/search",
+      "method": "GET",
+      "name": "Search images",
+      "params": [
+        {
+          "name": "term",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/search",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "term",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filters",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Search images",
+      "url": "/v1.33/images/search"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Remove an image, along with any untagged parent images that were\nreferenced by that image.\n\nImages can't be removed if they have descendant images, are being\nused by a running container or are being used by a build.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1.33/images/{{NAME}}",
+      "method": "DELETE",
+      "name": "Remove an image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "force",
+          "value": ""
+        },
+        {
+          "name": "noprune",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/{{NAME}}",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "force",
+          "value": ""
+        },
+        {
+          "name": "noprune",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove an image",
+      "url": "/v1.33/images/{{NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a tarball containing all images and metadata for a repository.\n\nIf `name` is a specific name and tag (e.g. `ubuntu:latest`), then only that image (and its parents) are returned. If `name` is an image ID, similarly only that image (and its parents) are returned, but with the exclusion of the `repositories` file in the tarball, as there were no image names referenced.\n\n### Image tarball format\n\nAn image tarball contains one directory per image layer (named using its long ID), each containing these files:\n\n- `VERSION`: currently `1.0` - the file format version\n- `json`: detailed layer information, similar to `docker inspect layer_id`\n- `layer.tar`: A tarfile containing the filesystem changes in this layer\n\nThe `layer.tar` file contains `aufs` style `.wh..wh.aufs` files and directories for storing attribute changes and deletions.\n\nIf the tarball defines a repository, the tarball should also include a `repositories` file at the root that contains a list of repository and tag names mapped to layer IDs.\n\n```json\n{\n  \"hello-world\": {\n    \"latest\": \"565a9d68a73f6706862bfe8409a7f659776d4d60a8d096eb4a3cbce6999cc2a1\"\n  }\n}\n```\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/images/{{NAME}}/get",
+      "method": "GET",
+      "name": "Export an image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/{{NAME}}/get",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Export an image",
+      "url": "/v1.33/images/{{NAME}}/get"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return parent layers of an image.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/images/{{NAME}}/history",
+      "method": "GET",
+      "name": "Get the history of an image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/{{NAME}}/history",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the history of an image",
+      "url": "/v1.33/images/{{NAME}}/history"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return low-level information about an image.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1.33/images/{{NAME}}/json",
+      "method": "GET",
+      "name": "Inspect an image",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "path": "/v1.33/images/{{NAME}}/json",
+      "pathParameters": [
+        {
+          "name": "name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Inspect an image",
+      "url": "/v1.33/images/{{NAME}}/json"
+    }
+  ]
+}

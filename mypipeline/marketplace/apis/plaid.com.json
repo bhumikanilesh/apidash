@@ -1,0 +1,3476 @@
+{
+  "id": "plaid.com",
+  "info": {
+    "base_url": "https://production.plaid.com",
+    "description": "This endpoint creates a deposit switch entity that will be persisted throughout the lifecycle of the switch.",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "The Plaid API",
+    "version": "2020-09-14_1.334.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_token": "",
+        "client_id": "",
+        "options": {
+          "account_ids": [
+            ""
+          ],
+          "min_last_updated_datetime": ""
+        },
+        "secret": ""
+      },
+      "body_json": {
+        "access_token": "",
+        "client_id": "",
+        "options": {
+          "account_ids": [
+            ""
+          ],
+          "min_last_updated_datetime": ""
+        },
+        "secret": ""
+      },
+      "body_text": "{\"access_token\": \"\", \"client_id\": \"\", \"options\": {\"account_ids\": [\"\"], \"min_last_updated_datetime\": \"\"}, \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/accounts/balance/get` endpoint returns the real-time balance for each of an Item's accounts. While other endpoints may return a balance object, only `/accounts/balance/get` forces the available and current balance fields to be refreshed rather than cached. This endpoint can be used for existing Items that were added via any of Plaid’s other products. This endpoint can be used as long as Link has been initialized with any other product, `balance` itself is not a product that can be used to initialize Link. As this endpoint triggers a synchronous request for fresh data, latency may be higher than for other Plaid endpoints; if you encounter errors, you may find it necessary to adjust your timeout period when making requests.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /accounts/balance/get",
+      "method": "POST",
+      "name": "Retrieve real-time balance data",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/accounts/balance/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_token\": \"\", \"client_id\": \"\", \"options\": {\"account_ids\": [\"\"], \"min_last_updated_datetime\": \"\"}, \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve real-time balance data",
+      "url": "https://production.plaid.com/accounts/balance/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_token": "",
+        "client_id": "",
+        "options": {
+          "account_ids": [
+            ""
+          ]
+        },
+        "secret": ""
+      },
+      "body_json": {
+        "access_token": "",
+        "client_id": "",
+        "options": {
+          "account_ids": [
+            ""
+          ]
+        },
+        "secret": ""
+      },
+      "body_text": "{\"access_token\": \"\", \"client_id\": \"\", \"options\": {\"account_ids\": [\"\"]}, \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/accounts/get` endpoint can be used to retrieve a list of accounts associated with any linked Item. Plaid will only return active bank accounts — that is, accounts that are not closed and are capable of carrying a balance.\nFor items that went through the updated account selection pane, this endpoint only returns accounts that were permissioned by the user when they initially created the Item. If a user creates a new account after the initial link, you can capture this event through the [`NEW_ACCOUNTS_AVAILABLE`](https://plaid.com/docs/api/items/#new_accounts_available) webhook and then use Link's [update mode](https://plaid.com/docs/link/update-mode/) to request that the user share this new account with you.\n\nThis endpoint retrieves cached information, rather than extracting fresh information from the institution. As a result, balances returned may not be up-to-date; for realtime balance information, use `/accounts/balance/get` instead. Note that some information is nullable.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /accounts/get",
+      "method": "POST",
+      "name": "Retrieve accounts",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/accounts/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_token\": \"\", \"client_id\": \"\", \"options\": {\"account_ids\": [\"\"]}, \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve accounts",
+      "url": "https://production.plaid.com/accounts/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "application_id": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "application_id": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"application_id\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Allows financial institutions to retrieve information about Plaid clients for the purpose of building control-tower experiences",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /application/get",
+      "method": "POST",
+      "name": "Retrieve information about a Plaid application",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/application/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"application_id\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve information about a Plaid application",
+      "url": "https://production.plaid.com/application/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "asset_report_token": "",
+        "auditor_id": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "asset_report_token": "",
+        "auditor_id": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"asset_report_token\": \"\", \"auditor_id\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Plaid can provide an Audit Copy of any Asset Report directly to a participating third party on your behalf. For example, Plaid can supply an Audit Copy directly to Fannie Mae on your behalf if you participate in the Day 1 Certainty™ program. An Audit Copy contains the same underlying data as the Asset Report.\n\nTo grant access to an Audit Copy, use the `/asset_report/audit_copy/create` endpoint to create an `audit_copy_token` and then pass that token to the third party who needs access. Each third party has its own `auditor_id`, for example `fannie_mae`. You’ll need to create a separate Audit Copy for each third party to whom you want to grant access to the Report.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/audit_copy/create",
+      "method": "POST",
+      "name": "Create Asset Report Audit Copy",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/audit_copy/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"asset_report_token\": \"\", \"auditor_id\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Asset Report Audit Copy",
+      "url": "https://production.plaid.com/asset_report/audit_copy/create"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/asset_report/audit_copy/get` allows auditors to get a copy of an Asset Report that was previously shared via the `/asset_report/audit_copy/create` endpoint.  The caller of `/asset_report/audit_copy/create` must provide the `audit_copy_token` to the auditor.  This token can then be used to call `/asset_report/audit_copy/create`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/audit_copy/get",
+      "method": "POST",
+      "name": "Retrieve an Asset Report Audit Copy",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/audit_copy/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Asset Report Audit Copy",
+      "url": "https://production.plaid.com/asset_report/audit_copy/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/asset_report/audit_copy/remove` endpoint allows you to remove an Audit Copy. Removing an Audit Copy invalidates the `audit_copy_token` associated with it, meaning both you and any third parties holding the token will no longer be able to use it to access Report data. Items associated with the Asset Report, the Asset Report itself and other Audit Copies of it are not affected and will remain accessible after removing the given Audit Copy.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/audit_copy/remove",
+      "method": "POST",
+      "name": "Remove Asset Report Audit Copy",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/audit_copy/remove",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove Asset Report Audit Copy",
+      "url": "https://production.plaid.com/asset_report/audit_copy/remove"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_tokens": [
+          ""
+        ],
+        "client_id": "",
+        "days_requested": 0,
+        "options": {
+          "add_ons": [
+            "investments"
+          ],
+          "client_report_id": "",
+          "include_fast_report": false,
+          "products": [
+            ""
+          ],
+          "user": {
+            "client_user_id": "",
+            "email": "",
+            "first_name": "",
+            "last_name": "",
+            "middle_name": "",
+            "phone_number": "",
+            "ssn": ""
+          },
+          "webhook": ""
+        },
+        "report_type": "VERIFICATION_OF_EMPLOYMENT",
+        "secret": ""
+      },
+      "body_json": {
+        "access_tokens": [
+          ""
+        ],
+        "client_id": "",
+        "days_requested": 0,
+        "options": {
+          "add_ons": [
+            "investments"
+          ],
+          "client_report_id": "",
+          "include_fast_report": false,
+          "products": [
+            ""
+          ],
+          "user": {
+            "client_user_id": "",
+            "email": "",
+            "first_name": "",
+            "last_name": "",
+            "middle_name": "",
+            "phone_number": "",
+            "ssn": ""
+          },
+          "webhook": ""
+        },
+        "report_type": "VERIFICATION_OF_EMPLOYMENT",
+        "secret": ""
+      },
+      "body_text": "{\"access_tokens\": [\"\"], \"client_id\": \"\", \"days_requested\": 0, \"options\": {\"add_ons\": [\"investments\"], \"client_report_id\": \"\", \"include_fast_report\": false, \"products\": [\"\"], \"user\": {\"client_user_id\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"middle_name\": \"\", \"phone_number\": \"\", \"ssn\": \"\"}, \"webhook\": \"\"}, \"report_type\": \"VERIFICATION_OF_EMPLOYMENT\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/asset_report/create` endpoint initiates the process of creating an Asset Report, which can then be retrieved by passing the `asset_report_token` return value to the `/asset_report/get` or `/asset_report/pdf/get` endpoints.\n\nThe Asset Report takes some time to be created and is not available immediately after calling `/asset_report/create`. When the Asset Report is ready to be retrieved using `/asset_report/get` or `/asset_report/pdf/get`, Plaid will fire a `PRODUCT_READY` webhook. For full details of the webhook schema, see [Asset Report webhooks](https://plaid.com/docs/api/products/assets/#webhooks).\n\nThe `/asset_report/create` endpoint creates an Asset Report at a moment in time. Asset Reports are immutable. To get an updated Asset Report, use the `/asset_report/refresh` endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/create",
+      "method": "POST",
+      "name": "Create an Asset Report",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_tokens\": [\"\"], \"client_id\": \"\", \"days_requested\": 0, \"options\": {\"add_ons\": [\"investments\"], \"client_report_id\": \"\", \"include_fast_report\": false, \"products\": [\"\"], \"user\": {\"client_user_id\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"middle_name\": \"\", \"phone_number\": \"\", \"ssn\": \"\"}, \"webhook\": \"\"}, \"report_type\": \"VERIFICATION_OF_EMPLOYMENT\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an Asset Report",
+      "url": "https://production.plaid.com/asset_report/create"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "account_ids_to_exclude": [
+          ""
+        ],
+        "asset_report_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "account_ids_to_exclude": [
+          ""
+        ],
+        "asset_report_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"account_ids_to_exclude\": [\"\"], \"asset_report_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "By default, an Asset Report will contain all of the accounts on a given Item. In some cases, you may not want the Asset Report to contain all accounts. For example, you might have the end user choose which accounts are relevant in Link using the Account Select view, which you can enable in the dashboard. Or, you might always exclude certain account types or subtypes, which you can identify by using the `/accounts/get` endpoint. To narrow an Asset Report to only a subset of accounts, use the `/asset_report/filter` endpoint.\n\nTo exclude certain Accounts from an Asset Report, first use the `/asset_report/create` endpoint to create the report, then send the `asset_report_token` along with a list of `account_ids` to exclude to the `/asset_report/filter` endpoint, to create a new Asset Report which contains only a subset of the original Asset Report's data.\n\nBecause Asset Reports are immutable, calling `/asset_report/filter` does not alter the original Asset Report in any way; rather, `/asset_report/filter` creates a new Asset Report with a new token and id. Asset Reports created via `/asset_report/filter` do not contain new Asset data, and are not billed.\n\nPlaid will fire a [`PRODUCT_READY`](https://plaid.com/docs/api/products/assets/#product_ready) webhook once generation of the filtered Asset Report has completed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/filter",
+      "method": "POST",
+      "name": "Filter Asset Report",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/filter",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account_ids_to_exclude\": [\"\"], \"asset_report_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Filter Asset Report",
+      "url": "https://production.plaid.com/asset_report/filter"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "asset_report_token": "",
+        "client_id": "",
+        "fast_report": false,
+        "include_insights": false,
+        "options": {
+          "days_to_include": 0
+        },
+        "secret": ""
+      },
+      "body_json": {
+        "asset_report_token": "",
+        "client_id": "",
+        "fast_report": false,
+        "include_insights": false,
+        "options": {
+          "days_to_include": 0
+        },
+        "secret": ""
+      },
+      "body_text": "{\"asset_report_token\": \"\", \"client_id\": \"\", \"fast_report\": false, \"include_insights\": false, \"options\": {\"days_to_include\": 0}, \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/asset_report/get` endpoint retrieves the Asset Report in JSON format. Before calling `/asset_report/get`, you must first create the Asset Report using `/asset_report/create` (or filter an Asset Report using `/asset_report/filter`) and then wait for the [`PRODUCT_READY`](https://plaid.com/docs/api/products/assets/#product_ready) webhook to fire, indicating that the Report is ready to be retrieved.\n\nBy default, an Asset Report includes transaction descriptions as returned by the bank, as opposed to parsed and categorized by Plaid. You can also receive cleaned and categorized transactions, as well as additional insights like merchant name or location information. We call this an Asset Report with Insights. An Asset Report with Insights provides transaction category, location, and merchant information in addition to the transaction strings provided in a standard Asset Report.\n\nTo retrieve an Asset Report with Insights, call the `/asset_report/get` endpoint with `include_insights` set to `true`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/get",
+      "method": "POST",
+      "name": "Retrieve an Asset Report",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"asset_report_token\": \"\", \"client_id\": \"\", \"fast_report\": false, \"include_insights\": false, \"options\": {\"days_to_include\": 0}, \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Asset Report",
+      "url": "https://production.plaid.com/asset_report/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "asset_report_token": "",
+        "client_id": "",
+        "options": {
+          "days_to_include": 0
+        },
+        "secret": ""
+      },
+      "body_json": {
+        "asset_report_token": "",
+        "client_id": "",
+        "options": {
+          "days_to_include": 0
+        },
+        "secret": ""
+      },
+      "body_text": "{\"asset_report_token\": \"\", \"client_id\": \"\", \"options\": {\"days_to_include\": 0}, \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/asset_report/pdf/get` endpoint retrieves the Asset Report in PDF format. Before calling `/asset_report/pdf/get`, you must first create the Asset Report using `/asset_report/create` (or filter an Asset Report using `/asset_report/filter`) and then wait for the [`PRODUCT_READY`](https://plaid.com/docs/api/products/assets/#product_ready) webhook to fire, indicating that the Report is ready to be retrieved.\n\nThe response to `/asset_report/pdf/get` is the PDF binary data. The `request_id`  is returned in the `Plaid-Request-ID` header.\n\n[View a sample PDF Asset Report](https://plaid.com/documents/sample-asset-report.pdf).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/pdf/get",
+      "method": "POST",
+      "name": "Retrieve a PDF Asset Report",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/pdf/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"asset_report_token\": \"\", \"client_id\": \"\", \"options\": {\"days_to_include\": 0}, \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a PDF Asset Report",
+      "url": "https://production.plaid.com/asset_report/pdf/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "asset_report_token": "",
+        "client_id": "",
+        "days_requested": 0,
+        "options": {
+          "client_report_id": "",
+          "user": {
+            "client_user_id": "",
+            "email": "",
+            "first_name": "",
+            "last_name": "",
+            "middle_name": "",
+            "phone_number": "",
+            "ssn": ""
+          },
+          "webhook": ""
+        },
+        "secret": ""
+      },
+      "body_json": {
+        "asset_report_token": "",
+        "client_id": "",
+        "days_requested": 0,
+        "options": {
+          "client_report_id": "",
+          "user": {
+            "client_user_id": "",
+            "email": "",
+            "first_name": "",
+            "last_name": "",
+            "middle_name": "",
+            "phone_number": "",
+            "ssn": ""
+          },
+          "webhook": ""
+        },
+        "secret": ""
+      },
+      "body_text": "{\"asset_report_token\": \"\", \"client_id\": \"\", \"days_requested\": 0, \"options\": {\"client_report_id\": \"\", \"user\": {\"client_user_id\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"middle_name\": \"\", \"phone_number\": \"\", \"ssn\": \"\"}, \"webhook\": \"\"}, \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "An Asset Report is an immutable snapshot of a user's assets. In order to \"refresh\" an Asset Report you created previously, you can use the `/asset_report/refresh` endpoint to create a new Asset Report based on the old one, but with the most recent data available.\n\nThe new Asset Report will contain the same Items as the original Report, as well as the same filters applied by any call to `/asset_report/filter`. By default, the new Asset Report will also use the same parameters you submitted with your original `/asset_report/create` request, but the original `days_requested` value and the values of any parameters in the `options` object can be overridden with new values. To change these arguments, simply supply new values for them in your request to `/asset_report/refresh`. Submit an empty string (\"\") for any previously-populated fields you would like set as empty.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/refresh",
+      "method": "POST",
+      "name": "Refresh an Asset Report",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/refresh",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"asset_report_token\": \"\", \"client_id\": \"\", \"days_requested\": 0, \"options\": {\"client_report_id\": \"\", \"user\": {\"client_user_id\": \"\", \"email\": \"\", \"first_name\": \"\", \"last_name\": \"\", \"middle_name\": \"\", \"phone_number\": \"\", \"ssn\": \"\"}, \"webhook\": \"\"}, \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refresh an Asset Report",
+      "url": "https://production.plaid.com/asset_report/refresh"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "asset_report_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "asset_report_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"asset_report_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/item/remove` endpoint allows you to invalidate an `access_token`, meaning you will not be able to create new Asset Reports with it. Removing an Item does not affect any Asset Reports or Audit Copies you have already created, which will remain accessible until you remove them specifically.\n\nThe `/asset_report/remove` endpoint allows you to remove an Asset Report. Removing an Asset Report invalidates its `asset_report_token`, meaning you will no longer be able to use it to access Report data or create new Audit Copies. Removing an Asset Report does not affect the underlying Items, but does invalidate any `audit_copy_tokens` associated with the Asset Report.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /asset_report/remove",
+      "method": "POST",
+      "name": "Delete an Asset Report",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/asset_report/remove",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"asset_report_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an Asset Report",
+      "url": "https://production.plaid.com/asset_report/remove"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_token": "",
+        "client_id": "",
+        "options": {
+          "account_ids": [
+            ""
+          ]
+        },
+        "secret": ""
+      },
+      "body_json": {
+        "access_token": "",
+        "client_id": "",
+        "options": {
+          "account_ids": [
+            ""
+          ]
+        },
+        "secret": ""
+      },
+      "body_text": "{\"access_token\": \"\", \"client_id\": \"\", \"options\": {\"account_ids\": [\"\"]}, \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/auth/get` endpoint returns the bank account and bank identification numbers (such as routing numbers, for US accounts) associated with an Item's checking and savings accounts, along with high-level account data and balances when available.\n\nNote: This request may take some time to complete if `auth` was not specified as an initial product when creating the Item. This is because Plaid must communicate directly with the institution to retrieve the data.\n\nVersioning note: In API version 2017-03-08, the schema of the `numbers` object returned by this endpoint is substantially different. For details, see [Plaid API versioning](https://plaid.com/docs/api/versioning/#version-2018-05-22).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /auth/get",
+      "method": "POST",
+      "name": "Retrieve auth data",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/auth/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_token\": \"\", \"client_id\": \"\", \"options\": {\"account_ids\": [\"\"]}, \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve auth data",
+      "url": "https://production.plaid.com/auth/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "origination_account_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "origination_account_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"origination_account_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use the `/bank_transfer/balance/get` endpoint to see the available balance in your bank transfer account. Debit transfers increase this balance once their status is posted. Credit transfers decrease this balance when they are created.\n\nThe transactable balance shows the amount in your account that you are able to use for transfers, and is essentially your available balance minus your minimum balance.\n\nNote that this endpoint can only be used with FBO accounts, when using Bank Transfers in the Full Service configuration. It cannot be used on your own account when using Bank Transfers in the BTS Platform configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/balance/get",
+      "method": "POST",
+      "name": "Get balance of your Bank Transfer account",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/balance/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"origination_account_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get balance of your Bank Transfer account",
+      "url": "https://production.plaid.com/bank_transfer/balance/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "bank_transfer_id": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "bank_transfer_id": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"bank_transfer_id\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use the `/bank_transfer/cancel` endpoint to cancel a bank transfer.  A transfer is eligible for cancelation if the `cancellable` property returned by `/bank_transfer/get` is `true`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/cancel",
+      "method": "POST",
+      "name": "Cancel a bank transfer",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/cancel",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"bank_transfer_id\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel a bank transfer",
+      "url": "https://production.plaid.com/bank_transfer/cancel"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_token": "",
+        "account_id": "",
+        "ach_class": "ccd",
+        "amount": "",
+        "client_id": "",
+        "custom_tag": "",
+        "description": "",
+        "idempotency_key": "",
+        "iso_currency_code": "",
+        "metadata": {},
+        "network": "ach",
+        "origination_account_id": "",
+        "secret": "",
+        "type": "debit",
+        "user": {
+          "email_address": "",
+          "legal_name": "",
+          "routing_number": ""
+        }
+      },
+      "body_json": {
+        "access_token": "",
+        "account_id": "",
+        "ach_class": "ccd",
+        "amount": "",
+        "client_id": "",
+        "custom_tag": "",
+        "description": "",
+        "idempotency_key": "",
+        "iso_currency_code": "",
+        "metadata": {},
+        "network": "ach",
+        "origination_account_id": "",
+        "secret": "",
+        "type": "debit",
+        "user": {
+          "email_address": "",
+          "legal_name": "",
+          "routing_number": ""
+        }
+      },
+      "body_text": "{\"access_token\": \"\", \"account_id\": \"\", \"ach_class\": \"ccd\", \"amount\": \"\", \"client_id\": \"\", \"custom_tag\": \"\", \"description\": \"\", \"idempotency_key\": \"\", \"iso_currency_code\": \"\", \"metadata\": {}, \"network\": \"ach\", \"origination_account_id\": \"\", \"secret\": \"\", \"type\": \"debit\", \"user\": {\"email_address\": \"\", \"legal_name\": \"\", \"routing_number\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use the `/bank_transfer/create` endpoint to initiate a new bank transfer.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/create",
+      "method": "POST",
+      "name": "Create a bank transfer",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_token\": \"\", \"account_id\": \"\", \"ach_class\": \"ccd\", \"amount\": \"\", \"client_id\": \"\", \"custom_tag\": \"\", \"description\": \"\", \"idempotency_key\": \"\", \"iso_currency_code\": \"\", \"metadata\": {}, \"network\": \"ach\", \"origination_account_id\": \"\", \"secret\": \"\", \"type\": \"debit\", \"user\": {\"email_address\": \"\", \"legal_name\": \"\", \"routing_number\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a bank transfer",
+      "url": "https://production.plaid.com/bank_transfer/create"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "account_id": "",
+        "bank_transfer_id": "",
+        "bank_transfer_type": "debit",
+        "client_id": "",
+        "count": 25,
+        "direction": "inbound",
+        "end_date": "",
+        "event_types": [
+          "pending"
+        ],
+        "offset": 0,
+        "origination_account_id": "",
+        "secret": "",
+        "start_date": ""
+      },
+      "body_json": {
+        "account_id": "",
+        "bank_transfer_id": "",
+        "bank_transfer_type": "debit",
+        "client_id": "",
+        "count": 25,
+        "direction": "inbound",
+        "end_date": "",
+        "event_types": [
+          "pending"
+        ],
+        "offset": 0,
+        "origination_account_id": "",
+        "secret": "",
+        "start_date": ""
+      },
+      "body_text": "{\"account_id\": \"\", \"bank_transfer_id\": \"\", \"bank_transfer_type\": \"debit\", \"client_id\": \"\", \"count\": 25, \"direction\": \"inbound\", \"end_date\": \"\", \"event_types\": [\"pending\"], \"offset\": 0, \"origination_account_id\": \"\", \"secret\": \"\", \"start_date\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use the `/bank_transfer/event/list` endpoint to get a list of Plaid-initiated ACH or bank transfer events based on specified filter criteria. When using Auth with micro-deposit verification enabled, this endpoint can be used to fetch status updates on ACH micro-deposits. For more details, see [micro-deposit events](https://plaid.com/docs/auth/coverage/microdeposit-events/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/event/list",
+      "method": "POST",
+      "name": "List bank transfer events",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/event/list",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account_id\": \"\", \"bank_transfer_id\": \"\", \"bank_transfer_type\": \"debit\", \"client_id\": \"\", \"count\": 25, \"direction\": \"inbound\", \"end_date\": \"\", \"event_types\": [\"pending\"], \"offset\": 0, \"origination_account_id\": \"\", \"secret\": \"\", \"start_date\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List bank transfer events",
+      "url": "https://production.plaid.com/bank_transfer/event/list"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "after_id": 0,
+        "client_id": "",
+        "count": 25,
+        "secret": ""
+      },
+      "body_json": {
+        "after_id": 0,
+        "client_id": "",
+        "count": 25,
+        "secret": ""
+      },
+      "body_text": "{\"after_id\": 0, \"client_id\": \"\", \"count\": 25, \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/bank_transfer/event/sync` allows you to request up to the next 25 Plaid-initiated bank transfer events that happened after a specific `event_id`. When using Auth with micro-deposit verification enabled, this endpoint can be used to fetch status updates on ACH micro-deposits. For more details, see [micro-deposit events](https://www.plaid.com/docs/auth/coverage/microdeposit-events/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/event/sync",
+      "method": "POST",
+      "name": "Sync bank transfer events",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/event/sync",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"after_id\": 0, \"client_id\": \"\", \"count\": 25, \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Sync bank transfer events",
+      "url": "https://production.plaid.com/bank_transfer/event/sync"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "bank_transfer_id": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "bank_transfer_id": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"bank_transfer_id\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/bank_transfer/get` fetches information about the bank transfer corresponding to the given `bank_transfer_id`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/get",
+      "method": "POST",
+      "name": "Retrieve a bank transfer",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"bank_transfer_id\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a bank transfer",
+      "url": "https://production.plaid.com/bank_transfer/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "count": 25,
+        "direction": "outbound",
+        "end_date": "",
+        "offset": 0,
+        "origination_account_id": "",
+        "secret": "",
+        "start_date": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "count": 25,
+        "direction": "outbound",
+        "end_date": "",
+        "offset": 0,
+        "origination_account_id": "",
+        "secret": "",
+        "start_date": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"count\": 25, \"direction\": \"outbound\", \"end_date\": \"\", \"offset\": 0, \"origination_account_id\": \"\", \"secret\": \"\", \"start_date\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use the `/bank_transfer/list` endpoint to see a list of all your bank transfers and their statuses. Results are paginated; use the `count` and `offset` query parameters to retrieve the desired bank transfers.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/list",
+      "method": "POST",
+      "name": "List bank transfers",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/list",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"count\": 25, \"direction\": \"outbound\", \"end_date\": \"\", \"offset\": 0, \"origination_account_id\": \"\", \"secret\": \"\", \"start_date\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List bank transfers",
+      "url": "https://production.plaid.com/bank_transfer/list"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "account_number": "",
+        "account_type": "",
+        "client_id": "",
+        "routing_number": "",
+        "secret": "",
+        "wire_routing_number": ""
+      },
+      "body_json": {
+        "account_number": "",
+        "account_type": "",
+        "client_id": "",
+        "routing_number": "",
+        "secret": "",
+        "wire_routing_number": ""
+      },
+      "body_text": "{\"account_number\": \"\", \"account_type\": \"\", \"client_id\": \"\", \"routing_number\": \"\", \"secret\": \"\", \"wire_routing_number\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "As an alternative to adding Items via Link, you can also use the `/bank_transfer/migrate_account` endpoint to migrate known account and routing numbers to Plaid Items.  Note that Items created in this way are not compatible with endpoints for other products, such as `/accounts/balance/get`, and can only be used with Bank Transfer endpoints.  If you require access to other endpoints, create the Item through Link instead.  Access to `/bank_transfer/migrate_account` is not enabled by default; to obtain access, contact your Plaid Account Manager.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/migrate_account",
+      "method": "POST",
+      "name": "Migrate account into Bank Transfers",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/migrate_account",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account_number\": \"\", \"account_type\": \"\", \"client_id\": \"\", \"routing_number\": \"\", \"secret\": \"\", \"wire_routing_number\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Migrate account into Bank Transfers",
+      "url": "https://production.plaid.com/bank_transfer/migrate_account"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "secret": "",
+        "sweep_id": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "secret": "",
+        "sweep_id": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"secret\": \"\", \"sweep_id\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/bank_transfer/sweep/get` endpoint fetches information about the sweep corresponding to the given `sweep_id`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/sweep/get",
+      "method": "POST",
+      "name": "Retrieve a sweep",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/sweep/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"secret\": \"\", \"sweep_id\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a sweep",
+      "url": "https://production.plaid.com/bank_transfer/sweep/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "count": 25,
+        "end_time": "",
+        "origination_account_id": "",
+        "secret": "",
+        "start_time": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "count": 25,
+        "end_time": "",
+        "origination_account_id": "",
+        "secret": "",
+        "start_time": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"count\": 25, \"end_time\": \"\", \"origination_account_id\": \"\", \"secret\": \"\", \"start_time\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/bank_transfer/sweep/list` endpoint fetches information about the sweeps matching the given filters.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /bank_transfer/sweep/list",
+      "method": "POST",
+      "name": "List sweeps",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/bank_transfer/sweep/list",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"count\": 25, \"end_time\": \"\", \"origination_account_id\": \"\", \"secret\": \"\", \"start_time\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List sweeps",
+      "url": "https://production.plaid.com/bank_transfer/sweep/list"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/credit/bank_employment/get` returns the employment report(s) derived from bank transaction data for a specified user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /beta/credit/v1/bank_employment/get",
+      "method": "POST",
+      "name": "Retrieve information from the bank accounts used for employment verification",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/beta/credit/v1/bank_employment/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve information from the bank accounts used for employment verification",
+      "url": "https://production.plaid.com/beta/credit/v1/bank_employment/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_token": "",
+        "client_id": "",
+        "personal_finance_category": "",
+        "rule_details": {
+          "field": "TRANSACTION_ID",
+          "query": "",
+          "type": "EXACT_MATCH"
+        },
+        "secret": ""
+      },
+      "body_json": {
+        "access_token": "",
+        "client_id": "",
+        "personal_finance_category": "",
+        "rule_details": {
+          "field": "TRANSACTION_ID",
+          "query": "",
+          "type": "EXACT_MATCH"
+        },
+        "secret": ""
+      },
+      "body_text": "{\"access_token\": \"\", \"client_id\": \"\", \"personal_finance_category\": \"\", \"rule_details\": {\"field\": \"TRANSACTION_ID\", \"query\": \"\", \"type\": \"EXACT_MATCH\"}, \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/transactions/rules/v1/create` endpoint creates transaction categorization rules.\n\nRules will be applied on the Item's transactions returned in `/transactions/get` response.\n\nThe product is currently in beta. To request access, contact transactions-feedback@plaid.com.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /beta/transactions/rules/v1/create",
+      "method": "POST",
+      "name": "Create transaction category rule",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/beta/transactions/rules/v1/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_token\": \"\", \"client_id\": \"\", \"personal_finance_category\": \"\", \"rule_details\": {\"field\": \"TRANSACTION_ID\", \"query\": \"\", \"type\": \"EXACT_MATCH\"}, \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create transaction category rule",
+      "url": "https://production.plaid.com/beta/transactions/rules/v1/create"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "access_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"access_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/transactions/rules/v1/list` returns a list of transaction rules created for the Item associated with the access token.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /beta/transactions/rules/v1/list",
+      "method": "POST",
+      "name": "Return a list of rules created for the Item associated with the access token.",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/beta/transactions/rules/v1/list",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Return a list of rules created for the Item associated with the access token.",
+      "url": "https://production.plaid.com/beta/transactions/rules/v1/list"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_token": "",
+        "client_id": "",
+        "rule_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "access_token": "",
+        "client_id": "",
+        "rule_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"access_token\": \"\", \"client_id\": \"\", \"rule_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/transactions/rules/v1/remove` endpoint is used to remove a transaction rule.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /beta/transactions/rules/v1/remove",
+      "method": "POST",
+      "name": "Remove transaction rule",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/beta/transactions/rules/v1/remove",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_token\": \"\", \"client_id\": \"\", \"rule_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove transaction rule",
+      "url": "https://production.plaid.com/beta/transactions/rules/v1/remove"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "account_type": "",
+        "client_id": "",
+        "secret": "",
+        "transactions": [
+          {
+            "amount": 0.0,
+            "description": "",
+            "id": "",
+            "iso_currency_code": ""
+          }
+        ]
+      },
+      "body_json": {
+        "account_type": "",
+        "client_id": "",
+        "secret": "",
+        "transactions": [
+          {
+            "amount": 0.0,
+            "description": "",
+            "id": "",
+            "iso_currency_code": ""
+          }
+        ]
+      },
+      "body_text": "{\"account_type\": \"\", \"client_id\": \"\", \"secret\": \"\", \"transactions\": [{\"amount\": 0.0, \"description\": \"\", \"id\": \"\", \"iso_currency_code\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/beta/transactions/v1/enhance` endpoint enriches raw transaction data provided directly by clients.\n\nThe product is currently in beta.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /beta/transactions/v1/enhance",
+      "method": "POST",
+      "name": "enhance locally-held transaction data",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/beta/transactions/v1/enhance",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account_type\": \"\", \"client_id\": \"\", \"secret\": \"\", \"transactions\": [{\"amount\": 0.0, \"description\": \"\", \"id\": \"\", \"iso_currency_code\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "enhance locally-held transaction data",
+      "url": "https://production.plaid.com/beta/transactions/v1/enhance"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Send a request to the `/categories/get` endpoint to get detailed information on categories returned by Plaid. This endpoint does not require authentication.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /categories/get",
+      "method": "POST",
+      "name": "Get Categories",
+      "params": [],
+      "path": "/categories/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Categories",
+      "url": "https://production.plaid.com/categories/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `credit/asset_report/freddie_mac/get` endpoint retrieves the Asset Report in Freddie Mac's JSON format.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/asset_report/freddie_mac/get",
+      "method": "POST",
+      "name": "Retrieve an Asset Report with Freddie Mac format. Only Freddie Mac can use this endpoint.",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/asset_report/freddie_mac/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Asset Report with Freddie Mac format. Only Freddie Mac can use this endpoint.",
+      "url": "https://production.plaid.com/credit/asset_report/freddie_mac/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "report_tokens": [
+          ""
+        ],
+        "secret": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "report_tokens": [
+          ""
+        ],
+        "secret": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"report_tokens\": [\"\"], \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Plaid can create an Audit Copy token of an Asset Report and/or Income Report to share with participating Government Sponsored Entity (GSE). If you participate in the Day 1 Certainty™ program, Plaid can supply an Audit Copy token directly to Fannie Mae on your behalf. An Audit Copy token contains the same underlying data as the Asset Report and/or Income Report (result of /credit/payroll_income/get).\n\nUse the `/credit/audit_copy_token/create` endpoint to create an `audit_copy_token` and then pass that token to the GSE who needs access.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/audit_copy_token/create",
+      "method": "POST",
+      "name": "Create Asset or Income Report Audit Copy Token",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/audit_copy_token/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"report_tokens\": [\"\"], \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create Asset or Income Report Audit Copy Token",
+      "url": "https://production.plaid.com/credit/audit_copy_token/create"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/credit/audit_copy_token/remove` endpoint allows you to remove an Audit Copy. Removing an Audit Copy invalidates the `audit_copy_token` associated with it, meaning both you and any third parties holding the token will no longer be able to use it to access Report data. Items associated with the Report data and other Audit Copies of it are not affected and will remain accessible after removing the given Audit Copy.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/audit_copy_token/remove",
+      "method": "POST",
+      "name": "Remove an Audit Copy token",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/audit_copy_token/remove",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove an Audit Copy token",
+      "url": "https://production.plaid.com/credit/audit_copy_token/remove"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "report_tokens": [
+          ""
+        ],
+        "secret": ""
+      },
+      "body_json": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "report_tokens": [
+          ""
+        ],
+        "secret": ""
+      },
+      "body_text": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"report_tokens\": [\"\"], \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/credit/audit_copy_token/update` endpoint updates the Audit Copy Token by adding the report tokens in the `report_tokens` field to the `audit_copy_token`. If the Audit Copy Token already contains a report of a certain type, it will be replaced with the token provided in the `report_tokens` field.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/audit_copy_token/update",
+      "method": "POST",
+      "name": "Update an Audit Copy Token",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/audit_copy_token/update",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"report_tokens\": [\"\"], \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an Audit Copy Token",
+      "url": "https://production.plaid.com/credit/audit_copy_token/update"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "options": {
+          "count": 1
+        },
+        "secret": "",
+        "user_token": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "options": {
+          "count": 1
+        },
+        "secret": "",
+        "user_token": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"options\": {\"count\": 1}, \"secret\": \"\", \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/credit/bank_income/get` returns the bank income report(s) for a specified user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/bank_income/get",
+      "method": "POST",
+      "name": "Retrieve information from the bank accounts used for income verification",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/bank_income/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"options\": {\"count\": 1}, \"secret\": \"\", \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve information from the bank accounts used for income verification",
+      "url": "https://production.plaid.com/credit/bank_income/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/credit/bank_income/pdf/get` returns the most recent bank income report for a specified user in PDF format.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/bank_income/pdf/get",
+      "method": "POST",
+      "name": "Retrieve information from the bank accounts used for income verification in PDF format",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/bank_income/pdf/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve information from the bank accounts used for income verification in PDF format",
+      "url": "https://production.plaid.com/credit/bank_income/pdf/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "options": {
+          "days_requested": 0,
+          "webhook": ""
+        },
+        "secret": "",
+        "user_token": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "options": {
+          "days_requested": 0,
+          "webhook": ""
+        },
+        "secret": "",
+        "user_token": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"options\": {\"days_requested\": 0, \"webhook\": \"\"}, \"secret\": \"\", \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/credit/bank_income/refresh` refreshes the bank income report data for a specific user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/bank_income/refresh",
+      "method": "POST",
+      "name": "Refresh a user's bank income information",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/bank_income/refresh",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"options\": {\"days_requested\": 0, \"webhook\": \"\"}, \"secret\": \"\", \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refresh a user's bank income information",
+      "url": "https://production.plaid.com/credit/bank_income/refresh"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/credit/employment/get` returns a list of items with employment information from a user's payroll provider that was verified by an end user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/employment/get",
+      "method": "POST",
+      "name": "Retrieve a summary of an individual's employment information",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/employment/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a summary of an individual's employment information",
+      "url": "https://production.plaid.com/credit/employment/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_json": {
+        "audit_copy_token": "",
+        "client_id": "",
+        "secret": ""
+      },
+      "body_text": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `credit/asset_report/freddie_mac/get` endpoint retrieves the Verification of Assets and Verification of Employment reports.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/freddie_mac/reports/get",
+      "method": "POST",
+      "name": "Retrieve an Asset Report with Freddie Mac format (aka VOA - Verification Of Assets), and a Verification Of Employment (VOE) report if this one is available. Only Freddie Mac can use this endpoint.",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/freddie_mac/reports/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"audit_copy_token\": \"\", \"client_id\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Asset Report with Freddie Mac format (aka VOA - Verification Of Assets), and a Verification Of Employment (VOE) report if this one is available. Only Freddie Mac can use this endpoint.",
+      "url": "https://production.plaid.com/credit/freddie_mac/reports/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint gets payroll income information for a specific user, either as a result of the user connecting to their payroll provider or uploading a pay related document.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/payroll_income/get",
+      "method": "POST",
+      "name": "Retrieve a user's payroll information",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/payroll_income/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a user's payroll information",
+      "url": "https://production.plaid.com/credit/payroll_income/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "access_tokens": [
+          ""
+        ],
+        "client_id": "",
+        "employer": {
+          "address": {
+            "city": "",
+            "country": "",
+            "postal_code": "",
+            "region": "",
+            "street": ""
+          },
+          "name": "",
+          "tax_id": "",
+          "url": ""
+        },
+        "payroll_institution": {
+          "name": ""
+        },
+        "secret": "",
+        "us_military_info": {
+          "branch": "",
+          "is_active_duty": false
+        },
+        "user_token": ""
+      },
+      "body_json": {
+        "access_tokens": [
+          ""
+        ],
+        "client_id": "",
+        "employer": {
+          "address": {
+            "city": "",
+            "country": "",
+            "postal_code": "",
+            "region": "",
+            "street": ""
+          },
+          "name": "",
+          "tax_id": "",
+          "url": ""
+        },
+        "payroll_institution": {
+          "name": ""
+        },
+        "secret": "",
+        "us_military_info": {
+          "branch": "",
+          "is_active_duty": false
+        },
+        "user_token": ""
+      },
+      "body_text": "{\"access_tokens\": [\"\"], \"client_id\": \"\", \"employer\": {\"address\": {\"city\": \"\", \"country\": \"\", \"postal_code\": \"\", \"region\": \"\", \"street\": \"\"}, \"name\": \"\", \"tax_id\": \"\", \"url\": \"\"}, \"payroll_institution\": {\"name\": \"\"}, \"secret\": \"\", \"us_military_info\": {\"branch\": \"\", \"is_active_duty\": false}, \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/credit/payroll_income/precheck` is an optional endpoint that can be called before initializing a Link session for income verification. It evaluates whether a given user is supportable by digital income verification. If the user is eligible for digital verification, that information will be associated with the user token, and in this way will generate a Link UI optimized for the end user and their specific employer. If the user cannot be confirmed as eligible, the user can still use the income verification flow, but they may be required to manually upload a paystub to verify their income.\n\nWhile all request fields are optional, providing `employer` data will increase the chance of receiving a useful result.\n\nWhen testing in Sandbox, you can control the results by providing special test values in the `employer` and `access_tokens` fields. `employer_good` and `employer_bad` will result in `HIGH` and `LOW` confidence values, respectively. `employer_multi` will result in a `HIGH` confidence with multiple payroll options. Likewise, `access_good` and `access_bad` will result in `HIGH` and `LOW` confidence values, respectively. Any other value for `employer` and `access_tokens` in Sandbox will result in `UNKNOWN` confidence.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/payroll_income/precheck",
+      "method": "POST",
+      "name": "Check income verification eligibility and optimize conversion",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/payroll_income/precheck",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"access_tokens\": [\"\"], \"client_id\": \"\", \"employer\": {\"address\": {\"city\": \"\", \"country\": \"\", \"postal_code\": \"\", \"region\": \"\", \"street\": \"\"}, \"name\": \"\", \"tax_id\": \"\", \"url\": \"\"}, \"payroll_institution\": {\"name\": \"\"}, \"secret\": \"\", \"us_military_info\": {\"branch\": \"\", \"is_active_duty\": false}, \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Check income verification eligibility and optimize conversion",
+      "url": "https://production.plaid.com/credit/payroll_income/precheck"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/credit/payroll_income/refresh` refreshes a given digital payroll income verification.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/payroll_income/refresh",
+      "method": "POST",
+      "name": "Refresh a digital payroll income verification",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/payroll_income/refresh",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refresh a digital payroll income verification",
+      "url": "https://production.plaid.com/credit/payroll_income/refresh"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "report_tokens": [
+          ""
+        ],
+        "secondary_client_id": "",
+        "secret": "",
+        "webhook": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "report_tokens": [
+          ""
+        ],
+        "secondary_client_id": "",
+        "secret": "",
+        "webhook": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"report_tokens\": [\"\"], \"secondary_client_id\": \"\", \"secret\": \"\", \"webhook\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Plaid can share an Asset Report directly with a participating third party on your behalf. The shared Asset Report is the exact same Asset Report originally created in `/asset_report/create`.\n\nTo grant a third party access to an Asset Report, use the `/credit/relay/create` endpoint to create a `relay_token` and then pass that token to your third party. Each third party has its own `secondary_client_id`; for example, `ce5bd328dcd34123456`. You'll need to create a separate `relay_token` for each third party that needs access to the report on your behalf.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/relay/create",
+      "method": "POST",
+      "name": "Create a relay token to share an Asset Report with a partner client (beta)",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/relay/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"report_tokens\": [\"\"], \"secondary_client_id\": \"\", \"secret\": \"\", \"webhook\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a relay token to share an Asset Report with a partner client (beta)",
+      "url": "https://production.plaid.com/credit/relay/create"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "relay_token": "",
+        "report_type": "assets",
+        "secret": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "relay_token": "",
+        "report_type": "assets",
+        "secret": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"relay_token\": \"\", \"report_type\": \"assets\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "`/credit/relay/get` allows third parties to receive a report that was shared with them, using a `relay_token` that was created by the report owner.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/relay/get",
+      "method": "POST",
+      "name": "Retrieve the reports associated with a relay token that was shared with you (beta)",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/relay/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"relay_token\": \"\", \"report_type\": \"assets\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve the reports associated with a relay token that was shared with you (beta)",
+      "url": "https://production.plaid.com/credit/relay/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "relay_token": "",
+        "report_type": "assets",
+        "secret": "",
+        "webhook": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "relay_token": "",
+        "report_type": "assets",
+        "secret": "",
+        "webhook": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"relay_token\": \"\", \"report_type\": \"assets\", \"secret\": \"\", \"webhook\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/credit/relay/refresh` endpoint allows third parties to refresh a report that was relayed to them, using a `relay_token` that was created by the report owner. A new report will be created with the original report parameters, but with the most recent data available based on the `days_requested` value of the original report.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/relay/refresh",
+      "method": "POST",
+      "name": "Refresh a report of a relay token (beta)",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/relay/refresh",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"relay_token\": \"\", \"report_type\": \"assets\", \"secret\": \"\", \"webhook\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refresh a report of a relay token (beta)",
+      "url": "https://production.plaid.com/credit/relay/refresh"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "relay_token": "",
+        "secret": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "relay_token": "",
+        "secret": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"relay_token\": \"\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The `/credit/relay/remove` endpoint allows you to invalidate a `relay_token`. The third party holding the token will no longer be able to access or refresh the reports which the `relay_token` gives access to. The original report, associated Items, and other relay tokens that provide access to the same report are not affected and will remain accessible after removing the given `relay_token`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/relay/remove",
+      "method": "POST",
+      "name": "Remove relay token (beta)",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/relay/remove",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"relay_token\": \"\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove relay token (beta)",
+      "url": "https://production.plaid.com/credit/relay/remove"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "secret": "",
+        "user_token": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint can be used for your end users after they complete the Link flow. This endpoint returns a list of Link sessions that your user completed, where each session includes the results from the Link flow.\n\nThese results include details about the Item that was created and some product related metadata (showing, for example, whether the user finished the bank income verification step).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /credit/sessions/get",
+      "method": "POST",
+      "name": "Retrieve Link sessions for your user",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/credit/sessions/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"secret\": \"\", \"user_token\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Link sessions for your user",
+      "url": "https://production.plaid.com/credit/sessions/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "dashboard_user_id": "54350110fedcbaf01234ffee",
+        "secret": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "dashboard_user_id": "54350110fedcbaf01234ffee",
+        "secret": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"dashboard_user_id\": \"54350110fedcbaf01234ffee\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieve information about a dashboard user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /dashboard_user/get",
+      "method": "POST",
+      "name": "Retrieve a dashboard user",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/dashboard_user/get",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"dashboard_user_id\": \"54350110fedcbaf01234ffee\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a dashboard user",
+      "url": "https://production.plaid.com/dashboard_user/get"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "cursor": "eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM",
+        "secret": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "cursor": "eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM",
+        "secret": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"cursor\": \"eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM\", \"secret\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "List all dashboard users associated with your account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /dashboard_user/list",
+      "method": "POST",
+      "name": "List dashboard users",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/dashboard_user/list",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"cursor\": \"eyJkaXJlY3Rpb24iOiJuZXh0Iiwib2Zmc2V0IjoiMTU5NDM\", \"secret\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List dashboard users",
+      "url": "https://production.plaid.com/dashboard_user/list"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "country_code": "US",
+        "options": {
+          "transaction_item_access_tokens": [
+            ""
+          ],
+          "webhook": ""
+        },
+        "secret": "",
+        "target_account": {
+          "account_name": "",
+          "account_number": "",
+          "account_subtype": "checking",
+          "routing_number": ""
+        },
+        "target_user": {
+          "address": {
+            "city": "",
+            "country": "",
+            "postal_code": "",
+            "region": "",
+            "street": ""
+          },
+          "email": "",
+          "family_name": "",
+          "given_name": "",
+          "phone": "",
+          "tax_payer_id": ""
+        }
+      },
+      "body_json": {
+        "client_id": "",
+        "country_code": "US",
+        "options": {
+          "transaction_item_access_tokens": [
+            ""
+          ],
+          "webhook": ""
+        },
+        "secret": "",
+        "target_account": {
+          "account_name": "",
+          "account_number": "",
+          "account_subtype": "checking",
+          "routing_number": ""
+        },
+        "target_user": {
+          "address": {
+            "city": "",
+            "country": "",
+            "postal_code": "",
+            "region": "",
+            "street": ""
+          },
+          "email": "",
+          "family_name": "",
+          "given_name": "",
+          "phone": "",
+          "tax_payer_id": ""
+        }
+      },
+      "body_text": "{\"client_id\": \"\", \"country_code\": \"US\", \"options\": {\"transaction_item_access_tokens\": [\"\"], \"webhook\": \"\"}, \"secret\": \"\", \"target_account\": {\"account_name\": \"\", \"account_number\": \"\", \"account_subtype\": \"checking\", \"routing_number\": \"\"}, \"target_user\": {\"address\": {\"city\": \"\", \"country\": \"\", \"postal_code\": \"\", \"region\": \"\", \"street\": \"\"}, \"email\": \"\", \"family_name\": \"\", \"given_name\": \"\", \"phone\": \"\", \"tax_payer_id\": \"\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint provides an alternative to `/deposit_switch/create` for customers who have not yet fully integrated with Plaid Exchange. Like `/deposit_switch/create`, it creates a deposit switch entity that will be persisted throughout the lifecycle of the switch.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /deposit_switch/alt/create",
+      "method": "POST",
+      "name": "Create a deposit switch without using Plaid Exchange",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/deposit_switch/alt/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"country_code\": \"US\", \"options\": {\"transaction_item_access_tokens\": [\"\"], \"webhook\": \"\"}, \"secret\": \"\", \"target_account\": {\"account_name\": \"\", \"account_number\": \"\", \"account_subtype\": \"checking\", \"routing_number\": \"\"}, \"target_user\": {\"address\": {\"city\": \"\", \"country\": \"\", \"postal_code\": \"\", \"region\": \"\", \"street\": \"\"}, \"email\": \"\", \"family_name\": \"\", \"given_name\": \"\", \"phone\": \"\", \"tax_payer_id\": \"\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a deposit switch without using Plaid Exchange",
+      "url": "https://production.plaid.com/deposit_switch/alt/create"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "THE_PLAID_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "client_id": "",
+        "country_code": "US",
+        "options": {
+          "transaction_item_access_tokens": [
+            ""
+          ],
+          "webhook": ""
+        },
+        "secret": "",
+        "target_access_token": "",
+        "target_account_id": ""
+      },
+      "body_json": {
+        "client_id": "",
+        "country_code": "US",
+        "options": {
+          "transaction_item_access_tokens": [
+            ""
+          ],
+          "webhook": ""
+        },
+        "secret": "",
+        "target_access_token": "",
+        "target_account_id": ""
+      },
+      "body_text": "{\"client_id\": \"\", \"country_code\": \"US\", \"options\": {\"transaction_item_access_tokens\": [\"\"], \"webhook\": \"\"}, \"secret\": \"\", \"target_access_token\": \"\", \"target_account_id\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This endpoint creates a deposit switch entity that will be persisted throughout the lifecycle of the switch.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{THE_PLAID_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /deposit_switch/create",
+      "method": "POST",
+      "name": "Create a deposit switch",
+      "note": "Replace {{THE_PLAID_API_KEY}} with your API key",
+      "params": [],
+      "path": "/deposit_switch/create",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"client_id\": \"\", \"country_code\": \"US\", \"options\": {\"transaction_item_access_tokens\": [\"\"], \"webhook\": \"\"}, \"secret\": \"\", \"target_access_token\": \"\", \"target_account_id\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a deposit switch",
+      "url": "https://production.plaid.com/deposit_switch/create"
+    }
+  ]
+}

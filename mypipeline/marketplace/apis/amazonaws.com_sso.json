@@ -1,0 +1,322 @@
+{
+  "id": "amazonaws.com_sso",
+  "info": {
+    "base_url": "http://portal.sso.{region}.amazonaws.com",
+    "description": "Removes the locally stored SSO tokens from the client-side cache and sends an API call to the IAM Identity Center service to invalidate the corresponding server-side IAM Identity Center sign in...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "AWS Single Sign-On",
+    "version": "2019-06-10"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_SINGLE_SIGNON_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the STS short-term credentials for a given role name that is assigned to the user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_SINGLE_SIGNON_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_SINGLE_SIGNON_API_KEY}}"
+        }
+      ],
+      "id": "GET /federation/credentials",
+      "method": "GET",
+      "name": "GET /federation/credentials#role_name&account_id&x-amz-sso_bearer_token",
+      "note": "Replace {{AWS_SINGLE_SIGNON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "role_name",
+          "value": ""
+        },
+        {
+          "name": "account_id",
+          "value": ""
+        }
+      ],
+      "path": "/federation/credentials",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "role_name",
+          "value": ""
+        },
+        {
+          "name": "account_id",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /federation/credentials#role_name&account_id&x-amz-sso_bearer_token",
+      "url": "http://portal.sso.{{REGION}}.amazonaws.com/federation/credentials#role_name&account_id&x-amz-sso_bearer_token"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_SINGLE_SIGNON_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all roles that are assigned to the user for a given AWS account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_SINGLE_SIGNON_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_SINGLE_SIGNON_API_KEY}}"
+        }
+      ],
+      "id": "GET /assignment/roles",
+      "method": "GET",
+      "name": "GET /assignment/roles#x-amz-sso_bearer_token&account_id",
+      "note": "Replace {{AWS_SINGLE_SIGNON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "max_result",
+          "value": ""
+        },
+        {
+          "name": "account_id",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/assignment/roles",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "max_result",
+          "value": ""
+        },
+        {
+          "name": "account_id",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /assignment/roles#x-amz-sso_bearer_token&account_id",
+      "url": "http://portal.sso.{{REGION}}.amazonaws.com/assignment/roles#x-amz-sso_bearer_token&account_id"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_SINGLE_SIGNON_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the administrator of the account. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers\">Assign User Access</a> in the <i>IAM Identity Center User Guide</i>. This operation returns a paginated response.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_SINGLE_SIGNON_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_SINGLE_SIGNON_API_KEY}}"
+        }
+      ],
+      "id": "GET /assignment/accounts",
+      "method": "GET",
+      "name": "GET /assignment/accounts#x-amz-sso_bearer_token",
+      "note": "Replace {{AWS_SINGLE_SIGNON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "max_result",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/assignment/accounts",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "max_result",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /assignment/accounts#x-amz-sso_bearer_token",
+      "url": "http://portal.sso.{{REGION}}.amazonaws.com/assignment/accounts#x-amz-sso_bearer_token"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_SINGLE_SIGNON_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>Removes the locally stored SSO tokens from the client-side cache and sends an API call to the IAM Identity Center service to invalidate the corresponding server-side IAM Identity Center sign in session.</p> <note> <p>If a user uses IAM Identity Center to access the AWS CLI, the user’s IAM Identity Center sign in session is used to obtain an IAM session, as specified in the corresponding IAM Identity Center permission set. More specifically, IAM Identity Center assumes an IAM role in the target account on behalf of the user, and the corresponding temporary AWS credentials are returned to the client.</p> <p>After user logout, any existing IAM role sessions that were created by using IAM Identity Center permission sets continue based on the duration configured in the permission set. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/userguide/authconcept.html\">User authentications</a> in the <i>IAM Identity Center User Guide</i>.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_SINGLE_SIGNON_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_SINGLE_SIGNON_API_KEY}}"
+        }
+      ],
+      "id": "POST /logout",
+      "method": "POST",
+      "name": "POST /logout#x-amz-sso_bearer_token",
+      "note": "Replace {{AWS_SINGLE_SIGNON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "x-amz-sso_bearer_token",
+          "value": ""
+        }
+      ],
+      "path": "/logout",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /logout#x-amz-sso_bearer_token",
+      "url": "http://portal.sso.{{REGION}}.amazonaws.com/logout#x-amz-sso_bearer_token"
+    }
+  ]
+}

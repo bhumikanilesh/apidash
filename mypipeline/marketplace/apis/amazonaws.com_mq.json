@@ -1,0 +1,1715 @@
+{
+  "id": "amazonaws.com_mq",
+  "info": {
+    "base_url": "http://mq.{region}.amazonaws.com",
+    "description": "Reboots a broker. Note: This API is asynchronous.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "AmazonMQ",
+    "version": "2017-11-27"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "authenticationStrategy": "SIMPLE",
+        "autoMinorVersionUpgrade": false,
+        "brokerName": "",
+        "configuration": {
+          "Id": {},
+          "Revision": {}
+        },
+        "creatorRequestId": "",
+        "deploymentMode": "SINGLE_INSTANCE",
+        "encryptionOptions": {
+          "KmsKeyId": {},
+          "UseAwsOwnedKey": {}
+        },
+        "engineType": "ACTIVEMQ",
+        "engineVersion": "",
+        "hostInstanceType": "",
+        "ldapServerMetadata": {
+          "Hosts": {},
+          "RoleBase": {},
+          "RoleName": {},
+          "RoleSearchMatching": {},
+          "RoleSearchSubtree": {},
+          "ServiceAccountPassword": {},
+          "ServiceAccountUsername": {},
+          "UserBase": {},
+          "UserRoleName": {},
+          "UserSearchMatching": {},
+          "UserSearchSubtree": {}
+        },
+        "logs": {
+          "Audit": {},
+          "General": {}
+        },
+        "maintenanceWindowStartTime": {
+          "DayOfWeek": {},
+          "TimeOfDay": {},
+          "TimeZone": {}
+        },
+        "publiclyAccessible": false,
+        "securityGroups": [
+          ""
+        ],
+        "storageType": "EBS",
+        "subnetIds": [
+          ""
+        ],
+        "tags": {},
+        "users": [
+          {
+            "ConsoleAccess": {},
+            "Groups": {},
+            "Password": {},
+            "Username": {}
+          }
+        ]
+      },
+      "body_json": {
+        "authenticationStrategy": "SIMPLE",
+        "autoMinorVersionUpgrade": false,
+        "brokerName": "",
+        "configuration": {
+          "Id": {},
+          "Revision": {}
+        },
+        "creatorRequestId": "",
+        "deploymentMode": "SINGLE_INSTANCE",
+        "encryptionOptions": {
+          "KmsKeyId": {},
+          "UseAwsOwnedKey": {}
+        },
+        "engineType": "ACTIVEMQ",
+        "engineVersion": "",
+        "hostInstanceType": "",
+        "ldapServerMetadata": {
+          "Hosts": {},
+          "RoleBase": {},
+          "RoleName": {},
+          "RoleSearchMatching": {},
+          "RoleSearchSubtree": {},
+          "ServiceAccountPassword": {},
+          "ServiceAccountUsername": {},
+          "UserBase": {},
+          "UserRoleName": {},
+          "UserSearchMatching": {},
+          "UserSearchSubtree": {}
+        },
+        "logs": {
+          "Audit": {},
+          "General": {}
+        },
+        "maintenanceWindowStartTime": {
+          "DayOfWeek": {},
+          "TimeOfDay": {},
+          "TimeZone": {}
+        },
+        "publiclyAccessible": false,
+        "securityGroups": [
+          ""
+        ],
+        "storageType": "EBS",
+        "subnetIds": [
+          ""
+        ],
+        "tags": {},
+        "users": [
+          {
+            "ConsoleAccess": {},
+            "Groups": {},
+            "Password": {},
+            "Username": {}
+          }
+        ]
+      },
+      "body_text": "{\"authenticationStrategy\": \"SIMPLE\", \"autoMinorVersionUpgrade\": false, \"brokerName\": \"\", \"configuration\": {\"Id\": {}, \"Revision\": {}}, \"creatorRequestId\": \"\", \"deploymentMode\": \"SINGLE_INSTANCE\", \"encryptionOptions\": {\"KmsKeyId\": {}, \"UseAwsOwnedKey\": {}}, \"engineType\": \"ACTIVEMQ\", \"engineVersion\": \"\", \"hostInstanceType\": \"\", \"ldapServerMetadata\": {\"Hosts\": {}, \"RoleBase\": {}, \"RoleName\": {}, \"RoleSearchMatching\": {}, \"RoleSearchSubtree\": {}, \"ServiceAccountPassword\": {}, \"ServiceAccountUsername\": {}, \"UserBase\": {}, \"UserRoleName\": {}, \"UserSearchMatching\": {}, \"UserSearchSubtree\": {}}, \"logs\": {\"Audit\": {}, \"General\": {}}, \"maintenanceWindowStartTime\": {\"DayOfWeek\": {}, \"TimeOfDay\": {}, \"TimeZone\": {}}, \"publiclyAccessible\": false, \"securityGroups\": [\"\"], \"storageType\": \"EBS\", \"subnetIds\": [\"\"], \"tags\": {}, \"users\": [{\"ConsoleAccess\": {}, \"Groups\": {}, \"Password\": {}, \"Username\": {}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a broker. Note: This API is asynchronous.</p> <p>To create a broker, you must either use the AmazonMQFullAccess IAM policy or include the following EC2 permissions in your IAM policy.</p> <ul><li><p>ec2:CreateNetworkInterface</p> <p>This permission is required to allow Amazon MQ to create an elastic network interface (ENI) on behalf of your account.</p></li> <li><p>ec2:CreateNetworkInterfacePermission</p> <p>This permission is required to attach the ENI to the broker instance.</p></li> <li><p>ec2:DeleteNetworkInterface</p></li> <li><p>ec2:DeleteNetworkInterfacePermission</p></li> <li><p>ec2:DetachNetworkInterface</p></li> <li><p>ec2:DescribeInternetGateways</p></li> <li><p>ec2:DescribeNetworkInterfaces</p></li> <li><p>ec2:DescribeNetworkInterfacePermissions</p></li> <li><p>ec2:DescribeRouteTables</p></li> <li><p>ec2:DescribeSecurityGroups</p></li> <li><p>ec2:DescribeSubnets</p></li> <li><p>ec2:DescribeVpcs</p></li></ul> <p>For more information, see <a href=\"https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user\">Create an IAM User and Get Your AWS Credentials</a> and <a href=\"https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface\">Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/brokers",
+      "method": "POST",
+      "name": "POST /v1/brokers",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"authenticationStrategy\": \"SIMPLE\", \"autoMinorVersionUpgrade\": false, \"brokerName\": \"\", \"configuration\": {\"Id\": {}, \"Revision\": {}}, \"creatorRequestId\": \"\", \"deploymentMode\": \"SINGLE_INSTANCE\", \"encryptionOptions\": {\"KmsKeyId\": {}, \"UseAwsOwnedKey\": {}}, \"engineType\": \"ACTIVEMQ\", \"engineVersion\": \"\", \"hostInstanceType\": \"\", \"ldapServerMetadata\": {\"Hosts\": {}, \"RoleBase\": {}, \"RoleName\": {}, \"RoleSearchMatching\": {}, \"RoleSearchSubtree\": {}, \"ServiceAccountPassword\": {}, \"ServiceAccountUsername\": {}, \"UserBase\": {}, \"UserRoleName\": {}, \"UserSearchMatching\": {}, \"UserSearchSubtree\": {}}, \"logs\": {\"Audit\": {}, \"General\": {}}, \"maintenanceWindowStartTime\": {\"DayOfWeek\": {}, \"TimeOfDay\": {}, \"TimeZone\": {}}, \"publiclyAccessible\": false, \"securityGroups\": [\"\"], \"storageType\": \"EBS\", \"subnetIds\": [\"\"], \"tags\": {}, \"users\": [{\"ConsoleAccess\": {}, \"Groups\": {}, \"Password\": {}, \"Username\": {}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/brokers",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of all brokers.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/brokers",
+      "method": "GET",
+      "name": "GET /v1/brokers",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/brokers",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "authenticationStrategy": "SIMPLE",
+        "engineType": "ACTIVEMQ",
+        "engineVersion": "",
+        "name": "",
+        "tags": {}
+      },
+      "body_json": {
+        "authenticationStrategy": "SIMPLE",
+        "engineType": "ACTIVEMQ",
+        "engineVersion": "",
+        "name": "",
+        "tags": {}
+      },
+      "body_text": "{\"authenticationStrategy\": \"SIMPLE\", \"engineType\": \"ACTIVEMQ\", \"engineVersion\": \"\", \"name\": \"\", \"tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/configurations",
+      "method": "POST",
+      "name": "POST /v1/configurations",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/v1/configurations",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"authenticationStrategy\": \"SIMPLE\", \"engineType\": \"ACTIVEMQ\", \"engineVersion\": \"\", \"name\": \"\", \"tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/configurations",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/configurations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of all configurations.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/configurations",
+      "method": "GET",
+      "name": "GET /v1/configurations",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/v1/configurations",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/configurations",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/configurations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "tags": {}
+      },
+      "body_json": {
+        "tags": {}
+      },
+      "body_text": "{\"tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Add a tag to a resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/tags/{{RESOURCE-ARN}}",
+      "method": "POST",
+      "name": "POST /v1/tags/{resource-arn}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource-arn",
+          "value": ""
+        }
+      ],
+      "path": "/v1/tags/{{RESOURCE-ARN}}",
+      "pathParameters": [
+        {
+          "name": "resource-arn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/tags/{resource-arn}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/tags/{{RESOURCE-ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists tags for a resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/tags/{{RESOURCE-ARN}}",
+      "method": "GET",
+      "name": "GET /v1/tags/{resource-arn}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource-arn",
+          "value": ""
+        }
+      ],
+      "path": "/v1/tags/{{RESOURCE-ARN}}",
+      "pathParameters": [
+        {
+          "name": "resource-arn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/tags/{resource-arn}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/tags/{{RESOURCE-ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "consoleAccess": false,
+        "groups": [
+          ""
+        ],
+        "password": ""
+      },
+      "body_json": {
+        "consoleAccess": false,
+        "groups": [
+          ""
+        ],
+        "password": ""
+      },
+      "body_text": "{\"consoleAccess\": false, \"groups\": [\"\"], \"password\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates an ActiveMQ user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}",
+      "method": "POST",
+      "name": "POST /v1/brokers/{broker-id}/users/{username}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"consoleAccess\": false, \"groups\": [\"\"], \"password\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/brokers/{broker-id}/users/{username}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an ActiveMQ user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}",
+      "method": "DELETE",
+      "name": "DELETE /v1/brokers/{broker-id}/users/{username}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /v1/brokers/{broker-id}/users/{username}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about an ActiveMQ user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}",
+      "method": "GET",
+      "name": "GET /v1/brokers/{broker-id}/users/{username}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/brokers/{broker-id}/users/{username}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "consoleAccess": false,
+        "groups": [
+          ""
+        ],
+        "password": ""
+      },
+      "body_json": {
+        "consoleAccess": false,
+        "groups": [
+          ""
+        ],
+        "password": ""
+      },
+      "body_text": "{\"consoleAccess\": false, \"groups\": [\"\"], \"password\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the information for an ActiveMQ user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}",
+      "method": "PUT",
+      "name": "PUT /v1/brokers/{broker-id}/users/{username}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "username",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"consoleAccess\": false, \"groups\": [\"\"], \"password\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /v1/brokers/{broker-id}/users/{username}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}/users/{{USERNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a broker. Note: This API is asynchronous.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/brokers/{{BROKER-ID}}",
+      "method": "DELETE",
+      "name": "DELETE /v1/brokers/{broker-id}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /v1/brokers/{broker-id}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about the specified broker.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/brokers/{{BROKER-ID}}",
+      "method": "GET",
+      "name": "GET /v1/brokers/{broker-id}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/brokers/{broker-id}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "authenticationStrategy": "SIMPLE",
+        "autoMinorVersionUpgrade": false,
+        "configuration": {
+          "Id": {},
+          "Revision": {}
+        },
+        "engineVersion": "",
+        "hostInstanceType": "",
+        "ldapServerMetadata": {
+          "Hosts": {},
+          "RoleBase": {},
+          "RoleName": {},
+          "RoleSearchMatching": {},
+          "RoleSearchSubtree": {},
+          "ServiceAccountPassword": {},
+          "ServiceAccountUsername": {},
+          "UserBase": {},
+          "UserRoleName": {},
+          "UserSearchMatching": {},
+          "UserSearchSubtree": {}
+        },
+        "logs": {
+          "Audit": {},
+          "General": {}
+        },
+        "maintenanceWindowStartTime": {
+          "DayOfWeek": {},
+          "TimeOfDay": {},
+          "TimeZone": {}
+        },
+        "securityGroups": [
+          ""
+        ]
+      },
+      "body_json": {
+        "authenticationStrategy": "SIMPLE",
+        "autoMinorVersionUpgrade": false,
+        "configuration": {
+          "Id": {},
+          "Revision": {}
+        },
+        "engineVersion": "",
+        "hostInstanceType": "",
+        "ldapServerMetadata": {
+          "Hosts": {},
+          "RoleBase": {},
+          "RoleName": {},
+          "RoleSearchMatching": {},
+          "RoleSearchSubtree": {},
+          "ServiceAccountPassword": {},
+          "ServiceAccountUsername": {},
+          "UserBase": {},
+          "UserRoleName": {},
+          "UserSearchMatching": {},
+          "UserSearchSubtree": {}
+        },
+        "logs": {
+          "Audit": {},
+          "General": {}
+        },
+        "maintenanceWindowStartTime": {
+          "DayOfWeek": {},
+          "TimeOfDay": {},
+          "TimeZone": {}
+        },
+        "securityGroups": [
+          ""
+        ]
+      },
+      "body_text": "{\"authenticationStrategy\": \"SIMPLE\", \"autoMinorVersionUpgrade\": false, \"configuration\": {\"Id\": {}, \"Revision\": {}}, \"engineVersion\": \"\", \"hostInstanceType\": \"\", \"ldapServerMetadata\": {\"Hosts\": {}, \"RoleBase\": {}, \"RoleName\": {}, \"RoleSearchMatching\": {}, \"RoleSearchSubtree\": {}, \"ServiceAccountPassword\": {}, \"ServiceAccountUsername\": {}, \"UserBase\": {}, \"UserRoleName\": {}, \"UserSearchMatching\": {}, \"UserSearchSubtree\": {}}, \"logs\": {\"Audit\": {}, \"General\": {}}, \"maintenanceWindowStartTime\": {\"DayOfWeek\": {}, \"TimeOfDay\": {}, \"TimeZone\": {}}, \"securityGroups\": [\"\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds a pending configuration change to a broker.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/brokers/{{BROKER-ID}}",
+      "method": "PUT",
+      "name": "PUT /v1/brokers/{broker-id}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"authenticationStrategy\": \"SIMPLE\", \"autoMinorVersionUpgrade\": false, \"configuration\": {\"Id\": {}, \"Revision\": {}}, \"engineVersion\": \"\", \"hostInstanceType\": \"\", \"ldapServerMetadata\": {\"Hosts\": {}, \"RoleBase\": {}, \"RoleName\": {}, \"RoleSearchMatching\": {}, \"RoleSearchSubtree\": {}, \"ServiceAccountPassword\": {}, \"ServiceAccountUsername\": {}, \"UserBase\": {}, \"UserRoleName\": {}, \"UserSearchMatching\": {}, \"UserSearchSubtree\": {}}, \"logs\": {\"Audit\": {}, \"General\": {}}, \"maintenanceWindowStartTime\": {\"DayOfWeek\": {}, \"TimeOfDay\": {}, \"TimeZone\": {}}, \"securityGroups\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /v1/brokers/{broker-id}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Removes a tag from a resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v1/tags/{{RESOURCE-ARN}}",
+      "method": "DELETE",
+      "name": "DELETE /v1/tags/{resource-arn}#tagKeys",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource-arn",
+          "value": ""
+        },
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "path": "/v1/tags/{{RESOURCE-ARN}}",
+      "pathParameters": [
+        {
+          "name": "resource-arn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /v1/tags/{resource-arn}#tagKeys",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/tags/{{RESOURCE-ARN}}#tagKeys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Describe available engine types and versions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/broker-engine-types",
+      "method": "GET",
+      "name": "GET /v1/broker-engine-types",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "engineType",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/v1/broker-engine-types",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "engineType",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/broker-engine-types",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/broker-engine-types"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Describe available broker instance options.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/broker-instance-options",
+      "method": "GET",
+      "name": "GET /v1/broker-instance-options",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "engineType",
+          "value": ""
+        },
+        {
+          "name": "hostInstanceType",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "storageType",
+          "value": ""
+        }
+      ],
+      "path": "/v1/broker-instance-options",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "engineType",
+          "value": ""
+        },
+        {
+          "name": "hostInstanceType",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        },
+        {
+          "name": "storageType",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/broker-instance-options",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/broker-instance-options"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about the specified configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/configurations/{{CONFIGURATION-ID}}",
+      "method": "GET",
+      "name": "GET /v1/configurations/{configuration-id}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "configuration-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/configurations/{{CONFIGURATION-ID}}",
+      "pathParameters": [
+        {
+          "name": "configuration-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/configurations/{configuration-id}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/configurations/{{CONFIGURATION-ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "data": "",
+        "description": ""
+      },
+      "body_json": {
+        "data": "",
+        "description": ""
+      },
+      "body_text": "{\"data\": \"\", \"description\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the specified configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v1/configurations/{{CONFIGURATION-ID}}",
+      "method": "PUT",
+      "name": "PUT /v1/configurations/{configuration-id}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "configuration-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/configurations/{{CONFIGURATION-ID}}",
+      "pathParameters": [
+        {
+          "name": "configuration-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"data\": \"\", \"description\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /v1/configurations/{configuration-id}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/configurations/{{CONFIGURATION-ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the specified configuration revision for the specified configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/configurations/{{CONFIGURATION-ID}}/revisions/{{CONFIGURATION-REVISION}}",
+      "method": "GET",
+      "name": "GET /v1/configurations/{configuration-id}/revisions/{configuration-revision}",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "configuration-id",
+          "value": ""
+        },
+        {
+          "name": "configuration-revision",
+          "value": ""
+        }
+      ],
+      "path": "/v1/configurations/{{CONFIGURATION-ID}}/revisions/{{CONFIGURATION-REVISION}}",
+      "pathParameters": [
+        {
+          "name": "configuration-id",
+          "value": ""
+        },
+        {
+          "name": "configuration-revision",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/configurations/{configuration-id}/revisions/{configuration-revision}",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/configurations/{{CONFIGURATION-ID}}/revisions/{{CONFIGURATION-REVISION}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of all revisions for the specified configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/configurations/{{CONFIGURATION-ID}}/revisions",
+      "method": "GET",
+      "name": "GET /v1/configurations/{configuration-id}/revisions",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "configuration-id",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/v1/configurations/{{CONFIGURATION-ID}}/revisions",
+      "pathParameters": [
+        {
+          "name": "configuration-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/configurations/{configuration-id}/revisions",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/configurations/{{CONFIGURATION-ID}}/revisions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of all ActiveMQ users.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1/brokers/{{BROKER-ID}}/users",
+      "method": "GET",
+      "name": "GET /v1/brokers/{broker-id}/users",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        },
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}/users",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /v1/brokers/{broker-id}/users",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}/users"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZONMQ_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Reboots a broker. Note: This API is asynchronous.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZONMQ_API_KEY}}"
+        }
+      ],
+      "id": "POST /v1/brokers/{{BROKER-ID}}/reboot",
+      "method": "POST",
+      "name": "POST /v1/brokers/{broker-id}/reboot",
+      "note": "Replace {{AMAZONMQ_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/brokers/{{BROKER-ID}}/reboot",
+      "pathParameters": [
+        {
+          "name": "broker-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /v1/brokers/{broker-id}/reboot",
+      "url": "http://mq.{{REGION}}.amazonaws.com/v1/brokers/{{BROKER-ID}}/reboot"
+    }
+  ]
+}

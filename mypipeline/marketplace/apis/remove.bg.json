@@ -1,0 +1,214 @@
+{
+  "id": "remove.bg",
+  "info": {
+    "base_url": "https://api.remove.bg/v1.0",
+    "description": "Removes the background of a JPG/PNG image.\n\n* File size: up to 12 MB\n* Image source: File upload (binary or as base64 encoded string) or download from URL\n* Image Content: Any photo with a foreground...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation",
+      "image-generation"
+    ],
+    "title": "Background Removal API",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "BACKGROUND_REMOVAL_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the current credit balance and number of free API calls.\n\nNotes:\n\n* Balance changes may be delayed by several seconds. To locally keep track of your credit balance, you should therefore only call this endpoint initially (or e.g. when the user manually triggers a refresh), then use the `X-Credits-Charged` response header returned with each image processing response to adjust the local balance.\n\n* The \"*sizes*\" field is always \"all\", is deprecated and will soon be removed.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{BACKGROUND_REMOVAL_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{BACKGROUND_REMOVAL_API_KEY}}"
+        }
+      ],
+      "id": "GET /v1.0/account",
+      "method": "GET",
+      "name": "Fetch credit balance and free API calls.",
+      "note": "Replace {{BACKGROUND_REMOVAL_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1.0/account",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Fetch credit balance and free API calls.",
+      "url": "https://api.remove.bg/v1.0/account"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "BACKGROUND_REMOVAL_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "image_file_b64": "",
+        "image_filename": "car.jpg",
+        "image_url": "https://www.remove.bg/example-hd.jpg",
+        "tag": "batch_1_2020"
+      },
+      "body_json": {
+        "image_file_b64": "",
+        "image_filename": "car.jpg",
+        "image_url": "https://www.remove.bg/example-hd.jpg",
+        "tag": "batch_1_2020"
+      },
+      "body_text": "{\"image_file_b64\": \"\", \"image_filename\": \"car.jpg\", \"image_url\": \"https://www.remove.bg/example-hd.jpg\", \"tag\": \"batch_1_2020\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Submit an image to the remove.bg Improvement program\n* Contribute an image that remove.bg is currently not able to remove the background from properly\n* Help us make remove.bg better\n* Get better results for similiar images in the future\n\nNotes:\n  * By submitting images through the API you agree to the <a target=\"_blank\" rel=\"noopener\" href=\"/ipc\">Improvement Program Conditions</a>\n  * File size: up to 12MB\n  * up to 100 files per day. <br> Higher Rate Limits are available for Enterprise customers <a href=\"/support/contact?subject=Improvement+Program+Rate+Limit\">upon request</a>.\n\nRequires either an API Key to be provided in the `X-API-Key` request header or an OAuth 2.0 access token to be provided in the `Authorization` request header.\n\nPlease note that submissions are used on a best-effort basis and the extent of expected improvement varies depending on many factors, including the number of provided images, their complexity and visual similarity. Improvements usually take several weeks to become effective.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{BACKGROUND_REMOVAL_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{BACKGROUND_REMOVAL_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.0/improve",
+      "method": "POST",
+      "name": "POST /improve",
+      "note": "Replace {{BACKGROUND_REMOVAL_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1.0/improve",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"image_file_b64\": \"\", \"image_filename\": \"car.jpg\", \"image_url\": \"https://www.remove.bg/example-hd.jpg\", \"tag\": \"batch_1_2020\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /improve",
+      "url": "https://api.remove.bg/v1.0/improve"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "BACKGROUND_REMOVAL_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "add_shadow": "false",
+        "bg_color": "",
+        "bg_image_url": "",
+        "channels": "rgba",
+        "crop": "false",
+        "crop_margin": "0",
+        "format": "auto",
+        "image_file_b64": "",
+        "image_url": "https://www.remove.bg/example-hd.jpg",
+        "position": "original",
+        "roi": "0% 0% 100% 100%",
+        "scale": "original",
+        "semitransparency": "true",
+        "size": "preview",
+        "type": "auto",
+        "type_level": "none"
+      },
+      "body_json": {
+        "add_shadow": "false",
+        "bg_color": "",
+        "bg_image_url": "",
+        "channels": "rgba",
+        "crop": "false",
+        "crop_margin": "0",
+        "format": "auto",
+        "image_file_b64": "",
+        "image_url": "https://www.remove.bg/example-hd.jpg",
+        "position": "original",
+        "roi": "0% 0% 100% 100%",
+        "scale": "original",
+        "semitransparency": "true",
+        "size": "preview",
+        "type": "auto",
+        "type_level": "none"
+      },
+      "body_text": "{\"add_shadow\": \"false\", \"bg_color\": \"\", \"bg_image_url\": \"\", \"channels\": \"rgba\", \"crop\": \"false\", \"crop_margin\": \"0\", \"format\": \"auto\", \"image_file_b64\": \"\", \"image_url\": \"https://www.remove.bg/example-hd.jpg\", \"position\": \"original\", \"roi\": \"0% 0% 100% 100%\", \"scale\": \"original\", \"semitransparency\": \"true\", \"size\": \"preview\", \"type\": \"auto\", \"type_level\": \"none\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Removes the background of a JPG/PNG image.\n\n* File size: up to 12 MB\n* Image source: File upload (binary or as base64 encoded string) or download from URL\n* Image Content: Any photo with a foreground [(e.g. people, products, animals, cars, etc.)](/supported-images)\n* Output resolutions available: Preview (up to 0.25 megapixels), Full (up to 25 megapixels)\n\nRequires either an API Key to be provided in the `X-API-Key` request header or an OAuth 2.0 access token to be provided in the `Authorization` request header.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{BACKGROUND_REMOVAL_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{BACKGROUND_REMOVAL_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1.0/removebg",
+      "method": "POST",
+      "name": "Remove the background of an image",
+      "note": "Replace {{BACKGROUND_REMOVAL_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v1.0/removebg",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"add_shadow\": \"false\", \"bg_color\": \"\", \"bg_image_url\": \"\", \"channels\": \"rgba\", \"crop\": \"false\", \"crop_margin\": \"0\", \"format\": \"auto\", \"image_file_b64\": \"\", \"image_url\": \"https://www.remove.bg/example-hd.jpg\", \"position\": \"original\", \"roi\": \"0% 0% 100% 100%\", \"scale\": \"original\", \"semitransparency\": \"true\", \"size\": \"preview\", \"type\": \"auto\", \"type_level\": \"none\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove the background of an image",
+      "url": "https://api.remove.bg/v1.0/removebg"
+    }
+  ]
+}

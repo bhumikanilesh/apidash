@@ -1,0 +1,1049 @@
+{
+  "id": "klarna.com_payments",
+  "info": {
+    "base_url": "https://api.klarna.com",
+    "description": "Use this API call to update a Klarna Payments session with new details, in case something in the order has changed and the checkout has been reloaded. Including if the consumer adds a new item to the...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "finance"
+    ],
+    "title": "Klarna Payments API V1",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this API call to cancel/release an authorization. If the `authorization_token` received during a Klarna Payments won’t be used to place an order immediately you could release the authorization.\nRead more on **[Cancel an existing authorization](https://docs.klarna.com/klarna-payments/other-actions/cancel-an-authorization/)**.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}",
+      "method": "DELETE",
+      "name": "Cancel an existing authorization",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "authorizationToken",
+          "value": ""
+        }
+      ],
+      "path": "/payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}",
+      "pathParameters": [
+        {
+          "name": "authorizationToken",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel an existing authorization",
+      "url": "https://api.klarna.com/payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "billing_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "customer": {
+          "date_of_birth": "1978-12-31",
+          "gender": "male",
+          "last_four_ssn": "",
+          "national_identification_number": "",
+          "organization_entity_type": "LIMITED_COMPANY",
+          "organization_registration_id": "",
+          "title": "Mr.",
+          "type": "organization",
+          "vat_id": ""
+        },
+        "description": "",
+        "intended_use": "SUBSCRIPTION",
+        "locale": "en-GB",
+        "purchase_country": "GB",
+        "purchase_currency": "GBP"
+      },
+      "body_json": {
+        "billing_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "customer": {
+          "date_of_birth": "1978-12-31",
+          "gender": "male",
+          "last_four_ssn": "",
+          "national_identification_number": "",
+          "organization_entity_type": "LIMITED_COMPANY",
+          "organization_registration_id": "",
+          "title": "Mr.",
+          "type": "organization",
+          "vat_id": ""
+        },
+        "description": "",
+        "intended_use": "SUBSCRIPTION",
+        "locale": "en-GB",
+        "purchase_country": "GB",
+        "purchase_currency": "GBP"
+      },
+      "body_text": "{\"billing_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"customer\": {\"date_of_birth\": \"1978-12-31\", \"gender\": \"male\", \"last_four_ssn\": \"\", \"national_identification_number\": \"\", \"organization_entity_type\": \"LIMITED_COMPANY\", \"organization_registration_id\": \"\", \"title\": \"Mr.\", \"type\": \"organization\", \"vat_id\": \"\"}, \"description\": \"\", \"intended_use\": \"SUBSCRIPTION\", \"locale\": \"en-GB\", \"purchase_country\": \"GB\", \"purchase_currency\": \"GBP\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this API call to create a Klarna Customer Token.<br/>After having obtained an `authorization_token` for a successful authorization, this can be used to create a purchase token instead of placing the order. Creating a Klarna Customer Token results in Klarna storing customer and payment method details.\nRead more on **[Generate a consumer token](https://docs.klarna.com/klarna-payments/in-depth-knowledge/customer-token/)**.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}/customer-token",
+      "method": "POST",
+      "name": "Generate a consumer token",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "authorizationToken",
+          "value": ""
+        }
+      ],
+      "path": "/payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}/customer-token",
+      "pathParameters": [
+        {
+          "name": "authorizationToken",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"billing_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"customer\": {\"date_of_birth\": \"1978-12-31\", \"gender\": \"male\", \"last_four_ssn\": \"\", \"national_identification_number\": \"\", \"organization_entity_type\": \"LIMITED_COMPANY\", \"organization_registration_id\": \"\", \"title\": \"Mr.\", \"type\": \"organization\", \"vat_id\": \"\"}, \"description\": \"\", \"intended_use\": \"SUBSCRIPTION\", \"locale\": \"en-GB\", \"purchase_country\": \"GB\", \"purchase_currency\": \"GBP\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Generate a consumer token",
+      "url": "https://api.klarna.com/payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}/customer-token"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "authorization_token": "",
+        "auto_capture": false,
+        "billing_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "custom_payment_method_ids": [
+          ""
+        ],
+        "customer": {
+          "date_of_birth": "1978-12-31",
+          "gender": "male",
+          "last_four_ssn": "",
+          "national_identification_number": "",
+          "organization_entity_type": "LIMITED_COMPANY",
+          "organization_registration_id": "",
+          "title": "Mr.",
+          "type": "organization",
+          "vat_id": ""
+        },
+        "locale": "en-GB",
+        "merchant_data": "{\"order_specific\":[{\"substore\":\"Women's Fashion\",\"product_name\":\"Women Sweatshirt\"}]}",
+        "merchant_reference1": "ON4711",
+        "merchant_reference2": "hdt53h-zdgg6-hdaff2",
+        "merchant_urls": {
+          "authorization": "https://www.example-url.com/authorization",
+          "confirmation": "https://www.example-url.com/confirmation",
+          "notification": "https://www.example-url.com/notification",
+          "push": "https://www.example-url.com/push"
+        },
+        "order_amount": 2500,
+        "order_lines": [
+          {
+            "image_url": "https://www.exampleobjects.com/logo.png",
+            "merchant_data": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+            "name": "Running shoe",
+            "product_identifiers": {
+              "brand": "shoe-brand",
+              "category_path": "Shoes > Running",
+              "color": "white",
+              "global_trade_item_number": "4912345678904",
+              "manufacturer_part_number": "AD6654412-334.22",
+              "size": "small"
+            },
+            "product_url": "https://.../AD6654412.html",
+            "quantity": 1,
+            "quantity_unit": "pcs",
+            "reference": "AD6654412",
+            "subscription": {
+              "interval": "DAY",
+              "interval_count": 0,
+              "name": ""
+            },
+            "tax_rate": 1900,
+            "total_amount": 2500,
+            "total_discount_amount": 500,
+            "total_tax_amount": 475,
+            "type": "physical",
+            "unit_price": 2500
+          }
+        ],
+        "order_tax_amount": 475,
+        "payment_method_categories": [
+          {
+            "asset_urls": {
+              "descriptive": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg",
+              "standard": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
+            },
+            "identifier": "klarna",
+            "name": "Pay with Klarna"
+          }
+        ],
+        "purchase_country": "GB",
+        "purchase_currency": "GBP",
+        "shipping_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "status": "complete"
+      },
+      "body_json": {
+        "authorization_token": "",
+        "auto_capture": false,
+        "billing_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "custom_payment_method_ids": [
+          ""
+        ],
+        "customer": {
+          "date_of_birth": "1978-12-31",
+          "gender": "male",
+          "last_four_ssn": "",
+          "national_identification_number": "",
+          "organization_entity_type": "LIMITED_COMPANY",
+          "organization_registration_id": "",
+          "title": "Mr.",
+          "type": "organization",
+          "vat_id": ""
+        },
+        "locale": "en-GB",
+        "merchant_data": "{\"order_specific\":[{\"substore\":\"Women's Fashion\",\"product_name\":\"Women Sweatshirt\"}]}",
+        "merchant_reference1": "ON4711",
+        "merchant_reference2": "hdt53h-zdgg6-hdaff2",
+        "merchant_urls": {
+          "authorization": "https://www.example-url.com/authorization",
+          "confirmation": "https://www.example-url.com/confirmation",
+          "notification": "https://www.example-url.com/notification",
+          "push": "https://www.example-url.com/push"
+        },
+        "order_amount": 2500,
+        "order_lines": [
+          {
+            "image_url": "https://www.exampleobjects.com/logo.png",
+            "merchant_data": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+            "name": "Running shoe",
+            "product_identifiers": {
+              "brand": "shoe-brand",
+              "category_path": "Shoes > Running",
+              "color": "white",
+              "global_trade_item_number": "4912345678904",
+              "manufacturer_part_number": "AD6654412-334.22",
+              "size": "small"
+            },
+            "product_url": "https://.../AD6654412.html",
+            "quantity": 1,
+            "quantity_unit": "pcs",
+            "reference": "AD6654412",
+            "subscription": {
+              "interval": "DAY",
+              "interval_count": 0,
+              "name": ""
+            },
+            "tax_rate": 1900,
+            "total_amount": 2500,
+            "total_discount_amount": 500,
+            "total_tax_amount": 475,
+            "type": "physical",
+            "unit_price": 2500
+          }
+        ],
+        "order_tax_amount": 475,
+        "payment_method_categories": [
+          {
+            "asset_urls": {
+              "descriptive": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg",
+              "standard": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
+            },
+            "identifier": "klarna",
+            "name": "Pay with Klarna"
+          }
+        ],
+        "purchase_country": "GB",
+        "purchase_currency": "GBP",
+        "shipping_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "status": "complete"
+      },
+      "body_text": "{\"authorization_token\": \"\", \"auto_capture\": false, \"billing_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"custom_payment_method_ids\": [\"\"], \"customer\": {\"date_of_birth\": \"1978-12-31\", \"gender\": \"male\", \"last_four_ssn\": \"\", \"national_identification_number\": \"\", \"organization_entity_type\": \"LIMITED_COMPANY\", \"organization_registration_id\": \"\", \"title\": \"Mr.\", \"type\": \"organization\", \"vat_id\": \"\"}, \"locale\": \"en-GB\", \"merchant_data\": \"{\\\"order_specific\\\":[{\\\"substore\\\":\\\"Women's Fashion\\\",\\\"product_name\\\":\\\"Women Sweatshirt\\\"}]}\", \"merchant_reference1\": \"ON4711\", \"merchant_reference2\": \"hdt53h-zdgg6-hdaff2\", \"merchant_urls\": {\"authorization\": \"https://www.example-url.com/authorization\", \"confirmation\": \"https://www.example-url.com/confirmation\", \"notification\": \"https://www.example-url.com/notification\", \"push\": \"https://www.example-url.com/push\"}, \"order_amount\": 2500, \"order_lines\": [{\"image_url\": \"https://www.exampleobjects.com/logo.png\", \"merchant_data\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"name\": \"Running shoe\", \"product_identifiers\": {\"brand\": \"shoe-brand\", \"category_path\": \"Shoes > Running\", \"color\": \"white\", \"global_trade_item_number\": \"4912345678904\", \"manufacturer_part_number\": \"AD6654412-334.22\", \"size\": \"small\"}, \"product_url\": \"https://.../AD6654412.html\", \"quantity\": 1, \"quantity_unit\": \"pcs\", \"reference\": \"AD6654412\", \"subscription\": {\"interval\": \"DAY\", \"interval_count\": 0, \"name\": \"\"}, \"tax_rate\": 1900, \"total_amount\": 2500, \"total_discount_amount\": 500, \"total_tax_amount\": 475, \"type\": \"physical\", \"unit_price\": 2500}], \"order_tax_amount\": 475, \"payment_method_categories\": [{\"asset_urls\": {\"descriptive\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\", \"standard\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\"}, \"identifier\": \"klarna\", \"name\": \"Pay with Klarna\"}], \"purchase_country\": \"GB\", \"purchase_currency\": \"GBP\", \"shipping_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"status\": \"complete\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this API call to create a new order. Placing an order towards Klarna means that the Klarna Payments session will be closed and that an order will be created in Klarna's system.<br/>When you have received the `authorization_token` for a successful authorization you can place the order. Among the other order details in this request, you include a URL to the confirmation page for the customer.<br/>When the Order has been successfully placed at Klarna, you need to handle it either through the Merchant Portal or using [Klarna’s Order Management API](#order-management-api).\nRead more on **[Create a new order](https://docs.klarna.com/klarna-payments/integrate-with-klarna-payments/step-3-create-an-order/)**.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}/order",
+      "method": "POST",
+      "name": "Create a new order",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "authorizationToken",
+          "value": ""
+        }
+      ],
+      "path": "/payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}/order",
+      "pathParameters": [
+        {
+          "name": "authorizationToken",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"authorization_token\": \"\", \"auto_capture\": false, \"billing_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"custom_payment_method_ids\": [\"\"], \"customer\": {\"date_of_birth\": \"1978-12-31\", \"gender\": \"male\", \"last_four_ssn\": \"\", \"national_identification_number\": \"\", \"organization_entity_type\": \"LIMITED_COMPANY\", \"organization_registration_id\": \"\", \"title\": \"Mr.\", \"type\": \"organization\", \"vat_id\": \"\"}, \"locale\": \"en-GB\", \"merchant_data\": \"{\\\"order_specific\\\":[{\\\"substore\\\":\\\"Women's Fashion\\\",\\\"product_name\\\":\\\"Women Sweatshirt\\\"}]}\", \"merchant_reference1\": \"ON4711\", \"merchant_reference2\": \"hdt53h-zdgg6-hdaff2\", \"merchant_urls\": {\"authorization\": \"https://www.example-url.com/authorization\", \"confirmation\": \"https://www.example-url.com/confirmation\", \"notification\": \"https://www.example-url.com/notification\", \"push\": \"https://www.example-url.com/push\"}, \"order_amount\": 2500, \"order_lines\": [{\"image_url\": \"https://www.exampleobjects.com/logo.png\", \"merchant_data\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"name\": \"Running shoe\", \"product_identifiers\": {\"brand\": \"shoe-brand\", \"category_path\": \"Shoes > Running\", \"color\": \"white\", \"global_trade_item_number\": \"4912345678904\", \"manufacturer_part_number\": \"AD6654412-334.22\", \"size\": \"small\"}, \"product_url\": \"https://.../AD6654412.html\", \"quantity\": 1, \"quantity_unit\": \"pcs\", \"reference\": \"AD6654412\", \"subscription\": {\"interval\": \"DAY\", \"interval_count\": 0, \"name\": \"\"}, \"tax_rate\": 1900, \"total_amount\": 2500, \"total_discount_amount\": 500, \"total_tax_amount\": 475, \"type\": \"physical\", \"unit_price\": 2500}], \"order_tax_amount\": 475, \"payment_method_categories\": [{\"asset_urls\": {\"descriptive\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\", \"standard\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\"}, \"identifier\": \"klarna\", \"name\": \"Pay with Klarna\"}], \"purchase_country\": \"GB\", \"purchase_currency\": \"GBP\", \"shipping_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"status\": \"complete\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new order",
+      "url": "https://api.klarna.com/payments/v1/authorizations/{{AUTHORIZATION_TOKEN}}/order"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "acquiring_channel": "ECOMMERCE",
+        "attachment": {
+          "body": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+          "content_type": "application/vnd.klarna.internal.emd-v2+json"
+        },
+        "authorization_token": "",
+        "billing_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "client_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICIw",
+        "custom_payment_method_ids": [
+          ""
+        ],
+        "customer": {
+          "date_of_birth": "1978-12-31",
+          "gender": "male",
+          "last_four_ssn": "",
+          "national_identification_number": "",
+          "organization_entity_type": "LIMITED_COMPANY",
+          "organization_registration_id": "",
+          "title": "Mr.",
+          "type": "organization",
+          "vat_id": ""
+        },
+        "design": "",
+        "expires_at": "2038-01-19T03:14:07.000Z",
+        "intent": "buy",
+        "locale": "en-US",
+        "merchant_data": "{\"order_specific\":[{\"substore\":\"Women's Fashion\",\"product_name\":\"Women Sweatshirt\"}]}",
+        "merchant_reference1": "ON4711",
+        "merchant_reference2": "hdt53h-zdgg6-hdaff2",
+        "merchant_urls": {
+          "authorization": "https://www.example-url.com/authorization",
+          "confirmation": "https://www.example-url.com/confirmation",
+          "notification": "https://www.example-url.com/notification",
+          "push": "https://www.example-url.com/push"
+        },
+        "options": {
+          "color_border": "#FF9900",
+          "color_border_selected": "#FF9900",
+          "color_details": "#FF9900",
+          "color_text": "#FF9900",
+          "radius_border": "5px"
+        },
+        "order_amount": 2500,
+        "order_lines": [
+          {
+            "image_url": "https://www.exampleobjects.com/logo.png",
+            "merchant_data": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+            "name": "Running shoe",
+            "product_identifiers": {
+              "brand": "shoe-brand",
+              "category_path": "Shoes > Running",
+              "color": "white",
+              "global_trade_item_number": "4912345678904",
+              "manufacturer_part_number": "AD6654412-334.22",
+              "size": "small"
+            },
+            "product_url": "https://.../AD6654412.html",
+            "quantity": 1,
+            "quantity_unit": "pcs",
+            "reference": "AD6654412",
+            "subscription": {
+              "interval": "DAY",
+              "interval_count": 0,
+              "name": ""
+            },
+            "tax_rate": 1900,
+            "total_amount": 2500,
+            "total_discount_amount": 500,
+            "total_tax_amount": 475,
+            "type": "physical",
+            "unit_price": 2500
+          }
+        ],
+        "order_tax_amount": 475,
+        "payment_method_categories": [
+          {
+            "asset_urls": {
+              "descriptive": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg",
+              "standard": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
+            },
+            "identifier": "klarna",
+            "name": "Pay with Klarna"
+          }
+        ],
+        "purchase_country": "GB",
+        "purchase_currency": "GBP",
+        "shipping_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "status": "complete"
+      },
+      "body_json": {
+        "acquiring_channel": "ECOMMERCE",
+        "attachment": {
+          "body": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+          "content_type": "application/vnd.klarna.internal.emd-v2+json"
+        },
+        "authorization_token": "",
+        "billing_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "client_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICIw",
+        "custom_payment_method_ids": [
+          ""
+        ],
+        "customer": {
+          "date_of_birth": "1978-12-31",
+          "gender": "male",
+          "last_four_ssn": "",
+          "national_identification_number": "",
+          "organization_entity_type": "LIMITED_COMPANY",
+          "organization_registration_id": "",
+          "title": "Mr.",
+          "type": "organization",
+          "vat_id": ""
+        },
+        "design": "",
+        "expires_at": "2038-01-19T03:14:07.000Z",
+        "intent": "buy",
+        "locale": "en-US",
+        "merchant_data": "{\"order_specific\":[{\"substore\":\"Women's Fashion\",\"product_name\":\"Women Sweatshirt\"}]}",
+        "merchant_reference1": "ON4711",
+        "merchant_reference2": "hdt53h-zdgg6-hdaff2",
+        "merchant_urls": {
+          "authorization": "https://www.example-url.com/authorization",
+          "confirmation": "https://www.example-url.com/confirmation",
+          "notification": "https://www.example-url.com/notification",
+          "push": "https://www.example-url.com/push"
+        },
+        "options": {
+          "color_border": "#FF9900",
+          "color_border_selected": "#FF9900",
+          "color_details": "#FF9900",
+          "color_text": "#FF9900",
+          "radius_border": "5px"
+        },
+        "order_amount": 2500,
+        "order_lines": [
+          {
+            "image_url": "https://www.exampleobjects.com/logo.png",
+            "merchant_data": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+            "name": "Running shoe",
+            "product_identifiers": {
+              "brand": "shoe-brand",
+              "category_path": "Shoes > Running",
+              "color": "white",
+              "global_trade_item_number": "4912345678904",
+              "manufacturer_part_number": "AD6654412-334.22",
+              "size": "small"
+            },
+            "product_url": "https://.../AD6654412.html",
+            "quantity": 1,
+            "quantity_unit": "pcs",
+            "reference": "AD6654412",
+            "subscription": {
+              "interval": "DAY",
+              "interval_count": 0,
+              "name": ""
+            },
+            "tax_rate": 1900,
+            "total_amount": 2500,
+            "total_discount_amount": 500,
+            "total_tax_amount": 475,
+            "type": "physical",
+            "unit_price": 2500
+          }
+        ],
+        "order_tax_amount": 475,
+        "payment_method_categories": [
+          {
+            "asset_urls": {
+              "descriptive": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg",
+              "standard": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
+            },
+            "identifier": "klarna",
+            "name": "Pay with Klarna"
+          }
+        ],
+        "purchase_country": "GB",
+        "purchase_currency": "GBP",
+        "shipping_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "status": "complete"
+      },
+      "body_text": "{\"acquiring_channel\": \"ECOMMERCE\", \"attachment\": {\"body\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"content_type\": \"application/vnd.klarna.internal.emd-v2+json\"}, \"authorization_token\": \"\", \"billing_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"client_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICIw\", \"custom_payment_method_ids\": [\"\"], \"customer\": {\"date_of_birth\": \"1978-12-31\", \"gender\": \"male\", \"last_four_ssn\": \"\", \"national_identification_number\": \"\", \"organization_entity_type\": \"LIMITED_COMPANY\", \"organization_registration_id\": \"\", \"title\": \"Mr.\", \"type\": \"organization\", \"vat_id\": \"\"}, \"design\": \"\", \"expires_at\": \"2038-01-19T03:14:07.000Z\", \"intent\": \"buy\", \"locale\": \"en-US\", \"merchant_data\": \"{\\\"order_specific\\\":[{\\\"substore\\\":\\\"Women's Fashion\\\",\\\"product_name\\\":\\\"Women Sweatshirt\\\"}]}\", \"merchant_reference1\": \"ON4711\", \"merchant_reference2\": \"hdt53h-zdgg6-hdaff2\", \"merchant_urls\": {\"authorization\": \"https://www.example-url.com/authorization\", \"confirmation\": \"https://www.example-url.com/confirmation\", \"notification\": \"https://www.example-url.com/notification\", \"push\": \"https://www.example-url.com/push\"}, \"options\": {\"color_border\": \"#FF9900\", \"color_border_selected\": \"#FF9900\", \"color_details\": \"#FF9900\", \"color_text\": \"#FF9900\", \"radius_border\": \"5px\"}, \"order_amount\": 2500, \"order_lines\": [{\"image_url\": \"https://www.exampleobjects.com/logo.png\", \"merchant_data\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"name\": \"Running shoe\", \"product_identifiers\": {\"brand\": \"shoe-brand\", \"category_path\": \"Shoes > Running\", \"color\": \"white\", \"global_trade_item_number\": \"4912345678904\", \"manufacturer_part_number\": \"AD6654412-334.22\", \"size\": \"small\"}, \"product_url\": \"https://.../AD6654412.html\", \"quantity\": 1, \"quantity_unit\": \"pcs\", \"reference\": \"AD6654412\", \"subscription\": {\"interval\": \"DAY\", \"interval_count\": 0, \"name\": \"\"}, \"tax_rate\": 1900, \"total_amount\": 2500, \"total_discount_amount\": 500, \"total_tax_amount\": 475, \"type\": \"physical\", \"unit_price\": 2500}], \"order_tax_amount\": 475, \"payment_method_categories\": [{\"asset_urls\": {\"descriptive\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\", \"standard\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\"}, \"identifier\": \"klarna\", \"name\": \"Pay with Klarna\"}], \"purchase_country\": \"GB\", \"purchase_currency\": \"GBP\", \"shipping_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"status\": \"complete\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this API call to create a Klarna Payments session.<br/>When a session is created you will receive the available `payment_method_categories` for the session, a `session_id` and a `client_token`. The `session_id` can be used to read or update the session using the REST API. The `client_token` should be passed to the browser.\nRead more on **[Create a new payment session](https://docs.klarna.com/klarna-payments/integrate-with-klarna-payments/step-1-initiate-a-payment/)**.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /payments/v1/sessions",
+      "method": "POST",
+      "name": "Create a new payment session",
+      "params": [],
+      "path": "/payments/v1/sessions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"acquiring_channel\": \"ECOMMERCE\", \"attachment\": {\"body\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"content_type\": \"application/vnd.klarna.internal.emd-v2+json\"}, \"authorization_token\": \"\", \"billing_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"client_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICIw\", \"custom_payment_method_ids\": [\"\"], \"customer\": {\"date_of_birth\": \"1978-12-31\", \"gender\": \"male\", \"last_four_ssn\": \"\", \"national_identification_number\": \"\", \"organization_entity_type\": \"LIMITED_COMPANY\", \"organization_registration_id\": \"\", \"title\": \"Mr.\", \"type\": \"organization\", \"vat_id\": \"\"}, \"design\": \"\", \"expires_at\": \"2038-01-19T03:14:07.000Z\", \"intent\": \"buy\", \"locale\": \"en-US\", \"merchant_data\": \"{\\\"order_specific\\\":[{\\\"substore\\\":\\\"Women's Fashion\\\",\\\"product_name\\\":\\\"Women Sweatshirt\\\"}]}\", \"merchant_reference1\": \"ON4711\", \"merchant_reference2\": \"hdt53h-zdgg6-hdaff2\", \"merchant_urls\": {\"authorization\": \"https://www.example-url.com/authorization\", \"confirmation\": \"https://www.example-url.com/confirmation\", \"notification\": \"https://www.example-url.com/notification\", \"push\": \"https://www.example-url.com/push\"}, \"options\": {\"color_border\": \"#FF9900\", \"color_border_selected\": \"#FF9900\", \"color_details\": \"#FF9900\", \"color_text\": \"#FF9900\", \"radius_border\": \"5px\"}, \"order_amount\": 2500, \"order_lines\": [{\"image_url\": \"https://www.exampleobjects.com/logo.png\", \"merchant_data\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"name\": \"Running shoe\", \"product_identifiers\": {\"brand\": \"shoe-brand\", \"category_path\": \"Shoes > Running\", \"color\": \"white\", \"global_trade_item_number\": \"4912345678904\", \"manufacturer_part_number\": \"AD6654412-334.22\", \"size\": \"small\"}, \"product_url\": \"https://.../AD6654412.html\", \"quantity\": 1, \"quantity_unit\": \"pcs\", \"reference\": \"AD6654412\", \"subscription\": {\"interval\": \"DAY\", \"interval_count\": 0, \"name\": \"\"}, \"tax_rate\": 1900, \"total_amount\": 2500, \"total_discount_amount\": 500, \"total_tax_amount\": 475, \"type\": \"physical\", \"unit_price\": 2500}], \"order_tax_amount\": 475, \"payment_method_categories\": [{\"asset_urls\": {\"descriptive\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\", \"standard\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\"}, \"identifier\": \"klarna\", \"name\": \"Pay with Klarna\"}], \"purchase_country\": \"GB\", \"purchase_currency\": \"GBP\", \"shipping_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"status\": \"complete\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a new payment session",
+      "url": "https://api.klarna.com/payments/v1/sessions"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this API call to read a Klarna Payments session. You can read the Klarna Payments session at any time after it has been created, to get information about it. This will return all data that has been collected during the session.\nRead more on **[Read an existing payment session](https://docs.klarna.com/klarna-payments/other-actions/check-the-details-of-a-payment-session/)**.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /payments/v1/sessions/{{SESSION_ID}}",
+      "method": "GET",
+      "name": "Read an existing payment session",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "session_id",
+          "value": ""
+        }
+      ],
+      "path": "/payments/v1/sessions/{{SESSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "session_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Read an existing payment session",
+      "url": "https://api.klarna.com/payments/v1/sessions/{{SESSION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "acquiring_channel": "ECOMMERCE",
+        "attachment": {
+          "body": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+          "content_type": "application/vnd.klarna.internal.emd-v2+json"
+        },
+        "authorization_token": "",
+        "billing_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "client_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICIw",
+        "custom_payment_method_ids": [
+          ""
+        ],
+        "customer": {
+          "date_of_birth": "1978-12-31",
+          "gender": "male",
+          "last_four_ssn": "",
+          "national_identification_number": "",
+          "organization_entity_type": "LIMITED_COMPANY",
+          "organization_registration_id": "",
+          "title": "Mr.",
+          "type": "organization",
+          "vat_id": ""
+        },
+        "design": "",
+        "expires_at": "2038-01-19T03:14:07.000Z",
+        "intent": "buy",
+        "locale": "en-GB",
+        "merchant_data": "{\"order_specific\":[{\"substore\":\"Women's Fashion\",\"product_name\":\"Women Sweatshirt\"}]}",
+        "merchant_reference1": "ON4711",
+        "merchant_reference2": "hdt53h-zdgg6-hdaff2",
+        "merchant_urls": {
+          "authorization": "https://www.example-url.com/authorization",
+          "confirmation": "https://www.example-url.com/confirmation",
+          "notification": "https://www.example-url.com/notification",
+          "push": "https://www.example-url.com/push"
+        },
+        "options": {
+          "color_border": "#FF9900",
+          "color_border_selected": "#FF9900",
+          "color_details": "#FF9900",
+          "color_text": "#FF9900",
+          "radius_border": "5px"
+        },
+        "order_amount": 2500,
+        "order_lines": [
+          {
+            "image_url": "https://www.exampleobjects.com/logo.png",
+            "merchant_data": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+            "name": "Running shoe",
+            "product_identifiers": {
+              "brand": "shoe-brand",
+              "category_path": "Shoes > Running",
+              "color": "white",
+              "global_trade_item_number": "4912345678904",
+              "manufacturer_part_number": "AD6654412-334.22",
+              "size": "small"
+            },
+            "product_url": "https://.../AD6654412.html",
+            "quantity": 1,
+            "quantity_unit": "pcs",
+            "reference": "AD6654412",
+            "subscription": {
+              "interval": "DAY",
+              "interval_count": 0,
+              "name": ""
+            },
+            "tax_rate": 1900,
+            "total_amount": 2500,
+            "total_discount_amount": 500,
+            "total_tax_amount": 475,
+            "type": "physical",
+            "unit_price": 2500
+          }
+        ],
+        "order_tax_amount": 475,
+        "payment_method_categories": [
+          {
+            "asset_urls": {
+              "descriptive": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg",
+              "standard": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
+            },
+            "identifier": "klarna",
+            "name": "Pay with Klarna"
+          }
+        ],
+        "purchase_country": "GB",
+        "purchase_currency": "GBP",
+        "shipping_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "status": "complete"
+      },
+      "body_json": {
+        "acquiring_channel": "ECOMMERCE",
+        "attachment": {
+          "body": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+          "content_type": "application/vnd.klarna.internal.emd-v2+json"
+        },
+        "authorization_token": "",
+        "billing_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "client_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICIw",
+        "custom_payment_method_ids": [
+          ""
+        ],
+        "customer": {
+          "date_of_birth": "1978-12-31",
+          "gender": "male",
+          "last_four_ssn": "",
+          "national_identification_number": "",
+          "organization_entity_type": "LIMITED_COMPANY",
+          "organization_registration_id": "",
+          "title": "Mr.",
+          "type": "organization",
+          "vat_id": ""
+        },
+        "design": "",
+        "expires_at": "2038-01-19T03:14:07.000Z",
+        "intent": "buy",
+        "locale": "en-GB",
+        "merchant_data": "{\"order_specific\":[{\"substore\":\"Women's Fashion\",\"product_name\":\"Women Sweatshirt\"}]}",
+        "merchant_reference1": "ON4711",
+        "merchant_reference2": "hdt53h-zdgg6-hdaff2",
+        "merchant_urls": {
+          "authorization": "https://www.example-url.com/authorization",
+          "confirmation": "https://www.example-url.com/confirmation",
+          "notification": "https://www.example-url.com/notification",
+          "push": "https://www.example-url.com/push"
+        },
+        "options": {
+          "color_border": "#FF9900",
+          "color_border_selected": "#FF9900",
+          "color_details": "#FF9900",
+          "color_text": "#FF9900",
+          "radius_border": "5px"
+        },
+        "order_amount": 2500,
+        "order_lines": [
+          {
+            "image_url": "https://www.exampleobjects.com/logo.png",
+            "merchant_data": "{\"customer_account_info\":[{\"unique_account_identifier\":\"test@gmail.com\",\"account_registration_date\":\"2017-02-13T10:49:20Z\",\"account_last_modified\":\"2019-03-13T11:45:27Z\"}]}",
+            "name": "Running shoe",
+            "product_identifiers": {
+              "brand": "shoe-brand",
+              "category_path": "Shoes > Running",
+              "color": "white",
+              "global_trade_item_number": "4912345678904",
+              "manufacturer_part_number": "AD6654412-334.22",
+              "size": "small"
+            },
+            "product_url": "https://.../AD6654412.html",
+            "quantity": 1,
+            "quantity_unit": "pcs",
+            "reference": "AD6654412",
+            "subscription": {
+              "interval": "DAY",
+              "interval_count": 0,
+              "name": ""
+            },
+            "tax_rate": 1900,
+            "total_amount": 2500,
+            "total_discount_amount": 500,
+            "total_tax_amount": 475,
+            "type": "physical",
+            "unit_price": 2500
+          }
+        ],
+        "order_tax_amount": 475,
+        "payment_method_categories": [
+          {
+            "asset_urls": {
+              "descriptive": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg",
+              "standard": "https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
+            },
+            "identifier": "klarna",
+            "name": "Pay with Klarna"
+          }
+        ],
+        "purchase_country": "GB",
+        "purchase_currency": "GBP",
+        "shipping_address": {
+          "attention": "Attn",
+          "city": "London",
+          "country": "GB",
+          "email": "test.sam@test.com",
+          "family_name": "Andersson",
+          "given_name": "Adam",
+          "organization_name": "",
+          "phone": "+44795465131",
+          "postal_code": "W1G 0PW",
+          "region": "OH",
+          "street_address": "33 Cavendish Square",
+          "street_address2": "Floor 22 / Flat 2",
+          "title": "Mr."
+        },
+        "status": "complete"
+      },
+      "body_text": "{\"acquiring_channel\": \"ECOMMERCE\", \"attachment\": {\"body\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"content_type\": \"application/vnd.klarna.internal.emd-v2+json\"}, \"authorization_token\": \"\", \"billing_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"client_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICIw\", \"custom_payment_method_ids\": [\"\"], \"customer\": {\"date_of_birth\": \"1978-12-31\", \"gender\": \"male\", \"last_four_ssn\": \"\", \"national_identification_number\": \"\", \"organization_entity_type\": \"LIMITED_COMPANY\", \"organization_registration_id\": \"\", \"title\": \"Mr.\", \"type\": \"organization\", \"vat_id\": \"\"}, \"design\": \"\", \"expires_at\": \"2038-01-19T03:14:07.000Z\", \"intent\": \"buy\", \"locale\": \"en-GB\", \"merchant_data\": \"{\\\"order_specific\\\":[{\\\"substore\\\":\\\"Women's Fashion\\\",\\\"product_name\\\":\\\"Women Sweatshirt\\\"}]}\", \"merchant_reference1\": \"ON4711\", \"merchant_reference2\": \"hdt53h-zdgg6-hdaff2\", \"merchant_urls\": {\"authorization\": \"https://www.example-url.com/authorization\", \"confirmation\": \"https://www.example-url.com/confirmation\", \"notification\": \"https://www.example-url.com/notification\", \"push\": \"https://www.example-url.com/push\"}, \"options\": {\"color_border\": \"#FF9900\", \"color_border_selected\": \"#FF9900\", \"color_details\": \"#FF9900\", \"color_text\": \"#FF9900\", \"radius_border\": \"5px\"}, \"order_amount\": 2500, \"order_lines\": [{\"image_url\": \"https://www.exampleobjects.com/logo.png\", \"merchant_data\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"name\": \"Running shoe\", \"product_identifiers\": {\"brand\": \"shoe-brand\", \"category_path\": \"Shoes > Running\", \"color\": \"white\", \"global_trade_item_number\": \"4912345678904\", \"manufacturer_part_number\": \"AD6654412-334.22\", \"size\": \"small\"}, \"product_url\": \"https://.../AD6654412.html\", \"quantity\": 1, \"quantity_unit\": \"pcs\", \"reference\": \"AD6654412\", \"subscription\": {\"interval\": \"DAY\", \"interval_count\": 0, \"name\": \"\"}, \"tax_rate\": 1900, \"total_amount\": 2500, \"total_discount_amount\": 500, \"total_tax_amount\": 475, \"type\": \"physical\", \"unit_price\": 2500}], \"order_tax_amount\": 475, \"payment_method_categories\": [{\"asset_urls\": {\"descriptive\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\", \"standard\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\"}, \"identifier\": \"klarna\", \"name\": \"Pay with Klarna\"}], \"purchase_country\": \"GB\", \"purchase_currency\": \"GBP\", \"shipping_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"status\": \"complete\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Use this API call to update a Klarna Payments session with new details, in case something in the order has changed and the checkout has been reloaded. Including if the consumer adds a new item to the cart or if consumer details are updated.\nRead more on **[Update an existing payment session](https://docs.klarna.com/klarna-payments/other-actions/update-the-cart/)**.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /payments/v1/sessions/{{SESSION_ID}}",
+      "method": "POST",
+      "name": "Update an existing payment session",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "session_id",
+          "value": ""
+        }
+      ],
+      "path": "/payments/v1/sessions/{{SESSION_ID}}",
+      "pathParameters": [
+        {
+          "name": "session_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"acquiring_channel\": \"ECOMMERCE\", \"attachment\": {\"body\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"content_type\": \"application/vnd.klarna.internal.emd-v2+json\"}, \"authorization_token\": \"\", \"billing_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"client_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJzZXNzaW9uX2lkIiA6ICIw\", \"custom_payment_method_ids\": [\"\"], \"customer\": {\"date_of_birth\": \"1978-12-31\", \"gender\": \"male\", \"last_four_ssn\": \"\", \"national_identification_number\": \"\", \"organization_entity_type\": \"LIMITED_COMPANY\", \"organization_registration_id\": \"\", \"title\": \"Mr.\", \"type\": \"organization\", \"vat_id\": \"\"}, \"design\": \"\", \"expires_at\": \"2038-01-19T03:14:07.000Z\", \"intent\": \"buy\", \"locale\": \"en-GB\", \"merchant_data\": \"{\\\"order_specific\\\":[{\\\"substore\\\":\\\"Women's Fashion\\\",\\\"product_name\\\":\\\"Women Sweatshirt\\\"}]}\", \"merchant_reference1\": \"ON4711\", \"merchant_reference2\": \"hdt53h-zdgg6-hdaff2\", \"merchant_urls\": {\"authorization\": \"https://www.example-url.com/authorization\", \"confirmation\": \"https://www.example-url.com/confirmation\", \"notification\": \"https://www.example-url.com/notification\", \"push\": \"https://www.example-url.com/push\"}, \"options\": {\"color_border\": \"#FF9900\", \"color_border_selected\": \"#FF9900\", \"color_details\": \"#FF9900\", \"color_text\": \"#FF9900\", \"radius_border\": \"5px\"}, \"order_amount\": 2500, \"order_lines\": [{\"image_url\": \"https://www.exampleobjects.com/logo.png\", \"merchant_data\": \"{\\\"customer_account_info\\\":[{\\\"unique_account_identifier\\\":\\\"test@gmail.com\\\",\\\"account_registration_date\\\":\\\"2017-02-13T10:49:20Z\\\",\\\"account_last_modified\\\":\\\"2019-03-13T11:45:27Z\\\"}]}\", \"name\": \"Running shoe\", \"product_identifiers\": {\"brand\": \"shoe-brand\", \"category_path\": \"Shoes > Running\", \"color\": \"white\", \"global_trade_item_number\": \"4912345678904\", \"manufacturer_part_number\": \"AD6654412-334.22\", \"size\": \"small\"}, \"product_url\": \"https://.../AD6654412.html\", \"quantity\": 1, \"quantity_unit\": \"pcs\", \"reference\": \"AD6654412\", \"subscription\": {\"interval\": \"DAY\", \"interval_count\": 0, \"name\": \"\"}, \"tax_rate\": 1900, \"total_amount\": 2500, \"total_discount_amount\": 500, \"total_tax_amount\": 475, \"type\": \"physical\", \"unit_price\": 2500}], \"order_tax_amount\": 475, \"payment_method_categories\": [{\"asset_urls\": {\"descriptive\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\", \"standard\": \"https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg\"}, \"identifier\": \"klarna\", \"name\": \"Pay with Klarna\"}], \"purchase_country\": \"GB\", \"purchase_currency\": \"GBP\", \"shipping_address\": {\"attention\": \"Attn\", \"city\": \"London\", \"country\": \"GB\", \"email\": \"test.sam@test.com\", \"family_name\": \"Andersson\", \"given_name\": \"Adam\", \"organization_name\": \"\", \"phone\": \"+44795465131\", \"postal_code\": \"W1G 0PW\", \"region\": \"OH\", \"street_address\": \"33 Cavendish Square\", \"street_address2\": \"Floor 22 / Flat 2\", \"title\": \"Mr.\"}, \"status\": \"complete\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an existing payment session",
+      "url": "https://api.klarna.com/payments/v1/sessions/{{SESSION_ID}}"
+    }
+  ]
+}

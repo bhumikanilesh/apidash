@@ -1,0 +1,1408 @@
+{
+  "id": "truesight.local",
+  "info": {
+    "base_url": "http://truesight.local",
+    "description": "You need to provide a Service ID ID :- use the hardware/services service to get all available service IDs.",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Hardware Sentry TrueSight Presentation Server REST API",
+    "version": "11.1.00"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide the <b>Device ID</b> and <b>Monitor Class</b> parameters to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> of a device.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /hardware/actions/{{DEVICE_ID}}/collect-now",
+      "method": "POST",
+      "name": "Triggers a new collect on a specific device.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        },
+        {
+          "name": "monitorClass",
+          "value": "MS_HW_FAN"
+        }
+      ],
+      "path": "/hardware/actions/{{DEVICE_ID}}/collect-now",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "monitorClass",
+          "value": "MS_HW_FAN"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Triggers a new collect on a specific device.",
+      "url": "http://truesight.local/hardware/actions/{{DEVICE_ID}}/collect-now"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide the <b>Device ID</b> to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of a device.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /hardware/actions/{{DEVICE_ID}}/rediscover",
+      "method": "POST",
+      "name": "Triggers a new discovery on a specific device.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "path": "/hardware/actions/{{DEVICE_ID}}/rediscover",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Triggers a new discovery on a specific device.",
+      "url": "http://truesight.local/hardware/actions/{{DEVICE_ID}}/rediscover"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "resetAlertActions": 1,
+        "resetAlertAfterNTimes": 1,
+        "resetDebugMode": 1,
+        "resetDiscoveryAndPollingIntervals": 1,
+        "resetJavaSettings": 1,
+        "resetOtherAlertSettings": 1,
+        "resetRemovedPausedObjectList": 1,
+        "resetReportSettings": 1,
+        "resetThresholds": 1
+      },
+      "body_json": {
+        "resetAlertActions": 1,
+        "resetAlertAfterNTimes": 1,
+        "resetDebugMode": 1,
+        "resetDiscoveryAndPollingIntervals": 1,
+        "resetJavaSettings": 1,
+        "resetOtherAlertSettings": 1,
+        "resetRemovedPausedObjectList": 1,
+        "resetReportSettings": 1,
+        "resetThresholds": 1
+      },
+      "body_text": "{\"resetAlertActions\": 1, \"resetAlertAfterNTimes\": 1, \"resetDebugMode\": 1, \"resetDiscoveryAndPollingIntervals\": 1, \"resetJavaSettings\": 1, \"resetOtherAlertSettings\": 1, \"resetRemovedPausedObjectList\": 1, \"resetReportSettings\": 1, \"resetThresholds\": 1}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Launches a 'Reinitialize KM' command for the following parameters:<br>- resetDiscoveryAndPollingIntervals<br>- resetAlertAfterNTimes<br>- resetAlertActions<br>- resetOtherA<br>- resetSettings<br>- resetDebugMode<br>- resetRemovedPausedObjectList<br>- resetReportSettings<br>- resetJavaSettings<br>- resetThresholds<br><br>You need to provide the <b>Device ID</b> to identify the device:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of a device.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /hardware/actions/{{DEVICE_ID}}/reinitialize",
+      "method": "POST",
+      "name": "Sends a 'Reinitialize KM' command.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "path": "/hardware/actions/{{DEVICE_ID}}/reinitialize",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"resetAlertActions\": 1, \"resetAlertAfterNTimes\": 1, \"resetDebugMode\": 1, \"resetDiscoveryAndPollingIntervals\": 1, \"resetJavaSettings\": 1, \"resetOtherAlertSettings\": 1, \"resetRemovedPausedObjectList\": 1, \"resetReportSettings\": 1, \"resetThresholds\": 1}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Sends a 'Reinitialize KM' command.",
+      "url": "http://truesight.local/hardware/actions/{{DEVICE_ID}}/reinitialize"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide the <b>Device ID</b>, the <b>Monitor Class</b> and the <b>Monitor SID</b> parameters:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> and the <b>Monitor SID</b> for a device.<br><br>(Example:\"path\":\"/MS_HW_MAIN/10025150\" where <em>MS_HW_MAIN</em> is the Monitor Class and <em>10025150</em> is the Monitor SID).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /hardware/actions/{{DEVICE_ID}}/remove",
+      "method": "POST",
+      "name": "Removes a specific instance from the monitoring environment.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        },
+        {
+          "name": "monitorClass",
+          "value": "MS_HW_FAN"
+        },
+        {
+          "name": "monitorSid",
+          "value": "cisco-c240-imc"
+        }
+      ],
+      "path": "/hardware/actions/{{DEVICE_ID}}/remove",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "monitorClass",
+          "value": "MS_HW_FAN"
+        },
+        {
+          "name": "monitorSid",
+          "value": "cisco-c240-imc"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Removes a specific instance from the monitoring environment.",
+      "url": "http://truesight.local/hardware/actions/{{DEVICE_ID}}/remove"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Sets the Error Count parameter to 0.<br><br>You need to provide the <b>Device ID</b>, the <b>Monitor Class</b> and the <b>Monitor SID</b> parameters:<br>- Use the <b>/hardware/devices</b> service in the <b>Device</b> section to retrieve the <b>Device ID</b> of any device.<br>- Use the <b>/hardware/device-monitors/{deviceId}</b> service in the <b>Device</b> section to retrieve the <b>Monitor Class</b> and the <b>Monitor SID</b> for a device.<br><br>(Example:\"path\":\"/MS_HW_MAIN/10025150\" where <em>MS_HW_MAIN</em> is the Monitor Class and <em>10025150</em> is the monitorSid).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /hardware/actions/{{DEVICE_ID}}/reset-error-count",
+      "method": "POST",
+      "name": "Resets the Error Count parameter.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        },
+        {
+          "name": "monitorClass",
+          "value": "MS_HW_FAN"
+        },
+        {
+          "name": "monitorSid",
+          "value": "cisco-c240-imc"
+        }
+      ],
+      "path": "/hardware/actions/{{DEVICE_ID}}/reset-error-count",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "monitorClass",
+          "value": "MS_HW_FAN"
+        },
+        {
+          "name": "monitorSid",
+          "value": "cisco-c240-imc"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Resets the Error Count parameter.",
+      "url": "http://truesight.local/hardware/actions/{{DEVICE_ID}}/reset-error-count"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all the available ApplicationSummary instances.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/applications",
+      "method": "GET",
+      "name": "Gets summarized information about all monitored applications.",
+      "params": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/hardware/applications",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets summarized information about all monitored applications.",
+      "url": "http://truesight.local/hardware/applications"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide an <b>Application ID</b>:<br>- use the <b>hardware/applications</b> service to retrieve all available application IDs.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/applications/{{APPLICATION_ID}}",
+      "method": "GET",
+      "name": "Gets detailed information for a specific application.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "applicationId",
+          "value": "0"
+        }
+      ],
+      "path": "/hardware/applications/{{APPLICATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "applicationId",
+          "value": "0"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets detailed information for a specific application.",
+      "url": "http://truesight.local/hardware/applications/{{APPLICATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide a <b>Device ID</b>:<br>- use the <b>hardware/devices</b> service to get all available device IDs.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/device-monitors/{{DEVICE_ID}}",
+      "method": "GET",
+      "name": "Gets the Monitors for a specific device.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "path": "/hardware/device-monitors/{{DEVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets the Monitors for a specific device.",
+      "url": "http://truesight.local/hardware/device-monitors/{{DEVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the available DeviceSummary instances.<br><br>If a parent ID (group ID, application ID, or service ID) is provided, the function narrows down the devices list to those attached to the specified parent:<br>- use the <b>hardware/groups</b> service in the <b>Groups</b> section to get all available group IDs.<br>- use the <b>hardware/applications</b> service in the <b>Applications</b> section to get all available application IDs.<br>- use the <b>hardware/services</b> service in the <b>Services</b> section to get all available service IDs.<br><br><b>Note</b>: At most, one parent ID is taken into account according to this order of precedence:<ol><li>group ID</li><li>application ID</li><li>service ID</li></ol>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/devices",
+      "method": "GET",
+      "name": "Gets summarized information about all monitored devices.",
+      "params": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": "0"
+        },
+        {
+          "name": "applicationId",
+          "value": "0"
+        },
+        {
+          "name": "serviceId",
+          "value": "0"
+        }
+      ],
+      "path": "/hardware/devices",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": "0"
+        },
+        {
+          "name": "applicationId",
+          "value": "0"
+        },
+        {
+          "name": "serviceId",
+          "value": "0"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets summarized information about all monitored devices.",
+      "url": "http://truesight.local/hardware/devices"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the GlobalSummary instance for all the monitored devices.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/devices-summary",
+      "method": "GET",
+      "name": "Gets overall information for all devices.",
+      "params": [],
+      "path": "/hardware/devices-summary",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets overall information for all devices.",
+      "url": "http://truesight.local/hardware/devices-summary"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide a <b>Device ID</b>:<br>-use the <b>hardware/devices</b> service to get all available device IDs.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/devices/{{DEVICE_ID}}",
+      "method": "GET",
+      "name": "Gets detailed information about a specific device.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "path": "/hardware/devices/{{DEVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets detailed information about a specific device.",
+      "url": "http://truesight.local/hardware/devices/{{DEVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide a <b>Device ID</b> to retrieve detailed information about the Agent that Monitors the device:<br>-use the <b>hardware/devices</b> service to get all available device IDs.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/devices/{{DEVICE_ID}}/agent",
+      "method": "GET",
+      "name": "Gets detailed information about an Agent.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "path": "/hardware/devices/{{DEVICE_ID}}/agent",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets detailed information about an Agent.",
+      "url": "http://truesight.local/hardware/devices/{{DEVICE_ID}}/agent"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide the <b>Device ID</b> of a device to retrieve any other devices monitored by the same Agent:<br>-use the <b>hardware/devices</b> service to get all available device IDs.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/devices/{{DEVICE_ID}}/agent-devices",
+      "method": "GET",
+      "name": "Gets a list of all the devices monitored by an Agent.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "path": "/hardware/devices/{{DEVICE_ID}}/agent-devices",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets a list of all the devices monitored by an Agent.",
+      "url": "http://truesight.local/hardware/devices/{{DEVICE_ID}}/agent-devices"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide the <b>Device ID</b>, <b>Parameter Name</b>, <b>Monitor Type</b> and <b>Monitor SID</b>:<br>- use the <b>hardware/devices</b> service to get all available device IDs<br>- use the <b>/hardware/device-monitors/{deviceId}</b> to get the parameter name, the Monitor type and the Monitor SID.<br><br>Finally, define the period for which you wish to retrieve data history.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/devices/{{DEVICE_ID}}/parameter-history",
+      "method": "GET",
+      "name": "Gets data history for a parameter of a specific device over a given period.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        },
+        {
+          "name": "parameterName",
+          "value": "Power Consumption"
+        },
+        {
+          "name": "monitorType",
+          "value": "_PATROL__MS_HW_REPORT"
+        },
+        {
+          "name": "from",
+          "value": "1608850800"
+        },
+        {
+          "name": "to",
+          "value": "1608850800"
+        },
+        {
+          "name": "monitorSid",
+          "value": "cisco-c240-imc"
+        }
+      ],
+      "path": "/hardware/devices/{{DEVICE_ID}}/parameter-history",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "parameterName",
+          "value": "Power Consumption"
+        },
+        {
+          "name": "monitorType",
+          "value": "_PATROL__MS_HW_REPORT"
+        },
+        {
+          "name": "from",
+          "value": "1608850800"
+        },
+        {
+          "name": "to",
+          "value": "1608850800"
+        },
+        {
+          "name": "monitorSid",
+          "value": "cisco-c240-imc"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets data history for a parameter of a specific device over a given period.",
+      "url": "http://truesight.local/hardware/devices/{{DEVICE_ID}}/parameter-history"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide the device ID:<br>- use the <b>hardware/devices</b> service to get all available device IDs.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/energy-usage/{{DEVICE_ID}}",
+      "method": "GET",
+      "name": "Gets the energy usage for a specific device and a given period.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        },
+        {
+          "name": "rollPeriod",
+          "value": ""
+        },
+        {
+          "name": "basis",
+          "value": ""
+        }
+      ],
+      "path": "/hardware/energy-usage/{{DEVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "deviceId",
+          "value": "42"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "rollPeriod",
+          "value": ""
+        },
+        {
+          "name": "basis",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets the energy usage for a specific device and a given period.",
+      "url": "http://truesight.local/hardware/energy-usage/{{DEVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the available GroupSummary instances.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/groups",
+      "method": "GET",
+      "name": "Gets all group summaries.",
+      "params": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/hardware/groups",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets all group summaries.",
+      "url": "http://truesight.local/hardware/groups"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide a <b>Device ID</b>:<br>- use the <b>hardware/groups</b> service to get all available group ID.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/groups/{{GROUP_ID}}",
+      "method": "GET",
+      "name": "Gets detailed information about a specific group.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "groupId",
+          "value": "0"
+        }
+      ],
+      "path": "/hardware/groups/{{GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "groupId",
+          "value": "0"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets detailed information about a specific group.",
+      "url": "http://truesight.local/hardware/groups/{{GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "co2Emission": 0.3,
+        "energyCost": 0.3,
+        "groupNameFilter": "Group [0-9]+"
+      },
+      "body_json": {
+        "co2Emission": 0.3,
+        "energyCost": 0.3,
+        "groupNameFilter": "Group [0-9]+"
+      },
+      "body_text": "{\"co2Emission\": 0.3, \"energyCost\": 0.3, \"groupNameFilter\": \"Group [0-9]+\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "You need to provide a <b>Device ID</b>:<br>- use the <b>hardware/groups</b> service to get all available group ID.<br><br>If the ID is <em>\"global\"</em>, then the group being updated is the GlobalSummary.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /hardware/groups/{{GROUP_ID}}",
+      "method": "PUT",
+      "name": "Updates the values of the energy footprint parameter for a specific group.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "groupId",
+          "value": "0"
+        }
+      ],
+      "path": "/hardware/groups/{{GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "groupId",
+          "value": "0"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"co2Emission\": 0.3, \"energyCost\": 0.3, \"groupNameFilter\": \"Group [0-9]+\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Updates the values of the energy footprint parameter for a specific group.",
+      "url": "http://truesight.local/hardware/groups/{{GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "If a parent ID (group ID, application ID, or service ID) is provided, the function narrows down the devices list to those attached to the specified parent:<br>- use the <b>hardware/groups</b> service in the <b>Groups</b> section to get all available group IDs.<br>- use the <b>hardware/applications</b> service in the <b>Applications</b> section to get all available application IDs.<br>- use the <b>hardware/services</b> service in the <b>Services</b> section to get all available service IDs.<br><br><b>Note</b>: At most, one parent ID is taken into account according to this order of precedence:<ol><li>group ID</li><li>application ID</li><li>service ID</li></ol>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/heating-margin-devices",
+      "method": "GET",
+      "name": "Gets the heating margin values for each monitored device, when available.",
+      "params": [
+        {
+          "name": "covered",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": "0"
+        },
+        {
+          "name": "applicationId",
+          "value": "0"
+        },
+        {
+          "name": "serviceId",
+          "value": "0"
+        }
+      ],
+      "path": "/hardware/heating-margin-devices",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "covered",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "groupId",
+          "value": "0"
+        },
+        {
+          "name": "applicationId",
+          "value": "0"
+        },
+        {
+          "name": "serviceId",
+          "value": "0"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets the heating margin values for each monitored device, when available.",
+      "url": "http://truesight.local/hardware/heating-margin-devices"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets the historical data for a specific group, application or service, for a given period.<br><br>If a parent ID (group ID, application ID, or service ID) is provided, the function narrows down the devices list to those attached to the specified parent:<br>- use the <b>hardware/groups</b> service in the <b>Groups</b> section to get all available group IDs.<br>- use the <b>hardware/applications</b> service in the <b>Applications</b> section to get all available application IDs.<br>- use the <b>hardware/services</b> service in the <b>Services</b> section to get all available service IDs.<br><br><b>Note</b>: At most, one parent ID is taken into account according to this order of precedence:<ol><li>group ID</li><li>application ID</li><li>service ID</li></ol>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/history",
+      "method": "GET",
+      "name": "Gets historical data for a specific group, application or service.",
+      "params": [
+        {
+          "name": "groupId",
+          "value": "0"
+        },
+        {
+          "name": "applicationId",
+          "value": "0"
+        },
+        {
+          "name": "serviceId",
+          "value": "0"
+        },
+        {
+          "name": "from",
+          "value": "1608850800"
+        },
+        {
+          "name": "to",
+          "value": "1608850800"
+        }
+      ],
+      "path": "/hardware/history",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "groupId",
+          "value": "0"
+        },
+        {
+          "name": "applicationId",
+          "value": "0"
+        },
+        {
+          "name": "serviceId",
+          "value": "0"
+        },
+        {
+          "name": "from",
+          "value": "1608850800"
+        },
+        {
+          "name": "to",
+          "value": "1608850800"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets historical data for a specific group, application or service.",
+      "url": "http://truesight.local/hardware/history"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets the DeviceSummary instances whose name, model, manufacturer or serial number match the specified criteria.<br><br>If a parent ID (group ID, application ID, or service ID) is provided, the function narrows down the devices list to those attached to the specified parent:<br>- use the <b>hardware/groups</b> service in the <b>Groups</b> section to get all available group IDs.<br>- use the <b>hardware/applications</b> service in the <b>Applications</b> section to get all available application IDs.<br>- use the <b>hardware/services</b> service in the <b>Services</b> section to get all available service IDs.<br><br><b>Note</b>: At most, one parent ID is taken into account according to this order of precedence:<ol><li>group ID</li><li>application ID</li><li>service ID</li></ol>",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/search-devices",
+      "method": "GET",
+      "name": "Searches devices by name, model, manufacturer or serial number.",
+      "params": [
+        {
+          "name": "searchTerms",
+          "value": "EMC Unity"
+        },
+        {
+          "name": "groupId",
+          "value": "0"
+        },
+        {
+          "name": "applicationId",
+          "value": "0"
+        },
+        {
+          "name": "serviceId",
+          "value": "0"
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/hardware/search-devices",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "searchTerms",
+          "value": "EMC Unity"
+        },
+        {
+          "name": "groupId",
+          "value": "0"
+        },
+        {
+          "name": "applicationId",
+          "value": "0"
+        },
+        {
+          "name": "serviceId",
+          "value": "0"
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Searches devices by name, model, manufacturer or serial number.",
+      "url": "http://truesight.local/hardware/search-devices"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the available ServiceSummary instances.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/services",
+      "method": "GET",
+      "name": "Gets summarized information about all monitored services.",
+      "params": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/hardware/services",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "direction",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets summarized information about all monitored services.",
+      "url": "http://truesight.local/hardware/services"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You need to provide a <b>Service ID</b> ID :<br>- use the <b>hardware/services</b> service to get all available service IDs.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /hardware/services/{{SERVICE_ID}}",
+      "method": "GET",
+      "name": "Gets detailed information about a specific service.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "serviceId",
+          "value": "0"
+        }
+      ],
+      "path": "/hardware/services/{{SERVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "serviceId",
+          "value": "0"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Gets detailed information about a specific service.",
+      "url": "http://truesight.local/hardware/services/{{SERVICE_ID}}"
+    }
+  ]
+}

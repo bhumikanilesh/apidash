@@ -1,0 +1,1022 @@
+{
+  "id": "pandorabots.com",
+  "info": {
+    "base_url": "https://aiaas.pandorabots.com/",
+    "description": "Use these tools to test/debug/trace bot categories. Malformed requests such as exceeding size of input or invalid clientname returns 400 error code. Error code 412 is returned if the bot is not...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation"
+    ],
+    "title": "Pandorabots AIaaS",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Start a conversation with the bot using the Anonymous Talk API. This method will allow you to request creation of an end-user client_name that can maintain persistent predicates per end-user talking to your bot. If client_name is NOT sent in the request, then Pandorabots will create a end-user client_name and return it in the response. Similar to the Talk to Bot API, Pandorabots will also return a new session ID if not included in the call. Use the session ID returned to group interactions together. <p>In addition to bot response and session ID, the HTTP response will include a new end-user client_name in the following format:<br>aiaas-XXX-user-nnnn, where XXX is your app_ID and nnnn is numeric starting with 0000 and incrementing after each request.<br/> </p><p>Malformed requests such as exceeding size of input or unknown end-user client_name returns 400 error code. Error code 412 is returned if the bot is not compiled or does not exist. Error code 429 is returned if your application has reached maximum plan API call limit.</p><p><pre class='prettyprint'>curl -v  -X POST 'https://aiaas.pandorabots.com/atalk/APP_ID/BOTNAME?user_key=USER_KEY&input=INPUT'</pre></p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "POST //atalk/{{APP_ID}}/{{BOTNAME}}",
+      "method": "POST",
+      "name": "Anonymous Talk",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "input",
+          "value": ""
+        },
+        {
+          "name": "client_name",
+          "value": ""
+        },
+        {
+          "name": "sessionid",
+          "value": ""
+        },
+        {
+          "name": "recent",
+          "value": ""
+        }
+      ],
+      "path": "//atalk/{{APP_ID}}/{{BOTNAME}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "input",
+          "value": ""
+        },
+        {
+          "name": "client_name",
+          "value": ""
+        },
+        {
+          "name": "sessionid",
+          "value": ""
+        },
+        {
+          "name": "recent",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Anonymous Talk",
+      "url": "https://aiaas.pandorabots.com//atalk/{{APP_ID}}/{{BOTNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of your application's bots. Response returns JSON object with info for each bot.<p>Returns a 401 error code for invalid app_ID or user_key, or if applicable, invalid referrer.</p><p><pre class='prettyprint'>curl -v  -X GET 'https://aiaas.pandorabots.com/bot/APP_ID?user_key=USER_KEY'</pre></p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "GET //bot/{{APP_ID}}",
+      "method": "GET",
+      "name": "List of bots",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List of bots",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a bot on the Pandorabots server.<p>Deleting a bot that does not exist returns a 412 error. Invalid botname will return a 400 error. Invalid app_id, user_key, or referrer filter will return a 401 error.</p><p><pre class='prettyprint'>curl -v  -X DELETE 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME?user_key=USER_KEY'</pre></p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE //bot/{{APP_ID}}/{{BOTNAME}}",
+      "method": "DELETE",
+      "name": "Delete a bot",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a bot",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of a bot's files. Returns a JSON object with each bot file associated with bot specified.<p>Returns a 404 error code for bot not found. Returns a 401 error code for invalid app_ID, user_key, or referrer filter.</p><p>The <code color=blue>return=zip</code> option may not behave as expected using Active Docs 1.2</p><p><pre class='prettyprint'>curl -v  -X GET 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME?user_key=USER_KEY'</pre></p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "GET //bot/{{APP_ID}}/{{BOTNAME}}",
+      "method": "GET",
+      "name": "List of bot files",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "return",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "return",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List of bot files",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Create a new instance of a bot on the Pandorabots server.<p>If there is already a bot under the same app_id and botname, a 409 error is returned. Invalid botname will return a 400 error.</p><p>Creating more bots than your plan allows or using an invalid app_id or user_key (or if applicable referrer filter) returns a 401 error.</p><p><pre class='prettyprint'>curl -v  -X PUT 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME?user_key=USER_KEY'</pre></p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "PUT //bot/{{APP_ID}}/{{BOTNAME}}",
+      "method": "PUT",
+      "name": "Create a bot",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a bot",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "A bot personality is created by uploading AIML and other file types to Pandorabots. The files must compile correctly in order for the bot to run. By issuing a call to this API, Pandorabots will compile the bot, updating any changes that have been made to the files.<p>Compiling the bot makes its most recent version available for talk. A 400 error means that we were unable to compile your bot (you should check your files for syntax issues) or the botname was not found. </p><p>You can see any thrown errors in the results field of the returned JSON object:</p><p><pre class='prettyprint'>curl -v  -X GET 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME/verify?user_key=USER_KEY'</pre></p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "GET //bot/{{APP_ID}}/{{BOTNAME}}/verify",
+      "method": "GET",
+      "name": "Compile a bot",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}/verify",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Compile a bot",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}/verify"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete pdefaults or properties bot file.<p>For malformed file-kind, a 404 error is returned. For invalid botname, a 412 error is returned.</p><pre><p>curl -v -X DELETE 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME/FILE-KIND?user_key=USER_KEY'</p></pre>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE //bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}",
+      "method": "DELETE",
+      "name": "Delete a bot file (pdefaults, properties)",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a bot file (pdefaults, properties)",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve pdefaults or properties bot file.<p>For malformed file-kind, a 404 error is returned. For invalid botname, a 400 error is returned. For unknown bot or file, a 412 error is returned.</p><pre><p>curl -v -X GET 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME/FILE-KIND?user_key=USER_KEY'</p></pre>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "GET //bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}",
+      "method": "GET",
+      "name": "Retrieve a bot file (pdefaults, properties)",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a bot file (pdefaults, properties)",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Upload bot personality files to your bot. Files must be named with only lowercase letters and numbers with one of the following extensions: <p><b>Properties: </b>Extension - .properties, file-kind - properties, No filename required in path</p><p><b>Predicate defaults: </b>Extension - .pdefaults, file-kind - pdefaults, No filename required in path</p><p>The system will overwrite existing files with the file being uploaded.</p><p>For malformed JSON in non-AIML files, a 400 error is returned. For malformed file-kind, a 404 error is returned. For invalid file or botname, a 412 error is returned. </p><p>If Active Doc spec is not working with this API, please use the following curl command examples:</p><pre class='prettyprint'><p>curl -v -X PUT 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME/properties?user_key=USER_KEY'<br/>&nbsp;&nbsp;--data-binary @/home/foo/foobot.properties</p></pre>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "PUT //bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}",
+      "method": "PUT",
+      "name": "Upload a bot file (pdefaults, properties)",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Upload a bot file (pdefaults, properties)",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an AIML, set, map or substitution bot file<p>For malformed file-kind, a 404 error is returned. For invalid file or botname, a 412 error is returned.</p><pre><p>curl -v -X DELETE 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME/FILE-KIND/FILENAME?user_key=USER_KEY'</p></pre>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "DELETE //bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}",
+      "method": "DELETE",
+      "name": "Delete a bot file (AIML, set, map, substitution)",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        },
+        {
+          "name": "filename",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        },
+        {
+          "name": "filename",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a bot file (AIML, set, map, substitution)",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve an AIML, set, map or substitution bot file.<p>For malformed file-kind, a 404 error is returned. For invalid filename or botname, a 400 error is returned. For unknown bot or file, a 412 error is returned.</p><pre><p>curl -v -X GET 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME/FILE-KIND/FILENAME?user_key=USER_KEY'</p></pre>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "GET //bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}",
+      "method": "GET",
+      "name": "Retrieve a bot file (AIML, set, map, substitution)",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        },
+        {
+          "name": "filename",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        },
+        {
+          "name": "filename",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a bot file (AIML, set, map, substitution)",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Upload bot personality files to your bot. Files must be named with only lowercase letters and numbers with one of the following extensions: <p><b>AIML: </b>Extention - .aiml, file-kind - file</p><p><b>Sets: </b>Extension - .set, file-kind - set</p><p><b>Maps: </b>Extension - .map, file-kind - map</p><p><b>Substitutions: </b>Extension - .substitution, file-kind - substitution</p><p>The system will overwrite existing files with the file being uploaded.</p><p>If the request is malformed because the file name is invalid or malformed JSON for non-AIML files, a 400 error is returned. For malformed file-kind, a 404 error is returned. For invalid file or botname, a 412 error is returned. </p><p>If Active Doc spec is not working with this API, please use the following curl command examples:</p><pre class='prettyprint'><p>curl -v -X PUT 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME/file/foobot.aiml?user_key=USER_KEY'<br/>&nbsp;&nbsp;--data-binary @/home/foo/foobot.aiml</p></pre><br/><pre class='prettyprint'><p>curl -v -X PUT 'https://aiaas.pandorabots.com/bot/APP_ID/BOTNAME/set/colors?user_key=USER_KEY'<br/>&nbsp;&nbsp;--data-binary @/home/foo/colors.set</p></pre>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "PUT //bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}",
+      "method": "PUT",
+      "name": "Upload a bot file (AIML, set, substitution, map)",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        },
+        {
+          "name": "filename",
+          "value": ""
+        }
+      ],
+      "path": "//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "file-kind",
+          "value": ""
+        },
+        {
+          "name": "filename",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Upload a bot file (AIML, set, substitution, map)",
+      "url": "https://aiaas.pandorabots.com//bot/{{APP_ID}}/{{BOTNAME}}/{{FILE-KIND}}/{{FILENAME}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PANDORABOTS_AIAAS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use these tools to test/debug/trace bot categories. <p>Malformed requests such as exceeding size of input or invalid clientname returns 400 error code. Error code 412 is returned if the bot is not compiled or does not exist.</p><p><pre class='prettyprint'>curl -v  -X POST 'https://aiaas.pandorabots.com/talk/APP_ID/BOTNAME?user_key=USER_KEY&input=INPUT'</pre></p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PANDORABOTS_AIAAS_API_KEY}}"
+        }
+      ],
+      "id": "POST //talk/{{APP_ID}}/{{BOTNAME}}",
+      "method": "POST",
+      "name": "Debug a bot conversation",
+      "note": "Replace {{PANDORABOTS_AIAAS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        },
+        {
+          "name": "input",
+          "value": ""
+        },
+        {
+          "name": "client_name",
+          "value": ""
+        },
+        {
+          "name": "sessionid",
+          "value": ""
+        },
+        {
+          "name": "that",
+          "value": ""
+        },
+        {
+          "name": "topic",
+          "value": ""
+        },
+        {
+          "name": "extra",
+          "value": ""
+        },
+        {
+          "name": "reset",
+          "value": ""
+        },
+        {
+          "name": "trace",
+          "value": ""
+        },
+        {
+          "name": "reload",
+          "value": ""
+        },
+        {
+          "name": "recent",
+          "value": ""
+        }
+      ],
+      "path": "//talk/{{APP_ID}}/{{BOTNAME}}",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": ""
+        },
+        {
+          "name": "botname",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "input",
+          "value": ""
+        },
+        {
+          "name": "client_name",
+          "value": ""
+        },
+        {
+          "name": "sessionid",
+          "value": ""
+        },
+        {
+          "name": "that",
+          "value": ""
+        },
+        {
+          "name": "topic",
+          "value": ""
+        },
+        {
+          "name": "extra",
+          "value": ""
+        },
+        {
+          "name": "reset",
+          "value": ""
+        },
+        {
+          "name": "trace",
+          "value": ""
+        },
+        {
+          "name": "reload",
+          "value": ""
+        },
+        {
+          "name": "recent",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Debug a bot conversation",
+      "url": "https://aiaas.pandorabots.com//talk/{{APP_ID}}/{{BOTNAME}}"
+    }
+  ]
+}

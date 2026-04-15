@@ -1,0 +1,479 @@
+{
+  "id": "openlinksw.com_osdb",
+  "info": {
+    "base_url": "https://osdb.openlinksw.com/osdb",
+    "description": "Returns a description of a given service",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "OSDB REST API v1",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns an array of action descriptions for the actions supported by the given service",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /osdb/api/v1/actions/{{SERVICE_ID}}",
+      "method": "GET",
+      "name": "List actions",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "serviceId",
+          "value": ""
+        }
+      ],
+      "path": "/osdb/api/v1/actions/{{SERVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "serviceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List actions",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/actions/{{SERVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a description of a given service action.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}",
+      "method": "GET",
+      "name": "Describe action",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "serviceId",
+          "value": ""
+        },
+        {
+          "name": "actionId",
+          "value": ""
+        }
+      ],
+      "path": "/osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "serviceId",
+          "value": ""
+        },
+        {
+          "name": "actionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Describe action",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "action_specific_property1": "",
+        "action_specific_property2": "",
+        "osdb:body_data_encoding": "",
+        "osdb:body_data_raw": "",
+        "osdb:body_data_src_url": "",
+        "osdb:output_type": "url_only",
+        "osdb:response_format": ""
+      },
+      "body_json": {
+        "action_specific_property1": "",
+        "action_specific_property2": "",
+        "osdb:body_data_encoding": "",
+        "osdb:body_data_raw": "",
+        "osdb:body_data_src_url": "",
+        "osdb:output_type": "url_only",
+        "osdb:response_format": ""
+      },
+      "body_text": "{\"action_specific_property1\": \"\", \"action_specific_property2\": \"\", \"osdb:body_data_encoding\": \"\", \"osdb:body_data_raw\": \"\", \"osdb:body_data_src_url\": \"\", \"osdb:output_type\": \"url_only\", \"osdb:response_format\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Executes a registered service action and returns any output from the action.\nThe data returned in the POST response body may be: \n* the raw action output, \n* a URL encapsulating the action request which executes the action when dereferenced  (only for actions using GET), \n* RDF generated from the action output,\n* a URL to an RDF viewer's display of the generated RDF.\n\nAny parameters required by the action are supplied as a JSON object in the POST body. The parameter types supported are: \"query\", \"header\", \"uri\", \"path\" and \"body\".  The parameter type determines where a supplied parameter value is inserted into the HTTP request constructed by OSDB to invoke the target service action. In addition to native parameters required by the service action, 'Execute action' accepts some OSDB-specific parameters.<br/><br/>\n\n**Examples**\n* ```curl -ik -X POST -d '{ \"latitude\":\"37.7759792\", \"longitude\":\"-122.41823\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/uber/products/exec```  \n* ```curl -ikL -X POST -d '{ \"latitude\":\"37.7759792\", \"longitude\":\"-122.41823\", \"osdb:output_type\":\"generate_rdf\", \"osdb:response_format\":\"application/rdf+xml\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/uber/products/exec``` \n* ```curl -ikL -X POST -d '{ \"latitude\":\"37.7759792\", \"longitude\":\"-122.41823\", \"osdb:output_type\":\"display_rdf\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/uber/products/exec``` \n* ```curl -ik -X POST -d '{ \"q\":\"skiing\", \"osdb:response_format\": \"application/rdf+xml\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/facet/search/exec``` \n* ```curl -ik -X POST -d '{ \"q\":\"skiing\", \"osdb:output_type\": \"url_only\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/facet/search/exec``` \n* ```curl -ik -X POST -d '{ \"Content-Location\": \"http://demo.openlinksw.co.uk/pubs\", \"osdb:body_data_src_url\": \"http://ods-qa.openlinksw.com/DAV/home/osdb/pubs.csv\", \"extractor\": \"csv\", \"osdb:response_format\": \"application/rdf+xml\", \"osdb:body_data_encoding\": \"text/csv\" }' -H 'Content-Type: application/json' https://osdb.openlinksw.com/osdb/api/v1/actions/csv_transformer/transform/exec```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}/exec",
+      "method": "POST",
+      "name": "Execute action",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "serviceId",
+          "value": ""
+        },
+        {
+          "name": "actionId",
+          "value": ""
+        }
+      ],
+      "path": "/osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}/exec",
+      "pathParameters": [
+        {
+          "name": "serviceId",
+          "value": ""
+        },
+        {
+          "name": "actionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"action_specific_property1\": \"\", \"action_specific_property2\": \"\", \"osdb:body_data_encoding\": \"\", \"osdb:body_data_raw\": \"\", \"osdb:body_data_src_url\": \"\", \"osdb:output_type\": \"url_only\", \"osdb:response_format\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Execute action",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}/exec"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the help text for a given service action",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}/help",
+      "method": "GET",
+      "name": "Action help",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "serviceId",
+          "value": ""
+        },
+        {
+          "name": "actionId",
+          "value": ""
+        }
+      ],
+      "path": "/osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}/help",
+      "pathParameters": [
+        {
+          "name": "serviceId",
+          "value": ""
+        },
+        {
+          "name": "actionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Action help",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/actions/{{SERVICE_ID}}/{{ACTION_ID}}/help"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Logs a user into the OSDB server, authenticating them by their WebID and returning an OSDB session ID in cookie osdb.sid",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /osdb/api/v1/login",
+      "method": "GET",
+      "name": "Login",
+      "params": [],
+      "path": "/osdb/api/v1/login",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Login",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/login"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Logs a user out of the OSDB server, ending their OSDB session",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /osdb/api/v1/logout",
+      "method": "GET",
+      "name": "Logout",
+      "params": [],
+      "path": "/osdb/api/v1/logout",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Logout",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/logout"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns descriptions of all services registered with the OSDB server.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /osdb/api/v1/services",
+      "method": "GET",
+      "name": "List services",
+      "params": [],
+      "path": "/osdb/api/v1/services",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List services",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/services"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "service_description_url": "",
+        "service_moniker": ""
+      },
+      "body_json": {
+        "service_description_url": "",
+        "service_moniker": ""
+      },
+      "body_text": "{\"service_description_url\": \"\", \"service_moniker\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Loads a service description into the OSDB Service Registry",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /osdb/api/v1/services",
+      "method": "POST",
+      "name": "Load service",
+      "params": [],
+      "path": "/osdb/api/v1/services",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"service_description_url\": \"\", \"service_moniker\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Load service",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/services"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Removes a service description from the OSDB Service Registry",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /osdb/api/v1/services/{{SERVICE_ID}}",
+      "method": "DELETE",
+      "name": "Unload service",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "serviceId",
+          "value": ""
+        }
+      ],
+      "path": "/osdb/api/v1/services/{{SERVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "serviceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unload service",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/services/{{SERVICE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a description of a given service",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /osdb/api/v1/services/{{SERVICE_ID}}",
+      "method": "GET",
+      "name": "Describe service",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "serviceId",
+          "value": ""
+        }
+      ],
+      "path": "/osdb/api/v1/services/{{SERVICE_ID}}",
+      "pathParameters": [
+        {
+          "name": "serviceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Describe service",
+      "url": "https://osdb.openlinksw.com/osdb/api/v1/services/{{SERVICE_ID}}"
+    }
+  ]
+}

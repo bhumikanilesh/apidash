@@ -1,0 +1,594 @@
+{
+  "id": "azure.com_cognitiveservices-FormRecognizer",
+  "info": {
+    "base_url": "https://azure.local",
+    "description": "Track the progress and obtain the result of the analyze receipt operation.",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Form Recognizer Client",
+    "version": "2.0-preview"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get information about all custom models",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /custom/models",
+      "method": "GET",
+      "name": "List Custom Models",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "op",
+          "value": ""
+        }
+      ],
+      "path": "/custom/models",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "op",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Custom Models",
+      "url": "https://azure.local/custom/models"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "source": "",
+        "sourceFilter": {
+          "includeSubFolders": false,
+          "prefix": ""
+        },
+        "useLabelFile": false
+      },
+      "body_json": {
+        "source": "",
+        "sourceFilter": {
+          "includeSubFolders": false,
+          "prefix": ""
+        },
+        "useLabelFile": false
+      },
+      "body_text": "{\"source\": \"\", \"sourceFilter\": {\"includeSubFolders\": false, \"prefix\": \"\"}, \"useLabelFile\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create and train a custom model. The request must include a source parameter that is either an externally accessible Azure storage blob container Uri (preferably a Shared Access Signature Uri) or valid path to a data folder in a locally mounted drive. When local paths are specified, they must follow the Linux/Unix path format and be an absolute path rooted to the input mount configuration setting value e.g., if '{Mounts:Input}' configuration setting value is '/input' then a valid source path would be '/input/contosodataset'. All data to be trained is expected to be under the source folder or sub folders under it. Models are trained using documents that are of the following content type - 'application/pdf', 'image/jpeg', 'image/png', 'image/tiff'. Other type of content is ignored.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /custom/models",
+      "method": "POST",
+      "name": "Train Custom Model",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/custom/models",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"source\": \"\", \"sourceFilter\": {\"includeSubFolders\": false, \"prefix\": \"\"}, \"useLabelFile\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Train Custom Model",
+      "url": "https://azure.local/custom/models"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Mark model for deletion. Model artifacts will be permanently removed within a predetermined period.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /custom/models/{{MODEL_ID}}",
+      "method": "DELETE",
+      "name": "Delete Custom Model",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "path": "/custom/models/{{MODEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Custom Model",
+      "url": "https://azure.local/custom/models/{{MODEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get detailed information about a custom model.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /custom/models/{{MODEL_ID}}",
+      "method": "GET",
+      "name": "Get Custom Model",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": ""
+        },
+        {
+          "name": "includeKeys",
+          "value": ""
+        }
+      ],
+      "path": "/custom/models/{{MODEL_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "includeKeys",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Custom Model",
+      "url": "https://azure.local/custom/models/{{MODEL_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Extract key-value pairs, tables, and semantic values from a given document. The input document must be of one of the supported content types - 'application/pdf', 'image/jpeg', 'image/png' or 'image/tiff'. Alternatively, use 'application/json' type to specify the location (Uri or local path) of the document to be analyzed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "POST /custom/models/{{MODEL_ID}}/analyze",
+      "method": "POST",
+      "name": "Analyze Form",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": ""
+        },
+        {
+          "name": "includeTextDetails",
+          "value": ""
+        }
+      ],
+      "path": "/custom/models/{{MODEL_ID}}/analyze",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "includeTextDetails",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Analyze Form",
+      "url": "https://azure.local/custom/models/{{MODEL_ID}}/analyze"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Obtain current status and the result of the analyze form operation.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /custom/models/{{MODEL_ID}}/analyzeResults/{{RESULT_ID}}",
+      "method": "GET",
+      "name": "Get Analyze Form Result",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "modelId",
+          "value": ""
+        },
+        {
+          "name": "resultId",
+          "value": ""
+        }
+      ],
+      "path": "/custom/models/{{MODEL_ID}}/analyzeResults/{{RESULT_ID}}",
+      "pathParameters": [
+        {
+          "name": "modelId",
+          "value": ""
+        },
+        {
+          "name": "resultId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Analyze Form Result",
+      "url": "https://azure.local/custom/models/{{MODEL_ID}}/analyzeResults/{{RESULT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Extract text and layout information from a given document. The input document must be of one of the supported content types - 'application/pdf', 'image/jpeg', 'image/png' or 'image/tiff'. Alternatively, use 'application/json' type to specify the location (Uri or local path) of the document to be analyzed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "POST /layout/analyze",
+      "method": "POST",
+      "name": "Analyze Layout",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/layout/analyze",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Analyze Layout",
+      "url": "https://azure.local/layout/analyze"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Track the progress and obtain the result of the analyze layout operation",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /layout/analyzeResults/{{RESULT_ID}}",
+      "method": "GET",
+      "name": "Get Analyze Layout Result",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resultId",
+          "value": ""
+        }
+      ],
+      "path": "/layout/analyzeResults/{{RESULT_ID}}",
+      "pathParameters": [
+        {
+          "name": "resultId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Analyze Layout Result",
+      "url": "https://azure.local/layout/analyzeResults/{{RESULT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Extract field text and semantic values from a given receipt document. The input document must be of one of the supported content types - 'application/pdf', 'image/jpeg', 'image/png' or 'image/tiff'. Alternatively, use 'application/json' type to specify the location (Uri or local path) of the document to be analyzed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "POST /prebuilt/receipt/analyze",
+      "method": "POST",
+      "name": "Analyze Receipt",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "includeTextDetails",
+          "value": ""
+        }
+      ],
+      "path": "/prebuilt/receipt/analyze",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "includeTextDetails",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Analyze Receipt",
+      "url": "https://azure.local/prebuilt/receipt/analyze"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FORM_RECOGNIZER_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Track the progress and obtain the result of the analyze receipt operation.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FORM_RECOGNIZER_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /prebuilt/receipt/analyzeResults/{{RESULT_ID}}",
+      "method": "GET",
+      "name": "Get Analyze Receipt Result",
+      "note": "Replace {{FORM_RECOGNIZER_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resultId",
+          "value": ""
+        }
+      ],
+      "path": "/prebuilt/receipt/analyzeResults/{{RESULT_ID}}",
+      "pathParameters": [
+        {
+          "name": "resultId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Analyze Receipt Result",
+      "url": "https://azure.local/prebuilt/receipt/analyzeResults/{{RESULT_ID}}"
+    }
+  ]
+}

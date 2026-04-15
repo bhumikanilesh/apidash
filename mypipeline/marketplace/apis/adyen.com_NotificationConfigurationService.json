@@ -1,0 +1,437 @@
+{
+  "id": "adyen.com_NotificationConfigurationService",
+  "info": {
+    "base_url": "https://cal-test.adyen.com/cal/services/Notification/v4",
+    "description": "Updates an existing notification subscription configuration. If you are updating the event types, you must provide all event types, otherwise the previous event type configuration will be overwritten.",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation",
+      "communication"
+    ],
+    "title": "Notification Configuration API",
+    "version": "4"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NOTIFICATION_CONFIGURATION_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "configurationDetails": {
+          "active": false,
+          "apiVersion": 0,
+          "description": "",
+          "eventConfigs": [
+            {
+              "NotificationEventConfiguration": {
+                "eventType": "ACCOUNT_CLOSED",
+                "includeMode": "EXCLUDE"
+              }
+            }
+          ],
+          "messageFormat": "JSON",
+          "notificationId": 0,
+          "notifyPassword": "",
+          "notifyURL": "",
+          "notifyUsername": "",
+          "sendActionHeader": false,
+          "sslProtocol": "TLSv12"
+        }
+      },
+      "body_json": {
+        "configurationDetails": {
+          "active": false,
+          "apiVersion": 0,
+          "description": "",
+          "eventConfigs": [
+            {
+              "NotificationEventConfiguration": {
+                "eventType": "ACCOUNT_CLOSED",
+                "includeMode": "EXCLUDE"
+              }
+            }
+          ],
+          "messageFormat": "JSON",
+          "notificationId": 0,
+          "notifyPassword": "",
+          "notifyURL": "",
+          "notifyUsername": "",
+          "sendActionHeader": false,
+          "sslProtocol": "TLSv12"
+        }
+      },
+      "body_text": "{\"configurationDetails\": {\"active\": false, \"apiVersion\": 0, \"description\": \"\", \"eventConfigs\": [{\"NotificationEventConfiguration\": {\"eventType\": \"ACCOUNT_CLOSED\", \"includeMode\": \"EXCLUDE\"}}], \"messageFormat\": \"JSON\", \"notificationId\": 0, \"notifyPassword\": \"\", \"notifyURL\": \"\", \"notifyUsername\": \"\", \"sendActionHeader\": false, \"sslProtocol\": \"TLSv12\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a subscription to notifications informing you of events on your platform. After the subscription is created, the events specified in the configuration will be sent to the URL specified in the configuration. Subscriptions must be configured on a per-event basis (as opposed to, for example, a per-account holder basis), so all event notifications of a marketplace and of a given type will be sent to the same endpoint(s). A marketplace may have multiple endpoints if desired; an event notification may be sent to as many or as few different endpoints as configured.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Notification/v4/createNotificationConfiguration",
+      "method": "POST",
+      "name": "Subscribe to notifications",
+      "note": "Replace {{NOTIFICATION_CONFIGURATION_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Notification/v4/createNotificationConfiguration",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"configurationDetails\": {\"active\": false, \"apiVersion\": 0, \"description\": \"\", \"eventConfigs\": [{\"NotificationEventConfiguration\": {\"eventType\": \"ACCOUNT_CLOSED\", \"includeMode\": \"EXCLUDE\"}}], \"messageFormat\": \"JSON\", \"notificationId\": 0, \"notifyPassword\": \"\", \"notifyURL\": \"\", \"notifyUsername\": \"\", \"sendActionHeader\": false, \"sslProtocol\": \"TLSv12\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Subscribe to notifications",
+      "url": "https://cal-test.adyen.com/cal/services/Notification/v4/createNotificationConfiguration"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NOTIFICATION_CONFIGURATION_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "notificationIds": [
+          0
+        ]
+      },
+      "body_json": {
+        "notificationIds": [
+          0
+        ]
+      },
+      "body_text": "{\"notificationIds\": [0]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes an existing notification subscription configuration. After the subscription is deleted, no further event notifications will be sent to the URL defined in the subscription.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Notification/v4/deleteNotificationConfigurations",
+      "method": "POST",
+      "name": "Delete a notification subscription configuration",
+      "note": "Replace {{NOTIFICATION_CONFIGURATION_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Notification/v4/deleteNotificationConfigurations",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"notificationIds\": [0]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a notification subscription configuration",
+      "url": "https://cal-test.adyen.com/cal/services/Notification/v4/deleteNotificationConfigurations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NOTIFICATION_CONFIGURATION_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "notificationId": 0
+      },
+      "body_json": {
+        "notificationId": 0
+      },
+      "body_text": "{\"notificationId\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns the details of the configuration of a notification subscription.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Notification/v4/getNotificationConfiguration",
+      "method": "POST",
+      "name": "Get a notification subscription configuration",
+      "note": "Replace {{NOTIFICATION_CONFIGURATION_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Notification/v4/getNotificationConfiguration",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"notificationId\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a notification subscription configuration",
+      "url": "https://cal-test.adyen.com/cal/services/Notification/v4/getNotificationConfiguration"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NOTIFICATION_CONFIGURATION_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the details of the configurations of all of the notification subscriptions in the platform of the executing user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "POST /cal/services/Notification/v4/getNotificationConfigurationList",
+      "method": "POST",
+      "name": "Get a list of notification subscription configurations",
+      "note": "Replace {{NOTIFICATION_CONFIGURATION_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Notification/v4/getNotificationConfigurationList",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a list of notification subscription configurations",
+      "url": "https://cal-test.adyen.com/cal/services/Notification/v4/getNotificationConfigurationList"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NOTIFICATION_CONFIGURATION_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "eventTypes": [
+          "ACCOUNT_CLOSED"
+        ],
+        "notificationId": 0
+      },
+      "body_json": {
+        "eventTypes": [
+          "ACCOUNT_CLOSED"
+        ],
+        "notificationId": 0
+      },
+      "body_text": "{\"eventTypes\": [\"ACCOUNT_CLOSED\"], \"notificationId\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Tests an existing notification subscription configuration. For each event type specified, a test notification will be generated and sent to the URL configured in the subscription specified.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Notification/v4/testNotificationConfiguration",
+      "method": "POST",
+      "name": "Test a notification configuration",
+      "note": "Replace {{NOTIFICATION_CONFIGURATION_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Notification/v4/testNotificationConfiguration",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"eventTypes\": [\"ACCOUNT_CLOSED\"], \"notificationId\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Test a notification configuration",
+      "url": "https://cal-test.adyen.com/cal/services/Notification/v4/testNotificationConfiguration"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NOTIFICATION_CONFIGURATION_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "configurationDetails": {
+          "active": false,
+          "apiVersion": 0,
+          "description": "",
+          "eventConfigs": [
+            {
+              "NotificationEventConfiguration": {
+                "eventType": "ACCOUNT_CLOSED",
+                "includeMode": "EXCLUDE"
+              }
+            }
+          ],
+          "messageFormat": "JSON",
+          "notificationId": 0,
+          "notifyPassword": "",
+          "notifyURL": "",
+          "notifyUsername": "",
+          "sendActionHeader": false,
+          "sslProtocol": "TLSv12"
+        }
+      },
+      "body_json": {
+        "configurationDetails": {
+          "active": false,
+          "apiVersion": 0,
+          "description": "",
+          "eventConfigs": [
+            {
+              "NotificationEventConfiguration": {
+                "eventType": "ACCOUNT_CLOSED",
+                "includeMode": "EXCLUDE"
+              }
+            }
+          ],
+          "messageFormat": "JSON",
+          "notificationId": 0,
+          "notifyPassword": "",
+          "notifyURL": "",
+          "notifyUsername": "",
+          "sendActionHeader": false,
+          "sslProtocol": "TLSv12"
+        }
+      },
+      "body_text": "{\"configurationDetails\": {\"active\": false, \"apiVersion\": 0, \"description\": \"\", \"eventConfigs\": [{\"NotificationEventConfiguration\": {\"eventType\": \"ACCOUNT_CLOSED\", \"includeMode\": \"EXCLUDE\"}}], \"messageFormat\": \"JSON\", \"notificationId\": 0, \"notifyPassword\": \"\", \"notifyURL\": \"\", \"notifyUsername\": \"\", \"sendActionHeader\": false, \"sslProtocol\": \"TLSv12\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an existing notification subscription configuration. If you are updating the event types, you must provide all event types, otherwise the previous event type configuration will be overwritten.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{NOTIFICATION_CONFIGURATION_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /cal/services/Notification/v4/updateNotificationConfiguration",
+      "method": "POST",
+      "name": "Update a notification subscription configuration",
+      "note": "Replace {{NOTIFICATION_CONFIGURATION_API_KEY}} with your API key",
+      "params": [],
+      "path": "/cal/services/Notification/v4/updateNotificationConfiguration",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"configurationDetails\": {\"active\": false, \"apiVersion\": 0, \"description\": \"\", \"eventConfigs\": [{\"NotificationEventConfiguration\": {\"eventType\": \"ACCOUNT_CLOSED\", \"includeMode\": \"EXCLUDE\"}}], \"messageFormat\": \"JSON\", \"notificationId\": 0, \"notifyPassword\": \"\", \"notifyURL\": \"\", \"notifyUsername\": \"\", \"sendActionHeader\": false, \"sslProtocol\": \"TLSv12\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a notification subscription configuration",
+      "url": "https://cal-test.adyen.com/cal/services/Notification/v4/updateNotificationConfiguration"
+    }
+  ]
+}

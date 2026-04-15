@@ -1,0 +1,368 @@
+{
+  "id": "nexmo.com_voice",
+  "info": {
+    "base_url": "https://api.nexmo.com/v1/calls",
+    "description": "Play text to speech into a call",
+    "source": "apis.guru",
+    "tags": [
+      "text-generation",
+      "voice"
+    ],
+    "title": "Voice API",
+    "version": "1.3.10"
+  },
+  "requests": [
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Get details of your calls",
+      "note": "Replace {{VOICE_API_KEY}} with your API key",
+      "url": "https://api.nexmo.com/v1/calls/"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "event_method": "POST",
+        "event_url": [
+          "https://example.com/event"
+        ],
+        "from": {
+          "number": "14155550100",
+          "type": "phone"
+        },
+        "length_timer": 7200,
+        "machine_detection": "continue",
+        "ncco": [
+          {
+            "action": "talk",
+            "text": "Hello World"
+          }
+        ],
+        "random_from_number": false,
+        "ringing_timer": 60,
+        "to": [
+          {
+            "dtmfAnswer": {},
+            "number": {},
+            "type": {}
+          }
+        ]
+      },
+      "body_json": {
+        "event_method": "POST",
+        "event_url": [
+          "https://example.com/event"
+        ],
+        "from": {
+          "number": "14155550100",
+          "type": "phone"
+        },
+        "length_timer": 7200,
+        "machine_detection": "continue",
+        "ncco": [
+          {
+            "action": "talk",
+            "text": "Hello World"
+          }
+        ],
+        "random_from_number": false,
+        "ringing_timer": 60,
+        "to": [
+          {
+            "dtmfAnswer": {},
+            "number": {},
+            "type": {}
+          }
+        ]
+      },
+      "body_text": "{\"ncco\": [{\"action\": \"talk\", \"text\": \"Hello World\"}], \"event_method\": \"POST\", \"event_url\": [\"https://example.com/event\"], \"from\": {\"number\": \"14155550100\", \"type\": \"phone\"}, \"length_timer\": 7200, \"machine_detection\": \"continue\", \"random_from_number\": false, \"ringing_timer\": 60, \"to\": [{\"dtmfAnswer\": {}, \"number\": {}, \"type\": {}}]}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}",
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "Create an outbound call",
+      "note": "Replace {{VOICE_API_KEY}} with your API key",
+      "url": "https://api.nexmo.com/v1/calls/"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Get detail of a specific call",
+      "note": "Replace {{VOICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.nexmo.com/v1/calls/{{UUID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "action": "transfer",
+        "destination": {
+          "ncco": [
+            {
+              "action": "talk",
+              "text": "Hello World"
+            }
+          ],
+          "type": "ncco"
+        }
+      },
+      "body_json": {
+        "action": "transfer",
+        "destination": {
+          "ncco": [
+            {
+              "action": "talk",
+              "text": "Hello World"
+            }
+          ],
+          "type": "ncco"
+        }
+      },
+      "body_text": "{\"action\": \"transfer\", \"destination\": {\"ncco\": [{\"action\": \"talk\", \"text\": \"Hello World\"}], \"type\": \"ncco\"}}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}",
+        "Content-Type": "application/json"
+      },
+      "method": "PUT",
+      "name": "Modify an in progress call",
+      "note": "Replace {{VOICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.nexmo.com/v1/calls/{{UUID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "digits": 1713
+      },
+      "body_json": {
+        "digits": 1713
+      },
+      "body_text": "{\"digits\": 1713}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}",
+        "Content-Type": "application/json"
+      },
+      "method": "PUT",
+      "name": "Play DTMF tones into a call",
+      "note": "Replace {{VOICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.nexmo.com/v1/calls/{{UUID}}/dtmf"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}"
+      },
+      "method": "DELETE",
+      "name": "Stop playing an audio file into a call",
+      "note": "Replace {{VOICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.nexmo.com/v1/calls/{{UUID}}/stream"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "level": "0.4",
+        "loop": 1,
+        "stream_url": [
+          "https://example.com/waiting.mp3"
+        ]
+      },
+      "body_json": {
+        "level": "0.4",
+        "loop": 1,
+        "stream_url": [
+          "https://example.com/waiting.mp3"
+        ]
+      },
+      "body_text": "{\"level\": \"0.4\", \"loop\": 1, \"stream_url\": [\"https://example.com/waiting.mp3\"]}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}",
+        "Content-Type": "application/json"
+      },
+      "method": "PUT",
+      "name": "Play an audio file into a call",
+      "note": "Replace {{VOICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.nexmo.com/v1/calls/{{UUID}}/stream"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}"
+      },
+      "method": "DELETE",
+      "name": "Stop text to speech in a call",
+      "note": "Replace {{VOICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.nexmo.com/v1/calls/{{UUID}}/talk"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "language": "ar",
+        "level": "0.4",
+        "loop": 1,
+        "premium": false,
+        "style": 0,
+        "text": "Hello. How are you today?",
+        "voice_name": "Aditi"
+      },
+      "body_json": {
+        "language": "ar",
+        "level": "0.4",
+        "loop": 1,
+        "premium": false,
+        "style": 0,
+        "text": "Hello. How are you today?",
+        "voice_name": "Aditi"
+      },
+      "body_text": "{\"language\": \"ar\", \"level\": \"0.4\", \"loop\": 1, \"premium\": false, \"style\": 0, \"text\": \"Hello. How are you today?\", \"voice_name\": \"Aditi\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{VOICE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{VOICE_API_KEY}}",
+        "Content-Type": "application/json"
+      },
+      "method": "PUT",
+      "name": "Play text to speech into a call",
+      "note": "Replace {{VOICE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://api.nexmo.com/v1/calls/{{UUID}}/talk"
+    }
+  ]
+}

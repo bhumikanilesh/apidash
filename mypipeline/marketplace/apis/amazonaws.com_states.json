@@ -1,0 +1,2412 @@
+{
+  "id": "amazonaws.com_states",
+  "info": {
+    "base_url": "http://states.{region}.amazonaws.com",
+    "description": "Updates an existing state machine by modifying its definition, roleArn, or loggingConfiguration. Running executions will continue to use the previous definition and roleArn. You must include at least...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation",
+      "maps"
+    ],
+    "title": "AWS Step Functions",
+    "version": "2016-11-23"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": {},
+        "tags": {}
+      },
+      "body_json": {
+        "name": {},
+        "tags": {}
+      },
+      "body_text": "{\"name\": {}, \"tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note> <note> <p> <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateActivity</code>'s idempotency check is based on the activity <code>name</code>. If a following request has different <code>tags</code> values, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.CreateActivity",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": {}, \"tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.CreateActivity",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.CreateActivity"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "definition": {},
+        "loggingConfiguration": {
+          "destinations": {},
+          "includeExecutionData": {},
+          "level": {}
+        },
+        "name": {},
+        "roleArn": {},
+        "tags": {},
+        "tracingConfiguration": {
+          "enabled": {}
+        },
+        "type": {}
+      },
+      "body_json": {
+        "definition": {},
+        "loggingConfiguration": {
+          "destinations": {},
+          "includeExecutionData": {},
+          "level": {}
+        },
+        "name": {},
+        "roleArn": {},
+        "tags": {},
+        "tracingConfiguration": {
+          "enabled": {}
+        },
+        "type": {}
+      },
+      "body_text": "{\"name\": {}, \"definition\": {}, \"roleArn\": {}, \"type\": {}, \"loggingConfiguration\": {\"level\": {}, \"includeExecutionData\": {}, \"destinations\": {}}, \"tags\": {}, \"tracingConfiguration\": {\"enabled\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured language. For more information, see <a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html\">Amazon States Language</a> in the Step Functions User Guide.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note> <note> <p> <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.CreateStateMachine",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": {}, \"definition\": {}, \"roleArn\": {}, \"type\": {}, \"loggingConfiguration\": {\"level\": {}, \"includeExecutionData\": {}, \"destinations\": {}}, \"tags\": {}, \"tracingConfiguration\": {\"enabled\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.CreateStateMachine",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.CreateStateMachine"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "activityArn": {}
+      },
+      "body_json": {
+        "activityArn": {}
+      },
+      "body_text": "{\"activityArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Deletes an activity.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.DeleteActivity",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"activityArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.DeleteActivity",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.DeleteActivity"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "stateMachineArn": {}
+      },
+      "body_json": {
+        "stateMachineArn": {}
+      },
+      "body_text": "{\"stateMachineArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to <code>DELETING</code> and begins the deletion process. </p> <p>If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with ValidationException.</p> <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note> <p>For <code>EXPRESS</code> state machines, the deletion will happen eventually (usually less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code> API is called.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.DeleteStateMachine",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"stateMachineArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.DeleteStateMachine",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.DeleteStateMachine"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "activityArn": {}
+      },
+      "body_json": {
+        "activityArn": {}
+      },
+      "body_text": "{\"activityArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Describes an activity.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.DescribeActivity",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"activityArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.DescribeActivity",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.DescribeActivity"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "executionArn": {}
+      },
+      "body_json": {
+        "executionArn": {}
+      },
+      "body_text": "{\"executionArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides all information about a state machine execution, such as the state machine associated with the execution, the execution input and output, and relevant execution metadata. Use this API action to return the Map Run ARN if the execution was dispatched by a Map Run.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note> <p>This API action is not supported by <code>EXPRESS</code> state machine executions unless they were dispatched by a Map Run.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.DescribeExecution",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"executionArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.DescribeExecution",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.DescribeExecution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "mapRunArn": {}
+      },
+      "body_json": {
+        "mapRunArn": {}
+      },
+      "body_text": "{\"mapRunArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Provides information about a Map Run's configuration, progress, and results. For more information, see <a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html\">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.DescribeMapRun",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"mapRunArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.DescribeMapRun",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.DescribeMapRun"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "stateMachineArn": {}
+      },
+      "body_json": {
+        "stateMachineArn": {}
+      },
+      "body_text": "{\"stateMachineArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and configuration. If the state machine ARN is a qualified state machine ARN, the response returned includes the <code>Map</code> state's label.</p> <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.DescribeStateMachine",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"stateMachineArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.DescribeStateMachine",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.DescribeStateMachine"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "executionArn": {}
+      },
+      "body_json": {
+        "executionArn": {}
+      },
+      "body_text": "{\"executionArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Provides information about a state machine's definition, its execution role ARN, and configuration. If an execution was dispatched by a Map Run, the Map Run is returned in the response. Additionally, the state machine returned will be the state machine associated with the Map Run.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note> <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.DescribeStateMachineForExecution",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"executionArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.DescribeStateMachineForExecution",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.DescribeStateMachineForExecution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "activityArn": {},
+        "workerName": {}
+      },
+      "body_json": {
+        "activityArn": {},
+        "workerName": {}
+      },
+      "body_text": "{\"activityArn\": {}, \"workerName\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns a <code>taskToken</code> with a null string.</p> <note> <p>This API action isn't logged in CloudTrail.</p> </note> <important> <p>Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum time the service may hold the poll request).</p> <p>Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html\">Avoid Latency When Polling for Activity Tasks</a> in the Step Functions Developer Guide.</p> </important>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.GetActivityTask",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"activityArn\": {}, \"workerName\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.GetActivityTask",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.GetActivityTask"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "executionArn": {},
+        "includeExecutionData": {},
+        "maxResults": {},
+        "nextToken": {},
+        "reverseOrder": {}
+      },
+      "body_json": {
+        "executionArn": {},
+        "includeExecutionData": {},
+        "maxResults": {},
+        "nextToken": {},
+        "reverseOrder": {}
+      },
+      "body_text": "{\"executionArn\": {}, \"maxResults\": {}, \"reverseOrder\": {}, \"nextToken\": {}, \"includeExecutionData\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get the latest events first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.GetExecutionHistory",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"executionArn\": {}, \"maxResults\": {}, \"reverseOrder\": {}, \"nextToken\": {}, \"includeExecutionData\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.GetExecutionHistory",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.GetExecutionHistory"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "maxResults": {},
+        "nextToken": {}
+      },
+      "body_json": {
+        "maxResults": {},
+        "nextToken": {}
+      },
+      "body_text": "{\"maxResults\": {}, \"nextToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Lists the existing activities.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.ListActivities",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"maxResults\": {}, \"nextToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.ListActivities",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.ListActivities"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "mapRunArn": {},
+        "maxResults": {},
+        "nextToken": {},
+        "stateMachineArn": {},
+        "statusFilter": {}
+      },
+      "body_json": {
+        "mapRunArn": {},
+        "maxResults": {},
+        "nextToken": {},
+        "stateMachineArn": {},
+        "statusFilter": {}
+      },
+      "body_text": "{\"stateMachineArn\": {}, \"statusFilter\": {}, \"maxResults\": {}, \"nextToken\": {}, \"mapRunArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Lists all executions of a state machine or a Map Run. You can list all executions related to a state machine by specifying a state machine Amazon Resource Name (ARN), or those related to a Map Run by specifying a Map Run ARN.</p> <p>Results are sorted by time, with the most recent execution first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note> <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.ListExecutions",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"stateMachineArn\": {}, \"statusFilter\": {}, \"maxResults\": {}, \"nextToken\": {}, \"mapRunArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.ListExecutions",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.ListExecutions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "executionArn": {},
+        "maxResults": {},
+        "nextToken": {}
+      },
+      "body_json": {
+        "executionArn": {},
+        "maxResults": {},
+        "nextToken": {}
+      },
+      "body_text": "{\"executionArn\": {}, \"maxResults\": {}, \"nextToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Lists all Map Runs that were started by a given state machine execution. Use this API action to obtain Map Run ARNs, and then call <code>DescribeMapRun</code> to obtain more information, if needed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.ListMapRuns",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"executionArn\": {}, \"maxResults\": {}, \"nextToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.ListMapRuns",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.ListMapRuns"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "maxResults": {},
+        "nextToken": {}
+      },
+      "body_json": {
+        "maxResults": {},
+        "nextToken": {}
+      },
+      "body_text": "{\"maxResults\": {}, \"nextToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Lists the existing state machines.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.ListStateMachines",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "maxResults",
+          "value": ""
+        },
+        {
+          "name": "nextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"maxResults\": {}, \"nextToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.ListStateMachines",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.ListStateMachines"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "resourceArn": {}
+      },
+      "body_json": {
+        "resourceArn": {}
+      },
+      "body_text": "{\"resourceArn\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>List tags for a given resource.</p> <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.ListTagsForResource",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"resourceArn\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.ListTagsForResource",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.ListTagsForResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "cause": {},
+        "error": {},
+        "taskToken": {}
+      },
+      "body_json": {
+        "cause": {},
+        "error": {},
+        "taskToken": {}
+      },
+      "body_text": "{\"taskToken\": {}, \"error\": {}, \"cause\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Used by activity workers and task states using the <a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token\">callback</a> pattern to report that the task identified by the <code>taskToken</code> failed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.SendTaskFailure",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"taskToken\": {}, \"error\": {}, \"cause\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.SendTaskFailure",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.SendTaskFailure"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "taskToken": {}
+      },
+      "body_json": {
+        "taskToken": {}
+      },
+      "body_text": "{\"taskToken\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Used by activity workers and task states using the <a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token\">callback</a> pattern to report to Step Functions that the task represented by the specified <code>taskToken</code> is still making progress. This action resets the <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold is specified in the state machine's Amazon States Language definition (<code>HeartbeatSeconds</code>). This action does not in itself create an event in the execution history. However, if the task times out, the execution history contains an <code>ActivityTimedOut</code> entry for activities, or a <code>TaskTimedOut</code> entry for for tasks using the <a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync\">job run</a> or <a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token\">callback</a> pattern.</p> <note> <p>The <code>Timeout</code> of a task, defined in the state machine's Amazon States Language definition, is its maximum allowed duration, regardless of the number of <a>SendTaskHeartbeat</a> requests received. Use <code>HeartbeatSeconds</code> to configure the timeout interval for heartbeats.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.SendTaskHeartbeat",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"taskToken\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.SendTaskHeartbeat",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.SendTaskHeartbeat"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "output": {},
+        "taskToken": {}
+      },
+      "body_json": {
+        "output": {},
+        "taskToken": {}
+      },
+      "body_text": "{\"taskToken\": {}, \"output\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Used by activity workers and task states using the <a href=\"https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token\">callback</a> pattern to report that the task identified by the <code>taskToken</code> completed successfully.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.SendTaskSuccess",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"taskToken\": {}, \"output\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.SendTaskSuccess",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.SendTaskSuccess"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "input": {},
+        "name": {},
+        "stateMachineArn": {},
+        "traceHeader": {}
+      },
+      "body_json": {
+        "input": {},
+        "name": {},
+        "stateMachineArn": {},
+        "traceHeader": {}
+      },
+      "body_text": "{\"stateMachineArn\": {}, \"name\": {}, \"input\": {}, \"traceHeader\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Starts a state machine execution. If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with ValidationException.</p> <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note> <p> <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code> workflow, if <code>StartExecution</code> is called with the same name and input as a running execution, the call will succeed and return the same response as the original request. If the execution is closed or if the input is different, it will return a <code>400 ExecutionAlreadyExists</code> error. Names can be reused after 90 days. </p> <p> <code>StartExecution</code> is not idempotent for <code>EXPRESS</code> workflows. </p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.StartExecution",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"stateMachineArn\": {}, \"name\": {}, \"input\": {}, \"traceHeader\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.StartExecution",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.StartExecution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "input": {},
+        "name": {},
+        "stateMachineArn": {},
+        "traceHeader": {}
+      },
+      "body_json": {
+        "input": {},
+        "name": {},
+        "stateMachineArn": {},
+        "traceHeader": {}
+      },
+      "body_text": "{\"stateMachineArn\": {}, \"name\": {}, \"input\": {}, \"traceHeader\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Starts a Synchronous Express state machine execution. <code>StartSyncExecution</code> is not available for <code>STANDARD</code> workflows.</p> <note> <p> <code>StartSyncExecution</code> will return a <code>200 OK</code> response, even if your execution fails, because the status code in the API response doesn't reflect function errors. Error codes are reserved for errors that prevent your execution from running, such as permissions errors, limit errors, or issues with your state machine code and configuration. </p> </note> <note> <p>This API action isn't logged in CloudTrail.</p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.StartSyncExecution",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"stateMachineArn\": {}, \"name\": {}, \"input\": {}, \"traceHeader\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.StartSyncExecution",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.StartSyncExecution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "cause": {},
+        "error": {},
+        "executionArn": {}
+      },
+      "body_json": {
+        "cause": {},
+        "error": {},
+        "executionArn": {}
+      },
+      "body_text": "{\"executionArn\": {}, \"error\": {}, \"cause\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Stops an execution.</p> <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.StopExecution",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"executionArn\": {}, \"error\": {}, \"cause\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.StopExecution",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.StopExecution"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "resourceArn": {},
+        "tags": {}
+      },
+      "body_json": {
+        "resourceArn": {},
+        "tags": {}
+      },
+      "body_text": "{\"resourceArn\": {}, \"tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Add a tag to a Step Functions resource.</p> <p>An array of key-value pairs. For more information, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html\">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html\">Controlling Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.TagResource",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"resourceArn\": {}, \"tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.TagResource",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.TagResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "resourceArn": {},
+        "tagKeys": {}
+      },
+      "body_json": {
+        "resourceArn": {},
+        "tagKeys": {}
+      },
+      "body_text": "{\"resourceArn\": {}, \"tagKeys\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Remove a tag from a Step Functions resource",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.UntagResource",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"resourceArn\": {}, \"tagKeys\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.UntagResource",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.UntagResource"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "mapRunArn": {},
+        "maxConcurrency": {},
+        "toleratedFailureCount": {},
+        "toleratedFailurePercentage": {}
+      },
+      "body_json": {
+        "mapRunArn": {},
+        "maxConcurrency": {},
+        "toleratedFailureCount": {},
+        "toleratedFailurePercentage": {}
+      },
+      "body_text": "{\"mapRunArn\": {}, \"maxConcurrency\": {}, \"toleratedFailurePercentage\": {}, \"toleratedFailureCount\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an in-progress Map Run's configuration to include changes to the settings that control maximum concurrency and Map Run failure.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.UpdateMapRun",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"mapRunArn\": {}, \"maxConcurrency\": {}, \"toleratedFailurePercentage\": {}, \"toleratedFailureCount\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.UpdateMapRun",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.UpdateMapRun"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AWS_STEP_FUNCTIONS_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "definition": {},
+        "loggingConfiguration": {
+          "destinations": {},
+          "includeExecutionData": {},
+          "level": {}
+        },
+        "roleArn": {},
+        "stateMachineArn": {},
+        "tracingConfiguration": {
+          "enabled": {}
+        }
+      },
+      "body_json": {
+        "definition": {},
+        "loggingConfiguration": {
+          "destinations": {},
+          "includeExecutionData": {},
+          "level": {}
+        },
+        "roleArn": {},
+        "stateMachineArn": {},
+        "tracingConfiguration": {
+          "enabled": {}
+        }
+      },
+      "body_text": "{\"stateMachineArn\": {}, \"definition\": {}, \"roleArn\": {}, \"loggingConfiguration\": {\"level\": {}, \"includeExecutionData\": {}, \"destinations\": {}}, \"tracingConfiguration\": {\"enabled\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code> error.</p> <p>If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with ValidationException.</p> <p>A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named <code>stateMachineName</code>.</p> <note> <p>All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the previous state machine <code>definition</code> and <code>roleArn</code>. </p> </note>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AWS_STEP_FUNCTIONS_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /",
+      "method": "POST",
+      "name": "POST /#X-Amz-Target=AWSStepFunctions.UpdateStateMachine",
+      "note": "Replace {{AWS_STEP_FUNCTIONS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Target",
+          "value": ""
+        }
+      ],
+      "path": "/",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"stateMachineArn\": {}, \"definition\": {}, \"roleArn\": {}, \"loggingConfiguration\": {\"level\": {}, \"includeExecutionData\": {}, \"destinations\": {}}, \"tracingConfiguration\": {\"enabled\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /#X-Amz-Target=AWSStepFunctions.UpdateStateMachine",
+      "url": "http://states.{{REGION}}.amazonaws.com/#X-Amz-Target=AWSStepFunctions.UpdateStateMachine"
+    }
+  ]
+}

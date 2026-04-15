@@ -1,0 +1,464 @@
+{
+  "id": "nexmo.com_reports",
+  "info": {
+    "base_url": "https://api.nexmo.com",
+    "description": "Download a zipped archive of the rendered report. The file is available for download for 72 hours. The zip file will be named `_.zip` The csv file in the zip archive will be named as `report___.csv`...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Reports API",
+    "version": "2.2.2"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "REPORTS_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List reports created by the specified account based on filtered provided.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v2/reports",
+      "method": "GET",
+      "name": "List reports",
+      "note": "Replace {{REPORTS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "account_id",
+          "value": "abcd1234"
+        },
+        {
+          "name": "status",
+          "value": "SUCCESS, FAILED"
+        },
+        {
+          "name": "date_from",
+          "value": "2019-06-28T00:00:00-00:00"
+        },
+        {
+          "name": "date_to",
+          "value": "2019-06-28T23:59:59-00:00"
+        }
+      ],
+      "path": "/v2/reports",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "account_id",
+          "value": "abcd1234"
+        },
+        {
+          "name": "status",
+          "value": "SUCCESS, FAILED"
+        },
+        {
+          "name": "date_from",
+          "value": "2019-06-28T00:00:00-00:00"
+        },
+        {
+          "name": "date_to",
+          "value": "2019-06-28T23:59:59-00:00"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List reports",
+      "url": "https://api.nexmo.com/v2/reports"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "REPORTS_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "account_id": "abcdef01",
+        "account_ref": "",
+        "callback_url": "https://requestb.in/12345",
+        "client_ref": "",
+        "date_end": "2018-01-01T00:00:00+00:00",
+        "date_start": "2017-12-01T00:00:00+00:00",
+        "direction": "outbound",
+        "from": "441234567890",
+        "include_message": "true",
+        "include_subaccounts": "false",
+        "network": "23415",
+        "product": "SMS",
+        "show_concatenated": "false",
+        "status": "delivered",
+        "to": "441234567890"
+      },
+      "body_json": {
+        "account_id": "abcdef01",
+        "account_ref": "",
+        "callback_url": "https://requestb.in/12345",
+        "client_ref": "",
+        "date_end": "2018-01-01T00:00:00+00:00",
+        "date_start": "2017-12-01T00:00:00+00:00",
+        "direction": "outbound",
+        "from": "441234567890",
+        "include_message": "true",
+        "include_subaccounts": "false",
+        "network": "23415",
+        "product": "SMS",
+        "show_concatenated": "false",
+        "status": "delivered",
+        "to": "441234567890"
+      },
+      "body_text": "{\"account_id\": \"abcdef01\", \"callback_url\": \"https://requestb.in/12345\", \"date_end\": \"2018-01-01T00:00:00+00:00\", \"date_start\": \"2017-12-01T00:00:00+00:00\", \"include_subaccounts\": \"false\", \"product\": \"SMS\", \"account_ref\": \"\", \"client_ref\": \"\", \"direction\": \"outbound\", \"from\": \"441234567890\", \"include_message\": \"true\", \"network\": \"23415\", \"show_concatenated\": \"false\", \"status\": \"delivered\", \"to\": \"441234567890\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Request a report on your account activity",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/reports",
+      "method": "POST",
+      "name": "Create an asynchronous report",
+      "note": "Replace {{REPORTS_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/reports",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"account_id\": \"abcdef01\", \"callback_url\": \"https://requestb.in/12345\", \"date_end\": \"2018-01-01T00:00:00+00:00\", \"date_start\": \"2017-12-01T00:00:00+00:00\", \"include_subaccounts\": \"false\", \"product\": \"SMS\", \"account_ref\": \"\", \"client_ref\": \"\", \"direction\": \"outbound\", \"from\": \"441234567890\", \"include_message\": \"true\", \"network\": \"23415\", \"show_concatenated\": \"false\", \"status\": \"delivered\", \"to\": \"441234567890\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an asynchronous report",
+      "url": "https://api.nexmo.com/v2/reports"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "REPORTS_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Fetch usage data synchronously",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v2/reports/records",
+      "method": "GET",
+      "name": "Load records synchronously",
+      "note": "Replace {{REPORTS_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "account_id",
+          "value": "abcd1234"
+        },
+        {
+          "name": "product",
+          "value": "SMS"
+        },
+        {
+          "name": "direction",
+          "value": "inbound"
+        },
+        {
+          "name": "id",
+          "value": "aaaaaaaa-bbbb-cccc-dddd-0123456789ab"
+        },
+        {
+          "name": "date_start",
+          "value": "2017-12-01T00:00:00+0000"
+        },
+        {
+          "name": "date_end",
+          "value": "2018-01-01T00:00:00+0000"
+        },
+        {
+          "name": "include_message",
+          "value": "True"
+        },
+        {
+          "name": "show_concatenated",
+          "value": "False"
+        },
+        {
+          "name": "status",
+          "value": "delivered"
+        }
+      ],
+      "path": "/v2/reports/records",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "account_id",
+          "value": "abcd1234"
+        },
+        {
+          "name": "product",
+          "value": "SMS"
+        },
+        {
+          "name": "direction",
+          "value": "inbound"
+        },
+        {
+          "name": "id",
+          "value": "aaaaaaaa-bbbb-cccc-dddd-0123456789ab"
+        },
+        {
+          "name": "date_start",
+          "value": "2017-12-01T00:00:00+0000"
+        },
+        {
+          "name": "date_end",
+          "value": "2018-01-01T00:00:00+0000"
+        },
+        {
+          "name": "include_message",
+          "value": "True"
+        },
+        {
+          "name": "show_concatenated",
+          "value": "False"
+        },
+        {
+          "name": "status",
+          "value": "delivered"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Load records synchronously",
+      "url": "https://api.nexmo.com/v2/reports/records"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "REPORTS_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Cancel the execution of a pending or processing report.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "DELETE /v2/reports/{{REPORT_ID}}",
+      "method": "DELETE",
+      "name": "Cancel the execution of a report",
+      "note": "Replace {{REPORTS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/reports/{{REPORT_ID}}",
+      "pathParameters": [
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel the execution of a report",
+      "url": "https://api.nexmo.com/v2/reports/{{REPORT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "REPORTS_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve status and metadata about a requested report.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v2/reports/{{REPORT_ID}}",
+      "method": "GET",
+      "name": "Get status of report",
+      "note": "Replace {{REPORTS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "path": "/v2/reports/{{REPORT_ID}}",
+      "pathParameters": [
+        {
+          "name": "report_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get status of report",
+      "url": "https://api.nexmo.com/v2/reports/{{REPORT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "REPORTS_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Download a zipped archive of the rendered report. The file is available for download for 72 hours.<br> The zip file will be named `<PRODUCT>_<REPORT_ID>.zip`<br> The csv file in the zip archive will be named as `report_<PRODUCT>_<ACCOUNT_ID>_<DATE>.csv` the date will be formatted as `yyyyMMdd`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{REPORTS_API_KEY_BASE64}}"
+        }
+      ],
+      "id": "GET /v3/media/{{FILE_ID}}",
+      "method": "GET",
+      "name": "Get report data",
+      "note": "Replace {{REPORTS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "file_id",
+          "value": ""
+        }
+      ],
+      "path": "/v3/media/{{FILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "file_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get report data",
+      "url": "https://api.nexmo.com/v3/media/{{FILE_ID}}"
+    }
+  ]
+}

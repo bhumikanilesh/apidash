@@ -1,0 +1,510 @@
+{
+  "id": "ebay.com_sell-logistics",
+  "info": {
+    "base_url": "https://api.ebay.com{basePath}",
+    "description": "This method retrieves the complete details of the shipping quote associated with the specified shippingQuoteId value.  A \"shipping quote\" pertains to a single specific package and contains a set of...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Logistics API",
+    "version": "v1_beta.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "LOGISTICS_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "additionalOptions": [
+          {
+            "additionalCost": {
+              "currency": "",
+              "value": ""
+            },
+            "optionType": ""
+          }
+        ],
+        "labelCustomMessage": "",
+        "labelSize": "",
+        "rateId": "",
+        "returnTo": {
+          "companyName": "",
+          "contactAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "city": "",
+            "countryCode": "",
+            "county": "",
+            "postalCode": "",
+            "stateOrProvince": ""
+          },
+          "fullName": "",
+          "primaryPhone": {
+            "phoneNumber": ""
+          }
+        },
+        "shippingQuoteId": ""
+      },
+      "body_json": {
+        "additionalOptions": [
+          {
+            "additionalCost": {
+              "currency": "",
+              "value": ""
+            },
+            "optionType": ""
+          }
+        ],
+        "labelCustomMessage": "",
+        "labelSize": "",
+        "rateId": "",
+        "returnTo": {
+          "companyName": "",
+          "contactAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "city": "",
+            "countryCode": "",
+            "county": "",
+            "postalCode": "",
+            "stateOrProvince": ""
+          },
+          "fullName": "",
+          "primaryPhone": {
+            "phoneNumber": ""
+          }
+        },
+        "shippingQuoteId": ""
+      },
+      "body_text": "{\"additionalOptions\": [{\"additionalCost\": {\"currency\": \"\", \"value\": \"\"}, \"optionType\": \"\"}], \"labelCustomMessage\": \"\", \"labelSize\": \"\", \"rateId\": \"\", \"returnTo\": {\"companyName\": \"\", \"contactAddress\": {\"addressLine1\": \"\", \"addressLine2\": \"\", \"city\": \"\", \"countryCode\": \"\", \"county\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\"}, \"fullName\": \"\", \"primaryPhone\": {\"phoneNumber\": \"\"}}, \"shippingQuoteId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method creates a \"shipment\" based on the <b>shippingQuoteId</b> and <b>rateId</b> values supplied in the request. The rate identified by the <b>rateId</b> value specifies the carrier and service for the package shipment, and the rate ID must be contained in the shipping quote identified by the <b>shippingQuoteId</b> value. Call <b>createShippingQuote</b> to retrieve a set of live shipping rates.  <br><br>When you create a shipment, eBay generates a shipping label that you can download and use to ship your package.  <br><br>In a <b>createFromShippingQuote</b> request, sellers can include a list of shipping options they want to add to the base service quoted in the selected rate. The list of available shipping options is specific to each quoted rate and if available, the options are listed in the rate container of the of the shipping quote.  <br><br>In addition to a configurable return-to location and other details about the shipment, the response to this method includes:  <ul><li>The shipping carrier and service to be used for the package shipment</li> <li>A list of selected shipping options, if any</li> <li>The shipment tracking number</li> <li>The total shipping cost (the sum cost of the base shipping service and any added options)</li></ul> When you create a shipment, your billing agreement account is charged the sum of the <b>baseShippingCost</b> and the total cost of any additional shipping options you might have selected. Use the URL returned in <b>labelDownloadUrl</b> field, or call <b>downloadLabelFile</b> with the <b>shipmentId</b> value from the response, to download a shipping label for your package. <p class=\"tablenote\"><b>Important!</b> Sellers must set up their payment method with eBay before they can use this method to create a shipment and the associated shipping label.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /shipment/create_from_shipping_quote",
+      "method": "POST",
+      "name": "POST /shipment/create_from_shipping_quote",
+      "note": "Replace {{LOGISTICS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/shipment/create_from_shipping_quote",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"additionalOptions\": [{\"additionalCost\": {\"currency\": \"\", \"value\": \"\"}, \"optionType\": \"\"}], \"labelCustomMessage\": \"\", \"labelSize\": \"\", \"rateId\": \"\", \"returnTo\": {\"companyName\": \"\", \"contactAddress\": {\"addressLine1\": \"\", \"addressLine2\": \"\", \"city\": \"\", \"countryCode\": \"\", \"county\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\"}, \"fullName\": \"\", \"primaryPhone\": {\"phoneNumber\": \"\"}}, \"shippingQuoteId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /shipment/create_from_shipping_quote",
+      "url": "https://api.ebay.com{{BASE_PATH}}/shipment/create_from_shipping_quote"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "LOGISTICS_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the shipment details for the specified shipment ID. Call <b>createFromShippingQuote</b> to generate a shipment ID.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /shipment/{{SHIPMENT_ID}}",
+      "method": "GET",
+      "name": "GET /shipment/{shipmentId}",
+      "note": "Replace {{LOGISTICS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "shipmentId",
+          "value": ""
+        }
+      ],
+      "path": "/shipment/{{SHIPMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "shipmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /shipment/{shipmentId}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/shipment/{{SHIPMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "LOGISTICS_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method cancels the shipment associated with the specified shipment ID and the associated shipping label is deleted. When you cancel a shipment, the <b>totalShippingCost</b> of the canceled shipment is refunded to the account established by the user's billing agreement.  <br><br>Note that you cannot cancel a shipment if you have used the associated shipping label.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /shipment/{{SHIPMENT_ID}}/cancel",
+      "method": "POST",
+      "name": "POST /shipment/{shipmentId}/cancel",
+      "note": "Replace {{LOGISTICS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "shipmentId",
+          "value": ""
+        }
+      ],
+      "path": "/shipment/{{SHIPMENT_ID}}/cancel",
+      "pathParameters": [
+        {
+          "name": "shipmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /shipment/{shipmentId}/cancel",
+      "url": "https://api.ebay.com{{BASE_PATH}}/shipment/{{SHIPMENT_ID}}/cancel"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "LOGISTICS_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method returns the shipping label file that was generated for the <b>shipmentId</b> value specified in the request. Call <b>createFromShippingQuote</b> to generate a shipment ID.  <br><br>Use the <code>Accept</code> HTTP header to specify the format of the returned file. The default file format is a PDF file. <!-- Are other options available? -->",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /shipment/{{SHIPMENT_ID}}/download_label_file",
+      "method": "GET",
+      "name": "GET /shipment/{shipmentId}/download_label_file",
+      "note": "Replace {{LOGISTICS_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "shipmentId",
+          "value": ""
+        }
+      ],
+      "path": "/shipment/{{SHIPMENT_ID}}/download_label_file",
+      "pathParameters": [
+        {
+          "name": "shipmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /shipment/{shipmentId}/download_label_file",
+      "url": "https://api.ebay.com{{BASE_PATH}}/shipment/{{SHIPMENT_ID}}/download_label_file"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "LOGISTICS_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "orders": [
+          {
+            "channel": "",
+            "orderId": ""
+          }
+        ],
+        "packageSpecification": {
+          "dimensions": {
+            "height": "",
+            "length": "",
+            "unit": "",
+            "width": ""
+          },
+          "weight": {
+            "unit": "",
+            "value": ""
+          }
+        },
+        "shipFrom": {
+          "companyName": "",
+          "contactAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "city": "",
+            "countryCode": "",
+            "county": "",
+            "postalCode": "",
+            "stateOrProvince": ""
+          },
+          "fullName": "",
+          "primaryPhone": {
+            "phoneNumber": ""
+          }
+        },
+        "shipTo": {
+          "companyName": "",
+          "contactAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "city": "",
+            "countryCode": "",
+            "county": "",
+            "postalCode": "",
+            "stateOrProvince": ""
+          },
+          "fullName": "",
+          "primaryPhone": {
+            "phoneNumber": ""
+          }
+        }
+      },
+      "body_json": {
+        "orders": [
+          {
+            "channel": "",
+            "orderId": ""
+          }
+        ],
+        "packageSpecification": {
+          "dimensions": {
+            "height": "",
+            "length": "",
+            "unit": "",
+            "width": ""
+          },
+          "weight": {
+            "unit": "",
+            "value": ""
+          }
+        },
+        "shipFrom": {
+          "companyName": "",
+          "contactAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "city": "",
+            "countryCode": "",
+            "county": "",
+            "postalCode": "",
+            "stateOrProvince": ""
+          },
+          "fullName": "",
+          "primaryPhone": {
+            "phoneNumber": ""
+          }
+        },
+        "shipTo": {
+          "companyName": "",
+          "contactAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "city": "",
+            "countryCode": "",
+            "county": "",
+            "postalCode": "",
+            "stateOrProvince": ""
+          },
+          "fullName": "",
+          "primaryPhone": {
+            "phoneNumber": ""
+          }
+        }
+      },
+      "body_text": "{\"orders\": [{\"channel\": \"\", \"orderId\": \"\"}], \"packageSpecification\": {\"dimensions\": {\"height\": \"\", \"length\": \"\", \"unit\": \"\", \"width\": \"\"}, \"weight\": {\"unit\": \"\", \"value\": \"\"}}, \"shipFrom\": {\"companyName\": \"\", \"contactAddress\": {\"addressLine1\": \"\", \"addressLine2\": \"\", \"city\": \"\", \"countryCode\": \"\", \"county\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\"}, \"fullName\": \"\", \"primaryPhone\": {\"phoneNumber\": \"\"}}, \"shipTo\": {\"companyName\": \"\", \"contactAddress\": {\"addressLine1\": \"\", \"addressLine2\": \"\", \"city\": \"\", \"countryCode\": \"\", \"county\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\"}, \"fullName\": \"\", \"primaryPhone\": {\"phoneNumber\": \"\"}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The <b>createShippingQuote</b> method returns a <i>shipping quote </i> that contains a list of live \"rates.\"  <br><br>Each rate represents an offer made by a shipping carrier for a specific service and each offer has a live quote for the base service cost. Rates have a time window in which they are \"live,\" and rates expire when their purchase window ends. If offered by the carrier, rates can include shipping options (and their associated prices), and users can add any offered shipping option to the base service should they desire.  Also, depending on the services required, rates can also include pickup and delivery windows.  <br><br>Each rate is for a single package and is based on the following information: <ul><li>The shipping origin</li> <li>The shipping destination</li> <li>The package size (weight and dimensions)</li></ul>  Rates are identified by a unique eBay-assigned <b>rateId</b> and rates are based on price points, pickup and delivery time frames, and other user requirements. Because each rate offered must be compliant with the eBay shipping program, all rates reflect eBay-negotiated prices.  <br><br>The various rates returned in a shipping quote offer the user a choice from which they can choose a shipping service that best fits their needs. Select the rate for your shipment and using the associated <b>rateId</b>, call <b>createFromShippingQuote</b> to create a shipment and generate a shipping label that you can use to ship the package.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /shipping_quote",
+      "method": "POST",
+      "name": "POST /shipping_quote",
+      "note": "Replace {{LOGISTICS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-EBAY-C-MARKETPLACE-ID",
+          "value": ""
+        }
+      ],
+      "path": "/shipping_quote",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"orders\": [{\"channel\": \"\", \"orderId\": \"\"}], \"packageSpecification\": {\"dimensions\": {\"height\": \"\", \"length\": \"\", \"unit\": \"\", \"width\": \"\"}, \"weight\": {\"unit\": \"\", \"value\": \"\"}}, \"shipFrom\": {\"companyName\": \"\", \"contactAddress\": {\"addressLine1\": \"\", \"addressLine2\": \"\", \"city\": \"\", \"countryCode\": \"\", \"county\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\"}, \"fullName\": \"\", \"primaryPhone\": {\"phoneNumber\": \"\"}}, \"shipTo\": {\"companyName\": \"\", \"contactAddress\": {\"addressLine1\": \"\", \"addressLine2\": \"\", \"city\": \"\", \"countryCode\": \"\", \"county\": \"\", \"postalCode\": \"\", \"stateOrProvince\": \"\"}, \"fullName\": \"\", \"primaryPhone\": {\"phoneNumber\": \"\"}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /shipping_quote",
+      "url": "https://api.ebay.com{{BASE_PATH}}/shipping_quote"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "LOGISTICS_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method retrieves the complete details of the shipping quote associated with the specified <b>shippingQuoteId</b> value.  <br><br>A \"shipping quote\" pertains to a single specific package and contains a set of shipping \"rates\" that quote the cost to ship the package by different shipping carriers and services. The quotes are based on the package's origin, destination, and size.  <br><br>Call <b>createShippingQuote</b> to create a <b>shippingQuoteId</b>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{LOGISTICS_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /shipping_quote/{{SHIPPING_QUOTE_ID}}",
+      "method": "GET",
+      "name": "GET /shipping_quote/{shippingQuoteId}",
+      "note": "Replace {{LOGISTICS_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "shippingQuoteId",
+          "value": ""
+        }
+      ],
+      "path": "/shipping_quote/{{SHIPPING_QUOTE_ID}}",
+      "pathParameters": [
+        {
+          "name": "shippingQuoteId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /shipping_quote/{shippingQuoteId}",
+      "url": "https://api.ebay.com{{BASE_PATH}}/shipping_quote/{{SHIPPING_QUOTE_ID}}"
+    }
+  ]
+}

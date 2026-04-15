@@ -1,0 +1,3075 @@
+{
+  "id": "dracoon.team",
+  "info": {
+    "base_url": "/api",
+    "description": "&#128640; Since v4.25.0\n\n### Description:  \nUpdates a list of file’s metadata.\n\n### Precondition:\nUser has &#128275; change permissions in parent room.\n\n### Postcondition:\nFile's metadata is...",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "DRACOON API",
+    "version": "4.42.2"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "authType": "basic",
+        "language": "",
+        "login": "",
+        "password": "",
+        "state": "",
+        "token": "",
+        "userName": ""
+      },
+      "body_json": {
+        "authType": "basic",
+        "language": "",
+        "login": "",
+        "password": "",
+        "state": "",
+        "token": "",
+        "userName": ""
+      },
+      "body_text": "{\"authType\": \"basic\", \"language\": \"\", \"login\": \"\", \"password\": \"\", \"state\": \"\", \"token\": \"\", \"userName\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128679; Deprecated since v4.13.0</h3>\n\n### Description:\nAuthenticates user and provides an authentication token (`X-Sds-Auth-Token`) that is required for the most operations.\n\n### Precondition:\nExisting user that is **NOT** locked.\n\n### Postcondition:\nUser is logged in.\n\n### Further Information:\nThe provided token is valid for **two hours**, every usage resets this period to two full hours again.  \nLogging off invalidates the token.  \n\n### Available authentication methods:\n<details open style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Authentication Method (`authType`) | Description |\n| :--- | :--- |\n| `basic` | Log in with credentials stored in the database <br>Formerly known as `sql`.|\n| `active_directory` | Log in with Active Directory credentials |\n| `radius` | Log in with RADIUS username, PIN and token password.<br>Token (request parameter) may be set, otherwise this parameter is ignored. If token is set, password is optional. |\n| `openid` | Please use `POST /auth/openid/login` API to login with OpenID Connect identity |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v4/auth/login",
+      "method": "POST",
+      "name": "Authenticate user (Login)",
+      "params": [],
+      "path": "/api/v4/auth/login",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"authType\": \"basic\", \"language\": \"\", \"login\": \"\", \"password\": \"\", \"state\": \"\", \"token\": \"\", \"userName\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Authenticate user (Login)",
+      "url": "/api/v4/auth/login"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128679; Deprecated since v4.14.0</h3>\n\n### Description:\nThis is the first step of the OpenID Connect authentication.  \nThe user is send to the OpenID Connect identity provider to authenticate himself and retrieve an authorization code.\n\n### Precondition:\nNone.\n\n### Postcondition:\nUser is redirected to OpenID Connect identity provider to authenticate himself.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/v4/auth/openid/login",
+      "method": "GET",
+      "name": "Initiate OpenID Connect authentication",
+      "params": [
+        {
+          "name": "issuer",
+          "value": ""
+        },
+        {
+          "name": "redirect_uri",
+          "value": ""
+        },
+        {
+          "name": "language",
+          "value": ""
+        },
+        {
+          "name": "test",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/auth/openid/login",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "issuer",
+          "value": ""
+        },
+        {
+          "name": "redirect_uri",
+          "value": ""
+        },
+        {
+          "name": "language",
+          "value": ""
+        },
+        {
+          "name": "test",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Initiate OpenID Connect authentication",
+      "url": "/api/v4/auth/openid/login"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128679; Deprecated since v4.14.0</h3>\n\n### Description:  \nThis is the second step of the OpenID Connect authentication.  \nThe user hands over the authorization code and is logged in.\n\n### Precondition:\nExisting user with activated OpenID Connect authentication that is **NOT** locked.\n\n### Postcondition:\nUser is logged in.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /api/v4/auth/openid/login",
+      "method": "POST",
+      "name": "Complete OpenID Connect authentication",
+      "params": [
+        {
+          "name": "code",
+          "value": ""
+        },
+        {
+          "name": "id_token",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/auth/openid/login",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "code",
+          "value": ""
+        },
+        {
+          "name": "id_token",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Complete OpenID Connect authentication",
+      "url": "/api/v4/auth/openid/login"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:\nTest connection to DRACOON Core Service.\n\n### Precondition:\nNone.\n\n### Postcondition:\n`200 OK` with current date string is returned if successful.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/v4/auth/ping",
+      "method": "GET",
+      "name": "Ping",
+      "params": [],
+      "path": "/api/v4/auth/ping",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Ping",
+      "url": "/api/v4/auth/ping"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "creatorLanguage": "",
+        "email": ""
+      },
+      "body_json": {
+        "creatorLanguage": "",
+        "email": ""
+      },
+      "body_text": "{\"creatorLanguage\": \"\", \"email\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.13.0</h3>\n\n### Description:  \nRequest an email with the user names of all accounts connected to the email.\n\n### Precondition:\nValid email address.\n\n### Postcondition:\nAn email is sent to the provided address, with a list of account user names connected to it.\n\n### Further Information:\nNone.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v4/auth/recover_username",
+      "method": "POST",
+      "name": "Recover username",
+      "params": [],
+      "path": "/api/v4/auth/recover_username",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"creatorLanguage\": \"\", \"email\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Recover username",
+      "url": "/api/v4/auth/recover_username"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "creatorLanguage": "",
+        "language": "",
+        "login": "",
+        "userName": ""
+      },
+      "body_json": {
+        "creatorLanguage": "",
+        "language": "",
+        "login": "",
+        "userName": ""
+      },
+      "body_text": "{\"creatorLanguage\": \"\", \"language\": \"\", \"login\": \"\", \"userName\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### Description:  \nRequest an email with a password reset token for a certain user to reset password.\n\n### Precondition:\nRegistered user account.\n\n### Postcondition:\nProvided user receives email with password reset token.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v4/auth/reset_password",
+      "method": "POST",
+      "name": "Request password reset",
+      "params": [],
+      "path": "/api/v4/auth/reset_password",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"creatorLanguage\": \"\", \"language\": \"\", \"login\": \"\", \"userName\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request password reset",
+      "url": "/api/v4/auth/reset_password"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:  \nRequest all information for a password change dialogue e.g. real name of user.\n\n### Precondition:\nUser received a password reset token.\n\n### Postcondition:\nContext information is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/v4/auth/reset_password/{{TOKEN}}",
+      "method": "GET",
+      "name": "Validate information for password reset",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/auth/reset_password/{{TOKEN}}",
+      "pathParameters": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Validate information for password reset",
+      "url": "/api/v4/auth/reset_password/{{TOKEN}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "password": ""
+      },
+      "body_json": {
+        "password": ""
+      },
+      "body_text": "{\"password\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### Description:  \nResets user's password.\n\n### Precondition:\nUser received a password reset token.\n\n### Postcondition:\nUser's password is reset to the provided password.\n\n### Further Information:\nForbidden characters in passwords: [`&`, `'`, `<`, `>`]",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/v4/auth/reset_password/{{TOKEN}}",
+      "method": "PUT",
+      "name": "Reset password",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/auth/reset_password/{{TOKEN}}",
+      "pathParameters": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"password\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Reset password",
+      "url": "/api/v4/auth/reset_password/{{TOKEN}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.6.0</h3>\n\n### Description:  \nReturns a list of configurable system default values.\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of configurable default settings is returned.\n\n### Further Information:\nNone.\n\n### Configurable default values:\n<details open style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Setting | Description | Value |\n| :--- | :--- | :--- |\n| `languageDefault` | Defines which language should be default. | `ISO 639-1 code` |\n| `downloadShareDefaultExpirationPeriod` | Default expiration period for Download Shares in _days_. | `Integer between 0 and 9999` |\n| `uploadShareDefaultExpirationPeriod` | Default expiration period for Upload Shares in _days_. | `Integer between 0 and 9999` |\n| `fileDefaultExpirationPeriod` | Default expiration period for all uploaded files in _days_. | `Integer between 0 and 9999` |\n| `nonmemberViewerDefault` | Defines if new users get the role _Non Member Viewer_ by default | `true or false` |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/defaults",
+      "method": "GET",
+      "name": "Request default values",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/defaults",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request default values",
+      "url": "/api/v4/config/info/defaults"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.6.0</h3>\n\n### Description:\nReturns a list of configurable general settings.\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of configurable general settings is returned.\n\n### Further Information:\nNone.\n\n### Configurable general settings:\n<details open style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Setting | Description | Value |\n| :--- | :--- | :--- |\n| `sharePasswordSmsEnabled` | Determines whether sending of share passwords via SMS is allowed. | `true or false` |\n| `cryptoEnabled` | Determines whether client-side encryption is enabled.<br>Can only be enabled once; disabling is **NOT** possible. | `true or false` |\n| `emailNotificationButtonEnabled` | Determines whether email notification button is enabled. | `true or false` |\n| `eulaEnabled` | Determines whether EULA is enabled.<br>Each user has to confirm the EULA at first login. | `true or false` |\n| `useS3Storage` | Defines if S3 is used as storage backend.<br>Can only be enabled once; disabling is **NOT** possible. | `true or false` |\n| `s3TagsEnabled` | Determines whether S3 tags are enabled | `true or false` |\n| `homeRoomsActive` | Determines whether each AD user has a personal home room | `true or false` |\n| `homeRoomParentId` | Defines a node under which all personal home rooms are located. **NULL** if `homeRoomsActive` is `false` | `Long` |\n| `subscriptionPlan` | Subscription Plan. <br> 0 = Pro, 1 = Premium, 2 = Basic | `Integer` |\n\n</details>\n\n### Deprecated general settings:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Setting | Description | Value |\n| :--- | :--- | :--- |\n| <del>`mediaServerEnabled`</del> | Determines whether media server is enabled.<br>Returns boolean value dependent on conjunction of `mediaServerConfigEnabled` AND `mediaServerEnabled` | `true or false` |\n| <del>`weakPasswordEnabled`</del> | Determines whether weak password is allowed.<br>Use `GET /system/config/policies/passwords` API to get configured password policies. | `true or false` |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/general",
+      "method": "GET",
+      "name": "Request general settings",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/general",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request general settings",
+      "url": "/api/v4/config/info/general"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.6.0</h3>\n\n### Description:  \nReturns a list of read-only infrastructure properties.  \n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of infrastructure properties is returned.\n\n### Further Information:\nSource: `core-service.properties`\n\n### Read-only infrastructure properties:\n<details open style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Setting | Description | Value |\n| :--- | :--- | :--- |\n| `smsConfigEnabled` | Determines whether sending of share passwords via SMS is **system-wide** enabled. | `true or false` |\n| `mediaServerConfigEnabled` | Determines whether media server is **system-wide** enabled. | `true or false` |\n| `s3DefaultRegion` | Suggested S3 region | `Region name` |\n| `s3EnforceDirectUpload` | Enforce direct upload to S3 | `true or false` |\n| `isDracoonCloud` | Determines if the **DRACOON Core** is deployed in the cloud environment | `true or false` |\n| `tenantUuid` | Current tenant UUID | `UUID` |\n\n</details>\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/infrastructure",
+      "method": "GET",
+      "name": "Request infrastructure properties",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/infrastructure",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request infrastructure properties",
+      "url": "/api/v4/config/info/infrastructure"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.20.0</h3>\n\n### Description:\nRetrieve a list of configured notification channels.\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of notification channels is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/notifications/channels",
+      "method": "GET",
+      "name": "Request list of notification channels",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/notifications/channels",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request list of notification channels",
+      "url": "/api/v4/config/info/notifications/channels"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.24.0</h3>\n\n### Description:\nRetrieve a list of available algorithms used for encryption.\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of available algorithms is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/policies/algorithms",
+      "method": "GET",
+      "name": "Request algorithms",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/policies/algorithms",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request algorithms",
+      "url": "/api/v4/config/info/policies/algorithms"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.30.0</h3>\n\n### Description:\nRetrieve a list of classification policies:\n* `shareClassificationPolicies`\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of configured classification policies is returned.\n\n### Further Information:\n`classificationRequiresSharePassword`: When a node has this classification or higher, it cannot be shared without a password. If the node is an encrypted file this policy has no effect. `0` means no password will be enforced.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/policies/classifications",
+      "method": "GET",
+      "name": "Request classification policies",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/policies/classifications",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request classification policies",
+      "url": "/api/v4/config/info/policies/classifications"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.40.0</h3>\n\n### Description:\nRetrieve a list of guest users policies.\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of configured guest users policies is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/policies/guest_users",
+      "method": "GET",
+      "name": "Request guest users policies",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/policies/guest_users",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request guest users policies",
+      "url": "/api/v4/config/info/policies/guest_users"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.14.0</h3>\n\n### Description:  \nRetrieve a list of configured password policies for all password types:  \n* `login`\n* `shares`\n* `encryption`\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of configured password policies is returned.\n\n### Further Information:\nNone.\n\n### Available password policies:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Name | Description | Value | Password Type |\n| :--- | :--- | :--- | :--- |\n| `mustContainCharacters` | Characters which a password must contain:<br><ul><li>`alpha` - at least one alphabetical character (`uppercase` **OR** `lowercase`)<pre>a b c d e f g h i j k l m n o p q r s t u v w x y z<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</pre></li><li>`uppercase` - at least one uppercase character<pre>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</pre></li><li>`lowercase` - at least one lowercase character<pre>a b c d e f g h i j k l m n o p q r s t u v w x y z</pre></li><li>`numeric` - at least one numeric character<pre>0 1 2 3 4 5 6 7 8 9</pre></li><li>`special` - at least one special character (letters and digits excluded)<pre>! \" # $ % ( ) * + , - . / : ; = ? @ [ \\ ] ^ _ { &#124; } ~</pre></li><li>`none` - none of the above</li></ul> | <ul><li>`alpha`</li><li>`uppercase`</li><li>`lowercase`</li><li>`numeric`</li><li>`special`</li><li>`none`</li></ul> | <ul><li>`login`</li><li>`shares`</li><li>`encryption`</li></ul> |\n| `numberOfCharacteristicsToEnforce` | Number of characteristics to enforce.<br>e.g. from `[\"uppercase\", \"lowercase\", \"numeric\", \"special\"]`<br>all 4 character sets can be enforced; but also only 2 of them | `Integer between 0 and 4` | <ul><li>`login`</li><li>`shares`</li><li>`encryption`</li></ul> |\n| `minLength` | Minimum number of characters a password must contain. | `Integer between 1 and 1024` | <ul><li>`login`</li><li>`shares`</li><li>`encryption`</li></ul> |\n| `rejectDictionaryWords` | Determines whether a password must **NOT** contain word(s) from a dictionary.<br>In `core-service.properties` a path to directory with dictionary files (`*.txt`) can be defined<br>cf. `policies.passwords.dictionary.directory`.<br><br>If this rule gets enabled `policies.passwords.dictionary.directory` must be defined and contain dictionary files.<br>Otherwise, the rule will not have any effect on password validation process. | `true or false` | <ul><li>`login`</li><li>`shares`</li></ul> |\n| `rejectUserInfo` | Determines whether a password must **NOT** contain user info.<br>Affects user's **first name**, **last name**, **email** and **user name**. | `true or false` | <ul><li>`login`</li><li>`shares`</li><li>`encryption`</li></ul> |\n| `rejectKeyboardPatterns` | Determines whether a password must **NOT** contain keyboard patterns.<br>e.g. `qwertz`, `asdf` (min. 4 character pattern) | `true or false` | <ul><li>`login`</li><li>`shares`</li><li>`encryption`</li></ul> |\n| `numberOfArchivedPasswords` | Number of passwords to archive.<br>Value `0` means that password history is disabled. | `Integer between 0 and 10` | <ul><li>`login`</li></ul> |\n| `passwordExpiration.enabled` | Determines whether password expiration is enabled. | `true or false` | <ul><li>`login`</li></ul> |\n| `maxPasswordAge` | Maximum allowed password age (in **days**) | `positive Integer` | <ul><li>`login`</li></ul> |\n| `userLockout.enabled` | Determines whether user lockout is enabled. | `true or false` | <ul><li>`login`</li></ul> |\n| `maxNumberOfLoginFailures` | Maximum allowed number of failed login attempts. | `positive Integer` | <ul><li>`login`</li></ul> |\n| `lockoutPeriod` | Amount of **minutes** a user has to wait to make another login attempt<br>after `maxNumberOfLoginFailures` has been exceeded. | `positive Integer` | <ul><li>`login`</li></ul> |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/policies/passwords",
+      "method": "GET",
+      "name": "Request password policies",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/policies/passwords",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request password policies",
+      "url": "/api/v4/config/info/policies/passwords"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.38.0</h3>\n\n### Description:  \nReturns a list of product packages.\n\n### Precondition:\nAuthenticated user\n\n### Postcondition:\nList of Product Packages is returned.\n\n### Further Information:\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/product_packages",
+      "method": "GET",
+      "name": "Request list of product packages",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/product_packages",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request list of product packages",
+      "url": "/api/v4/config/info/product_packages"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.38.0</h3>\n\n### Description:  \nReturns a list of currently enabled product packages.\n\n### Precondition:\nAuthenticated user\n\n### Postcondition:\nList of currently enabled Product Packages is returned.\n\n### Further Information:\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/product_packages/current",
+      "method": "GET",
+      "name": "Request list of currently enabled product packages",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/product_packages/current",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request list of currently enabled product packages",
+      "url": "/api/v4/config/info/product_packages/current"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.9.0</h3>\n\n### Description:\nRetrieve all configured S3 tags.\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of configured S3 tags is returned.\n\n### Further Information:\nAn empty list is returned if no S3 tags are found / configured.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/info/s3_tags",
+      "method": "GET",
+      "name": "Request list of configured S3 tags",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/info/s3_tags",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request list of configured S3 tags",
+      "url": "/api/v4/config/info/s3_tags"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128679; Deprecated since v4.6.0</h3>\n\n### Description:  \nReturns a list of configurable system settings.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read global config</span> required.\n\n### Postcondition:\nList of configurable settings is returned.\n\n### Further Information:\nCheck for every settings key new corresponding API and key below.\n\nIf `eula_active` is true, but **NOT** accepted yet, or password **MUST** be changed, only the following two values are returned:\n* `allow_system_global_weak_password`\n* `eula_active`\n\n### Configurable settings\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Setting | Description | Value |\n| :--- | :--- | :--- |\n| `branding_server_branding_id` | The branding UUID, which corresponds to _BRANDING-QUALIFIER_ in the new branding server.<br>cf. `GET /system/config/settings/branding` `BrandingConfig.brandingQualifier` | `String` |\n| `branding_portal_url` | Access URL to to the Branding Portal<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/branding` `BrandingConfig.brandingProviderUrl` | `String` |\n| `dblog` | Write logs to local database.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/eventlog` `EventlogConfig.enabled` | `true or false` |\n| `default_downloadshare_expiration_period` | Default expiration period for Download Shares in days<br>cf. `GET /system/config/settings/defaults` `SystemDefaults.downloadShareDefaultExpirationPeriod` | `Integer between 0 and 9999` |\n| `default_file_upload_expiration_date` | Default expiration period for all uploaded files in days<br>cf. `GET /system/config/settings/defaults` `SystemDefaults.fileDefaultExpirationPeriod` | `Integer between 0 and 9999` |\n| `default_language` | Define which language should be default.<br>cf. `GET /system/config/settings/defaults` `SystemDefaults.languageDefault` | cf. `GET /public/system/info` - `SystemInfo.languageDefault` |\n| `default_uploadshare_expiration_period` | Default expiration period for Upload Shares in days<br>cf. `GET /system/config/settings/defaults` `SystemDefaults.uploadShareDefaultExpirationPeriod` | `Integer between 0 and 9999` |\n| `enable_client_side_crypto` | Activation status of client-side encryption<br>Can only be enabled once; disabling is **NOT** possible.<br>cf. `GET /system/config/settings/general` `GeneralSettings.cryptoEnabled` | `true or false`<br>default: `false` |\n| `eula_active` | Each user has to confirm the EULA at first login.<br>cf. `GET /system/config/settings/general` `GeneralSettings.eulaEnabled` | `true or false` |\n| `eventlog_retention_period` | Retention period (in days) of event log entries<br>After that period, all entries are deleted.<br>cf. `GET /system/config/settings/eventlog` `EventlogConfig.retentionPeriod` | `Integer between 0 and 9999`<br>If set to `0`: no logs are deleted<br>Recommended value: `7` |\n| `ip_address_logging` | Determines whether a user's IP address is logged.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/eventlog` `EventlogConfig.logIpEnabled`<br>cf. `GET /system/config/settings/syslog` `SyslogConfig.logIpEnabled` | `true or false` |\n| `mailserver` | Email server to send emails.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/mail_server` `MailServerConfig.host` | `DNS name or IPv4 of an email server` |\n| `mailserver_authentication_necessary` | Set to `true` if the email server requires authentication.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/mail_server` `MailServerConfig.authenticationEnabled` | `true or false` |\n| `mailserver_password` | **Password is no longer returned.**<br>Check `mailserver_password_set` to determine whether password is set. |  |\n| `mailserver_password_set` | Indicates if a password is set for the mailserver (because `mailserver_password` is always returned empty).<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/mail_server` `MailServerConfig.passwordDefined` | `true or false` |\n| `mailserver_port` | Email server port<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/mail_server` `MailServerConfig.port` | `Valid port number` |\n| `mailserver_username` | User ame for email server<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/mail_server` `MailServerConfig.username` | `Username for authentication` |\n| `mailserver_use_ssl` | Email server requires SSL connection?<br>Only visible for _Config Manager_ of Provider Customer.<br>Requires `mailserver_use_starttls` to be `false`<br>cf. `GET /system/config/settings/mail_server` `MailServerConfig.username` | `true or false` |\n| `mailserver_use_starttls` | Email server requires StartTLS connection?<br>Only visible for _Config Manager_ of Provider Customer.<br>Requires `mailserver_use_ssl` to be `false`<br>cf. `GET /system/config/settings/mail_server` `MailServerConfig.starttlsEnabled` | `true or false` |\n| `syslog` | Write logs to a syslog interface.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/syslog` `SyslogConfig.enabled` | `true or false` |\n| `syslog_host` | Syslog server (IP or FQDN)<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/syslog` `SyslogConfig.host` | `DNS name or IPv4 of a syslog server` |\n| `syslog_port` | Syslog server port<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/syslog` `SyslogConfig.port` | `Valid port number` |\n| `syslog_protocol` | Protocol to connect to syslog server.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `GET /system/config/settings/syslog` `SyslogConfig.protocol` | `TCP or UDP` |\n| `enable_email_notification_button` | Enable mail notification button.<br>cf. `GET /system/config/settings/general` `GeneralSettings.emailNotificationButtonEnabled` | `true or false` |\n| `allow_share_password_sms` | Allow sending of share passwords via SMS.<br>cf. `GET /system/config/settings/general` `GeneralSettings.sharePasswordSmsEnabled` | `true or false` |\n| `globally_allow_share_password_sms` | Allow sending of share passwords via SMS **system-wide** (read-only).<br>cf. `GET /system/config/settings/infrastructure` `InfrastructureProperties.smsConfigEnabled` | `true or false` |\n| `use_s3_storage` | Defines if S3 is used as storage backend.<br>Can only be enabled once; disabling is **NOT** possible.<br>cf. `GET /system/config/settings/general` `GeneralSettings.useS3Storage` | `true or false` |\n| `s3_default_region` |Suggested S3 region (read-only)<br>cf. `GET /system/config/settings/infrastructure` `InfrastructureProperties.s3DefaultRegion` | `Region name` |\n\n</details>\n\n### Deprecated settings\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Setting | Description | Value |\n| :--- | :--- | :--- |\n| <del>`allow_system_global_weak_password`</del> | Determines whether weak password (cf. _Password Policy_ below) is allowed.<br>cf. `GET /system/config/settings/general` `GeneralSettings.weakPasswordEnabled`<br>Use `GET /system/config/policies/passwords` API to get configured password policies. | `true or false` |\n| <del>`branding_server_customer`</del> | The UUID of the branding server customer, which corresponds to customer key in the branding server. | `String` |\n| <del>`branding_server_url`</del> | Access URL to to the Branding Server.<br>Only visible for _Config Manager_ of Provider Customer. | `String` |\n| <del>`email_from`</del> | Sender of system-generated emails<br>Only visible for _Config Manager_ of Provider Customer.<br>**Moved to branding** | `Valid email address` |\n| <del>`email_to_sales`</del> | Contact email address for customers to request more user licenses or data volume.<br>**Moved to branding** | `Valid email address` |\n| <del>`email_to_support`</del> | Support email address for users<br>**Moved to branding** | `Valid email address` |\n| <del>`file_size_js`</del> | Maximum file size (in bytes) for downloads of encrypted files with JavaScript.<br>Bigger files will require a JavaApplet. | `Integer`<br>Recommended value: `10485760` (=`10MB`) |\n| <del>`system_name`</del> | System name<br>**Moved to branding** use `product.title` | `Display name of the DRACOON` |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/config/settings",
+      "method": "GET",
+      "name": "Request system settings",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/settings",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request system settings",
+      "url": "/api/v4/config/settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "items": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "body_json": {
+        "items": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "body_text": "{\"items\": [{\"key\": \"\", \"value\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128679; Deprecated since v4.6.0</h3>\n\n### Description:\nUpdate configurable settings.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; change global config</span> and\nrole <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128100; Config Manager</span> of the Provider Customer required.\n\n### Postcondition:\nOne or more global settings gets changed.\n\n### Further Information:\nThis API is deprecated and will be removed in the future.  \nCheck for every settings key new corresponding API and key below.\n\n### Configurable settings:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Setting | Description | Value |\n| :--- | :--- | :--- |\n| `branding_server_branding_id` | The branding UUID, which corresponds to _BRANDING-QUALIFIER_ in the new branding server.<br>cf. `PUT /system/config/settings/branding` `BrandingConfig.brandingQualifier` | `String` |\n| `branding_portal_url` | Access URL to to the Branding Portal<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/branding` `BrandingConfig.brandingProviderUrl` | `String` |\n| `dblog` | Write logs to local database.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/eventlog` `EventlogConfig.enabled` | `true or false` |\n| `default_downloadshare_expiration_period` | Default expiration period for Download Shares in days<br>cf. `PUT /system/config/settings/defaults` `SystemDefaults.downloadShareDefaultExpirationPeriod` | `Integer between 0 and 9999`<br>Set `0` to disable. |\n| `default_file_upload_expiration_date` | Default expiration period for all uploaded files in days<br>cf. `PUT /system/config/settings/defaults` `SystemDefaults.fileDefaultExpirationPeriod` | `Integer between 0 and 9999`<br>Set `0` to disable. |\n| `default_language` | Define which language should be default.<br>cf. `PUT /system/config/settings/defaults` `SystemDefaults.languageDefault` | cf. `GET /public/system/info` - `SystemInfo.languageDefault` |\n| `default_uploadshare_expiration_period` | Default expiration period for Upload Shares in days<br>cf. `PUT /system/config/settings/defaults` `SystemDefaults.uploadShareDefaultExpirationPeriod` | `Integer between 0 and 9999`<br>Set `0` to disable. |\n| `enable_client_side_crypto` | Activation status of client-side encryption<br>Can only be enabled once; disabling is **NOT** possible.<br>cf. `PUT /system/config/settings/general` `GeneralSettings.cryptoEnabled` | `true or false`<br>default: `false` |\n| `eula_active` | Each user has to confirm the EULA at first login.<br>cf. `PUT /system/config/settings/general` `GeneralSettings.eulaEnabled` | `true or false` |\n| `eventlog_retention_period` | Retention period (in days) of event log entries<br>After that period, all entries are deleted.<br>cf. `PUT /system/config/settings/eventlog` `EventlogConfig.retentionPeriod` | `Integer between 0 and 9999`<br>If set to `0`: no logs are deleted<br>Recommended value: `7` |\n| `ip_address_logging` | Determines whether a user's IP address is logged.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/eventlog` `EventlogConfig.logIpEnabled`<br>cf. `PUT /system/config/settings/syslog` `SyslogConfig.logIpEnabled` | `true or false` |\n| `mailserver` | Email server to send emails.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/mail_server` `MailServerConfig.host` | `DNS name or IPv4 of an email server` |\n| `mailserver_authentication_necessary` | Set to `true` if the email server requires authentication.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/mail_server` `MailServerConfig.authenticationEnabled` | `true or false` |\n| `mailserver_password` | Password for email server<br>cf. `PUT /system/config/settings/mail_server` `MailServerConfig.password` | `Password for authentication` |\n| `mailserver_port` | Email server port<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/mail_server` `MailServerConfig.port` | `Valid port number` |\n| `mailserver_username` | Username for email server<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/mail_server` `MailServerConfig.username` | `Username for authentication` |\n| `mailserver_use_ssl` | Email server requires SSL connection?<br>Only visible for _Config Manager_ of Provider Customer.<br>Requires `mailserver_use_starttls` to be `false`<br>cf. `PUT /system/config/settings/mail_server` `MailServerConfig.username` | `true or false` |\n| `mailserver_use_starttls` | Email server requires StartTLS connection?<br>Only visible for _Config Manager_ of Provider Customer.<br>Requires `mailserver_use_ssl` to be `false`<br>cf. `PUT /system/config/settings/mail_server` `MailServerConfig.starttlsEnabled` | `true or false` |\n| `syslog` | Write logs to a syslog interface.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/syslog` `SyslogConfig.enabled` | `true or false` |\n| `syslog_host` | Syslog server (IP or FQDN)<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/syslog` `SyslogConfig.host` | `DNS name or IPv4 of a syslog server` |\n| `syslog_port` | Syslog server port<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/syslog` `SyslogConfig.port` | `Valid port number` |\n| `syslog_protocol` | Protocol to connect to syslog server.<br>Only visible for _Config Manager_ of Provider Customer.<br>cf. `PUT /system/config/settings/syslog` `SyslogConfig.protocol` | `TCP or UDP` |\n| `enable_email_notification_button` | Enable mail notification button.<br>cf. `PUT /system/config/settings/general` `GeneralSettings.emailNotificationButtonEnabled` | `true or false` |\n| `allow_share_password_sms` | Allow sending of share passwords via SMS.<br>cf. `PUT /system/config/settings/general` `GeneralSettings.sharePasswordSmsEnabled` | `true or false` |\n\n</details>\n\n### Deprecated settings:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| Setting | Description | Value |\n| :--- | :--- | :--- |\n| <del>`allow_system_global_weak_password`</del> | Determines whether weak password (cf. _Password Policy_ below) is allowed.<br>cf. `PUT /system/config/settings/general` `GeneralSettings.weakPasswordEnabled`<br>Use `PUT /system/config/policies/passwords` API to change configured password policies. | `true or false` |\n| <del>`branding_server_customer`</del> | The UUID of the branding server customer, which corresponds to customer key in the branding server. | `String` |\n| <del>`branding_server_url`</del> | Access URL to to the Branding Server.<br>Only visible for _Config Manager_ of Provider Customer. | `String` |\n| <del>`email_from`</del> | Sender of system-generated emails<br>Only visible for _Config Manager_ of Provider Customer.<br>**Moved to branding** | `Valid email address` |\n| <del>`email_to_sales`</del> | Contact email address for customers to request more user licenses or data volume.<br>**Moved to branding** | `Valid email address` |\n| <del>`email_to_support`</del> | Support email address for users<br>**Moved to branding** | `Valid email address` |\n| <del>`file_size_js`</del> | Maximum file size (in bytes) for downloads of encrypted files with JavaScript.<br>Bigger files will require a JavaApplet. | `Integer`<br>Recommended value: `10485760` (=`10MB`) |\n| <del>`system_name`</del> | System name<br>**Moved to branding** use `product.title` | `Display name of the DRACOON` |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/v4/config/settings",
+      "method": "PUT",
+      "name": "Update system settings",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/config/settings",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"items\": [{\"key\": \"\", \"value\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update system settings",
+      "url": "/api/v4/config/settings"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.11.0</h3>\n\n### Description:\nDownload avatar for given user ID and UUID.\n\n### Precondition:\nValid UUID.\n\n### Postcondition:\nStream is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/v4/downloads/avatar/{{USER_ID}}/{{UUID}}",
+      "method": "GET",
+      "name": "Download avatar",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "user_id",
+          "value": ""
+        },
+        {
+          "name": "uuid",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/downloads/avatar/{{USER_ID}}/{{UUID}}",
+      "pathParameters": [
+        {
+          "name": "user_id",
+          "value": ""
+        },
+        {
+          "name": "uuid",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Download avatar",
+      "url": "/api/v4/downloads/avatar/{{USER_ID}}/{{UUID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:\nDownload multiple files in a ZIP archive.\n\n### Precondition:\nValid download token.\n\n### Postcondition:\nStream is returned.\n\n### Further Information:\nCreate a download token with `POST /nodes/zip` API.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/v4/downloads/zip/{{TOKEN}}",
+      "method": "GET",
+      "name": "Download ZIP archive",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/downloads/zip/{{TOKEN}}",
+      "pathParameters": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Download ZIP archive",
+      "url": "/api/v4/downloads/zip/{{TOKEN}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:\nDownload a file.\n\n### Precondition:\nValid download token.\n\n### Postcondition:\nStream is returned.\n\n### Further Information:\nRange requests are supported.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/v4/downloads/{{TOKEN}}",
+      "method": "GET",
+      "name": "Download file",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "token",
+          "value": ""
+        },
+        {
+          "name": "generic_mimetype",
+          "value": ""
+        },
+        {
+          "name": "inline",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/downloads/{{TOKEN}}",
+      "pathParameters": [
+        {
+          "name": "token",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "generic_mimetype",
+          "value": ""
+        },
+        {
+          "name": "inline",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Download file",
+      "url": "/api/v4/downloads/{{TOKEN}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.31.0</h3>\n\n### Description: \nRetrieve a list of all nodes of type room under a certain parent.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read audit log</span> required.\n\n### Postcondition:\nList of rooms.\n\n### Further Information:\nFor rooms on root level, use parent_id = 0.\n\n### Filtering:\nAll filter fields are connected via logical conjunction (**AND**)  \nFilter string syntax: `FIELD_NAME:OPERATOR:VALUE[:VALUE...]`\n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`nodeName:cn:searchString_1|nodeIsEncrypted:eq:true`  \nFilter by node name containing `searchString_1` **AND** node is encrypted .\n\n</details>\n\n### Filtering options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Filter Description | `OPERATOR` | Operator Description | `VALUE` |\n| :--- | :--- | :--- | :--- | :--- |\n| `nodeId` | Node ID filter | `eq` | Node ID equals value. | `positive Integer` |\n| `nodeName` | Node name filter | `cn, eq, sw` | Node name contains / equals / starts with value. | `search String` |\n| `nodeIsEncrypted` | Encrypted node filter | `eq` |  | `true or false` |\n\n</details>\n\n\n---\n\n### Sorting:\nSort string syntax: `FIELD_NAME:ORDER`  \n`ORDER` can be `asc` or `desc`.  \nMultiple sort fields are supported.\n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`nodeName:asc`  \nSort by `nodeName` ascending.\n\n</details>\n\n### Sorting options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Description |\n| :--- | :--- |\n| `nodeId` | Node ID |\n| `nodeName` | Node name |\n\n</details>\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/eventlog/audits/node_info",
+      "method": "GET",
+      "name": "Request nodes",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "parent_id",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/eventlog/audits/node_info",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "parent_id",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request nodes",
+      "url": "/api/v4/eventlog/audits/node_info"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128679; Deprecated since v4.32.0</h3>\n\n### Description: \nRetrieve a list of all nodes of type room, and the room assignment users with permissions.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read audit log</span> required.\n\n### Postcondition:\nList of rooms and their assigned users is returned.\n\n### Further Information:\n\nOutput is limited to **500** entries.  \nFor more results please use filter criteria and the `limit` parameter.\n\n### Filtering:\nAll filter fields are connected via logical conjunction (**AND**)  \nExcept for `userName`, `userFirstName` and  `userLastName` - these are connected via logical disjunction (**OR**)  \nFilter string syntax: `FIELD_NAME:OPERATOR:VALUE[:VALUE...]`\n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`userName:cn:searchString_1|userFirstName:cn:searchString_2|nodeId:eq:2`  \nFilter by user login containing `searchString_1` **OR** first name containing `searchString_2` **AND** node ID equals `2`.\n\n</details>\n\n### Filtering options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Filter Description | `OPERATOR` | Operator Description | `VALUE` |\n| :--- | :--- | :--- | :--- | :--- |\n| `nodeId` | Node ID filter | `eq` | Node ID equals value. | `positive Integer` |\n| `nodeName` | Node name filter | `cn, eq` | Node name contains / equals value. | `search String` |\n| `nodeParentId` | Node parent ID filter | `eq` | Parent ID equals value. | `positive Integer`<br>Parent ID `0` is the root node. |\n| `userId` | User ID filter | `eq` | User ID equals value. | `positive Integer` |\n| `userName` | Username (login) filter | `cn, eq` | Username contains / equals value. | `search String` |\n| `userFirstName` | User first name filter | `cn, eq` | User first name contains / equals value. | `search String` |\n| `userLastName` | User last name filter | `cn, eq` | User last name contains / equals value. | `search String` |\n| `permissionsManage` | Filter the users that do (not) have `manage` permissions in this room | `eq` |  | `true or false` |\n| `nodeIsEncrypted` | Encrypted node filter | `eq` |  | `true or false` |\n| `nodeHasActivitiesLog` | Activities log filter | `eq` |  | `true or false` |\n\n</details>\n\n### Deprecated filtering options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Filter Description | `OPERATOR` | Operator Description | `VALUE` |\n| :--- | :--- | :--- | :--- | :--- |\n| <del>`nodeHasRecycleBin`</del> | Recycle bin filter<br>**Filter has no effect!** | `eq` |  | `true or false` |\n\n</details>\n\n---\n\n### Sorting:\nSort string syntax: `FIELD_NAME:ORDER`  \n`ORDER` can be `asc` or `desc`.  \nMultiple sort fields are supported.\n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`nodeName:asc`  \nSort by `nodeName` ascending.\n\n</details>\n\n### Sorting options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Description |\n| :--- | :--- |\n| `nodeId` | Node ID |\n| `nodeName` | Node name |\n| `nodeParentId` | Node parent ID |\n| `nodeSize` | Node size |\n| `nodeQuota` | Node quota |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/eventlog/audits/nodes",
+      "method": "GET",
+      "name": "Request node assigned users with permissions",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/eventlog/audits/nodes",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request node assigned users with permissions",
+      "url": "/api/v4/eventlog/audits/nodes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.3.0</h3>\n\n### Description: \nRetrieve eventlog (audit log) events.\n\n### Precondition:\nRole <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128100; Log Auditor</span> required.\n\n### Postcondition:\nList of audit log events is returned.\n\n### Further Information:\nOutput is limited to **500** entries.  \nFor more results please use filter criteria and paging (`offset` + `limit`). \n\nAllowed `Accept-Header`:\n* `Accept: application/json`\n* `Accept: text/csv`  \n\n---\n\nSort string syntax: `FIELD_NAME:ORDER`  \n`ORDER` can be `asc` or `desc`.  \nMultiple sort fields are supported.  \n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`time:desc`  \nSort by `time` descending (default sort option).\n\n</details>\n\n### Sorting options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Description |\n| :--- | :--- |\n| `time` | Event timestamp |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/eventlog/events",
+      "method": "GET",
+      "name": "Request system events",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "date_start",
+          "value": ""
+        },
+        {
+          "name": "date_end",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "user_id",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "user_client",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/eventlog/events",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "date_start",
+          "value": ""
+        },
+        {
+          "name": "date_end",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "user_id",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "user_client",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request system events",
+      "url": "/api/v4/eventlog/events"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.3.0</h3>\n\n### Description: \nRetrieve eventlog (audit log) operation IDs and the associated log operation description.\n\n### Precondition:\nRole <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128100; Log Auditor</span> required.\n\n### Postcondition:\nList of available log operations is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/eventlog/operations",
+      "method": "GET",
+      "name": "Request allowed Log Operations",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "is_deprecated",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/eventlog/operations",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "is_deprecated",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request allowed Log Operations",
+      "url": "/api/v4/eventlog/operations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:  \nReturns a list of user groups.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read groups</span> required.\n\n### Postcondition: \nList of user groups is returned.\n\n### Further Information:\n\n### Filtering:\nAll filter fields are connected via logical conjunction (**AND**)  \nFilter string syntax: `FIELD_NAME:OPERATOR:VALUE`  \n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`name:cn:searchString`  \nFilter by group name containing `searchString`.\n\n</details>\n\n### Filtering options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Filter Description | `OPERATOR` | Operator Description | `VALUE` |\n| :--- | :--- | :--- | :--- | :--- |\n| `name` | Group name filter | `cn` | Group name contains value. | `search String` |\n| `hasRole` | (**`NEW`**) Group role filter<br>For more information about roles check **`GET /roles`** API | `eq` | Group role equals value. | <ul><li>`CONFIG_MANAGER` - Manages global configuration</li><li>`USER_MANAGER` - Manages users</li><li>`GROUP_MANAGER` - Manages user groups</li><li>`ROOM_MANAGER` - Manages top level rooms</li><li>`LOG_AUDITOR` - Reads audit logs</li><li>`NONMEMBER_VIEWER` - Views users and groups when having room _\"manage\"_ permission</li></ul> |\n\n</details>\n\n---\n\n### Sorting:\nSort string syntax: `FIELD_NAME:ORDER`  \n`ORDER` can be `asc` or `desc`.  \nMultiple sort fields are supported.  \n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`name:asc|expireAt:desc`  \nSort by `name` ascending **AND** by `expireAt` descending.\n\n</details>\n\n### Sorting options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Description |\n| :--- | :--- |\n| `name` | Group name |\n| `createdAt` | Creation date |\n| `expireAt` | Expiration date |\n| `cntUsers` | Amount of users |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/groups",
+      "method": "GET",
+      "name": "Request list of user groups",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request list of user groups",
+      "url": "/api/v4/groups"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "expiration": {
+          "enableExpiration": false,
+          "expireAt": ""
+        },
+        "name": ""
+      },
+      "body_json": {
+        "expiration": {
+          "enableExpiration": false,
+          "expireAt": ""
+        },
+        "name": ""
+      },
+      "body_text": "{\"expiration\": {\"enableExpiration\": false, \"expireAt\": \"\"}, \"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### Description:\nCreate a new user group.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; change groups</span> required.\n\n### Postcondition: \nA new user group is created.\n\n### Further Information:\n* If a group should **NOT** expire, leave `expireAt` empty.\n* Group names are limited to **150** characters\n* Forbidden characters in group name: [`<`, `>`]\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v4/groups",
+      "method": "POST",
+      "name": "Create new user group",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Date-Format",
+          "value": ""
+        },
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"expiration\": {\"enableExpiration\": false, \"expireAt\": \"\"}, \"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create new user group",
+      "url": "/api/v4/groups"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:\nDelete a user group.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; delete groups</span> required.\n\n### Postcondition: \nUser group is deleted.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /api/v4/groups/{{GROUP_ID}}",
+      "method": "DELETE",
+      "name": "Remove user group",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove user group",
+      "url": "/api/v4/groups/{{GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:  \nRetrieve detailed information about a user group.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read groups</span> required.\n\n### Postcondition: \nUser group is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/groups/{{GROUP_ID}}",
+      "method": "GET",
+      "name": "Request user group",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request user group",
+      "url": "/api/v4/groups/{{GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "expiration": {
+          "enableExpiration": false,
+          "expireAt": ""
+        },
+        "name": ""
+      },
+      "body_json": {
+        "expiration": {
+          "enableExpiration": false,
+          "expireAt": ""
+        },
+        "name": ""
+      },
+      "body_text": "{\"expiration\": {\"enableExpiration\": false, \"expireAt\": \"\"}, \"name\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### Description:  \nUpdate user group's metadata .\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; change groups</span> required.\n\n### Postcondition: \nUser group's metadata is changed.\n\n### Further Information:\n* If a group should **NOT** expire, leave `expireAt` empty.\n* Group names are limited to **150** characters\n* **All** characters are allowed.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/v4/groups/{{GROUP_ID}}",
+      "method": "PUT",
+      "name": "Update user group's metadata",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"expiration\": {\"enableExpiration\": false, \"expireAt\": \"\"}, \"name\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update user group's metadata",
+      "url": "/api/v4/groups/{{GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.10.0</h3>\n\n### Description:  \nRetrieve a list of all rooms where the group is defined as last admin group.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; change groups</span> required.\n\n### Postcondition: \nList of rooms is returned. \n\n### Further Information:\nAn empty list is returned if no rooms were found where the group is defined as last admin group.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/groups/{{GROUP_ID}}/last_admin_rooms",
+      "method": "GET",
+      "name": "Request rooms where the group is defined as last admin group",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}/last_admin_rooms",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request rooms where the group is defined as last admin group",
+      "url": "/api/v4/groups/{{GROUP_ID}}/last_admin_rooms"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:  \nRetrieve a list of all roles granted to a group.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read groups</span> required.\n\n### Postcondition: \nList of granted roles is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/groups/{{GROUP_ID}}/roles",
+      "method": "GET",
+      "name": "Request list of roles assigned to the group",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}/roles",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request list of roles assigned to the group",
+      "url": "/api/v4/groups/{{GROUP_ID}}/roles"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128679; Deprecated since v4.10.0</h3>\n\n### Description:  \nRetrieves a list of rooms granted to the group and / or that can be granted.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read groups</span> required.\n\n### Postcondition: \nList of rooms is returned.\n\n### Further Information:\n\n### Filtering:\nAll filter fields are connected via logical conjunction (**AND**)  \nFilter string syntax: `FIELD_NAME:OPERATOR:VALUE`  \n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`isGranted:eq:false|name:cn:searchString`  \nGet all rooms where the group is **NOT** granted **AND** whose name is like `searchString`.\n\n</details>\n\n### Filtering options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Filter Description | `OPERATOR` | Operator Description | `VALUE` |\n| :--- | :--- | :--- | :--- | :--- |\n| `name` | Room name filter | `cn` | Room name contains value. | `search String` |\n| `isGranted` | Filter rooms which the group is (not) granted | `eq` |  | <ul><li>`true`</li><li>`false`</li><li>`any`</li></ul>default: `true` |\n| `effectivePerm` | Filter rooms with DIRECT or DIRECT **AND** EFFECTIVE permissions<ul><li>`false`: DIRECT permissions</li><li>`true`:  DIRECT **AND** EFFECTIVE permissions</li></ul>DIRECT means: e.g. room administrator grants `read` permissions to group of users **directly** on desired room.<br>EFFECTIVE means: e.g. group of users gets `read` permissions on desired room through **inheritance**. | `eq` |  | `true or false`<br>default: `true` |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/groups/{{GROUP_ID}}/rooms",
+      "method": "GET",
+      "name": "Request rooms granted to the group or / and rooms that can be granted",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}/rooms",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request rooms granted to the group or / and rooms that can be granted",
+      "url": "/api/v4/groups/{{GROUP_ID}}/rooms"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "ids": [
+          0
+        ]
+      },
+      "body_json": {
+        "ids": [
+          0
+        ]
+      },
+      "body_text": "{\"ids\": [0]}",
+      "body_type": "json",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:  \nRemove group members.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; change groups</span> required.\n\n### Postcondition: \nProvided users are removed from the user group.\n\n### Further Information:\nBatch function.  \nThe provided users are removed from the user group. Maximum number of users to remove in one request is 200.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /api/v4/groups/{{GROUP_ID}}/users",
+      "method": "DELETE",
+      "name": "Remove group members",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}/users",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ids\": [0]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove group members",
+      "url": "/api/v4/groups/{{GROUP_ID}}/users"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:  \nRetrieve a list of group member users or / and users who can become a member.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read groups</span> required.\n\n### Postcondition: \nList of users is returned.\n\n### Further Information:\n\n### Filtering:\nAll filter fields are connected via logical conjunction (**AND**)  \nFilter string syntax: `FIELD_NAME:OPERATOR:VALUE`  \n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`isMember:eq:false|user:cn:searchString`  \nGet all users that are **NOT** in this group **AND** whose (`firstName` **OR** `lastName` **OR** `email` **OR** `username`) is like `searchString`.\n\n</details>\n\n### Filtering options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Filter Description | `OPERATOR` | Operator Description | `VALUE` |\n| :--- | :--- | :--- | :--- | :--- |\n| `user` | User filter | `cn` | User contains value (`firstName` **OR** `lastName` **OR** `email` **OR** `username`). | `search String` |\n| `isMember` | Filter group members | `eq` |  | <ul><li>`true`</li><li>`false`</li><li>`any`</li></ul>default: `true` |\n\n</details>\n\n### Deprecated filtering options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Filter Description | `OPERATOR` | Operator Description | `VALUE` |\n| :--- | :--- | :--- | :--- | :--- |\n| <del>`displayName`</del> | User display name filter (use `user` filter) | `cn` | User display name contains value (`firstName` **OR** `lastName` **OR** `email`). | `search String` |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/groups/{{GROUP_ID}}/users",
+      "method": "GET",
+      "name": "Request group member users or / and users who can become a member",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}/users",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request group member users or / and users who can become a member",
+      "url": "/api/v4/groups/{{GROUP_ID}}/users"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "ids": [
+          0
+        ]
+      },
+      "body_json": {
+        "ids": [
+          0
+        ]
+      },
+      "body_text": "{\"ids\": [0]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### Description:\nAdd members to a group.\n\n### Precondition:\nRight <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; change groups</span> required.\n\n### Postcondition: \nNew members are added to the group.\n\n### Further Information:\nBatch function.  \nThe newly provided members will be added to the existing ones.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v4/groups/{{GROUP_ID}}/users",
+      "method": "POST",
+      "name": "Add group members",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/groups/{{GROUP_ID}}/users",
+      "pathParameters": [
+        {
+          "name": "group_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ids\": [0]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add group members",
+      "url": "/api/v4/groups/{{GROUP_ID}}/users"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.36.0</h3>\n\n### Description:\nGet the subscription plan id of the current tenant\n\n### Precondition:\nValid `X-SDS-Service-Token` Header\n\n### Postcondition:\nReturns SubscriptionPlanResponse model that includes subscription plan id.\n\n### Further Information:\nNone.\n",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/v4/internal/tenant/subscription_plan",
+      "method": "GET",
+      "name": "Request subscription plan",
+      "params": [
+        {
+          "name": "X-Sds-Service-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/internal/tenant/subscription_plan",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request subscription plan",
+      "url": "/api/v4/internal/tenant/subscription_plan"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "subscriptionPlanId": 0
+      },
+      "body_json": {
+        "subscriptionPlanId": 0
+      },
+      "body_text": "{\"subscriptionPlanId\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.36.0</h3>\n\n### Description: \nChange the subscription plan id of the current tenant\n\n### Precondition:\nValid `X-SDS-Service-Token` Header\n\n### Postcondition:\nThe subscription plan of the current tenant is set to the given value.  \nReturns SubscriptionPlanResponse model that includes subscription plan id.\n\n### Further Information:\nNone.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/v4/internal/tenant/subscription_plan",
+      "method": "PUT",
+      "name": "Set subscription plan",
+      "params": [
+        {
+          "name": "X-Sds-Service-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/internal/tenant/subscription_plan",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"subscriptionPlanId\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set subscription plan",
+      "url": "/api/v4/internal/tenant/subscription_plan"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "nodeIds": [
+          0
+        ]
+      },
+      "body_json": {
+        "nodeIds": [
+          0
+        ]
+      },
+      "body_text": "{\"nodeIds\": [0]}",
+      "body_type": "json",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:\nDelete nodes (room, folder or file).\n\n### Precondition:\nAuthenticated user with <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; delete</span> permissions on supplied nodes (for folders or files) or on superordinated node (for rooms).\n\n### Postcondition:\nNodes are deleted.\n\n### Further Information:\nNodes **MUST** be in same parent.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /api/v4/nodes",
+      "method": "DELETE",
+      "name": "Remove nodes",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"nodeIds\": [0]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove nodes",
+      "url": "/api/v4/nodes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:  \nProvides a hierarchical list of file system nodes (rooms, folders or files) of a given parent that are accessible by the current user.\n\n### Precondition:\nAuthenticated user.\n\n### Postcondition:\nList of nodes is returned.\n\n### Further Information:\n`EncryptionInfo` is **NOT** provided.\n\n### Filtering:\nAll filter fields are connected via logical conjunction (**AND**)  \nFilter string syntax: `FIELD_NAME:OPERATOR:VALUE[:VALUE...]`  \n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`type:eq:room:folder|perm:eq:read`  \nGet nodes where type equals (`room` **OR** `folder`) **AND** user has `read` permissions.\n\n</details>\n\n### Filtering options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Filter Description | `OPERATOR` | Operator Description | `VALUE` |\n| :--- | :--- | :--- | :--- | :--- |\n| `type` | Node type filter | `eq` | Node type equals value.<br>Multiple values are allowed and will be connected via logical disjunction (**OR**).<br>e.g. `type:eq:room:folder` | <ul><li>`room`</li><li>`folder`</li><li>`file`</li></ul> |\n| `perm` | Permission filter | `eq` | Permission equals value.<br>Multiple values are allowed and will be connected via logical disjunction (**OR**).<br>e.g. `perm:eq:read:create:delete` | <ul><li>`manage`</li><li>`read`</li><li>`change`</li><li>`create`</li><li>`delete`</li><li>`manageDownloadShare`</li><li>`manageUploadShare`</li><li>`canReadRecycleBin`</li><li>`canRestoreRecycleBin`</li><li>`canDeleteRecycleBin`</li></ul> |\n| `childPerm` | Same as `perm`, but less restrictive (applies to child nodes only).<br>Child nodes of the parent node which do not meet the filter condition<br>are **NOT** returned. | `eq` | cf. `perm` | cf. `perm` |\n| `name` | Node name filter | `cn, eq` | Node name contains / equals value. | `search String` |\n| `encrypted` | Node encryption status filter | `eq` |  | `true or false` |\n| `branchVersion` | Node branch version filter | `ge, le` | Branch version is greater / less equals than value.<br>Multiple operator values are allowed and will be connected via logical conjunction (**AND**).<br>e.g. `branchVersion:ge:1423280937404`&#124;`branchVersion:le:1523280937404` | `version number` |\n| `timestampCreation` | Creation timestamp filter | `ge, le` | Creation timestamp is greater / less equals than value.<br>Multiple operator values are allowed and will be connected via logical conjunction (**AND**).<br>e.g. `timestampCreation:ge:2016-12-31T23:00:00.123`&#124;<br>`timestampCreation:le:2018-01-01T11:00:00.540` | `Date (yyyy-MM-dd)` |\n| `timestampModification` | Modification timestamp filter | `ge, le` | Modification timestamp is greater / less equals than value.<br>Multiple operator values are allowed and will be connected via logical conjunction (**AND**).<br>e.g. `timestampModification:ge:2016-12-31T23:00:00.123`&#124;<br>`timestampModification:le:2018-01-01T11:00:00.540` | `Date (yyyy-MM-dd)` |\n| `referenceId`           | Reference ID filter               | `eq` | Reference ID equals value.   | `Integer ` |\n</details>\n\n---\n\n### Sorting:\nSort string syntax: `FIELD_NAME:ORDER`  \n`ORDER` can be `asc` or `desc`.  \nMultiple sort criteria are possible.  \nFields are connected via logical conjunction **AND**.  \nNodes are sorted by type first, then by sent sort string.  \n\n<details style=\"padding-left: 10px\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Example</strong></summary>\n\n`name:desc|fileType:asc`  \nSort by `name` descending **AND** `fileType` ascending.\n\n</details>\n\n### Sorting options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Description |\n| :--- | :--- |\n| `name` | Node name |\n| `createdAt` | Creation date |\n| `createdBy` | Creator first name, last name |\n| `updatedAt` | Last modification date |\n| `updatedBy` | Last modifier first name, last name |\n| `fileType` | File type (extension) |\n| `classification` | Classification ID:<ul><li>1 - public</li><li>2 - internal</li><li>3 - confidential</li><li>4 - strictly confidential</li></ul> |\n| `size` | Node size |\n| `cntDeletedVersions` | Number of deleted versions of this file / folder (**NOT** recursive; for files and folders only) |\n| `timestampCreation` | Creation timestamp |\n| `timestampModification` | Modification timestamp |\n\n</details>\n\n### Deprecated sorting options:\n<details style=\"padding: 10px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px;\">\n<summary style=\"cursor: pointer; outline: none\"><strong>Expand</strong></summary>\n\n| `FIELD_NAME` | Description |\n| :--- | :--- |\n| <del>`cntChildren`</del> | Number of direct children (**NOT** recursive; for rooms and folders only) |\n\n</details>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/nodes",
+      "method": "GET",
+      "name": "Request list of nodes",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "depth_level",
+          "value": ""
+        },
+        {
+          "name": "parent_id",
+          "value": ""
+        },
+        {
+          "name": "room_manager",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "depth_level",
+          "value": ""
+        },
+        {
+          "name": "parent_id",
+          "value": ""
+        },
+        {
+          "name": "room_manager",
+          "value": ""
+        },
+        {
+          "name": "filter",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request list of nodes",
+      "url": "/api/v4/nodes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.10.0</h3>\n\n### Description:\nDelete an existing comment for a specific node.\n\n### Precondition:\nUser has <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read</span> permissions on the node and is the creator of the comment **OR** <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128100; Room Administrator</span> in auth parent room.\n\n### Postcondition:\nComment is deleted.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /api/v4/nodes/comments/{{COMMENT_ID}}",
+      "method": "DELETE",
+      "name": "Remove node comment",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "comment_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes/comments/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "comment_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove node comment",
+      "url": "/api/v4/nodes/comments/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "text": ""
+      },
+      "body_json": {
+        "text": ""
+      },
+      "body_text": "{\"text\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.10.0</h3>\n\n### Description:\nEdit the text of an existing comment for a specific node.\n\n### Precondition:\nUser has <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read</span> permissions on the node and is the creator of the comment.\n\n### Postcondition:\nComments text gets changed.\n\n### Further Information:\nMaximum allowed text length: **65535** characters.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/v4/nodes/comments/{{COMMENT_ID}}",
+      "method": "PUT",
+      "name": "Edit node comment",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "comment_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes/comments/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "comment_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"text\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Edit node comment",
+      "url": "/api/v4/nodes/comments/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "deletedNodeIds": [
+          0
+        ]
+      },
+      "body_json": {
+        "deletedNodeIds": [
+          0
+        ]
+      },
+      "body_text": "{\"deletedNodeIds\": [0]}",
+      "body_type": "json",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:\nPermanently remove a list of nodes from the recycle bin.\n\n### Precondition:\nUser has <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; delete recycle bin</span> permissions in parent room.\n\n### Postcondition:\nAll provided nodes are removed.\n\n### Further Information:\nThe removal of deleted nodes from the recycle bin is irreversible.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /api/v4/nodes/deleted_nodes",
+      "method": "DELETE",
+      "name": "Remove nodes from recycle bin",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes/deleted_nodes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"deletedNodeIds\": [0]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove nodes from recycle bin",
+      "url": "/api/v4/nodes/deleted_nodes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "deletedNodeIds": [
+          0
+        ],
+        "keepShareLinks": false,
+        "parentId": 0,
+        "resolutionStrategy": "autorename"
+      },
+      "body_json": {
+        "deletedNodeIds": [
+          0
+        ],
+        "keepShareLinks": false,
+        "parentId": 0,
+        "resolutionStrategy": "autorename"
+      },
+      "body_text": "{\"deletedNodeIds\": [0], \"keepShareLinks\": false, \"parentId\": 0, \"resolutionStrategy\": \"autorename\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "### Description:  \nRestore a list of deleted nodes.\n\n### Precondition:\nUser has <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; create</span> permissions in parent room and <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; restore recycle bin</span> permissions.\n\n### Postcondition:\nThe selected files are moved from the recycle bin to the chosen productive container.\n\n### Further Information:\nIf no parent ID is provided, the node is restored to its previous location.  \nThe default resolution strategy is `autorename` that adds numbers to the file name until the conflict is solved.  \nIf an existing file is overwritten, it is moved to the recycle bin instead of the restored one.\n\nDownload share id (if exists) gets changed if:\n- node with the same name exists in the target container\n- `resolutionStrategy` is `overwrite`\n- `keepShareLinks` is `true`",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/v4/nodes/deleted_nodes/actions/restore",
+      "method": "POST",
+      "name": "Restore deleted nodes",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes/deleted_nodes/actions/restore",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"deletedNodeIds\": [0], \"keepShareLinks\": false, \"parentId\": 0, \"resolutionStrategy\": \"autorename\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Restore deleted nodes",
+      "url": "/api/v4/nodes/deleted_nodes/actions/restore"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "### Description:  \nGet metadata of a deleted node.\n\n### Precondition:\nUser can access parent room and has <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; read recycle bin</span> permissions.\n\n### Postcondition:\nRequested deleted node is returned.\n\n### Further Information:\nNone.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /api/v4/nodes/deleted_nodes/{{DELETED_NODE_ID}}",
+      "method": "GET",
+      "name": "Request deleted node",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deleted_node_id",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes/deleted_nodes/{{DELETED_NODE_ID}}",
+      "pathParameters": [
+        {
+          "name": "deleted_node_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Request deleted node",
+      "url": "/api/v4/nodes/deleted_nodes/{{DELETED_NODE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "isFavorite": false,
+        "objectIds": [
+          0
+        ]
+      },
+      "body_json": {
+        "isFavorite": false,
+        "objectIds": [
+          0
+        ]
+      },
+      "body_text": "{\"isFavorite\": false, \"objectIds\": [0]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.25.0</h3>\n\n### Description:  \nMarks or unmarks a list of nodes (room, folder or file) as favorite.\n\n### Precondition:\nAuthenticated user is allowed to <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128065; see</span> the node (i.e. `isBrowsable = true`).\n\n### Postcondition:\nNodes gets marked as favorite.\n\n### Further Information:\nMaximum number of nodes is 200.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/v4/nodes/favorites",
+      "method": "PUT",
+      "name": "Mark or unmark a list of nodes (room, folder or file) as favorite",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes/favorites",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"isFavorite\": false, \"objectIds\": [0]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Mark or unmark a list of nodes (room, folder or file) as favorite",
+      "url": "/api/v4/nodes/favorites"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DRACOON_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "classification": 0,
+        "expiration": {
+          "enableExpiration": false,
+          "expireAt": ""
+        },
+        "objectIds": [
+          0
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "<h3 style='padding: 5px; background-color: #F6F7F8; border: 1px solid #AAA; border-radius: 5px; display: table-cell;'>&#128640; Since v4.25.0</h3>\n\n### Description:  \nUpdates a list of file’s metadata.\n\n### Precondition:\nUser has <span style='padding: 3px; background-color: #F6F7F8; border: 1px solid #000; border-radius: 5px; display: inline;'>&#128275; change</span> permissions in parent room.\n\n### Postcondition:\nFile's metadata is changed.\n\n### Further Information:\nMaximum number of files is 200\n",
+      "form_data": [
+        {
+          "name": "classification",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "expiration",
+          "type": "text",
+          "value": {
+            "enableExpiration": false,
+            "expireAt": ""
+          }
+        },
+        {
+          "name": "objectIds",
+          "type": "text",
+          "value": [
+            0
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DRACOON_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PUT /api/v4/nodes/files",
+      "method": "PUT",
+      "name": "Updates a list of  file’s metadata",
+      "note": "Replace {{DRACOON_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "X-Sds-Auth-Token",
+          "value": ""
+        }
+      ],
+      "path": "/api/v4/nodes/files",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"classification\": 0, \"expiration\": {\"enableExpiration\": false, \"expireAt\": \"\"}, \"objectIds\": [0]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Updates a list of  file’s metadata",
+      "url": "/api/v4/nodes/files"
+    }
+  ]
+}

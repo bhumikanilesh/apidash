@@ -1,0 +1,1865 @@
+{
+  "id": "vtex.local_Payments-Gateway-API",
+  "info": {
+    "base_url": "https://vtex.local",
+    "description": "Returns associated settlements data for the specified transaction id.",
+    "source": "apis.guru",
+    "tags": [
+      "finance"
+    ],
+    "title": "Payments Gateway API",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": [
+        {
+          "currencyCode": "BRL",
+          "fields": {
+            "accountId": "",
+            "address": null,
+            "callbackUrl": "",
+            "cardNumber": "5378244888889174",
+            "document": "8041734561",
+            "dueDate": "10/19",
+            "holderName": "UserTest",
+            "validationCode": "231"
+          },
+          "installments": 1,
+          "installmentsInterestRate": 0,
+          "installmentsValue": 100,
+          "paymentSystem": 4,
+          "referenceValue": 100,
+          "transaction": {
+            "id": "{{transactionId}}",
+            "merchantName": "{{accountName}}"
+          },
+          "value": 100
+        }
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The second step to create a new transaction. Here, you have the option to send the data in three diferent ways: doing a private request, a public request or a private request that uses a saved Credit Card. ",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pub/transactions/{{TRANSACTION_ID}}/payments",
+      "method": "POST",
+      "name": "2.1 Send Payments Information Public",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        },
+        {
+          "name": "orderId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pub/transactions/{{TRANSACTION_ID}}/payments",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "orderId",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "2.1 Send Payments Information Public",
+      "url": "https://vtex.local/api/pub/transactions/{{TRANSACTION_ID}}/payments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all affiliations that your provider can handle.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/affiliations",
+      "method": "GET",
+      "name": "Affiliations",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-PROVIDER-API-AppKey",
+          "value": ""
+        },
+        {
+          "name": "X-PROVIDER-API-AppToken",
+          "value": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/affiliations",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Affiliations",
+      "url": "https://vtex.local/api/pvt/affiliations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "configuration": [
+          {
+            "name": "HowTo",
+            "value": "https://developercielo.github.io/Habilitacao-meios-de-pagamento/"
+          },
+          {
+            "name": "MerchantId",
+            "value": "sampleData"
+          },
+          {
+            "name": "MerchantKey",
+            "value": "sampleData"
+          },
+          {
+            "name": "softDescriptor",
+            "value": "teste"
+          },
+          {
+            "name": "bankInvoiceProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "bankIDebitProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "useEarlySecurityCapture",
+            "value": "0"
+          },
+          {
+            "name": "isProduction",
+            "value": "false"
+          },
+          {
+            "name": "bankDebitProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "Registered",
+            "value": "false"
+          }
+        ],
+        "implementation": "Vtex.PaymentGateway.Connectors.CieloV3Connector",
+        "isConfigured": true,
+        "isdelivered": true,
+        "name": "CieloV3 - Teste Ellen"
+      },
+      "body_json": {
+        "configuration": [
+          {
+            "name": "HowTo",
+            "value": "https://developercielo.github.io/Habilitacao-meios-de-pagamento/"
+          },
+          {
+            "name": "MerchantId",
+            "value": "sampleData"
+          },
+          {
+            "name": "MerchantKey",
+            "value": "sampleData"
+          },
+          {
+            "name": "softDescriptor",
+            "value": "teste"
+          },
+          {
+            "name": "bankInvoiceProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "bankIDebitProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "useEarlySecurityCapture",
+            "value": "0"
+          },
+          {
+            "name": "isProduction",
+            "value": "false"
+          },
+          {
+            "name": "bankDebitProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "Registered",
+            "value": "false"
+          }
+        ],
+        "implementation": "Vtex.PaymentGateway.Connectors.CieloV3Connector",
+        "isConfigured": true,
+        "isdelivered": true,
+        "name": "CieloV3 - Teste Ellen"
+      },
+      "body_text": "{\"configuration\": [{\"name\": \"HowTo\", \"value\": \"https://developercielo.github.io/Habilitacao-meios-de-pagamento/\"}, {\"name\": \"MerchantId\", \"value\": \"sampleData\"}, {\"name\": \"MerchantKey\", \"value\": \"sampleData\"}, {\"name\": \"softDescriptor\", \"value\": \"teste\"}, {\"name\": \"bankInvoiceProvider\", \"value\": \"Disabled\"}, {\"name\": \"bankIDebitProvider\", \"value\": \"Disabled\"}, {\"name\": \"useEarlySecurityCapture\", \"value\": \"0\"}, {\"name\": \"isProduction\", \"value\": \"false\"}, {\"name\": \"bankDebitProvider\", \"value\": \"Disabled\"}, {\"name\": \"Registered\", \"value\": \"false\"}], \"implementation\": \"Vtex.PaymentGateway.Connectors.CieloV3Connector\", \"isConfigured\": true, \"isdelivered\": true, \"name\": \"CieloV3 - Teste Ellen\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new affiliation and returns a successful response.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/affiliations",
+      "method": "POST",
+      "name": "Insert Affiliation",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-PROVIDER-API-AppKey",
+          "value": ""
+        },
+        {
+          "name": "X-PROVIDER-API-AppToken",
+          "value": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/affiliations",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"configuration\": [{\"name\": \"HowTo\", \"value\": \"https://developercielo.github.io/Habilitacao-meios-de-pagamento/\"}, {\"name\": \"MerchantId\", \"value\": \"sampleData\"}, {\"name\": \"MerchantKey\", \"value\": \"sampleData\"}, {\"name\": \"softDescriptor\", \"value\": \"teste\"}, {\"name\": \"bankInvoiceProvider\", \"value\": \"Disabled\"}, {\"name\": \"bankIDebitProvider\", \"value\": \"Disabled\"}, {\"name\": \"useEarlySecurityCapture\", \"value\": \"0\"}, {\"name\": \"isProduction\", \"value\": \"false\"}, {\"name\": \"bankDebitProvider\", \"value\": \"Disabled\"}, {\"name\": \"Registered\", \"value\": \"false\"}], \"implementation\": \"Vtex.PaymentGateway.Connectors.CieloV3Connector\", \"isConfigured\": true, \"isdelivered\": true, \"name\": \"CieloV3 - Teste Ellen\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Insert Affiliation",
+      "url": "https://vtex.local/api/pvt/affiliations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns associated data for the specified affiliation Id, like name and implementation, for example.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/affiliations/{{AFFILIATION_ID}}",
+      "method": "GET",
+      "name": "Affiliation By Id",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "affiliationId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/affiliations/{{AFFILIATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "affiliationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Affiliation By Id",
+      "url": "https://vtex.local/api/pvt/affiliations/{{AFFILIATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "configuration": [
+          {
+            "name": "HowTo",
+            "value": "https://developercielo.github.io/Habilitacao-meios-de-pagamento/"
+          },
+          {
+            "name": "MerchantId",
+            "value": "DATA TEST"
+          },
+          {
+            "name": "MerchantKey",
+            "value": "DATA TEST"
+          },
+          {
+            "name": "softDescriptor",
+            "value": "teste"
+          },
+          {
+            "name": "bankInvoiceProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "bankIDebitProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "useEarlySecurityCapture",
+            "value": "0"
+          },
+          {
+            "name": "isProduction",
+            "value": "false"
+          },
+          {
+            "name": "bankDebitProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "Registered",
+            "value": "false"
+          }
+        ],
+        "id": "61c3b25b-554d-41a4-b989-a0ba215e4bba",
+        "implementation": "Vtex.PaymentGateway.Connectors.CieloV3Connector",
+        "isConfigured": true,
+        "isdelivered": true,
+        "name": "CieloV3 - Teste Ellen"
+      },
+      "body_json": {
+        "configuration": [
+          {
+            "name": "HowTo",
+            "value": "https://developercielo.github.io/Habilitacao-meios-de-pagamento/"
+          },
+          {
+            "name": "MerchantId",
+            "value": "DATA TEST"
+          },
+          {
+            "name": "MerchantKey",
+            "value": "DATA TEST"
+          },
+          {
+            "name": "softDescriptor",
+            "value": "teste"
+          },
+          {
+            "name": "bankInvoiceProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "bankIDebitProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "useEarlySecurityCapture",
+            "value": "0"
+          },
+          {
+            "name": "isProduction",
+            "value": "false"
+          },
+          {
+            "name": "bankDebitProvider",
+            "value": "Disabled"
+          },
+          {
+            "name": "Registered",
+            "value": "false"
+          }
+        ],
+        "id": "61c3b25b-554d-41a4-b989-a0ba215e4bba",
+        "implementation": "Vtex.PaymentGateway.Connectors.CieloV3Connector",
+        "isConfigured": true,
+        "isdelivered": true,
+        "name": "CieloV3 - Teste Ellen"
+      },
+      "body_text": "{\"configuration\": [{\"name\": \"HowTo\", \"value\": \"https://developercielo.github.io/Habilitacao-meios-de-pagamento/\"}, {\"name\": \"MerchantId\", \"value\": \"DATA TEST\"}, {\"name\": \"MerchantKey\", \"value\": \"DATA TEST\"}, {\"name\": \"softDescriptor\", \"value\": \"teste\"}, {\"name\": \"bankInvoiceProvider\", \"value\": \"Disabled\"}, {\"name\": \"bankIDebitProvider\", \"value\": \"Disabled\"}, {\"name\": \"useEarlySecurityCapture\", \"value\": \"0\"}, {\"name\": \"isProduction\", \"value\": \"false\"}, {\"name\": \"bankDebitProvider\", \"value\": \"Disabled\"}, {\"name\": \"Registered\", \"value\": \"false\"}], \"id\": \"61c3b25b-554d-41a4-b989-a0ba215e4bba\", \"implementation\": \"Vtex.PaymentGateway.Connectors.CieloV3Connector\", \"isConfigured\": true, \"isdelivered\": true, \"name\": \"CieloV3 - Teste Ellen\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns all affiliations.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/pvt/affiliations/{{AFFILIATION_ID}}",
+      "method": "PUT",
+      "name": "Update Affiliation",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "affiliationId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/affiliations/{{AFFILIATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "affiliationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"configuration\": [{\"name\": \"HowTo\", \"value\": \"https://developercielo.github.io/Habilitacao-meios-de-pagamento/\"}, {\"name\": \"MerchantId\", \"value\": \"DATA TEST\"}, {\"name\": \"MerchantKey\", \"value\": \"DATA TEST\"}, {\"name\": \"softDescriptor\", \"value\": \"teste\"}, {\"name\": \"bankInvoiceProvider\", \"value\": \"Disabled\"}, {\"name\": \"bankIDebitProvider\", \"value\": \"Disabled\"}, {\"name\": \"useEarlySecurityCapture\", \"value\": \"0\"}, {\"name\": \"isProduction\", \"value\": \"false\"}, {\"name\": \"bankDebitProvider\", \"value\": \"Disabled\"}, {\"name\": \"Registered\", \"value\": \"false\"}], \"id\": \"61c3b25b-554d-41a4-b989-a0ba215e4bba\", \"implementation\": \"Vtex.PaymentGateway.Connectors.CieloV3Connector\", \"isConfigured\": true, \"isdelivered\": true, \"name\": \"CieloV3 - Teste Ellen\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update Affiliation",
+      "url": "https://vtex.local/api/pvt/affiliations/{{AFFILIATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the best installment options according to the informed params.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/installments",
+      "method": "GET",
+      "name": "Installments options",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "request.value",
+          "value": ""
+        },
+        {
+          "name": "request.salesChannel",
+          "value": ""
+        },
+        {
+          "name": "request.paymentDetails[0].id",
+          "value": ""
+        },
+        {
+          "name": "request.paymentDetails[0].value",
+          "value": ""
+        },
+        {
+          "name": "request.paymentDetails[0].bin",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/installments",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "request.value",
+          "value": ""
+        },
+        {
+          "name": "request.salesChannel",
+          "value": ""
+        },
+        {
+          "name": "request.paymentDetails[0].id",
+          "value": ""
+        },
+        {
+          "name": "request.paymentDetails[0].value",
+          "value": ""
+        },
+        {
+          "name": "request.paymentDetails[0].bin",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Installments options",
+      "url": "https://vtex.local/api/pvt/installments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns enabled payment methods, like visa, master, bankissueinvoice that are shown for the final user and enabled to receive payment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/merchants/payment-systems",
+      "method": "GET",
+      "name": "Available Payment Methods",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-PROVIDER-API-AppKey",
+          "value": ""
+        },
+        {
+          "name": "X-PROVIDER-API-AppToken",
+          "value": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/merchants/payment-systems",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Available Payment Methods",
+      "url": "https://vtex.local/api/pvt/merchants/payment-systems"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all rules conditions your provider can handle.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/rules",
+      "method": "GET",
+      "name": "Rules",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-PROVIDER-API-AppKey",
+          "value": ""
+        },
+        {
+          "name": "X-PROVIDER-API-AppToken",
+          "value": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/rules",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Rules",
+      "url": "https://vtex.local/api/pvt/rules"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "antifraud": {
+          "affiliationId": null,
+          "implementation": null
+        },
+        "beginDate": null,
+        "condition": null,
+        "connector": {
+          "affiliationId": "e046d326-5421-45ab-95ae-f13d37f260b5",
+          "implementation": "Vtex.PaymentGateway.Connectors.PromissoryConnector"
+        },
+        "country": null,
+        "dateIntervals": null,
+        "enabled": true,
+        "endDate": null,
+        "installmentOptions": null,
+        "installmentsService": null,
+        "isDefault": false,
+        "isSelfAuthorized": null,
+        "issuer": {
+          "name": null
+        },
+        "multiMerchantList": null,
+        "name": "Cash - Custom",
+        "paymentSystem": {
+          "id": 47,
+          "implementation": null,
+          "name": "Cash"
+        },
+        "requiresAuthentication": null,
+        "salesChannels": [
+          {
+            "id": ":ALL:"
+          }
+        ]
+      },
+      "body_json": {
+        "antifraud": {
+          "affiliationId": null,
+          "implementation": null
+        },
+        "beginDate": null,
+        "condition": null,
+        "connector": {
+          "affiliationId": "e046d326-5421-45ab-95ae-f13d37f260b5",
+          "implementation": "Vtex.PaymentGateway.Connectors.PromissoryConnector"
+        },
+        "country": null,
+        "dateIntervals": null,
+        "enabled": true,
+        "endDate": null,
+        "installmentOptions": null,
+        "installmentsService": null,
+        "isDefault": false,
+        "isSelfAuthorized": null,
+        "issuer": {
+          "name": null
+        },
+        "multiMerchantList": null,
+        "name": "Cash - Custom",
+        "paymentSystem": {
+          "id": 47,
+          "implementation": null,
+          "name": "Cash"
+        },
+        "requiresAuthentication": null,
+        "salesChannels": [
+          {
+            "id": ":ALL:"
+          }
+        ]
+      },
+      "body_text": "{\"antifraud\": {\"affiliationId\": null, \"implementation\": null}, \"beginDate\": null, \"condition\": null, \"connector\": {\"affiliationId\": \"e046d326-5421-45ab-95ae-f13d37f260b5\", \"implementation\": \"Vtex.PaymentGateway.Connectors.PromissoryConnector\"}, \"country\": null, \"dateIntervals\": null, \"enabled\": true, \"endDate\": null, \"installmentOptions\": null, \"installmentsService\": null, \"isDefault\": false, \"isSelfAuthorized\": null, \"issuer\": {\"name\": null}, \"multiMerchantList\": null, \"name\": \"Cash - Custom\", \"paymentSystem\": {\"id\": 47, \"implementation\": null, \"name\": \"Cash\"}, \"requiresAuthentication\": null, \"salesChannels\": [{\"id\": \":ALL:\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new rule and returns a successful response.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/rules",
+      "method": "POST",
+      "name": "Insert Rule",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-PROVIDER-API-AppKey",
+          "value": ""
+        },
+        {
+          "name": "X-PROVIDER-API-AppToken",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/rules",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"antifraud\": {\"affiliationId\": null, \"implementation\": null}, \"beginDate\": null, \"condition\": null, \"connector\": {\"affiliationId\": \"e046d326-5421-45ab-95ae-f13d37f260b5\", \"implementation\": \"Vtex.PaymentGateway.Connectors.PromissoryConnector\"}, \"country\": null, \"dateIntervals\": null, \"enabled\": true, \"endDate\": null, \"installmentOptions\": null, \"installmentsService\": null, \"isDefault\": false, \"isSelfAuthorized\": null, \"issuer\": {\"name\": null}, \"multiMerchantList\": null, \"name\": \"Cash - Custom\", \"paymentSystem\": {\"id\": 47, \"implementation\": null, \"name\": \"Cash\"}, \"requiresAuthentication\": null, \"salesChannels\": [{\"id\": \":ALL:\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Insert Rule",
+      "url": "https://vtex.local/api/pvt/rules"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes rules by specified Id.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/pvt/rules/{{RULE_ID}}",
+      "method": "DELETE",
+      "name": "Delete Rule",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ruleId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/rules/{{RULE_ID}}",
+      "pathParameters": [
+        {
+          "name": "ruleId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete Rule",
+      "url": "https://vtex.local/api/pvt/rules/{{RULE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns rule by specified RuleId.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/rules/{{RULE_ID}}",
+      "method": "GET",
+      "name": "Rule By Id",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ruleId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/rules/{{RULE_ID}}",
+      "pathParameters": [
+        {
+          "name": "ruleId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Rule By Id",
+      "url": "https://vtex.local/api/pvt/rules/{{RULE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "antifraud": {
+          "affiliationId": "f952588c-8b41-41cc-a06f-c0f48f7320ef"
+        },
+        "beginDate": "0001-01-01T00:00:00",
+        "condition": null,
+        "connector": {
+          "affiliationId": "d0d7097e-0959-43dc-b335-852eda7b2992",
+          "implementation": "Vtex.PaymentGateway.Connectors.MundipaggConnector"
+        },
+        "country": null,
+        "dateIntervals": null,
+        "enabled": true,
+        "endDate": "9999-12-31T23:59:59.9999999",
+        "id": "eff4f368-b671-443b-b5a9-82616e87ea1c",
+        "installmentOptions": {
+          "interestRateMethod": null
+        },
+        "isDefault": null,
+        "isSelfAuthorized": null,
+        "issuer": {
+          "name": null
+        },
+        "multiMerchantList": null,
+        "name": "Visa gatewayqa",
+        "paymentSystem": {
+          "id": 2,
+          "implementation": null,
+          "name": "Visa"
+        },
+        "salesChannels": [
+          {
+            "id": "2"
+          }
+        ]
+      },
+      "body_json": {
+        "antifraud": {
+          "affiliationId": "f952588c-8b41-41cc-a06f-c0f48f7320ef"
+        },
+        "beginDate": "0001-01-01T00:00:00",
+        "condition": null,
+        "connector": {
+          "affiliationId": "d0d7097e-0959-43dc-b335-852eda7b2992",
+          "implementation": "Vtex.PaymentGateway.Connectors.MundipaggConnector"
+        },
+        "country": null,
+        "dateIntervals": null,
+        "enabled": true,
+        "endDate": "9999-12-31T23:59:59.9999999",
+        "id": "eff4f368-b671-443b-b5a9-82616e87ea1c",
+        "installmentOptions": {
+          "interestRateMethod": null
+        },
+        "isDefault": null,
+        "isSelfAuthorized": null,
+        "issuer": {
+          "name": null
+        },
+        "multiMerchantList": null,
+        "name": "Visa gatewayqa",
+        "paymentSystem": {
+          "id": 2,
+          "implementation": null,
+          "name": "Visa"
+        },
+        "salesChannels": [
+          {
+            "id": "2"
+          }
+        ]
+      },
+      "body_text": "{\"antifraud\": {\"affiliationId\": \"f952588c-8b41-41cc-a06f-c0f48f7320ef\"}, \"beginDate\": \"0001-01-01T00:00:00\", \"condition\": null, \"connector\": {\"affiliationId\": \"d0d7097e-0959-43dc-b335-852eda7b2992\", \"implementation\": \"Vtex.PaymentGateway.Connectors.MundipaggConnector\"}, \"country\": null, \"dateIntervals\": null, \"enabled\": true, \"endDate\": \"9999-12-31T23:59:59.9999999\", \"id\": \"eff4f368-b671-443b-b5a9-82616e87ea1c\", \"installmentOptions\": {\"interestRateMethod\": null}, \"isDefault\": null, \"isSelfAuthorized\": null, \"issuer\": {\"name\": null}, \"multiMerchantList\": null, \"name\": \"Visa gatewayqa\", \"paymentSystem\": {\"id\": 2, \"implementation\": null, \"name\": \"Visa\"}, \"salesChannels\": [{\"id\": \"2\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update Rule.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/pvt/rules/{{RULE_ID}}",
+      "method": "PUT",
+      "name": "Rule By Id",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ruleId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/rules/{{RULE_ID}}",
+      "pathParameters": [
+        {
+          "name": "ruleId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"antifraud\": {\"affiliationId\": \"f952588c-8b41-41cc-a06f-c0f48f7320ef\"}, \"beginDate\": \"0001-01-01T00:00:00\", \"condition\": null, \"connector\": {\"affiliationId\": \"d0d7097e-0959-43dc-b335-852eda7b2992\", \"implementation\": \"Vtex.PaymentGateway.Connectors.MundipaggConnector\"}, \"country\": null, \"dateIntervals\": null, \"enabled\": true, \"endDate\": \"9999-12-31T23:59:59.9999999\", \"id\": \"eff4f368-b671-443b-b5a9-82616e87ea1c\", \"installmentOptions\": {\"interestRateMethod\": null}, \"isDefault\": null, \"isSelfAuthorized\": null, \"issuer\": {\"name\": null}, \"multiMerchantList\": null, \"name\": \"Visa gatewayqa\", \"paymentSystem\": {\"id\": 2, \"implementation\": null, \"name\": \"Visa\"}, \"salesChannels\": [{\"id\": \"2\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Rule By Id",
+      "url": "https://vtex.local/api/pvt/rules/{{RULE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "channel": "{{accountName}}",
+        "referenceId": "1234567",
+        "salesChannel": "1",
+        "urn": "",
+        "value": 100
+      },
+      "body_json": {
+        "channel": "{{accountName}}",
+        "referenceId": "1234567",
+        "salesChannel": "1",
+        "urn": "",
+        "value": 100
+      },
+      "body_text": "{\"channel\": \"{{accountName}}\", \"referenceId\": \"1234567\", \"salesChannel\": \"1\", \"urn\": \"\", \"value\": 100}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This request is the first step to create a new transaction.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/transactions",
+      "method": "POST",
+      "name": "1. Starts a new transaction",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "X-PROVIDER-API-AppKey",
+          "value": ""
+        },
+        {
+          "name": "X-PROVIDER-API-AppToken",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        },
+        {
+          "name": "Content-Type",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"channel\": \"{{accountName}}\", \"referenceId\": \"1234567\", \"salesChannel\": \"1\", \"urn\": \"\", \"value\": 100}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "1. Starts a new transaction",
+      "url": "https://vtex.local/api/pvt/transactions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns associated data for the specified transaction id, like value and status, for exemple.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/transactions/{{TRANSACTION_ID}}",
+      "method": "GET",
+      "name": "Transaction Details",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Transaction Details",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "value": ""
+      },
+      "body_json": {
+        "name": "",
+        "value": ""
+      },
+      "body_text": "{\"name\": \"\", \"value\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The third step to create a new transaction. It will send the additional related data to the transaction, like billig and shipping adress.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/transactions/{{TRANSACTION_ID}}/additional-data",
+      "method": "POST",
+      "name": "3. Send Additional Data",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}/additional-data",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"value\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "3. Send Additional Data",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}/additional-data"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "prepareForRecurrency": false,
+        "softDescriptor": "{{accountName}}",
+        "transactionId": "{{transactionId}}"
+      },
+      "body_json": {
+        "prepareForRecurrency": false,
+        "softDescriptor": "{{accountName}}",
+        "transactionId": "{{transactionId}}"
+      },
+      "body_text": "{\"prepareForRecurrency\": false, \"softDescriptor\": \"{{accountName}}\", \"transactionId\": \"{{transactionId}}\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The fouth and last step to create a new transaction. It will authorized the new transction creation acorrdint to the data previously informed in the latests requests.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/transactions/{{TRANSACTION_ID}}/authorization-request",
+      "method": "POST",
+      "name": "Do authorization",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}/authorization-request",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"prepareForRecurrency\": false, \"softDescriptor\": \"{{accountName}}\", \"transactionId\": \"{{transactionId}}\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Do authorization",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}/authorization-request"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "minicart": {
+          "freight": 0,
+          "items": [
+            {}
+          ],
+          "tax": 0
+        },
+        "value": 0
+      },
+      "body_json": {
+        "minicart": {
+          "freight": 0,
+          "items": [
+            {}
+          ],
+          "tax": 0
+        },
+        "value": 0
+      },
+      "body_text": "{\"minicart\": {\"freight\": 0, \"items\": [{}], \"tax\": 0}, \"value\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Cancel's transaction that was previously approved, but not settled.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/transactions/{{TRANSACTION_ID}}/cancellation-request",
+      "method": "POST",
+      "name": "Cancel the transaction",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}/cancellation-request",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"minicart\": {\"freight\": 0, \"items\": [{}], \"tax\": 0}, \"value\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel the transaction",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}/cancellation-request"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": [
+        {
+          "currencyCode": "BRL",
+          "fields": {
+            "accountId": "44D964F2053642E888E3B23549937F87",
+            "address": null,
+            "callbackUrl": "",
+            "firstDigits": "411111",
+            "validationCode": "231"
+          },
+          "installments": 1,
+          "installmentsInterestRate": 0,
+          "installmentsValue": 100,
+          "paymentSystem": 2,
+          "referenceValue": 100,
+          "transaction": {
+            "id": "{{transactionId}}",
+            "merchantName": "{{accountName}}"
+          },
+          "value": 100
+        }
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "The second step to create a new transaction. Here, you have the option to send the data in three diferent ways: doing a private request, a public request or a private request that uses a saved Credit Card.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/transactions/{{TRANSACTION_ID}}/payments",
+      "method": "POST",
+      "name": "2.2 Send Payments With Saved Credit Card",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}/payments",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "2.2 Send Payments With Saved Credit Card",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}/payments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns associated information details for the specified payment id.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/transactions/{{TRANSACTION_ID}}/payments/{{PAYMENT_ID}}",
+      "method": "GET",
+      "name": "Payment Details",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        },
+        {
+          "name": "paymentId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}/payments/{{PAYMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        },
+        {
+          "name": "paymentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Payment Details",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}/payments/{{PAYMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "minicart": {
+          "freight": 0,
+          "items": [
+            {}
+          ],
+          "tax": 0
+        },
+        "value": 0
+      },
+      "body_json": {
+        "minicart": {
+          "freight": 0,
+          "items": [
+            {}
+          ],
+          "tax": 0
+        },
+        "value": 0
+      },
+      "body_text": "{\"minicart\": {\"freight\": 0, \"items\": [{}], \"tax\": 0}, \"value\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Refunds transaction's value that was previously settled.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/transactions/{{TRANSACTION_ID}}/refunding-request",
+      "method": "POST",
+      "name": "Refund the transaction",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}/refunding-request",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"minicart\": {\"freight\": 0, \"items\": [{}], \"tax\": 0}, \"value\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refund the transaction",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}/refunding-request"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "value": 100
+      },
+      "body_json": {
+        "value": 100
+      },
+      "body_text": "{\"value\": 100}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Settles transaction's value.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/pvt/transactions/{{TRANSACTION_ID}}/settlement-request",
+      "method": "POST",
+      "name": "Settle the transaction",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}/settlement-request",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"value\": 100}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Settle the transaction",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}/settlement-request"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "PAYMENTS_GATEWAY_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns associated settlements data for the specified transaction id.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{PAYMENTS_GATEWAY_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/pvt/transactions/{{TRANSACTION_ID}}/settlements",
+      "method": "GET",
+      "name": "Transaction Settlement  Details",
+      "note": "Replace {{PAYMENTS_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "path": "/api/pvt/transactions/{{TRANSACTION_ID}}/settlements",
+      "pathParameters": [
+        {
+          "name": "transactionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Transaction Settlement  Details",
+      "url": "https://vtex.local/api/pvt/transactions/{{TRANSACTION_ID}}/settlements"
+    }
+  ]
+}

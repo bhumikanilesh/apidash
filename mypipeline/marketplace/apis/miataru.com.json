@@ -1,0 +1,307 @@
+{
+  "id": "miataru.com",
+  "info": {
+    "base_url": "http://service.miataru.com/v1",
+    "description": "This method is used to update the location of a device. The device does not need to be known already to the Miataru server but it rather creates a unique identifier for itself in the client...",
+    "source": "apis.guru",
+    "tags": [
+      "maps"
+    ],
+    "title": "Miataru",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "MiataruConfig": {
+          "RequestMiataruDeviceID": "6140c3c0-4a7d-40d2-99ab-39414cac3509"
+        },
+        "MiataruGetLocation": [
+          {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823"
+          }
+        ]
+      },
+      "body_json": {
+        "MiataruConfig": {
+          "RequestMiataruDeviceID": "6140c3c0-4a7d-40d2-99ab-39414cac3509"
+        },
+        "MiataruGetLocation": [
+          {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823"
+          }
+        ]
+      },
+      "body_text": "{\"MiataruConfig\": {\"RequestMiataruDeviceID\": \"6140c3c0-4a7d-40d2-99ab-39414cac3509\"}, \"MiataruGetLocation\": [{\"Device\": \"7b8e6e0ee5296db345162dc2ef652c1350761823\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To retrieve a specific devices latest known location the /GetLocation method is used. Please note that the MiataruConfig portion is optional. RequestMiataruDeviceID should be the ID of the device the request is sent from (or an identifier like an URL).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/GetLocation",
+      "method": "POST",
+      "name": "POST /GetLocation",
+      "params": [],
+      "path": "/v1/GetLocation",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MiataruConfig\": {\"RequestMiataruDeviceID\": \"6140c3c0-4a7d-40d2-99ab-39414cac3509\"}, \"MiataruGetLocation\": [{\"Device\": \"7b8e6e0ee5296db345162dc2ef652c1350761823\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /GetLocation",
+      "url": "http://service.miataru.com/v1/GetLocation"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a devices Location in GeoJSON format.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/GetLocationGeoJSON/{{DEVICE_I_D}}",
+      "method": "GET",
+      "name": "GET /GetLocationGeoJSON/{deviceID}",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deviceID",
+          "value": ""
+        }
+      ],
+      "path": "/v1/GetLocationGeoJSON/{{DEVICE_I_D}}",
+      "pathParameters": [
+        {
+          "name": "deviceID",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /GetLocationGeoJSON/{deviceID}",
+      "url": "http://service.miataru.com/v1/GetLocationGeoJSON/{{DEVICE_I_D}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "MiataruConfig": {
+          "RequestMiataruDeviceID": "6140c3c0-4a7d-40d2-99ab-39414cac3509"
+        },
+        "MiataruGetLocationHistory": {
+          "Amount": "10",
+          "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823"
+        }
+      },
+      "body_json": {
+        "MiataruConfig": {
+          "RequestMiataruDeviceID": "6140c3c0-4a7d-40d2-99ab-39414cac3509"
+        },
+        "MiataruGetLocationHistory": {
+          "Amount": "10",
+          "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823"
+        }
+      },
+      "body_text": "{\"MiataruConfig\": {\"RequestMiataruDeviceID\": \"6140c3c0-4a7d-40d2-99ab-39414cac3509\"}, \"MiataruGetLocationHistory\": {\"Amount\": \"10\", \"Device\": \"7b8e6e0ee5296db345162dc2ef652c1350761823\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Location History is stored on the server only if the client told the server to do so using the “EnableLocationHistory” setting in the Location Update requests. For transitions of enabling/disabling that functionality - Everytime a Location Update is received by the server with “EnableLocationHistory=false” the server removes all stored Location History till that point. There is a server-side setting that controls up to how many Location Updates the server is storing in the Location History before it removes the oldest one. To request the Location History of a particular device the client sends the following POST request to the GetLocationHistory service URL. Please note that the MiataruConfig portion is optional. RequestMiataruDeviceID should be the ID of the device the request is sent from (or an identifier like an URL).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/GetLocationHistory",
+      "method": "POST",
+      "name": "POST /GetLocationHistory",
+      "params": [],
+      "path": "/v1/GetLocationHistory",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MiataruConfig\": {\"RequestMiataruDeviceID\": \"6140c3c0-4a7d-40d2-99ab-39414cac3509\"}, \"MiataruGetLocationHistory\": {\"Amount\": \"10\", \"Device\": \"7b8e6e0ee5296db345162dc2ef652c1350761823\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /GetLocationHistory",
+      "url": "http://service.miataru.com/v1/GetLocationHistory"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "MiataruGetVisitorHistory": {
+          "Amount": "10",
+          "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823"
+        }
+      },
+      "body_json": {
+        "MiataruGetVisitorHistory": {
+          "Amount": "10",
+          "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823"
+        }
+      },
+      "body_text": "{\"MiataruGetVisitorHistory\": {\"Amount\": \"10\", \"Device\": \"7b8e6e0ee5296db345162dc2ef652c1350761823\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Visitor History is stored on the server with every request to the location or location history information of a device. There is a server-side setting that controls up to how many Visitors the server is storing in the Visitor History before it removes the oldest one. To request the Visitor History of a particular device the client sends the following POST request to the GetVisitorHistory service URL.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/GetVisitorHistory",
+      "method": "POST",
+      "name": "POST /GetVisitorHistory",
+      "params": [],
+      "path": "/v1/GetVisitorHistory",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MiataruGetVisitorHistory\": {\"Amount\": \"10\", \"Device\": \"7b8e6e0ee5296db345162dc2ef652c1350761823\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /GetVisitorHistory",
+      "url": "http://service.miataru.com/v1/GetVisitorHistory"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "MiataruConfig": {
+          "EnableLocationHistory": "False",
+          "LocationDataRetentionTime": "30"
+        },
+        "MiataruLocation": [
+          {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "HorizontalAccuracy": "50",
+            "Latitude": "41.079351",
+            "Longitude": "-4.394531",
+            "Timestamp": "1441360863"
+          }
+        ]
+      },
+      "body_json": {
+        "MiataruConfig": {
+          "EnableLocationHistory": "False",
+          "LocationDataRetentionTime": "30"
+        },
+        "MiataruLocation": [
+          {
+            "Device": "7b8e6e0ee5296db345162dc2ef652c1350761823",
+            "HorizontalAccuracy": "50",
+            "Latitude": "41.079351",
+            "Longitude": "-4.394531",
+            "Timestamp": "1441360863"
+          }
+        ]
+      },
+      "body_text": "{\"MiataruConfig\": {\"EnableLocationHistory\": \"False\", \"LocationDataRetentionTime\": \"30\"}, \"MiataruLocation\": [{\"Device\": \"7b8e6e0ee5296db345162dc2ef652c1350761823\", \"HorizontalAccuracy\": \"50\", \"Latitude\": \"41.079351\", \"Longitude\": \"-4.394531\", \"Timestamp\": \"1441360863\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method is used to update the location of a device. The device does not need to be known already to the Miataru server but it rather creates a unique identifier for itself in the client application. This unique identifier, or device ID is then used to address this particular device.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/UpdateLocation",
+      "method": "POST",
+      "name": "POST /UpdateLocation",
+      "params": [],
+      "path": "/v1/UpdateLocation",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"MiataruConfig\": {\"EnableLocationHistory\": \"False\", \"LocationDataRetentionTime\": \"30\"}, \"MiataruLocation\": [{\"Device\": \"7b8e6e0ee5296db345162dc2ef652c1350761823\", \"HorizontalAccuracy\": \"50\", \"Latitude\": \"41.079351\", \"Longitude\": \"-4.394531\", \"Timestamp\": \"1441360863\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /UpdateLocation",
+      "url": "http://service.miataru.com/v1/UpdateLocation"
+    }
+  ]
+}

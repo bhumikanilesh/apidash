@@ -1,0 +1,4611 @@
+{
+  "id": "asana.com",
+  "info": {
+    "base_url": "https://app.asana.com/api/1.0",
+    "description": "An existing project brief can be updated by making a PUT request on the URL for\nthat project brief. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Asana",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the compact records for all attachments on the object.\n\nThere are three possible `parent` values for this request: `project`, `project_brief`, and `task`. For a project, an attachment refers to a file uploaded to the \"Key resources\" section in the project Overview. For a project brief, an attachment refers to inline files in the project brief itself. For a task, an attachment refers to a file directly associated to that task.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/attachments",
+      "method": "GET",
+      "name": "Get attachments from an object",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        },
+        {
+          "name": "parent",
+          "value": "159874"
+        }
+      ],
+      "path": "/api/1.0/attachments",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        },
+        {
+          "name": "parent",
+          "value": "159874"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get attachments from an object",
+      "url": "https://app.asana.com/api/1.0/attachments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "connect_to_app": false,
+        "file": "",
+        "name": "",
+        "parent": "",
+        "resource_subtype": "external",
+        "url": ""
+      },
+      "body_json": {
+        "connect_to_app": false,
+        "file": "",
+        "name": "",
+        "parent": "",
+        "resource_subtype": "external",
+        "url": ""
+      },
+      "body_text": "{\"connect_to_app\": false, \"file\": \"\", \"name\": \"\", \"parent\": \"\", \"resource_subtype\": \"external\", \"url\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Upload an attachment.\n\nThis method uploads an attachment on an object and returns the compact\nrecord for the created attachment object. This is possible by either:\n\n- Providing the URL of the external resource being attached, or\n- Downloading the file content first and then uploading it as any other attachment. Note that it is not possible to attach\nfiles from third party services such as Dropbox, Box, Vimeo & Google Drive via the API\n\nThe 100MB size limit on attachments in Asana is enforced on this endpoint.\n\nThis endpoint expects a multipart/form-data encoded request containing the full contents of the file to be uploaded.\n\nRequests made should follow the HTTP/1.1 specification that line\nterminators are of the form `CRLF` or `\\r\\n` outlined\n[here](http://www.w3.org/Protocols/HTTP/1.1/draft-ietf-http-v11-spec-01#Basic-Rules) in order for the server to reliably and properly handle the request.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/attachments",
+      "method": "POST",
+      "name": "Upload an attachment",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/attachments",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"connect_to_app\": false, \"file\": \"\", \"name\": \"\", \"parent\": \"\", \"resource_subtype\": \"external\", \"url\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Upload an attachment",
+      "url": "https://app.asana.com/api/1.0/attachments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a specific, existing attachment.\n\nReturns an empty data record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/1.0/attachments/{{ATTACHMENT_GID}}",
+      "method": "DELETE",
+      "name": "Delete an attachment",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "attachment_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/attachments/{{ATTACHMENT_GID}}",
+      "pathParameters": [
+        {
+          "name": "attachment_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an attachment",
+      "url": "https://app.asana.com/api/1.0/attachments/{{ATTACHMENT_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the full record for a single attachment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/attachments/{{ATTACHMENT_GID}}",
+      "method": "GET",
+      "name": "Get an attachment",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "attachment_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/attachments/{{ATTACHMENT_GID}}",
+      "pathParameters": [
+        {
+          "name": "attachment_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an attachment",
+      "url": "https://app.asana.com/api/1.0/attachments/{{ATTACHMENT_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "actions": [
+            {
+              "data": {
+                "assignee": "me",
+                "workspace": "1337"
+              },
+              "method": "get",
+              "options": {
+                "fields": [
+                  "name",
+                  "notes",
+                  "completed"
+                ],
+                "limit": 3
+              },
+              "relative_path": "/tasks/123"
+            }
+          ]
+        }
+      },
+      "body_json": {
+        "data": {
+          "actions": [
+            {
+              "data": {
+                "assignee": "me",
+                "workspace": "1337"
+              },
+              "method": "get",
+              "options": {
+                "fields": [
+                  "name",
+                  "notes",
+                  "completed"
+                ],
+                "limit": 3
+              },
+              "relative_path": "/tasks/123"
+            }
+          ]
+        }
+      },
+      "body_text": "{\"data\": {\"actions\": [{\"data\": {\"assignee\": \"me\", \"workspace\": \"1337\"}, \"method\": \"get\", \"options\": {\"fields\": [\"name\", \"notes\", \"completed\"], \"limit\": 3}, \"relative_path\": \"/tasks/123\"}]}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Make multiple requests in parallel to Asana's API.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/batch",
+      "method": "POST",
+      "name": "Submit parallel requests",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/batch",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"actions\": [{\"data\": {\"assignee\": \"me\", \"workspace\": \"1337\"}, \"method\": \"get\", \"options\": {\"fields\": [\"name\", \"notes\", \"completed\"], \"limit\": 3}, \"relative_path\": \"/tasks/123\"}]}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Submit parallel requests",
+      "url": "https://app.asana.com/api/1.0/batch"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "asana_created_field": "priority",
+          "currency_code": "EUR",
+          "custom_label": "gold pieces",
+          "custom_label_position": "suffix",
+          "date_value": {
+            "date": {},
+            "date_time": {}
+          },
+          "description": "Development team priority",
+          "display_value": "blue",
+          "enabled": true,
+          "enum_options": [
+            {}
+          ],
+          "enum_value": {},
+          "format": "custom",
+          "gid": "12345",
+          "has_notifications_enabled": true,
+          "is_global_to_workspace": true,
+          "multi_enum_values": [
+            {}
+          ],
+          "name": "Status",
+          "number_value": 5.2,
+          "people_value": [
+            "12345"
+          ],
+          "precision": 2,
+          "resource_subtype": "text",
+          "resource_type": "task",
+          "text_value": "Some Value",
+          "type": "text",
+          "workspace": "1331"
+        }
+      },
+      "body_json": {
+        "data": {
+          "asana_created_field": "priority",
+          "currency_code": "EUR",
+          "custom_label": "gold pieces",
+          "custom_label_position": "suffix",
+          "date_value": {
+            "date": {},
+            "date_time": {}
+          },
+          "description": "Development team priority",
+          "display_value": "blue",
+          "enabled": true,
+          "enum_options": [
+            {}
+          ],
+          "enum_value": {},
+          "format": "custom",
+          "gid": "12345",
+          "has_notifications_enabled": true,
+          "is_global_to_workspace": true,
+          "multi_enum_values": [
+            {}
+          ],
+          "name": "Status",
+          "number_value": 5.2,
+          "people_value": [
+            "12345"
+          ],
+          "precision": 2,
+          "resource_subtype": "text",
+          "resource_type": "task",
+          "text_value": "Some Value",
+          "type": "text",
+          "workspace": "1331"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"date_value\": {\"date\": {}, \"date_time\": {}}, \"display_value\": \"blue\", \"enabled\": true, \"enum_options\": [{}], \"enum_value\": {}, \"multi_enum_values\": [{}], \"name\": \"Status\", \"number_value\": 5.2, \"resource_subtype\": \"text\", \"text_value\": \"Some Value\", \"type\": \"text\", \"asana_created_field\": \"priority\", \"currency_code\": \"EUR\", \"custom_label\": \"gold pieces\", \"custom_label_position\": \"suffix\", \"description\": \"Development team priority\", \"format\": \"custom\", \"has_notifications_enabled\": true, \"is_global_to_workspace\": true, \"precision\": 2, \"people_value\": [\"12345\"], \"workspace\": \"1331\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new custom field in a workspace. Every custom field is required\nto be created in a specific workspace, and this workspace cannot be\nchanged once set.\n\nA custom field’s name must be unique within a workspace and not conflict\nwith names of existing task properties such as `Due Date` or `Assignee`.\nA custom field’s type must be one of `text`, `enum`, `multi_enum`, `number`,\n`date`, or `people`.\n\nReturns the full record of the newly created custom field.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/custom_fields",
+      "method": "POST",
+      "name": "Create a custom field",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "path": "/api/1.0/custom_fields",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"date_value\": {\"date\": {}, \"date_time\": {}}, \"display_value\": \"blue\", \"enabled\": true, \"enum_options\": [{}], \"enum_value\": {}, \"multi_enum_values\": [{}], \"name\": \"Status\", \"number_value\": 5.2, \"resource_subtype\": \"text\", \"text_value\": \"Some Value\", \"type\": \"text\", \"asana_created_field\": \"priority\", \"currency_code\": \"EUR\", \"custom_label\": \"gold pieces\", \"custom_label_position\": \"suffix\", \"description\": \"Development team priority\", \"format\": \"custom\", \"has_notifications_enabled\": true, \"is_global_to_workspace\": true, \"precision\": 2, \"people_value\": [\"12345\"], \"workspace\": \"1331\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a custom field",
+      "url": "https://app.asana.com/api/1.0/custom_fields"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "A specific, existing custom field can be deleted by making a DELETE request on the URL for that custom field.\nLocked custom fields can only be deleted by the user who locked the field.\nReturns an empty data record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}",
+      "method": "DELETE",
+      "name": "Delete a custom field",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}",
+      "pathParameters": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a custom field",
+      "url": "https://app.asana.com/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the complete definition of a custom field’s metadata.\n\nSince custom fields can be defined for one of a number of types, and\nthese types have different data and behaviors, there are fields that are\nrelevant to a particular type. For instance, as noted above, enum_options\nis only relevant for the enum type and defines the set of choices that\nthe enum could represent. The examples below show some of these\ntype-specific custom field definitions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}",
+      "method": "GET",
+      "name": "Get a custom field",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}",
+      "pathParameters": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a custom field",
+      "url": "https://app.asana.com/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "asana_created_field": "priority",
+          "currency_code": "EUR",
+          "custom_label": "gold pieces",
+          "custom_label_position": "suffix",
+          "date_value": {
+            "date": {},
+            "date_time": {}
+          },
+          "description": "Development team priority",
+          "display_value": "blue",
+          "enabled": true,
+          "enum_options": [
+            {}
+          ],
+          "enum_value": {},
+          "format": "custom",
+          "gid": "12345",
+          "has_notifications_enabled": true,
+          "is_global_to_workspace": true,
+          "multi_enum_values": [
+            {}
+          ],
+          "name": "Status",
+          "number_value": 5.2,
+          "people_value": [
+            "12345"
+          ],
+          "precision": 2,
+          "resource_subtype": "text",
+          "resource_type": "task",
+          "text_value": "Some Value",
+          "type": "text",
+          "workspace": "1331"
+        }
+      },
+      "body_json": {
+        "data": {
+          "asana_created_field": "priority",
+          "currency_code": "EUR",
+          "custom_label": "gold pieces",
+          "custom_label_position": "suffix",
+          "date_value": {
+            "date": {},
+            "date_time": {}
+          },
+          "description": "Development team priority",
+          "display_value": "blue",
+          "enabled": true,
+          "enum_options": [
+            {}
+          ],
+          "enum_value": {},
+          "format": "custom",
+          "gid": "12345",
+          "has_notifications_enabled": true,
+          "is_global_to_workspace": true,
+          "multi_enum_values": [
+            {}
+          ],
+          "name": "Status",
+          "number_value": 5.2,
+          "people_value": [
+            "12345"
+          ],
+          "precision": 2,
+          "resource_subtype": "text",
+          "resource_type": "task",
+          "text_value": "Some Value",
+          "type": "text",
+          "workspace": "1331"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"date_value\": {\"date\": {}, \"date_time\": {}}, \"display_value\": \"blue\", \"enabled\": true, \"enum_options\": [{}], \"enum_value\": {}, \"multi_enum_values\": [{}], \"name\": \"Status\", \"number_value\": 5.2, \"resource_subtype\": \"text\", \"text_value\": \"Some Value\", \"type\": \"text\", \"asana_created_field\": \"priority\", \"currency_code\": \"EUR\", \"custom_label\": \"gold pieces\", \"custom_label_position\": \"suffix\", \"description\": \"Development team priority\", \"format\": \"custom\", \"has_notifications_enabled\": true, \"is_global_to_workspace\": true, \"precision\": 2, \"people_value\": [\"12345\"], \"workspace\": \"1331\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "A specific, existing custom field can be updated by making a PUT request on the URL for that custom field. Only the fields provided in the `data` block will be updated; any unspecified fields will remain unchanged\nWhen using this method, it is best to specify only those fields you wish to change, or else you may overwrite changes made by another user since you last retrieved the custom field.\nA custom field’s `type` cannot be updated.\nAn enum custom field’s `enum_options` cannot be updated with this endpoint. Instead see “Work With Enum Options” for information on how to update `enum_options`.\nLocked custom fields can only be updated by the user who locked the field.\nReturns the complete updated custom field record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}",
+      "method": "PUT",
+      "name": "Update a custom field",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}",
+      "pathParameters": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"date_value\": {\"date\": {}, \"date_time\": {}}, \"display_value\": \"blue\", \"enabled\": true, \"enum_options\": [{}], \"enum_value\": {}, \"multi_enum_values\": [{}], \"name\": \"Status\", \"number_value\": 5.2, \"resource_subtype\": \"text\", \"text_value\": \"Some Value\", \"type\": \"text\", \"asana_created_field\": \"priority\", \"currency_code\": \"EUR\", \"custom_label\": \"gold pieces\", \"custom_label_position\": \"suffix\", \"description\": \"Development team priority\", \"format\": \"custom\", \"has_notifications_enabled\": true, \"is_global_to_workspace\": true, \"precision\": 2, \"people_value\": [\"12345\"], \"workspace\": \"1331\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a custom field",
+      "url": "https://app.asana.com/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "color": "blue",
+          "enabled": true,
+          "gid": "12345",
+          "insert_after": "12345",
+          "insert_before": "12345",
+          "name": "Low",
+          "resource_type": "task"
+        }
+      },
+      "body_json": {
+        "data": {
+          "color": "blue",
+          "enabled": true,
+          "gid": "12345",
+          "insert_after": "12345",
+          "insert_before": "12345",
+          "name": "Low",
+          "resource_type": "task"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"color\": \"blue\", \"enabled\": true, \"name\": \"Low\", \"insert_after\": \"12345\", \"insert_before\": \"12345\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates an enum option and adds it to this custom field’s list of enum options. A custom field can have at most 500 enum options (including disabled options). By default new enum options are inserted at the end of a custom field’s list.\nLocked custom fields can only have enum options added by the user who locked the field.\nReturns the full record of the newly created enum option.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}/enum_options",
+      "method": "POST",
+      "name": "Create an enum option",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "path": "/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}/enum_options",
+      "pathParameters": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"color\": \"blue\", \"enabled\": true, \"name\": \"Low\", \"insert_after\": \"12345\", \"insert_before\": \"12345\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an enum option",
+      "url": "https://app.asana.com/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}/enum_options"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "after_enum_option": "12345",
+          "before_enum_option": "12345",
+          "enum_option": "97285"
+        }
+      },
+      "body_json": {
+        "data": {
+          "after_enum_option": "12345",
+          "before_enum_option": "12345",
+          "enum_option": "97285"
+        }
+      },
+      "body_text": "{\"data\": {\"after_enum_option\": \"12345\", \"before_enum_option\": \"12345\", \"enum_option\": \"97285\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Moves a particular enum option to be either before or after another specified enum option in the custom field.\nLocked custom fields can only be reordered by the user who locked the field.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}/enum_options/insert",
+      "method": "POST",
+      "name": "Reorder a custom field's enum",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}/enum_options/insert",
+      "pathParameters": [
+        {
+          "name": "custom_field_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"after_enum_option\": \"12345\", \"before_enum_option\": \"12345\", \"enum_option\": \"97285\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Reorder a custom field's enum",
+      "url": "https://app.asana.com/api/1.0/custom_fields/{{CUSTOM_FIELD_GID}}/enum_options/insert"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "color": "blue",
+          "enabled": true,
+          "gid": "12345",
+          "insert_after": "12345",
+          "insert_before": "12345",
+          "name": "Low",
+          "resource_type": "task"
+        }
+      },
+      "body_json": {
+        "data": {
+          "color": "blue",
+          "enabled": true,
+          "gid": "12345",
+          "insert_after": "12345",
+          "insert_before": "12345",
+          "name": "Low",
+          "resource_type": "task"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"color\": \"blue\", \"enabled\": true, \"name\": \"Low\", \"insert_after\": \"12345\", \"insert_before\": \"12345\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an existing enum option. Enum custom fields require at least one enabled enum option.\nLocked custom fields can only be updated by the user who locked the field.\nReturns the full record of the updated enum option.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/1.0/enum_options/{{ENUM_OPTION_GID}}",
+      "method": "PUT",
+      "name": "Update an enum option",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "enum_option_gid",
+          "value": "124578"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/enum_options/{{ENUM_OPTION_GID}}",
+      "pathParameters": [
+        {
+          "name": "enum_option_gid",
+          "value": "124578"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"color\": \"blue\", \"enabled\": true, \"name\": \"Low\", \"insert_after\": \"12345\", \"insert_before\": \"12345\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an enum option",
+      "url": "https://app.asana.com/api/1.0/enum_options/{{ENUM_OPTION_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the full record for all events that have occurred since the sync\ntoken was created.\n\nA `GET` request to the endpoint `/[path_to_resource]/events` can be made in\nlieu of including the resource ID in the data for the request.\n\nAsana limits a single sync token to 100 events. If more than 100 events exist\nfor a given resource, `has_more: true` will be returned in the response, indicating\nthat there are more events to pull. \n\n*Note: The resource returned will be the resource that triggered the\nevent. This may be different from the one that the events were requested\nfor. For example, a subscription to a project will contain events for\ntasks contained within the project.*",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/events",
+      "method": "GET",
+      "name": "Get events on a resource",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "resource",
+          "value": "12345"
+        },
+        {
+          "name": "sync",
+          "value": "de4774f6915eae04714ca93bb2f5ee81"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/events",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "resource",
+          "value": "12345"
+        },
+        {
+          "name": "sync",
+          "value": "de4774f6915eae04714ca93bb2f5ee81"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get events on a resource",
+      "url": "https://app.asana.com/api/1.0/events"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns compact goal relationship records.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/goal_relationships",
+      "method": "GET",
+      "name": "Get goal relationships",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "supported_goal",
+          "value": "12345"
+        },
+        {
+          "name": "resource_subtype",
+          "value": "subgoal"
+        }
+      ],
+      "path": "/api/1.0/goal_relationships",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "supported_goal",
+          "value": "12345"
+        },
+        {
+          "name": "resource_subtype",
+          "value": "subgoal"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get goal relationships",
+      "url": "https://app.asana.com/api/1.0/goal_relationships"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the complete updated goal relationship record for a single goal relationship.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/goal_relationships/{{GOAL_RELATIONSHIP_GID}}",
+      "method": "GET",
+      "name": "Get a goal relationship",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_relationship_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goal_relationships/{{GOAL_RELATIONSHIP_GID}}",
+      "pathParameters": [
+        {
+          "name": "goal_relationship_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a goal relationship",
+      "url": "https://app.asana.com/api/1.0/goal_relationships/{{GOAL_RELATIONSHIP_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "contribution_weight": 1,
+          "gid": "12345",
+          "resource_subtype": "subgoal",
+          "resource_type": "task",
+          "supported_goal": {},
+          "supporting_resource": {}
+        }
+      },
+      "body_json": {
+        "data": {
+          "contribution_weight": 1,
+          "gid": "12345",
+          "resource_subtype": "subgoal",
+          "resource_type": "task",
+          "supported_goal": {},
+          "supporting_resource": {}
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"contribution_weight\": 1, \"resource_subtype\": \"subgoal\", \"supporting_resource\": {}, \"supported_goal\": {}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "An existing goal relationship can be updated by making a PUT request on the URL for\nthat goal relationship. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain unchanged.\n\nReturns the complete updated goal relationship record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/1.0/goal_relationships/{{GOAL_RELATIONSHIP_GID}}",
+      "method": "PUT",
+      "name": "Update a goal relationship",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_relationship_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goal_relationships/{{GOAL_RELATIONSHIP_GID}}",
+      "pathParameters": [
+        {
+          "name": "goal_relationship_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"contribution_weight\": 1, \"resource_subtype\": \"subgoal\", \"supporting_resource\": {}, \"supported_goal\": {}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a goal relationship",
+      "url": "https://app.asana.com/api/1.0/goal_relationships/{{GOAL_RELATIONSHIP_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns compact goal records.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/goals",
+      "method": "GET",
+      "name": "Get goals",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        },
+        {
+          "name": "portfolio",
+          "value": "159874"
+        },
+        {
+          "name": "project",
+          "value": "512241"
+        },
+        {
+          "name": "is_workspace_level",
+          "value": "False"
+        },
+        {
+          "name": "team",
+          "value": "31326"
+        },
+        {
+          "name": "workspace",
+          "value": "31326"
+        },
+        {
+          "name": "time_periods",
+          "value": "221693,506165"
+        }
+      ],
+      "path": "/api/1.0/goals",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        },
+        {
+          "name": "portfolio",
+          "value": "159874"
+        },
+        {
+          "name": "project",
+          "value": "512241"
+        },
+        {
+          "name": "is_workspace_level",
+          "value": "False"
+        },
+        {
+          "name": "team",
+          "value": "31326"
+        },
+        {
+          "name": "workspace",
+          "value": "31326"
+        },
+        {
+          "name": "time_periods",
+          "value": "221693,506165"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get goals",
+      "url": "https://app.asana.com/api/1.0/goals"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "due_on": "2019-09-15",
+          "followers": [
+            "12345"
+          ],
+          "gid": "12345",
+          "html_notes": "<body>Start building brand awareness.</body>",
+          "is_workspace_level": true,
+          "liked": false,
+          "name": "Grow web traffic by 30%",
+          "notes": "Start building brand awareness.",
+          "owner": "12345",
+          "resource_type": "task",
+          "start_on": "2019-09-14",
+          "status": "green",
+          "team": "12345",
+          "time_period": "12345",
+          "workspace": "12345"
+        }
+      },
+      "body_json": {
+        "data": {
+          "due_on": "2019-09-15",
+          "followers": [
+            "12345"
+          ],
+          "gid": "12345",
+          "html_notes": "<body>Start building brand awareness.</body>",
+          "is_workspace_level": true,
+          "liked": false,
+          "name": "Grow web traffic by 30%",
+          "notes": "Start building brand awareness.",
+          "owner": "12345",
+          "resource_type": "task",
+          "start_on": "2019-09-14",
+          "status": "green",
+          "team": "12345",
+          "time_period": "12345",
+          "workspace": "12345"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"due_on\": \"2019-09-15\", \"html_notes\": \"<body>Start building brand awareness.</body>\", \"is_workspace_level\": true, \"liked\": false, \"name\": \"Grow web traffic by 30%\", \"notes\": \"Start building brand awareness.\", \"start_on\": \"2019-09-14\", \"status\": \"green\", \"followers\": [\"12345\"], \"owner\": \"12345\", \"team\": \"12345\", \"time_period\": \"12345\", \"workspace\": \"12345\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new goal in a workspace or team.\n\nReturns the full record of the newly created goal.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/goals",
+      "method": "POST",
+      "name": "Create a goal",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "path": "/api/1.0/goals",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"due_on\": \"2019-09-15\", \"html_notes\": \"<body>Start building brand awareness.</body>\", \"is_workspace_level\": true, \"liked\": false, \"name\": \"Grow web traffic by 30%\", \"notes\": \"Start building brand awareness.\", \"start_on\": \"2019-09-14\", \"status\": \"green\", \"followers\": [\"12345\"], \"owner\": \"12345\", \"team\": \"12345\", \"time_period\": \"12345\", \"workspace\": \"12345\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a goal",
+      "url": "https://app.asana.com/api/1.0/goals"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "A specific, existing goal can be deleted by making a DELETE request on the URL for that goal.\n\nReturns an empty data record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/1.0/goals/{{GOAL_GID}}",
+      "method": "DELETE",
+      "name": "Delete a goal",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a goal",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the complete goal record for a single goal.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/goals/{{GOAL_GID}}",
+      "method": "GET",
+      "name": "Get a goal",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a goal",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "due_on": "2019-09-15",
+          "followers": [
+            "12345"
+          ],
+          "gid": "12345",
+          "html_notes": "<body>Start building brand awareness.</body>",
+          "is_workspace_level": true,
+          "liked": false,
+          "name": "Grow web traffic by 30%",
+          "notes": "Start building brand awareness.",
+          "owner": "12345",
+          "resource_type": "task",
+          "start_on": "2019-09-14",
+          "status": "green",
+          "team": "12345",
+          "time_period": "12345",
+          "workspace": "12345"
+        }
+      },
+      "body_json": {
+        "data": {
+          "due_on": "2019-09-15",
+          "followers": [
+            "12345"
+          ],
+          "gid": "12345",
+          "html_notes": "<body>Start building brand awareness.</body>",
+          "is_workspace_level": true,
+          "liked": false,
+          "name": "Grow web traffic by 30%",
+          "notes": "Start building brand awareness.",
+          "owner": "12345",
+          "resource_type": "task",
+          "start_on": "2019-09-14",
+          "status": "green",
+          "team": "12345",
+          "time_period": "12345",
+          "workspace": "12345"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"due_on\": \"2019-09-15\", \"html_notes\": \"<body>Start building brand awareness.</body>\", \"is_workspace_level\": true, \"liked\": false, \"name\": \"Grow web traffic by 30%\", \"notes\": \"Start building brand awareness.\", \"start_on\": \"2019-09-14\", \"status\": \"green\", \"followers\": [\"12345\"], \"owner\": \"12345\", \"team\": \"12345\", \"time_period\": \"12345\", \"workspace\": \"12345\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "An existing goal can be updated by making a PUT request on the URL for\nthat goal. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain unchanged.\n\nReturns the complete updated goal record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/1.0/goals/{{GOAL_GID}}",
+      "method": "PUT",
+      "name": "Update a goal",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"due_on\": \"2019-09-15\", \"html_notes\": \"<body>Start building brand awareness.</body>\", \"is_workspace_level\": true, \"liked\": false, \"name\": \"Grow web traffic by 30%\", \"notes\": \"Start building brand awareness.\", \"start_on\": \"2019-09-14\", \"status\": \"green\", \"followers\": [\"12345\"], \"owner\": \"12345\", \"team\": \"12345\", \"time_period\": \"12345\", \"workspace\": \"12345\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a goal",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "followers": [
+            "13579",
+            "321654"
+          ]
+        }
+      },
+      "body_json": {
+        "data": {
+          "followers": [
+            "13579",
+            "321654"
+          ]
+        }
+      },
+      "body_text": "{\"data\": {\"followers\": [\"13579\", \"321654\"]}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds followers to a goal. Returns the goal the followers were added to.\nEach goal can be associated with zero or more followers in the system.\nRequests to add/remove followers, if successful, will return the complete updated goal record, described above.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/goals/{{GOAL_GID}}/addFollowers",
+      "method": "POST",
+      "name": "Add a collaborator to a goal",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}/addFollowers",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"followers\": [\"13579\", \"321654\"]}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add a collaborator to a goal",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}/addFollowers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "contribution_weight": 1,
+          "insert_after": "1331",
+          "insert_before": "1331",
+          "supporting_resource": "12345"
+        }
+      },
+      "body_json": {
+        "data": {
+          "contribution_weight": 1,
+          "insert_after": "1331",
+          "insert_before": "1331",
+          "supporting_resource": "12345"
+        }
+      },
+      "body_text": "{\"data\": {\"contribution_weight\": 1, \"insert_after\": \"1331\", \"insert_before\": \"1331\", \"supporting_resource\": \"12345\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a goal relationship by adding a supporting resource to a given goal.\n\nReturns the newly created goal relationship record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/goals/{{GOAL_GID}}/addSupportingRelationship",
+      "method": "POST",
+      "name": "Add a supporting goal relationship",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}/addSupportingRelationship",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"contribution_weight\": 1, \"insert_after\": \"1331\", \"insert_before\": \"1331\", \"supporting_resource\": \"12345\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add a supporting goal relationship",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}/addSupportingRelationship"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a compact representation of all of the parent goals of a goal.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/goals/{{GOAL_GID}}/parentGoals",
+      "method": "GET",
+      "name": "Get parent goals from a goal",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}/parentGoals",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get parent goals from a goal",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}/parentGoals"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "followers": [
+            "13579",
+            "321654"
+          ]
+        }
+      },
+      "body_json": {
+        "data": {
+          "followers": [
+            "13579",
+            "321654"
+          ]
+        }
+      },
+      "body_text": "{\"data\": {\"followers\": [\"13579\", \"321654\"]}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Removes followers from a goal. Returns the goal the followers were removed from.\nEach goal can be associated with zero or more followers in the system.\nRequests to add/remove followers, if successful, will return the complete updated goal record, described above.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/goals/{{GOAL_GID}}/removeFollowers",
+      "method": "POST",
+      "name": "Remove a collaborator from a goal",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}/removeFollowers",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"followers\": [\"13579\", \"321654\"]}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove a collaborator from a goal",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}/removeFollowers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "supporting_resource": "12345"
+        }
+      },
+      "body_json": {
+        "data": {
+          "supporting_resource": "12345"
+        }
+      },
+      "body_text": "{\"data\": {\"supporting_resource\": \"12345\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Removes a goal relationship for a given parent goal.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/goals/{{GOAL_GID}}/removeSupportingRelationship",
+      "method": "POST",
+      "name": "Removes a supporting goal relationship",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}/removeSupportingRelationship",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"supporting_resource\": \"12345\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Removes a supporting goal relationship",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}/removeSupportingRelationship"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "currency_code": "EUR",
+          "current_display_value": "8.12",
+          "current_number_value": 8.12,
+          "gid": "12345",
+          "initial_number_value": 5.2,
+          "precision": 2,
+          "progress_source": "manual",
+          "resource_subtype": "number",
+          "resource_type": "task",
+          "target_number_value": 10.2,
+          "unit": "none"
+        }
+      },
+      "body_json": {
+        "data": {
+          "currency_code": "EUR",
+          "current_display_value": "8.12",
+          "current_number_value": 8.12,
+          "gid": "12345",
+          "initial_number_value": 5.2,
+          "precision": 2,
+          "progress_source": "manual",
+          "resource_subtype": "number",
+          "resource_type": "task",
+          "target_number_value": 10.2,
+          "unit": "none"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"currency_code\": \"EUR\", \"current_display_value\": \"8.12\", \"current_number_value\": 8.12, \"initial_number_value\": 5.2, \"precision\": 2, \"progress_source\": \"manual\", \"resource_subtype\": \"number\", \"target_number_value\": 10.2, \"unit\": \"none\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates and adds a goal metric to a specified goal. Note that this replaces an existing goal metric if one already exists.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/goals/{{GOAL_GID}}/setMetric",
+      "method": "POST",
+      "name": "Create a goal metric",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}/setMetric",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"currency_code\": \"EUR\", \"current_display_value\": \"8.12\", \"current_number_value\": 8.12, \"initial_number_value\": 5.2, \"precision\": 2, \"progress_source\": \"manual\", \"resource_subtype\": \"number\", \"target_number_value\": 10.2, \"unit\": \"none\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a goal metric",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}/setMetric"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "current_number_value": 8.12,
+          "gid": "12345",
+          "resource_type": "task"
+        }
+      },
+      "body_json": {
+        "data": {
+          "current_number_value": 8.12,
+          "gid": "12345",
+          "resource_type": "task"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"current_number_value\": 8.12}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates a goal's existing metric's `current_number_value` if one exists,\notherwise responds with a 400 status code.\n\nReturns the complete updated goal metric record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/goals/{{GOAL_GID}}/setMetricCurrentValue",
+      "method": "POST",
+      "name": "Update a goal metric",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/goals/{{GOAL_GID}}/setMetricCurrentValue",
+      "pathParameters": [
+        {
+          "name": "goal_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"current_number_value\": 8.12}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a goal metric",
+      "url": "https://app.asana.com/api/1.0/goals/{{GOAL_GID}}/setMetricCurrentValue"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the full record for a job.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/jobs/{{JOB_GID}}",
+      "method": "GET",
+      "name": "Get a job by id",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "job_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/jobs/{{JOB_GID}}",
+      "pathParameters": [
+        {
+          "name": "job_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a job by id",
+      "url": "https://app.asana.com/api/1.0/jobs/{{JOB_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "organization": "1331"
+        }
+      },
+      "body_json": {
+        "data": {
+          "organization": "1331"
+        }
+      },
+      "body_text": "{\"data\": {\"organization\": \"1331\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method creates a request to export an Organization. Asana will complete the export at some point after you create the request.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/organization_exports",
+      "method": "POST",
+      "name": "Create an organization export request",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "path": "/api/1.0/organization_exports",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"organization\": \"1331\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an organization export request",
+      "url": "https://app.asana.com/api/1.0/organization_exports"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns details of a previously-requested Organization export.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/organization_exports/{{ORGANIZATION_EXPORT_GID}}",
+      "method": "GET",
+      "name": "Get details on an org export request",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "organization_export_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/organization_exports/{{ORGANIZATION_EXPORT_GID}}",
+      "pathParameters": [
+        {
+          "name": "organization_export_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get details on an org export request",
+      "url": "https://app.asana.com/api/1.0/organization_exports/{{ORGANIZATION_EXPORT_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of portfolio memberships in compact representation. You must specify `portfolio`, `portfolio` and `user`, or `workspace` and `user`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/portfolio_memberships",
+      "method": "GET",
+      "name": "Get multiple portfolio memberships",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "portfolio",
+          "value": "12345"
+        },
+        {
+          "name": "workspace",
+          "value": "12345"
+        },
+        {
+          "name": "user",
+          "value": "me"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "path": "/api/1.0/portfolio_memberships",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "portfolio",
+          "value": "12345"
+        },
+        {
+          "name": "workspace",
+          "value": "12345"
+        },
+        {
+          "name": "user",
+          "value": "me"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get multiple portfolio memberships",
+      "url": "https://app.asana.com/api/1.0/portfolio_memberships"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the complete portfolio record for a single portfolio membership.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/portfolio_memberships/{{PORTFOLIO_MEMBERSHIP_GID}}",
+      "method": "GET",
+      "name": "Get a portfolio membership",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_membership_gid",
+          "value": "1331"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolio_memberships/{{PORTFOLIO_MEMBERSHIP_GID}}",
+      "pathParameters": [
+        {
+          "name": "portfolio_membership_gid",
+          "value": "1331"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a portfolio membership",
+      "url": "https://app.asana.com/api/1.0/portfolio_memberships/{{PORTFOLIO_MEMBERSHIP_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of the portfolios in compact representation that are owned by the current API user.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/portfolios",
+      "method": "GET",
+      "name": "Get multiple portfolios",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        },
+        {
+          "name": "workspace",
+          "value": "1331"
+        },
+        {
+          "name": "owner",
+          "value": "14916"
+        }
+      ],
+      "path": "/api/1.0/portfolios",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        },
+        {
+          "name": "workspace",
+          "value": "1331"
+        },
+        {
+          "name": "owner",
+          "value": "14916"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get multiple portfolios",
+      "url": "https://app.asana.com/api/1.0/portfolios"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "color": "light-green",
+          "gid": "12345",
+          "members": [
+            "52164",
+            "15363"
+          ],
+          "name": "Bug Portfolio",
+          "public": false,
+          "resource_type": "task",
+          "workspace": "167589"
+        }
+      },
+      "body_json": {
+        "data": {
+          "color": "light-green",
+          "gid": "12345",
+          "members": [
+            "52164",
+            "15363"
+          ],
+          "name": "Bug Portfolio",
+          "public": false,
+          "resource_type": "task",
+          "workspace": "167589"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"name\": \"Bug Portfolio\", \"color\": \"light-green\", \"members\": [\"52164\", \"15363\"], \"public\": false, \"workspace\": \"167589\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new portfolio in the given workspace with the supplied name.\n\nNote that portfolios created in the Asana UI may have some state\n(like the “Priority” custom field) which is automatically added\nto the portfolio when it is created. Portfolios created via our\nAPI will *not* be created with the same initial state to allow\nintegrations to create their own starting state on a portfolio.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/portfolios",
+      "method": "POST",
+      "name": "Create a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolios",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"name\": \"Bug Portfolio\", \"color\": \"light-green\", \"members\": [\"52164\", \"15363\"], \"public\": false, \"workspace\": \"167589\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "An existing portfolio can be deleted by making a DELETE request on\nthe URL for that portfolio.\n\nReturns an empty data record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/1.0/portfolios/{{PORTFOLIO_GID}}",
+      "method": "DELETE",
+      "name": "Delete a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the complete portfolio record for a single portfolio.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/portfolios/{{PORTFOLIO_GID}}",
+      "method": "GET",
+      "name": "Get a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "color": "light-green",
+          "gid": "12345",
+          "members": [
+            "52164",
+            "15363"
+          ],
+          "name": "Bug Portfolio",
+          "public": false,
+          "resource_type": "task",
+          "workspace": "167589"
+        }
+      },
+      "body_json": {
+        "data": {
+          "color": "light-green",
+          "gid": "12345",
+          "members": [
+            "52164",
+            "15363"
+          ],
+          "name": "Bug Portfolio",
+          "public": false,
+          "resource_type": "task",
+          "workspace": "167589"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"name\": \"Bug Portfolio\", \"color\": \"light-green\", \"members\": [\"52164\", \"15363\"], \"public\": false, \"workspace\": \"167589\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "An existing portfolio can be updated by making a PUT request on the URL for\nthat portfolio. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain unchanged.\n\nReturns the complete updated portfolio record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/1.0/portfolios/{{PORTFOLIO_GID}}",
+      "method": "PUT",
+      "name": "Update a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"name\": \"Bug Portfolio\", \"color\": \"light-green\", \"members\": [\"52164\", \"15363\"], \"public\": false, \"workspace\": \"167589\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "custom_field": "14916",
+          "insert_after": "1331",
+          "insert_before": "1331",
+          "is_important": true
+        }
+      },
+      "body_json": {
+        "data": {
+          "custom_field": "14916",
+          "insert_after": "1331",
+          "insert_before": "1331",
+          "is_important": true
+        }
+      },
+      "body_text": "{\"data\": {\"custom_field\": \"14916\", \"insert_after\": \"1331\", \"insert_before\": \"1331\", \"is_important\": true}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Custom fields are associated with portfolios by way of custom field settings.  This method creates a setting for the portfolio.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/portfolios/{{PORTFOLIO_GID}}/addCustomFieldSetting",
+      "method": "POST",
+      "name": "Add a custom field to a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/addCustomFieldSetting",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"custom_field\": \"14916\", \"insert_after\": \"1331\", \"insert_before\": \"1331\", \"is_important\": true}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add a custom field to a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/addCustomFieldSetting"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "insert_after": "1331",
+          "insert_before": "1331",
+          "item": "1331"
+        }
+      },
+      "body_json": {
+        "data": {
+          "insert_after": "1331",
+          "insert_before": "1331",
+          "item": "1331"
+        }
+      },
+      "body_text": "{\"data\": {\"insert_after\": \"1331\", \"insert_before\": \"1331\", \"item\": \"1331\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Add an item to a portfolio.\nReturns an empty data block.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/portfolios/{{PORTFOLIO_GID}}/addItem",
+      "method": "POST",
+      "name": "Add a portfolio item",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/addItem",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"insert_after\": \"1331\", \"insert_before\": \"1331\", \"item\": \"1331\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add a portfolio item",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/addItem"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "members": "521621,621373"
+        }
+      },
+      "body_json": {
+        "data": {
+          "members": "521621,621373"
+        }
+      },
+      "body_text": "{\"data\": {\"members\": \"521621,621373\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Adds the specified list of users as members of the portfolio.\nReturns the updated portfolio record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/portfolios/{{PORTFOLIO_GID}}/addMembers",
+      "method": "POST",
+      "name": "Add users to a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/addMembers",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"members\": \"521621,621373\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add users to a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/addMembers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a list of all of the custom fields settings on a portfolio, in compact form.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/portfolios/{{PORTFOLIO_GID}}/custom_field_settings",
+      "method": "GET",
+      "name": "Get a portfolio's custom fields",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/custom_field_settings",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a portfolio's custom fields",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/custom_field_settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a list of the items in compact form in a portfolio.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/portfolios/{{PORTFOLIO_GID}}/items",
+      "method": "GET",
+      "name": "Get portfolio items",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/items",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get portfolio items",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/items"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the compact portfolio membership records for the portfolio.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/portfolios/{{PORTFOLIO_GID}}/portfolio_memberships",
+      "method": "GET",
+      "name": "Get memberships from a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "user",
+          "value": "me"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/portfolio_memberships",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "user",
+          "value": "me"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        },
+        {
+          "name": "offset",
+          "value": "eyJ0eXAiOJiKV1iQLCJhbGciOiJIUzI1NiJ9"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get memberships from a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/portfolio_memberships"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "custom_field": "14916"
+        }
+      },
+      "body_json": {
+        "data": {
+          "custom_field": "14916"
+        }
+      },
+      "body_text": "{\"data\": {\"custom_field\": \"14916\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Removes a custom field setting from a portfolio.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/portfolios/{{PORTFOLIO_GID}}/removeCustomFieldSetting",
+      "method": "POST",
+      "name": "Remove a custom field from a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/removeCustomFieldSetting",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"custom_field\": \"14916\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove a custom field from a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/removeCustomFieldSetting"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "item": "1331"
+        }
+      },
+      "body_json": {
+        "data": {
+          "item": "1331"
+        }
+      },
+      "body_text": "{\"data\": {\"item\": \"1331\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Remove an item from a portfolio.\nReturns an empty data block.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/portfolios/{{PORTFOLIO_GID}}/removeItem",
+      "method": "POST",
+      "name": "Remove a portfolio item",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/removeItem",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"item\": \"1331\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove a portfolio item",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/removeItem"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "members": "521621,621373"
+        }
+      },
+      "body_json": {
+        "data": {
+          "members": "521621,621373"
+        }
+      },
+      "body_text": "{\"data\": {\"members\": \"521621,621373\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Removes the specified list of users from members of the portfolio.\nReturns the updated portfolio record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/1.0/portfolios/{{PORTFOLIO_GID}}/removeMembers",
+      "method": "POST",
+      "name": "Remove users from a portfolio",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/portfolios/{{PORTFOLIO_GID}}/removeMembers",
+      "pathParameters": [
+        {
+          "name": "portfolio_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"members\": \"521621,621373\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove users from a portfolio",
+      "url": "https://app.asana.com/api/1.0/portfolios/{{PORTFOLIO_GID}}/removeMembers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a specific, existing project brief.\n\nReturns an empty data record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}",
+      "method": "DELETE",
+      "name": "Delete a project brief",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project_brief_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}",
+      "pathParameters": [
+        {
+          "name": "project_brief_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a project brief",
+      "url": "https://app.asana.com/api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the full record for a project brief.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}",
+      "method": "GET",
+      "name": "Get a project brief",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project_brief_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}",
+      "pathParameters": [
+        {
+          "name": "project_brief_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a project brief",
+      "url": "https://app.asana.com/api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "ASANA_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "data": {
+          "gid": "12345",
+          "html_text": "<body>This is a <strong>project brief</strong>.</body>",
+          "resource_type": "task",
+          "text": "This is a project brief.",
+          "title": "Stuff to buy — Project Brief"
+        }
+      },
+      "body_json": {
+        "data": {
+          "gid": "12345",
+          "html_text": "<body>This is a <strong>project brief</strong>.</body>",
+          "resource_type": "task",
+          "text": "This is a project brief.",
+          "title": "Stuff to buy — Project Brief"
+        }
+      },
+      "body_text": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"html_text\": \"<body>This is a <strong>project brief</strong>.</body>\", \"title\": \"Stuff to buy — Project Brief\", \"text\": \"This is a project brief.\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "An existing project brief can be updated by making a PUT request on the URL for\nthat project brief. Only the fields provided in the `data` block will be updated;\nany unspecified fields will remain unchanged.\n\nReturns the complete updated project brief record.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ASANA_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}",
+      "method": "PUT",
+      "name": "Update a project brief",
+      "note": "Replace {{ASANA_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "project_brief_gid",
+          "value": "12345"
+        },
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "path": "/api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}",
+      "pathParameters": [
+        {
+          "name": "project_brief_gid",
+          "value": "12345"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "opt_pretty",
+          "value": "True"
+        },
+        {
+          "name": "opt_fields",
+          "value": "['followers', 'assignee']"
+        }
+      ],
+      "requestBodyExample": "{\"data\": {\"gid\": \"12345\", \"resource_type\": \"task\", \"html_text\": \"<body>This is a <strong>project brief</strong>.</body>\", \"title\": \"Stuff to buy — Project Brief\", \"text\": \"This is a project brief.\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a project brief",
+      "url": "https://app.asana.com/api/1.0/project_briefs/{{PROJECT_BRIEF_GID}}"
+    }
+  ]
+}

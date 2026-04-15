@@ -1,0 +1,649 @@
+{
+  "id": "pinecone.io",
+  "info": {
+    "base_url": "https://controller.{environment}.pinecone.io",
+    "description": "The Upsert operation writes vectors into a namespace. If a new value is upserted for an existing vector id, it will overwrite the previous value.",
+    "source": "apis.guru",
+    "tags": [
+      "embedding"
+    ],
+    "title": "Pinecone API",
+    "version": "20230401.1"
+  },
+  "requests": [
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "List collections",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/collections"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "name": "example",
+        "source": "example"
+      },
+      "body_json": {
+        "name": "example",
+        "source": "example"
+      },
+      "body_text": "{\"name\": \"example\", \"source\": \"example\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Create collection",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/collections"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "DELETE",
+      "name": "Delete Collection",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/collections/{{COLLECTION_NAME}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Describe collection",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/collections/{{COLLECTION_NAME}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "filter": {
+          "hello": [
+            "alpha",
+            "bravo"
+          ]
+        }
+      },
+      "body_json": {
+        "filter": {
+          "hello": [
+            "alpha",
+            "bravo"
+          ]
+        }
+      },
+      "body_text": "{\"filter\": {\"hello\": [\"alpha\", \"bravo\"]}}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Describe Index Stats",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/describe_index_stats"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "List indexes",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/indexes"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "dimension": 0,
+        "metadata_config": {
+          "indexed": [
+            "hello"
+          ]
+        },
+        "metric": "euclidean",
+        "name": "example",
+        "pod_type": "s1.x1",
+        "pods": 1,
+        "replicas": 1,
+        "source_collection": "example"
+      },
+      "body_json": {
+        "dimension": 0,
+        "metadata_config": {
+          "indexed": [
+            "hello"
+          ]
+        },
+        "metric": "euclidean",
+        "name": "example",
+        "pod_type": "s1.x1",
+        "pods": 1,
+        "replicas": 1,
+        "source_collection": "example"
+      },
+      "body_text": "{\"dimension\": 0, \"metadata_config\": {\"indexed\": [\"hello\"]}, \"metric\": \"euclidean\", \"name\": \"example\", \"pod_type\": \"s1.x1\", \"pods\": 1, \"replicas\": 1, \"source_collection\": \"example\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Create index",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/indexes"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "DELETE",
+      "name": "Delete Index",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/indexes/{{INDEX_NAME}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Describe index",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/indexes/{{INDEX_NAME}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "pod_type": "s1.x1",
+        "replicas": 1
+      },
+      "body_json": {
+        "pod_type": "s1.x1",
+        "replicas": 1
+      },
+      "body_text": "{\"pod_type\": \"s1.x1\", \"replicas\": 1}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "PATCH",
+      "name": "Configure index",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/indexes/{{INDEX_NAME}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "filter": {
+          "hello": [
+            "alpha",
+            "bravo"
+          ]
+        },
+        "id": "vector-0",
+        "includeMetadata": false,
+        "includeValues": false,
+        "namespace": "namespace-0",
+        "sparseVector": {
+          "indices": [
+            1
+          ],
+          "values": [
+            2
+          ]
+        },
+        "topK": 100,
+        "vector": [
+          1,
+          2,
+          3
+        ]
+      },
+      "body_json": {
+        "filter": {
+          "hello": [
+            "alpha",
+            "bravo"
+          ]
+        },
+        "id": "vector-0",
+        "includeMetadata": false,
+        "includeValues": false,
+        "namespace": "namespace-0",
+        "sparseVector": {
+          "indices": [
+            1
+          ],
+          "values": [
+            2
+          ]
+        },
+        "topK": 100,
+        "vector": [
+          1,
+          2,
+          3
+        ]
+      },
+      "body_text": "{\"filter\": {\"hello\": [\"alpha\", \"bravo\"]}, \"id\": \"vector-0\", \"includeMetadata\": false, \"includeValues\": false, \"namespace\": \"namespace-0\", \"sparseVector\": {\"indices\": [1], \"values\": [2]}, \"topK\": 100, \"vector\": [1, 2, 3]}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Query",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/query"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "deleteAll": false,
+        "filter": {
+          "hello": [
+            "alpha",
+            "bravo"
+          ]
+        },
+        "ids": [
+          "vector-0"
+        ],
+        "namespace": "namespace-0"
+      },
+      "body_json": {
+        "deleteAll": false,
+        "filter": {
+          "hello": [
+            "alpha",
+            "bravo"
+          ]
+        },
+        "ids": [
+          "vector-0"
+        ],
+        "namespace": "namespace-0"
+      },
+      "body_text": "{\"deleteAll\": false, \"filter\": {\"hello\": [\"alpha\", \"bravo\"]}, \"ids\": [\"vector-0\"], \"namespace\": \"namespace-0\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Delete",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/vectors/delete"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "ids": [
+          "vector-0"
+        ],
+        "namespace": "namespace-0"
+      },
+      "body_json": {
+        "ids": [
+          "vector-0"
+        ],
+        "namespace": "namespace-0"
+      },
+      "body_text": "{\"ids\": [\"vector-0\"], \"namespace\": \"namespace-0\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Fetch",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/vectors/fetch"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "id": "",
+        "namespace": "namespace-0",
+        "setMetadata": {
+          "hello": "alpha"
+        },
+        "sparseValues": {
+          "indices": [
+            1
+          ],
+          "values": [
+            2
+          ]
+        },
+        "values": [
+          1,
+          2,
+          3
+        ]
+      },
+      "body_json": {
+        "id": "",
+        "namespace": "namespace-0",
+        "setMetadata": {
+          "hello": "alpha"
+        },
+        "sparseValues": {
+          "indices": [
+            1
+          ],
+          "values": [
+            2
+          ]
+        },
+        "values": [
+          1,
+          2,
+          3
+        ]
+      },
+      "body_text": "{\"id\": \"\", \"namespace\": \"namespace-0\", \"setMetadata\": {\"hello\": \"alpha\"}, \"sparseValues\": {\"indices\": [1], \"values\": [2]}, \"values\": [1, 2, 3]}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Fetch",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/vectors/update"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "namespace": "namespace-0",
+        "vectors": [
+          {
+            "id": "vector-0",
+            "metadata": {
+              "hello": "alpha"
+            },
+            "sparseValues": {
+              "indices": [
+                1
+              ],
+              "values": [
+                2
+              ]
+            },
+            "values": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "body_json": {
+        "namespace": "namespace-0",
+        "vectors": [
+          {
+            "id": "vector-0",
+            "metadata": {
+              "hello": "alpha"
+            },
+            "sparseValues": {
+              "indices": [
+                1
+              ],
+              "values": [
+                2
+              ]
+            },
+            "values": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "body_text": "{\"namespace\": \"namespace-0\", \"vectors\": [{\"id\": \"vector-0\", \"metadata\": {\"hello\": \"alpha\"}, \"sparseValues\": {\"indices\": [1], \"values\": [2]}, \"values\": [1, 2, 3]}]}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{PINECONE_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{PINECONE_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Upsert",
+      "note": "Replace {{PINECONE_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://controller.{{ENVIRONMENT}}.pinecone.io/vectors/upsert"
+    }
+  ]
+}

@@ -1,0 +1,2665 @@
+{
+  "id": "digitalocean.com",
+  "info": {
+    "base_url": "https://api.digitalocean.com",
+    "description": "To retrieve a list of all invoices, send a GET request to `/v2/customers/my/invoices`.",
+    "source": "apis.guru",
+    "tags": [
+      "finance",
+      "voice"
+    ],
+    "title": "DigitalOcean API",
+    "version": "2.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To list all available 1-Click applications, send a GET request to `/v2/1-clicks`. The `type` may\nbe provided as query paramater in order to restrict results to a certain type of 1-Click, for\nexample: `/v2/1-clicks?type=droplet`. Current supported types are `kubernetes` and `droplet`.\n\nThe response will be a JSON object with a key called `1_clicks`. This will be set to an array of\n1-Click application data, each of which will contain the the slug and type for the 1-Click.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/1-clicks",
+      "method": "GET",
+      "name": "List 1-Click Applications",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "type",
+          "value": "kubernetes"
+        }
+      ],
+      "path": "/v2/1-clicks",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "type",
+          "value": "kubernetes"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List 1-Click Applications",
+      "url": "https://api.digitalocean.com/v2/1-clicks"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "addon_slugs": [
+          "kube-state-metrics",
+          "loki"
+        ],
+        "cluster_uuid": "50a994b6-c303-438f-9495-7e896cfe6b08"
+      },
+      "body_json": {
+        "addon_slugs": [
+          "kube-state-metrics",
+          "loki"
+        ],
+        "cluster_uuid": "50a994b6-c303-438f-9495-7e896cfe6b08"
+      },
+      "body_text": "{\"addon_slugs\": [\"kube-state-metrics\", \"loki\"], \"cluster_uuid\": \"50a994b6-c303-438f-9495-7e896cfe6b08\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To install a Kubernetes 1-Click application on a cluster, send a POST request to\n`/v2/1-clicks/kubernetes`. The `addon_slugs` and `cluster_uuid` must be provided as body\nparameter in order to specify which 1-Click application(s) to install. To list all available\n1-Click Kubernetes applications, send a request to `/v2/1-clicks?type=kubernetes`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/1-clicks/kubernetes",
+      "method": "POST",
+      "name": "Install Kubernetes 1-Click Applications",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/1-clicks/kubernetes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"addon_slugs\": [\"kube-state-metrics\", \"loki\"], \"cluster_uuid\": \"50a994b6-c303-438f-9495-7e896cfe6b08\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Install Kubernetes 1-Click Applications",
+      "url": "https://api.digitalocean.com/v2/1-clicks/kubernetes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To show information about the current user account, send a GET request to `/v2/account`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/account",
+      "method": "GET",
+      "name": "Get User Information",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/account",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get User Information",
+      "url": "https://api.digitalocean.com/v2/account"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To list all of the keys in your account, send a GET request to `/v2/account/keys`. The response will be a JSON object with a key set to `ssh_keys`. The value of this will be an array of ssh_key objects, each of which contains the standard ssh_key attributes.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/account/keys",
+      "method": "GET",
+      "name": "List All SSH Keys",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "per_page",
+          "value": "2"
+        },
+        {
+          "name": "page",
+          "value": "1"
+        }
+      ],
+      "path": "/v2/account/keys",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "per_page",
+          "value": "2"
+        },
+        {
+          "name": "page",
+          "value": "1"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List All SSH Keys",
+      "url": "https://api.digitalocean.com/v2/account/keys"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To add a new SSH public key to your DigitalOcean account, send a POST request to `/v2/account/keys`. Set the `name` attribute to the name you wish to use and the `public_key` attribute to the full public key you are adding.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "POST /v2/account/keys",
+      "method": "POST",
+      "name": "Create a New SSH Key",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/account/keys",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a New SSH Key",
+      "url": "https://api.digitalocean.com/v2/account/keys"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To destroy a public SSH key that you have in your account, send a DELETE request to `/v2/account/keys/$KEY_ID` or `/v2/account/keys/$KEY_FINGERPRINT`.\nA 204 status will be returned, indicating that the action was successful and that the response body is empty.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/account/keys/{{SSH_KEY_IDENTIFIER}}",
+      "method": "DELETE",
+      "name": "Delete an SSH Key",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/account/keys/{{SSH_KEY_IDENTIFIER}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an SSH Key",
+      "url": "https://api.digitalocean.com/v2/account/keys/{{SSH_KEY_IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To get information about a key, send a GET request to `/v2/account/keys/$KEY_ID` or `/v2/account/keys/$KEY_FINGERPRINT`.\nThe response will be a JSON object with the key `ssh_key` and value an ssh_key object which contains the standard ssh_key attributes.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/account/keys/{{SSH_KEY_IDENTIFIER}}",
+      "method": "GET",
+      "name": "Retrieve an Existing SSH Key",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ssh_key_identifier",
+          "value": "512189"
+        }
+      ],
+      "path": "/v2/account/keys/{{SSH_KEY_IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "ssh_key_identifier",
+          "value": "512189"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Existing SSH Key",
+      "url": "https://api.digitalocean.com/v2/account/keys/{{SSH_KEY_IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "name": {}
+      },
+      "body_json": {
+        "name": {}
+      },
+      "body_text": "{\"name\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To update the name of an SSH key, send a PUT request to either `/v2/account/keys/$SSH_KEY_ID` or `/v2/account/keys/$SSH_KEY_FINGERPRINT`. Set the `name` attribute to the new name you want to use.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/account/keys/{{SSH_KEY_IDENTIFIER}}",
+      "method": "PUT",
+      "name": "Update an SSH Key's Name",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/account/keys/{{SSH_KEY_IDENTIFIER}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an SSH Key's Name",
+      "url": "https://api.digitalocean.com/v2/account/keys/{{SSH_KEY_IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This will be the entire list of actions taken on your account, so it will be quite large. As with any large collection returned by the API, the results will be paginated with only 20 on each page by default.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/actions",
+      "method": "GET",
+      "name": "List All Actions",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/actions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List All Actions",
+      "url": "https://api.digitalocean.com/v2/actions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To retrieve a specific action object, send a GET request to `/v2/actions/$ACTION_ID`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/actions/{{ACTION_ID}}",
+      "method": "GET",
+      "name": "Retrieve an Existing Action",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "action_id",
+          "value": "36804636"
+        }
+      ],
+      "path": "/v2/actions/{{ACTION_ID}}",
+      "pathParameters": [
+        {
+          "name": "action_id",
+          "value": "36804636"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Existing Action",
+      "url": "https://api.digitalocean.com/v2/actions/{{ACTION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all apps on your account. Information about the current active deployment as well as any in progress ones will also be included for each app.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps",
+      "method": "GET",
+      "name": "List All Apps",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "with_projects",
+          "value": "True"
+        }
+      ],
+      "path": "/v2/apps",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "with_projects",
+          "value": "True"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List All Apps",
+      "url": "https://api.digitalocean.com/v2/apps"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "project_id": "",
+        "spec": {}
+      },
+      "body_json": {
+        "project_id": "",
+        "spec": {}
+      },
+      "body_text": "{\"project_id\": \"\", \"spec\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new app by submitting an app specification. For documentation on app specifications (`AppSpec` objects), please refer to [the product documentation](https://docs.digitalocean.com/products/app-platform/reference/app-spec/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/apps",
+      "method": "POST",
+      "name": "Create a New App",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "path": "/v2/apps",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"project_id\": \"\", \"spec\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a New App",
+      "url": "https://api.digitalocean.com/v2/apps"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "app_ids": [
+          "4f6c71e2-1e90-4762-9fee-6cc4a0a9f2cf",
+          "c2a93513-8d9b-4223-9d61-5e7272c81cf5"
+        ],
+        "date": "2023-01-17T00:00:00Z"
+      },
+      "body_json": {
+        "app_ids": [
+          "4f6c71e2-1e90-4762-9fee-6cc4a0a9f2cf",
+          "c2a93513-8d9b-4223-9d61-5e7272c81cf5"
+        ],
+        "date": "2023-01-17T00:00:00Z"
+      },
+      "body_text": "{\"app_ids\": [\"4f6c71e2-1e90-4762-9fee-6cc4a0a9f2cf\", \"c2a93513-8d9b-4223-9d61-5e7272c81cf5\"], \"date\": \"2023-01-17T00:00:00Z\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Retrieve daily bandwidth usage metrics for multiple apps.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/apps/metrics/bandwidth_daily",
+      "method": "POST",
+      "name": "Retrieve Multiple Apps' Daily Bandwidth Metrics",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/apps/metrics/bandwidth_daily",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"app_ids\": [\"4f6c71e2-1e90-4762-9fee-6cc4a0a9f2cf\", \"c2a93513-8d9b-4223-9d61-5e7272c81cf5\"], \"date\": \"2023-01-17T00:00:00Z\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Multiple Apps' Daily Bandwidth Metrics",
+      "url": "https://api.digitalocean.com/v2/apps/metrics/bandwidth_daily"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "app_id": "b6bdf840-2854-4f87-a36c-5f231c617c84",
+        "spec": {}
+      },
+      "body_json": {
+        "app_id": "b6bdf840-2854-4f87-a36c-5f231c617c84",
+        "spec": {}
+      },
+      "body_text": "{\"app_id\": \"b6bdf840-2854-4f87-a36c-5f231c617c84\", \"spec\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To propose and validate a spec for a new or existing app, send a POST request to the `/v2/apps/propose` endpoint. The request returns some information about the proposed app, including app cost and upgrade cost. If an existing app ID is specified, the app spec is treated as a proposed update to the existing app.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/apps/propose",
+      "method": "POST",
+      "name": "Propose an App Spec",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/apps/propose",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"app_id\": \"b6bdf840-2854-4f87-a36c-5f231c617c84\", \"spec\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Propose an App Spec",
+      "url": "https://api.digitalocean.com/v2/apps/propose"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all regions supported by App Platform.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/regions",
+      "method": "GET",
+      "name": "List App Regions",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/apps/regions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List App Regions",
+      "url": "https://api.digitalocean.com/v2/apps/regions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all app tiers.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/tiers",
+      "method": "GET",
+      "name": "List App Tiers",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/apps/tiers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List App Tiers",
+      "url": "https://api.digitalocean.com/v2/apps/tiers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all instance sizes for `service`, `worker`, and `job` components.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/tiers/instance_sizes",
+      "method": "GET",
+      "name": "List Instance Sizes",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/apps/tiers/instance_sizes",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Instance Sizes",
+      "url": "https://api.digitalocean.com/v2/apps/tiers/instance_sizes"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve information about a specific instance size for `service`, `worker`, and `job` components.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/tiers/instance_sizes/{{SLUG}}",
+      "method": "GET",
+      "name": "Retrieve an Instance Size",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "slug",
+          "value": "basic-xxs"
+        }
+      ],
+      "path": "/v2/apps/tiers/instance_sizes/{{SLUG}}",
+      "pathParameters": [
+        {
+          "name": "slug",
+          "value": "basic-xxs"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Instance Size",
+      "url": "https://api.digitalocean.com/v2/apps/tiers/instance_sizes/{{SLUG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve information about a specific app tier.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/tiers/{{SLUG}}",
+      "method": "GET",
+      "name": "Retrieve an App Tier",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "slug",
+          "value": "basic"
+        }
+      ],
+      "path": "/v2/apps/tiers/{{SLUG}}",
+      "pathParameters": [
+        {
+          "name": "slug",
+          "value": "basic"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an App Tier",
+      "url": "https://api.digitalocean.com/v2/apps/tiers/{{SLUG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List alerts associated to the app and any components. This includes configuration information about the alerts including emails, slack webhooks, and triggering events or conditions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{APP_ID}}/alerts",
+      "method": "GET",
+      "name": "List all app alerts",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/alerts",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List all app alerts",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/alerts"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "emails": [
+          "sammy@digitalocean.com"
+        ],
+        "slack_webhooks": [
+          {}
+        ]
+      },
+      "body_json": {
+        "emails": [
+          "sammy@digitalocean.com"
+        ],
+        "slack_webhooks": [
+          {}
+        ]
+      },
+      "body_text": "{\"emails\": [\"sammy@digitalocean.com\"], \"slack_webhooks\": [{}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates the emails and slack webhook destinations for app alerts. Emails must be associated to a user with access to the app.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/apps/{{APP_ID}}/alerts/{{ALERT_ID}}/destinations",
+      "method": "POST",
+      "name": "Update destinations for alerts",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "alert_id",
+          "value": "5a624ab5-dd58-4b39-b7dd-8b7c36e8a91d"
+        }
+      ],
+      "path": "/v2/apps/{{APP_ID}}/alerts/{{ALERT_ID}}/destinations",
+      "pathParameters": [
+        {
+          "name": "alert_id",
+          "value": "5a624ab5-dd58-4b39-b7dd-8b7c36e8a91d"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"emails\": [\"sammy@digitalocean.com\"], \"slack_webhooks\": [{}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update destinations for alerts",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/alerts/{{ALERT_ID}}/destinations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the logs of the active deployment if one exists. The response will include links to either real-time logs of an in-progress or active deployment or archived logs of a past deployment. Note log_type=BUILD logs will return logs associated with the current active deployment (being served). To view build logs associated with in-progress build, the query must explicitly reference the deployment id.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{APP_ID}}/components/{{COMPONENT_NAME}}/logs",
+      "method": "GET",
+      "name": "Retrieve Active Deployment Logs",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "app_id",
+          "value": "4f6c71e2-1e90-4762-9fee-6cc4a0a9f2cf"
+        },
+        {
+          "name": "component_name",
+          "value": "component"
+        },
+        {
+          "name": "follow",
+          "value": "True"
+        },
+        {
+          "name": "type",
+          "value": "BUILD"
+        },
+        {
+          "name": "pod_connection_timeout",
+          "value": "3m"
+        }
+      ],
+      "path": "/v2/apps/{{APP_ID}}/components/{{COMPONENT_NAME}}/logs",
+      "pathParameters": [
+        {
+          "name": "app_id",
+          "value": "4f6c71e2-1e90-4762-9fee-6cc4a0a9f2cf"
+        },
+        {
+          "name": "component_name",
+          "value": "component"
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "follow",
+          "value": "True"
+        },
+        {
+          "name": "type",
+          "value": "BUILD"
+        },
+        {
+          "name": "pod_connection_timeout",
+          "value": "3m"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Active Deployment Logs",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/components/{{COMPONENT_NAME}}/logs"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all deployments of an app.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{APP_ID}}/deployments",
+      "method": "GET",
+      "name": "List App Deployments",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/deployments",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List App Deployments",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/deployments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "force_build": true
+      },
+      "body_json": {
+        "force_build": true
+      },
+      "body_text": "{\"force_build\": true}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creating an app deployment will pull the latest changes from your repository and schedule a new deployment for your app.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/apps/{{APP_ID}}/deployments",
+      "method": "POST",
+      "name": "Create an App Deployment",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/deployments",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"force_build\": true}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create an App Deployment",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/deployments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve information about an app deployment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}",
+      "method": "GET",
+      "name": "Retrieve an App Deployment",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "deployment_id",
+          "value": "3aa4d20e-5527-4c00-b496-601fbd22520a"
+        }
+      ],
+      "path": "/v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "deployment_id",
+          "value": "3aa4d20e-5527-4c00-b496-601fbd22520a"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an App Deployment",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Immediately cancel an in-progress deployment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "POST /v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/cancel",
+      "method": "POST",
+      "name": "Cancel a Deployment",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/cancel",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cancel a Deployment",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/cancel"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the logs of a past, in-progress, or active deployment. The response will include links to either real-time logs of an in-progress or active deployment or archived logs of a past deployment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/components/{{COMPONENT_NAME}}/logs",
+      "method": "GET",
+      "name": "Retrieve Deployment Logs",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/components/{{COMPONENT_NAME}}/logs",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Deployment Logs",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/components/{{COMPONENT_NAME}}/logs"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the logs of a past, in-progress, or active deployment. If a component name is specified, the logs will be limited to only that component. The response will include links to either real-time logs of an in-progress or active deployment or archived logs of a past deployment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/logs",
+      "method": "GET",
+      "name": "Retrieve Aggregate Deployment Logs",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/logs",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Aggregate Deployment Logs",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/deployments/{{DEPLOYMENT_ID}}/logs"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the logs of the active deployment if one exists. The response will include links to either real-time logs of an in-progress or active deployment or archived logs of a past deployment. Note log_type=BUILD logs will return logs associated with the current active deployment (being served). To view build logs associated with in-progress build, the query must explicitly reference the deployment id.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{APP_ID}}/logs",
+      "method": "GET",
+      "name": "Retrieve Active Deployment Aggregate Logs",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/logs",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve Active Deployment Aggregate Logs",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/logs"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve daily bandwidth usage metrics for a single app.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{APP_ID}}/metrics/bandwidth_daily",
+      "method": "GET",
+      "name": "Retrieve App Daily Bandwidth Metrics",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "date",
+          "value": "2023-01-17T00:00:00Z"
+        }
+      ],
+      "path": "/v2/apps/{{APP_ID}}/metrics/bandwidth_daily",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "date",
+          "value": "2023-01-17T00:00:00Z"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve App Daily Bandwidth Metrics",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/metrics/bandwidth_daily"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "deployment_id": "3aa4d20e-5527-4c00-b496-601fbd22520a",
+        "skip_pin": false
+      },
+      "body_json": {
+        "deployment_id": "3aa4d20e-5527-4c00-b496-601fbd22520a",
+        "skip_pin": false
+      },
+      "body_text": "{\"deployment_id\": \"3aa4d20e-5527-4c00-b496-601fbd22520a\", \"skip_pin\": false}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Rollback an app to a previous deployment. A new deployment will be created to perform the rollback.\nThe app will be pinned to the rollback deployment preventing any new deployments from being created,\neither manually or through Auto Deploy on Push webhooks. To resume deployments, the rollback must be\neither committed or reverted.\n\nIt is recommended to use the Validate App Rollback endpoint to double check if the rollback is\nvalid and if there are any warnings.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/apps/{{APP_ID}}/rollback",
+      "method": "POST",
+      "name": "Rollback App",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/rollback",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"deployment_id\": \"3aa4d20e-5527-4c00-b496-601fbd22520a\", \"skip_pin\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Rollback App",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/rollback"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Commit an app rollback. This action permanently applies the rollback and unpins the app to resume new deployments.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "POST /v2/apps/{{APP_ID}}/rollback/commit",
+      "method": "POST",
+      "name": "Commit App Rollback",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/rollback/commit",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Commit App Rollback",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/rollback/commit"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Revert an app rollback. This action reverts the active rollback by creating a new deployment from the\nlatest app spec prior to the rollback and unpins the app to resume new deployments.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "POST /v2/apps/{{APP_ID}}/rollback/revert",
+      "method": "POST",
+      "name": "Revert App Rollback",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/rollback/revert",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Revert App Rollback",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/rollback/revert"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Check whether an app can be rolled back to a specific deployment. This endpoint can also be used\nto check if there are any warnings or validation conditions that will cause the rollback to proceed\nunder unideal circumstances. For example, if a component must be rebuilt as part of the rollback\ncausing it to take longer than usual.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "POST /v2/apps/{{APP_ID}}/rollback/validate",
+      "method": "POST",
+      "name": "Validate App Rollback",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{APP_ID}}/rollback/validate",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Validate App Rollback",
+      "url": "https://api.digitalocean.com/v2/apps/{{APP_ID}}/rollback/validate"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an existing app. Once deleted, all active deployments will be permanently shut down and the app deleted. If needed, be sure to back up your app specification so that you may re-create it at a later time.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/apps/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete an App",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "4f6c71e2-1e90-4762-9fee-6cc4a0a9f2cf"
+        }
+      ],
+      "path": "/v2/apps/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "4f6c71e2-1e90-4762-9fee-6cc4a0a9f2cf"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an App",
+      "url": "https://api.digitalocean.com/v2/apps/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve details about an existing app by either its ID or name. To retrieve an app by its name, do not include an ID in the request path. Information about the current active deployment as well as any in progress ones will also be included in the response.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/apps/{{ID}}",
+      "method": "GET",
+      "name": "Retrieve an Existing App",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "name",
+          "value": "myApp"
+        }
+      ],
+      "path": "/v2/apps/{{ID}}",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "name",
+          "value": "myApp"
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Existing App",
+      "url": "https://api.digitalocean.com/v2/apps/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "spec": {}
+      },
+      "body_json": {
+        "spec": {}
+      },
+      "body_text": "{\"spec\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update an existing app by submitting a new app specification. For documentation on app specifications (`AppSpec` objects), please refer to [the product documentation](https://docs.digitalocean.com/products/app-platform/reference/app-spec/).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/apps/{{ID}}",
+      "method": "PUT",
+      "name": "Update an App",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/apps/{{ID}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"spec\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an App",
+      "url": "https://api.digitalocean.com/v2/apps/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To list all of the CDN endpoints available on your account, send a GET request to `/v2/cdn/endpoints`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/cdn/endpoints",
+      "method": "GET",
+      "name": "List All CDN Endpoints",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/cdn/endpoints",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List All CDN Endpoints",
+      "url": "https://api.digitalocean.com/v2/cdn/endpoints"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To create a new CDN endpoint, send a POST request to `/v2/cdn/endpoints`. The\norigin attribute must be set to the fully qualified domain name (FQDN) of a\nDigitalOcean Space. Optionally, the TTL may be configured by setting the `ttl`\nattribute.\n\nA custom subdomain may be configured by specifying the `custom_domain` and\n`certificate_id` attributes.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "POST /v2/cdn/endpoints",
+      "method": "POST",
+      "name": "Create a New CDN Endpoint",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/cdn/endpoints",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a New CDN Endpoint",
+      "url": "https://api.digitalocean.com/v2/cdn/endpoints"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To delete a specific CDN endpoint, send a DELETE request to\n`/v2/cdn/endpoints/$ENDPOINT_ID`.\n\nA status of 204 will be given. This indicates that the request was processed\nsuccessfully, but that no response body is needed.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/cdn/endpoints/{{CDN_ID}}",
+      "method": "DELETE",
+      "name": "Delete a CDN Endpoint",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/cdn/endpoints/{{CDN_ID}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a CDN Endpoint",
+      "url": "https://api.digitalocean.com/v2/cdn/endpoints/{{CDN_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To show information about an existing CDN endpoint, send a GET request to `/v2/cdn/endpoints/$ENDPOINT_ID`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/cdn/endpoints/{{CDN_ID}}",
+      "method": "GET",
+      "name": "Retrieve an Existing CDN Endpoint",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "cdn_id",
+          "value": "19f06b6a-3ace-4315-b086-499a0e521b76"
+        }
+      ],
+      "path": "/v2/cdn/endpoints/{{CDN_ID}}",
+      "pathParameters": [
+        {
+          "name": "cdn_id",
+          "value": "19f06b6a-3ace-4315-b086-499a0e521b76"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Existing CDN Endpoint",
+      "url": "https://api.digitalocean.com/v2/cdn/endpoints/{{CDN_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "certificate_id": "892071a0-bb95-49bc-8021-3afd67a210bf",
+        "custom_domain": "static.example.com",
+        "ttl": 3600
+      },
+      "body_json": {
+        "certificate_id": "892071a0-bb95-49bc-8021-3afd67a210bf",
+        "custom_domain": "static.example.com",
+        "ttl": 3600
+      },
+      "body_text": "{\"certificate_id\": \"892071a0-bb95-49bc-8021-3afd67a210bf\", \"custom_domain\": \"static.example.com\", \"ttl\": 3600}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To update the TTL, certificate ID, or the FQDN of the custom subdomain for\nan existing CDN endpoint, send a PUT request to\n`/v2/cdn/endpoints/$ENDPOINT_ID`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/cdn/endpoints/{{CDN_ID}}",
+      "method": "PUT",
+      "name": "Update a CDN Endpoint",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/cdn/endpoints/{{CDN_ID}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"certificate_id\": \"892071a0-bb95-49bc-8021-3afd67a210bf\", \"custom_domain\": \"static.example.com\", \"ttl\": 3600}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a CDN Endpoint",
+      "url": "https://api.digitalocean.com/v2/cdn/endpoints/{{CDN_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "files": [
+          "path/to/image.png",
+          "path/to/css/*"
+        ]
+      },
+      "body_json": {
+        "files": [
+          "path/to/image.png",
+          "path/to/css/*"
+        ]
+      },
+      "body_text": "{\"files\": [\"path/to/image.png\", \"path/to/css/*\"]}",
+      "body_type": "json",
+      "contentType": "",
+      "content_type": "",
+      "description": "To purge cached content from a CDN endpoint, send a DELETE request to\n`/v2/cdn/endpoints/$ENDPOINT_ID/cache`. The body of the request should include\na `files` attribute containing a list of cached file paths to be purged. A\npath may be for a single file or may contain a wildcard (`*`) to recursively\npurge all files under a directory. When only a wildcard is provided, all\ncached files will be purged. There is a rate limit of 50 files per 20 seconds \nthat can be purged.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/cdn/endpoints/{{CDN_ID}}/cache",
+      "method": "DELETE",
+      "name": "Purge the Cache for an Existing CDN Endpoint",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/cdn/endpoints/{{CDN_ID}}/cache",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"files\": [\"path/to/image.png\", \"path/to/css/*\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Purge the Cache for an Existing CDN Endpoint",
+      "url": "https://api.digitalocean.com/v2/cdn/endpoints/{{CDN_ID}}/cache"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To list all of the certificates available on your account, send a GET request to `/v2/certificates`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/certificates",
+      "method": "GET",
+      "name": "List All Certificates",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/certificates",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List All Certificates",
+      "url": "https://api.digitalocean.com/v2/certificates"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {
+        "dns_names": [
+          "www.example.com",
+          "example.com"
+        ],
+        "name": "web-cert-01",
+        "type": "lets_encrypt"
+      },
+      "body_json": {
+        "dns_names": [
+          "www.example.com",
+          "example.com"
+        ],
+        "name": "web-cert-01",
+        "type": "lets_encrypt"
+      },
+      "body_text": "{\"name\": \"web-cert-01\", \"type\": \"lets_encrypt\", \"dns_names\": [\"www.example.com\", \"example.com\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "To upload new SSL certificate which you have previously generated, send a POST\nrequest to `/v2/certificates`.\n\nWhen uploading a user-generated certificate, the `private_key`,\n`leaf_certificate`, and optionally the `certificate_chain` attributes should\nbe provided. The type must be set to `custom`.\n\nWhen using Let's Encrypt to create a certificate, the `dns_names` attribute\nmust be provided, and the type must be set to `lets_encrypt`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/certificates",
+      "method": "POST",
+      "name": "Create a New Certificate",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/certificates",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"web-cert-01\", \"type\": \"lets_encrypt\", \"dns_names\": [\"www.example.com\", \"example.com\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a New Certificate",
+      "url": "https://api.digitalocean.com/v2/certificates"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To delete a specific certificate, send a DELETE request to\n`/v2/certificates/$CERTIFICATE_ID`.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /v2/certificates/{{CERTIFICATE_ID}}",
+      "method": "DELETE",
+      "name": "Delete a Certificate",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [],
+      "path": "/v2/certificates/{{CERTIFICATE_ID}}",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a Certificate",
+      "url": "https://api.digitalocean.com/v2/certificates/{{CERTIFICATE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To show information about an existing certificate, send a GET request to `/v2/certificates/$CERTIFICATE_ID`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/certificates/{{CERTIFICATE_ID}}",
+      "method": "GET",
+      "name": "Retrieve an Existing Certificate",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "certificate_id",
+          "value": "4de7ac8b-495b-4884-9a69-1050c6793cd6"
+        }
+      ],
+      "path": "/v2/certificates/{{CERTIFICATE_ID}}",
+      "pathParameters": [
+        {
+          "name": "certificate_id",
+          "value": "4de7ac8b-495b-4884-9a69-1050c6793cd6"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve an Existing Certificate",
+      "url": "https://api.digitalocean.com/v2/certificates/{{CERTIFICATE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To retrieve the balances on a customer's account, send a GET request to `/v2/customers/my/balance`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/customers/my/balance",
+      "method": "GET",
+      "name": "Get Customer Balance",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/customers/my/balance",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Customer Balance",
+      "url": "https://api.digitalocean.com/v2/customers/my/balance"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To retrieve a list of all billing history entries, send a GET request to `/v2/customers/my/billing_history`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/customers/my/billing_history",
+      "method": "GET",
+      "name": "List Billing History",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/customers/my/billing_history",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List Billing History",
+      "url": "https://api.digitalocean.com/v2/customers/my/billing_history"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "DIGITALOCEAN_API_KEY",
+        "prefix": "Bearer ",
+        "type": "bearer"
+      },
+      "authType": "bearer",
+      "auth_type": "bearer",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "To retrieve a list of all invoices, send a GET request to `/v2/customers/my/invoices`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{DIGITALOCEAN_API_KEY}}"
+        }
+      ],
+      "id": "GET /v2/customers/my/invoices",
+      "method": "GET",
+      "name": "List All Invoices",
+      "note": "Replace {{DIGITALOCEAN_API_KEY}} with your API key",
+      "params": [],
+      "path": "/v2/customers/my/invoices",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List All Invoices",
+      "url": "https://api.digitalocean.com/v2/customers/my/invoices"
+    }
+  ]
+}

@@ -15,6 +15,7 @@ const String kHistoryLazyBox = "apidash-history-lazy";
 
 const String kDashBotBox = "apidash-dashbot-data";
 const String kKeyDashBotBoxIds = 'messages';
+const String kApiExplorerBox = "apidash-api-explorer";
 
 const kHiveBoxes = [
   (kDataBox, HiveBoxType.normal),
@@ -22,6 +23,7 @@ const kHiveBoxes = [
   (kHistoryMetaBox, HiveBoxType.normal),
   (kHistoryLazyBox, HiveBoxType.lazy),
   (kDashBotBox, HiveBoxType.lazy),
+  (kApiExplorerBox, HiveBoxType.normal),
 ];
 
 Future<bool> initHiveBoxes(
@@ -102,6 +104,7 @@ class HiveHandler {
   late final Box historyMetaBox;
   late final LazyBox historyLazyBox;
   late final LazyBox dashBotBox;
+  late final Box apiExplorerBox;
 
   HiveHandler() {
     debugPrint("Trying to open Hive boxes");
@@ -110,6 +113,7 @@ class HiveHandler {
     historyMetaBox = Hive.box(kHistoryMetaBox);
     historyLazyBox = Hive.lazyBox(kHistoryLazyBox);
     dashBotBox = Hive.lazyBox(kDashBotBox);
+    apiExplorerBox = Hive.box(kApiExplorerBox);
   }
 
   dynamic getIds() => dataBox.get(kKeyDataBoxIds);

@@ -1,0 +1,412 @@
+{
+  "id": "okta.local",
+  "info": {
+    "base_url": "http://okta.local",
+    "description": "Clear User Sessions",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Users (Okta API)",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Find User",
+      "url": "http://okta.local/api/v1/users"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "groupIds": [
+          "{{groupId}}"
+        ],
+        "profile": {
+          "email": "isaac@{{email-suffix}}",
+          "firstName": "Isaac",
+          "lastName": "Brock",
+          "login": "isaac@{{email-suffix}}"
+        }
+      },
+      "body_json": {
+        "groupIds": [
+          "{{groupId}}"
+        ],
+        "profile": {
+          "email": "isaac@{{email-suffix}}",
+          "firstName": "Isaac",
+          "lastName": "Brock",
+          "login": "isaac@{{email-suffix}}"
+        }
+      },
+      "body_text": "{\"groupIds\": [\"{{groupId}}\"], \"profile\": {\"email\": \"isaac@{{email-suffix}}\", \"firstName\": \"Isaac\", \"lastName\": \"Brock\", \"login\": \"isaac@{{email-suffix}}\"}}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "Create User in Group",
+      "url": "http://okta.local/api/v1/users"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get Current User",
+      "url": "http://okta.local/api/v1/users/me"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "credentials": {
+          "recovery_question": {
+            "answer": "Annie Oakley",
+            "question": "Who's a major player in the cowboy scene?"
+          }
+        }
+      },
+      "body_json": {
+        "credentials": {
+          "recovery_question": {
+            "answer": "Annie Oakley",
+            "question": "Who's a major player in the cowboy scene?"
+          }
+        }
+      },
+      "body_text": "{\"credentials\": {\"recovery_question\": {\"answer\": \"Annie Oakley\", \"question\": \"Who's a major player in the cowboy scene?\"}}}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "PUT",
+      "name": "Set Recovery Credential",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get Assigned App Links",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/appLinks"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "newPassword": {
+          "value": "uTVM,TPw55"
+        },
+        "oldPassword": {
+          "value": "{{password}}"
+        }
+      },
+      "body_json": {
+        "newPassword": {
+          "value": "uTVM,TPw55"
+        },
+        "oldPassword": {
+          "value": "{{password}}"
+        }
+      },
+      "body_text": "{\"newPassword\": {\"value\": \"uTVM,TPw55\"}, \"oldPassword\": {\"value\": \"{{password}}\"}}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "Change Password",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/credentials/change_password"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "password": {
+          "value": "{{password}}"
+        },
+        "recovery_question": {
+          "answer": "My recovery credentials are updated",
+          "question": "What happens when I update my question"
+        }
+      },
+      "body_json": {
+        "password": {
+          "value": "{{password}}"
+        },
+        "recovery_question": {
+          "answer": "My recovery credentials are updated",
+          "question": "What happens when I update my question"
+        }
+      },
+      "body_text": "{\"password\": {\"value\": \"{{password}}\"}, \"recovery_question\": {\"answer\": \"My recovery credentials are updated\", \"question\": \"What happens when I update my question\"}}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "Change Recovery Question",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/credentials/change_recovery_question"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Forgot Password (One Time Code)",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/credentials/forgot_password"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "GET",
+      "name": "Get Groups for User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/groups"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Activate User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/lifecycle/activate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Deactivate User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/lifecycle/deactivate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Set Temp Password",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/lifecycle/expire_password"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Reset Factors",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/lifecycle/reset_factors"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Reset Password",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/lifecycle/reset_password"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Suspend User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/lifecycle/suspend"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Unlock User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/lifecycle/unlock"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Unsuspend User",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/lifecycle/unsuspend"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "DELETE",
+      "name": "Clear User Sessions",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://okta.local/api/v1/users/{{USER_ID}}/sessions"
+    }
+  ]
+}

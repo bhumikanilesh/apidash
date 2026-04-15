@@ -1,0 +1,313 @@
+{
+  "id": "payments.service.gov.uk_payments",
+  "info": {
+    "base_url": "https://publicapi.payments.service.gov.uk",
+    "description": "Search refunds by 'from' and 'to' date. The Authorisation token needs to be specified in the 'authorization' header as 'authorization: Bearer YOUR_API_KEY_HERE'",
+    "source": "apis.guru",
+    "tags": [
+      "embedding"
+    ],
+    "title": "GOV.UK Pay API",
+    "version": "1.0.3"
+  },
+  "requests": [
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Search payments",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "amount": 12000,
+        "delayed_capture": false,
+        "description": "New passport application",
+        "email": "Joe.Bogs@example.org",
+        "language": "en",
+        "metadata": "{\"ledger_code\":\"123\", \"reconciled\": true}",
+        "moto": false,
+        "prefilled_cardholder_details": {
+          "billing_address": {
+            "city": "address city",
+            "country": "GB",
+            "line1": "address line 1",
+            "line2": "address line 2",
+            "postcode": "AB1 2CD"
+          },
+          "cardholder_name": "J. Bogs"
+        },
+        "reference": "12345",
+        "return_url": "https://service-name.gov.uk/transactions/12345"
+      },
+      "body_json": {
+        "amount": 12000,
+        "delayed_capture": false,
+        "description": "New passport application",
+        "email": "Joe.Bogs@example.org",
+        "language": "en",
+        "metadata": "{\"ledger_code\":\"123\", \"reconciled\": true}",
+        "moto": false,
+        "prefilled_cardholder_details": {
+          "billing_address": {
+            "city": "address city",
+            "country": "GB",
+            "line1": "address line 1",
+            "line2": "address line 2",
+            "postcode": "AB1 2CD"
+          },
+          "cardholder_name": "J. Bogs"
+        },
+        "reference": "12345",
+        "return_url": "https://service-name.gov.uk/transactions/12345"
+      },
+      "body_text": "{\"amount\": 12000, \"delayed_capture\": false, \"description\": \"New passport application\", \"email\": \"Joe.Bogs@example.org\", \"language\": \"en\", \"metadata\": \"{\\\"ledger_code\\\":\\\"123\\\", \\\"reconciled\\\": true}\", \"moto\": false, \"prefilled_cardholder_details\": {\"billing_address\": {\"city\": \"address city\", \"country\": \"GB\", \"line1\": \"address line 1\", \"line2\": \"address line 2\", \"postcode\": \"AB1 2CD\"}, \"cardholder_name\": \"J. Bogs\"}, \"reference\": \"12345\", \"return_url\": \"https://service-name.gov.uk/transactions/12345\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Create new payment",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Find payment by ID",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments/{{PAYMENT_ID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Cancel payment",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments/{{PAYMENT_ID}}/cancel"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Capture payment",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments/{{PAYMENT_ID}}/capture"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Return payment events by ID",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments/{{PAYMENT_ID}}/events"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Get all refunds for a payment",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments/{{PAYMENT_ID}}/refunds"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "amount": 150000,
+        "refund_amount_available": 200000
+      },
+      "body_json": {
+        "amount": 150000,
+        "refund_amount_available": 200000
+      },
+      "body_text": "{\"amount\": 150000, \"refund_amount_available\": 200000}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Submit a refund for a payment",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments/{{PAYMENT_ID}}/refunds"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Find payment refund by ID",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "https://publicapi.payments.service.gov.uk/v1/payments/{{PAYMENT_ID}}/refunds/{{REFUND_ID}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{GOVUK_PAY_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{GOVUK_PAY_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Search refunds",
+      "note": "Replace {{GOVUK_PAY_API_KEY}} with your API key",
+      "url": "https://publicapi.payments.service.gov.uk/v1/refunds"
+    }
+  ]
+}

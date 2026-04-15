@@ -1,0 +1,909 @@
+{
+  "id": "nowpayments.io",
+  "info": {
+    "base_url": "https://api.nowpayments.io",
+    "description": "Get information about a particular recurring payment via its ID.\n\nHere’s the list of available statuses:  \n\\- WAITING_PAY  \n\\- PAID  \n\\- PARTIALLY_PAID  \n\\- EXPIRED",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "finance"
+    ],
+    "title": "NOWPayments API",
+    "version": "1.0.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This is a method for calculating the approximate price in cryptocurrency for a given value in Fiat currency. You will need to provide the initial cost in the Fiat currency (amount, currency_from) and the necessary cryptocurrency (currency_to)\nCurrently following fiat currencies are available: usd, eur, nzd, brl, gbp.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/estimate",
+      "method": "GET",
+      "name": "Get estimated price",
+      "params": [
+        {
+          "name": "amount",
+          "value": ""
+        },
+        {
+          "name": "currency_from",
+          "value": ""
+        },
+        {
+          "name": "currency_to",
+          "value": ""
+        }
+      ],
+      "path": "/v1/estimate",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "amount",
+          "value": ""
+        },
+        {
+          "name": "currency_from",
+          "value": ""
+        },
+        {
+          "name": "currency_to",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get estimated price",
+      "url": "https://api.nowpayments.io/v1/estimate"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the minimum payment amount for a specific pair.\n\nYou can provide both currencies in the pair or just currency\\_from, and we will calculate the minimum payment amount for currency\\_from and currency which you have specified as the outcome in the Store Settings.\n\nYou can also specify one of the fiat currencies in the currency\\_from. In this case, the minimum payment will be calculated in this fiat currency.\n\nYou can also add field fiat\\_equivalent (optional field) to get the fiat equivalent of the minimum amount.\n\nIn the case of several outcome wallets we will calculate the minimum amount in the same way we route your payment to a specific wallet.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/min-amount",
+      "method": "GET",
+      "name": "Get the minimum payment amount",
+      "params": [
+        {
+          "name": "currency_from",
+          "value": ""
+        },
+        {
+          "name": "currency_to",
+          "value": ""
+        }
+      ],
+      "path": "/v1/min-amount",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "currency_from",
+          "value": ""
+        },
+        {
+          "name": "currency_to",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the minimum payment amount",
+      "url": "https://api.nowpayments.io/v1/min-amount"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the entire list of all transactions, created with certain API key.\nThe list of optional parameters:\n- limit - number of records in one page. (possible values: from 1 to 500)\n- page - the page number you want to get (possible values: from 0 to **page count - 1**)\n- sortBy - sort the received list by a paramenter. Set to **created_at** by default (possible values: payment_id, payment_status, pay_address, price_amount, price_currency, pay_amount, actually_paid, pay_currency, order_id, order_description, purchase_id, outcome_amount, outcome_currency)\n- orderBy - display the list in ascending or descending order. Set to **asc** by default (possible values: asc, desc)\n- dateFrom - select the displayed period start date (date format: YYYY-MM-DD or yy-MM-ddTHH:mm:ss.SSSZ).\n- dateTo - select the displayed period end date (date format: YYYY-MM-DD or yy-MM-ddTHH:mm:ss.SSSZ).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/payment/",
+      "method": "GET",
+      "name": "Get list of payments",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "sortBy",
+          "value": ""
+        },
+        {
+          "name": "orderBy",
+          "value": ""
+        },
+        {
+          "name": "dateFrom",
+          "value": ""
+        },
+        {
+          "name": "dateTo",
+          "value": ""
+        }
+      ],
+      "path": "/v1/payment/",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "sortBy",
+          "value": ""
+        },
+        {
+          "name": "orderBy",
+          "value": ""
+        },
+        {
+          "name": "dateFrom",
+          "value": ""
+        },
+        {
+          "name": "dateTo",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get list of payments",
+      "url": "https://api.nowpayments.io/v1/payment/"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This endpoint is required to get the current estimate on the payment, and update the current estimate.  \nPlease note! Calling this estimate before `expiration_estimate_date` will return the current estimate, it won’t be updated.\n\n`:id` \\- payment ID, for which you want to get the estimate\n\nResponse:  \n`id` \\- payment ID  \n`token_id` - id of api key used to create this payment (please discard this parameter)  \n`pay_amount` - payment estimate, the exact amount the user will have to send to complete the payment  \n`expiration_estimate_date` - expiration date of this estimate",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /v1/payment/{{ID}}/update-merchant-estimate",
+      "method": "POST",
+      "name": "Get/Update payment estimate",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/payment/{{ID}}/update-merchant-estimate",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get/Update payment estimate",
+      "url": "https://api.nowpayments.io/v1/payment/{{ID}}/update-merchant-estimate"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the actual information about the payment. You need to provide the ID of the payment in the request.\n\nNOTE! You should make the get payment status request with the same API key that you used in the create payment request.\nHere is the list of avalable statuses:\n- waiting - waiting for the customer to send the payment. The initial status of each payment.\n- confirming - the transaction is being processed on the blockchain. Appears when NOWPayments detect the funds from the user on the blockchain.\n- confirmed -  the process is confirmed by the blockchain. Customer’s funds have accumulated enough confirmations.\n- sending - the funds are being sent to your personal wallet. We are in the process of sending the funds to you.\n- partially_paid -  it shows that the customer sent the less than the actual price. Appears when the funds have arrived in your wallet.\n- finished - the funds have reached your personal address and the payment is finished.\n- failed -  the payment wasn't completed due to the error of some kind.\n- refunded -  the funds were refunded back to the user.\n- expired - the user didn't send the funds to the specified address in the 24 hour time window.\n\nAdditional info:\n- outcome_amount - this parameter shows the amount that will be (or is already) received on your Outcome Wallet once the transaction is settled.\n- outcome_currency - this parameter shows the currency in which the transaction will be settled.\n- invoice_id - this parameter shows invoice ID from which the payment was created",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/payment/{{PAYMENT_ID}}",
+      "method": "GET",
+      "name": "Get payment status",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "payment_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/payment/{{PAYMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "payment_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get payment status",
+      "url": "https://api.nowpayments.io/v1/payment/{{PAYMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "verification_code": "123456"
+      },
+      "body_json": {
+        "verification_code": "123456"
+      },
+      "body_text": "{\"verification_code\": \"123456\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method is required to verify payouts by using your 2fa code.  \nYou’ll have 10 attempts to verify the payout. If it is not verified after 10 attempts, the payout will remain in ‘creating’ status.  \nPayout will be processed only when it is verified.\n\nMake sure to have your 2fa authentication enabled in your NOWPayments Account (in Account Settings).  \nWhen 2fa is disabled, the code automatically goes to your registration email.  \nThe code sent by email is valid for one hour.\n\nNext is a description of the required request fields:\n\n- :batch-withdrawal-id - payout id you received in `2. Create payout` method\n- verification_code - 2fa code you received with your Google Auth app or via email\n    \n\nIn order to establish an automatic verification of payouts, you should switch 2FA through the application.  \nThere are several libraries for different frameworks aimed on generating a 2FA codes based on a secret key from your account settings.  \ne.g: Speakeasy for JavaScript.  \nWe do not recommend to change any default settings.  \n\n```\nconst 2faVerificationCode = speakeasy.totp({\n      your_2fa_secret_key,\n      encoding: 'base32',\n})\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v1/payout/{{WITHDRAWALS-ID}}/verify",
+      "method": "POST",
+      "name": "Verify payout",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "withdrawals-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/payout/{{WITHDRAWALS-ID}}/verify",
+      "pathParameters": [
+        {
+          "name": "withdrawals-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"verification_code\": \"123456\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Verify payout",
+      "url": "https://api.nowpayments.io/v1/payout/{{WITHDRAWALS-ID}}/verify"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method returns the entire list of your sub-partners.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/sub-partner",
+      "method": "GET",
+      "name": "Get sub-partners",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sub-partner",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get sub-partners",
+      "url": "https://api.nowpayments.io/v1/sub-partner"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This request can be made only from a whitelisted IP.  \nIf IP whitelisting is disabled, this request can be made by any user that has an API key.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/sub-partner/balance/{{ID}}",
+      "method": "GET",
+      "name": "Get sub-partner balance",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sub-partner/balance/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get sub-partner balance",
+      "url": "https://api.nowpayments.io/v1/sub-partner/balance/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get the actual information about the transfer. You need to provide the transfer ID in the request.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/sub-partner/transfer/{{ID}}",
+      "method": "GET",
+      "name": "Get transfer",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sub-partner/transfer/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get transfer",
+      "url": "https://api.nowpayments.io/v1/sub-partner/transfer/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the entire list of transfers created by your sub-partners.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/sub-partner/transfers",
+      "method": "GET",
+      "name": "Get all transfers",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        }
+      ],
+      "path": "/v1/sub-partner/transfers",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        },
+        {
+          "name": "order",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get all transfers",
+      "url": "https://api.nowpayments.io/v1/sub-partner/transfers"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "The method allows you to view the entire list of recurring payments filtered by payment status and/or payment plan id",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/subscriptions",
+      "method": "GET",
+      "name": "Get many recurring payments",
+      "params": [
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "subscription_plan_id",
+          "value": ""
+        },
+        {
+          "name": "is_active",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "path": "/v1/subscriptions",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "status",
+          "value": ""
+        },
+        {
+          "name": "subscription_plan_id",
+          "value": ""
+        },
+        {
+          "name": "is_active",
+          "value": ""
+        },
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get many recurring payments",
+      "url": "https://api.nowpayments.io/v1/subscriptions"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method allows you to obtain information about all the payment plans you’ve created.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/subscriptions/plans",
+      "method": "GET",
+      "name": "Get many plans",
+      "params": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "path": "/v1/subscriptions/plans",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "limit",
+          "value": ""
+        },
+        {
+          "name": "offset",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get many plans",
+      "url": "https://api.nowpayments.io/v1/subscriptions/plans"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This method allows you to obtain information about your payment plan.  \n(you need to specify your payment plan id in the request).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/subscriptions/plans/{{PLAN-ID}}",
+      "method": "GET",
+      "name": "Get one plan",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "plan-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/subscriptions/plans/{{PLAN-ID}}",
+      "pathParameters": [
+        {
+          "name": "plan-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get one plan",
+      "url": "https://api.nowpayments.io/v1/subscriptions/plans/{{PLAN-ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "amount": 2,
+        "currency": "usd",
+        "interval_day": 1,
+        "title": "test plan"
+      },
+      "body_json": {
+        "amount": 2,
+        "currency": "usd",
+        "interval_day": 1,
+        "title": "test plan"
+      },
+      "body_text": "{\"amount\": 2, \"currency\": \"usd\", \"interval_day\": 1, \"title\": \"test plan\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "This method allows you to add necessary changes to a created plan. They won’t affect users who have already paid; however, the changes will take effect when a new payment is to be made.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /v1/subscriptions/plans/{{PLAN-ID}}",
+      "method": "PATCH",
+      "name": "Update plan",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "plan-id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/subscriptions/plans/{{PLAN-ID}}",
+      "pathParameters": [
+        {
+          "name": "plan-id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amount\": 2, \"currency\": \"usd\", \"interval_day\": 1, \"title\": \"test plan\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update plan",
+      "url": "https://api.nowpayments.io/v1/subscriptions/plans/{{PLAN-ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Completely removes a particular payment from the recurring payment plan.  \nYou need to specify the payment plan id in the request.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /v1/subscriptions/{{SUB_ID}}",
+      "method": "DELETE",
+      "name": "Delete recurring payment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sub_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/subscriptions/{{SUB_ID}}",
+      "pathParameters": [
+        {
+          "name": "sub_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete recurring payment",
+      "url": "https://api.nowpayments.io/v1/subscriptions/{{SUB_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get information about a particular recurring payment via its ID.\n\nHere’s the list of available statuses:  \n\\- WAITING_PAY  \n\\- PAID  \n\\- PARTIALLY_PAID  \n\\- EXPIRED",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /v1/subscriptions/{{SUB_ID}}",
+      "method": "GET",
+      "name": "Get one recurring payment",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "sub_id",
+          "value": ""
+        }
+      ],
+      "path": "/v1/subscriptions/{{SUB_ID}}",
+      "pathParameters": [
+        {
+          "name": "sub_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get one recurring payment",
+      "url": "https://api.nowpayments.io/v1/subscriptions/{{SUB_ID}}"
+    }
+  ]
+}

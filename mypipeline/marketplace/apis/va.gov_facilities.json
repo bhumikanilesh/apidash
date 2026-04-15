@@ -1,0 +1,446 @@
+{
+  "id": "va.gov_facilities",
+  "info": {
+    "base_url": "https://sandbox-api.va.gov/services/va_facilities/{version}",
+    "description": "Retrieve all VA health facilities that are located within a specified drive time from a specified location based on address (`street_address`, `city`, `state`, and `zip`) or coordinates (`lat` and...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "maps"
+    ],
+    "title": "VA Facilities",
+    "version": "0.0.1"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VA_FACILITIES_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Query facilities by bounding box, latitude and longitude, state, visn, or zip code. Bounding box is specified as four `bbox[]` parameters, long1, lat1, long2, lat2. (Relative order is unimportant.)\n\nA query by latitude and longitude returns all facilities in the system, sorted by distance from that location.\n\nAll location queries support filtering by facility type, available services, and mobile status.\n\nOne can also retrieve facilities by ID using a comma-separated list like `?ids=id1,id2`. When requesting multiple facilities by ID, the API will return as many results as it can find matches for, omitting IDs where there is no match. It will not return an HTTP error code if it is unable to match a requested ID. Clients may supply IDs up to the limit their HTTP client enforces for URI path lengths. (Usually 2048 characters.)\n\nResults are paginated. JSON responses include pagination information in the standard JSON API \"links\" and \"meta\" elements. \n\n### Parameter combinations\nYou may optionally specify `page` and `per_page` with any query. You must specify one of the following parameter combinations: \n\n- `bbox[]`, with the option of any combination of `type`, `services[]`, or `mobile`\n\n- `ids`\n\n- `lat` and `long`, with the option of any combination of `ids`, `type`, `services[]`, or `mobile`\n\n- `state`, with the option of any combination of `type`, `services[]`, or `mobile`\n\n- `visn`\n\n- `zip`, with the option of any combination of `type`, `services[]`, or `mobile`\n\n Invalid combinations will return `400 Bad Request`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "id": "GET /services/va_facilities/{{VERSION}}/facilities",
+      "method": "GET",
+      "name": "Query facilities by location or IDs, with optional filters",
+      "note": "Replace {{VA_FACILITIES_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ids",
+          "value": ""
+        },
+        {
+          "name": "zip",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "value": ""
+        },
+        {
+          "name": "lat",
+          "value": ""
+        },
+        {
+          "name": "long",
+          "value": ""
+        },
+        {
+          "name": "bbox[]",
+          "value": ""
+        },
+        {
+          "name": "visn",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "services[]",
+          "value": ""
+        },
+        {
+          "name": "mobile",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "per_page",
+          "value": ""
+        }
+      ],
+      "path": "/services/va_facilities/{{VERSION}}/facilities",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "ids",
+          "value": ""
+        },
+        {
+          "name": "zip",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "value": ""
+        },
+        {
+          "name": "lat",
+          "value": ""
+        },
+        {
+          "name": "long",
+          "value": ""
+        },
+        {
+          "name": "bbox[]",
+          "value": ""
+        },
+        {
+          "name": "visn",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "services[]",
+          "value": ""
+        },
+        {
+          "name": "mobile",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "per_page",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Query facilities by location or IDs, with optional filters",
+      "url": "https://sandbox-api.va.gov/services/va_facilities/{{VERSION}}/facilities"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VA_FACILITIES_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve all available facilities in a single operation, formatted as either a GeoJSON FeatureCollection or as a CSV. Due to the complexity of the facility resource type, the CSV response contains a subset of available facility data - specifically it omits the available services, patient satisfaction, and patient wait time data.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "id": "GET /services/va_facilities/{{VERSION}}/facilities/all",
+      "method": "GET",
+      "name": "Bulk download information for all facilities",
+      "note": "Replace {{VA_FACILITIES_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Accept",
+          "value": "application/geo+json"
+        }
+      ],
+      "path": "/services/va_facilities/{{VERSION}}/facilities/all",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Bulk download information for all facilities",
+      "url": "https://sandbox-api.va.gov/services/va_facilities/{{VERSION}}/facilities/all"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VA_FACILITIES_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Replace {{VA_FACILITIES_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "id": "GET /services/va_facilities/{{VERSION}}/facilities/{{ID}}",
+      "method": "GET",
+      "name": "Retrieve a specific facility by ID",
+      "note": "Replace {{VA_FACILITIES_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": "vha_688"
+        }
+      ],
+      "path": "/services/va_facilities/{{VERSION}}/facilities/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": "vha_688"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve a specific facility by ID",
+      "url": "https://sandbox-api.va.gov/services/va_facilities/{{VERSION}}/facilities/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VA_FACILITIES_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves all available facility IDs only",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "id": "GET /services/va_facilities/{{VERSION}}/ids",
+      "method": "GET",
+      "name": "Bulk download of all facility IDs",
+      "note": "Replace {{VA_FACILITIES_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "path": "/services/va_facilities/{{VERSION}}/ids",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "type",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Bulk download of all facility IDs",
+      "url": "https://sandbox-api.va.gov/services/va_facilities/{{VERSION}}/ids"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "VA_FACILITIES_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve all VA health facilities that are located within a specified drive time from a specified location based on address (`street_address`, `city`, `state`, and `zip`) or coordinates (`lat` and `lng`). Optional filter parameters include `drive_time` and `services[]`. \n\nResults of this operation are paginated. Responses include pagination information in the standard JSON API \"links\" and \"meta\" elements. \n\nThe \"attributes\" element has information about the drive-time band that contains the requested location for each facility in the response. The values of `min_time` and `max_time` are in minutes. For example, a facility returned with a matched `min_time` of 10 and `max_time` of 20 is a 10 to 20 minute drive from the requested location.\n\nTo retrieve full details for nearby facilities, see the documentation for `/facilities?ids`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{VA_FACILITIES_API_KEY}}"
+        }
+      ],
+      "id": "GET /services/va_facilities/{{VERSION}}/nearby",
+      "method": "GET",
+      "name": "Retrieve all VA health facilities reachable by driving within the specified time period",
+      "note": "Replace {{VA_FACILITIES_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "street_address",
+          "value": ""
+        },
+        {
+          "name": "city",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "value": ""
+        },
+        {
+          "name": "zip",
+          "value": ""
+        },
+        {
+          "name": "lat",
+          "value": ""
+        },
+        {
+          "name": "lng",
+          "value": ""
+        },
+        {
+          "name": "drive_time",
+          "value": ""
+        },
+        {
+          "name": "services[]",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "per_page",
+          "value": ""
+        }
+      ],
+      "path": "/services/va_facilities/{{VERSION}}/nearby",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "street_address",
+          "value": ""
+        },
+        {
+          "name": "city",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "value": ""
+        },
+        {
+          "name": "zip",
+          "value": ""
+        },
+        {
+          "name": "lat",
+          "value": ""
+        },
+        {
+          "name": "lng",
+          "value": ""
+        },
+        {
+          "name": "drive_time",
+          "value": ""
+        },
+        {
+          "name": "services[]",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "per_page",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Retrieve all VA health facilities reachable by driving within the specified time period",
+      "url": "https://sandbox-api.va.gov/services/va_facilities/{{VERSION}}/nearby"
+    }
+  ]
+}

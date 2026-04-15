@@ -1,0 +1,1027 @@
+{
+  "id": "conjur.local",
+  "info": {
+    "base_url": "http://conjur.local",
+    "description": "Once the status webservice has been properly configured and the relevant user\ngroups have been given permissions to access the status webservice, the\nusers in those groups can check the status of the...",
+    "source": "apis.guru",
+    "tags": [
+      "ai"
+    ],
+    "title": "Conjur",
+    "version": "5.3.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "GET",
+      "name": "Details about which authenticators are on the Conjur Server",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "url": "http://conjur.local/authenticators"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_json": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_text": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications running in Azure.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-azure/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_json": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_text": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications running in\nGoogle Cloud Platform.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-gcp/{{ACCOUNT}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Details whether an authentication service has been configured properly",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-gcp/{{ACCOUNT}}/status"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Get a short-lived access token for applications running in AWS.",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-iam/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_json": {
+        "jwt": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_text": "{\"jwt\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-jwt/{{SERVICE_ID}}/{{ACCOUNT}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications using JSON Web Token (JWT)\nto access the Conjur API. Covers the case of use of optional URL parameter \"ID\"\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-jwt/{{SERVICE_ID}}/{{ACCOUNT}}/{{ID}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "POST",
+      "name": "For applications running in Kubernetes; sends Conjur a certificate\nsigning request (CSR) and requests a client certificate injected into\nthe application's Kubernetes pod.\n",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-k8s/{{SERVICE_ID}}/inject_client_cert"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Bearer {{CONJUR_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications running in Kubernetes.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-k8s/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "GET",
+      "name": "Gets the Conjur API key of a user given the LDAP username and\npassword via HTTP Basic Authentication.\n",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-ldap/{{SERVICE_ID}}/{{ACCOUNT}}/login"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Gets a short-lived access token for users and hosts using their\nLDAP identity to access the Conjur API.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-ldap/{{SERVICE_ID}}/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "id_token": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_json": {
+        "id_token": "eyJhbGciOiJSUzI1NiIs......uTonCA"
+      },
+      "body_text": "{\"id_token\": \"eyJhbGciOiJSUzI1NiIs......uTonCA\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "method": "POST",
+      "name": "Gets a short-lived access token for applications using OpenID\nConnect (OIDC) to access the Conjur API.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn-oidc/{{SERVICE_ID}}/{{ACCOUNT}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "PUT",
+      "name": "Rotates a role's API key.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn/{{ACCOUNT}}/api_key"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "GET",
+      "name": "Gets the API key of a user given the username and password\nvia HTTP Basic Authentication.\n",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn/{{ACCOUNT}}/login"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "PUT",
+      "name": "Changes a user’s password.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn/{{ACCOUNT}}/password"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [],
+      "headers": {},
+      "method": "POST",
+      "name": "Gets a short-lived access token, which is required in the header\nof most subsequent API requests.\n",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/authn/{{ACCOUNT}}/{{LOGIN}}/authenticate"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "csr": "",
+        "ttl": ""
+      },
+      "body_json": {
+        "csr": "",
+        "ttl": ""
+      },
+      "body_text": "{\"csr\": \"\", \"ttl\": \"\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Gets a signed certificate from the configured Certificate Authority service.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/ca/{{ACCOUNT}}/{{SERVICE_ID}}/sign"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "GET",
+      "name": "Health info about conjur",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "url": "http://conjur.local/health"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "id": "new-host"
+      },
+      "body_json": {
+        "id": "new-host"
+      },
+      "body_text": "{\"id\": \"new-host\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Creates a Host using the Host Factory.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "url": "http://conjur.local/host_factories/hosts"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "expiration": "2017-08-04T22:27:20+00:00",
+        "host_factory": "myorg:hosty_factory:hf-db"
+      },
+      "body_json": {
+        "expiration": "2017-08-04T22:27:20+00:00",
+        "host_factory": "myorg:hosty_factory:hf-db"
+      },
+      "body_text": "{\"expiration\": \"2017-08-04T22:27:20+00:00\", \"host_factory\": \"myorg:hosty_factory:hf-db\"}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Content-Type": "application/json",
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Creates one or more host identity tokens.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "url": "http://conjur.local/host_factory_tokens"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "DELETE",
+      "name": "Revokes a token, immediately disabling it.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/host_factory_tokens/{{TOKEN}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "GET",
+      "name": "Basic information about the Conjur Enterprise server",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "url": "http://conjur.local/info"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "PATCH",
+      "name": "Modifies an existing Conjur policy.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Adds data to the existing Conjur policy.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "PUT",
+      "name": "Loads or replaces a Conjur policy document.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/policies/{{ACCOUNT}}/policy/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "GET",
+      "name": "Shows all public keys for a resource.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/public_keys/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}"
+      },
+      "method": "GET",
+      "name": "Health info about a given Conjur Enterprise server",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/remote_health/{{REMOTE}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Lists resources within an organization account.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "url": "http://conjur.local/resources"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Lists resources within an organization account.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/resources/{{ACCOUNT}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Lists resources of the same kind within an organization account.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/resources/{{ACCOUNT}}/{{KIND}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Shows a description of a single resource.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/resources/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "DELETE",
+      "name": "Deletes an existing role membership",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Get role information",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Update or modify an existing role membership",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/roles/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Fetch multiple secrets",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "url": "http://conjur.local/secrets"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Fetches the value of a secret from the specified Secret.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/secrets/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "POST",
+      "name": "Creates a secret value within the specified variable.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/secrets/{{ACCOUNT}}/{{KIND}}/{{IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Provides information about the client making an API request.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key",
+      "url": "http://conjur.local/whoami"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {
+        "enabled": false
+      },
+      "body_json": {
+        "enabled": false
+      },
+      "body_text": "{\"enabled\": false}",
+      "body_type": "json",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{CONJUR_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": {
+        "Authorization": "Basic {{CONJUR_API_KEY_BASE64}}",
+        "Content-Type": "application/json"
+      },
+      "method": "PATCH",
+      "name": "Enables or disables authenticator defined without service_id.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/{{AUTHENTICATOR}}/{{ACCOUNT}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "PATCH",
+      "name": "Enables or disables authenticator service instances.",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/{{AUTHENTICATOR}}/{{SERVICE_ID}}/{{ACCOUNT}}"
+    },
+    {
+      "auth": {
+        "type": "none"
+      },
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CONJUR_API_KEY}}"
+        }
+      ],
+      "headers": {
+        "X-API-Key": "{{CONJUR_API_KEY}}"
+      },
+      "method": "GET",
+      "name": "Details whether an authentication service has been configured properly",
+      "note": "Replace {{CONJUR_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "url": "http://conjur.local/{{AUTHENTICATOR}}/{{SERVICE_ID}}/{{ACCOUNT}}/status"
+    }
+  ]
+}

@@ -1,0 +1,4550 @@
+{
+  "id": "bitbucket.org",
+  "info": {
+    "base_url": "https://api.bitbucket.org/2.0",
+    "description": "Creates a new build status against the specified commit.\n\nIf the specified key already exists, the existing status object will\nbe overwritten.\n\nExample:\n\n```\ncurl...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation",
+      "text-generation"
+    ],
+    "title": "Bitbucket API",
+    "version": "2.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the application for the user.\n\nThis endpoint is intended to be used by Bitbucket Connect apps\nand only supports JWT authentication -- that is how Bitbucket\nidentifies the particular installation of the app. Developers\nwith applications registered in the \"Develop Apps\" section\nof Bitbucket Marketplace need not use this endpoint as\nupdates for those applications can be sent out via the\nUI of that section.\n\n```\n$ curl -X DELETE https://api.bitbucket.org/2.0/addon \\\n  -H \"Authorization: JWT <JWT Token>\"\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/addon",
+      "method": "DELETE",
+      "name": "Delete an app",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key",
+      "params": [],
+      "path": "/2.0/addon",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an app",
+      "url": "https://api.bitbucket.org/2.0/addon"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Updates the application installation for the user.\n\nThis endpoint is intended to be used by Bitbucket Connect apps\nand only supports JWT authentication -- that is how Bitbucket\nidentifies the particular installation of the app. Developers\nwith applications registered in the \"Develop Apps\" section\nof Bitbucket need not use this endpoint as updates for those\napplications can be sent out via the UI of that section.\n\nPassing an empty body will update the installation using the\nexisting descriptor URL.\n\n```\n$ curl -X PUT https://api.bitbucket.org/2.0/addon \\\n  -H \"Authorization: JWT <JWT Token>\" \\\n  --header \"Content-Type: application/json\" \\\n  --data '{}'\n```\n\nThe new `descriptor` for the installation can be also provided\nin the body directly.\n\n```\n$ curl -X PUT https://api.bitbucket.org/2.0/addon \\\n  -H \"Authorization: JWT <JWT Token>\" \\\n  --header \"Content-Type: application/json\" \\\n  --data '{\"descriptor\": $NEW_DESCRIPTOR}'\n```\n\nIn both these modes the URL of the descriptor cannot be changed. To\nchange the descriptor location and upgrade an installation\nthe request must be made exclusively with a `descriptor_url`.\n\n ```\n$ curl -X PUT https://api.bitbucket.org/2.0/addon \\\n  -H \"Authorization: JWT <JWT Token>\" \\\n  --header \"Content-Type: application/json\" \\\n  --data '{\"descriptor_url\": $NEW_URL}'\n```\n\nThe `descriptor_url` must exactly match the marketplace registration\nthat Atlassian has for the application. Contact your Atlassian\ndeveloper advocate to update this registration. Once the registration\nhas been updated you may call this resource for each installation.\n\nNote that the scopes of the application cannot be increased\nin the new descriptor nor reduced to none.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "PUT /2.0/addon",
+      "method": "PUT",
+      "name": "Update an installed app",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key",
+      "params": [],
+      "path": "/2.0/addon",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update an installed app",
+      "url": "https://api.bitbucket.org/2.0/addon"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets a list of all [linkers](/cloud/bitbucket/modules/linker/)\nfor the authenticated application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/addon/linkers",
+      "method": "GET",
+      "name": "List linkers for an app",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key",
+      "params": [],
+      "path": "/2.0/addon/linkers",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List linkers for an app",
+      "url": "https://api.bitbucket.org/2.0/addon/linkers"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets a [linker](/cloud/bitbucket/modules/linker/) specified by `linker_key`\nfor the authenticated application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/addon/linkers/{{LINKER_KEY}}",
+      "method": "GET",
+      "name": "Get a linker for an app",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/addon/linkers/{{LINKER_KEY}}",
+      "pathParameters": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a linker for an app",
+      "url": "https://api.bitbucket.org/2.0/addon/linkers/{{LINKER_KEY}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete all [linker](/cloud/bitbucket/modules/linker/) values for the\nspecified linker of the authenticated application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/addon/linkers/{{LINKER_KEY}}/values",
+      "method": "DELETE",
+      "name": "Delete all linker values",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/addon/linkers/{{LINKER_KEY}}/values",
+      "pathParameters": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete all linker values",
+      "url": "https://api.bitbucket.org/2.0/addon/linkers/{{LINKER_KEY}}/values"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Gets a list of all [linker](/cloud/bitbucket/modules/linker/) values for the\nspecified linker of the authenticated application.\n\nA linker value lets applications supply values to modify its regular expression.\n\nThe base regular expression must use a Bitbucket-specific match group `(?K)`\nwhich will be translated to `([\\w\\-]+)`. A value must match this pattern.\n\n[Read more about linker values](/cloud/bitbucket/modules/linker/#usingthebitbucketapitosupplyvalues)",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/addon/linkers/{{LINKER_KEY}}/values",
+      "method": "GET",
+      "name": "List linker values for a linker",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/addon/linkers/{{LINKER_KEY}}/values",
+      "pathParameters": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List linker values for a linker",
+      "url": "https://api.bitbucket.org/2.0/addon/linkers/{{LINKER_KEY}}/values"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Creates a [linker](/cloud/bitbucket/modules/linker/) value for the specified\nlinker of authenticated application.\n\nA linker value lets applications supply values to modify its regular expression.\n\nThe base regular expression must use a Bitbucket-specific match group `(?K)`\nwhich will be translated to `([\\w\\-]+)`. A value must match this pattern.\n\n[Read more about linker values](/cloud/bitbucket/modules/linker/#usingthebitbucketapitosupplyvalues)",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /2.0/addon/linkers/{{LINKER_KEY}}/values",
+      "method": "POST",
+      "name": "Create a linker value",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/addon/linkers/{{LINKER_KEY}}/values",
+      "pathParameters": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a linker value",
+      "url": "https://api.bitbucket.org/2.0/addon/linkers/{{LINKER_KEY}}/values"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Bulk update [linker](/cloud/bitbucket/modules/linker/) values for the specified\nlinker of the authenticated application.\n\nA linker value lets applications supply values to modify its regular expression.\n\nThe base regular expression must use a Bitbucket-specific match group `(?K)`\nwhich will be translated to `([\\w\\-]+)`. A value must match this pattern.\n\n[Read more about linker values](/cloud/bitbucket/modules/linker/#usingthebitbucketapitosupplyvalues)",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "PUT /2.0/addon/linkers/{{LINKER_KEY}}/values",
+      "method": "PUT",
+      "name": "Update a linker value",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/addon/linkers/{{LINKER_KEY}}/values",
+      "pathParameters": [
+        {
+          "name": "linker_key",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a linker value",
+      "url": "https://api.bitbucket.org/2.0/addon/linkers/{{LINKER_KEY}}/values"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a single [linker](/cloud/bitbucket/modules/linker/) value\nof the authenticated application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/addon/linkers/{{LINKER_KEY}}/values/{{VALUE_ID}}",
+      "method": "DELETE",
+      "name": "Delete a linker value",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "linker_key",
+          "value": ""
+        },
+        {
+          "name": "value_id",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/addon/linkers/{{LINKER_KEY}}/values/{{VALUE_ID}}",
+      "pathParameters": [
+        {
+          "name": "linker_key",
+          "value": ""
+        },
+        {
+          "name": "value_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a linker value",
+      "url": "https://api.bitbucket.org/2.0/addon/linkers/{{LINKER_KEY}}/values/{{VALUE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Get a single [linker](/cloud/bitbucket/modules/linker/) value\nof the authenticated application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/addon/linkers/{{LINKER_KEY}}/values/{{VALUE_ID}}",
+      "method": "GET",
+      "name": "Get a linker value",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "linker_key",
+          "value": ""
+        },
+        {
+          "name": "value_id",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/addon/linkers/{{LINKER_KEY}}/values/{{VALUE_ID}}",
+      "pathParameters": [
+        {
+          "name": "linker_key",
+          "value": ""
+        },
+        {
+          "name": "value_id",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a linker value",
+      "url": "https://api.bitbucket.org/2.0/addon/linkers/{{LINKER_KEY}}/values/{{VALUE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the webhook resource or subject types on which webhooks can\nbe registered.\n\nEach resource/subject type contains an `events` link that returns the\npaginated list of specific events each individual subject type can\nemit.\n\nThis endpoint is publicly accessible and does not require\nauthentication or scopes.\n\nExample:\n\n```\n$ curl https://api.bitbucket.org/2.0/hook_events\n\n{\n    \"repository\": {\n        \"links\": {\n            \"events\": {\n                \"href\": \"https://api.bitbucket.org/2.0/hook_events/repository\"\n            }\n        }\n    },\n    \"workspace\": {\n        \"links\": {\n            \"events\": {\n                \"href\": \"https://api.bitbucket.org/2.0/hook_events/workspace\"\n            }\n        }\n    }\n}\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/hook_events",
+      "method": "GET",
+      "name": "Get a webhook resource",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key",
+      "params": [],
+      "path": "/2.0/hook_events",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a webhook resource",
+      "url": "https://api.bitbucket.org/2.0/hook_events"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a paginated list of all valid webhook events for the\nspecified entity.\n**The team and user webhooks are deprecated, and you should use workspace instead.\nFor more information, see [the announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-teams-deprecation/).**\n\nThis is public data that does not require any scopes or authentication.\n\nExample:\n\nNOTE: The following example is a truncated response object for the `workspace` `subject_type`.\nWe return the same structure for the other `subject_type` objects.\n\n```\n$ curl https://api.bitbucket.org/2.0/hook_events/workspace\n{\n    \"page\": 1,\n    \"pagelen\": 30,\n    \"size\": 21,\n    \"values\": [\n        {\n            \"category\": \"Repository\",\n            \"description\": \"Whenever a repository push occurs\",\n            \"event\": \"repo:push\",\n            \"label\": \"Push\"\n        },\n        {\n            \"category\": \"Repository\",\n            \"description\": \"Whenever a repository fork occurs\",\n            \"event\": \"repo:fork\",\n            \"label\": \"Fork\"\n        },\n        {\n            \"category\": \"Repository\",\n            \"description\": \"Whenever a repository import occurs\",\n            \"event\": \"repo:imported\",\n            \"label\": \"Import\"\n        },\n        ...\n        {\n            \"category\":\"Pull Request\",\n            \"label\":\"Approved\",\n            \"description\":\"When someone has approved a pull request\",\n            \"event\":\"pullrequest:approved\"\n        },\n    ]\n}\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/hook_events/{{SUBJECT_TYPE}}",
+      "method": "GET",
+      "name": "List subscribable webhook types",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "subject_type",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/hook_events/{{SUBJECT_TYPE}}",
+      "pathParameters": [
+        {
+          "name": "subject_type",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List subscribable webhook types",
+      "url": "https://api.bitbucket.org/2.0/hook_events/{{SUBJECT_TYPE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all pull requests authored by the specified user.\n\nBy default only open pull requests are returned. This can be controlled\nusing the `state` query parameter. To retrieve pull requests that are\nin one of multiple states, repeat the `state` parameter for each\nindividual state.\n\nThis endpoint also supports filtering and sorting of the results. See\n[filtering and sorting](/cloud/bitbucket/rest/intro/#filtering) for more details.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/pullrequests/{{SELECTED_USER}}",
+      "method": "GET",
+      "name": "List pull requests for a user",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "selected_user",
+          "value": ""
+        },
+        {
+          "name": "state",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/pullrequests/{{SELECTED_USER}}",
+      "pathParameters": [
+        {
+          "name": "selected_user",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "state",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List pull requests for a user",
+      "url": "https://api.bitbucket.org/2.0/pullrequests/{{SELECTED_USER}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a paginated list of all public repositories.\n\nThis endpoint also supports filtering and sorting of the results. See\n[filtering and sorting](/cloud/bitbucket/rest/intro/#filtering) for more details.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories",
+      "method": "GET",
+      "name": "List public repositories",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "after",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "after",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List public repositories",
+      "url": "https://api.bitbucket.org/2.0/repositories"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a paginated list of all repositories owned by the specified\nworkspace.\n\nThe result can be narrowed down based on the authenticated user's role.\n\nE.g. with `?role=contributor`, only those repositories that the\nauthenticated user has write access to are returned (this includes any\nrepo the user is an admin on, as that implies write access).\n\nThis endpoint also supports filtering and sorting of the results. See\n[filtering and sorting](/cloud/bitbucket/rest/intro/#filtering) for more details.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}",
+      "method": "GET",
+      "name": "List repositories in a workspace",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "role",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List repositories in a workspace",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the repository. This is an irreversible operation.\n\nThis does not affect its forks.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}",
+      "method": "DELETE",
+      "name": "Delete a repository",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "redirect_to",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "redirect_to",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a repository",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the object describing this repository.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}",
+      "method": "GET",
+      "name": "Get a repository",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a repository",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "created_on": "",
+        "description": "",
+        "fork_policy": "allow_forks",
+        "full_name": "",
+        "has_issues": false,
+        "has_wiki": false,
+        "is_private": false,
+        "language": "",
+        "links": {
+          "avatar": {
+            "href": "",
+            "name": ""
+          },
+          "clone": [
+            {
+              "href": "",
+              "name": ""
+            }
+          ],
+          "commits": {
+            "href": "",
+            "name": ""
+          },
+          "downloads": {
+            "href": "",
+            "name": ""
+          },
+          "forks": {
+            "href": "",
+            "name": ""
+          },
+          "hooks": {
+            "href": "",
+            "name": ""
+          },
+          "html": {
+            "href": "",
+            "name": ""
+          },
+          "pullrequests": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          },
+          "watchers": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "mainbranch": {
+          "default_merge_strategy": "",
+          "links": {
+            "commits": {
+              "href": {},
+              "name": {}
+            },
+            "html": {
+              "href": {},
+              "name": {}
+            },
+            "self": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "merge_strategies": [
+            "merge_commit"
+          ],
+          "name": "",
+          "target": {
+            "participants": {},
+            "repository": {}
+          },
+          "type": ""
+        },
+        "name": "",
+        "owner": {
+          "created_on": "",
+          "display_name": "",
+          "links": {
+            "avatar": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "type": "",
+          "username": "",
+          "uuid": ""
+        },
+        "parent": {},
+        "project": {
+          "created_on": "",
+          "description": "",
+          "has_publicly_visible_repos": false,
+          "is_private": false,
+          "key": "",
+          "links": {
+            "avatar": {
+              "href": {},
+              "name": {}
+            },
+            "html": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "name": "",
+          "owner": {
+            "links": {}
+          },
+          "type": "",
+          "updated_on": "",
+          "uuid": ""
+        },
+        "scm": "git",
+        "size": 0,
+        "type": "",
+        "updated_on": "",
+        "uuid": ""
+      },
+      "body_json": {
+        "created_on": "",
+        "description": "",
+        "fork_policy": "allow_forks",
+        "full_name": "",
+        "has_issues": false,
+        "has_wiki": false,
+        "is_private": false,
+        "language": "",
+        "links": {
+          "avatar": {
+            "href": "",
+            "name": ""
+          },
+          "clone": [
+            {
+              "href": "",
+              "name": ""
+            }
+          ],
+          "commits": {
+            "href": "",
+            "name": ""
+          },
+          "downloads": {
+            "href": "",
+            "name": ""
+          },
+          "forks": {
+            "href": "",
+            "name": ""
+          },
+          "hooks": {
+            "href": "",
+            "name": ""
+          },
+          "html": {
+            "href": "",
+            "name": ""
+          },
+          "pullrequests": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          },
+          "watchers": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "mainbranch": {
+          "default_merge_strategy": "",
+          "links": {
+            "commits": {
+              "href": {},
+              "name": {}
+            },
+            "html": {
+              "href": {},
+              "name": {}
+            },
+            "self": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "merge_strategies": [
+            "merge_commit"
+          ],
+          "name": "",
+          "target": {
+            "participants": {},
+            "repository": {}
+          },
+          "type": ""
+        },
+        "name": "",
+        "owner": {
+          "created_on": "",
+          "display_name": "",
+          "links": {
+            "avatar": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "type": "",
+          "username": "",
+          "uuid": ""
+        },
+        "parent": {},
+        "project": {
+          "created_on": "",
+          "description": "",
+          "has_publicly_visible_repos": false,
+          "is_private": false,
+          "key": "",
+          "links": {
+            "avatar": {
+              "href": {},
+              "name": {}
+            },
+            "html": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "name": "",
+          "owner": {
+            "links": {}
+          },
+          "type": "",
+          "updated_on": "",
+          "uuid": ""
+        },
+        "scm": "git",
+        "size": 0,
+        "type": "",
+        "updated_on": "",
+        "uuid": ""
+      },
+      "body_text": "{\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"fork_policy\": \"allow_forks\", \"full_name\": \"\", \"has_issues\": false, \"has_wiki\": false, \"is_private\": false, \"language\": \"\", \"links\": {\"avatar\": {\"href\": \"\", \"name\": \"\"}, \"clone\": [{\"href\": \"\", \"name\": \"\"}], \"commits\": {\"href\": \"\", \"name\": \"\"}, \"downloads\": {\"href\": \"\", \"name\": \"\"}, \"forks\": {\"href\": \"\", \"name\": \"\"}, \"hooks\": {\"href\": \"\", \"name\": \"\"}, \"html\": {\"href\": \"\", \"name\": \"\"}, \"pullrequests\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}, \"watchers\": {\"href\": \"\", \"name\": \"\"}}, \"mainbranch\": {\"links\": {\"commits\": {\"href\": {}, \"name\": {}}, \"html\": {\"href\": {}, \"name\": {}}, \"self\": {\"href\": {}, \"name\": {}}}, \"name\": \"\", \"target\": {\"participants\": {}, \"repository\": {}}, \"type\": \"\", \"default_merge_strategy\": \"\", \"merge_strategies\": [\"merge_commit\"]}, \"name\": \"\", \"owner\": {\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {\"href\": {}, \"name\": {}}}, \"username\": \"\", \"uuid\": \"\"}, \"parent\": {}, \"project\": {\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"has_publicly_visible_repos\": false, \"is_private\": false, \"key\": \"\", \"links\": {\"avatar\": {\"href\": {}, \"name\": {}}, \"html\": {\"href\": {}, \"name\": {}}}, \"name\": \"\", \"owner\": {\"links\": {}}, \"updated_on\": \"\", \"uuid\": \"\"}, \"scm\": \"git\", \"size\": 0, \"updated_on\": \"\", \"uuid\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new repository.\n\nNote: In order to set the project for the newly created repository,\npass in either the project key or the project UUID as part of the\nrequest body as shown in the examples below:\n\n```\n$ curl -X POST -H \"Content-Type: application/json\" -d '{\n    \"scm\": \"git\",\n    \"project\": {\n        \"key\": \"MARS\"\n    }\n}' https://api.bitbucket.org/2.0/repositories/teamsinspace/hablanding\n```\n\nor\n\n```\n$ curl -X POST -H \"Content-Type: application/json\" -d '{\n    \"scm\": \"git\",\n    \"project\": {\n        \"key\": \"{ba516952-992a-4c2d-acbd-17d502922f96}\"\n    }\n}' https://api.bitbucket.org/2.0/repositories/teamsinspace/hablanding\n```\n\nThe project must be assigned for all repositories. If the project is not provided,\nthe repository is automatically assigned to the oldest project in the workspace.\n\nNote: In the examples above, the workspace ID `teamsinspace`,\nand/or the repository name `hablanding` can be replaced by UUIDs.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}",
+      "method": "POST",
+      "name": "Create a repository",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"fork_policy\": \"allow_forks\", \"full_name\": \"\", \"has_issues\": false, \"has_wiki\": false, \"is_private\": false, \"language\": \"\", \"links\": {\"avatar\": {\"href\": \"\", \"name\": \"\"}, \"clone\": [{\"href\": \"\", \"name\": \"\"}], \"commits\": {\"href\": \"\", \"name\": \"\"}, \"downloads\": {\"href\": \"\", \"name\": \"\"}, \"forks\": {\"href\": \"\", \"name\": \"\"}, \"hooks\": {\"href\": \"\", \"name\": \"\"}, \"html\": {\"href\": \"\", \"name\": \"\"}, \"pullrequests\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}, \"watchers\": {\"href\": \"\", \"name\": \"\"}}, \"mainbranch\": {\"links\": {\"commits\": {\"href\": {}, \"name\": {}}, \"html\": {\"href\": {}, \"name\": {}}, \"self\": {\"href\": {}, \"name\": {}}}, \"name\": \"\", \"target\": {\"participants\": {}, \"repository\": {}}, \"type\": \"\", \"default_merge_strategy\": \"\", \"merge_strategies\": [\"merge_commit\"]}, \"name\": \"\", \"owner\": {\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {\"href\": {}, \"name\": {}}}, \"username\": \"\", \"uuid\": \"\"}, \"parent\": {}, \"project\": {\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"has_publicly_visible_repos\": false, \"is_private\": false, \"key\": \"\", \"links\": {\"avatar\": {\"href\": {}, \"name\": {}}, \"html\": {\"href\": {}, \"name\": {}}}, \"name\": \"\", \"owner\": {\"links\": {}}, \"updated_on\": \"\", \"uuid\": \"\"}, \"scm\": \"git\", \"size\": 0, \"updated_on\": \"\", \"uuid\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a repository",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "created_on": "",
+        "description": "",
+        "fork_policy": "allow_forks",
+        "full_name": "",
+        "has_issues": false,
+        "has_wiki": false,
+        "is_private": false,
+        "language": "",
+        "links": {
+          "avatar": {
+            "href": "",
+            "name": ""
+          },
+          "clone": [
+            {
+              "href": "",
+              "name": ""
+            }
+          ],
+          "commits": {
+            "href": "",
+            "name": ""
+          },
+          "downloads": {
+            "href": "",
+            "name": ""
+          },
+          "forks": {
+            "href": "",
+            "name": ""
+          },
+          "hooks": {
+            "href": "",
+            "name": ""
+          },
+          "html": {
+            "href": "",
+            "name": ""
+          },
+          "pullrequests": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          },
+          "watchers": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "mainbranch": {
+          "default_merge_strategy": "",
+          "links": {
+            "commits": {
+              "href": {},
+              "name": {}
+            },
+            "html": {
+              "href": {},
+              "name": {}
+            },
+            "self": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "merge_strategies": [
+            "merge_commit"
+          ],
+          "name": "",
+          "target": {
+            "participants": {},
+            "repository": {}
+          },
+          "type": ""
+        },
+        "name": "",
+        "owner": {
+          "created_on": "",
+          "display_name": "",
+          "links": {
+            "avatar": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "type": "",
+          "username": "",
+          "uuid": ""
+        },
+        "parent": {},
+        "project": {
+          "created_on": "",
+          "description": "",
+          "has_publicly_visible_repos": false,
+          "is_private": false,
+          "key": "",
+          "links": {
+            "avatar": {
+              "href": {},
+              "name": {}
+            },
+            "html": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "name": "",
+          "owner": {
+            "links": {}
+          },
+          "type": "",
+          "updated_on": "",
+          "uuid": ""
+        },
+        "scm": "git",
+        "size": 0,
+        "type": "",
+        "updated_on": "",
+        "uuid": ""
+      },
+      "body_json": {
+        "created_on": "",
+        "description": "",
+        "fork_policy": "allow_forks",
+        "full_name": "",
+        "has_issues": false,
+        "has_wiki": false,
+        "is_private": false,
+        "language": "",
+        "links": {
+          "avatar": {
+            "href": "",
+            "name": ""
+          },
+          "clone": [
+            {
+              "href": "",
+              "name": ""
+            }
+          ],
+          "commits": {
+            "href": "",
+            "name": ""
+          },
+          "downloads": {
+            "href": "",
+            "name": ""
+          },
+          "forks": {
+            "href": "",
+            "name": ""
+          },
+          "hooks": {
+            "href": "",
+            "name": ""
+          },
+          "html": {
+            "href": "",
+            "name": ""
+          },
+          "pullrequests": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          },
+          "watchers": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "mainbranch": {
+          "default_merge_strategy": "",
+          "links": {
+            "commits": {
+              "href": {},
+              "name": {}
+            },
+            "html": {
+              "href": {},
+              "name": {}
+            },
+            "self": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "merge_strategies": [
+            "merge_commit"
+          ],
+          "name": "",
+          "target": {
+            "participants": {},
+            "repository": {}
+          },
+          "type": ""
+        },
+        "name": "",
+        "owner": {
+          "created_on": "",
+          "display_name": "",
+          "links": {
+            "avatar": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "type": "",
+          "username": "",
+          "uuid": ""
+        },
+        "parent": {},
+        "project": {
+          "created_on": "",
+          "description": "",
+          "has_publicly_visible_repos": false,
+          "is_private": false,
+          "key": "",
+          "links": {
+            "avatar": {
+              "href": {},
+              "name": {}
+            },
+            "html": {
+              "href": {},
+              "name": {}
+            }
+          },
+          "name": "",
+          "owner": {
+            "links": {}
+          },
+          "type": "",
+          "updated_on": "",
+          "uuid": ""
+        },
+        "scm": "git",
+        "size": 0,
+        "type": "",
+        "updated_on": "",
+        "uuid": ""
+      },
+      "body_text": "{\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"fork_policy\": \"allow_forks\", \"full_name\": \"\", \"has_issues\": false, \"has_wiki\": false, \"is_private\": false, \"language\": \"\", \"links\": {\"avatar\": {\"href\": \"\", \"name\": \"\"}, \"clone\": [{\"href\": \"\", \"name\": \"\"}], \"commits\": {\"href\": \"\", \"name\": \"\"}, \"downloads\": {\"href\": \"\", \"name\": \"\"}, \"forks\": {\"href\": \"\", \"name\": \"\"}, \"hooks\": {\"href\": \"\", \"name\": \"\"}, \"html\": {\"href\": \"\", \"name\": \"\"}, \"pullrequests\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}, \"watchers\": {\"href\": \"\", \"name\": \"\"}}, \"mainbranch\": {\"links\": {\"commits\": {\"href\": {}, \"name\": {}}, \"html\": {\"href\": {}, \"name\": {}}, \"self\": {\"href\": {}, \"name\": {}}}, \"name\": \"\", \"target\": {\"participants\": {}, \"repository\": {}}, \"type\": \"\", \"default_merge_strategy\": \"\", \"merge_strategies\": [\"merge_commit\"]}, \"name\": \"\", \"owner\": {\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {\"href\": {}, \"name\": {}}}, \"username\": \"\", \"uuid\": \"\"}, \"parent\": {}, \"project\": {\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"has_publicly_visible_repos\": false, \"is_private\": false, \"key\": \"\", \"links\": {\"avatar\": {\"href\": {}, \"name\": {}}, \"html\": {\"href\": {}, \"name\": {}}}, \"name\": \"\", \"owner\": {\"links\": {}}, \"updated_on\": \"\", \"uuid\": \"\"}, \"scm\": \"git\", \"size\": 0, \"updated_on\": \"\", \"uuid\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Since this endpoint can be used to both update and to create a\nrepository, the request body depends on the intent.\n\n#### Creation\n\nSee the POST documentation for the repository endpoint for an example\nof the request body.\n\n#### Update\n\nNote: Changing the `name` of the repository will cause the location to\nbe changed. This is because the URL of the repo is derived from the\nname (a process called slugification). In such a scenario, it is\npossible for the request to fail if the newly created slug conflicts\nwith an existing repository's slug. But if there is no conflict,\nthe new location will be returned in the `Location` header of the\nresponse.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}",
+      "method": "PUT",
+      "name": "Update a repository",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"fork_policy\": \"allow_forks\", \"full_name\": \"\", \"has_issues\": false, \"has_wiki\": false, \"is_private\": false, \"language\": \"\", \"links\": {\"avatar\": {\"href\": \"\", \"name\": \"\"}, \"clone\": [{\"href\": \"\", \"name\": \"\"}], \"commits\": {\"href\": \"\", \"name\": \"\"}, \"downloads\": {\"href\": \"\", \"name\": \"\"}, \"forks\": {\"href\": \"\", \"name\": \"\"}, \"hooks\": {\"href\": \"\", \"name\": \"\"}, \"html\": {\"href\": \"\", \"name\": \"\"}, \"pullrequests\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}, \"watchers\": {\"href\": \"\", \"name\": \"\"}}, \"mainbranch\": {\"links\": {\"commits\": {\"href\": {}, \"name\": {}}, \"html\": {\"href\": {}, \"name\": {}}, \"self\": {\"href\": {}, \"name\": {}}}, \"name\": \"\", \"target\": {\"participants\": {}, \"repository\": {}}, \"type\": \"\", \"default_merge_strategy\": \"\", \"merge_strategies\": [\"merge_commit\"]}, \"name\": \"\", \"owner\": {\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {\"href\": {}, \"name\": {}}}, \"username\": \"\", \"uuid\": \"\"}, \"parent\": {}, \"project\": {\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"has_publicly_visible_repos\": false, \"is_private\": false, \"key\": \"\", \"links\": {\"avatar\": {\"href\": {}, \"name\": {}}, \"html\": {\"href\": {}, \"name\": {}}}, \"name\": \"\", \"owner\": {\"links\": {}}, \"updated_on\": \"\", \"uuid\": \"\"}, \"scm\": \"git\", \"size\": 0, \"updated_on\": \"\", \"uuid\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a repository",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a paginated list of all branch restrictions on the\nrepository.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions",
+      "method": "GET",
+      "name": "List branch restrictions",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "kind",
+          "value": ""
+        },
+        {
+          "name": "pattern",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "kind",
+          "value": ""
+        },
+        {
+          "name": "pattern",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List branch restrictions",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "groups": [
+          {
+            "full_slug": "",
+            "links": {
+              "html": {},
+              "self": {}
+            },
+            "name": "",
+            "owner": {},
+            "slug": "",
+            "type": "",
+            "workspace": {}
+          }
+        ],
+        "type": "",
+        "users": [
+          {
+            "created_on": "",
+            "display_name": "",
+            "links": {
+              "avatar": {}
+            },
+            "type": "",
+            "username": "",
+            "uuid": ""
+          }
+        ]
+      },
+      "body_json": {
+        "groups": [
+          {
+            "full_slug": "",
+            "links": {
+              "html": {},
+              "self": {}
+            },
+            "name": "",
+            "owner": {},
+            "slug": "",
+            "type": "",
+            "workspace": {}
+          }
+        ],
+        "type": "",
+        "users": [
+          {
+            "created_on": "",
+            "display_name": "",
+            "links": {
+              "avatar": {}
+            },
+            "type": "",
+            "username": "",
+            "uuid": ""
+          }
+        ]
+      },
+      "body_text": "{\"type\": \"\", \"groups\": [{\"type\": \"\", \"full_slug\": \"\", \"links\": {\"html\": {}, \"self\": {}}, \"name\": \"\", \"owner\": {}, \"slug\": \"\", \"workspace\": {}}], \"users\": [{\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {}}, \"username\": \"\", \"uuid\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new branch restriction rule for a repository.\n\n`kind` describes what will be restricted. Allowed values include:\n`push`, `force`, `delete` and `restrict_merges`.\n\nDifferent kinds of branch restrictions have different requirements:\n\n* `push` and `restrict_merges` require `users` and `groups` to be\n  specified. Empty lists are allowed, in which case permission is\n  denied for everybody.\n\nThe restriction applies to all branches that match. There are\ntwo ways to match a branch. It is configured in `branch_match_kind`:\n\n1. `glob`: Matches a branch against the `pattern`. A `'*'` in\n   `pattern` will expand to match zero or more characters, and every\n   other character matches itself. For example, `'foo*'` will match\n   `'foo'` and `'foobar'`, but not `'barfoo'`. `'*'` will match all\n   branches.\n2. `branching_model`: Matches a branch against the repository's\n   branching model. The `branch_type` controls the type of branch\n   to match. Allowed values include: `production`, `development`,\n   `bugfix`, `release`, `feature` and `hotfix`.\n\nThe combination of `kind` and match must be unique. This means that\ntwo `glob` restrictions in a repository cannot have the same `kind` and\n`pattern`. Additionally, two `branching_model` restrictions in a\nrepository cannot have the same `kind` and `branch_type`.\n\n`users` and `groups` are lists of users and groups that are except from\nthe restriction. They can only be configured in `push` and\n`restrict_merges` restrictions. The `push` restriction stops a user\npushing to matching branches unless that user is in `users` or is a\nmember of a group in `groups`. The `restrict_merges` stops a user\nmerging pull requests to matching branches unless that user is in\n`users` or is a member of a group in `groups`. Adding new users or\ngroups to an existing restriction should be done via `PUT`.\n\nNote that branch restrictions with overlapping matchers is allowed,\nbut the resulting behavior may be surprising.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions",
+      "method": "POST",
+      "name": "Create a branch restriction rule",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"groups\": [{\"type\": \"\", \"full_slug\": \"\", \"links\": {\"html\": {}, \"self\": {}}, \"name\": \"\", \"owner\": {}, \"slug\": \"\", \"workspace\": {}}], \"users\": [{\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {}}, \"username\": \"\", \"uuid\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a branch restriction rule",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an existing branch restriction rule.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}",
+      "method": "DELETE",
+      "name": "Delete a branch restriction rule",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a branch restriction rule",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a specific branch restriction rule.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}",
+      "method": "GET",
+      "name": "Get a branch restriction rule",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a branch restriction rule",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "groups": [
+          {
+            "full_slug": "",
+            "links": {
+              "html": {},
+              "self": {}
+            },
+            "name": "",
+            "owner": {},
+            "slug": "",
+            "type": "",
+            "workspace": {}
+          }
+        ],
+        "type": "",
+        "users": [
+          {
+            "created_on": "",
+            "display_name": "",
+            "links": {
+              "avatar": {}
+            },
+            "type": "",
+            "username": "",
+            "uuid": ""
+          }
+        ]
+      },
+      "body_json": {
+        "groups": [
+          {
+            "full_slug": "",
+            "links": {
+              "html": {},
+              "self": {}
+            },
+            "name": "",
+            "owner": {},
+            "slug": "",
+            "type": "",
+            "workspace": {}
+          }
+        ],
+        "type": "",
+        "users": [
+          {
+            "created_on": "",
+            "display_name": "",
+            "links": {
+              "avatar": {}
+            },
+            "type": "",
+            "username": "",
+            "uuid": ""
+          }
+        ]
+      },
+      "body_text": "{\"type\": \"\", \"groups\": [{\"type\": \"\", \"full_slug\": \"\", \"links\": {\"html\": {}, \"self\": {}}, \"name\": \"\", \"owner\": {}, \"slug\": \"\", \"workspace\": {}}], \"users\": [{\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {}}, \"username\": \"\", \"uuid\": \"\"}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an existing branch restriction rule.\n\nFields not present in the request body are ignored.\n\nSee [`POST`](/cloud/bitbucket/rest/api-group-branch-restrictions/#api-repositories-workspace-repo-slug-branch-restrictions-post) for details.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}",
+      "method": "PUT",
+      "name": "Update a branch restriction rule",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}",
+      "pathParameters": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"groups\": [{\"type\": \"\", \"full_slug\": \"\", \"links\": {\"html\": {}, \"self\": {}}, \"name\": \"\", \"owner\": {}, \"slug\": \"\", \"workspace\": {}}], \"users\": [{\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {}}, \"username\": \"\", \"uuid\": \"\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a branch restriction rule",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branch-restrictions/{{ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return the branching model as applied to the repository. This view is\nread-only. The branching model settings can be changed using the\n[settings](#api-repositories-workspace-repo-slug-branching-model-settings-get) API.\n\nThe returned object:\n\n1. Always has a `development` property. `development.branch` contains\n   the actual repository branch object that is considered to be the\n   `development` branch. `development.branch` will not be present\n   if it does not exist.\n2. Might have a `production` property. `production` will not\n   be present when `production` is disabled.\n   `production.branch` contains the actual branch object that is\n   considered to be the `production` branch. `production.branch` will\n   not be present if it does not exist.\n3. Always has a `branch_types` array which contains all enabled branch\n   types.\n\nExample body:\n\n```\n{\n  \"development\": {\n    \"name\": \"master\",\n    \"branch\": {\n      \"type\": \"branch\",\n      \"name\": \"master\",\n      \"target\": {\n        \"hash\": \"16dffcb0de1b22e249db6799532074cf32efe80f\"\n      }\n    },\n    \"use_mainbranch\": true\n  },\n  \"production\": {\n    \"name\": \"production\",\n    \"branch\": {\n      \"type\": \"branch\",\n      \"name\": \"production\",\n      \"target\": {\n        \"hash\": \"16dffcb0de1b22e249db6799532074cf32efe80f\"\n      }\n    },\n    \"use_mainbranch\": false\n  },\n  \"branch_types\": [\n    {\n      \"kind\": \"release\",\n      \"prefix\": \"release/\"\n    },\n    {\n      \"kind\": \"hotfix\",\n      \"prefix\": \"hotfix/\"\n    },\n    {\n      \"kind\": \"feature\",\n      \"prefix\": \"feature/\"\n    },\n    {\n      \"kind\": \"bugfix\",\n      \"prefix\": \"bugfix/\"\n    }\n  ],\n  \"type\": \"branching_model\",\n  \"links\": {\n    \"self\": {\n      \"href\": \"https://api.bitbucket.org/.../branching-model\"\n    }\n  }\n}\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model",
+      "method": "GET",
+      "name": "Get the branching model for a repository",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the branching model for a repository",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Return the branching model configuration for a repository. The returned\nobject:\n\n1. Always has a `development` property for the development branch.\n2. Always a `production` property for the production branch. The\n   production branch can be disabled.\n3. The `branch_types` contains all the branch types.\n\nThis is the raw configuration for the branching model. A client\nwishing to see the branching model with its actual current branches may\nfind the [active model API](/cloud/bitbucket/rest/api-group-branching-model/#api-repositories-workspace-repo-slug-branching-model-get) more useful.\n\nExample body:\n\n```\n{\n  \"development\": {\n    \"is_valid\": true,\n    \"name\": null,\n    \"use_mainbranch\": true\n  },\n  \"production\": {\n    \"is_valid\": true,\n    \"name\": \"production\",\n    \"use_mainbranch\": false,\n    \"enabled\": false\n  },\n  \"branch_types\": [\n    {\n      \"kind\": \"release\",\n      \"enabled\": true,\n      \"prefix\": \"release/\"\n    },\n    {\n      \"kind\": \"hotfix\",\n      \"enabled\": true,\n      \"prefix\": \"hotfix/\"\n    },\n    {\n      \"kind\": \"feature\",\n      \"enabled\": true,\n      \"prefix\": \"feature/\"\n    },\n    {\n      \"kind\": \"bugfix\",\n      \"enabled\": false,\n      \"prefix\": \"bugfix/\"\n    }\n  ],\n  \"type\": \"branching_model_settings\",\n  \"links\": {\n    \"self\": {\n      \"href\": \"https://api.bitbucket.org/.../branching-model/settings\"\n    }\n  }\n}\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model/settings",
+      "method": "GET",
+      "name": "Get the branching model config for a repository",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model/settings",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the branching model config for a repository",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model/settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Update the branching model configuration for a repository.\n\nThe `development` branch can be configured to a specific branch or to\ntrack the main branch. When set to a specific branch it must\ncurrently exist. Only the passed properties will be updated. The\nproperties not passed will be left unchanged. A request without a\n`development` property will leave the development branch unchanged.\n\nIt is possible for the `development` branch to be invalid. This\nhappens when it points at a specific branch that has been\ndeleted. This is indicated in the `is_valid` field for the branch. It is\nnot possible to update the settings for `development` if that\nwould leave the branch in an invalid state. Such a request will be\nrejected.\n\nThe `production` branch can be a specific branch, the main\nbranch or disabled. When set to a specific branch it must currently\nexist. The `enabled` property can be used to enable (`true`) or\ndisable (`false`) it. Only the passed properties will be updated. The\nproperties not passed will be left unchanged. A request without a\n`production` property will leave the production branch unchanged.\n\nIt is possible for the `production` branch to be invalid. This\nhappens when it points at a specific branch that has been\ndeleted. This is indicated in the `is_valid` field for the branch. A\nrequest that would leave `production` enabled and invalid will be\nrejected. It is possible to update `production` and make it invalid if\nit would also be left disabled.\n\nThe `branch_types` property contains the branch types to be updated.\nOnly the branch types passed will be updated. All updates will be\nrejected if it would leave the branching model in an invalid state.\nFor branch types this means that:\n\n1. The prefixes for all enabled branch types are valid. For example,\n   it is not possible to use '*' inside a Git prefix.\n2. A prefix of an enabled branch type must not be a prefix of another\n   enabled branch type. This is to ensure that a branch can be easily\n   classified by its prefix unambiguously.\n\nIt is possible to store an invalid prefix if that branch type would be\nleft disabled. Only the passed properties will be updated. The\nproperties not passed will be left unchanged. Each branch type must\nhave a `kind` property to identify it.\n\nExample Body:\n\n```\n    {\n      \"development\": {\n        \"use_mainbranch\": true\n      },\n      \"production\": {\n        \"enabled\": true,\n        \"use_mainbranch\": false,\n        \"name\": \"production\"\n      },\n      \"branch_types\": [\n        {\n          \"kind\": \"bugfix\",\n          \"enabled\": true,\n          \"prefix\": \"bugfix/\"\n        },\n        {\n          \"kind\": \"feature\",\n          \"enabled\": true,\n          \"prefix\": \"feature/\"\n        },\n        {\n          \"kind\": \"hotfix\",\n          \"prefix\": \"hotfix/\"\n        },\n        {\n          \"kind\": \"release\",\n          \"enabled\": false,\n        }\n      ]\n    }\n```\n\nThere is currently a side effect when using this API endpoint. If the\nrepository is inheriting branching model settings from its project,\nupdating the branching model for this repository will disable the\nproject setting inheritance.\n\n\nWe have deprecated this side effect and will remove it on 1 August 2022.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "PUT /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model/settings",
+      "method": "PUT",
+      "name": "Update the branching model config for a repository",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model/settings",
+      "pathParameters": [
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update the branching model config for a repository",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/branching-model/settings"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the specified commit.\n\nExample:\n\n```\n$ curl https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/commit/f7591a1\n{\n    \"rendered\": {\n        \"message\": {\n        \"raw\": \"Add a GEORDI_OUTPUT_DIR setting\",\n        \"markup\": \"markdown\",\n        \"html\": \"<p>Add a GEORDI_OUTPUT_DIR setting</p>\",\n        \"type\": \"rendered\"\n        }\n    },\n    \"hash\": \"f7591a13eda445d9a9167f98eb870319f4b6c2d8\",\n    \"repository\": {\n        \"name\": \"geordi\",\n        \"type\": \"repository\",\n        \"full_name\": \"bitbucket/geordi\",\n        \"links\": {\n            \"self\": {\n                \"href\": \"https://api.bitbucket.org/2.0/repositories/bitbucket/geordi\"\n            },\n            \"html\": {\n                \"href\": \"https://bitbucket.org/bitbucket/geordi\"\n            },\n            \"avatar\": {\n                \"href\": \"https://bytebucket.org/ravatar/%7B85d08b4e-571d-44e9-a507-fa476535aa98%7D?ts=1730260\"\n            }\n        },\n        \"uuid\": \"{85d08b4e-571d-44e9-a507-fa476535aa98}\"\n    },\n    \"links\": {\n        \"self\": {\n            \"href\": \"https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/commit/f7591a13eda445d9a9167f98eb870319f4b6c2d8\"\n        },\n        \"comments\": {\n            \"href\": \"https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/commit/f7591a13eda445d9a9167f98eb870319f4b6c2d8/comments\"\n        },\n        \"patch\": {\n            \"href\": \"https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/patch/f7591a13eda445d9a9167f98eb870319f4b6c2d8\"\n        },\n        \"html\": {\n            \"href\": \"https://bitbucket.org/bitbucket/geordi/commits/f7591a13eda445d9a9167f98eb870319f4b6c2d8\"\n        },\n        \"diff\": {\n            \"href\": \"https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/diff/f7591a13eda445d9a9167f98eb870319f4b6c2d8\"\n        },\n        \"approve\": {\n            \"href\": \"https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/commit/f7591a13eda445d9a9167f98eb870319f4b6c2d8/approve\"\n        },\n        \"statuses\": {\n            \"href\": \"https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/commit/f7591a13eda445d9a9167f98eb870319f4b6c2d8/statuses\"\n        }\n    },\n    \"author\": {\n        \"raw\": \"Brodie Rao <a@b.c>\",\n        \"type\": \"author\",\n        \"user\": {\n            \"display_name\": \"Brodie Rao\",\n            \"uuid\": \"{9484702e-c663-4afd-aefb-c93a8cd31c28}\",\n            \"links\": {\n                \"self\": {\n                    \"href\": \"https://api.bitbucket.org/2.0/users/%7B9484702e-c663-4afd-aefb-c93a8cd31c28%7D\"\n                },\n                \"html\": {\n                    \"href\": \"https://bitbucket.org/%7B9484702e-c663-4afd-aefb-c93a8cd31c28%7D/\"\n                },\n                \"avatar\": {\n                    \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/557058:3aae1e05-702a-41e5-81c8-f36f29afb6ca/613070db-28b0-421f-8dba-ae8a87e2a5c7/128\"\n                }\n            },\n            \"type\": \"user\",\n            \"nickname\": \"brodie\",\n            \"account_id\": \"557058:3aae1e05-702a-41e5-81c8-f36f29afb6ca\"\n        }\n    },\n    \"summary\": {\n        \"raw\": \"Add a GEORDI_OUTPUT_DIR setting\",\n        \"markup\": \"markdown\",\n        \"html\": \"<p>Add a GEORDI_OUTPUT_DIR setting</p>\",\n        \"type\": \"rendered\"\n    },\n    \"participants\": [],\n    \"parents\": [\n        {\n            \"type\": \"commit\",\n            \"hash\": \"f06941fec4ef6bcb0c2456927a0cf258fa4f899b\",\n            \"links\": {\n                \"self\": {\n                    \"href\": \"https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/commit/f06941fec4ef6bcb0c2456927a0cf258fa4f899b\"\n                },\n                \"html\": {\n                    \"href\": \"https://bitbucket.org/bitbucket/geordi/commits/f06941fec4ef6bcb0c2456927a0cf258fa4f899b\"\n                }\n            }\n        }\n    ],\n    \"date\": \"2012-07-16T19:37:54+00:00\",\n    \"message\": \"Add a GEORDI_OUTPUT_DIR setting\",\n    \"type\": \"commit\"\n}\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}",
+      "method": "GET",
+      "name": "Get a commit",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}",
+      "pathParameters": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a commit",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Redact the authenticated user's approval of the specified commit.\n\nThis operation is only available to users that have explicit access to\nthe repository. In contrast, just the fact that a repository is\npublicly accessible to users does not give them the ability to approve\ncommits.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/approve",
+      "method": "DELETE",
+      "name": "Unapprove a commit",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/approve",
+      "pathParameters": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Unapprove a commit",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/approve"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Approve the specified commit as the authenticated user.\n\nThis operation is only available to users that have explicit access to\nthe repository. In contrast, just the fact that a repository is\npublicly accessible to users does not give them the ability to approve\ncommits.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/approve",
+      "method": "POST",
+      "name": "Approve a commit",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/approve",
+      "pathParameters": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Approve a commit",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/approve"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the commit's comments.\n\nThis includes both global and inline comments.\n\nThe default sorting is oldest to newest and can be overridden with\nthe `sort` query parameter.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments",
+      "method": "GET",
+      "name": "List a commit's comments",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments",
+      "pathParameters": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List a commit's comments",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "commit": {
+          "author": {},
+          "date": "",
+          "hash": "",
+          "message": "",
+          "parents": [
+            {}
+          ],
+          "participants": [
+            {}
+          ],
+          "repository": {
+            "created_on": {},
+            "description": {},
+            "fork_policy": {},
+            "full_name": {},
+            "has_issues": {},
+            "has_wiki": {},
+            "is_private": {},
+            "language": {},
+            "links": {},
+            "mainbranch": {},
+            "name": {},
+            "owner": {},
+            "parent": {},
+            "project": {},
+            "scm": {},
+            "size": {},
+            "type": {},
+            "updated_on": {},
+            "uuid": {}
+          },
+          "summary": {
+            "html": {},
+            "markup": {},
+            "raw": {}
+          },
+          "type": ""
+        },
+        "content": {
+          "html": "",
+          "markup": "markdown",
+          "raw": ""
+        },
+        "created_on": "",
+        "deleted": false,
+        "id": 0,
+        "inline": {
+          "from": 0,
+          "path": "",
+          "to": 0
+        },
+        "links": {
+          "code": {
+            "href": "",
+            "name": ""
+          },
+          "html": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "parent": {},
+        "type": "",
+        "updated_on": "",
+        "user": {
+          "created_on": "",
+          "display_name": "",
+          "links": {
+            "avatar": {}
+          },
+          "type": "",
+          "username": "",
+          "uuid": ""
+        }
+      },
+      "body_json": {
+        "commit": {
+          "author": {},
+          "date": "",
+          "hash": "",
+          "message": "",
+          "parents": [
+            {}
+          ],
+          "participants": [
+            {}
+          ],
+          "repository": {
+            "created_on": {},
+            "description": {},
+            "fork_policy": {},
+            "full_name": {},
+            "has_issues": {},
+            "has_wiki": {},
+            "is_private": {},
+            "language": {},
+            "links": {},
+            "mainbranch": {},
+            "name": {},
+            "owner": {},
+            "parent": {},
+            "project": {},
+            "scm": {},
+            "size": {},
+            "type": {},
+            "updated_on": {},
+            "uuid": {}
+          },
+          "summary": {
+            "html": {},
+            "markup": {},
+            "raw": {}
+          },
+          "type": ""
+        },
+        "content": {
+          "html": "",
+          "markup": "markdown",
+          "raw": ""
+        },
+        "created_on": "",
+        "deleted": false,
+        "id": 0,
+        "inline": {
+          "from": 0,
+          "path": "",
+          "to": 0
+        },
+        "links": {
+          "code": {
+            "href": "",
+            "name": ""
+          },
+          "html": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "parent": {},
+        "type": "",
+        "updated_on": "",
+        "user": {
+          "created_on": "",
+          "display_name": "",
+          "links": {
+            "avatar": {}
+          },
+          "type": "",
+          "username": "",
+          "uuid": ""
+        }
+      },
+      "body_text": "{\"type\": \"\", \"content\": {\"html\": \"\", \"markup\": \"markdown\", \"raw\": \"\"}, \"created_on\": \"\", \"deleted\": false, \"id\": 0, \"inline\": {\"from\": 0, \"path\": \"\", \"to\": 0}, \"links\": {\"code\": {\"href\": \"\", \"name\": \"\"}, \"html\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}}, \"parent\": {}, \"updated_on\": \"\", \"user\": {\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {}}, \"username\": \"\", \"uuid\": \"\"}, \"commit\": {\"type\": \"\", \"author\": {}, \"date\": \"\", \"hash\": \"\", \"message\": \"\", \"parents\": [{}], \"summary\": {\"html\": {}, \"markup\": {}, \"raw\": {}}, \"participants\": [{}], \"repository\": {\"type\": {}, \"created_on\": {}, \"description\": {}, \"fork_policy\": {}, \"full_name\": {}, \"has_issues\": {}, \"has_wiki\": {}, \"is_private\": {}, \"language\": {}, \"links\": {}, \"mainbranch\": {}, \"name\": {}, \"owner\": {}, \"parent\": {}, \"project\": {}, \"scm\": {}, \"size\": {}, \"updated_on\": {}, \"uuid\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates new comment on the specified commit.\n\nTo post a reply to an existing comment, include the `parent.id` field:\n\n```\n$ curl https://api.bitbucket.org/2.0/repositories/atlassian/prlinks/commit/db9ba1e031d07a02603eae0e559a7adc010257fc/comments/ \\\n  -X POST -u evzijst \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"content\": {\"raw\": \"One more thing!\"},\n       \"parent\": {\"id\": 5728901}}'\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments",
+      "method": "POST",
+      "name": "Create comment for a commit",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments",
+      "pathParameters": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"content\": {\"html\": \"\", \"markup\": \"markdown\", \"raw\": \"\"}, \"created_on\": \"\", \"deleted\": false, \"id\": 0, \"inline\": {\"from\": 0, \"path\": \"\", \"to\": 0}, \"links\": {\"code\": {\"href\": \"\", \"name\": \"\"}, \"html\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}}, \"parent\": {}, \"updated_on\": \"\", \"user\": {\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {}}, \"username\": \"\", \"uuid\": \"\"}, \"commit\": {\"type\": \"\", \"author\": {}, \"date\": \"\", \"hash\": \"\", \"message\": \"\", \"parents\": [{}], \"summary\": {\"html\": {}, \"markup\": {}, \"raw\": {}}, \"participants\": [{}], \"repository\": {\"type\": {}, \"created_on\": {}, \"description\": {}, \"fork_policy\": {}, \"full_name\": {}, \"has_issues\": {}, \"has_wiki\": {}, \"is_private\": {}, \"language\": {}, \"links\": {}, \"mainbranch\": {}, \"name\": {}, \"owner\": {}, \"parent\": {}, \"project\": {}, \"scm\": {}, \"size\": {}, \"updated_on\": {}, \"uuid\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create comment for a commit",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes the specified commit comment.\n\nNote that deleting comments that have visible replies that point to\nthem will not really delete the resource. This is to retain the integrity\nof the original comment tree. Instead, the `deleted` element is set to\n`true` and the content is blanked out. The comment will continue to be\nreturned by the collections and self endpoints.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}",
+      "method": "DELETE",
+      "name": "Delete a commit comment",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "comment_id",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "comment_id",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a commit comment",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns the specified commit comment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}",
+      "method": "GET",
+      "name": "Get a commit comment",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "comment_id",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "comment_id",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a commit comment",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "commit": {
+          "author": {},
+          "date": "",
+          "hash": "",
+          "message": "",
+          "parents": [
+            {}
+          ],
+          "participants": [
+            {}
+          ],
+          "repository": {
+            "created_on": {},
+            "description": {},
+            "fork_policy": {},
+            "full_name": {},
+            "has_issues": {},
+            "has_wiki": {},
+            "is_private": {},
+            "language": {},
+            "links": {},
+            "mainbranch": {},
+            "name": {},
+            "owner": {},
+            "parent": {},
+            "project": {},
+            "scm": {},
+            "size": {},
+            "type": {},
+            "updated_on": {},
+            "uuid": {}
+          },
+          "summary": {
+            "html": {},
+            "markup": {},
+            "raw": {}
+          },
+          "type": ""
+        },
+        "content": {
+          "html": "",
+          "markup": "markdown",
+          "raw": ""
+        },
+        "created_on": "",
+        "deleted": false,
+        "id": 0,
+        "inline": {
+          "from": 0,
+          "path": "",
+          "to": 0
+        },
+        "links": {
+          "code": {
+            "href": "",
+            "name": ""
+          },
+          "html": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "parent": {},
+        "type": "",
+        "updated_on": "",
+        "user": {
+          "created_on": "",
+          "display_name": "",
+          "links": {
+            "avatar": {}
+          },
+          "type": "",
+          "username": "",
+          "uuid": ""
+        }
+      },
+      "body_json": {
+        "commit": {
+          "author": {},
+          "date": "",
+          "hash": "",
+          "message": "",
+          "parents": [
+            {}
+          ],
+          "participants": [
+            {}
+          ],
+          "repository": {
+            "created_on": {},
+            "description": {},
+            "fork_policy": {},
+            "full_name": {},
+            "has_issues": {},
+            "has_wiki": {},
+            "is_private": {},
+            "language": {},
+            "links": {},
+            "mainbranch": {},
+            "name": {},
+            "owner": {},
+            "parent": {},
+            "project": {},
+            "scm": {},
+            "size": {},
+            "type": {},
+            "updated_on": {},
+            "uuid": {}
+          },
+          "summary": {
+            "html": {},
+            "markup": {},
+            "raw": {}
+          },
+          "type": ""
+        },
+        "content": {
+          "html": "",
+          "markup": "markdown",
+          "raw": ""
+        },
+        "created_on": "",
+        "deleted": false,
+        "id": 0,
+        "inline": {
+          "from": 0,
+          "path": "",
+          "to": 0
+        },
+        "links": {
+          "code": {
+            "href": "",
+            "name": ""
+          },
+          "html": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "parent": {},
+        "type": "",
+        "updated_on": "",
+        "user": {
+          "created_on": "",
+          "display_name": "",
+          "links": {
+            "avatar": {}
+          },
+          "type": "",
+          "username": "",
+          "uuid": ""
+        }
+      },
+      "body_text": "{\"type\": \"\", \"content\": {\"html\": \"\", \"markup\": \"markdown\", \"raw\": \"\"}, \"created_on\": \"\", \"deleted\": false, \"id\": 0, \"inline\": {\"from\": 0, \"path\": \"\", \"to\": 0}, \"links\": {\"code\": {\"href\": \"\", \"name\": \"\"}, \"html\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}}, \"parent\": {}, \"updated_on\": \"\", \"user\": {\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {}}, \"username\": \"\", \"uuid\": \"\"}, \"commit\": {\"type\": \"\", \"author\": {}, \"date\": \"\", \"hash\": \"\", \"message\": \"\", \"parents\": [{}], \"summary\": {\"html\": {}, \"markup\": {}, \"raw\": {}}, \"participants\": [{}], \"repository\": {\"type\": {}, \"created_on\": {}, \"description\": {}, \"fork_policy\": {}, \"full_name\": {}, \"has_issues\": {}, \"has_wiki\": {}, \"is_private\": {}, \"language\": {}, \"links\": {}, \"mainbranch\": {}, \"name\": {}, \"owner\": {}, \"parent\": {}, \"project\": {}, \"scm\": {}, \"size\": {}, \"updated_on\": {}, \"uuid\": {}}}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Used to update the contents of a comment. Only the content of the comment can be updated.\n\n```\n$ curl https://api.bitbucket.org/2.0/repositories/atlassian/prlinks/commit/7f71b5/comments/5728901 \\\n  -X PUT -u evzijst \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"content\": {\"raw\": \"One more thing!\"}'\n```",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}",
+      "method": "PUT",
+      "name": "Update a commit comment",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "comment_id",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "comment_id",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"content\": {\"html\": \"\", \"markup\": \"markdown\", \"raw\": \"\"}, \"created_on\": \"\", \"deleted\": false, \"id\": 0, \"inline\": {\"from\": 0, \"path\": \"\", \"to\": 0}, \"links\": {\"code\": {\"href\": \"\", \"name\": \"\"}, \"html\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}}, \"parent\": {}, \"updated_on\": \"\", \"user\": {\"type\": \"\", \"created_on\": \"\", \"display_name\": \"\", \"links\": {\"avatar\": {}}, \"username\": \"\", \"uuid\": \"\"}, \"commit\": {\"type\": \"\", \"author\": {}, \"date\": \"\", \"hash\": \"\", \"message\": \"\", \"parents\": [{}], \"summary\": {\"html\": {}, \"markup\": {}, \"raw\": {}}, \"participants\": [{}], \"repository\": {\"type\": {}, \"created_on\": {}, \"description\": {}, \"fork_policy\": {}, \"full_name\": {}, \"has_issues\": {}, \"has_wiki\": {}, \"is_private\": {}, \"language\": {}, \"links\": {}, \"mainbranch\": {}, \"name\": {}, \"owner\": {}, \"parent\": {}, \"project\": {}, \"scm\": {}, \"size\": {}, \"updated_on\": {}, \"uuid\": {}}}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a commit comment",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/comments/{{COMMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an [application property](/cloud/bitbucket/application-properties/) value stored against a commit.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}",
+      "method": "DELETE",
+      "name": "Delete a commit application property",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "app_key",
+          "value": ""
+        },
+        {
+          "name": "property_name",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "app_key",
+          "value": ""
+        },
+        {
+          "name": "property_name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a commit application property",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve an [application property](/cloud/bitbucket/application-properties/) value stored against a commit.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}",
+      "method": "GET",
+      "name": "Get a commit application property",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "app_key",
+          "value": ""
+        },
+        {
+          "name": "property_name",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "app_key",
+          "value": ""
+        },
+        {
+          "name": "property_name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a commit application property",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "_attributes": [
+          "public"
+        ]
+      },
+      "body_json": {
+        "_attributes": [
+          "public"
+        ]
+      },
+      "body_text": "{\"_attributes\": [\"public\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update an [application property](/cloud/bitbucket/application-properties/) value stored against a commit.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}",
+      "method": "PUT",
+      "name": "Update a commit application property",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "app_key",
+          "value": ""
+        },
+        {
+          "name": "property_name",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "app_key",
+          "value": ""
+        },
+        {
+          "name": "property_name",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"_attributes\": [\"public\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update a commit application property",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/properties/{{APP_KEY}}/{{PROPERTY_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a paginated list of all pull requests as part of which this commit was reviewed. Pull Request Commit Links app must be installed first before using this API; installation automatically occurs when 'Go to pull request' is clicked from the web interface for a commit's details.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/pullrequests",
+      "method": "GET",
+      "name": "List pull requests that contain a commit",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "pagelen",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/pullrequests",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "page",
+          "value": ""
+        },
+        {
+          "name": "pagelen",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List pull requests that contain a commit",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/pullrequests"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a paginated list of Reports linked to this commit.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports",
+      "method": "GET",
+      "name": "List reports",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List reports",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a single Report matching the provided ID.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}",
+      "method": "DELETE",
+      "name": "Delete a report",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete a report",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a single Report matching the provided ID.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}",
+      "method": "GET",
+      "name": "Get a report",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get a report",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "created_on": "",
+        "data": [
+          {
+            "title": "",
+            "type": "BOOLEAN",
+            "value": {}
+          }
+        ],
+        "details": "",
+        "external_id": "",
+        "link": "",
+        "logo_url": "",
+        "remote_link_enabled": false,
+        "report_type": "SECURITY",
+        "reporter": "",
+        "result": "PASSED",
+        "title": "",
+        "type": "",
+        "updated_on": "",
+        "uuid": ""
+      },
+      "body_json": {
+        "created_on": "",
+        "data": [
+          {
+            "title": "",
+            "type": "BOOLEAN",
+            "value": {}
+          }
+        ],
+        "details": "",
+        "external_id": "",
+        "link": "",
+        "logo_url": "",
+        "remote_link_enabled": false,
+        "report_type": "SECURITY",
+        "reporter": "",
+        "result": "PASSED",
+        "title": "",
+        "type": "",
+        "updated_on": "",
+        "uuid": ""
+      },
+      "body_text": "{\"type\": \"\", \"created_on\": \"\", \"data\": [{\"title\": \"\", \"type\": \"BOOLEAN\", \"value\": {}}], \"details\": \"\", \"external_id\": \"\", \"link\": \"\", \"logo_url\": \"\", \"remote_link_enabled\": false, \"report_type\": \"SECURITY\", \"reporter\": \"\", \"result\": \"PASSED\", \"title\": \"\", \"updated_on\": \"\", \"uuid\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates or updates a report for the specified commit.\nTo upload a report, make sure to generate an ID that is unique across all reports for that commit. If you want to use an existing id from your own system, we recommend prefixing it with your system's name to avoid collisions, for example, mySystem-001.\n\n### Sample cURL request:\n```\ncurl --request PUT 'https://api.bitbucket.org/2.0/repositories/<username>/<reposity-name>/commit/<commit-hash>/reports/mysystem-001' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"title\": \"Security scan report\",\n    \"details\": \"This pull request introduces 10 new dependency vulnerabilities.\",\n    \"report_type\": \"SECURITY\",\n    \"reporter\": \"mySystem\",\n    \"link\": \"http://www.mysystem.com/reports/001\",\n    \"result\": \"FAILED\",\n    \"data\": [\n        {\n            \"title\": \"Duration (seconds)\",\n            \"type\": \"DURATION\",\n            \"value\": 14\n        },\n        {\n            \"title\": \"Safe to merge?\",\n            \"type\": \"BOOLEAN\",\n            \"value\": false\n        }\n    ]\n}'\n```\n\n### Possible field values:\nreport_type: SECURITY, COVERAGE, TEST, BUG\nresult: PASSED, FAILED, PENDING\ndata.type: BOOLEAN, DATE, DURATION, LINK, NUMBER, PERCENTAGE, TEXT\n\n#### Data field formats\n| Type  Field   | Value Field Type  | Value Field Display |\n|:--------------|:------------------|:--------------------|\n| None/ Omitted | Number, String or Boolean (not an array or object) | Plain text |\n| BOOLEAN\t| Boolean | The value will be read as a JSON boolean and displayed as 'Yes' or 'No'. |\n| DATE  | Number | The value will be read as a JSON number in the form of a Unix timestamp (milliseconds) and will be displayed as a relative date if the date is less than one week ago, otherwise  it will be displayed as an absolute date. |\n| DURATION | Number | The value will be read as a JSON number in milliseconds and will be displayed in a human readable duration format. |\n| LINK | Object: `{\"text\": \"Link text here\", \"href\": \"https://link.to.annotation/in/external/tool\"}` | The value will be read as a JSON object containing the fields \"text\" and \"href\" and will be displayed as a clickable link on the report. |\n| NUMBER | Number | The value will be read as a JSON number and large numbers will be  displayed in a human readable format (e.g. 14.3k). |\n| PERCENTAGE | Number (between 0 and 100) | The value will be read as a JSON number between 0 and 100 and will be displayed with a percentage sign. |\n| TEXT | String | The value will be read as a JSON string and will be displayed as-is |\n\nPlease refer to the [Code Insights documentation](https://confluence.atlassian.com/bitbucket/code-insights-994316785.html) for more information.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}",
+      "method": "PUT",
+      "name": "Create or update a report",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"created_on\": \"\", \"data\": [{\"title\": \"\", \"type\": \"BOOLEAN\", \"value\": {}}], \"details\": \"\", \"external_id\": \"\", \"link\": \"\", \"logo_url\": \"\", \"remote_link_enabled\": false, \"report_type\": \"SECURITY\", \"reporter\": \"\", \"result\": \"PASSED\", \"title\": \"\", \"updated_on\": \"\", \"uuid\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create or update a report",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a paginated list of Annotations for a specified report.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations",
+      "method": "GET",
+      "name": "List annotations",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List annotations",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": [
+        {
+          "annotation_type": "VULNERABILITY",
+          "created_on": "",
+          "details": "",
+          "external_id": "",
+          "line": 0,
+          "link": "",
+          "path": "",
+          "result": "PASSED",
+          "severity": "CRITICAL",
+          "summary": "",
+          "type": "",
+          "updated_on": "",
+          "uuid": ""
+        }
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Bulk upload of annotations.\nAnnotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.\n\nAdd the annotations you want to upload as objects in a JSON array and make sure each annotation has the external_id field set to a unique value. If you want to use an existing id from your own system, we recommend prefixing it with your system's name to avoid collisions, for example, mySystem-annotation001. The external id can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). You can upload up to 100 annotations per POST request.\n\n### Sample cURL request:\n```\ncurl --location 'https://api.bitbucket.org/2.0/repositories/<username>/<reposity-name>/commit/<commit-hash>/reports/mysystem-001/annotations' \\\n--header 'Content-Type: application/json' \\\n--data-raw '[\n  {\n        \"external_id\": \"mysystem-annotation001\",\n        \"title\": \"Security scan report\",\n        \"annotation_type\": \"VULNERABILITY\",\n        \"summary\": \"This line represents a security threat.\",\n        \"severity\": \"HIGH\",\n      \"path\": \"my-service/src/main/java/com/myCompany/mysystem/logic/Main.java\",\n        \"line\": 42\n  },\n  {\n        \"external_id\": \"mySystem-annotation002\",\n        \"title\": \"Bug report\",\n        \"annotation_type\": \"BUG\",\n        \"result\": \"FAILED\",\n        \"summary\": \"This line might introduce a bug.\",\n        \"severity\": \"MEDIUM\",\n      \"path\": \"my-service/src/main/java/com/myCompany/mysystem/logic/Helper.java\",\n        \"line\": 13\n  }\n]'\n```\n\n### Possible field values:\nannotation_type: VULNERABILITY, CODE_SMELL, BUG\nresult: PASSED, FAILED, IGNORED, SKIPPED\nseverity: HIGH, MEDIUM, LOW, CRITICAL\n\nPlease refer to the [Code Insights documentation](https://confluence.atlassian.com/bitbucket/code-insights-994316785.html) for more information.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations",
+      "method": "POST",
+      "name": "Bulk create or update annotations",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Bulk create or update annotations",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a single Annotation matching the provided ID.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}",
+      "method": "DELETE",
+      "name": "Delete an annotation",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        },
+        {
+          "name": "annotationId",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        },
+        {
+          "name": "annotationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete an annotation",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns a single Annotation matching the provided ID.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}",
+      "method": "GET",
+      "name": "Get an annotation",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        },
+        {
+          "name": "annotationId",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        },
+        {
+          "name": "annotationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get an annotation",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "annotation_type": "VULNERABILITY",
+        "created_on": "",
+        "details": "",
+        "external_id": "",
+        "line": 0,
+        "link": "",
+        "path": "",
+        "result": "PASSED",
+        "severity": "CRITICAL",
+        "summary": "",
+        "type": "",
+        "updated_on": "",
+        "uuid": ""
+      },
+      "body_json": {
+        "annotation_type": "VULNERABILITY",
+        "created_on": "",
+        "details": "",
+        "external_id": "",
+        "line": 0,
+        "link": "",
+        "path": "",
+        "result": "PASSED",
+        "severity": "CRITICAL",
+        "summary": "",
+        "type": "",
+        "updated_on": "",
+        "uuid": ""
+      },
+      "body_text": "{\"type\": \"\", \"annotation_type\": \"VULNERABILITY\", \"created_on\": \"\", \"details\": \"\", \"external_id\": \"\", \"line\": 0, \"link\": \"\", \"path\": \"\", \"result\": \"PASSED\", \"severity\": \"CRITICAL\", \"summary\": \"\", \"updated_on\": \"\", \"uuid\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates or updates an individual annotation for the specified report.\nAnnotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.\n\nJust as reports, annotation needs to be uploaded with a unique ID that can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). If you want to use an existing id from your own system, we recommend prefixing it with your system's name to avoid collisions, for example, mySystem-annotation001.\n\n### Sample cURL request:\n```\ncurl --request PUT 'https://api.bitbucket.org/2.0/repositories/<username>/<reposity-name>/commit/<commit-hash>/reports/mySystem-001/annotations/mysystem-annotation001' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"title\": \"Security scan report\",\n    \"annotation_type\": \"VULNERABILITY\",\n    \"summary\": \"This line represents a security thread.\",\n    \"severity\": \"HIGH\",\n    \"path\": \"my-service/src/main/java/com/myCompany/mysystem/logic/Main.java\",\n    \"line\": 42\n}'\n```\n\n### Possible field values:\nannotation_type: VULNERABILITY, CODE_SMELL, BUG\nresult: PASSED, FAILED, IGNORED, SKIPPED\nseverity: HIGH, MEDIUM, LOW, CRITICAL\n\nPlease refer to the [Code Insights documentation](https://confluence.atlassian.com/bitbucket/code-insights-994316785.html) for more information.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}",
+      "method": "PUT",
+      "name": "Create or update an annotation",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        },
+        {
+          "name": "annotationId",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "reportId",
+          "value": ""
+        },
+        {
+          "name": "annotationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"annotation_type\": \"VULNERABILITY\", \"created_on\": \"\", \"details\": \"\", \"external_id\": \"\", \"line\": 0, \"link\": \"\", \"path\": \"\", \"result\": \"PASSED\", \"severity\": \"CRITICAL\", \"summary\": \"\", \"updated_on\": \"\", \"uuid\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create or update an annotation",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/reports/{{REPORT_ID}}/annotations/{{ANNOTATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns all statuses (e.g. build results) for a specific commit.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/statuses",
+      "method": "GET",
+      "name": "List commit statuses for a commit",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        },
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/statuses",
+      "pathParameters": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "q",
+          "value": ""
+        },
+        {
+          "name": "sort",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List commit statuses for a commit",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/statuses"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "BITBUCKET_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "created_on": "",
+        "description": "",
+        "key": "",
+        "links": {
+          "commit": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "name": "",
+        "refname": "",
+        "state": "INPROGRESS",
+        "type": "",
+        "updated_on": "",
+        "url": "",
+        "uuid": ""
+      },
+      "body_json": {
+        "created_on": "",
+        "description": "",
+        "key": "",
+        "links": {
+          "commit": {
+            "href": "",
+            "name": ""
+          },
+          "self": {
+            "href": "",
+            "name": ""
+          }
+        },
+        "name": "",
+        "refname": "",
+        "state": "INPROGRESS",
+        "type": "",
+        "updated_on": "",
+        "url": "",
+        "uuid": ""
+      },
+      "body_text": "{\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"key\": \"\", \"links\": {\"commit\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}}, \"name\": \"\", \"refname\": \"\", \"state\": \"INPROGRESS\", \"updated_on\": \"\", \"url\": \"\", \"uuid\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new build status against the specified commit.\n\nIf the specified key already exists, the existing status object will\nbe overwritten.\n\nExample:\n\n```\ncurl https://api.bitbucket.org/2.0/repositories/my-workspace/my-repo/commit/e10dae226959c2194f2b07b077c07762d93821cf/statuses/build/           -X POST -u jdoe -H 'Content-Type: application/json'           -d '{\n    \"key\": \"MY-BUILD\",\n    \"state\": \"SUCCESSFUL\",\n    \"description\": \"42 tests passed\",\n    \"url\": \"https://www.example.org/my-build-result\"\n  }'\n```\n\nWhen creating a new commit status, you can use a URI template for the URL.\nTemplates are URLs that contain variable names that Bitbucket will\nevaluate at runtime whenever the URL is displayed anywhere similar to\nparameter substitution in\n[Bitbucket Connect](https://developer.atlassian.com/bitbucket/concepts/context-parameters.html).\nFor example, one could use `https://foo.com/builds/{repository.full_name}`\nwhich Bitbucket will turn into `https://foo.com/builds/foo/bar` at render time.\nThe context variables available are `repository` and `commit`.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{BITBUCKET_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/statuses/build",
+      "method": "POST",
+      "name": "Create a build status for a commit",
+      "note": "Replace {{BITBUCKET_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "path": "/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/statuses/build",
+      "pathParameters": [
+        {
+          "name": "commit",
+          "value": ""
+        },
+        {
+          "name": "repo_slug",
+          "value": ""
+        },
+        {
+          "name": "workspace",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"type\": \"\", \"created_on\": \"\", \"description\": \"\", \"key\": \"\", \"links\": {\"commit\": {\"href\": \"\", \"name\": \"\"}, \"self\": {\"href\": \"\", \"name\": \"\"}}, \"name\": \"\", \"refname\": \"\", \"state\": \"INPROGRESS\", \"updated_on\": \"\", \"url\": \"\", \"uuid\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Create a build status for a commit",
+      "url": "https://api.bitbucket.org/2.0/repositories/{{WORKSPACE}}/{{REPO_SLUG}}/commit/{{COMMIT}}/statuses/build"
+    }
+  ]
+}

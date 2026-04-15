@@ -1,0 +1,3328 @@
+{
+  "id": "amazonaws.com_appconfig",
+  "info": {
+    "base_url": "http://appconfig.{region}.amazonaws.com",
+    "description": "Uses the validators in a configuration profile to validate a configuration.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Amazon AppConfig",
+    "version": "2019-10-09"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Name": "",
+        "Tags": {}
+      },
+      "body_json": {
+        "Description": "",
+        "Name": "",
+        "Tags": {}
+      },
+      "body_text": "{\"Name\": \"\", \"Description\": \"\", \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This organizational construct has a relationship with some unit of executable code. For example, you could create an application called MyMobileApp to organize and manage configuration data for a mobile application installed by your users.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /applications",
+      "method": "POST",
+      "name": "POST /applications",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/applications",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\", \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /applications",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all applications in your Amazon Web Services account.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications",
+      "method": "GET",
+      "name": "GET /applications",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/applications",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "LocationUri": "",
+        "Name": "",
+        "RetrievalRoleArn": "",
+        "Tags": {},
+        "Type": "",
+        "Validators": [
+          {
+            "Content": {},
+            "Type": {}
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "<p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the following:</p> <ul> <li> <p>Configuration data in YAML, JSON, and other formats stored in the AppConfig hosted configuration store</p> </li> <li> <p>Configuration data stored as objects in an Amazon Simple Storage Service (Amazon S3) bucket</p> </li> <li> <p>Pipelines stored in CodePipeline</p> </li> <li> <p>Secrets stored in Secrets Manager</p> </li> <li> <p>Standard and secure string parameters stored in Amazon Web Services Systems Manager Parameter Store</p> </li> <li> <p>Configuration data in SSM documents stored in the Systems Manager document store</p> </li> </ul> <p>A configuration profile includes the following information:</p> <ul> <li> <p>The URI location of the configuration data.</p> </li> <li> <p>The Identity and Access Management (IAM) role that provides access to the configuration data.</p> </li> <li> <p>A validator for the configuration data. Available validators include either a JSON Schema or an Amazon Web Services Lambda function.</p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html\">Create a Configuration and a Configuration Profile</a> in the <i>AppConfig User Guide</i>.</p>",
+      "form_data": [
+        {
+          "name": "Name",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "Description",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "LocationUri",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "RetrievalRoleArn",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "Validators",
+          "type": "text",
+          "value": [
+            {
+              "Content": {},
+              "Type": {}
+            }
+          ]
+        },
+        {
+          "name": "Tags",
+          "type": "text",
+          "value": {}
+        },
+        {
+          "name": "Type",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /applications/{{APPLICATION_ID}}/configurationprofiles",
+      "method": "POST",
+      "name": "POST /applications/{ApplicationId}/configurationprofiles",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\", \"LocationUri\": \"\", \"RetrievalRoleArn\": \"\", \"Validators\": [{\"Type\": {}, \"Content\": {}}], \"Tags\": {}, \"Type\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /applications/{ApplicationId}/configurationprofiles",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the configuration profiles for an application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}/configurationprofiles",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}/configurationprofiles",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "type",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}/configurationprofiles",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DeploymentDurationInMinutes": 0,
+        "Description": "",
+        "FinalBakeTimeInMinutes": 0,
+        "GrowthFactor": 0.0,
+        "GrowthType": "LINEAR",
+        "Name": "",
+        "ReplicateTo": "NONE",
+        "Tags": {}
+      },
+      "body_json": {
+        "DeploymentDurationInMinutes": 0,
+        "Description": "",
+        "FinalBakeTimeInMinutes": 0,
+        "GrowthFactor": 0.0,
+        "GrowthType": "LINEAR",
+        "Name": "",
+        "ReplicateTo": "NONE",
+        "Tags": {}
+      },
+      "body_text": "{\"Name\": \"\", \"Description\": \"\", \"DeploymentDurationInMinutes\": 0, \"FinalBakeTimeInMinutes\": 0, \"GrowthFactor\": 0.0, \"GrowthType\": \"LINEAR\", \"ReplicateTo\": \"NONE\", \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a deployment strategy that defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /deploymentstrategies",
+      "method": "POST",
+      "name": "POST /deploymentstrategies",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/deploymentstrategies",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\", \"DeploymentDurationInMinutes\": 0, \"FinalBakeTimeInMinutes\": 0, \"GrowthFactor\": 0.0, \"GrowthType\": \"LINEAR\", \"ReplicateTo\": \"NONE\", \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /deploymentstrategies",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/deploymentstrategies"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists deployment strategies.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /deploymentstrategies",
+      "method": "GET",
+      "name": "GET /deploymentstrategies",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/deploymentstrategies",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /deploymentstrategies",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/deploymentstrategies"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Monitors": [
+          {
+            "AlarmArn": {},
+            "AlarmRoleArn": {}
+          }
+        ],
+        "Name": "",
+        "Tags": {}
+      },
+      "body_json": {
+        "Description": "",
+        "Monitors": [
+          {
+            "AlarmArn": {},
+            "AlarmRoleArn": {}
+          }
+        ],
+        "Name": "",
+        "Tags": {}
+      },
+      "body_text": "{\"Name\": \"\", \"Description\": \"\", \"Monitors\": [{\"AlarmArn\": {}, \"AlarmRoleArn\": {}}], \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates an environment. For each application, you define one or more environments. An environment is a deployment group of AppConfig targets, such as applications in a <code>Beta</code> or <code>Production</code> environment. You can also define environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code> components for your application. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /applications/{{APPLICATION_ID}}/environments",
+      "method": "POST",
+      "name": "POST /applications/{ApplicationId}/environments",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\", \"Monitors\": [{\"AlarmArn\": {}, \"AlarmRoleArn\": {}}], \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /applications/{ApplicationId}/environments",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the environments for an application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}/environments",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}/environments",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}/environments",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Actions": {},
+        "Description": "",
+        "Name": "",
+        "Parameters": {},
+        "Tags": {}
+      },
+      "body_json": {
+        "Actions": {},
+        "Description": "",
+        "Name": "",
+        "Parameters": {},
+        "Tags": {}
+      },
+      "body_text": "{\"Name\": \"\", \"Description\": \"\", \"Actions\": {}, \"Parameters\": {}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "<p>Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different points during the AppConfig workflow of creating or deploying a configuration.</p> <p>You can create your own extensions or use the Amazon Web Services authored extensions provided by AppConfig. For most use cases, to create your own extension, you must create an Lambda function to perform any computation and processing defined in the extension. For more information about extensions, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /extensions",
+      "method": "POST",
+      "name": "POST /extensions",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        },
+        {
+          "name": "Latest-Version-Number",
+          "value": ""
+        }
+      ],
+      "path": "/extensions",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\", \"Actions\": {}, \"Parameters\": {}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /extensions",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all custom and Amazon Web Services authored AppConfig extensions in the account. For more information about extensions, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /extensions",
+      "method": "GET",
+      "name": "GET /extensions",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/extensions",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "name",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /extensions",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ExtensionIdentifier": "",
+        "ExtensionVersionNumber": 0,
+        "Parameters": {},
+        "ResourceIdentifier": "",
+        "Tags": {}
+      },
+      "body_json": {
+        "ExtensionIdentifier": "",
+        "ExtensionVersionNumber": 0,
+        "Parameters": {},
+        "ResourceIdentifier": "",
+        "Tags": {}
+      },
+      "body_text": "{\"ExtensionIdentifier\": \"\", \"ExtensionVersionNumber\": 0, \"ResourceIdentifier\": \"\", \"Parameters\": {}, \"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "When you create an extension or configure an Amazon Web Services authored extension, you associate the extension with an AppConfig application, environment, or configuration profile. For example, you can choose to run the <code>AppConfig deployment events to Amazon SNS</code> Amazon Web Services authored extension and receive notifications on an Amazon SNS topic anytime a configuration deployment is started for a specific application. Defining which extension to associate with an AppConfig resource is called an <i>extension association</i>. An extension association is a specified relationship between an extension and an AppConfig resource, such as an application or a configuration profile. For more information about extensions and associations, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /extensionassociations",
+      "method": "POST",
+      "name": "POST /extensionassociations",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "X-Amz-Content-Sha256",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Date",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Algorithm",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Credential",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Security-Token",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-Signature",
+          "value": ""
+        },
+        {
+          "name": "X-Amz-SignedHeaders",
+          "value": ""
+        }
+      ],
+      "path": "/extensionassociations",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ExtensionIdentifier\": \"\", \"ExtensionVersionNumber\": 0, \"ResourceIdentifier\": \"\", \"Parameters\": {}, \"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /extensionassociations",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensionassociations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists all AppConfig extension associations in the account. For more information about extensions and associations, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /extensionassociations",
+      "method": "GET",
+      "name": "GET /extensionassociations",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "resource_identifier",
+          "value": ""
+        },
+        {
+          "name": "extension_identifier",
+          "value": ""
+        },
+        {
+          "name": "extension_version_number",
+          "value": ""
+        },
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/extensionassociations",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "resource_identifier",
+          "value": ""
+        },
+        {
+          "name": "extension_identifier",
+          "value": ""
+        },
+        {
+          "name": "extension_version_number",
+          "value": ""
+        },
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /extensionassociations",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensionassociations"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Content": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Creates a new configuration in the AppConfig hosted configuration store.",
+      "form_data": [
+        {
+          "name": "Content",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions",
+      "method": "POST",
+      "name": "POST /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions#Content-Type",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Content\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions#Content-Type",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions#Content-Type"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an application. Deleting an application does not delete a configuration from a host.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /applications/{{APPLICATION_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /applications/{ApplicationId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /applications/{ApplicationId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about an application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Name": ""
+      },
+      "body_json": {
+        "Description": "",
+        "Name": ""
+      },
+      "body_text": "{\"Name\": \"\", \"Description\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an application.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /applications/{{APPLICATION_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /applications/{ApplicationId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /applications/{ApplicationId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a configuration profile. Deleting a configuration profile does not delete a configuration from a host.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about a configuration profile.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Name": "",
+        "RetrievalRoleArn": "",
+        "Validators": [
+          {
+            "Content": {},
+            "Type": {}
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Updates a configuration profile.",
+      "form_data": [
+        {
+          "name": "Name",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "Description",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "RetrievalRoleArn",
+          "type": "text",
+          "value": ""
+        },
+        {
+          "name": "Validators",
+          "type": "text",
+          "value": [
+            {
+              "Content": {},
+              "Type": {}
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PATCH /applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\", \"RetrievalRoleArn\": \"\", \"Validators\": [{\"Type\": {}, \"Content\": {}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration from a host.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /deployementstrategies/{{DEPLOYMENT_STRATEGY_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /deployementstrategies/{DeploymentStrategyId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DeploymentStrategyId",
+          "value": ""
+        }
+      ],
+      "path": "/deployementstrategies/{{DEPLOYMENT_STRATEGY_ID}}",
+      "pathParameters": [
+        {
+          "name": "DeploymentStrategyId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /deployementstrategies/{DeploymentStrategyId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/deployementstrategies/{{DEPLOYMENT_STRATEGY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an environment. Deleting an environment does not delete a configuration from a host.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /applications/{ApplicationId}/environments/{EnvironmentId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /applications/{ApplicationId}/environments/{EnvironmentId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about an environment. An environment is a deployment group of AppConfig applications, such as applications in a <code>Production</code> environment or in an <code>EU_Region</code> environment. Each configuration deployment targets an environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm is triggered during a deployment, AppConfig roles back the configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}/environments/{EnvironmentId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}/environments/{EnvironmentId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Description": "",
+        "Monitors": [
+          {
+            "AlarmArn": {},
+            "AlarmRoleArn": {}
+          }
+        ],
+        "Name": ""
+      },
+      "body_json": {
+        "Description": "",
+        "Monitors": [
+          {
+            "AlarmArn": {},
+            "AlarmRoleArn": {}
+          }
+        ],
+        "Name": ""
+      },
+      "body_text": "{\"Name\": \"\", \"Description\": \"\", \"Monitors\": [{\"AlarmArn\": {}, \"AlarmRoleArn\": {}}]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an environment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /applications/{ApplicationId}/environments/{EnvironmentId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Name\": \"\", \"Description\": \"\", \"Monitors\": [{\"AlarmArn\": {}, \"AlarmRoleArn\": {}}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /applications/{ApplicationId}/environments/{EnvironmentId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an AppConfig extension. You must delete all associations to an extension before you delete the extension.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /extensions/{{EXTENSION_IDENTIFIER}}",
+      "method": "DELETE",
+      "name": "DELETE /extensions/{ExtensionIdentifier}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ExtensionIdentifier",
+          "value": ""
+        },
+        {
+          "name": "version",
+          "value": ""
+        }
+      ],
+      "path": "/extensions/{{EXTENSION_IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "ExtensionIdentifier",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "version",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /extensions/{ExtensionIdentifier}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensions/{{EXTENSION_IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about an AppConfig extension.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /extensions/{{EXTENSION_IDENTIFIER}}",
+      "method": "GET",
+      "name": "GET /extensions/{ExtensionIdentifier}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ExtensionIdentifier",
+          "value": ""
+        },
+        {
+          "name": "version_number",
+          "value": ""
+        }
+      ],
+      "path": "/extensions/{{EXTENSION_IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "ExtensionIdentifier",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "version_number",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /extensions/{ExtensionIdentifier}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensions/{{EXTENSION_IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Actions": {},
+        "Description": "",
+        "Parameters": {},
+        "VersionNumber": 0
+      },
+      "body_json": {
+        "Actions": {},
+        "Description": "",
+        "Parameters": {},
+        "VersionNumber": 0
+      },
+      "body_text": "{\"Description\": \"\", \"Actions\": {}, \"Parameters\": {}, \"VersionNumber\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an AppConfig extension. For more information about extensions, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /extensions/{{EXTENSION_IDENTIFIER}}",
+      "method": "PATCH",
+      "name": "PATCH /extensions/{ExtensionIdentifier}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ExtensionIdentifier",
+          "value": ""
+        }
+      ],
+      "path": "/extensions/{{EXTENSION_IDENTIFIER}}",
+      "pathParameters": [
+        {
+          "name": "ExtensionIdentifier",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Description\": \"\", \"Actions\": {}, \"Parameters\": {}, \"VersionNumber\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /extensions/{ExtensionIdentifier}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensions/{{EXTENSION_IDENTIFIER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes an extension association. This action doesn't delete extensions defined in the association.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /extensionassociations/{{EXTENSION_ASSOCIATION_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /extensionassociations/{ExtensionAssociationId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ExtensionAssociationId",
+          "value": ""
+        }
+      ],
+      "path": "/extensionassociations/{{EXTENSION_ASSOCIATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "ExtensionAssociationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /extensionassociations/{ExtensionAssociationId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensionassociations/{{EXTENSION_ASSOCIATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Returns information about an AppConfig extension association. For more information about extensions and associations, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /extensionassociations/{{EXTENSION_ASSOCIATION_ID}}",
+      "method": "GET",
+      "name": "GET /extensionassociations/{ExtensionAssociationId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ExtensionAssociationId",
+          "value": ""
+        }
+      ],
+      "path": "/extensionassociations/{{EXTENSION_ASSOCIATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "ExtensionAssociationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /extensionassociations/{ExtensionAssociationId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensionassociations/{{EXTENSION_ASSOCIATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Parameters": {}
+      },
+      "body_json": {
+        "Parameters": {}
+      },
+      "body_text": "{\"Parameters\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates an association. For more information about extensions and associations, see <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html\">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /extensionassociations/{{EXTENSION_ASSOCIATION_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /extensionassociations/{ExtensionAssociationId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ExtensionAssociationId",
+          "value": ""
+        }
+      ],
+      "path": "/extensionassociations/{{EXTENSION_ASSOCIATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "ExtensionAssociationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Parameters\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /extensionassociations/{ExtensionAssociationId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/extensionassociations/{{EXTENSION_ASSOCIATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a version of a configuration from the AppConfig hosted configuration store.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions/{{VERSION_NUMBER}}",
+      "method": "DELETE",
+      "name": "DELETE /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions/{VersionNumber}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        },
+        {
+          "name": "VersionNumber",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions/{{VERSION_NUMBER}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        },
+        {
+          "name": "VersionNumber",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions/{VersionNumber}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions/{{VERSION_NUMBER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about a specific configuration version.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions/{{VERSION_NUMBER}}",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions/{VersionNumber}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        },
+        {
+          "name": "VersionNumber",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions/{{VERSION_NUMBER}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        },
+        {
+          "name": "VersionNumber",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions/{VersionNumber}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions/{{VERSION_NUMBER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "<p>(Deprecated) Retrieves the latest deployed configuration.</p> <important> <p>Note the following important information.</p> <ul> <li> <p>This API action is deprecated. Calls to receive configuration data should use the <a href=\"https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_StartConfigurationSession.html\">StartConfigurationSession</a> and <a href=\"https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_appconfigdata_GetLatestConfiguration.html\">GetLatestConfiguration</a> APIs instead. </p> </li> <li> <p> <code>GetConfiguration</code> is a priced call. For more information, see <a href=\"https://aws.amazon.com/systems-manager/pricing/\">Pricing</a>.</p> </li> </ul> </important>",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION}}/environments/{{ENVIRONMENT}}/configurations/{{CONFIGURATION}}",
+      "method": "GET",
+      "name": "GET /applications/{Application}/environments/{Environment}/configurations/{Configuration}#client_id",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "Application",
+          "value": ""
+        },
+        {
+          "name": "Environment",
+          "value": ""
+        },
+        {
+          "name": "Configuration",
+          "value": ""
+        },
+        {
+          "name": "client_id",
+          "value": ""
+        },
+        {
+          "name": "client_configuration_version",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION}}/environments/{{ENVIRONMENT}}/configurations/{{CONFIGURATION}}",
+      "pathParameters": [
+        {
+          "name": "Application",
+          "value": ""
+        },
+        {
+          "name": "Environment",
+          "value": ""
+        },
+        {
+          "name": "Configuration",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "client_id",
+          "value": ""
+        },
+        {
+          "name": "client_configuration_version",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{Application}/environments/{Environment}/configurations/{Configuration}#client_id",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION}}/environments/{{ENVIRONMENT}}/configurations/{{CONFIGURATION}}#client_id"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about a configuration deployment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments/{{DEPLOYMENT_NUMBER}}",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}/environments/{EnvironmentId}/deployments/{DeploymentNumber}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        },
+        {
+          "name": "DeploymentNumber",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments/{{DEPLOYMENT_NUMBER}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        },
+        {
+          "name": "DeploymentNumber",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}/environments/{EnvironmentId}/deployments/{DeploymentNumber}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments/{{DEPLOYMENT_NUMBER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Stops a deployment. This API action works only on deployments that have a status of <code>DEPLOYING</code>. This action moves the deployment to a status of <code>ROLLED_BACK</code>.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments/{{DEPLOYMENT_NUMBER}}",
+      "method": "DELETE",
+      "name": "DELETE /applications/{ApplicationId}/environments/{EnvironmentId}/deployments/{DeploymentNumber}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        },
+        {
+          "name": "DeploymentNumber",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments/{{DEPLOYMENT_NUMBER}}",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        },
+        {
+          "name": "DeploymentNumber",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /applications/{ApplicationId}/environments/{EnvironmentId}/deployments/{DeploymentNumber}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments/{{DEPLOYMENT_NUMBER}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information about a deployment strategy. A deployment strategy defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /deploymentstrategies/{{DEPLOYMENT_STRATEGY_ID}}",
+      "method": "GET",
+      "name": "GET /deploymentstrategies/{DeploymentStrategyId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DeploymentStrategyId",
+          "value": ""
+        }
+      ],
+      "path": "/deploymentstrategies/{{DEPLOYMENT_STRATEGY_ID}}",
+      "pathParameters": [
+        {
+          "name": "DeploymentStrategyId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /deploymentstrategies/{DeploymentStrategyId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/deploymentstrategies/{{DEPLOYMENT_STRATEGY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "DeploymentDurationInMinutes": 0,
+        "Description": "",
+        "FinalBakeTimeInMinutes": 0,
+        "GrowthFactor": 0.0,
+        "GrowthType": "LINEAR"
+      },
+      "body_json": {
+        "DeploymentDurationInMinutes": 0,
+        "Description": "",
+        "FinalBakeTimeInMinutes": 0,
+        "GrowthFactor": 0.0,
+        "GrowthType": "LINEAR"
+      },
+      "body_text": "{\"Description\": \"\", \"DeploymentDurationInMinutes\": 0, \"FinalBakeTimeInMinutes\": 0, \"GrowthFactor\": 0.0, \"GrowthType\": \"LINEAR\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates a deployment strategy.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /deploymentstrategies/{{DEPLOYMENT_STRATEGY_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /deploymentstrategies/{DeploymentStrategyId}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "DeploymentStrategyId",
+          "value": ""
+        }
+      ],
+      "path": "/deploymentstrategies/{{DEPLOYMENT_STRATEGY_ID}}",
+      "pathParameters": [
+        {
+          "name": "DeploymentStrategyId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Description\": \"\", \"DeploymentDurationInMinutes\": 0, \"FinalBakeTimeInMinutes\": 0, \"GrowthFactor\": 0.0, \"GrowthType\": \"LINEAR\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /deploymentstrategies/{DeploymentStrategyId}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/deploymentstrategies/{{DEPLOYMENT_STRATEGY_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists the deployments for an environment in descending deployment number order.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}/environments/{EnvironmentId}/deployments",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        },
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}/environments/{EnvironmentId}/deployments",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "ConfigurationProfileId": "",
+        "ConfigurationVersion": "",
+        "DeploymentStrategyId": "",
+        "Description": "",
+        "KmsKeyIdentifier": "",
+        "Tags": {}
+      },
+      "body_json": {
+        "ConfigurationProfileId": "",
+        "ConfigurationVersion": "",
+        "DeploymentStrategyId": "",
+        "Description": "",
+        "KmsKeyIdentifier": "",
+        "Tags": {}
+      },
+      "body_text": "{\"DeploymentStrategyId\": \"\", \"ConfigurationProfileId\": \"\", \"ConfigurationVersion\": \"\", \"Description\": \"\", \"Tags\": {}, \"KmsKeyIdentifier\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Starts a deployment.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments",
+      "method": "POST",
+      "name": "POST /applications/{ApplicationId}/environments/{EnvironmentId}/deployments",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "EnvironmentId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"DeploymentStrategyId\": \"\", \"ConfigurationProfileId\": \"\", \"ConfigurationVersion\": \"\", \"Description\": \"\", \"Tags\": {}, \"KmsKeyIdentifier\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /applications/{ApplicationId}/environments/{EnvironmentId}/deployments",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/environments/{{ENVIRONMENT_ID}}/deployments"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Lists configurations stored in the AppConfig hosted configuration store by version.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions",
+      "method": "GET",
+      "name": "GET /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        },
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "version_label",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "max_results",
+          "value": ""
+        },
+        {
+          "name": "next_token",
+          "value": ""
+        },
+        {
+          "name": "version_label",
+          "value": ""
+        },
+        {
+          "name": "MaxResults",
+          "value": ""
+        },
+        {
+          "name": "NextToken",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/hostedconfigurationversions"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the list of key-value tags assigned to the resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "GET /tags/{{RESOURCE_ARN}}",
+      "method": "GET",
+      "name": "GET /tags/{ResourceArn}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /tags/{ResourceArn}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "Tags": {}
+      },
+      "body_json": {
+        "Tags": {}
+      },
+      "body_text": "{\"Tags\": {}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Assigns metadata to an AppConfig resource. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define. You can specify a maximum of 50 tags for a resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /tags/{{RESOURCE_ARN}}",
+      "method": "POST",
+      "name": "POST /tags/{ResourceArn}",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"Tags\": {}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /tags/{ResourceArn}",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Deletes a tag key and value from an AppConfig resource.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /tags/{{RESOURCE_ARN}}",
+      "method": "DELETE",
+      "name": "DELETE /tags/{ResourceArn}#tagKeys",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        },
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "path": "/tags/{{RESOURCE_ARN}}",
+      "pathParameters": [
+        {
+          "name": "ResourceArn",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "tagKeys",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /tags/{ResourceArn}#tagKeys",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/tags/{{RESOURCE_ARN}}#tagKeys"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "AMAZON_APPCONFIG_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Uses the validators in a configuration profile to validate a configuration.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{AMAZON_APPCONFIG_API_KEY}}"
+        }
+      ],
+      "id": "POST /applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/validators",
+      "method": "POST",
+      "name": "POST /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/validators#configuration_version",
+      "note": "Replace {{AMAZON_APPCONFIG_API_KEY}} with your API key | Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        },
+        {
+          "name": "configuration_version",
+          "value": ""
+        }
+      ],
+      "path": "/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/validators",
+      "pathParameters": [
+        {
+          "name": "ApplicationId",
+          "value": ""
+        },
+        {
+          "name": "ConfigurationProfileId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "configuration_version",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/validators#configuration_version",
+      "url": "http://appconfig.{{REGION}}.amazonaws.com/applications/{{APPLICATION_ID}}/configurationprofiles/{{CONFIGURATION_PROFILE_ID}}/validators#configuration_version"
+    }
+  ]
+}

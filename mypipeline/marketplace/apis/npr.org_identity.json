@@ -1,0 +1,316 @@
+{
+  "id": "npr.org_identity",
+  "info": {
+    "base_url": "https://identity.api.npr.org",
+    "description": "This can and should only be used by clients who have access to the `temporary_user` grant type.\n    Third-party developers do not have access to this grant type by default, and will not need this...",
+    "source": "apis.guru",
+    "tags": [
+      "code-generation"
+    ],
+    "title": "NPR Identity Service",
+    "version": "2"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NPR_IDENTITY_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {
+        "daysSinceLastListen": 0,
+        "following": false,
+        "href": "",
+        "id": "",
+        "notif_following": [
+          ""
+        ],
+        "notif_rated": [
+          ""
+        ],
+        "rating": 0.0,
+        "title": ""
+      },
+      "body_json": {
+        "daysSinceLastListen": 0,
+        "following": false,
+        "href": "",
+        "id": "",
+        "notif_following": [
+          ""
+        ],
+        "notif_rated": [
+          ""
+        ],
+        "rating": 0.0,
+        "title": ""
+      },
+      "body_text": "{\"daysSinceLastListen\": 0, \"following\": false, \"href\": \"\", \"id\": \"\", \"notif_following\": [\"\"], \"notif_rated\": [\"\"], \"rating\": 0.0, \"title\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "After a successful call, this returns a User document with an updated list of affiliations.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /v2/following",
+      "method": "POST",
+      "name": "Update the following status of the logged-in user for a particular aggregation",
+      "note": "Replace {{NPR_IDENTITY_SERVICE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Authorization",
+          "value": ""
+        }
+      ],
+      "path": "/v2/following",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"daysSinceLastListen\": 0, \"following\": false, \"href\": \"\", \"id\": \"\", \"notif_following\": [\"\"], \"notif_rated\": [\"\"], \"rating\": 0.0, \"title\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update the following status of the logged-in user for a particular aggregation",
+      "url": "https://identity.api.npr.org/v2/following"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NPR_IDENTITY_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": [
+        0
+      ],
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Right now, only the primary station can be changed. Previously selected stations will not be deleted, but the new station will be moved to first in the array.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /v2/stations",
+      "method": "PUT",
+      "name": "Update the logged-in user's favorite station(s)",
+      "note": "Replace {{NPR_IDENTITY_SERVICE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Authorization",
+          "value": ""
+        }
+      ],
+      "path": "/v2/stations",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update the logged-in user's favorite station(s)",
+      "url": "https://identity.api.npr.org/v2/stations"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NPR_IDENTITY_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use with caution as some steps are irreverisble. Initiates the user account deletion process, including removal of all user PII and account access.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "DELETE /v2/user",
+      "method": "DELETE",
+      "name": "Delete the user's account",
+      "note": "Replace {{NPR_IDENTITY_SERVICE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Authorization",
+          "value": ""
+        }
+      ],
+      "path": "/v2/user",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Delete the user's account",
+      "url": "https://identity.api.npr.org/v2/user"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NPR_IDENTITY_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "After a successful login, the client should send a `GET` call approximately once an hour to refresh the user data.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "GET /v2/user",
+      "method": "GET",
+      "name": "Get the latest state information about the logged-in user",
+      "note": "Replace {{NPR_IDENTITY_SERVICE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Authorization",
+          "value": ""
+        }
+      ],
+      "path": "/v2/user",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get the latest state information about the logged-in user",
+      "url": "https://identity.api.npr.org/v2/user"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "NPR_IDENTITY_API_KEY_ACCESS_TOKEN",
+        "prefix": "Bearer ",
+        "type": "oauth2"
+      },
+      "authType": "oauth2",
+      "auth_type": "oauth2",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This can and should only be used by clients who have access to the `temporary_user` grant type.\n    Third-party developers do not have access to this grant type by default, and will not need this endpoint.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{NPR_IDENTITY_API_KEY_ACCESS_TOKEN}}"
+        }
+      ],
+      "id": "POST /v2/user/inherit",
+      "method": "POST",
+      "name": "Copy listening data from a temporary user account to the logged-in user's account",
+      "note": "Replace {{NPR_IDENTITY_SERVICE_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "temp_user",
+          "value": ""
+        }
+      ],
+      "path": "/v2/user/inherit",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "temp_user",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Copy listening data from a temporary user account to the logged-in user's account",
+      "url": "https://identity.api.npr.org/v2/user/inherit"
+    }
+  ]
+}

@@ -1,0 +1,3432 @@
+{
+  "id": "azure.com_cognitiveservices-Face",
+  "info": {
+    "base_url": "https://azure.local",
+    "description": "Update name or userData of a person.",
+    "source": "apis.guru",
+    "tags": [
+      "other"
+    ],
+    "title": "Face Client",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "url": ""
+      },
+      "body_json": {
+        "url": ""
+      },
+      "body_text": "{\"url\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Detect human faces in an image, return face rectangles, and optionally with faceIds, landmarks, and attributes.<br />\n* No image will be stored. Only the extracted face feature will be stored on server. The faceId is an identifier of the face feature and will be used in [Face - Identify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), [Face - Verify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a), and [Face - Find Similar](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237). The stored face feature(s) will expire and be deleted 24 hours after the original detection call.\n* Optional parameters include faceId, landmarks, and attributes. Attributes include age, gender, headPose, smile, facialHair, glasses, emotion, hair, makeup, occlusion, accessories, blur, exposure and noise. Some of the results returned for specific attributes may not be highly accurate.\n* JPEG, PNG, GIF (the first frame), and BMP format are supported. The allowed image file size is from 1KB to 6MB.\n* Up to 100 faces can be returned for an image. Faces are ranked by face rectangle size from large to small.\n* For optimal results when querying [Face - Identify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), [Face - Verify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a), and [Face - Find Similar](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237) ('returnFaceId' is true), please use faces that are: frontal, clear, and with a minimum size of 200x200 pixels (100 pixels between eyes).\n* The minimum detectable face size is 36x36 pixels in an image no larger than 1920x1080 pixels. Images with dimensions higher than 1920x1080 pixels will need a proportionally larger minimum face size.\n* Different 'detectionModel' values can be provided. To use and compare different detection models, please refer to [How to specify a detection model](https://docs.microsoft.com/en-us/azure/cognitive-services/face/face-api-how-to-topics/specify-detection-model)\n  | Model | Recommended use-case(s) |\n  | ---------- | -------- |\n  | 'detection_01': | The default detection model for [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236). Recommend for near frontal face detection. For scenarios with exceptionally large angle (head-pose) faces, occluded faces or wrong image orientation, the faces in such cases may not be detected. |\n  | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |\n\n* Different 'recognitionModel' values are provided. If follow-up operations like Verify, Identify, Find Similar are needed, please specify the recognition model with 'recognitionModel' parameter. The default value for 'recognitionModel' is 'recognition_01', if latest model needed, please explicitly specify the model you need in this parameter. Once specified, the detected faceIds will be associated with the specified recognition model. More details, please refer to [How to specify a recognition model](https://docs.microsoft.com/en-us/azure/cognitive-services/face/face-api-how-to-topics/specify-recognition-model)\n  | Model | Recommended use-case(s) |\n  | ---------- | -------- |\n  | 'recognition_01': | The default recognition model for [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236). All those faceIds created before 2019 March are bonded with this recognition model. |\n  | 'recognition_02': | Recognition model released in 2019 March. 'recognition_02' is recommended since its overall accuracy is improved compared with 'recognition_01'. |",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /detect",
+      "method": "POST",
+      "name": "POST /detect",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "returnFaceId",
+          "value": ""
+        },
+        {
+          "name": "returnFaceLandmarks",
+          "value": ""
+        },
+        {
+          "name": "returnFaceAttributes",
+          "value": ""
+        },
+        {
+          "name": "recognitionModel",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        },
+        {
+          "name": "detectionModel",
+          "value": ""
+        }
+      ],
+      "path": "/detect",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "returnFaceId",
+          "value": ""
+        },
+        {
+          "name": "returnFaceLandmarks",
+          "value": ""
+        },
+        {
+          "name": "returnFaceAttributes",
+          "value": ""
+        },
+        {
+          "name": "recognitionModel",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        },
+        {
+          "name": "detectionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"url\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /detect",
+      "url": "https://azure.local/detect"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List face lists’ faceListId, name, userData and recognitionModel. <br /> \nTo get face information inside faceList use [FaceList - Get](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524c)\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /facelists",
+      "method": "GET",
+      "name": "GET /facelists",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "path": "/facelists",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /facelists",
+      "url": "https://azure.local/facelists"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a specified face list.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /facelists/{{FACE_LIST_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /facelists/{faceListId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "faceListId",
+          "value": ""
+        }
+      ],
+      "path": "/facelists/{{FACE_LIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "faceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /facelists/{faceListId}",
+      "url": "https://azure.local/facelists/{{FACE_LIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a face list’s faceListId, name, userData, recognitionModel and faces in the face list.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /facelists/{{FACE_LIST_ID}}",
+      "method": "GET",
+      "name": "GET /facelists/{faceListId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "faceListId",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "path": "/facelists/{{FACE_LIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "faceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /facelists/{faceListId}",
+      "url": "https://azure.local/facelists/{{FACE_LIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update information of a face list.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /facelists/{{FACE_LIST_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /facelists/{faceListId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "faceListId",
+          "value": ""
+        }
+      ],
+      "path": "/facelists/{{FACE_LIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "faceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /facelists/{faceListId}",
+      "url": "https://azure.local/facelists/{{FACE_LIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create an empty face list with user-specified faceListId, name, an optional userData and recognitionModel. Up to 64 face lists are allowed in one subscription.\n<br /> Face list is a list of faces, up to 1,000 faces, and used by [Face - Find Similar](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237).\n<br /> After creation, user should use [FaceList - Add Face](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250) to import the faces. No image will be stored. Only the extracted face features are stored on server until [FaceList - Delete](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524f) is called.\n<br /> Find Similar is used for scenario like finding celebrity-like faces, similar face filtering, or as a light way face identification. But if the actual use is to identify person, please use [PersonGroup](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244) / [LargePersonGroup](/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d) and [Face - Identify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).\n<br /> Please consider [LargeFaceList](/docs/services/563879b61984550e40cbbe8d/operations/5a157b68d2de3616c086f2cc) when the face number is large. It can support up to 1,000,000 faces.\n<br />'recognitionModel' should be specified to associate with this face list. The default value for 'recognitionModel' is 'recognition_01', if the latest model needed, please explicitly specify the model you need in this parameter. New faces that are added to an existing face list will use the recognition model that's already associated with the collection. Existing face features in a face list can't be updated to features extracted by another version of recognition model.\n* 'recognition_01': The default recognition model for [FaceList- Create](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b). All those face lists created before 2019 March are bonded with this recognition model.\n* 'recognition_02': Recognition model released in 2019 March. 'recognition_02' is recommended since its overall accuracy is improved compared with 'recognition_01'.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /facelists/{{FACE_LIST_ID}}",
+      "method": "PUT",
+      "name": "PUT /facelists/{faceListId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "faceListId",
+          "value": ""
+        }
+      ],
+      "path": "/facelists/{{FACE_LIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "faceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /facelists/{faceListId}",
+      "url": "https://azure.local/facelists/{{FACE_LIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "url": ""
+      },
+      "body_json": {
+        "url": ""
+      },
+      "body_text": "{\"url\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Add a face to a specified face list, up to 1,000 faces.\n<br /> To deal with an image contains multiple faces, input face can be specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face. No image will be stored. Only the extracted face feature will be stored on server until [FaceList - Delete Face](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395251) or [FaceList - Delete](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524f) is called.\n<br /> Note persistedFaceId is different from faceId generated by [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).\n* Higher face image quality means better detection and recognition precision. Please consider high-quality faces: frontal, clear, and face size is 200x200 pixels (100 pixels between eyes) or bigger.\n* JPEG, PNG, GIF (the first frame), and BMP format are supported. The allowed image file size is from 1KB to 6MB.\n* \"targetFace\" rectangle should contain one face. Zero or multiple faces will be regarded as an error. If the provided \"targetFace\" rectangle is not returned from [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), there’s no guarantee to detect and add the face successfully.\n* Out of detectable face size (36x36 - 4096x4096 pixels), large head-pose, or large occlusions will cause failures.\n* Adding/deleting faces to/from a same face list are processed sequentially and to/from different face lists are in parallel.\n* The minimum detectable face size is 36x36 pixels in an image no larger than 1920x1080 pixels. Images with dimensions higher than 1920x1080 pixels will need a proportionally larger minimum face size.\n* Different 'detectionModel' values can be provided. To use and compare different detection models, please refer to [How to specify a detection model](https://docs.microsoft.com/en-us/azure/cognitive-services/face/face-api-how-to-topics/specify-detection-model)\n  | Model | Recommended use-case(s) |\n  | ---------- | -------- |\n  | 'detection_01': | The default detection model for [FaceList - Add Face](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250). Recommend for near frontal face detection. For scenarios with exceptionally large angle (head-pose) faces, occluded faces or wrong image orientation, the faces in such cases may not be detected. |\n  | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /facelists/{{FACE_LIST_ID}}/persistedfaces",
+      "method": "POST",
+      "name": "POST /facelists/{faceListId}/persistedfaces",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "faceListId",
+          "value": ""
+        },
+        {
+          "name": "userData",
+          "value": ""
+        },
+        {
+          "name": "targetFace",
+          "value": ""
+        },
+        {
+          "name": "detectionModel",
+          "value": ""
+        }
+      ],
+      "path": "/facelists/{{FACE_LIST_ID}}/persistedfaces",
+      "pathParameters": [
+        {
+          "name": "faceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "userData",
+          "value": ""
+        },
+        {
+          "name": "targetFace",
+          "value": ""
+        },
+        {
+          "name": "detectionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"url\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /facelists/{faceListId}/persistedfaces",
+      "url": "https://azure.local/facelists/{{FACE_LIST_ID}}/persistedfaces"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a face from a face list by specified faceListId and persistedFaceId.\n<br /> Adding/deleting faces to/from a same face list are processed sequentially and to/from different face lists are in parallel.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /facelists/{{FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /facelists/{faceListId}/persistedfaces/{persistedFaceId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "faceListId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "path": "/facelists/{{FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "pathParameters": [
+        {
+          "name": "faceListId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /facelists/{faceListId}/persistedfaces/{persistedFaceId}",
+      "url": "https://azure.local/facelists/{{FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "faceId": "",
+        "faceIds": [
+          ""
+        ],
+        "faceListId": "",
+        "largeFaceListId": "",
+        "maxNumOfCandidatesReturned": 20,
+        "mode": "matchPerson"
+      },
+      "body_json": {
+        "faceId": "",
+        "faceIds": [
+          ""
+        ],
+        "faceListId": "",
+        "largeFaceListId": "",
+        "maxNumOfCandidatesReturned": 20,
+        "mode": "matchPerson"
+      },
+      "body_text": "{\"faceId\": \"\", \"faceIds\": [\"\"], \"faceListId\": \"\", \"largeFaceListId\": \"\", \"maxNumOfCandidatesReturned\": 20, \"mode\": \"matchPerson\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Given query face's faceId, to search the similar-looking faces from a faceId array, a face list or a large face list. faceId array contains the faces created by [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), which will expire 24 hours after creation. A \"faceListId\" is created by [FaceList - Create](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b) containing persistedFaceIds that will not expire. And a \"largeFaceListId\" is created by [LargeFaceList - Create](/docs/services/563879b61984550e40cbbe8d/operations/5a157b68d2de3616c086f2cc) containing persistedFaceIds that will also not expire. Depending on the input the returned similar faces list contains faceIds or persistedFaceIds ranked by similarity.\n<br/>Find similar has two working modes, \"matchPerson\" and \"matchFace\". \"matchPerson\" is the default mode that it tries to find faces of the same person as possible by using internal same-person thresholds. It is useful to find a known person's other photos. Note that an empty list will be returned if no faces pass the internal thresholds. \"matchFace\" mode ignores same-person thresholds and returns ranked similar faces anyway, even the similarity is low. It can be used in the cases like searching celebrity-looking faces.\n<br/>The 'recognitionModel' associated with the query face's faceId should be the same as the 'recognitionModel' used by the target faceId array, face list or large face list.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /findsimilars",
+      "method": "POST",
+      "name": "POST /findsimilars",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/findsimilars",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"faceId\": \"\", \"faceIds\": [\"\"], \"faceListId\": \"\", \"largeFaceListId\": \"\", \"maxNumOfCandidatesReturned\": 20, \"mode\": \"matchPerson\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /findsimilars",
+      "url": "https://azure.local/findsimilars"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "faceIds": [
+          ""
+        ]
+      },
+      "body_json": {
+        "faceIds": [
+          ""
+        ]
+      },
+      "body_text": "{\"faceIds\": [\"\"]}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Divide candidate faces into groups based on face similarity.<br />\n* The output is one or more disjointed face groups and a messyGroup. A face group contains faces that have similar looking, often of the same person. Face groups are ranked by group size, i.e. number of faces. Notice that faces belonging to a same person might be split into several groups in the result.\n* MessyGroup is a special face group containing faces that cannot find any similar counterpart face from original faces. The messyGroup will not appear in the result if all faces found their counterparts.\n* Group API needs at least 2 candidate faces and 1000 at most. We suggest to try [Face - Verify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a) when you only have 2 candidate faces.\n* The 'recognitionModel' associated with the query faces' faceIds should be the same.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /group",
+      "method": "POST",
+      "name": "POST /group",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/group",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"faceIds\": [\"\"]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /group",
+      "url": "https://azure.local/group"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "confidenceThreshold": 0.0,
+        "faceIds": [
+          ""
+        ],
+        "largePersonGroupId": "",
+        "maxNumOfCandidatesReturned": 1,
+        "personGroupId": ""
+      },
+      "body_json": {
+        "confidenceThreshold": 0.0,
+        "faceIds": [
+          ""
+        ],
+        "largePersonGroupId": "",
+        "maxNumOfCandidatesReturned": 1,
+        "personGroupId": ""
+      },
+      "body_text": "{\"confidenceThreshold\": 0.0, \"faceIds\": [\"\"], \"largePersonGroupId\": \"\", \"maxNumOfCandidatesReturned\": 1, \"personGroupId\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "1-to-many identification to find the closest matches of the specific query person face from a person group or large person group.\n<br/> For each face in the faceIds array, Face Identify will compute similarities between the query face and all the faces in the person group (given by personGroupId) or large person group (given by largePersonGroupId), and return candidate person(s) for that face ranked by similarity confidence. The person group/large person group should be trained to make it ready for identification. See more in [PersonGroup - Train](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249) and [LargePersonGroup - Train](/docs/services/563879b61984550e40cbbe8d/operations/599ae2d16ac60f11b48b5aa4).\n<br/>\n \nRemarks:<br />\n* The algorithm allows more than one face to be identified independently at the same request, but no more than 10 faces.\n* Each person in the person group/large person group could have more than one face, but no more than 248 faces.\n* Higher face image quality means better identification precision. Please consider high-quality faces: frontal, clear, and face size is 200x200 pixels (100 pixels between eyes) or bigger.\n* Number of candidates returned is restricted by maxNumOfCandidatesReturned and confidenceThreshold. If no person is identified, the returned candidates will be an empty array.\n* Try [Face - Find Similar](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237) when you need to find similar faces from a face list/large face list instead of a person group/large person group.\n* The 'recognitionModel' associated with the query faces' faceIds should be the same as the 'recognitionModel' used by the target person group or large person group.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /identify",
+      "method": "POST",
+      "name": "POST /identify",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key",
+      "params": [],
+      "path": "/identify",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"confidenceThreshold\": 0.0, \"faceIds\": [\"\"], \"largePersonGroupId\": \"\", \"maxNumOfCandidatesReturned\": 1, \"personGroupId\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /identify",
+      "url": "https://azure.local/identify"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List large face lists’ information of largeFaceListId, name, userData and recognitionModel. <br /> \nTo get face information inside largeFaceList use [LargeFaceList Face - Get](/docs/services/563879b61984550e40cbbe8d/operations/5a158cf2d2de3616c086f2d5)<br />\n* Large face lists are stored in alphabetical order of largeFaceListId.\n* \"start\" parameter (string, optional) is a user-provided largeFaceListId value that returned entries have larger ids by string comparison. \"start\" set to empty to indicate return from the first item.\n* \"top\" parameter (int, optional) specifies the number of entries to return. A maximal of 1000 entries can be returned in one call. To fetch more, you can specify \"start\" with the last returned entry’s Id of the current call.\n<br />\nFor example, total 5 large person lists: \"list1\", ..., \"list5\".\n<br /> \"start=&top=\" will return all 5 lists.\n<br /> \"start=&top=2\" will return \"list1\", \"list2\".\n<br /> \"start=list2&top=3\" will return \"list3\", \"list4\", \"list5\".\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largefacelists",
+      "method": "GET",
+      "name": "GET /largefacelists",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largefacelists",
+      "url": "https://azure.local/largefacelists"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a specified large face list.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /largefacelists/{{LARGE_FACE_LIST_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /largefacelists/{largeFaceListId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /largefacelists/{largeFaceListId}",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a large face list’s largeFaceListId, name, userData and recognitionModel.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largefacelists/{{LARGE_FACE_LIST_ID}}",
+      "method": "GET",
+      "name": "GET /largefacelists/{largeFaceListId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largefacelists/{largeFaceListId}",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update information of a large face list.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /largefacelists/{{LARGE_FACE_LIST_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /largefacelists/{largeFaceListId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /largefacelists/{largeFaceListId}",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create an empty large face list with user-specified largeFaceListId, name, an optional userData and recognitionModel.\n<br /> Large face list is a list of faces, up to 1,000,000 faces, and used by [Face - Find Similar](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237).\n<br /> After creation, user should use [LargeFaceList Face - Add](/docs/services/563879b61984550e40cbbe8d/operations/5a158c10d2de3616c086f2d3) to import the faces and [LargeFaceList - Train](/docs/services/563879b61984550e40cbbe8d/operations/5a158422d2de3616c086f2d1) to make it ready for [Face - Find Similar](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237). No image will be stored. Only the extracted face features are stored on server until [LargeFaceList - Delete](/docs/services/563879b61984550e40cbbe8d/operations/5a1580d5d2de3616c086f2cd) is called.\n<br /> Find Similar is used for scenario like finding celebrity-like faces, similar face filtering, or as a light way face identification. But if the actual use is to identify person, please use [PersonGroup](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244) / [LargePersonGroup](/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d) and [Face - Identify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).\n<br/>'recognitionModel' should be specified to associate with this large face list. The default value for 'recognitionModel' is 'recognition_01', if the latest model needed, please explicitly specify the model you need in this parameter. New faces that are added to an existing large face list will use the recognition model that's already associated with the collection. Existing face features in a large face list can't be updated to features extracted by another version of recognition model.\n* 'recognition_01': The default recognition model for [LargeFaceList- Create](/docs/services/563879b61984550e40cbbe8d/operations/5a157b68d2de3616c086f2cc). All those large face lists created before 2019 March are bonded with this recognition model.\n* 'recognition_02': Recognition model released in 2019 March. 'recognition_02' is recommended since its overall accuracy is improved compared with 'recognition_01'.\n\nLarge face list quota:\n* Free-tier subscription quota: 64 large face lists.\n* S0-tier subscription quota: 1,000,000 large face lists.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /largefacelists/{{LARGE_FACE_LIST_ID}}",
+      "method": "PUT",
+      "name": "PUT /largefacelists/{largeFaceListId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /largefacelists/{largeFaceListId}",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all faces in a large face list, and retrieve face information (including userData and persistedFaceIds of registered faces of the face).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces",
+      "method": "GET",
+      "name": "GET /largefacelists/{largeFaceListId}/persistedfaces",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largefacelists/{largeFaceListId}/persistedfaces",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "url": ""
+      },
+      "body_json": {
+        "url": ""
+      },
+      "body_text": "{\"url\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Add a face to a specified large face list, up to 1,000,000 faces.\n<br /> To deal with an image contains multiple faces, input face can be specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face. No image will be stored. Only the extracted face feature will be stored on server until [LargeFaceList Face - Delete](/docs/services/563879b61984550e40cbbe8d/operations/5a158c8ad2de3616c086f2d4) or [LargeFaceList - Delete](/docs/services/563879b61984550e40cbbe8d/operations/5a1580d5d2de3616c086f2cd) is called.\n<br /> Note persistedFaceId is different from faceId generated by [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).\n* Higher face image quality means better recognition precision. Please consider high-quality faces: frontal, clear, and face size is 200x200 pixels (100 pixels between eyes) or bigger.\n* JPEG, PNG, GIF (the first frame), and BMP format are supported. The allowed image file size is from 1KB to 6MB.\n* \"targetFace\" rectangle should contain one face. Zero or multiple faces will be regarded as an error. If the provided \"targetFace\" rectangle is not returned from [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), there’s no guarantee to detect and add the face successfully.\n* Out of detectable face size (36x36 - 4096x4096 pixels), large head-pose, or large occlusions will cause failures.\n* Adding/deleting faces to/from a same face list are processed sequentially and to/from different face lists are in parallel.\n* The minimum detectable face size is 36x36 pixels in an image no larger than 1920x1080 pixels. Images with dimensions higher than 1920x1080 pixels will need a proportionally larger minimum face size.\n* Different 'detectionModel' values can be provided. To use and compare different detection models, please refer to [How to specify a detection model](https://docs.microsoft.com/en-us/azure/cognitive-services/face/face-api-how-to-topics/specify-detection-model)\n  | Model | Recommended use-case(s) |\n  | ---------- | -------- |\n  | 'detection_01': | The default detection model for [LargeFaceList - Add Face](/docs/services/563879b61984550e40cbbe8d/operations/5a158c10d2de3616c086f2d3). Recommend for near frontal face detection. For scenarios with exceptionally large angle (head-pose) faces, occluded faces or wrong image orientation, the faces in such cases may not be detected. |\n  | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |\n\nQuota:\n* Free-tier subscription quota: 1,000 faces per large face list.\n* S0-tier subscription quota: 1,000,000 faces per large face list.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces",
+      "method": "POST",
+      "name": "POST /largefacelists/{largeFaceListId}/persistedfaces",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "userData",
+          "value": ""
+        },
+        {
+          "name": "targetFace",
+          "value": ""
+        },
+        {
+          "name": "detectionModel",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "userData",
+          "value": ""
+        },
+        {
+          "name": "targetFace",
+          "value": ""
+        },
+        {
+          "name": "detectionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"url\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /largefacelists/{largeFaceListId}/persistedfaces",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a face from a large face list by specified largeFaceListId and persistedFaceId.\n<br /> Adding/deleting faces to/from a same large face list are processed sequentially and to/from different large face lists are in parallel.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve information about a persisted face (specified by persistedFaceId and its belonging largeFaceListId).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "method": "GET",
+      "name": "GET /largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "userData": ""
+      },
+      "body_json": {
+        "userData": ""
+      },
+      "body_text": "{\"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update a persisted face's userData field.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Queue a large face list training task, the training task may not be started immediately.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "POST /largefacelists/{{LARGE_FACE_LIST_ID}}/train",
+      "method": "POST",
+      "name": "POST /largefacelists/{largeFaceListId}/train",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}/train",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /largefacelists/{largeFaceListId}/train",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}/train"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the training status of a large face list (completed or ongoing).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largefacelists/{{LARGE_FACE_LIST_ID}}/training",
+      "method": "GET",
+      "name": "GET /largefacelists/{largeFaceListId}/training",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "path": "/largefacelists/{{LARGE_FACE_LIST_ID}}/training",
+      "pathParameters": [
+        {
+          "name": "largeFaceListId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largefacelists/{largeFaceListId}/training",
+      "url": "https://azure.local/largefacelists/{{LARGE_FACE_LIST_ID}}/training"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all existing large person groups’ largePersonGroupId, name, userData and recognitionModel.<br />\n* Large person groups are stored in alphabetical order of largePersonGroupId.\n* \"start\" parameter (string, optional) is a user-provided largePersonGroupId value that returned entries have larger ids by string comparison. \"start\" set to empty to indicate return from the first item.\n* \"top\" parameter (int, optional) specifies the number of entries to return. A maximal of 1000 entries can be returned in one call. To fetch more, you can specify \"start\" with the last returned entry’s Id of the current call.\n<br />\nFor example, total 5 large person groups: \"group1\", ..., \"group5\".\n<br /> \"start=&top=\" will return all 5 groups.\n<br /> \"start=&top=2\" will return \"group1\", \"group2\".\n<br /> \"start=group2&top=3\" will return \"group3\", \"group4\", \"group5\".\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largepersongroups",
+      "method": "GET",
+      "name": "GET /largepersongroups",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largepersongroups",
+      "url": "https://azure.local/largepersongroups"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an existing large person group. Persisted face features of all people in the large person group will also be deleted.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /largepersongroups/{{LARGE_PERSON_GROUP_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /largepersongroups/{largePersonGroupId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /largepersongroups/{largePersonGroupId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the information of a large person group, including its name, userData and recognitionModel. This API returns large person group information only, use [LargePersonGroup Person - List](/docs/services/563879b61984550e40cbbe8d/operations/599adda06ac60f11b48b5aa1) instead to retrieve person information under the large person group.\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largepersongroups/{{LARGE_PERSON_GROUP_ID}}",
+      "method": "GET",
+      "name": "GET /largepersongroups/{largePersonGroupId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largepersongroups/{largePersonGroupId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update an existing large person group's display name and userData. The properties which does not appear in request body will not be updated.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /largepersongroups/{{LARGE_PERSON_GROUP_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /largepersongroups/{largePersonGroupId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /largepersongroups/{largePersonGroupId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new large person group with user-specified largePersonGroupId, name, an optional userData and recognitionModel.\n<br /> A large person group is the container of the uploaded person data, including face recognition feature, and up to 1,000,000\npeople.\n<br /> After creation, use [LargePersonGroup Person - Create](/docs/services/563879b61984550e40cbbe8d/operations/599adcba3a7b9412a4d53f40) to add person into the group, and call [LargePersonGroup - Train](/docs/services/563879b61984550e40cbbe8d/operations/599ae2d16ac60f11b48b5aa4) to get this group ready for [Face - Identify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).\n<br /> No image will be stored. Only the person's extracted face features and userData will be stored on server until [LargePersonGroup Person - Delete](/docs/services/563879b61984550e40cbbe8d/operations/599ade5c6ac60f11b48b5aa2) or [LargePersonGroup - Delete](/docs/services/563879b61984550e40cbbe8d/operations/599adc216ac60f11b48b5a9f) is called.\n<br/>'recognitionModel' should be specified to associate with this large person group. The default value for 'recognitionModel' is 'recognition_01', if the latest model needed, please explicitly specify the model you need in this parameter. New faces that are added to an existing large person group will use the recognition model that's already associated with the collection. Existing face features in a large person group can't be updated to features extracted by another version of recognition model.\n* 'recognition_01': The default recognition model for [LargePersonGroup - Create](/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d). All those large person groups created before 2019 March are bonded with this recognition model.\n* 'recognition_02': Recognition model released in 2019 March. 'recognition_02' is recommended since its overall accuracy is improved compared with 'recognition_01'.\n\nLarge person group quota:\n* Free-tier subscription quota: 1,000 large person groups.\n* S0-tier subscription quota: 1,000,000 large person groups.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /largepersongroups/{{LARGE_PERSON_GROUP_ID}}",
+      "method": "PUT",
+      "name": "PUT /largepersongroups/{largePersonGroupId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /largepersongroups/{largePersonGroupId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all persons in a large person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons",
+      "method": "GET",
+      "name": "GET /largepersongroups/{largePersonGroupId}/persons",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largepersongroups/{largePersonGroupId}/persons",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new person in a specified large person group.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons",
+      "method": "POST",
+      "name": "POST /largepersongroups/{largePersonGroupId}/persons",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /largepersongroups/{largePersonGroupId}/persons",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an existing person from a large person group. The persistedFaceId, userData, person name and face feature in the person entry will all be deleted.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /largepersongroups/{largePersonGroupId}/persons/{personId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /largepersongroups/{largePersonGroupId}/persons/{personId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a person's name and userData, and the persisted faceIds representing the registered person face feature.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "method": "GET",
+      "name": "GET /largepersongroups/{largePersonGroupId}/persons/{personId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largepersongroups/{largePersonGroupId}/persons/{personId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update name or userData of a person.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /largepersongroups/{largePersonGroupId}/persons/{personId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /largepersongroups/{largePersonGroupId}/persons/{personId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "url": ""
+      },
+      "body_json": {
+        "url": ""
+      },
+      "body_text": "{\"url\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Add a face to a person into a large person group for face identification or verification. To deal with an image contains multiple faces, input face can be specified as an image with a targetFace rectangle. It returns a persistedFaceId representing the added face. No image will be stored. Only the extracted face feature will be stored on server until [LargePersonGroup PersonFace - Delete](/docs/services/563879b61984550e40cbbe8d/operations/599ae2966ac60f11b48b5aa3), [LargePersonGroup Person - Delete](/docs/services/563879b61984550e40cbbe8d/operations/599ade5c6ac60f11b48b5aa2) or [LargePersonGroup - Delete](/docs/services/563879b61984550e40cbbe8d/operations/599adc216ac60f11b48b5a9f) is called.\n<br /> Note persistedFaceId is different from faceId generated by [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).\n* Higher face image quality means better recognition precision. Please consider high-quality faces: frontal, clear, and face size is 200x200 pixels (100 pixels between eyes) or bigger.\n* Each person entry can hold up to 248 faces.\n* JPEG, PNG, GIF (the first frame), and BMP format are supported. The allowed image file size is from 1KB to 6MB.\n* \"targetFace\" rectangle should contain one face. Zero or multiple faces will be regarded as an error. If the provided \"targetFace\" rectangle is not returned from [Face - Detect](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), there’s no guarantee to detect and add the face successfully.\n* Out of detectable face size (36x36 - 4096x4096 pixels), large head-pose, or large occlusions will cause failures.\n* Adding/deleting faces to/from a same person will be processed sequentially. Adding/deleting faces to/from different persons are processed in parallel.\n* The minimum detectable face size is 36x36 pixels in an image no larger than 1920x1080 pixels. Images with dimensions higher than 1920x1080 pixels will need a proportionally larger minimum face size.\n* Different 'detectionModel' values can be provided. To use and compare different detection models, please refer to [How to specify a detection model](https://docs.microsoft.com/en-us/azure/cognitive-services/face/face-api-how-to-topics/specify-detection-model)\n  | Model | Recommended use-case(s) |\n  | ---------- | -------- |\n  | 'detection_01': | The default detection model for [LargePersonGroup Person - Add Face](/docs/services/563879b61984550e40cbbe8d/operations/599adf2a3a7b9412a4d53f42). Recommend for near frontal face detection. For scenarios with exceptionally large angle (head-pose) faces, occluded faces or wrong image orientation, the faces in such cases may not be detected. |\n  | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces",
+      "method": "POST",
+      "name": "POST /largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        },
+        {
+          "name": "userData",
+          "value": ""
+        },
+        {
+          "name": "targetFace",
+          "value": ""
+        },
+        {
+          "name": "detectionModel",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "userData",
+          "value": ""
+        },
+        {
+          "name": "targetFace",
+          "value": ""
+        },
+        {
+          "name": "detectionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"url\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete a face from a person in a large person group by specified largePersonGroupId, personId and persistedFaceId.\n<br /> Adding/deleting faces to/from a same person will be processed sequentially. Adding/deleting faces to/from different persons are processed in parallel.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve information about a persisted face (specified by persistedFaceId, personId and its belonging largePersonGroupId).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "method": "GET",
+      "name": "GET /largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "userData": ""
+      },
+      "body_json": {
+        "userData": ""
+      },
+      "body_text": "{\"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update a person persisted face's userData field.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        },
+        {
+          "name": "persistedFaceId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/persons/{{PERSON_ID}}/persistedfaces/{{PERSISTED_FACE_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Queue a large person group training task, the training task may not be started immediately.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "POST /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/train",
+      "method": "POST",
+      "name": "POST /largepersongroups/{largePersonGroupId}/train",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/train",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /largepersongroups/{largePersonGroupId}/train",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/train"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the training status of a large person group (completed or ongoing).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /largepersongroups/{{LARGE_PERSON_GROUP_ID}}/training",
+      "method": "GET",
+      "name": "GET /largepersongroups/{largePersonGroupId}/training",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/training",
+      "pathParameters": [
+        {
+          "name": "largePersonGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /largepersongroups/{largePersonGroupId}/training",
+      "url": "https://azure.local/largepersongroups/{{LARGE_PERSON_GROUP_ID}}/training"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve the status of a take/apply snapshot operation.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /operations/{{OPERATION_ID}}",
+      "method": "GET",
+      "name": "GET /operations/{operationId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "operationId",
+          "value": ""
+        }
+      ],
+      "path": "/operations/{{OPERATION_ID}}",
+      "pathParameters": [
+        {
+          "name": "operationId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /operations/{operationId}",
+      "url": "https://azure.local/operations/{{OPERATION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List person groups’ personGroupId, name, userData and recognitionModel.<br />\n* Person groups are stored in alphabetical order of personGroupId.\n* \"start\" parameter (string, optional) is a user-provided personGroupId value that returned entries have larger ids by string comparison. \"start\" set to empty to indicate return from the first item.\n* \"top\" parameter (int, optional) specifies the number of entries to return. A maximal of 1000 entries can be returned in one call. To fetch more, you can specify \"start\" with the last returned entry’s Id of the current call.\n<br />\nFor example, total 5 person groups: \"group1\", ..., \"group5\".\n<br /> \"start=&top=\" will return all 5 groups.\n<br /> \"start=&top=2\" will return \"group1\", \"group2\".\n<br /> \"start=group2&top=3\" will return \"group3\", \"group4\", \"group5\".\n",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /persongroups",
+      "method": "GET",
+      "name": "GET /persongroups",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /persongroups",
+      "url": "https://azure.local/persongroups"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an existing person group. Persisted face features of all people in the person group will also be deleted.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /persongroups/{{PERSON_GROUP_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /persongroups/{personGroupId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /persongroups/{personGroupId}",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve person group name, userData and recognitionModel. To get person information under this personGroup, use [PersonGroup Person - List](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395241).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /persongroups/{{PERSON_GROUP_ID}}",
+      "method": "GET",
+      "name": "GET /persongroups/{personGroupId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        },
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "returnRecognitionModel",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /persongroups/{personGroupId}",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update an existing person group's display name and userData. The properties which does not appear in request body will not be updated.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /persongroups/{{PERSON_GROUP_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /persongroups/{personGroupId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /persongroups/{personGroupId}",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new person group with specified personGroupId, name, user-provided userData and recognitionModel.\n<br /> A person group is the container of the uploaded person data, including face recognition features.\n<br /> After creation, use [PersonGroup Person - Create](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c) to add persons into the group, and then call [PersonGroup - Train](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249) to get this group ready for [Face - Identify](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).\n<br /> No image will be stored. Only the person's extracted face features and userData will be stored on server until [PersonGroup Person - Delete](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523d) or [PersonGroup - Delete](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395245) is called.\n<br/>'recognitionModel' should be specified to associate with this person group. The default value for 'recognitionModel' is 'recognition_01', if the latest model needed, please explicitly specify the model you need in this parameter. New faces that are added to an existing person group will use the recognition model that's already associated with the collection. Existing face features in a person group can't be updated to features extracted by another version of recognition model.\n* 'recognition_01': The default recognition model for [PersonGroup - Create](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244). All those person groups created before 2019 March are bonded with this recognition model.\n* 'recognition_02': Recognition model released in 2019 March. 'recognition_02' is recommended since its overall accuracy is improved compared with 'recognition_01'.\n\nPerson group quota:\n* Free-tier subscription quota: 1,000 person groups. Each holds up to 1,000 persons.\n* S0-tier subscription quota: 1,000,000 person groups. Each holds up to 10,000 persons.\n* to handle larger scale face identification problem, please consider using [LargePersonGroup](/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /persongroups/{{PERSON_GROUP_ID}}",
+      "method": "PUT",
+      "name": "PUT /persongroups/{personGroupId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PUT /persongroups/{personGroupId}",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "List all persons in a person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /persongroups/{{PERSON_GROUP_ID}}/persons",
+      "method": "GET",
+      "name": "GET /persongroups/{personGroupId}/persons",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        },
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}/persons",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "start",
+          "value": ""
+        },
+        {
+          "name": "top",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /persongroups/{personGroupId}/persons",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}/persons"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Create a new person in a specified person group.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /persongroups/{{PERSON_GROUP_ID}}/persons",
+      "method": "POST",
+      "name": "POST /persongroups/{personGroupId}/persons",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}/persons",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "POST /persongroups/{personGroupId}/persons",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}/persons"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Delete an existing person from a person group. The persistedFaceId, userData, person name and face feature in the person entry will all be deleted.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "DELETE /persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "method": "DELETE",
+      "name": "DELETE /persongroups/{personGroupId}/persons/{personId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "DELETE /persongroups/{personGroupId}/persons/{personId}",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a person's information, including registered persisted faces, name and userData.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        }
+      ],
+      "id": "GET /persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "method": "GET",
+      "name": "GET /persongroups/{personGroupId}/persons/{personId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "GET /persongroups/{personGroupId}/persons/{personId}",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "FACE_CLIENT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "name": "",
+        "userData": ""
+      },
+      "body_json": {
+        "name": "",
+        "userData": ""
+      },
+      "body_text": "{\"name\": \"\", \"userData\": \"\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Update name or userData of a person.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{FACE_CLIENT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PATCH /persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "method": "PATCH",
+      "name": "PATCH /persongroups/{personGroupId}/persons/{personId}",
+      "note": "Replace {{FACE_CLIENT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "path": "/persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}",
+      "pathParameters": [
+        {
+          "name": "personGroupId",
+          "value": ""
+        },
+        {
+          "name": "personId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"name\": \"\", \"userData\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "PATCH /persongroups/{personGroupId}/persons/{personId}",
+      "url": "https://azure.local/persongroups/{{PERSON_GROUP_ID}}/persons/{{PERSON_ID}}"
+    }
+  ]
+}

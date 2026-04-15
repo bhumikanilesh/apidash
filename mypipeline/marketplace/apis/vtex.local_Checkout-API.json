@@ -1,0 +1,2507 @@
+{
+  "id": "vtex.local_Checkout-API",
+  "info": {
+    "base_url": "https://vtex.local",
+    "description": "This call removes all user information, making a cart anonymous while leaving the items.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure that...",
+    "source": "apis.guru",
+    "tags": [
+      "ai",
+      "code-generation"
+    ],
+    "title": "Checkout API",
+    "version": "1.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Order processing callback request, which is made after an order's payment is approved.\n\r\n\r> This request has to be made until five minutes after the [Place order](https://developers.vtex.com/docs/api-reference/checkout-api#put-/api/checkout/pub/orders) or [Place order from existing cart](https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/transaction) request has been made, or else, the order will not be processed.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /api/checkout/pub/gatewayCallback/{{ORDER_GROUP}}",
+      "method": "POST",
+      "name": "Process order",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderGroup",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/gatewayCallback/{{ORDER_GROUP}}",
+      "pathParameters": [
+        {
+          "name": "orderGroup",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Process order",
+      "url": "https://vtex.local/api/checkout/pub/gatewayCallback/{{ORDER_GROUP}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "You can use this request to get your current shopping cart information (`orderFormId`) or to create a new cart.\r\n\r\n**Important**: To create a new empty shopping cart you need to send this request with the query param `forceNewCart=true`.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` obtained in response is the identification code of the newly created cart.\n\r\n\r> This request has a time out of 45 seconds.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/checkout/pub/orderForm",
+      "method": "GET",
+      "name": "Get current or create a new cart",
+      "params": [
+        {
+          "name": "forceNewCart",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "forceNewCart",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get current or create a new cart",
+      "url": "https://vtex.local/api/checkout/pub/orderForm"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Use this request to get all information associated to a given shopping  cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 45 seconds.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}",
+      "method": "GET",
+      "name": "Get cart information by ID",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "refreshOutdatedData",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "refreshOutdatedData",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get cart information by ID",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "locale": "EN",
+        "optinNewsLetter": false
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Use this request to include client preferences information to a given shopping cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds.",
+      "form_data": [
+        {
+          "name": "locale",
+          "type": "text",
+          "value": "EN"
+        },
+        {
+          "name": "optinNewsLetter",
+          "type": "text",
+          "value": false
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/clientPreferencesData",
+      "method": "POST",
+      "name": "Add client preferences",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/clientPreferencesData",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"locale\": \"EN\", \"optinNewsLetter\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add client preferences",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/clientPreferencesData"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "corporateDocument": "12345678000100",
+        "corporateName": "company-name",
+        "corporatePhone": "+551100988887777",
+        "document": "123456789",
+        "documentType": "cpf",
+        "email": "customer@examplemail.com",
+        "firstName": "first-name",
+        "isCorporate": false,
+        "lastName": "last-name",
+        "phone": "+55110988887777",
+        "stateInscription": "12345678",
+        "tradeName": "trade-name"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "Use this request to include client profile information to a given shopping cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds.\r\n\r\n>⚠️ The authentication of this endpoint can change depending on the customer context. If you are modifying information from a customer with a complete profile on the store, the response will return the customer's data masked. You can only access the customer data with an authenticated request.",
+      "form_data": [
+        {
+          "name": "corporateDocument",
+          "type": "text",
+          "value": "12345678000100"
+        },
+        {
+          "name": "corporateName",
+          "type": "text",
+          "value": "company-name"
+        },
+        {
+          "name": "corporatePhone",
+          "type": "text",
+          "value": "+551100988887777"
+        },
+        {
+          "name": "document",
+          "type": "text",
+          "value": "123456789"
+        },
+        {
+          "name": "documentType",
+          "type": "text",
+          "value": "cpf"
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "value": "customer@examplemail.com"
+        },
+        {
+          "name": "firstName",
+          "type": "text",
+          "value": "first-name"
+        },
+        {
+          "name": "isCorporate",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "lastName",
+          "type": "text",
+          "value": "last-name"
+        },
+        {
+          "name": "phone",
+          "type": "text",
+          "value": "+55110988887777"
+        },
+        {
+          "name": "stateInscription",
+          "type": "text",
+          "value": "12345678"
+        },
+        {
+          "name": "tradeName",
+          "type": "text",
+          "value": "trade-name"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/clientProfileData",
+      "method": "POST",
+      "name": "Add client profile",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/clientProfileData",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"corporateDocument\": \"12345678000100\", \"corporateName\": \"company-name\", \"corporatePhone\": \"+551100988887777\", \"document\": \"123456789\", \"documentType\": \"cpf\", \"email\": \"customer@examplemail.com\", \"firstName\": \"first-name\", \"isCorporate\": false, \"lastName\": \"last-name\", \"phone\": \"+55110988887777\", \"stateInscription\": \"12345678\", \"tradeName\": \"trade-name\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add client profile",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/clientProfileData"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "coupon": "free-shipping",
+        "marketingTags": [
+          ""
+        ],
+        "utmCampaign": "Black friday",
+        "utmMedium": "CPC",
+        "utmSource": "Facebook",
+        "utmiCampaign": "utmi_campaign-exmaple",
+        "utmiPage": "utmi_page-example",
+        "utmiPart": "utmi_part-exmaple"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Use this request to include marketing information to a given shopping cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds.",
+      "form_data": [
+        {
+          "name": "coupon",
+          "type": "text",
+          "value": "free-shipping"
+        },
+        {
+          "name": "marketingTags",
+          "type": "text",
+          "value": [
+            ""
+          ]
+        },
+        {
+          "name": "utmCampaign",
+          "type": "text",
+          "value": "Black friday"
+        },
+        {
+          "name": "utmMedium",
+          "type": "text",
+          "value": "CPC"
+        },
+        {
+          "name": "utmSource",
+          "type": "text",
+          "value": "Facebook"
+        },
+        {
+          "name": "utmiCampaign",
+          "type": "text",
+          "value": "utmi_campaign-exmaple"
+        },
+        {
+          "name": "utmiPage",
+          "type": "text",
+          "value": "utmi_page-example"
+        },
+        {
+          "name": "utmiPart",
+          "type": "text",
+          "value": "utmi_part-exmaple"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/marketingData",
+      "method": "POST",
+      "name": "Add marketing data",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/marketingData",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"coupon\": \"free-shipping\", \"marketingTags\": [\"\"], \"utmCampaign\": \"Black friday\", \"utmMedium\": \"CPC\", \"utmSource\": \"Facebook\", \"utmiCampaign\": \"utmi_campaign-exmaple\", \"utmiPage\": \"utmi_page-example\", \"utmiPart\": \"utmi_part-exmaple\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add marketing data",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/marketingData"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "salesAssociateData": {
+          "salesAssociateId": "seller123"
+        }
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "This endpoint is used for the merchant to add to the cart any relevant information that is related to the context of a specific order.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds.",
+      "form_data": [
+        {
+          "name": "salesAssociateData",
+          "type": "text",
+          "value": {
+            "salesAssociateId": "seller123"
+          }
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/merchantContextData",
+      "method": "POST",
+      "name": "Add merchant context data",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": "29154e27383145cc8ce1f7a1df0d99c4"
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/merchantContextData",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": "29154e27383145cc8ce1f7a1df0d99c4"
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"salesAssociateData\": {\"salesAssociateId\": \"seller123\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add merchant context data",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/merchantContextData"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "payments": [
+          {
+            "group": "bankInvoicePaymentGroup",
+            "hasDefaultBillingAddress": false,
+            "installments": 1,
+            "installmentsInterestRate": 0,
+            "installmentsValue": 1,
+            "paymentSystem": 1,
+            "paymentSystemName": "Boleto Bancário",
+            "referenceValue": 100,
+            "value": 100
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Use this request to include payment information to a given shopping cart. The payment information attachment in the shopping cart does not determine the final order payment method in itself. However, it allows tha platform to update any relevant information that may be impacted by the payment method.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds.",
+      "form_data": [
+        {
+          "name": "payments",
+          "type": "text",
+          "value": [
+            {
+              "group": "bankInvoicePaymentGroup",
+              "hasDefaultBillingAddress": false,
+              "installments": 1,
+              "installmentsInterestRate": 0,
+              "installmentsValue": 1,
+              "paymentSystem": 1,
+              "paymentSystemName": "Boleto Bancário",
+              "referenceValue": 100,
+              "value": 100
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/paymentData",
+      "method": "POST",
+      "name": "Add payment data",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/paymentData",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"payments\": [{\"group\": \"bankInvoicePaymentGroup\", \"hasDefaultBillingAddress\": false, \"installments\": 1, \"installmentsInterestRate\": 0, \"installmentsValue\": 1, \"paymentSystem\": 1, \"paymentSystemName\": \"Boleto Bancário\", \"referenceValue\": 100, \"value\": 100}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add payment data",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/paymentData"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "clearAddressIfPostalCodeNotFound": false,
+        "logisticsInfo": [
+          {
+            "itemIndex": 0,
+            "selectedDeliveryChannel": "delivery",
+            "selectedSla": "normal"
+          }
+        ],
+        "selectedAddresses": [
+          {
+            "addressType": "residential",
+            "city": "Rio de Janeiro",
+            "complement": "3rd floor",
+            "country": "BRA",
+            "geoCoordinates": [
+              -47.924747467041016
+            ],
+            "neighborhood": "Botafogo",
+            "number": "300",
+            "postalCode": "12345-000",
+            "receiverName": "receiver-name",
+            "reference": "Grey building",
+            "state": "RJ",
+            "street": "Praia de Botafogo"
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Use this request to include shipping information and/or selected delivery option to a given shopping cart.\r\n\r\nTo add shipping addresses send the `selectedAddresses` array. For delivery option use the `logisticsInfo` array.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 12 seconds.\r\n\r\n>⚠️ The authentication of this endpoint can change depending on the customer context. If you are modifying information from a customer with a complete profile on the store, the response will return the customer's data masked. You can only access the customer data with an authenticated request.",
+      "form_data": [
+        {
+          "name": "clearAddressIfPostalCodeNotFound",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "logisticsInfo",
+          "type": "text",
+          "value": [
+            {
+              "itemIndex": 0,
+              "selectedDeliveryChannel": "delivery",
+              "selectedSla": "normal"
+            }
+          ]
+        },
+        {
+          "name": "selectedAddresses",
+          "type": "text",
+          "value": [
+            {
+              "addressType": "residential",
+              "city": "Rio de Janeiro",
+              "complement": "3rd floor",
+              "country": "BRA",
+              "geoCoordinates": [
+                -47.924747467041016
+              ],
+              "neighborhood": "Botafogo",
+              "number": "300",
+              "postalCode": "12345-000",
+              "receiverName": "receiver-name",
+              "reference": "Grey building",
+              "state": "RJ",
+              "street": "Praia de Botafogo"
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/shippingData",
+      "method": "POST",
+      "name": "Add shipping address and select delivery option",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/shippingData",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"clearAddressIfPostalCodeNotFound\": false, \"logisticsInfo\": [{\"itemIndex\": 0, \"selectedDeliveryChannel\": \"delivery\", \"selectedSla\": \"normal\"}], \"selectedAddresses\": [{\"addressType\": \"residential\", \"city\": \"Rio de Janeiro\", \"complement\": \"3rd floor\", \"country\": \"BRA\", \"geoCoordinates\": [-47.924747467041016], \"neighborhood\": \"Botafogo\", \"number\": \"300\", \"postalCode\": \"12345-000\", \"receiverName\": \"receiver-name\", \"reference\": \"Grey building\", \"state\": \"RJ\", \"street\": \"Praia de Botafogo\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add shipping address and select delivery option",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/attachments/shippingData"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "text": "freeshipping"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Use this request to add coupons to a given shopping cart.",
+      "form_data": [
+        {
+          "name": "text",
+          "type": "text",
+          "value": "freeshipping"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/coupons",
+      "method": "POST",
+      "name": "Add coupons to the cart",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/coupons",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"text\": \"freeshipping\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add coupons to the cart",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/coupons"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Your account may create `apps`, which contain custom fields, through the [Update orderForm configuration](https://developers.vtex.com/reference/configuration#updateorderformconfiguration) request. The values of these custom fields can then be updated by this request.\n\r\n\rTo do that, you need to inform the ID of the app you created with the configuration API (`appId`).\n\r\n\rIn the body of the request, for each field created in this app (`appFieldName`) you will inform a value (`appFieldValue`).\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "PUT /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}",
+      "method": "PUT",
+      "name": "Set multiple custom field values",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "appId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "appId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set multiple custom field values",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Your account may create `apps`, which contain custom fields, through the [Update orderForm configuration](https://developers.vtex.com/reference#updateorderformconfiguration) request. The value of a specific custom field can be removed by this request.\n\r\n\rTo do that, you need to inform in the URL the ID of the app you created with the configuration API (`appId`).\n\r\n\rYou also need to iform the specific field created in this app (identified by the `appFieldName` parameter, also passed through the URL) whose value you want to remove.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "DELETE /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}/{{APP_FIELD_NAME}}",
+      "method": "DELETE",
+      "name": "Remove single custom field value",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "appFieldName",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}/{{APP_FIELD_NAME}}",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "appFieldName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove single custom field value",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}/{{APP_FIELD_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "value": ""
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Your account may create `apps`, which contain custom fields, through the [Update orderForm configuration](https://developers.vtex.com/reference#updateorderformconfiguration) request. The value of a specific custom field can then be updated by this request.\n\r\n\rTo do that, you need to inform in the URL the ID of the app you created with the configuration API (`appId`).\n\r\n\rIn the body of the request, you will inform the new value (`appFieldValue`, passed through the body) of the specific field created in this app (identified by the `appFieldName` parameter, passed through the URL).\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.",
+      "form_data": [
+        {
+          "name": "value",
+          "type": "text",
+          "value": ""
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}/{{APP_FIELD_NAME}}",
+      "method": "PUT",
+      "name": "Set single custom field value",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "appFieldName",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}/{{APP_FIELD_NAME}}",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "appId",
+          "value": ""
+        },
+        {
+          "name": "appFieldName",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"value\": \"\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Set single custom field value",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/customData/{{APP_ID}}/{{APP_FIELD_NAME}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves possible amount of installments and respective values for a given cart with a given payment method.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\rThis endpoint can be used to get the installment options for only one payment method at a time.\n\r\n\rThis endpoint should be called only after the selected `orderForm` already has a `paymentData`.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/installments",
+      "method": "GET",
+      "name": "Cart installments",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "paymentSystem",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/installments",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "paymentSystem",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cart installments",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/installments"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "orderItems": [
+          {
+            "id": "2005",
+            "index": 0,
+            "price": 1099,
+            "quantity": 3,
+            "seller": "1"
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Use this request to add a new item to the shopping cart.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 45 seconds.",
+      "form_data": [
+        {
+          "name": "orderItems",
+          "type": "text",
+          "value": [
+            {
+              "id": "2005",
+              "index": 0,
+              "price": 1099,
+              "quantity": 3,
+              "seller": "1"
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items",
+      "method": "POST",
+      "name": "Add cart items",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "allowedOutdatedData",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "allowedOutdatedData",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"orderItems\": [{\"id\": \"2005\", \"index\": 0, \"price\": 1099, \"quantity\": 3, \"seller\": \"1\"}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Add cart items",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This request removes all items from a given cart, leaving it empty.\r\n\r\nYou must send an empty JSON in the body of the request.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\r\n\r\n**Important**: **Request Body** must always be sent with empty value \"{ }\" in this endpoint.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/removeAll",
+      "method": "POST",
+      "name": "Remove all items",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/removeAll",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove all items",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/removeAll"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "orderItems": [
+          {
+            "index": 0,
+            "quantity": 3
+          }
+        ]
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "You can use this request to:\n\r\n\r1. Change the quantity of one or more items in a specific cart.\n\r2. Remove an item from the cart (by sending the `quantity` value = `0` in the request body).\r\n\r\n**Important**: To remove all items from the cart at the same time, use the [Remove all items](https://developers.vtex.com/vtex-rest-api/reference/removeallitems) endpoint.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure that represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\r> This request has a time out of 45 seconds.",
+      "form_data": [
+        {
+          "name": "orderItems",
+          "type": "text",
+          "value": [
+            {
+              "index": 0,
+              "quantity": 3
+            }
+          ]
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/update",
+      "method": "POST",
+      "name": "Update cart items",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "allowedOutdatedData",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/update",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "allowedOutdatedData",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"orderItems\": [{\"index\": 0, \"quantity\": 3}]}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update cart items",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/update"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKOUT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "price": 10000
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "This request changes the price of an SKU in a cart. You can also perform type of bulk price change with the [Update cart items request](https://developers.vtex.com/vtex-rest-api/reference/shopping-cart#itemsupdate)\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\n\r\n\rYou need to inform which cart you are referring to, by sending its `orderFormId`; and what is the item whose price you want to change, by sending its `itemIndex`.\n\r\n\rYou also need to pass the new price value in the body.\n\r\n\rRemember that, to use this endpoint, the feature of *manual price* must be active. To check if it's active, use the [Get orderForm configuration](https://developers.vtex.com/reference#getorderformconfiguration) endpoint. To make it active, use the [Update orderForm configuration](https://developers.vtex.com/reference#updateorderformconfiguration) endpoint, making the `allowManualPrice` field `true`.\n\r\n\r> Whenever you use this request to change the price of an item, all items in that cart with the same SKU are affected by this change. This applies even to items that share the SKU but have been separated into different objects in the `items` array due to customizations or attachments, for example.",
+      "form_data": [
+        {
+          "name": "price",
+          "type": "text",
+          "value": 10000
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "PUT /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/{{ITEM_INDEX}}/price",
+      "method": "PUT",
+      "name": "Change price",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "itemIndex",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/{{ITEM_INDEX}}/price",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        },
+        {
+          "name": "itemIndex",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"price\": 10000}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Change price",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/items/{{ITEM_INDEX}}/price"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This request removes all messages from the `messages` field of the orderForm , leaving it empty.\r\n\r\nYou must send an empty JSON in the body of the request.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\r\n\r\n**Important**: **Request Body** must always be sent with empty value \"{ }\" in this endpoint.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/messages/clear",
+      "method": "POST",
+      "name": "Clear orderForm messages",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/messages/clear",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Clear orderForm messages",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/messages/clear"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "ignoreProfileData": false
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "multipart",
+      "contentType": "multipart/form-data",
+      "content_type": "multipart/form-data",
+      "description": "When a shopper provides an email address at Checkout, the platform tries to retrieve existing profile information for that email and add it to the shopping cart information. Use this request if you want to change this behavior for a given cart, meaning profile information will not be included in the order automattically.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure which represents a shopping cart and contains all information pertaining to it. Hence, the `orderFormId` is the identification code of a given cart.\r\n\r\nNote that this request will only work if you have not sent the `clientProfileData` to the cart yet. Sending it to a cart that already has a `clientProfileData` should return a status `403 Forbidden` error, with an `Access denied` message.",
+      "form_data": [
+        {
+          "name": "ignoreProfileData",
+          "type": "text",
+          "value": false
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data"
+        }
+      ],
+      "id": "PATCH /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/profile",
+      "method": "PATCH",
+      "name": "Ignore profile data",
+      "note": "Set Content-Type to multipart/form-data for file uploads | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/profile",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"ignoreProfileData\": false}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Ignore profile data",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/profile"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "interestValue": 0,
+        "optinNewsLetter": false,
+        "referenceId": "41a22925298a4ddca95318131a25b000",
+        "referenceValue": 6800,
+        "savePersonalData": false,
+        "value": 6800
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "This endpoint places an order from an existing `orderForm` object, meaning an existing cart.\n\r\n\rAfter the creation of an order with this request, you have five minutes to send payment information and then request payment processing.",
+      "form_data": [
+        {
+          "name": "interestValue",
+          "type": "text",
+          "value": 0
+        },
+        {
+          "name": "optinNewsLetter",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "referenceId",
+          "type": "text",
+          "value": "41a22925298a4ddca95318131a25b000"
+        },
+        {
+          "name": "referenceValue",
+          "type": "text",
+          "value": 6800
+        },
+        {
+          "name": "savePersonalData",
+          "type": "text",
+          "value": false
+        },
+        {
+          "name": "value",
+          "type": "text",
+          "value": 6800
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/transaction",
+      "method": "POST",
+      "name": "Place order from an existing cart",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/transaction",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"interestValue\": 0, \"optinNewsLetter\": false, \"referenceId\": \"41a22925298a4ddca95318131a25b000\", \"referenceValue\": 6800, \"savePersonalData\": false, \"value\": 6800}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Place order from an existing cart",
+      "url": "https://vtex.local/api/checkout/pub/orderForm/{{ORDER_FORM_ID}}/transaction"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {
+        "country": "BRA",
+        "geoCoordinates": [
+          -47.924747467041016
+        ],
+        "items": [
+          {
+            "id": "1",
+            "quantity": 1,
+            "seller": "1"
+          }
+        ],
+        "postalCode": "12345-000"
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "This endpoint is used to simulate a cart in VTEX Checkout.\r\n\r\nIt receives an **SKU ID**, the **quantity** of items in the cart and the ID of the **Seller**.\r\n\r\nIt sends back all information about the cart, such as the selling price of each item, rates and benefits data, payment and logistics info.\r\n\r\nThis is useful whenever you need to know the availability of fulfilling an order for a specific cart setting, since the API response will let you know the updated price, inventory and shipping data.\r\n\r\n**Important**: The fields (`sku id`, `quantity`, `seller`, `country`, `postalCode` and `geoCoordinates`) are just examples of content that you can simulate in your cart. You can add more fields to the request as per your need. Access the [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) guide to check the available fields.",
+      "form_data": [
+        {
+          "name": "country",
+          "type": "text",
+          "value": "BRA"
+        },
+        {
+          "name": "geoCoordinates",
+          "type": "text",
+          "value": [
+            -47.924747467041016
+          ]
+        },
+        {
+          "name": "items",
+          "type": "text",
+          "value": [
+            {
+              "id": "1",
+              "quantity": 1,
+              "seller": "1"
+            }
+          ]
+        },
+        {
+          "name": "postalCode",
+          "type": "text",
+          "value": "12345-000"
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pub/orderForms/simulation",
+      "method": "POST",
+      "name": "Cart simulation",
+      "params": [
+        {
+          "name": "RnbBehavior",
+          "value": ""
+        },
+        {
+          "name": "sc",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orderForms/simulation",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "RnbBehavior",
+          "value": ""
+        },
+        {
+          "name": "sc",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"country\": \"BRA\", \"geoCoordinates\": [-47.924747467041016], \"items\": [{\"id\": \"1\", \"quantity\": 1, \"seller\": \"1\"}], \"postalCode\": \"12345-000\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Cart simulation",
+      "url": "https://vtex.local/api/checkout/pub/orderForms/simulation"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKOUT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "clientProfileData": {
+          "corporateDocument": "12345678000100",
+          "corporateName": "company-name",
+          "corporatePhone": "+551100988887777",
+          "document": "123456789",
+          "documentType": "cpf",
+          "email": "customer@examplemail.com",
+          "firstName": "first-name",
+          "isCorporate": false,
+          "lastName": "last-name",
+          "phone": "+55110988887777",
+          "stateInscription": "12345678",
+          "tradeName": "trade-name"
+        },
+        "items": [
+          {
+            "id": "123456789",
+            "quantity": 1,
+            "seller": "1"
+          }
+        ],
+        "marketingData": {
+          "coupon": "free-shipping",
+          "utmCampaign": "Black friday",
+          "utmMedium": "CPC",
+          "utmSource": "Facebook",
+          "utmiCampaign": "utmi_campaign-exmaple",
+          "utmiPage": "utmi_page-example",
+          "utmiPart": "utmi_part-exmaple"
+        },
+        "openTextField": "open-text-example",
+        "paymentData": {
+          "giftCardMessages": [
+            {}
+          ],
+          "giftCards": [
+            {
+              "balance": 500,
+              "id": "1390324156495k195pmab4rall3di",
+              "inUse": true,
+              "isSpecialCard": false,
+              "name": "name-example",
+              "redemptionCode": "HYUO-TEZZ-QFFT-HTFR",
+              "value": 500
+            }
+          ],
+          "paymentSystems": [
+            {
+              "description": "description-example",
+              "groupName": "creditCardPaymentGroup",
+              "id": 2,
+              "isCustom": false,
+              "name": "Visa",
+              "requiresDocument": false,
+              "selected": false,
+              "stringId": "12345abc",
+              "template": "creditCardPaymentGroup-template",
+              "validator": {
+                "cardCodeMask": "999",
+                "cardCodeRegex": "[^0-9]",
+                "mask": "9999 9999 9999 9999",
+                "regex": "^4",
+                "weights": [
+                  {}
+                ]
+              }
+            }
+          ],
+          "payments": [
+            {
+              "accountId": "accountID-example",
+              "bin": "2",
+              "installments": 2,
+              "paymentSystem": "12",
+              "referenceValue": 16175,
+              "value": 16175
+            }
+          ],
+          "updateStatus": "updated"
+        },
+        "salesAssociateData": {
+          "salesAssociateId": "seller123"
+        },
+        "shippingData": {
+          "address": {
+            "addressId": "Home",
+            "addressType": "residential",
+            "city": "Rio de Janeiro",
+            "complement": "3rd floor",
+            "country": "BRA",
+            "geoCoordinates": [
+              -47.924747467041016
+            ],
+            "neighborhood": "Botafogo",
+            "number": "300",
+            "postalCode": "12345-000",
+            "receiverName": "receiver-name",
+            "reference": "Grey building",
+            "state": "Rio de Janeiro",
+            "street": "Praia de Botafogo"
+          },
+          "logisticsInfo": [
+            {
+              "deliveryWindow": {
+                "endDateUtc": "2021-07-13T23:59:59+00:00",
+                "lisPrice": 0,
+                "price": 0,
+                "startDateUtc": "2021-07-13T00:00:00+00:00",
+                "tax": 0
+              },
+              "itemIndex": 0,
+              "lockTTL": "8d",
+              "price": 1099,
+              "selectedSla": "Express",
+              "shippingEstimate": "7d"
+            }
+          ],
+          "updateStatus": "updated"
+        }
+      },
+      "body_json": {
+        "clientProfileData": {
+          "corporateDocument": "12345678000100",
+          "corporateName": "company-name",
+          "corporatePhone": "+551100988887777",
+          "document": "123456789",
+          "documentType": "cpf",
+          "email": "customer@examplemail.com",
+          "firstName": "first-name",
+          "isCorporate": false,
+          "lastName": "last-name",
+          "phone": "+55110988887777",
+          "stateInscription": "12345678",
+          "tradeName": "trade-name"
+        },
+        "items": [
+          {
+            "id": "123456789",
+            "quantity": 1,
+            "seller": "1"
+          }
+        ],
+        "marketingData": {
+          "coupon": "free-shipping",
+          "utmCampaign": "Black friday",
+          "utmMedium": "CPC",
+          "utmSource": "Facebook",
+          "utmiCampaign": "utmi_campaign-exmaple",
+          "utmiPage": "utmi_page-example",
+          "utmiPart": "utmi_part-exmaple"
+        },
+        "openTextField": "open-text-example",
+        "paymentData": {
+          "giftCardMessages": [
+            {}
+          ],
+          "giftCards": [
+            {
+              "balance": 500,
+              "id": "1390324156495k195pmab4rall3di",
+              "inUse": true,
+              "isSpecialCard": false,
+              "name": "name-example",
+              "redemptionCode": "HYUO-TEZZ-QFFT-HTFR",
+              "value": 500
+            }
+          ],
+          "paymentSystems": [
+            {
+              "description": "description-example",
+              "groupName": "creditCardPaymentGroup",
+              "id": 2,
+              "isCustom": false,
+              "name": "Visa",
+              "requiresDocument": false,
+              "selected": false,
+              "stringId": "12345abc",
+              "template": "creditCardPaymentGroup-template",
+              "validator": {
+                "cardCodeMask": "999",
+                "cardCodeRegex": "[^0-9]",
+                "mask": "9999 9999 9999 9999",
+                "regex": "^4",
+                "weights": [
+                  {}
+                ]
+              }
+            }
+          ],
+          "payments": [
+            {
+              "accountId": "accountID-example",
+              "bin": "2",
+              "installments": 2,
+              "paymentSystem": "12",
+              "referenceValue": 16175,
+              "value": 16175
+            }
+          ],
+          "updateStatus": "updated"
+        },
+        "salesAssociateData": {
+          "salesAssociateId": "seller123"
+        },
+        "shippingData": {
+          "address": {
+            "addressId": "Home",
+            "addressType": "residential",
+            "city": "Rio de Janeiro",
+            "complement": "3rd floor",
+            "country": "BRA",
+            "geoCoordinates": [
+              -47.924747467041016
+            ],
+            "neighborhood": "Botafogo",
+            "number": "300",
+            "postalCode": "12345-000",
+            "receiverName": "receiver-name",
+            "reference": "Grey building",
+            "state": "Rio de Janeiro",
+            "street": "Praia de Botafogo"
+          },
+          "logisticsInfo": [
+            {
+              "deliveryWindow": {
+                "endDateUtc": "2021-07-13T23:59:59+00:00",
+                "lisPrice": 0,
+                "price": 0,
+                "startDateUtc": "2021-07-13T00:00:00+00:00",
+                "tax": 0
+              },
+              "itemIndex": 0,
+              "lockTTL": "8d",
+              "price": 1099,
+              "selectedSla": "Express",
+              "shippingEstimate": "7d"
+            }
+          ],
+          "updateStatus": "updated"
+        }
+      },
+      "body_text": "{\"clientProfileData\": {\"corporateDocument\": \"12345678000100\", \"corporateName\": \"company-name\", \"corporatePhone\": \"+551100988887777\", \"document\": \"123456789\", \"documentType\": \"cpf\", \"email\": \"customer@examplemail.com\", \"firstName\": \"first-name\", \"isCorporate\": false, \"lastName\": \"last-name\", \"phone\": \"+55110988887777\", \"stateInscription\": \"12345678\", \"tradeName\": \"trade-name\"}, \"items\": [{\"id\": \"123456789\", \"quantity\": 1, \"seller\": \"1\"}], \"marketingData\": {\"coupon\": \"free-shipping\", \"utmCampaign\": \"Black friday\", \"utmMedium\": \"CPC\", \"utmSource\": \"Facebook\", \"utmiCampaign\": \"utmi_campaign-exmaple\", \"utmiPage\": \"utmi_page-example\", \"utmiPart\": \"utmi_part-exmaple\"}, \"openTextField\": \"open-text-example\", \"paymentData\": {\"giftCardMessages\": [{}], \"giftCards\": [{\"balance\": 500, \"id\": \"1390324156495k195pmab4rall3di\", \"inUse\": true, \"isSpecialCard\": false, \"name\": \"name-example\", \"redemptionCode\": \"HYUO-TEZZ-QFFT-HTFR\", \"value\": 500}], \"paymentSystems\": [{\"description\": \"description-example\", \"groupName\": \"creditCardPaymentGroup\", \"id\": 2, \"isCustom\": false, \"name\": \"Visa\", \"requiresDocument\": false, \"selected\": false, \"stringId\": \"12345abc\", \"template\": \"creditCardPaymentGroup-template\", \"validator\": {\"cardCodeMask\": \"999\", \"cardCodeRegex\": \"[^0-9]\", \"mask\": \"9999 9999 9999 9999\", \"regex\": \"^4\", \"weights\": [{}]}}], \"payments\": [{\"accountId\": \"accountID-example\", \"bin\": \"2\", \"installments\": 2, \"paymentSystem\": \"12\", \"referenceValue\": 16175, \"value\": 16175}], \"updateStatus\": \"updated\"}, \"salesAssociateData\": {\"salesAssociateId\": \"seller123\"}, \"shippingData\": {\"address\": {\"addressId\": \"Home\", \"addressType\": \"residential\", \"city\": \"Rio de Janeiro\", \"complement\": \"3rd floor\", \"country\": \"BRA\", \"geoCoordinates\": [-47.924747467041016], \"neighborhood\": \"Botafogo\", \"number\": \"300\", \"postalCode\": \"12345-000\", \"receiverName\": \"receiver-name\", \"reference\": \"Grey building\", \"state\": \"Rio de Janeiro\", \"street\": \"Praia de Botafogo\"}, \"logisticsInfo\": [{\"deliveryWindow\": {\"endDateUtc\": \"2021-07-13T23:59:59+00:00\", \"lisPrice\": 0, \"price\": 0, \"startDateUtc\": \"2021-07-13T00:00:00+00:00\", \"tax\": 0}, \"itemIndex\": 0, \"lockTTL\": \"8d\", \"price\": 1099, \"selectedSla\": \"Express\", \"shippingEstimate\": \"7d\"}], \"updateStatus\": \"updated\"}}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Places order without having any prior cart information. This means all information on items, client, payment and shipping must be sent in the body.\r\n\r\n>⚠️ The authentication of this endpoint is required if you are creating an order with an item that has an attachment that creates a Subscription. For more information, access [Subscriptions API](https://developers.vtex.com/docs/api-reference/subscriptions-api-v3).",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "PUT /api/checkout/pub/orders",
+      "method": "PUT",
+      "name": "Place order",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "sc",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/orders",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "sc",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": "{\"clientProfileData\": {\"corporateDocument\": \"12345678000100\", \"corporateName\": \"company-name\", \"corporatePhone\": \"+551100988887777\", \"document\": \"123456789\", \"documentType\": \"cpf\", \"email\": \"customer@examplemail.com\", \"firstName\": \"first-name\", \"isCorporate\": false, \"lastName\": \"last-name\", \"phone\": \"+55110988887777\", \"stateInscription\": \"12345678\", \"tradeName\": \"trade-name\"}, \"items\": [{\"id\": \"123456789\", \"quantity\": 1, \"seller\": \"1\"}], \"marketingData\": {\"coupon\": \"free-shipping\", \"utmCampaign\": \"Black friday\", \"utmMedium\": \"CPC\", \"utmSource\": \"Facebook\", \"utmiCampaign\": \"utmi_campaign-exmaple\", \"utmiPage\": \"utmi_page-example\", \"utmiPart\": \"utmi_part-exmaple\"}, \"openTextField\": \"open-text-example\", \"paymentData\": {\"giftCardMessages\": [{}], \"giftCards\": [{\"balance\": 500, \"id\": \"1390324156495k195pmab4rall3di\", \"inUse\": true, \"isSpecialCard\": false, \"name\": \"name-example\", \"redemptionCode\": \"HYUO-TEZZ-QFFT-HTFR\", \"value\": 500}], \"paymentSystems\": [{\"description\": \"description-example\", \"groupName\": \"creditCardPaymentGroup\", \"id\": 2, \"isCustom\": false, \"name\": \"Visa\", \"requiresDocument\": false, \"selected\": false, \"stringId\": \"12345abc\", \"template\": \"creditCardPaymentGroup-template\", \"validator\": {\"cardCodeMask\": \"999\", \"cardCodeRegex\": \"[^0-9]\", \"mask\": \"9999 9999 9999 9999\", \"regex\": \"^4\", \"weights\": [{}]}}], \"payments\": [{\"accountId\": \"accountID-example\", \"bin\": \"2\", \"installments\": 2, \"paymentSystem\": \"12\", \"referenceValue\": 16175, \"value\": 16175}], \"updateStatus\": \"updated\"}, \"salesAssociateData\": {\"salesAssociateId\": \"seller123\"}, \"shippingData\": {\"address\": {\"addressId\": \"Home\", \"addressType\": \"residential\", \"city\": \"Rio de Janeiro\", \"complement\": \"3rd floor\", \"country\": \"BRA\", \"geoCoordinates\": [-47.924747467041016], \"neighborhood\": \"Botafogo\", \"number\": \"300\", \"postalCode\": \"12345-000\", \"receiverName\": \"receiver-name\", \"reference\": \"Grey building\", \"state\": \"Rio de Janeiro\", \"street\": \"Praia de Botafogo\"}, \"logisticsInfo\": [{\"deliveryWindow\": {\"endDateUtc\": \"2021-07-13T23:59:59+00:00\", \"lisPrice\": 0, \"price\": 0, \"startDateUtc\": \"2021-07-13T00:00:00+00:00\", \"tax\": 0}, \"itemIndex\": 0, \"lockTTL\": \"8d\", \"price\": 1099, \"selectedSla\": \"Express\", \"shippingEstimate\": \"7d\"}], \"updateStatus\": \"updated\"}}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Place order",
+      "url": "https://vtex.local/api/checkout/pub/orders"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves information on pickup points close to a given location determined by geocoordinates or postal code.\n\r\n\rThe pickup points returned are not necessarily all active ones. Make sure to validate the information consumed by integrations.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/checkout/pub/pickup-points",
+      "method": "GET",
+      "name": "List pickup points by location",
+      "params": [
+        {
+          "name": "geoCoordinates",
+          "value": ""
+        },
+        {
+          "name": "postalCode",
+          "value": ""
+        },
+        {
+          "name": "countryCode",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/pickup-points",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "geoCoordinates",
+          "value": ""
+        },
+        {
+          "name": "postalCode",
+          "value": ""
+        },
+        {
+          "name": "countryCode",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "List pickup points by location",
+      "url": "https://vtex.local/api/checkout/pub/pickup-points"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves address information for a given postal code and country.\r\n\r\nThis request can be used to implement auto complete functionality when a customer needs to fill in an address.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/checkout/pub/postal-code/{{COUNTRY_CODE}}/{{POSTAL_CODE}}",
+      "method": "GET",
+      "name": "Get address by postal code",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "countryCode",
+          "value": ""
+        },
+        {
+          "name": "postalCode",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/postal-code/{{COUNTRY_CODE}}/{{POSTAL_CODE}}",
+      "pathParameters": [
+        {
+          "name": "countryCode",
+          "value": ""
+        },
+        {
+          "name": "postalCode",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get address by postal code",
+      "url": "https://vtex.local/api/checkout/pub/postal-code/{{COUNTRY_CODE}}/{{POSTAL_CODE}}"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a client's profile information by providing an email address.\n\r\n\rIf the response body fields are empty, the following situations may have occurred:\n\r\n\r1. There is no client registered with the email address provided in your store, or;\n\r2. Client profile is invalid or incomplete. For more information, see [SmartCheckout - Customer information automatic fill-in](https://help.vtex.com/en/tutorial/smartcheckout-customer-information-automatic-fill-in--2Nuu3xAFzdhIzJIldAdtan).\r\n\r\n>⚠️ The authentication of this endpoint can change depending on the customer context. If you are consulting information from a customer with a complete profile on the store, the response will return the customer's data masked. You can only access the customer data with an authenticated request.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/checkout/pub/profiles",
+      "method": "GET",
+      "name": "Get client profile by email",
+      "note": "Set Content-Type to multipart/form-data for file uploads",
+      "params": [
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/profiles",
+      "pathParameters": [],
+      "queryParameters": [
+        {
+          "name": "email",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get client profile by email",
+      "url": "https://vtex.local/api/checkout/pub/profiles"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieve a list of sellers that cater to a specific region or address, according to your set up of our [regionalization feature](https://help.vtex.com/en/tutorial/setting-up-price-and-availability-of-skus-by-region--12ne58BmvYsYuGsimmugoc#). Learn more about [Region v2](https://developers.vtex.com/vtex-developer-docs/changelog/region-v2).\n\r\n\rTo access the list of sellers, you must choose one of the following methods:\n\r\n\r1. Send the identification of the list of sellers (`regionId`) as a path parameter through the URL. Or;\n\r2. Send the `country` (3-digit ISO code) and at least one of the two values (`postal Code` or `geo Coordinates`) as query parameters through the URL. For this method, it is also allowed to send both values (`postalCode` or `geoCoordinates`) in the same request.",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /api/checkout/pub/regions/{{REGION_ID}}",
+      "method": "GET",
+      "name": "Get sellers by region or address",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "regionId",
+          "value": ""
+        },
+        {
+          "name": "country",
+          "value": ""
+        },
+        {
+          "name": "postalCode",
+          "value": ""
+        },
+        {
+          "name": "geoCoordinates",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pub/regions/{{REGION_ID}}",
+      "pathParameters": [
+        {
+          "name": "regionId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [
+        {
+          "name": "country",
+          "value": ""
+        },
+        {
+          "name": "postalCode",
+          "value": ""
+        },
+        {
+          "name": "geoCoordinates",
+          "value": ""
+        }
+      ],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get sellers by region or address",
+      "url": "https://vtex.local/api/checkout/pub/regions/{{REGION_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKOUT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves the settings that are currently applied to every orderForm in the account.\n\r\n\rThese settings are defined by the request [Update orderForm configuration](https://developers.vtex.com/reference/configuration#updateorderformconfiguration).\n\r\n\rAlways use this request to retrieve the current configuration before performing an update. By doing so you ensure that you are modifying only the properties you want.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/checkout/pvt/configuration/orderForm",
+      "method": "GET",
+      "name": "Get orderForm configuration",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pvt/configuration/orderForm",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get orderForm configuration",
+      "url": "https://vtex.local/api/checkout/pvt/configuration/orderForm"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKOUT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "allowManualPrice": null,
+        "allowMultipleDeliveries": null,
+        "apps": null,
+        "decimalDigitsPrecision": 2,
+        "minimumQuantityAccumulatedForItems": 1,
+        "minimumValueAccumulated": null,
+        "paymentConfiguration": {
+          "requiresAuthenticationForPreAuthorizedPaymentOption": false
+        },
+        "taxConfiguration": null
+      },
+      "body_json": null,
+      "body_text": "",
+      "body_type": "form",
+      "contentType": "application/x-www-form-urlencoded",
+      "content_type": "application/x-www-form-urlencoded",
+      "description": "Determines settings that will apply to every orderForm in the account.\n\r\n\rFor example, if you create an app using this request, every orderForm of this account will have the custom fields created though it.\n\r\n\r**Important**: always retrieve the current configuration before performing an update to ensure that you are modifying only the properties you want. Otherwise, old values can be overwritten. To retrieve the current configuration, use the request [Get orderForm configuration](https://developers.vtex.com/reference#getorderformconfiguration).",
+      "form_data": [
+        {
+          "name": "allowManualPrice",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "allowMultipleDeliveries",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "apps",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "decimalDigitsPrecision",
+          "type": "text",
+          "value": 2
+        },
+        {
+          "name": "minimumQuantityAccumulatedForItems",
+          "type": "text",
+          "value": 1
+        },
+        {
+          "name": "minimumValueAccumulated",
+          "type": "text",
+          "value": null
+        },
+        {
+          "name": "paymentConfiguration",
+          "type": "text",
+          "value": {
+            "requiresAuthenticationForPreAuthorizedPaymentOption": false
+          }
+        },
+        {
+          "name": "taxConfiguration",
+          "type": "text",
+          "value": null
+        }
+      ],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "id": "POST /api/checkout/pvt/configuration/orderForm",
+      "method": "POST",
+      "name": "Update orderForm configuration",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pvt/configuration/orderForm",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"allowManualPrice\": null, \"allowMultipleDeliveries\": null, \"apps\": null, \"decimalDigitsPrecision\": 2, \"minimumQuantityAccumulatedForItems\": 1, \"minimumValueAccumulated\": null, \"paymentConfiguration\": {\"requiresAuthenticationForPreAuthorizedPaymentOption\": false}, \"taxConfiguration\": null}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update orderForm configuration",
+      "url": "https://vtex.local/api/checkout/pvt/configuration/orderForm"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKOUT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "Retrieves a marketplace’s window to change seller, that is, the period when it is possible to choose another seller to fulfill a given order after the original seller has canceled it.\n\r\n\rThe default period for this window is of 2 days, but it can be configured by the request Update window to change seller.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        }
+      ],
+      "id": "GET /api/checkout/pvt/configuration/window-to-change-seller",
+      "method": "GET",
+      "name": "Get window to change seller",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pvt/configuration/window-to-change-seller",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get window to change seller",
+      "url": "https://vtex.local/api/checkout/pvt/configuration/window-to-change-seller"
+    },
+    {
+      "auth": {
+        "header_name": "X-API-Key",
+        "location": "header",
+        "placeholder": "CHECKOUT_API_KEY",
+        "prefix": "",
+        "type": "api_key"
+      },
+      "authType": "api_key",
+      "auth_type": "api_key",
+      "body": {
+        "waitingTime": 0
+      },
+      "body_json": {
+        "waitingTime": 0
+      },
+      "body_text": "{\"waitingTime\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Updates a marketplace’s window to change seller, that is, the period when it is possible to choose another seller to fulfill a given order after the original seller has canceled it.\n\r\n\rIt is possible to check the current window using the request Get window to change seller.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "value": "{{CHECKOUT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /api/checkout/pvt/configuration/window-to-change-seller",
+      "method": "POST",
+      "name": "Update window to change seller",
+      "note": "Replace {{CHECKOUT_API_KEY}} with your API key",
+      "params": [
+        {
+          "name": "Content-Type",
+          "value": ""
+        },
+        {
+          "name": "Accept",
+          "value": ""
+        }
+      ],
+      "path": "/api/checkout/pvt/configuration/window-to-change-seller",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"waitingTime\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Update window to change seller",
+      "url": "https://vtex.local/api/checkout/pvt/configuration/window-to-change-seller"
+    },
+    {
+      "auth": {
+        "header_name": null,
+        "location": null,
+        "placeholder": null,
+        "prefix": "",
+        "type": "none"
+      },
+      "authType": "none",
+      "auth_type": "none",
+      "body": {},
+      "body_json": null,
+      "body_text": "",
+      "body_type": "none",
+      "contentType": "",
+      "content_type": "",
+      "description": "This call removes all user information, making a cart anonymous while leaving the items.\r\n\r\nThe [orderForm](https://developers.vtex.com/docs/guides/orderform-fields) is the data structure that represents a shopping cart and contains all information about it. Hence, the `orderFormId` is the identification code of a given cart.\r\n\r\nThis call works by creating a new orderForm, setting a new cookie, and returning a redirect 302 to the cart URL (`/checkout/#/orderform`).",
+      "form_data": [],
+      "header_rows": [],
+      "headers": [],
+      "id": "GET /checkout/changeToAnonymousUser/{{ORDER_FORM_ID}}",
+      "method": "GET",
+      "name": "Remove all personal data",
+      "note": "Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "path": "/checkout/changeToAnonymousUser/{{ORDER_FORM_ID}}",
+      "pathParameters": [
+        {
+          "name": "orderFormId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": null,
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Remove all personal data",
+      "url": "https://vtex.local/checkout/changeToAnonymousUser/{{ORDER_FORM_ID}}"
+    }
+  ]
+}

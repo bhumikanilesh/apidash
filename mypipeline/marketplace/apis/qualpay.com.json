@@ -1,0 +1,1897 @@
+{
+  "id": "qualpay.com",
+  "info": {
+    "base_url": "https://api-test.qualpay.com/pg",
+    "description": "Authorizations can be voided at any time until Qualpay automatically voids them at 28 days. Captured transactions can be voided until the batch is closed. If your batch closes and you did not void...",
+    "source": "apis.guru",
+    "tags": [
+      "finance"
+    ],
+    "title": "Qualpay Payment Gateway API",
+    "version": "1.7.0"
+  },
+  "requests": [
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "card_number": "4111111111111111",
+        "merchant_id": "<Provide merchant id that links to API Key>"
+      },
+      "body_json": {
+        "card_number": "4111111111111111",
+        "merchant_id": "<Provide merchant id that links to API Key>"
+      },
+      "body_text": "{\"card_number\": \"4111111111111111\", \"merchant_id\": \"<Provide merchant id that links to API Key>\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Gets Card type information for Visa, Mastercard, and Discover. Useful if you prohibit or allow certain activity based on card type. For example, you may not want to allow a subscription to be created using a prepaid card.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/ardef",
+      "method": "POST",
+      "name": "Get Card type Information for Visa, Mastercard, and Discover",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/ardef",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"card_number\": \"4111111111111111\", \"merchant_id\": \"<Provide merchant id that links to API Key>\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Get Card type Information for Visa, Mastercard, and Discover",
+      "url": "https://api-test.qualpay.com/pg/ardef"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amt_convenience_fee": 2,
+        "amt_fbo": 1.5,
+        "amt_tax": 93.5,
+        "amt_tran": 1193.5,
+        "amt_tran_fee": 2.35,
+        "auth_code": "620376",
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "cavv_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k=",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "customer_email": "testme@qualpay.com",
+        "customer_id": "JOECUSTOMER_12",
+        "cvv2": "152",
+        "dba_name": "SHOE CO",
+        "dba_suffix": "END PROMO",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "duplicate_seconds": 300,
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "email_receipt": true,
+        "emv_tran_id": "ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=",
+        "exp_date": "0921",
+        "fbo_id": 999000000001,
+        "line_items": "[{\"quantity\": \"1\",\"description\": \"Traffic Cones\", \"unit_of_measure\": \"each\", \"product_code\": \"SKU-123\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"14.99\"},{\"quantity\": \"3\", \"description\": \"Spray Paint\", \"unit_of_measure\": \"EA\", \"product_code\": \"SKU-456\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"5.00\"}]",
+        "loc_id": "0001",
+        "mc_ucaf_data": "ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=",
+        "mc_ucaf_ind": "2",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "partial_auth": true,
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "pg_id": "d24ac6189b0b11e6966ca68d5edbef41",
+        "profile_id": "21200001000300000978",
+        "purchase_id": "55-1212",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "subscription_id": 1234,
+        "tokenize": true,
+        "tr_number": "011111111",
+        "tran_currency": 840,
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512,
+        "xid_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k="
+      },
+      "body_json": {
+        "amt_convenience_fee": 2,
+        "amt_fbo": 1.5,
+        "amt_tax": 93.5,
+        "amt_tran": 1193.5,
+        "amt_tran_fee": 2.35,
+        "auth_code": "620376",
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "cavv_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k=",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "customer_email": "testme@qualpay.com",
+        "customer_id": "JOECUSTOMER_12",
+        "cvv2": "152",
+        "dba_name": "SHOE CO",
+        "dba_suffix": "END PROMO",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "duplicate_seconds": 300,
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "email_receipt": true,
+        "emv_tran_id": "ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=",
+        "exp_date": "0921",
+        "fbo_id": 999000000001,
+        "line_items": "[{\"quantity\": \"1\",\"description\": \"Traffic Cones\", \"unit_of_measure\": \"each\", \"product_code\": \"SKU-123\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"14.99\"},{\"quantity\": \"3\", \"description\": \"Spray Paint\", \"unit_of_measure\": \"EA\", \"product_code\": \"SKU-456\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"5.00\"}]",
+        "loc_id": "0001",
+        "mc_ucaf_data": "ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=",
+        "mc_ucaf_ind": "2",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "partial_auth": true,
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "pg_id": "d24ac6189b0b11e6966ca68d5edbef41",
+        "profile_id": "21200001000300000978",
+        "purchase_id": "55-1212",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "subscription_id": 1234,
+        "tokenize": true,
+        "tr_number": "011111111",
+        "tran_currency": 840,
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512,
+        "xid_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k="
+      },
+      "body_text": "{\"amt_convenience_fee\": 2, \"amt_fbo\": 1.5, \"amt_tax\": 93.5, \"amt_tran\": 1193.5, \"amt_tran_fee\": 2.35, \"auth_code\": \"620376\", \"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"cavv_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"customer_email\": \"testme@qualpay.com\", \"customer_id\": \"JOECUSTOMER_12\", \"cvv2\": \"152\", \"dba_name\": \"SHOE CO\", \"dba_suffix\": \"END PROMO\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"duplicate_seconds\": 300, \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"email_receipt\": true, \"emv_tran_id\": \"ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=\", \"exp_date\": \"0921\", \"fbo_id\": 999000000001, \"line_items\": \"[{\\\"quantity\\\": \\\"1\\\",\\\"description\\\": \\\"Traffic Cones\\\", \\\"unit_of_measure\\\": \\\"each\\\", \\\"product_code\\\": \\\"SKU-123\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"14.99\\\"},{\\\"quantity\\\": \\\"3\\\", \\\"description\\\": \\\"Spray Paint\\\", \\\"unit_of_measure\\\": \\\"EA\\\", \\\"product_code\\\": \\\"SKU-456\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"5.00\\\"}]\", \"loc_id\": \"0001\", \"mc_ucaf_data\": \"ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=\", \"mc_ucaf_ind\": \"2\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"partial_auth\": true, \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"pg_id\": \"d24ac6189b0b11e6966ca68d5edbef41\", \"profile_id\": \"21200001000300000978\", \"purchase_id\": \"55-1212\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"subscription_id\": 1234, \"tokenize\": true, \"tr_number\": \"011111111\", \"tran_currency\": 840, \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512, \"xid_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Authorizes a credit card for capture at a later time. An authorized transaction will continue to be open until it expires or a capture message is received. Authorizations are automatically voided if they are not captured within 28 days, although most issuing banks will release the hold after 24 hours in retail environments or 7 days in card not present environments.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/auth",
+      "method": "POST",
+      "name": "Authorize Transaction",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/auth",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amt_convenience_fee\": 2, \"amt_fbo\": 1.5, \"amt_tax\": 93.5, \"amt_tran\": 1193.5, \"amt_tran_fee\": 2.35, \"auth_code\": \"620376\", \"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"cavv_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"customer_email\": \"testme@qualpay.com\", \"customer_id\": \"JOECUSTOMER_12\", \"cvv2\": \"152\", \"dba_name\": \"SHOE CO\", \"dba_suffix\": \"END PROMO\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"duplicate_seconds\": 300, \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"email_receipt\": true, \"emv_tran_id\": \"ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=\", \"exp_date\": \"0921\", \"fbo_id\": 999000000001, \"line_items\": \"[{\\\"quantity\\\": \\\"1\\\",\\\"description\\\": \\\"Traffic Cones\\\", \\\"unit_of_measure\\\": \\\"each\\\", \\\"product_code\\\": \\\"SKU-123\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"14.99\\\"},{\\\"quantity\\\": \\\"3\\\", \\\"description\\\": \\\"Spray Paint\\\", \\\"unit_of_measure\\\": \\\"EA\\\", \\\"product_code\\\": \\\"SKU-456\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"5.00\\\"}]\", \"loc_id\": \"0001\", \"mc_ucaf_data\": \"ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=\", \"mc_ucaf_ind\": \"2\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"partial_auth\": true, \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"pg_id\": \"d24ac6189b0b11e6966ca68d5edbef41\", \"profile_id\": \"21200001000300000978\", \"purchase_id\": \"55-1212\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"subscription_id\": 1234, \"tokenize\": true, \"tr_number\": \"011111111\", \"tran_currency\": 840, \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512, \"xid_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Authorize Transaction",
+      "url": "https://api-test.qualpay.com/pg/auth"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "tran_currency": 840,
+        "user_id": 0
+      },
+      "body_json": {
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "tran_currency": 840,
+        "user_id": 0
+      },
+      "body_text": "{\"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"tran_currency\": 840, \"user_id\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Closes a batch. Use this request when the timing of the batch close needs to be controlled rather than relying on the once-daily automatic batch close which is 9 PM Pacific by default, and can be changed in the Qualpay Manager administration settings.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/batchClose",
+      "method": "POST",
+      "name": "Close Batch",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/batchClose",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"tran_currency\": 840, \"user_id\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Close Batch",
+      "url": "https://api-test.qualpay.com/pg/batchClose"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amt_tran": 1193.5,
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_json": {
+        "amt_tran": 1193.5,
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_text": "{\"amt_tran\": 1193.5, \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Captures an authorized transaction for any amount up to the amount originally authorized. An authorized transaction can only be captured once.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/capture/{{PG_ID_ORIG}}",
+      "method": "POST",
+      "name": "Capture an Authorized Transaction",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "pgIdOrig",
+          "value": ""
+        }
+      ],
+      "path": "/pg/capture/{{PG_ID_ORIG}}",
+      "pathParameters": [
+        {
+          "name": "pgIdOrig",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amt_tran\": 1193.5, \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Capture an Authorized Transaction",
+      "url": "https://api-test.qualpay.com/pg/capture/{{PG_ID_ORIG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amt_convenience_fee": 2,
+        "amt_fbo": 1.5,
+        "amt_tax": 93.5,
+        "amt_tran": 1193.5,
+        "amt_tran_fee": 2.35,
+        "auth_code": "620376",
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "cavv_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k=",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "customer_email": "testme@qualpay.com",
+        "customer_id": "JOECUSTOMER_12",
+        "cvv2": "152",
+        "dba_name": "SHOE CO",
+        "dba_suffix": "END PROMO",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "duplicate_seconds": 300,
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "email_receipt": true,
+        "emv_tran_id": "ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=",
+        "exp_date": "0921",
+        "fbo_id": 999000000001,
+        "line_items": "[{\"quantity\": \"1\",\"description\": \"Traffic Cones\", \"unit_of_measure\": \"each\", \"product_code\": \"SKU-123\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"14.99\"},{\"quantity\": \"3\", \"description\": \"Spray Paint\", \"unit_of_measure\": \"EA\", \"product_code\": \"SKU-456\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"5.00\"}]",
+        "loc_id": "0001",
+        "mc_ucaf_data": "ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=",
+        "mc_ucaf_ind": "2",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "partial_auth": true,
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "pg_id": "d24ac6189b0b11e6966ca68d5edbef41",
+        "profile_id": "21200001000300000978",
+        "purchase_id": "55-1212",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "subscription_id": 1234,
+        "tokenize": true,
+        "tr_number": "011111111",
+        "tran_currency": 840,
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512,
+        "xid_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k="
+      },
+      "body_json": {
+        "amt_convenience_fee": 2,
+        "amt_fbo": 1.5,
+        "amt_tax": 93.5,
+        "amt_tran": 1193.5,
+        "amt_tran_fee": 2.35,
+        "auth_code": "620376",
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "cavv_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k=",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "customer_email": "testme@qualpay.com",
+        "customer_id": "JOECUSTOMER_12",
+        "cvv2": "152",
+        "dba_name": "SHOE CO",
+        "dba_suffix": "END PROMO",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "duplicate_seconds": 300,
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "email_receipt": true,
+        "emv_tran_id": "ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=",
+        "exp_date": "0921",
+        "fbo_id": 999000000001,
+        "line_items": "[{\"quantity\": \"1\",\"description\": \"Traffic Cones\", \"unit_of_measure\": \"each\", \"product_code\": \"SKU-123\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"14.99\"},{\"quantity\": \"3\", \"description\": \"Spray Paint\", \"unit_of_measure\": \"EA\", \"product_code\": \"SKU-456\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"5.00\"}]",
+        "loc_id": "0001",
+        "mc_ucaf_data": "ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=",
+        "mc_ucaf_ind": "2",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "partial_auth": true,
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "pg_id": "d24ac6189b0b11e6966ca68d5edbef41",
+        "profile_id": "21200001000300000978",
+        "purchase_id": "55-1212",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "subscription_id": 1234,
+        "tokenize": true,
+        "tr_number": "011111111",
+        "tran_currency": 840,
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512,
+        "xid_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k="
+      },
+      "body_text": "{\"amt_convenience_fee\": 2, \"amt_fbo\": 1.5, \"amt_tax\": 93.5, \"amt_tran\": 1193.5, \"amt_tran_fee\": 2.35, \"auth_code\": \"620376\", \"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"cavv_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"customer_email\": \"testme@qualpay.com\", \"customer_id\": \"JOECUSTOMER_12\", \"cvv2\": \"152\", \"dba_name\": \"SHOE CO\", \"dba_suffix\": \"END PROMO\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"duplicate_seconds\": 300, \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"email_receipt\": true, \"emv_tran_id\": \"ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=\", \"exp_date\": \"0921\", \"fbo_id\": 999000000001, \"line_items\": \"[{\\\"quantity\\\": \\\"1\\\",\\\"description\\\": \\\"Traffic Cones\\\", \\\"unit_of_measure\\\": \\\"each\\\", \\\"product_code\\\": \\\"SKU-123\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"14.99\\\"},{\\\"quantity\\\": \\\"3\\\", \\\"description\\\": \\\"Spray Paint\\\", \\\"unit_of_measure\\\": \\\"EA\\\", \\\"product_code\\\": \\\"SKU-456\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"5.00\\\"}]\", \"loc_id\": \"0001\", \"mc_ucaf_data\": \"ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=\", \"mc_ucaf_ind\": \"2\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"partial_auth\": true, \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"pg_id\": \"d24ac6189b0b11e6966ca68d5edbef41\", \"profile_id\": \"21200001000300000978\", \"purchase_id\": \"55-1212\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"subscription_id\": 1234, \"tokenize\": true, \"tr_number\": \"011111111\", \"tran_currency\": 840, \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512, \"xid_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Issues an unlinked credit. Credit requests require that the cardholder data is  provided in the request. Credits are only available during the first 30 days of account opening unless you contact Qualpay support to make other arrangements. The refund request should generally be used to return money to the cardholder, as it is a reversal of a previously captured transaction. A refund request is linked to the original transaction which is helpful for reconciliation purposes.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/credit",
+      "method": "POST",
+      "name": "Issue Credit to Cardholder",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/credit",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amt_convenience_fee\": 2, \"amt_fbo\": 1.5, \"amt_tax\": 93.5, \"amt_tran\": 1193.5, \"amt_tran_fee\": 2.35, \"auth_code\": \"620376\", \"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"cavv_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"customer_email\": \"testme@qualpay.com\", \"customer_id\": \"JOECUSTOMER_12\", \"cvv2\": \"152\", \"dba_name\": \"SHOE CO\", \"dba_suffix\": \"END PROMO\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"duplicate_seconds\": 300, \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"email_receipt\": true, \"emv_tran_id\": \"ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=\", \"exp_date\": \"0921\", \"fbo_id\": 999000000001, \"line_items\": \"[{\\\"quantity\\\": \\\"1\\\",\\\"description\\\": \\\"Traffic Cones\\\", \\\"unit_of_measure\\\": \\\"each\\\", \\\"product_code\\\": \\\"SKU-123\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"14.99\\\"},{\\\"quantity\\\": \\\"3\\\", \\\"description\\\": \\\"Spray Paint\\\", \\\"unit_of_measure\\\": \\\"EA\\\", \\\"product_code\\\": \\\"SKU-456\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"5.00\\\"}]\", \"loc_id\": \"0001\", \"mc_ucaf_data\": \"ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=\", \"mc_ucaf_ind\": \"2\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"partial_auth\": true, \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"pg_id\": \"d24ac6189b0b11e6966ca68d5edbef41\", \"profile_id\": \"21200001000300000978\", \"purchase_id\": \"55-1212\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"subscription_id\": 1234, \"tokenize\": true, \"tr_number\": \"011111111\", \"tran_currency\": 840, \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512, \"xid_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Issue Credit to Cardholder",
+      "url": "https://api-test.qualpay.com/pg/credit"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "developer_id": "QualpayV1.2",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "logo_url": "https://app.qualpay.com/shared/images/qp-icon.png",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "vendor_id": 212100026512
+      },
+      "body_json": {
+        "developer_id": "QualpayV1.2",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "logo_url": "https://app.qualpay.com/shared/images/qp-icon.png",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "vendor_id": 212100026512
+      },
+      "body_text": "{\"developer_id\": \"QualpayV1.2\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"logo_url\": \"https://app.qualpay.com/shared/images/qp-icon.png\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"vendor_id\": 212100026512}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Sends the transaction receipt to multiple email addresses. Receipts can be sent only for successful transactions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/emailReceipt/{{PG_ID}}",
+      "method": "POST",
+      "name": "Send Transaction Receipt Email",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "pgId",
+          "value": ""
+        }
+      ],
+      "path": "/pg/emailReceipt/{{PG_ID}}",
+      "pathParameters": [
+        {
+          "name": "pgId",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"developer_id\": \"QualpayV1.2\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"logo_url\": \"https://app.qualpay.com/shared/images/qp-icon.png\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"vendor_id\": 212100026512}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Send Transaction Receipt Email",
+      "url": "https://api-test.qualpay.com/pg/emailReceipt/{{PG_ID}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_json": {
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_text": "{\"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Once expired, the token (card_id) is no longer valid for use in future transactions.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/expireToken",
+      "method": "POST",
+      "name": "Expire Token",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/expireToken",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Expire Token",
+      "url": "https://api-test.qualpay.com/pg/expireToken"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amt_convenience_fee": 2,
+        "amt_fbo": 1.5,
+        "amt_tax": 93.5,
+        "amt_tran": 1193.5,
+        "amt_tran_fee": 2.35,
+        "auth_code": "620376",
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "cavv_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k=",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "customer_email": "testme@qualpay.com",
+        "customer_id": "JOECUSTOMER_12",
+        "cvv2": "152",
+        "dba_name": "SHOE CO",
+        "dba_suffix": "END PROMO",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "duplicate_seconds": 300,
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "email_receipt": true,
+        "emv_tran_id": "ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=",
+        "exp_date": "0921",
+        "fbo_id": 999000000001,
+        "line_items": "[{\"quantity\": \"1\",\"description\": \"Traffic Cones\", \"unit_of_measure\": \"each\", \"product_code\": \"SKU-123\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"14.99\"},{\"quantity\": \"3\", \"description\": \"Spray Paint\", \"unit_of_measure\": \"EA\", \"product_code\": \"SKU-456\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"5.00\"}]",
+        "loc_id": "0001",
+        "mc_ucaf_data": "ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=",
+        "mc_ucaf_ind": "2",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "partial_auth": true,
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "pg_id": "d24ac6189b0b11e6966ca68d5edbef41",
+        "profile_id": "21200001000300000978",
+        "purchase_id": "55-1212",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "subscription_id": 1234,
+        "tokenize": true,
+        "tr_number": "011111111",
+        "tran_currency": 840,
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512,
+        "xid_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k="
+      },
+      "body_json": {
+        "amt_convenience_fee": 2,
+        "amt_fbo": 1.5,
+        "amt_tax": 93.5,
+        "amt_tran": 1193.5,
+        "amt_tran_fee": 2.35,
+        "auth_code": "620376",
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "cavv_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k=",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "customer_email": "testme@qualpay.com",
+        "customer_id": "JOECUSTOMER_12",
+        "cvv2": "152",
+        "dba_name": "SHOE CO",
+        "dba_suffix": "END PROMO",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "duplicate_seconds": 300,
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "email_receipt": true,
+        "emv_tran_id": "ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=",
+        "exp_date": "0921",
+        "fbo_id": 999000000001,
+        "line_items": "[{\"quantity\": \"1\",\"description\": \"Traffic Cones\", \"unit_of_measure\": \"each\", \"product_code\": \"SKU-123\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"14.99\"},{\"quantity\": \"3\", \"description\": \"Spray Paint\", \"unit_of_measure\": \"EA\", \"product_code\": \"SKU-456\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"5.00\"}]",
+        "loc_id": "0001",
+        "mc_ucaf_data": "ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=",
+        "mc_ucaf_ind": "2",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "partial_auth": true,
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "pg_id": "d24ac6189b0b11e6966ca68d5edbef41",
+        "profile_id": "21200001000300000978",
+        "purchase_id": "55-1212",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "subscription_id": 1234,
+        "tokenize": true,
+        "tr_number": "011111111",
+        "tran_currency": 840,
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512,
+        "xid_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k="
+      },
+      "body_text": "{\"amt_convenience_fee\": 2, \"amt_fbo\": 1.5, \"amt_tax\": 93.5, \"amt_tran\": 1193.5, \"amt_tran_fee\": 2.35, \"auth_code\": \"620376\", \"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"cavv_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"customer_email\": \"testme@qualpay.com\", \"customer_id\": \"JOECUSTOMER_12\", \"cvv2\": \"152\", \"dba_name\": \"SHOE CO\", \"dba_suffix\": \"END PROMO\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"duplicate_seconds\": 300, \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"email_receipt\": true, \"emv_tran_id\": \"ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=\", \"exp_date\": \"0921\", \"fbo_id\": 999000000001, \"line_items\": \"[{\\\"quantity\\\": \\\"1\\\",\\\"description\\\": \\\"Traffic Cones\\\", \\\"unit_of_measure\\\": \\\"each\\\", \\\"product_code\\\": \\\"SKU-123\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"14.99\\\"},{\\\"quantity\\\": \\\"3\\\", \\\"description\\\": \\\"Spray Paint\\\", \\\"unit_of_measure\\\": \\\"EA\\\", \\\"product_code\\\": \\\"SKU-456\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"5.00\\\"}]\", \"loc_id\": \"0001\", \"mc_ucaf_data\": \"ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=\", \"mc_ucaf_ind\": \"2\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"partial_auth\": true, \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"pg_id\": \"d24ac6189b0b11e6966ca68d5edbef41\", \"profile_id\": \"21200001000300000978\", \"purchase_id\": \"55-1212\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"subscription_id\": 1234, \"tokenize\": true, \"tr_number\": \"011111111\", \"tran_currency\": 840, \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512, \"xid_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Forces an approval, used when an online authorization request received a 'declined' reason code and you have received an authorization from a voice or automated response (ARU) system. The required fields are the same as a sale or authorization request, except that the expiration date (exp_date) is not required, and the 6-character authorization code (auth_code) is required.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/force",
+      "method": "POST",
+      "name": "Force Transaction Approval",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/force",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amt_convenience_fee\": 2, \"amt_fbo\": 1.5, \"amt_tax\": 93.5, \"amt_tran\": 1193.5, \"amt_tran_fee\": 2.35, \"auth_code\": \"620376\", \"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"cavv_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"customer_email\": \"testme@qualpay.com\", \"customer_id\": \"JOECUSTOMER_12\", \"cvv2\": \"152\", \"dba_name\": \"SHOE CO\", \"dba_suffix\": \"END PROMO\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"duplicate_seconds\": 300, \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"email_receipt\": true, \"emv_tran_id\": \"ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=\", \"exp_date\": \"0921\", \"fbo_id\": 999000000001, \"line_items\": \"[{\\\"quantity\\\": \\\"1\\\",\\\"description\\\": \\\"Traffic Cones\\\", \\\"unit_of_measure\\\": \\\"each\\\", \\\"product_code\\\": \\\"SKU-123\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"14.99\\\"},{\\\"quantity\\\": \\\"3\\\", \\\"description\\\": \\\"Spray Paint\\\", \\\"unit_of_measure\\\": \\\"EA\\\", \\\"product_code\\\": \\\"SKU-456\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"5.00\\\"}]\", \"loc_id\": \"0001\", \"mc_ucaf_data\": \"ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=\", \"mc_ucaf_ind\": \"2\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"partial_auth\": true, \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"pg_id\": \"d24ac6189b0b11e6966ca68d5edbef41\", \"profile_id\": \"21200001000300000978\", \"purchase_id\": \"55-1212\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"subscription_id\": 1234, \"tokenize\": true, \"tr_number\": \"011111111\", \"tran_currency\": 840, \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512, \"xid_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Force Transaction Approval",
+      "url": "https://api-test.qualpay.com/pg/force"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amt_tran": 1139.5,
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0
+      },
+      "body_json": {
+        "amt_tran": 1139.5,
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0
+      },
+      "body_text": "{\"amt_tran\": 1139.5, \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Creates a new sale transaction using the cardholder data from a previous successful transaction.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/recharge/{{PG_ID_ORIG}}",
+      "method": "POST",
+      "name": "Recharge Previously Settled Transaction",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "pgIdOrig",
+          "value": ""
+        }
+      ],
+      "path": "/pg/recharge/{{PG_ID_ORIG}}",
+      "pathParameters": [
+        {
+          "name": "pgIdOrig",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amt_tran\": 1139.5, \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Recharge Previously Settled Transaction",
+      "url": "https://api-test.qualpay.com/pg/recharge/{{PG_ID_ORIG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amt_tran": 1193.5,
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_json": {
+        "amt_tran": 1193.5,
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_text": "{\"amt_tran\": 1193.5, \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Returns money to the cardholder from a previously captured transaction. Multiple refunds are allowed per captured transaction, provided that the sum of all refunds does not exceed the original captured transaction amount. Authorizations that have not been captured are not eligible for a refund.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/refund/{{PG_ID_ORIG}}",
+      "method": "POST",
+      "name": "Refund Previously Captured Transaction",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "pgIdOrig",
+          "value": ""
+        }
+      ],
+      "path": "/pg/refund/{{PG_ID_ORIG}}",
+      "pathParameters": [
+        {
+          "name": "pgIdOrig",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amt_tran\": 1193.5, \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Refund Previously Captured Transaction",
+      "url": "https://api-test.qualpay.com/pg/refund/{{PG_ID_ORIG}}"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "amt_convenience_fee": 2,
+        "amt_fbo": 1.5,
+        "amt_tax": 93.5,
+        "amt_tran": 1193.5,
+        "amt_tran_fee": 2.35,
+        "auth_code": "620376",
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "cavv_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k=",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "customer_email": "testme@qualpay.com",
+        "customer_id": "JOECUSTOMER_12",
+        "cvv2": "152",
+        "dba_name": "SHOE CO",
+        "dba_suffix": "END PROMO",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "duplicate_seconds": 300,
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "email_receipt": true,
+        "emv_tran_id": "ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=",
+        "exp_date": "0921",
+        "fbo_id": 999000000001,
+        "line_items": "[{\"quantity\": \"1\",\"description\": \"Traffic Cones\", \"unit_of_measure\": \"each\", \"product_code\": \"SKU-123\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"14.99\"},{\"quantity\": \"3\", \"description\": \"Spray Paint\", \"unit_of_measure\": \"EA\", \"product_code\": \"SKU-456\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"5.00\"}]",
+        "loc_id": "0001",
+        "mc_ucaf_data": "ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=",
+        "mc_ucaf_ind": "2",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "partial_auth": true,
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "pg_id": "d24ac6189b0b11e6966ca68d5edbef41",
+        "profile_id": "21200001000300000978",
+        "purchase_id": "55-1212",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "subscription_id": 1234,
+        "tokenize": true,
+        "tr_number": "011111111",
+        "tran_currency": 840,
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512,
+        "xid_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k="
+      },
+      "body_json": {
+        "amt_convenience_fee": 2,
+        "amt_fbo": 1.5,
+        "amt_tax": 93.5,
+        "amt_tran": 1193.5,
+        "amt_tran_fee": 2.35,
+        "auth_code": "620376",
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "cavv_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k=",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "customer_email": "testme@qualpay.com",
+        "customer_id": "JOECUSTOMER_12",
+        "cvv2": "152",
+        "dba_name": "SHOE CO",
+        "dba_suffix": "END PROMO",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "duplicate_seconds": 300,
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "email_receipt": true,
+        "emv_tran_id": "ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=",
+        "exp_date": "0921",
+        "fbo_id": 999000000001,
+        "line_items": "[{\"quantity\": \"1\",\"description\": \"Traffic Cones\", \"unit_of_measure\": \"each\", \"product_code\": \"SKU-123\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"14.99\"},{\"quantity\": \"3\", \"description\": \"Spray Paint\", \"unit_of_measure\": \"EA\", \"product_code\": \"SKU-456\", \"debit_credit_ind\": \"D\", \"unit_cost\": \"5.00\"}]",
+        "loc_id": "0001",
+        "mc_ucaf_data": "ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=",
+        "mc_ucaf_ind": "2",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "partial_auth": true,
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "pg_id": "d24ac6189b0b11e6966ca68d5edbef41",
+        "profile_id": "21200001000300000978",
+        "purchase_id": "55-1212",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "subscription_id": 1234,
+        "tokenize": true,
+        "tr_number": "011111111",
+        "tran_currency": 840,
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512,
+        "xid_3ds": "ASNFZ4kBI0VniQEjRWeJASNFZ4k="
+      },
+      "body_text": "{\"amt_convenience_fee\": 2, \"amt_fbo\": 1.5, \"amt_tax\": 93.5, \"amt_tran\": 1193.5, \"amt_tran_fee\": 2.35, \"auth_code\": \"620376\", \"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"cavv_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"customer_email\": \"testme@qualpay.com\", \"customer_id\": \"JOECUSTOMER_12\", \"cvv2\": \"152\", \"dba_name\": \"SHOE CO\", \"dba_suffix\": \"END PROMO\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"duplicate_seconds\": 300, \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"email_receipt\": true, \"emv_tran_id\": \"ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=\", \"exp_date\": \"0921\", \"fbo_id\": 999000000001, \"line_items\": \"[{\\\"quantity\\\": \\\"1\\\",\\\"description\\\": \\\"Traffic Cones\\\", \\\"unit_of_measure\\\": \\\"each\\\", \\\"product_code\\\": \\\"SKU-123\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"14.99\\\"},{\\\"quantity\\\": \\\"3\\\", \\\"description\\\": \\\"Spray Paint\\\", \\\"unit_of_measure\\\": \\\"EA\\\", \\\"product_code\\\": \\\"SKU-456\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"5.00\\\"}]\", \"loc_id\": \"0001\", \"mc_ucaf_data\": \"ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=\", \"mc_ucaf_ind\": \"2\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"partial_auth\": true, \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"pg_id\": \"d24ac6189b0b11e6966ca68d5edbef41\", \"profile_id\": \"21200001000300000978\", \"purchase_id\": \"55-1212\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"subscription_id\": 1234, \"tokenize\": true, \"tr_number\": \"011111111\", \"tran_currency\": 840, \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512, \"xid_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\"}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Requests authorization, and, if approved, will immediately capture the transaction to be included in the next batch close. This transaction type is used in card-present environments, and also card-not-present environments where no physical goods are being shipped.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/sale",
+      "method": "POST",
+      "name": "Sale (Auth + Capture)",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/sale",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"amt_convenience_fee\": 2, \"amt_fbo\": 1.5, \"amt_tax\": 93.5, \"amt_tran\": 1193.5, \"amt_tran_fee\": 2.35, \"auth_code\": \"620376\", \"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"cavv_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"customer_email\": \"testme@qualpay.com\", \"customer_id\": \"JOECUSTOMER_12\", \"cvv2\": \"152\", \"dba_name\": \"SHOE CO\", \"dba_suffix\": \"END PROMO\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"duplicate_seconds\": 300, \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"email_receipt\": true, \"emv_tran_id\": \"ASNFZ4nwEjR1We3I85BI70V9nifASNFZ4jwHyL0U=\", \"exp_date\": \"0921\", \"fbo_id\": 999000000001, \"line_items\": \"[{\\\"quantity\\\": \\\"1\\\",\\\"description\\\": \\\"Traffic Cones\\\", \\\"unit_of_measure\\\": \\\"each\\\", \\\"product_code\\\": \\\"SKU-123\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"14.99\\\"},{\\\"quantity\\\": \\\"3\\\", \\\"description\\\": \\\"Spray Paint\\\", \\\"unit_of_measure\\\": \\\"EA\\\", \\\"product_code\\\": \\\"SKU-456\\\", \\\"debit_credit_ind\\\": \\\"D\\\", \\\"unit_cost\\\": \\\"5.00\\\"}]\", \"loc_id\": \"0001\", \"mc_ucaf_data\": \"ASNFZ4nwEjRWeI8BI0VnifASNFZ4jwHyL0U=\", \"mc_ucaf_ind\": \"2\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"partial_auth\": true, \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"pg_id\": \"d24ac6189b0b11e6966ca68d5edbef41\", \"profile_id\": \"21200001000300000978\", \"purchase_id\": \"55-1212\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"subscription_id\": 1234, \"tokenize\": true, \"tr_number\": \"011111111\", \"tran_currency\": 840, \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512, \"xid_3ds\": \"ASNFZ4kBI0VniQEjRWeJASNFZ4k=\"}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Sale (Auth + Capture)",
+      "url": "https://api-test.qualpay.com/pg/sale"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "client_ip": "10.1.1.4",
+        "cvv2": "152",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "exp_date": "0921",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "single_use": true,
+        "tr_number": "011111111",
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_json": {
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "client_ip": "10.1.1.4",
+        "cvv2": "152",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "exp_date": "0921",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "single_use": true,
+        "tr_number": "011111111",
+        "type_id": "S",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_text": "{\"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"client_ip\": \"10.1.1.4\", \"cvv2\": \"152\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"exp_date\": \"0921\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"single_use\": true, \"tr_number\": \"011111111\", \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Once stored, a unique card_id is returned for use in future transactions. Optionally, tokenization can be requested in an authorization, verify, force, credit, or sale request by sending the tokenize field set to true.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/tokenize",
+      "method": "POST",
+      "name": "Tokenize Card",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/tokenize",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"client_ip\": \"10.1.1.4\", \"cvv2\": \"152\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"exp_date\": \"0921\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"single_use\": true, \"tr_number\": \"011111111\", \"type_id\": \"S\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Tokenize Card",
+      "url": "https://api-test.qualpay.com/pg/tokenize"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "cvv2": "152",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "exp_date": "0921",
+        "loc_id": "0001",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "tokenize": true,
+        "tr_number": "011111111",
+        "type_id": "S",
+        "user_id": 0
+      },
+      "body_json": {
+        "avs_address": "123 Main St",
+        "avs_zip": "94402",
+        "card_id": "86e1b00d9b0811e68df3069d8f743581",
+        "card_number": "4111111111111111",
+        "card_swipe": ";4111111111111111=08051010912345678901?8",
+        "cardholder_name": "JOHN CUSTOMER",
+        "client_ip": "10.1.1.4",
+        "customer": {
+          "billing_addr1": "123 Main Street",
+          "billing_addr2": "Suite #1234",
+          "billing_city": "San Mateo",
+          "billing_country": "USA",
+          "billing_country_code": "840",
+          "billing_state": "CA",
+          "billing_zip": "94402",
+          "billing_zip4": "1234",
+          "customer_email": "jsmith@somewhere.com",
+          "customer_firm_name": "Qualpay",
+          "customer_first_name": "Joe",
+          "customer_last_name": "Smith",
+          "customer_phone": "6503885200",
+          "shipping_addresses": [
+            {
+              "primary": true,
+              "shipping_addr1": "1234 Main Street",
+              "shipping_addr2": "Ste 123",
+              "shipping_city": "San Mateo",
+              "shipping_country": "USA",
+              "shipping_country_code": "840",
+              "shipping_firm_name": "Qualpay",
+              "shipping_first_name": "Joe",
+              "shipping_last_name": "Smith",
+              "shipping_state": "CA",
+              "shipping_zip": "94402",
+              "shipping_zip4": "1234"
+            }
+          ]
+        },
+        "customer_code": "PO # abc123",
+        "cvv2": "152",
+        "dda_number": "3456776866",
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "email_address": [
+          "jdoe@qualpay.com",
+          "john.doe@qualpay.com"
+        ],
+        "exp_date": "0921",
+        "loc_id": "0001",
+        "merch_ref_num": "ITEM 16126 Purchased 12-15-2016",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "moto_ecomm_ind": "1",
+        "payload_apple_pay": "xxxxxxx",
+        "payload_google_pay": "xxxxxxx",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "tokenize": true,
+        "tr_number": "011111111",
+        "type_id": "S",
+        "user_id": 0
+      },
+      "body_text": "{\"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"cvv2\": \"152\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"exp_date\": \"0921\", \"loc_id\": \"0001\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"tokenize\": true, \"tr_number\": \"011111111\", \"type_id\": \"S\", \"user_id\": 0}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "A verify request will return success if the cardholder information was verified by the issuer. If AVS or CVV data is included in the message, then the AVS or CVV result code will be returned in the response message. This is useful if you want to determine if you have been presented with a valid card, but are not ready to authorize the card.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/verify",
+      "method": "POST",
+      "name": "Verify Card",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key",
+      "params": [],
+      "path": "/pg/verify",
+      "pathParameters": [],
+      "queryParameters": [],
+      "requestBodyExample": "{\"avs_address\": \"123 Main St\", \"avs_zip\": \"94402\", \"card_id\": \"86e1b00d9b0811e68df3069d8f743581\", \"card_number\": \"4111111111111111\", \"card_swipe\": \";4111111111111111=08051010912345678901?8\", \"cardholder_name\": \"JOHN CUSTOMER\", \"client_ip\": \"10.1.1.4\", \"customer\": {\"billing_addr1\": \"123 Main Street\", \"billing_addr2\": \"Suite #1234\", \"billing_city\": \"San Mateo\", \"billing_country\": \"USA\", \"billing_country_code\": \"840\", \"billing_state\": \"CA\", \"billing_zip\": \"94402\", \"billing_zip4\": \"1234\", \"customer_email\": \"jsmith@somewhere.com\", \"customer_firm_name\": \"Qualpay\", \"customer_first_name\": \"Joe\", \"customer_last_name\": \"Smith\", \"customer_phone\": \"6503885200\", \"shipping_addresses\": [{\"primary\": true, \"shipping_addr1\": \"1234 Main Street\", \"shipping_addr2\": \"Ste 123\", \"shipping_city\": \"San Mateo\", \"shipping_country\": \"USA\", \"shipping_country_code\": \"840\", \"shipping_firm_name\": \"Qualpay\", \"shipping_first_name\": \"Joe\", \"shipping_last_name\": \"Smith\", \"shipping_state\": \"CA\", \"shipping_zip\": \"94402\", \"shipping_zip4\": \"1234\"}]}, \"customer_code\": \"PO # abc123\", \"cvv2\": \"152\", \"dda_number\": \"3456776866\", \"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"email_address\": [\"jdoe@qualpay.com\", \"john.doe@qualpay.com\"], \"exp_date\": \"0921\", \"loc_id\": \"0001\", \"merch_ref_num\": \"ITEM 16126 Purchased 12-15-2016\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"moto_ecomm_ind\": \"1\", \"payload_apple_pay\": \"xxxxxxx\", \"payload_google_pay\": \"xxxxxxx\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"tokenize\": true, \"tr_number\": \"011111111\", \"type_id\": \"S\", \"user_id\": 0}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Verify Card",
+      "url": "https://api-test.qualpay.com/pg/verify"
+    },
+    {
+      "auth": {
+        "header_name": "Authorization",
+        "location": "header",
+        "placeholder": "QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64",
+        "prefix": "Basic ",
+        "type": "basic"
+      },
+      "authType": "basic",
+      "auth_type": "basic",
+      "body": {
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_json": {
+        "developer_id": "QualpayV1.2",
+        "echo_fields": "[ {\"product\" : \"lawnmower\"},{\"purchase\" : \"1 yr maintenance\"} ]",
+        "loc_id": "0001",
+        "merchant_id": "<Provide merchant id that links to API Key>",
+        "profile_id": "21200001000300000978",
+        "report_data": "[ {\"shipping address\" : \"123 Main St.\"},{\"shipping city, state zip\" : \"San Mateo, CA 94402\"} ]",
+        "retry_attempt": 1,
+        "retry_id": 1234,
+        "session_id": "",
+        "user_id": 0,
+        "vendor_id": 212100026512
+      },
+      "body_text": "{\"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "body_type": "json",
+      "contentType": "application/json",
+      "content_type": "application/json",
+      "description": "Authorizations can be voided at any time until Qualpay automatically voids them at 28 days. Captured transactions can be voided until the batch is closed. If your batch closes and you did not void the transaction in time, you may make a refund request.",
+      "form_data": [],
+      "header_rows": [
+        {
+          "enabled": true,
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Basic {{QUALPAY_PAYMENT_GATEWAY_API_KEY_BASE64}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "id": "POST /pg/void/{{PG_ID_ORIG}}",
+      "method": "POST",
+      "name": "Void a Previously Authorized Transaction",
+      "note": "Replace {{QUALPAY_PAYMENT_GATEWAY_API_KEY}} with your API key | Replace path parameters (e.g. {{VOICE_ID}}) with actual values",
+      "params": [
+        {
+          "name": "pgIdOrig",
+          "value": ""
+        }
+      ],
+      "path": "/pg/void/{{PG_ID_ORIG}}",
+      "pathParameters": [
+        {
+          "name": "pgIdOrig",
+          "value": ""
+        }
+      ],
+      "queryParameters": [],
+      "requestBodyExample": "{\"developer_id\": \"QualpayV1.2\", \"echo_fields\": \"[ {\\\"product\\\" : \\\"lawnmower\\\"},{\\\"purchase\\\" : \\\"1 yr maintenance\\\"} ]\", \"loc_id\": \"0001\", \"merchant_id\": \"<Provide merchant id that links to API Key>\", \"profile_id\": \"21200001000300000978\", \"report_data\": \"[ {\\\"shipping address\\\" : \\\"123 Main St.\\\"},{\\\"shipping city, state zip\\\" : \\\"San Mateo, CA 94402\\\"} ]\", \"retry_attempt\": 1, \"retry_id\": 1234, \"session_id\": \"\", \"user_id\": 0, \"vendor_id\": 212100026512}",
+      "responseExample": null,
+      "response_example": null,
+      "summary": "Void a Previously Authorized Transaction",
+      "url": "https://api-test.qualpay.com/pg/void/{{PG_ID_ORIG}}"
+    }
+  ]
+}
